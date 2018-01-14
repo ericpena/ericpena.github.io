@@ -1,1 +1,15 @@
 theme: jekyll-theme-time-machine
+
+# Setup
+title: [Who is Eric Peña]
+description: [Welcome to my web nerd cave.]
+baseurl: ""
+paginate: 1
+values:
+	layout: single
+
+# About/contact
+auther:
+	name: Eric Peña
+	url: pena.eng.physics@gmail.com
+	baseurl: ""
