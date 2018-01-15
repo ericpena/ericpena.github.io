@@ -1,51 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Eric Peña</title>
-    <link>https://github.com/ericpena/ericpena.github.io/tags/</link>
-    <description>Recent content in Tags on Eric Peña</description>
+    <title>Tags on Sublime Hugo</title>
+    <link>https://example.com/tags/</link>
+    <description>Recent content in Tags on Sublime Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://github.com/ericpena/ericpena.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Ssss</title>
-      <link>https://github.com/ericpena/ericpena.github.io/tags/ssss/</link>
-      <pubDate>Mon, 15 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://github.com/ericpena/ericpena.github.io/tags/ssss/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vvvvv</title>
-      <link>https://github.com/ericpena/ericpena.github.io/tags/vvvvv/</link>
-      <pubDate>Mon, 15 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://github.com/ericpena/ericpena.github.io/tags/vvvvv/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Xxx</title>
-      <link>https://github.com/ericpena/ericpena.github.io/tags/xxx/</link>
-      <pubDate>Mon, 15 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://github.com/ericpena/ericpena.github.io/tags/xxx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Yyy</title>
-      <link>https://github.com/ericpena/ericpena.github.io/tags/yyy/</link>
-      <pubDate>Mon, 15 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://github.com/ericpena/ericpena.github.io/tags/yyy/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>
