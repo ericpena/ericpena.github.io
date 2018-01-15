@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Eric Peña</title>
+    <title>Sublime Hugo</title>
     <link>https://example.com/</link>
-    <description>Recent content on Eric Peña</description>
+    <description>Recent content on Sublime Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Jul 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Henry</title>
-      <link>https://example.com/sdjfla-dflkjasdlf/</link>
-      <pubDate>Mon, 25 Jul 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/sdjfla-dflkjasdlf/</guid>
-      <description>Quite apart from the usual. ipsum dolor sit amet, hendrerit rutrum aliquam ullamcorper purus non sed. Vitae fames porttitor justo amet, eu neque donec enim vitae vitae vivamus, pede justo metus velit id diam. Scelerisque eget egestas adipiscing mollis in dictum, eu velit amet arcu nibh massa, fringilla ut nunc gravida maecenas phasellus, vulputate felis lacinia integer turpis aliquam. Ultricies eu amet magna, scelerisque ac nulla, auctor nullam vestibulum sapien rutrum pellentesque venenatis, vestibulum a.</description>
-    </item>
     
   </channel>
 </rss>
