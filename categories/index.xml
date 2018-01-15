@@ -1,36 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Eric Peña</title>
-    <link>https://example.com/categories/</link>
-    <description>Recent content in Categories on Eric Peña</description>
+    <title>Eric Peña</title>
+    <link>https://ericpena.github.io/categories/</link>
+    <description>Recent content on Eric Peña</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 25 Jul 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://example.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ericpena.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title></title>
-      <link>https://example.com/categories/</link>
+      <title>Henry</title>
+      <link>https://ericpena.github.io/sdjfla-dflkjasdlf/</link>
       <pubDate>Mon, 25 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/categories/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>V</title>
-      <link>https://example.com/categories/v/</link>
-      <pubDate>Mon, 25 Jul 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/categories/v/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
-</rss>vida maecenas phasellus, vulputate felis lacinia integer turpis aliquam. Ultricies eu amet magna, scelerisque ac nulla, auctor nullam vestibulum sapien rutrum pellentesque venenatis, vestibulum a.</description>
+      <guid>https://ericpena.github.io/sdjfla-dflkjasdlf/</guid>
+      <description>Quite apart from the usual. ipsum dolor sit amet, hendrerit rutrum aliquam ullamcorper purus non sed. Vitae fames porttitor justo amet, eu neque donec enim vitae vitae vivamus, pede justo metus velit id diam. Scelerisque eget egestas adipiscing mollis in dictum, eu velit amet arcu nibh massa, fringilla ut nunc gravida maecenas phasellus, vulputate felis lacinia integer turpis aliquam. Ultricies eu amet magna, scelerisque ac nulla, auctor nullam vestibulum sapien rutrum pellentesque venenatis, vestibulum a.</description>
     </item>
     
   </channel>
