@@ -827,6 +827,19 @@ header {
     margin: 0;
 }
 
+#wrapperHeader{
+    position: relative;
+    background-image:url({{ .Site.BaseURL }}img/ad_infinitum.png);
+}
+
+#header{
+    left: 50%;
+    margin-left: -500px;
+    background:url({{ .Site.BaseURL }}img/ad_infinitum.png) no-repeat;
+    width:1000px;
+    height:200px;
+}
+
 .off-canvas {
     font-family: 'Source Code Pro', monospace;    
     position: fixed;
