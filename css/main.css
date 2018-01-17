@@ -829,13 +829,13 @@ header {
 
 #wrapperHeader{
     position: relative;
-    background-image:url({{ .Site.BaseURL }}img/ad_infinitum.png);
+    background-image:url(../img/ad_infinitum.png);
 }
 
 #header{
     left: 50%;
     margin-left: -500px;
-    background:url({{ .Site.BaseURL }}img/ad_infinitum.png) no-repeat;
+    background:url(../img/ad_infinitum.png) no-repeat;
     width:1000px;
     height:200px;
 }
