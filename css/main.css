@@ -830,7 +830,7 @@ header {
 .header-image{
 /*    left: 50%;
     margin-left: -500px;*/
-    background: no-repeat top center; /*url(../img/ad_infinitum.png)*/
+    background:url(../img/ad_infinitum.png) no-repeat top center; 
 }
 
 .off-canvas {
