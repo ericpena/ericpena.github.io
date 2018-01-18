@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Website on Eric Peña</title>
+    <title>Website on Ghostwriter example</title>
     <link>https://ericpena.github.io/tags/website/</link>
-    <description>Recent content in Website on Eric Peña</description>
+    <description>Recent content in Website on Ghostwriter example</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>My Name</copyright>
     <lastBuildDate>Mon, 15 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ericpena.github.io/tags/website/index.xml" rel="self" type="application/rss+xml" />
