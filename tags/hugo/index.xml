@@ -14,10 +14,10 @@
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>https://ericpena.github.io/2014/04/02/hugoisforlovers/</link>
+      <link>https://ericpena.github.io/2014/04/02/first_post/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://ericpena.github.io/2014/04/02/hugoisforlovers/</guid>
+      <guid>https://ericpena.github.io/2014/04/02/first_post/</guid>
       <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
 Save it somewhere specific as we will be using it in the next step.
 More complete instructions are available at installing hugo
