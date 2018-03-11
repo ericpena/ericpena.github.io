@@ -8,11 +8,6 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/2018/01/21/network_theory/</loc>
-    <lastmod>2018-01-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ericpena.github.io/page/contact/</loc>
     <lastmod>2018-01-19T00:00:00+00:00</lastmod>
   </url>
@@ -34,7 +29,6 @@
   
   <url>
     <loc>https://ericpena.github.io/tags/complexity/</loc>
-    <lastmod>2018-01-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -58,7 +52,6 @@
   
   <url>
     <loc>https://ericpena.github.io/tags/mathematics/</loc>
-    <lastmod>2018-01-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -69,14 +62,16 @@
   </url>
   
   <url>
+    <loc>https://ericpena.github.io/1/01/01/network_theory/</loc>
+  </url>
+  
+  <url>
     <loc>https://ericpena.github.io/tags/networks/</loc>
-    <lastmod>2018-01-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ericpena.github.io/tags/notes/</loc>
-    <lastmod>2018-01-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -100,7 +95,6 @@
   
   <url>
     <loc>https://ericpena.github.io/tags/science/</loc>
-    <lastmod>2018-01-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
