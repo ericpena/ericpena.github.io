@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>ericpena</copyright>
-    <lastBuildDate>Sun, 21 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ericpena.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Network Theory Notes</title>
+      <link>https://ericpena.github.io/2018/03/01/network_theory/</link>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/2018/03/01/network_theory/</guid>
+      <description>These notes were written using Networks - An Introduction (Mark Newman).
+ </description>
+    </item>
     
     <item>
       <title>Create Smarter Goals</title>
@@ -57,16 +67,6 @@ Interests Data Science | Physics | Mathematics | Complexity | Computer Science |
       
       <guid>https://ericpena.github.io/project/first_project/</guid>
       <description>About project Aenean ipsum justo, semper eu nisl ut, pretium tincidunt sem. Praesent et diam sit amet lacus lobortis dictum a id lacus. Quisque hendrerit sit amet turpis eu varius. Ut id lorem ac felis ultrices tincidunt. Pellentesque consequat arcu ac fringilla imperdiet. Phasellus pellentesque, sapien non pulvinar blandit, sapien ante aliquet felis, vel porttitor sapien ante in lacus. Fusce non urna aliquet, malesuada nibh vel, luctus urna. Phasellus ut lacus molestie, varius purus quis, malesuada lorem.</description>
-    </item>
-    
-    <item>
-      <title>Network Theory Notes</title>
-      <link>https://ericpena.github.io/1/01/01/network_theory/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ericpena.github.io/1/01/01/network_theory/</guid>
-      <description>These notes were written using Networks - An Introduction (Mark Newman).
- </description>
     </item>
     
   </channel>

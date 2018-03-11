@@ -7,16 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>ericpena</copyright>
+    <lastBuildDate>Thu, 01 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ericpena.github.io/tags/notes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Network Theory Notes</title>
-      <link>https://ericpena.github.io/1/01/01/network_theory/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://ericpena.github.io/2018/03/01/network_theory/</link>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://ericpena.github.io/1/01/01/network_theory/</guid>
+      <guid>https://ericpena.github.io/2018/03/01/network_theory/</guid>
       <description>These notes were written using Networks - An Introduction (Mark Newman).
  </description>
     </item>
