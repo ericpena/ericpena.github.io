@@ -7,22 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>ericpena</copyright>
-    <lastBuildDate>Sun, 20 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ericpena.github.io/tags/goals/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Create Smarter Goals</title>
-      <link>https://ericpena.github.io/2018/05/20/r_data_types/</link>
-      <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ericpena.github.io/2018/05/20/r_data_types/</guid>
-      <description>Learning Basic R Data Types Vectors All elements in an R vector must have the same mode: integer, numeric, character, logical, complex, etc.
-x &amp;lt;- c(88, 12, 23, 74)  Find the length of a vector with length(x):
-length(x)  ## [1] 4  To iterate through the vector requires an index:
-second &amp;lt;- function(x) { for (i in 1:length(x)) { if(i == 2) break # break out of loop } return(x[i]) } second(x)  ## [1] 12  Matricies One way to create a matrix:</description>
-    </item>
     
     <item>
       <title>Create Smarter Goals</title>
