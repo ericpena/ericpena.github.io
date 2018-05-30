@@ -119,12 +119,12 @@ ga('send', 'pageview');
     
 
 <p>The data structures that will be reviewed in this post are:
-+ Vectors
-+ Matricies
-+ Lists
-+ Data Frame
-+ Factors
-+ Tables</p>
+* Vectors
+* Matricies
+* Lists
+* Data Frame
+* Factors
+* Tables</p>
 
 <p>One by one, it will cover the basics of:
 * Creation
@@ -132,7 +132,7 @@ ga('send', 'pageview');
 * Deleting Elements
 * Indexing
 * Filtering
-* Doing Math</p>
+* and More</p>
 
 <h1 id="span-style-color-2980b9-vectors-span"><span style="color: #2980B9">Vectors</span></h1>
 
@@ -215,7 +215,7 @@ x[x &gt; 2]
 <pre><code>## [1] 3 5
 </code></pre>
 
-<h3 id="span-style-color-e74c3c-math-span"><span style="color:#E74C3C">Math</span></h3>
+<h3 id="span-style-color-e74c3c-combining-vectors-span"><span style="color:#E74C3C">Combining Vectors</span></h3>
 
 <p>Find the length of a vector with <code>length(x)</code>:</p>
 
@@ -415,7 +415,7 @@ x[j,]
 ## [2,]    3    4
 </code></pre>
 
-<h3 id="span-style-color-e74c3c-math-span-1"><span style="color:#E74C3C">Math</span></h3>
+<h3 id="span-style-color-e74c3c-matrix-math-span"><span style="color:#E74C3C">Matrix Math</span></h3>
 
 <pre><code class="language-r">y
 </code></pre>
@@ -465,7 +465,7 @@ x[j,]
 
 <h3 id="span-style-color-e74c3c-introduction-span-3"><span style="color:#E74C3C">Introduction</span></h3>
 
-<p>List are unique in that not all elements have to be of the same mode. List structures can combine different types. An R list is similar to a Python dictionary or C struct. List form the basis for data frames, object oriented programming, and more.</p>
+<p>List are unique in that not all elements have to be of the same mode. List structures can combine different types. An R list is similar to a Python dictionary or C struct. List form the foundation for data frames, object oriented programming (R classes), and more.</p>
 
 <h3 id="span-style-color-e74c3c-creation-span-1"><span style="color:#E74C3C">Creation</span></h3>
 
@@ -489,7 +489,106 @@ j
 
 <h3 id="span-style-color-e74c3c-adding-element-span-1"><span style="color:#E74C3C">Adding Element</span></h3>
 
+<p>New components can be added after a list is created:</p>
+
+<pre><code class="language-r">z &lt;- list(a = &quot;abc&quot;, b = 12)
+z
+</code></pre>
+
+<pre><code>## $a
+## [1] &quot;abc&quot;
+## 
+## $b
+## [1] 12
+</code></pre>
+
+<pre><code class="language-r">z$c &lt;- &quot;sailing&quot; # add a c component
+z
+</code></pre>
+
+<pre><code>## $a
+## [1] &quot;abc&quot;
+## 
+## $b
+## [1] 12
+## 
+## $c
+## [1] &quot;sailing&quot;
+</code></pre>
+
+<p>Adding component can also be done via a vector index:</p>
+
+<pre><code class="language-r">z[[4]] &lt;- 28
+z[5:7] &lt;- c(F,T,T)
+z
+</code></pre>
+
+<pre><code>## $a
+## [1] &quot;abc&quot;
+## 
+## $b
+## [1] 12
+## 
+## $c
+## [1] &quot;sailing&quot;
+## 
+## [[4]]
+## [1] 28
+## 
+## [[5]]
+## [1] FALSE
+## 
+## [[6]]
+## [1] TRUE
+## 
+## [[7]]
+## [1] TRUE
+</code></pre>
+
+<p>You can also concatenate lists:</p>
+
+<pre><code class="language-r">cat &lt;- c(list(&quot;Joe&quot;, 55000, T), list(5)); cat
+</code></pre>
+
+<pre><code>## [[1]]
+## [1] &quot;Joe&quot;
+## 
+## [[2]]
+## [1] 55000
+## 
+## [[3]]
+## [1] TRUE
+## 
+## [[4]]
+## [1] 5
+</code></pre>
+
 <h3 id="span-style-color-e74c3c-remove-element-span-1"><span style="color:#E74C3C">Remove Element</span></h3>
+
+<p>You can delete a list component by setting it equal to <code>NULL</code>:</p>
+
+<pre><code class="language-r">z$b &lt;- NULL
+z
+</code></pre>
+
+<pre><code>## $a
+## [1] &quot;abc&quot;
+## 
+## $c
+## [1] &quot;sailing&quot;
+## 
+## [[3]]
+## [1] 28
+## 
+## [[4]]
+## [1] FALSE
+## 
+## [[5]]
+## [1] TRUE
+## 
+## [[6]]
+## [1] TRUE
+</code></pre>
 
 <h3 id="span-style-color-e74c3c-indexing-span-2"><span style="color:#E74C3C">Indexing</span></h3>
 
@@ -537,17 +636,83 @@ j
 
 <p>The following returns an error since it&rsquo;s trying to return several components using a function that is meant to return one:</p>
 
-<pre><code class="language-r">j[[1:2]]
-</code></pre>
-
-<pre><code>## Error in j[[1:2]] : subscript out of bounds
+<pre><code class="language-r"># j[[1:2]]
 </code></pre>
 
 <h3 id="span-style-color-e74c3c-filtering-span-2"><span style="color:#E74C3C">Filtering</span></h3>
 
-<h3 id="span-style-color-e74c3c-math-span-2"><span style="color:#E74C3C">Math</span></h3>
+<p>Accessing list components:</p>
 
-<h1 id="span-style-color-2980b9-data-frames-span"><span style="color: #2980B9">Data Frames</span></h1>
+<pre><code class="language-r">names(j)
+</code></pre>
+
+<pre><code>## [1] &quot;name&quot;   &quot;salary&quot; &quot;union&quot;
+</code></pre>
+
+<p>We can also get the specific values instead:</p>
+
+<pre><code class="language-r">ulj &lt;- unlist(j); ulj
+</code></pre>
+
+<pre><code>##    name  salary   union 
+##  &quot;Eric&quot; &quot;45000&quot;  &quot;TRUE&quot;
+</code></pre>
+
+<p>Each values above has a name. This name may be removed with the following function:</p>
+
+<pre><code class="language-r">names(ulj) &lt;- NULL
+ulj
+</code></pre>
+
+<pre><code>## [1] &quot;Eric&quot;  &quot;45000&quot; &quot;TRUE&quot;
+</code></pre>
+
+<h5 id="using-lapply-and-sapply-functions">Using <code>lapply()</code> and <code>sapply()</code> functions</h5>
+
+<p>This applies a specific function on each of the compoenents of a list and returns another list:</p>
+
+<pre><code class="language-r">lapply(list(1:3,25:29), median)
+</code></pre>
+
+<pre><code>## [[1]]
+## [1] 2
+## 
+## [[2]]
+## [1] 27
+</code></pre>
+
+<p><code>sapply()</code> returns a vector-valued answer:</p>
+
+<pre><code class="language-r">sapply(list(1:3,25:29), median)
+</code></pre>
+
+<pre><code>## [1]  2 27
+</code></pre>
+
+<h3 id="span-style-color-e74c3c-recursive-lists-span"><span style="color:#E74C3C">Recursive Lists</span></h3>
+
+<p>You can have lists within lists:</p>
+
+<pre><code class="language-r">b &lt;- list(u = 5, v = 12)
+c &lt;- list(w = 13)
+a &lt;- list(b, c)
+a
+</code></pre>
+
+<pre><code>## [[1]]
+## [[1]]$u
+## [1] 5
+## 
+## [[1]]$v
+## [1] 12
+## 
+## 
+## [[2]]
+## [[2]]$w
+## [1] 13
+</code></pre>
+
+<p>TIP: The concatenate function c() has an optional argument <code>recursive</code>, which controls whether <em>flattening</em> occurs when recursive lists are combined. # <span style="color: #2980B9">Data Frames</span></p>
 
 <h3 id="span-style-color-e74c3c-introduction-span-4"><span style="color:#E74C3C">Introduction</span></h3>
 
@@ -561,7 +726,7 @@ j
 
 <h3 id="span-style-color-e74c3c-filtering-span-3"><span style="color:#E74C3C">Filtering</span></h3>
 
-<h3 id="span-style-color-e74c3c-math-span-3"><span style="color:#E74C3C">Math</span></h3>
+<h3 id="span-style-color-e74c3c-math-span"><span style="color:#E74C3C">Math</span></h3>
 
 <h1 id="span-style-color-2980b9-factors-span"><span style="color: #2980B9">Factors</span></h1>
 
@@ -577,7 +742,7 @@ j
 
 <h3 id="span-style-color-e74c3c-filtering-span-4"><span style="color:#E74C3C">Filtering</span></h3>
 
-<h3 id="span-style-color-e74c3c-math-span-4"><span style="color:#E74C3C">Math</span></h3>
+<h3 id="span-style-color-e74c3c-math-span-1"><span style="color:#E74C3C">Math</span></h3>
 
 <h1 id="span-style-color-2980b9-tables-span"><span style="color: #2980B9">Tables</span></h1>
 
@@ -593,29 +758,7 @@ j
 
 <h3 id="span-style-color-e74c3c-filtering-span-5"><span style="color:#E74C3C">Filtering</span></h3>
 
-<h3 id="span-style-color-e74c3c-math-span-5"><span style="color:#E74C3C">Math</span></h3>
-
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com">http://rmarkdown.rstudio.com</a>.</p>
-
-<pre><code class="language-r">summary(cars)
-</code></pre>
-
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-</code></pre>
-
-<h2 id="including-plots">Including Plots</h2>
-
-<p>You can also embed plots, for example:</p>
-
-<p><img src="RDataTypes_files/figure-markdown_github/pressure-1.png" alt="" /></p>
-
-<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+<h3 id="span-style-color-e74c3c-math-span-2"><span style="color:#E74C3C">Math</span></h3>
 
 </div>
 
