@@ -13,15 +13,15 @@
     
     
     <item>
-      <title>R Data Types</title>
+      <title>R Data Structures</title>
       <link>https://ericpena.github.io/2018/05/20/r_data_types/</link>
       <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/2018/05/20/r_data_types/</guid>
-      <description>Vectors Introduction All elements in an R vector must have the same mode: integer, numeric, character, logical, complex, etc.
-Creation x &amp;lt;- c(88, 12, 23, 74) x  ## [1] 88 12 23 74  Adding Element Adding -44 to vector x:
-x &amp;lt;- c(x,-44) x  ## [1] 88 12 23 74 -44  or:
-x[5] &amp;lt;- -44 x  ## [1] 88 12 23 74 -44  Remove Element Remove 23 from x:</description>
+      <description>The data structures that will be reviewed in this post are: * Vectors * Matricies * Lists * Data Frame * Factors * Tables
+One by one, it will cover the basics of: * Creation * Adding Element * Deleting Elements * Indexing * Filtering * Doing Math
+Vectors Introduction All elements in an R vector must have the same mode: integer, numeric, character, logical, complex, etc.
+Creation x &amp;lt;- c(88, 12, 23, 74) x  ## [1] 88 12 23 74  Adding Element Adding -44 to vector x:</description>
     </item>
     
   </channel>
