@@ -19,12 +19,8 @@
       
       <guid>https://ericpena.github.io/2018/05/20/r_data_types/</guid>
       <description>The data structures that will be reviewed in this post are:
-
- Vectors Matricies Lists Data Frame Factors Tables  
-One by one, it will cover the basics of:
-
- Creation Adding Element Deleting Elements Indexing Filtering and More  
-Vectors Introduction All elements in an R vector must have the same mode: integer, numeric, character, logical, complex, etc.
+ Vectorswords Matricies Lists Data Frame Factors Tables  One by one, it will cover the basics of:
+ Creation Adding Element Deleting Elements Indexing Filtering and More  Vectors Introduction All elements in an R vector must have the same mode: integer, numeric, character, logical, complex, etc.
 Creation x &amp;lt;- c(88, 12, 23, 74) x  ## [1] 88 12 23 74  Adding Element Adding -44 to vector x:</description>
     </item>
     
