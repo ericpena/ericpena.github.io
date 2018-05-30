@@ -257,9 +257,55 @@ m
 ## [2,]    4    5    6
 </code></pre>
 
-<h3 id="span-style-color-e74c3c-adding-and-removing-elements-span"><span style="color:#E74C3C">Adding and Removing Elements</span></h3>
+<h3 id="span-style-color-e74c3c-adding-and-removing-rows-and-columns-span"><span style="color:#E74C3C">Adding and Removing Rows and Columns</span></h3>
 
-<p>Rows may be added (similar logic can be used for columns and removal):</p>
+<p>Rows and columns may be added and deleting from a matrix with operations analogous to the vector operations of adding and deleting. These functions are <code>rbind</code> and <code>cbind</code>.</p>
+
+<p>Adding a column:</p>
+
+<pre><code class="language-r">ones_column &lt;- matrix(rep(1,2)); ones_column; m
+</code></pre>
+
+<pre><code>##      [,1]
+## [1,]    1
+## [2,]    1
+
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+</code></pre>
+
+<pre><code class="language-r">cbind(m, ones_column)
+</code></pre>
+
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    2    3    1
+## [2,]    4    5    6    1
+</code></pre>
+
+<p>Adding a row: (don&rsquo;t forgot to adjust the row number: <code>nrow = 1</code>)</p>
+
+<pre><code class="language-r">ones_row &lt;- matrix(rep(1,3), nrow = 1); ones_row; m
+</code></pre>
+
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    1    1
+
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+</code></pre>
+
+<pre><code class="language-r">rbind(ones_row, m)
+</code></pre>
+
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    1    1
+## [2,]    1    2    3
+## [3,]    4    5    6
+</code></pre>
+
+<p>Rows may be added by creating matricies and copying:</p>
 
 <pre><code class="language-r">new_matrix &lt;- matrix(nrow = 3, ncol = 3)
 
@@ -276,6 +322,25 @@ new_matrix
 ## [3,]    7    8    9
 </code></pre>
 
+<p>You can use <code>rbind</code> and <code>cbind</code> to reassign values. This is a form of deleting data.</p>
+
+<pre><code class="language-r">m &lt;- matrix(1:6, nrow = 3); m
+</code></pre>
+
+<pre><code>##      [,1] [,2]
+## [1,]    1    4
+## [2,]    2    5
+## [3,]    3    6
+</code></pre>
+
+<pre><code class="language-r">m &lt;- m[c(1,3),]; m
+</code></pre>
+
+<pre><code>##      [,1] [,2]
+## [1,]    1    4
+## [2,]    3    6
+</code></pre>
+
 <h3 id="span-style-color-e74c3c-indexing-span-1"><span style="color:#E74C3C">Indexing</span></h3>
 
 <p>To retrieve information from a matrix:</p>
@@ -283,19 +348,19 @@ new_matrix
 <pre><code class="language-r">m[,2]
 </code></pre>
 
-<pre><code>## [1] 2 5
+<pre><code>## [1] 4 6
 </code></pre>
 
 <pre><code class="language-r">m[2,]
 </code></pre>
 
-<pre><code>## [1] 4 5 6
+<pre><code>## [1] 3 6
 </code></pre>
 
 <pre><code class="language-r">m[2,2]
 </code></pre>
 
-<pre><code>## [1] 5
+<pre><code>## [1] 6
 </code></pre>
 
 <p>Values may be changed in a matrix as well:</p>
@@ -303,9 +368,9 @@ new_matrix
 <pre><code class="language-r">m[2,2] &lt;- 66; m
 </code></pre>
 
-<pre><code>##      [,1] [,2] [,3]
-## [1,]    1    2    3
-## [2,]    4   66    6
+<pre><code>##      [,1] [,2]
+## [1,]    1    4
+## [2,]    3   66
 </code></pre>
 
 <h3 id="span-style-color-e74c3c-filtering-span-1"><span style="color:#E74C3C">Filtering</span></h3>
@@ -378,7 +443,33 @@ x[j,]
 
 <h3 id="span-style-color-e74c3c-introduction-span-2"><span style="color:#E74C3C">Introduction</span></h3>
 
+<p>The mechanics of an array is very similar to that of a matrix in R. Unlike a matrix, an array can represent data in higher than two dimensions. We may build a three-dimensional array by conbining two matricies, we can build four-dimensional arrays by combining two or more three-dimensional arrays, and so on.</p>
+
+<h1 id="span-style-color-2980b9-lists-span"><span style="color: #2980B9">Lists</span></h1>
+
+<h3 id="span-style-color-e74c3c-introduction-span-3"><span style="color:#E74C3C">Introduction</span></h3>
+
+<p>List are unique in that not all elements have to be of the same mode. List structures can combine different types. An R list is similar to a Python dictionary or C struct. List form the basis for data frames, object oriented programming, and more.</p>
+
 <h3 id="span-style-color-e74c3c-creation-span-1"><span style="color:#E74C3C">Creation</span></h3>
+
+<p>If we wanted to create an employee database, we could start with:</p>
+
+<pre><code class="language-r">j &lt;- list(name = &quot;Eric&quot;, salary = 45000, union = T)
+j
+</code></pre>
+
+<pre><code>## $name
+## [1] &quot;Eric&quot;
+## 
+## $salary
+## [1] 45000
+## 
+## $union
+## [1] TRUE
+</code></pre>
+
+<p>The component names are called <em>tags</em>.</p>
 
 <h3 id="span-style-color-e74c3c-adding-element-span-1"><span style="color:#E74C3C">Adding Element</span></h3>
 
@@ -386,13 +477,63 @@ x[j,]
 
 <h3 id="span-style-color-e74c3c-indexing-span-2"><span style="color:#E74C3C">Indexing</span></h3>
 
+<p>You can access a list component in several different ways:</p>
+
+<pre><code class="language-r">j$salary
+</code></pre>
+
+<pre><code>## [1] 45000
+</code></pre>
+
+<pre><code class="language-r">j[[&quot;salary&quot;]]
+</code></pre>
+
+<pre><code>## [1] 45000
+</code></pre>
+
+<pre><code class="language-r">j[[2]]
+</code></pre>
+
+<pre><code>## [1] 45000
+</code></pre>
+
+<p><strong>What&rsquo;s the deal with the single and double brackets?</strong></p>
+
+<p>If single brackets <code>[ ]</code> are used, the result is another list - a sublist of the original.</p>
+
+<pre><code class="language-r">j1 &lt;- j[1:2]; j1
+</code></pre>
+
+<pre><code>## $name
+## [1] &quot;Eric&quot;
+## 
+## $salary
+## [1] 45000
+</code></pre>
+
+<p>If double brackets <code>[[ ]]</code> are used, it is for referring to a single component and is return in the type of the component.</p>
+
+<pre><code class="language-r">j[[2]]
+</code></pre>
+
+<pre><code>## [1] 45000
+</code></pre>
+
+<p>The following returns an error since it&rsquo;s trying to return several components using a function that is meant to return one:</p>
+
+<pre><code class="language-r">j[[1:2]]
+</code></pre>
+
+<pre><code>## &lt;span style=&quot;color: #ff7f00&quot;&gt;Error in j[[1:2]] : subscript out of bounds&lt;/span&gt;
+</code></pre>
+
 <h3 id="span-style-color-e74c3c-filtering-span-2"><span style="color:#E74C3C">Filtering</span></h3>
 
 <h3 id="span-style-color-e74c3c-math-span-2"><span style="color:#E74C3C">Math</span></h3>
 
-<h1 id="span-style-color-2980b9-lists-span"><span style="color: #2980B9">Lists</span></h1>
+<h1 id="span-style-color-2980b9-data-frames-span"><span style="color: #2980B9">Data Frames</span></h1>
 
-<h3 id="span-style-color-e74c3c-introduction-span-3"><span style="color:#E74C3C">Introduction</span></h3>
+<h3 id="span-style-color-e74c3c-introduction-span-4"><span style="color:#E74C3C">Introduction</span></h3>
 
 <h3 id="span-style-color-e74c3c-creation-span-2"><span style="color:#E74C3C">Creation</span></h3>
 
@@ -406,9 +547,9 @@ x[j,]
 
 <h3 id="span-style-color-e74c3c-math-span-3"><span style="color:#E74C3C">Math</span></h3>
 
-<h1 id="span-style-color-2980b9-data-frames-span"><span style="color: #2980B9">Data Frames</span></h1>
+<h1 id="span-style-color-2980b9-factors-span"><span style="color: #2980B9">Factors</span></h1>
 
-<h3 id="span-style-color-e74c3c-introduction-span-4"><span style="color:#E74C3C">Introduction</span></h3>
+<h3 id="span-style-color-e74c3c-introduction-span-5"><span style="color:#E74C3C">Introduction</span></h3>
 
 <h3 id="span-style-color-e74c3c-creation-span-3"><span style="color:#E74C3C">Creation</span></h3>
 
@@ -422,9 +563,9 @@ x[j,]
 
 <h3 id="span-style-color-e74c3c-math-span-4"><span style="color:#E74C3C">Math</span></h3>
 
-<h1 id="span-style-color-2980b9-factors-span"><span style="color: #2980B9">Factors</span></h1>
+<h1 id="span-style-color-2980b9-tables-span"><span style="color: #2980B9">Tables</span></h1>
 
-<h3 id="span-style-color-e74c3c-introduction-span-5"><span style="color:#E74C3C">Introduction</span></h3>
+<h3 id="span-style-color-e74c3c-introduction-span-6"><span style="color:#E74C3C">Introduction</span></h3>
 
 <h3 id="span-style-color-e74c3c-creation-span-4"><span style="color:#E74C3C">Creation</span></h3>
 
@@ -437,22 +578,6 @@ x[j,]
 <h3 id="span-style-color-e74c3c-filtering-span-5"><span style="color:#E74C3C">Filtering</span></h3>
 
 <h3 id="span-style-color-e74c3c-math-span-5"><span style="color:#E74C3C">Math</span></h3>
-
-<h1 id="span-style-color-2980b9-tables-span"><span style="color: #2980B9">Tables</span></h1>
-
-<h3 id="span-style-color-e74c3c-introduction-span-6"><span style="color:#E74C3C">Introduction</span></h3>
-
-<h3 id="span-style-color-e74c3c-creation-span-5"><span style="color:#E74C3C">Creation</span></h3>
-
-<h3 id="span-style-color-e74c3c-adding-element-span-5"><span style="color:#E74C3C">Adding Element</span></h3>
-
-<h3 id="span-style-color-e74c3c-remove-element-span-5"><span style="color:#E74C3C">Remove Element</span></h3>
-
-<h3 id="span-style-color-e74c3c-indexing-span-6"><span style="color:#E74C3C">Indexing</span></h3>
-
-<h3 id="span-style-color-e74c3c-filtering-span-6"><span style="color:#E74C3C">Filtering</span></h3>
-
-<h3 id="span-style-color-e74c3c-math-span-6"><span style="color:#E74C3C">Math</span></h3>
 
 <p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com">http://rmarkdown.rstudio.com</a>.</p>
 
