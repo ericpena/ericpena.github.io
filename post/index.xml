@@ -20,7 +20,7 @@
       <guid>https://ericpena.github.io/2018/05/20/r_data_types/</guid>
       <description>Truth is ever to be found in simplicity, and not in the multiplicity and confusion of things.
 Isaac Newton
- When I first encountered R, I approached it in the same way I would start any language. I jumped into for-loops, conditional statements, user-defined functions, classes, and so on. I didn&amp;rsquo;t pay much attention to data types at first - assuming they&amp;rsquo;re not much different than what I&amp;rsquo;ve seen already.</description>
+ I approached R in the same way I would start any language. I jumped into for-loops, conditional statements, user-defined functions, classes, and so on. I didn&amp;rsquo;t pay much attention to data types at first - assuming they&amp;rsquo;re not much different than what I&amp;rsquo;ve seen already. I found myself using dataframes and matricies often with low confidence and a lingering confusion.</description>
     </item>
     
     <item>
