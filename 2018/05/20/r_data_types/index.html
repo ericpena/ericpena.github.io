@@ -792,6 +792,26 @@ d
 
 <h3 id="span-style-color-e74c3c-remove-element-span-2"><span style="color:#E74C3C">Remove Element</span></h3>
 
+<p>Data deletion in a data frame is similar to that of a vector.</p>
+
+<pre><code class="language-r">d2
+</code></pre>
+
+<pre><code>##    kids ages
+## 1  jack   12
+## 2  Jill   10
+## 3 laura   19
+</code></pre>
+
+<pre><code class="language-r">d2 &lt;- d2[-2,]
+d2
+</code></pre>
+
+<pre><code>##    kids ages
+## 1  jack   12
+## 3 laura   19
+</code></pre>
+
 <h3 id="span-style-color-e74c3c-indexing-span-3"><span style="color:#E74C3C">Indexing</span></h3>
 
 <pre><code class="language-r">d[[1]]
