@@ -921,9 +921,69 @@ head(cars)
 
 <h3 id="span-style-color-e74c3c-introduction-span-5"><span style="color:#E74C3C">Introduction</span></h3>
 
+<p>The motivation for factors comes from the concept of categorical data in statistics. An R <code>factor</code> may be viewed as a vector with more information added. The extra information consists of a record of the distinct values on that vector, called levels.</p>
+
 <h3 id="span-style-color-e74c3c-creation-span-3"><span style="color:#E74C3C">Creation</span></h3>
 
+<pre><code class="language-r">x &lt;- c(5, 12, 13, 12)
+xf &lt;- factor(x)
+xf
+</code></pre>
+
+<pre><code>## [1] 5  12 13 12
+## Levels: 5 12 13
+</code></pre>
+
+<p>The distinct values in xf: 5, 12, and 13 are the levels</p>
+
+<pre><code class="language-r">str(xf)
+</code></pre>
+
+<pre><code>##  Factor w/ 3 levels &quot;5&quot;,&quot;12&quot;,&quot;13&quot;: 1 2 3 2
+</code></pre>
+
+<pre><code class="language-r">unclass(xf)
+</code></pre>
+
+<pre><code>## [1] 1 2 3 2
+## attr(,&quot;levels&quot;)
+## [1] &quot;5&quot;  &quot;12&quot; &quot;13&quot;
+</code></pre>
+
+<pre><code class="language-r">length(xf)
+</code></pre>
+
+<pre><code>## [1] 4
+</code></pre>
+
 <h3 id="span-style-color-e74c3c-adding-element-span-3"><span style="color:#E74C3C">Adding Element</span></h3>
+
+<p>Future new levels can be anticipated as well:</p>
+
+<pre><code class="language-r">x &lt;- c(5, 12, 13, 12)
+xff &lt;- factor(x, levels = c(5, 12, 13, 88))
+xff
+</code></pre>
+
+<pre><code>## [1] 5  12 13 12
+## Levels: 5 12 13 88
+</code></pre>
+
+<pre><code class="language-r">xff[2] &lt;- 88
+xff
+</code></pre>
+
+<pre><code>## [1] 5  88 13 12
+## Levels: 5 12 13 88
+</code></pre>
+
+<p>Although you cannot add a values that doesn&rsquo;t have a level associated with it:</p>
+
+<pre><code class="language-r">xff[2] &lt;- 28
+</code></pre>
+
+<pre><code>## invalid factor level, NA generated
+</code></pre>
 
 <h3 id="span-style-color-e74c3c-remove-element-span-3"><span style="color:#E74C3C">Remove Element</span></h3>
 
