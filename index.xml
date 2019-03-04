@@ -1,75 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home</title>
+    <title>Hugo Hermit</title>
     <link>https://ericpena.github.io/</link>
-    <description>Recent content on Home</description>
+    <description>Recent content on Hugo Hermit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>ericpena</copyright>
-    <lastBuildDate>Sun, 20 May 2018 00:00:00 +0000</lastBuildDate>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     
 	<atom:link href="https://ericpena.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>R Data Structures</title>
-      <link>https://ericpena.github.io/2018/05/20/r_data_types/</link>
-      <pubDate>Sun, 20 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ericpena.github.io/2018/05/20/r_data_types/</guid>
-      <description>&amp;ldquo;Truth is ever to be found in simplicity, and not in the multiplicity and confusion of things.&amp;rdquo;
-Isaac Newton
- I approached R in the same way I would any language. I immediately delve into for-loops, conditional statements, user-defined functions, classes, and so on. I didn&amp;rsquo;t pay much attention to data types at first - assuming they&amp;rsquo;re not much different than what I&amp;rsquo;ve seen already. I found myself using dataframes and matricies often with low confidence and a lingering confusion.</description>
-    </item>
-    
-    <item>
-      <title>Network Theory Notes</title>
-      <link>https://ericpena.github.io/2018/03/01/network_theory/</link>
-      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ericpena.github.io/2018/03/01/network_theory/</guid>
-      <description>These notes were written using Networks - An Introduction (Mark Newman).
- </description>
-    </item>
-    
-    <item>
-      <title>Create Smarter Goals</title>
-      <link>https://ericpena.github.io/2018/01/21/goal_creation/</link>
-      <pubDate>Sun, 21 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ericpena.github.io/2018/01/21/goal_creation/</guid>
-      <description>If you are anything like me, passion and self-motivation compels you to generate ambitious goals. I sometimes even write them down and share them with friends and family. Then, I sit back and contentedly coddle myself in satisfaction for merely creating this goal hoping it will provide direction and purpose. I do this all while holding onto the illusion that I am responsibly evaluating my needs and assessing my possible futures.</description>
-    </item>
-    
-    <item>
-      <title>Highlights</title>
-      <link>https://ericpena.github.io/page/contact/</link>
-      <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ericpena.github.io/page/contact/</guid>
-      <description> Highlights Piano Programming </description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://ericpena.github.io/page/about/</link>
-      <pubDate>Fri, 03 Apr 2015 02:13:50 +0000</pubDate>
-      
-      <guid>https://ericpena.github.io/page/about/</guid>
-      <description>About Young professional interested in data analytics and machine learning.
-School The Ohio State University B.S. Engineering Physics | Computer Information Science
-Interests Data Science | Physics | Mathematics | Complexity | Computer Science | Self-Improvement</description>
-    </item>
-    
-    <item>
-      <title>Hugo Site</title>
-      <link>https://ericpena.github.io/project/hugo_site/</link>
-      <pubDate>Tue, 18 Nov 2014 02:13:50 +0000</pubDate>
-      
-      <guid>https://ericpena.github.io/project/hugo_site/</guid>
-      <description>Creating Static Webpage Aenean ipsum justo, semper eu nisl ut, pretium tincidunt sem. Praesent et diam sit amet lacus lobortis dictum a id lacus. Quisque hendrerit sit amet turpis eu varius. Ut id lorem ac felis ultrices tincidunt. Pellentesque consequat arcu ac fringilla imperdiet. Phasellus pellentesque, sapien non pulvinar blandit, sapien ante aliquet felis, vel porttitor sapien ante in lacus. Fusce non urna aliquet, malesuada nibh vel, luctus urna. Phasellus ut lacus molestie, varius purus quis, malesuada lorem.</description>
-    </item>
     
   </channel>
 </rss>
