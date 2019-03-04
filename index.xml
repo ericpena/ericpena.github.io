@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ERIC PEÑA</title>
-    <link>http://www.ericpena.github.io/</link>
+    <link>http://ericpena.github.io/</link>
     <description>Recent content on ERIC PEÑA</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     
-	<atom:link href="http://www.ericpena.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://ericpena.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
