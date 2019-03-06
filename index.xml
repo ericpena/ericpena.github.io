@@ -1127,26 +1127,29 @@ $$A = \begin{pmatrix}0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0\\ 0 &amp;amp; 0 &amp;
 
 &lt;p&gt;The cocitation of two vertices $i$ and $j$ in a directed network is the number of vertices that have outgoing edges pointing to both $i$ and $j$. We can see that:&lt;/p&gt;
 
-&lt;p&gt;$$A&lt;em&gt;{ik}A&lt;/em&gt;{jk} = 1$$&lt;/p&gt;
+&lt;div&gt;$$A_{ik}A_{jk} = 1$$&lt;/div&gt;
 
 &lt;p&gt;if $i$ and $j$ are both cited by $k$. If we sum over all these elements we get the following relation:&lt;/p&gt;
 
-&lt;p&gt;$$C&lt;em&gt;{ij} = \sum\limits&lt;/em&gt;{k=1}^n A&lt;em&gt;{ik}A&lt;/em&gt;{jk} = \sum\limits&lt;em&gt;{k=1}^n A&lt;/em&gt;{ik}A_{kj}^T = AA^T $$&lt;/p&gt;
+&lt;div&gt;$$C_{ij} = \sum\limits_{k=1}^n A_{ik}A_{jk} = \sum\limits_{k=1}^n A_{ik}A_{kj}^T = AA^T $$&lt;/div&gt;
 
 &lt;p&gt;This is a cocitation network for which there is an edge between $i$ and $j$ if $C_{ij} &amp;gt; 0$, for $i \neq j$.&lt;/p&gt;
 
-&lt;p&gt;The diagonal elements of the cocitation matrix are given by:
-$$C&lt;em&gt;{ii} = \sum\limits&lt;/em&gt;{k=1}^n A&lt;em&gt;{ik}^2 = \sum\limits&lt;/em&gt;{k=1}^n A_{ik}$$&lt;/p&gt;
+&lt;p&gt;The diagonal elements of the cocitation matrix are given by:&lt;/p&gt;
+
+&lt;div&gt;$$C_{ii} = \sum\limits_{k=1}^n A_{ik}^2 = \sum\limits_{k=1}^n A_{ik}$$&lt;/div&gt;
 
 &lt;p&gt;In constructing the cocitation network we ignore these diagonal elements, meaning that the network&amp;rsquo;s adjacency matrix is equal to the cocitation matrix but with all the diagonal elements set to zero.&lt;/p&gt;
 
 &lt;h3 id=&#34;bibliographic-coupling&#34;&gt;Bibliographic Coupling&lt;/h3&gt;
 
-&lt;p&gt;Cocitation and Bibliographic coupling are similar mathematically but give different results. They&amp;rsquo;re both affected by the number of in and out edges. Bibliographic Coupling of two vertices are the number of other vertices to which both $i$ and $j$ point to. Bibliographic Coupling is general more stable since the number of citations can vary with time. Bibliographic Coupling is known at time of publishing and doesn&amp;rsquo;t change at all. This may or may not be a good thing depending on the situation. Mathematically, it can be described by the following:
-$$B&lt;em&gt;{ij} = \sum\limits&lt;/em&gt;{k=1}^n A&lt;em&gt;{ki}A&lt;/em&gt;{kj} = \sum\limits&lt;em&gt;{k=1}^n A&lt;/em&gt;{ik}^TA_{kj} = A^TA $$&lt;/p&gt;
+&lt;p&gt;Cocitation and Bibliographic coupling are similar mathematically but give different results. They&amp;rsquo;re both affected by the number of in and out edges. Bibliographic Coupling of two vertices are the number of other vertices to which both $i$ and $j$ point to. Bibliographic Coupling is general more stable since the number of citations can vary with time. Bibliographic Coupling is known at time of publishing and doesn&amp;rsquo;t change at all. This may or may not be a good thing depending on the situation. Mathematically, it can be described by the following:&lt;/p&gt;
 
-&lt;p&gt;The diagonal elements of $\textbf{B}$ are:
-$$B&lt;em&gt;{ii} = \sum\limits&lt;/em&gt;{k=1}^n A&lt;em&gt;{ki}^2 = \sum\limits&lt;/em&gt;{k=1}^n A_{ki}$$&lt;/p&gt;
+&lt;div&gt;$$B_{ij} = \sum\limits_{k=1}^n A_{ki}A_{kj} = \sum\limits_{k=1}^n A_{ik}^TA_{kj} = A^TA $$&lt;/div&gt;
+
+&lt;p&gt;The diagonal elements of $\textbf{B}$ are:&lt;/p&gt;
+
+&lt;div&gt;$$B_{ii} = \sum\limits_{k=1}^n A_{ki}^2 = \sum\limits_{k=1}^n A_{ki}$$&lt;/div&gt;
 
 &lt;p&gt;$B_{ii}$ is equal to the number of other vertices that vertex $i$ points to - the number of papers $i$ cites.&lt;/p&gt;
 
@@ -1165,11 +1168,12 @@ Figure 1.1 Shows cocitation and bibliographic coupling network comparison
 
 &lt;p&gt;Hypergraphs may be difficult to deal with and represent mathematically but a tool that can help are bipartite graphs - a way of conveniently representing the hypergraph structure. In sociology, this may be called: &lt;em&gt;two-mode networks&lt;/em&gt;. Edges only exist between two vertices of unlike-types.&lt;/p&gt;
 
-&lt;p&gt;The adjacency matrix for a bipartite graph is a rectangular matrix called an &lt;em&gt;incidence matrix&lt;/em&gt; which is a $g$ by $n$ matrix where $g$ is the number of groups and $n$ are the number of members in the groups.
-$$B_{ij} = \begin{cases}
-      1, &amp;amp; \textit{if vertex j belongs to group i} &lt;br /&gt;
-      0, &amp;amp; \textit{otherwise}
-\end{cases}$$&lt;/p&gt;
+&lt;p&gt;The adjacency matrix for a bipartite graph is a rectangular matrix called an &lt;em&gt;incidence matrix&lt;/em&gt; which is a $g$ by $n$ matrix where $g$ is the number of groups and $n$ are the number of members in the groups.&lt;/p&gt;
+
+&lt;div&gt;$$B_{ij} = \begin{cases} 
+      1, &amp; \textit{if vertex j belongs to group i} \\
+      0, &amp; \textit{otherwise}
+\end{cases}$$&lt;/div&gt;
 
 &lt;p&gt;\begin{center}
 \includegraphics[scale=.5]{Images/BipartiteGraph1.jpg}
@@ -1223,69 +1227,81 @@ Figure 1.2 Bipartite Graph
 
 &lt;h4 id=&#34;mean-degree&#34;&gt;Mean Degree&lt;/h4&gt;
 
-&lt;p&gt;We will denote the degree of vertex $i$ by $k_i$. For an undirected graph of n vertices the degree can be written in terms of the adjacency matrix as:
-$$k&lt;em&gt;i = \sum\limits&lt;/em&gt;{j=1}^n A_{ij}$$&lt;/p&gt;
+&lt;p&gt;We will denote the degree of vertex $i$ by $k_i$. For an undirected graph of n vertices the degree can be written in terms of the adjacency matrix as:&lt;/p&gt;
 
-&lt;p&gt;Every edge in an undirected graph has two ends and if there are m edges in total then there are $2m$ ends of edges. But the number of ends of edges is also equal to the sum of the degrees of all the vertices, so
-$$2m = \sum\limits_{i=1}^n k_i$$&lt;/p&gt;
+&lt;div&gt;$$k_i = \sum\limits_{j=1}^n A_{ij}$$&lt;/div&gt;
 
-&lt;p&gt;Another way of writing this that is more intuitive is:
-$$m = \frac{1}{2}\sum\limits_{i=1}^n k&lt;em&gt;i = \frac{1}{2}\sum\limits&lt;/em&gt;{ij}^n A_{ij}$$&lt;/p&gt;
+&lt;p&gt;Every edge in an undirected graph has two ends and if there are m edges in total then there are $2m$ ends of edges. But the number of ends of edges is also equal to the sum of the degrees of all the vertices, so&lt;/p&gt;
 
-&lt;p&gt;The mean degree $c$ of an undirected graph is:
-$$c = \frac{1}{n} \sum\limits_{i=1}^n k_i$$&lt;/p&gt;
+&lt;div&gt;$$2m = \sum\limits_{i=1}^n k_i$$&lt;/div&gt;
 
-&lt;p&gt;And combining this with the earlier equation:
-$$c = \frac{2m}{n}$$&lt;/p&gt;
+&lt;p&gt;Another way of writing this that is more intuitive is:&lt;/p&gt;
+
+&lt;div&gt;$$m = \frac{1}{2}\sum\limits_{i=1}^n k_i = \frac{1}{2}\sum\limits_{ij}^n A_{ij}$$&lt;/div&gt;
+
+&lt;p&gt;The mean degree $c$ of an undirected graph is:&lt;/p&gt;
+
+&lt;div&gt;$$c = \frac{1}{n} \sum\limits_{i=1}^n k_i$$&lt;/div&gt;
+
+&lt;p&gt;And combining this with the earlier equation:&lt;/p&gt;
+
+&lt;p&gt;$$c = \frac{2m}{n}$$&lt;/p&gt;
 
 &lt;h4 id=&#34;density&#34;&gt;Density&lt;/h4&gt;
 
-&lt;p&gt;The maximum possible number of edges in a simple graph is $\binom{n}{2} = \frac{1}{2}n(n-1)$. The connectance or density $\rho$ of a graph is the fraction of these edges that are actually present:
-$$\rho = \frac{m}{\binom{n}{2}}=\frac{2m}{n(n-1)}=\frac{c}{n-1}$$
-When the network is sufficiently large, $\rho$ may be approximated with just $\frac{c}{n}$.&lt;/p&gt;
+&lt;p&gt;The maximum possible number of edges in a simple graph is $\binom{n}{2} = \frac{1}{2}n(n-1)$. The connectance or density $\rho$ of a graph is the fraction of these edges that are actually present:&lt;/p&gt;
+
+&lt;p&gt;$$\rho = \frac{m}{\binom{n}{2}}=\frac{2m}{n(n-1)}=\frac{c}{n-1}$$&lt;/p&gt;
+
+&lt;p&gt;When the network is sufficiently large, $\rho$ may be approximated with just $\frac{c}{n}$.&lt;/p&gt;
 
 &lt;p&gt;A network where $\rho$ tends to a constant as $n \rightarrow \infty$ is said to be &lt;em&gt;dense&lt;/em&gt;. A network in which $\rho \rightarrow 0$ as $n \rightarrow \infty$ is said to be &lt;em&gt;sparse&lt;/em&gt;.&lt;/p&gt;
 
 &lt;h4 id=&#34;directed-network-degree&#34;&gt;Directed Network Degree&lt;/h4&gt;
 
-&lt;p&gt;Vertex degrees in a directed network are more complicated. They are broken up into &lt;em&gt;in-degree&lt;/em&gt; and &lt;em&gt;out-degree&lt;/em&gt;. If $A_{ij}$ is the adjacency matrix of a directed network, the &lt;em&gt;in&lt;/em&gt; and &lt;em&gt;out&lt;/em&gt; degree can be written as:
-$$k&lt;em&gt;i^{in} = \sum\limits&lt;/em&gt;{j=1}^n A_{ij},\ \ \  k&lt;em&gt;j^{out} = \sum\limits&lt;/em&gt;{i=1}^n A_{ij}$$&lt;/p&gt;
+&lt;p&gt;Vertex degrees in a directed network are more complicated. They are broken up into &lt;em&gt;in-degree&lt;/em&gt; and &lt;em&gt;out-degree&lt;/em&gt;. If $A_{ij}$ is the adjacency matrix of a directed network, the &lt;em&gt;in&lt;/em&gt; and &lt;em&gt;out&lt;/em&gt; degree can be written as:&lt;/p&gt;
 
-&lt;p&gt;We also know the number of edges are:
-$$m = \sum  \limits_{i=1}^n k&lt;em&gt;i^{in} = \sum\limits&lt;/em&gt;{j=1}^n k&lt;em&gt;j^{out} = \sum \limits&lt;/em&gt;{ij} A_{ij}$$&lt;/p&gt;
+&lt;div&gt;$$k_i^{in} = \sum\limits_{j=1}^n A_{ij},\ \ \  k_j^{out} = \sum\limits_{i=1}^n A_{ij}$$&lt;/div&gt;
 
-&lt;p&gt;As far as the mean degree of directed networks:
-$$c&lt;em&gt;{in} = \frac{1}{n} \sum\limits&lt;/em&gt;{i=1}^n k&lt;em&gt;i^{in} = \frac{1}{n} \sum\limits&lt;/em&gt;{j=1}^n k&lt;em&gt;j^{out} = c&lt;/em&gt;{out}$$&lt;/p&gt;
+&lt;p&gt;We also know the number of edges are:&lt;/p&gt;
 
-&lt;p&gt;Combining these two relations, the mean degree can concisely be written as:
-$$c = \frac{m}{n}$$&lt;/p&gt;
+&lt;div&gt;$$m = \sum \limits_{i=1}^n k_i^{in} = \sum\limits_{j=1}^n k_j^{out} = \sum \limits_{ij} A_{ij}$$&lt;/div&gt;
+
+&lt;p&gt;As far as the mean degree of directed networks:&lt;/p&gt;
+
+&lt;div&gt;$$c_{in} = \frac{1}{n} \sum\limits_{i=1}^n k_i^{in} = \frac{1}{n} \sum\limits_{j=1}^n k_j^{out} = c_{out}$$&lt;/div&gt;
+
+&lt;p&gt;Combining these two relations, the mean degree can concisely be written as:&lt;/p&gt;
+
+&lt;p&gt;$$c = \frac{m}{n}$$&lt;/p&gt;
 
 &lt;h3 id=&#34;paths&#34;&gt;Paths&lt;/h3&gt;
 
 &lt;p&gt;A path along a network is a route across the network moving from vertex to vertex along the edges. In a directed network, the path can on go in the direction of the edge but can go either way for an undirected network. A path may reach a vertex or go along an edge it has seen before. A path that does not intersect itself is considered a &lt;em&gt;self-avoiding path&lt;/em&gt;. Geodesic paths and Hamiltonian paths are two special cases of self-avoiding paths.&lt;/p&gt;
 
-&lt;p&gt;The number of paths of length $r$ may be important to study and can be calculated for directed and undirected networks. We will use the fact that for directed and undirected networks, $A&lt;em&gt;{ij}$ is 1 if there is an edge from vertex $j$ to vertex $i$, and 0 otherwise. We can start by asking how many paths of length 2 are there in a network. Imagine we want to study all paths of length 2 from $j$ to $i$ via $k$. The product $A&lt;/em&gt;{ik}A_{kj}$ is 1 where there is a path of length 2 from $j$ to $i$ via $k$, and 0 otherwise.&lt;/p&gt;
+&lt;p&gt;The number of paths of length $r$ may be important to study and can be calculated for directed and undirected networks. We will use the fact that for directed and undirected networks, $A_{ij}$ is 1 if there is an edge from vertex $j$ to vertex $i$, and 0 otherwise. We can start by asking how many paths of length 2 are there in a network. Imagine we want to study all paths of length 2 from $j$ to $i$ via $k$. The product $A_{ik}A_{kj}$ is 1 where there is a path of length 2 from $j$ to $i$ via $k$, and 0 otherwise.&lt;/p&gt;
 
-&lt;p&gt;$$N&lt;em&gt;{ij}^{(2)} = \sum\limits&lt;/em&gt;{k=1}^n A&lt;em&gt;{ik}A&lt;/em&gt;{kj}=\left[A^2\right]_{ij}$$&lt;/p&gt;
+&lt;div&gt;$$N_{ij}^{(2)} = \sum\limits_{k=1}^n A_{ik}A_{kj}=\left[A^2\right]_{ij}$$&lt;/div&gt;
 
-&lt;p&gt;We can study the path of length 3 as well. The product $A&lt;em&gt;{ik}A&lt;/em&gt;{kl}A_{lj}$ is 1 where there exists a path of length 3, and 0 otherwise.&lt;/p&gt;
+&lt;p&gt;We can study the path of length 3 as well. The product $A_{ik}A_{kl}A_{lj}$ is 1 where there exists a path of length 3, and 0 otherwise.&lt;/p&gt;
 
-&lt;p&gt;$$N&lt;em&gt;{ij}^{(3)} = \sum\limits&lt;/em&gt;{k,l=1}^n A&lt;em&gt;{ik}A&lt;/em&gt;{kl}A&lt;em&gt;{lj}=\left[A^3\right]&lt;/em&gt;{ij}$$&lt;/p&gt;
+&lt;div&gt;$$N_{ij}^{(3)} = \sum\limits_{k,l=1}^n A_{ik}A_{kl}A_{lj}=\left[A^3\right]_{ij}$$&lt;/div&gt;
 
-&lt;p&gt;Generalizing to any length $r$ gives:
-$$N&lt;em&gt;{ij}^{r}=\left[A^r\right]&lt;/em&gt;{ij}$$&lt;/p&gt;
+&lt;p&gt;Generalizing to any length $r$ gives:&lt;/p&gt;
+
+&lt;div&gt;$$N_{ij}^{r}=\left[A^r\right]_{ij}$$&lt;/div&gt;
 
 &lt;p&gt;There is a proof of induction on page 137 of Network - An Introduction (Newman).&lt;/p&gt;
 
 &lt;p&gt;Another important thing to consider are loops in a network. The number of loops may be calculated as well.&lt;/p&gt;
 
-&lt;p&gt;$$L&lt;em&gt;r = \sum\limits&lt;/em&gt;{i=1}^n\left[A^r\right]_{ii}=Tr A^r$$&lt;/p&gt;
+&lt;div&gt;$$L_r = \sum\limits_{i=1}^n\left[A^r\right]_{ii}=Tr A^r$$&lt;/div&gt;
 
 &lt;p&gt;There &amp;lsquo;Tr&amp;rsquo; is the trace of a matrix. The number of loops can be written in terms of the eigenvalues of the adjacency matrix as well. The adjacency matrix can be written as $A=UKU^T$ where $U$ is the orthogonal matrix of eigenvectors and $K$ is the orthogonal matrix of eigenvalues:&lt;/p&gt;
 
 &lt;p&gt;$$A^r = (UKU^T)^r = UK^rU^T$$&lt;/p&gt;
 
-&lt;p&gt;$$L_r = Tr(UK^rU^T)=Tr(U^TUK^r)=Tr(k^r)=\sum\limits_i k_i^r$$&lt;/p&gt;
+&lt;div&gt;$$L_r = Tr(UK^rU^T)=Tr(U^TUK^r)=Tr(k^r)=\sum\limits_i k_i^r$$&lt;/div&gt;
 
 &lt;p&gt;Where $k_i$ is the $i^{th}$ eigenvalue of the adjacency matrix. This applies to directed and undirected graphs. There is one important thing to note when learning about counting the number of loops on length r. For each consideration below, the calculation for determining the number of loops uses the following criteria for counting distinct loops.&lt;/p&gt;
 

@@ -45,13 +45,13 @@
   },
   "image": {
     "@type": "ImageObject",
-    "url": "http://ericpena.github.io/example.png",
+    "url": "http://ericpena.github.io/IceCream.png",
     "width": 800,
     "height": 600
   },
   "genre": "posts",
   
-  "wordcount": 2332,
+  "wordcount": 2333,
   "url": "http://ericpena.github.io/2018/network-theory/",
   "datePublished": "2018-12-16T00:00:00+00:00",
   "dateModified": "2018-12-16T00:00:00+00:00",
@@ -61,7 +61,7 @@
     "name": "Fastbyte01",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://ericpena.github.io/logo.png",
+      "url": "http://ericpena.github.io/IceCream.png",
       "width": 127,
       "height": 40
     }
@@ -191,26 +191,29 @@ $$A = \begin{pmatrix}0 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; 0\\ 1 &
 
 <p>The cocitation of two vertices $i$ and $j$ in a directed network is the number of vertices that have outgoing edges pointing to both $i$ and $j$. We can see that:</p>
 
-<p>$$A<em>{ik}A</em>{jk} = 1$$</p>
+<div>$$A_{ik}A_{jk} = 1$$</div>
 
 <p>if $i$ and $j$ are both cited by $k$. If we sum over all these elements we get the following relation:</p>
 
-<p>$$C<em>{ij} = \sum\limits</em>{k=1}^n A<em>{ik}A</em>{jk} = \sum\limits<em>{k=1}^n A</em>{ik}A_{kj}^T = AA^T $$</p>
+<div>$$C_{ij} = \sum\limits_{k=1}^n A_{ik}A_{jk} = \sum\limits_{k=1}^n A_{ik}A_{kj}^T = AA^T $$</div>
 
 <p>This is a cocitation network for which there is an edge between $i$ and $j$ if $C_{ij} &gt; 0$, for $i \neq j$.</p>
 
-<p>The diagonal elements of the cocitation matrix are given by:
-$$C<em>{ii} = \sum\limits</em>{k=1}^n A<em>{ik}^2 = \sum\limits</em>{k=1}^n A_{ik}$$</p>
+<p>The diagonal elements of the cocitation matrix are given by:</p>
+
+<div>$$C_{ii} = \sum\limits_{k=1}^n A_{ik}^2 = \sum\limits_{k=1}^n A_{ik}$$</div>
 
 <p>In constructing the cocitation network we ignore these diagonal elements, meaning that the network&rsquo;s adjacency matrix is equal to the cocitation matrix but with all the diagonal elements set to zero.</p>
 
 <h3 id="bibliographic-coupling">Bibliographic Coupling</h3>
 
-<p>Cocitation and Bibliographic coupling are similar mathematically but give different results. They&rsquo;re both affected by the number of in and out edges. Bibliographic Coupling of two vertices are the number of other vertices to which both $i$ and $j$ point to. Bibliographic Coupling is general more stable since the number of citations can vary with time. Bibliographic Coupling is known at time of publishing and doesn&rsquo;t change at all. This may or may not be a good thing depending on the situation. Mathematically, it can be described by the following:
-$$B<em>{ij} = \sum\limits</em>{k=1}^n A<em>{ki}A</em>{kj} = \sum\limits<em>{k=1}^n A</em>{ik}^TA_{kj} = A^TA $$</p>
+<p>Cocitation and Bibliographic coupling are similar mathematically but give different results. They&rsquo;re both affected by the number of in and out edges. Bibliographic Coupling of two vertices are the number of other vertices to which both $i$ and $j$ point to. Bibliographic Coupling is general more stable since the number of citations can vary with time. Bibliographic Coupling is known at time of publishing and doesn&rsquo;t change at all. This may or may not be a good thing depending on the situation. Mathematically, it can be described by the following:</p>
 
-<p>The diagonal elements of $\textbf{B}$ are:
-$$B<em>{ii} = \sum\limits</em>{k=1}^n A<em>{ki}^2 = \sum\limits</em>{k=1}^n A_{ki}$$</p>
+<div>$$B_{ij} = \sum\limits_{k=1}^n A_{ki}A_{kj} = \sum\limits_{k=1}^n A_{ik}^TA_{kj} = A^TA $$</div>
+
+<p>The diagonal elements of $\textbf{B}$ are:</p>
+
+<div>$$B_{ii} = \sum\limits_{k=1}^n A_{ki}^2 = \sum\limits_{k=1}^n A_{ki}$$</div>
 
 <p>$B_{ii}$ is equal to the number of other vertices that vertex $i$ points to - the number of papers $i$ cites.</p>
 
@@ -229,11 +232,12 @@ Figure 1.1 Shows cocitation and bibliographic coupling network comparison
 
 <p>Hypergraphs may be difficult to deal with and represent mathematically but a tool that can help are bipartite graphs - a way of conveniently representing the hypergraph structure. In sociology, this may be called: <em>two-mode networks</em>. Edges only exist between two vertices of unlike-types.</p>
 
-<p>The adjacency matrix for a bipartite graph is a rectangular matrix called an <em>incidence matrix</em> which is a $g$ by $n$ matrix where $g$ is the number of groups and $n$ are the number of members in the groups.
-$$B_{ij} = \begin{cases}
-      1, &amp; \textit{if vertex j belongs to group i} <br />
-      0, &amp; \textit{otherwise}
-\end{cases}$$</p>
+<p>The adjacency matrix for a bipartite graph is a rectangular matrix called an <em>incidence matrix</em> which is a $g$ by $n$ matrix where $g$ is the number of groups and $n$ are the number of members in the groups.</p>
+
+<div>$$B_{ij} = \begin{cases} 
+      1, & \textit{if vertex j belongs to group i} \\
+      0, & \textit{otherwise}
+\end{cases}$$</div>
 
 <p>\begin{center}
 \includegraphics[scale=.5]{Images/BipartiteGraph1.jpg}
@@ -287,69 +291,81 @@ Figure 1.2 Bipartite Graph
 
 <h4 id="mean-degree">Mean Degree</h4>
 
-<p>We will denote the degree of vertex $i$ by $k_i$. For an undirected graph of n vertices the degree can be written in terms of the adjacency matrix as:
-$$k<em>i = \sum\limits</em>{j=1}^n A_{ij}$$</p>
+<p>We will denote the degree of vertex $i$ by $k_i$. For an undirected graph of n vertices the degree can be written in terms of the adjacency matrix as:</p>
 
-<p>Every edge in an undirected graph has two ends and if there are m edges in total then there are $2m$ ends of edges. But the number of ends of edges is also equal to the sum of the degrees of all the vertices, so
-$$2m = \sum\limits_{i=1}^n k_i$$</p>
+<div>$$k_i = \sum\limits_{j=1}^n A_{ij}$$</div>
 
-<p>Another way of writing this that is more intuitive is:
-$$m = \frac{1}{2}\sum\limits_{i=1}^n k<em>i = \frac{1}{2}\sum\limits</em>{ij}^n A_{ij}$$</p>
+<p>Every edge in an undirected graph has two ends and if there are m edges in total then there are $2m$ ends of edges. But the number of ends of edges is also equal to the sum of the degrees of all the vertices, so</p>
 
-<p>The mean degree $c$ of an undirected graph is:
-$$c = \frac{1}{n} \sum\limits_{i=1}^n k_i$$</p>
+<div>$$2m = \sum\limits_{i=1}^n k_i$$</div>
 
-<p>And combining this with the earlier equation:
-$$c = \frac{2m}{n}$$</p>
+<p>Another way of writing this that is more intuitive is:</p>
+
+<div>$$m = \frac{1}{2}\sum\limits_{i=1}^n k_i = \frac{1}{2}\sum\limits_{ij}^n A_{ij}$$</div>
+
+<p>The mean degree $c$ of an undirected graph is:</p>
+
+<div>$$c = \frac{1}{n} \sum\limits_{i=1}^n k_i$$</div>
+
+<p>And combining this with the earlier equation:</p>
+
+<p>$$c = \frac{2m}{n}$$</p>
 
 <h4 id="density">Density</h4>
 
-<p>The maximum possible number of edges in a simple graph is $\binom{n}{2} = \frac{1}{2}n(n-1)$. The connectance or density $\rho$ of a graph is the fraction of these edges that are actually present:
-$$\rho = \frac{m}{\binom{n}{2}}=\frac{2m}{n(n-1)}=\frac{c}{n-1}$$
-When the network is sufficiently large, $\rho$ may be approximated with just $\frac{c}{n}$.</p>
+<p>The maximum possible number of edges in a simple graph is $\binom{n}{2} = \frac{1}{2}n(n-1)$. The connectance or density $\rho$ of a graph is the fraction of these edges that are actually present:</p>
+
+<p>$$\rho = \frac{m}{\binom{n}{2}}=\frac{2m}{n(n-1)}=\frac{c}{n-1}$$</p>
+
+<p>When the network is sufficiently large, $\rho$ may be approximated with just $\frac{c}{n}$.</p>
 
 <p>A network where $\rho$ tends to a constant as $n \rightarrow \infty$ is said to be <em>dense</em>. A network in which $\rho \rightarrow 0$ as $n \rightarrow \infty$ is said to be <em>sparse</em>.</p>
 
 <h4 id="directed-network-degree">Directed Network Degree</h4>
 
-<p>Vertex degrees in a directed network are more complicated. They are broken up into <em>in-degree</em> and <em>out-degree</em>. If $A_{ij}$ is the adjacency matrix of a directed network, the <em>in</em> and <em>out</em> degree can be written as:
-$$k<em>i^{in} = \sum\limits</em>{j=1}^n A_{ij},\ \ \  k<em>j^{out} = \sum\limits</em>{i=1}^n A_{ij}$$</p>
+<p>Vertex degrees in a directed network are more complicated. They are broken up into <em>in-degree</em> and <em>out-degree</em>. If $A_{ij}$ is the adjacency matrix of a directed network, the <em>in</em> and <em>out</em> degree can be written as:</p>
 
-<p>We also know the number of edges are:
-$$m = \sum  \limits_{i=1}^n k<em>i^{in} = \sum\limits</em>{j=1}^n k<em>j^{out} = \sum \limits</em>{ij} A_{ij}$$</p>
+<div>$$k_i^{in} = \sum\limits_{j=1}^n A_{ij},\ \ \  k_j^{out} = \sum\limits_{i=1}^n A_{ij}$$</div>
 
-<p>As far as the mean degree of directed networks:
-$$c<em>{in} = \frac{1}{n} \sum\limits</em>{i=1}^n k<em>i^{in} = \frac{1}{n} \sum\limits</em>{j=1}^n k<em>j^{out} = c</em>{out}$$</p>
+<p>We also know the number of edges are:</p>
 
-<p>Combining these two relations, the mean degree can concisely be written as:
-$$c = \frac{m}{n}$$</p>
+<div>$$m = \sum \limits_{i=1}^n k_i^{in} = \sum\limits_{j=1}^n k_j^{out} = \sum \limits_{ij} A_{ij}$$</div>
+
+<p>As far as the mean degree of directed networks:</p>
+
+<div>$$c_{in} = \frac{1}{n} \sum\limits_{i=1}^n k_i^{in} = \frac{1}{n} \sum\limits_{j=1}^n k_j^{out} = c_{out}$$</div>
+
+<p>Combining these two relations, the mean degree can concisely be written as:</p>
+
+<p>$$c = \frac{m}{n}$$</p>
 
 <h3 id="paths">Paths</h3>
 
 <p>A path along a network is a route across the network moving from vertex to vertex along the edges. In a directed network, the path can on go in the direction of the edge but can go either way for an undirected network. A path may reach a vertex or go along an edge it has seen before. A path that does not intersect itself is considered a <em>self-avoiding path</em>. Geodesic paths and Hamiltonian paths are two special cases of self-avoiding paths.</p>
 
-<p>The number of paths of length $r$ may be important to study and can be calculated for directed and undirected networks. We will use the fact that for directed and undirected networks, $A<em>{ij}$ is 1 if there is an edge from vertex $j$ to vertex $i$, and 0 otherwise. We can start by asking how many paths of length 2 are there in a network. Imagine we want to study all paths of length 2 from $j$ to $i$ via $k$. The product $A</em>{ik}A_{kj}$ is 1 where there is a path of length 2 from $j$ to $i$ via $k$, and 0 otherwise.</p>
+<p>The number of paths of length $r$ may be important to study and can be calculated for directed and undirected networks. We will use the fact that for directed and undirected networks, $A_{ij}$ is 1 if there is an edge from vertex $j$ to vertex $i$, and 0 otherwise. We can start by asking how many paths of length 2 are there in a network. Imagine we want to study all paths of length 2 from $j$ to $i$ via $k$. The product $A_{ik}A_{kj}$ is 1 where there is a path of length 2 from $j$ to $i$ via $k$, and 0 otherwise.</p>
 
-<p>$$N<em>{ij}^{(2)} = \sum\limits</em>{k=1}^n A<em>{ik}A</em>{kj}=\left[A^2\right]_{ij}$$</p>
+<div>$$N_{ij}^{(2)} = \sum\limits_{k=1}^n A_{ik}A_{kj}=\left[A^2\right]_{ij}$$</div>
 
-<p>We can study the path of length 3 as well. The product $A<em>{ik}A</em>{kl}A_{lj}$ is 1 where there exists a path of length 3, and 0 otherwise.</p>
+<p>We can study the path of length 3 as well. The product $A_{ik}A_{kl}A_{lj}$ is 1 where there exists a path of length 3, and 0 otherwise.</p>
 
-<p>$$N<em>{ij}^{(3)} = \sum\limits</em>{k,l=1}^n A<em>{ik}A</em>{kl}A<em>{lj}=\left[A^3\right]</em>{ij}$$</p>
+<div>$$N_{ij}^{(3)} = \sum\limits_{k,l=1}^n A_{ik}A_{kl}A_{lj}=\left[A^3\right]_{ij}$$</div>
 
-<p>Generalizing to any length $r$ gives:
-$$N<em>{ij}^{r}=\left[A^r\right]</em>{ij}$$</p>
+<p>Generalizing to any length $r$ gives:</p>
+
+<div>$$N_{ij}^{r}=\left[A^r\right]_{ij}$$</div>
 
 <p>There is a proof of induction on page 137 of Network - An Introduction (Newman).</p>
 
 <p>Another important thing to consider are loops in a network. The number of loops may be calculated as well.</p>
 
-<p>$$L<em>r = \sum\limits</em>{i=1}^n\left[A^r\right]_{ii}=Tr A^r$$</p>
+<div>$$L_r = \sum\limits_{i=1}^n\left[A^r\right]_{ii}=Tr A^r$$</div>
 
 <p>There &lsquo;Tr&rsquo; is the trace of a matrix. The number of loops can be written in terms of the eigenvalues of the adjacency matrix as well. The adjacency matrix can be written as $A=UKU^T$ where $U$ is the orthogonal matrix of eigenvectors and $K$ is the orthogonal matrix of eigenvalues:</p>
 
 <p>$$A^r = (UKU^T)^r = UK^rU^T$$</p>
 
-<p>$$L_r = Tr(UK^rU^T)=Tr(U^TUK^r)=Tr(k^r)=\sum\limits_i k_i^r$$</p>
+<div>$$L_r = Tr(UK^rU^T)=Tr(U^TUK^r)=Tr(k^r)=\sum\limits_i k_i^r$$</div>
 
 <p>Where $k_i$ is the $i^{th}$ eigenvalue of the adjacency matrix. This applies to directed and undirected graphs. There is one important thing to note when learning about counting the number of loops on length r. For each consideration below, the calculation for determining the number of loops uses the following criteria for counting distinct loops.</p>
 
@@ -397,7 +413,7 @@ $$1 \rightarrow 2 \rightarrow 3 \rightarrow 1 \ \ \ and \ \ \ 1 \rightarrow 3 \r
            
             <p class="copyright-item">
                     <span>:</span>
-                   <span>2332</span>
+                   <span>2333</span>
             </p>
 
              
@@ -450,14 +466,23 @@ $$1 \rightarrow 2 \rightarrow 3 \rightarrow 1 \ \ \ and \ \ \ 1 \rightarrow 3 \r
     </div>
     
     
+    
+
+    
     <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        processEscapes: true
-        }
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[','\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: { equationNumbers: { autoNumber: "AMS" },
+                 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+          }
         });
     </script>
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </footer>
 
@@ -477,6 +502,8 @@ $$1 \rightarrow 2 \rightarrow 3 \rightarrow 1 \ \ \ and \ \ \ 1 \rightarrow 3 \r
     <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
+
+
 
 
 

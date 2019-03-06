@@ -48,8 +48,8 @@
     "name": "Fastbyte01"
   },
   
-  "image": "http://ericpena.github.io/example.png",
-  "thumbnailUrl": "http://ericpena.github.io/example.png",
+  "image": "http://ericpena.github.io/IceCream.png",
+  "thumbnailUrl": "http://ericpena.github.io/IceCream.png",
   
   "name": "ERIC PEÑA"
 }
@@ -170,14 +170,23 @@
     </div>
     
     
+    
+
+    
     <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        processEscapes: true
-        }
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[','\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: { equationNumbers: { autoNumber: "AMS" },
+                 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+          }
         });
     </script>
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </footer>
 
@@ -193,6 +202,8 @@
 
     
     <script src="/js/vendor_main.min.js" async=""></script>
+
+
 
 
 

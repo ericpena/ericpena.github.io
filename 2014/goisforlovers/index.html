@@ -46,7 +46,7 @@ This document is a brief primer on using Go templates."/>
   },
   "image": {
     "@type": "ImageObject",
-    "url": "http://ericpena.github.io/example.png",
+    "url": "http://ericpena.github.io/IceCream.png",
     "width": 800,
     "height": 600
   },
@@ -62,7 +62,7 @@ This document is a brief primer on using Go templates."/>
     "name": "Fastbyte01",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://ericpena.github.io/logo.png",
+      "url": "http://ericpena.github.io/IceCream.png",
       "width": 127,
       "height": 40
     }
@@ -580,14 +580,23 @@ so, such as in this example:</p>
     </div>
     
     
+    
+
+    
     <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        processEscapes: true
-        }
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[','\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: { equationNumbers: { autoNumber: "AMS" },
+                 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+          }
         });
     </script>
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </footer>
 
@@ -607,6 +616,8 @@ so, such as in this example:</p>
     <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
+
+
 
 
 

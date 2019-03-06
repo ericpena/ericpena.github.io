@@ -51,7 +51,7 @@ Step 2. Build the Docs Hugo has its own example site which happens to also be th
   },
   "image": {
     "@type": "ImageObject",
-    "url": "http://ericpena.github.io/example.png",
+    "url": "http://ericpena.github.io/IceCream.png",
     "width": 800,
     "height": 600
   },
@@ -67,7 +67,7 @@ Step 2. Build the Docs Hugo has its own example site which happens to also be th
     "name": "Fastbyte01",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://ericpena.github.io/logo.png",
+      "url": "http://ericpena.github.io/IceCream.png",
       "width": 127,
       "height": 40
     }
@@ -329,14 +329,23 @@ Having nearly instant feedback enables you to have your creativity flow without 
     </div>
     
     
+    
+
+    
     <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        processEscapes: true
-        }
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[','\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: { equationNumbers: { autoNumber: "AMS" },
+                 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+          }
         });
     </script>
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </footer>
 
@@ -356,6 +365,8 @@ Having nearly instant feedback enables you to have your creativity flow without 
     <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
+
+
 
 
 
