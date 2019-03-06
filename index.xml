@@ -1113,12 +1113,7 @@ xff
 $$A_{ij}$$
 which represents an edge from vertex $j$ to $i$.&lt;/p&gt;
 
-&lt;p&gt;\begin{center}
-\includegraphics[scale=.5]{Images/DirectedGraph1.jpg}
-\end{center}
-\begin{center}
-Figure 1.0 Directed Graph with four vertices
-\end{center}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://ericpena.github.io/DirectedGraph1.png&#34; alt=&#34;Directed graph with four verticies&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The corresponding adjacency matrix for the graph above is:
 $$A = \begin{pmatrix}0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0\\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0\\ 1 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0\\ 1 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 \end{pmatrix}$$&lt;/p&gt;
@@ -1153,12 +1148,7 @@ $$A = \begin{pmatrix}0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0\\ 0 &amp;amp; 0 &amp;
 
 &lt;p&gt;$B_{ii}$ is equal to the number of other vertices that vertex $i$ points to - the number of papers $i$ cites.&lt;/p&gt;
 
-&lt;p&gt;\begin{center}
-\includegraphics[scale=.15]{Images/DirectedGraph2.jpg}
-\end{center}
-\begin{center}
-Figure 1.1 Shows cocitation and bibliographic coupling network comparison
-\end{center}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://ericpena.github.io/DirectedGraph2.png&#34; alt=&#34;Shows cocitation and bibliographic coupling network comparison&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;hypergraphs&#34;&gt;Hypergraphs&lt;/h3&gt;
 
@@ -1170,17 +1160,14 @@ Figure 1.1 Shows cocitation and bibliographic coupling network comparison
 
 &lt;p&gt;The adjacency matrix for a bipartite graph is a rectangular matrix called an &lt;em&gt;incidence matrix&lt;/em&gt; which is a $g$ by $n$ matrix where $g$ is the number of groups and $n$ are the number of members in the groups.&lt;/p&gt;
 
-&lt;div&gt;$$B_{ij} = \begin{cases} 
+&lt;div&gt;
+$$B_{ij} = \begin{cases} 
       1, &amp; \textit{if vertex j belongs to group i} \\
       0, &amp; \textit{otherwise}
-\end{cases}$$&lt;/div&gt;
+\end{cases}$$
+&lt;/div&gt;
 
-&lt;p&gt;\begin{center}
-\includegraphics[scale=.5]{Images/BipartiteGraph1.jpg}
-\end{center}
-\begin{center}
-Figure 1.2 Bipartite Graph
-\end{center}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://ericpena.github.io/BipartiteGraph1.png&#34; alt=&#34;Bipartite Graph&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The adjancency matrix for the bipartite graph above can be written as a $4$ by $5$ matrix:&lt;/p&gt;
 

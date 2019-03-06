@@ -51,7 +51,7 @@
   },
   "genre": "posts",
   
-  "wordcount": 2333,
+  "wordcount": 2298,
   "url": "http://ericpena.github.io/2018/network-theory/",
   "datePublished": "2018-12-16T00:00:00+00:00",
   "dateModified": "2018-12-16T00:00:00+00:00",
@@ -145,6 +145,8 @@
         
 
         
+            
+        
 
         
         
@@ -177,12 +179,7 @@
 $$A_{ij}$$
 which represents an edge from vertex $j$ to $i$.</p>
 
-<p>\begin{center}
-\includegraphics[scale=.5]{Images/DirectedGraph1.jpg}
-\end{center}
-\begin{center}
-Figure 1.0 Directed Graph with four vertices
-\end{center}</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/DirectedGraph1.png" alt="Directed graph with four verticies" class="lazyload"><figcaption class="image-caption">Directed graph with four verticies</figcaption></figure></p>
 
 <p>The corresponding adjacency matrix for the graph above is:
 $$A = \begin{pmatrix}0 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; 0\\ 1 &amp; 1 &amp; 0 &amp; 0\\ 1 &amp; 1 &amp; 0 &amp; 0 \end{pmatrix}$$</p>
@@ -217,12 +214,7 @@ $$A = \begin{pmatrix}0 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; 0\\ 1 &
 
 <p>$B_{ii}$ is equal to the number of other vertices that vertex $i$ points to - the number of papers $i$ cites.</p>
 
-<p>\begin{center}
-\includegraphics[scale=.15]{Images/DirectedGraph2.jpg}
-\end{center}
-\begin{center}
-Figure 1.1 Shows cocitation and bibliographic coupling network comparison
-\end{center}</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/DirectedGraph2.png" alt="Shows cocitation and bibliographic coupling network comparison" class="lazyload"><figcaption class="image-caption">Shows cocitation and bibliographic coupling network comparison</figcaption></figure></p>
 
 <h3 id="hypergraphs">Hypergraphs</h3>
 
@@ -234,17 +226,14 @@ Figure 1.1 Shows cocitation and bibliographic coupling network comparison
 
 <p>The adjacency matrix for a bipartite graph is a rectangular matrix called an <em>incidence matrix</em> which is a $g$ by $n$ matrix where $g$ is the number of groups and $n$ are the number of members in the groups.</p>
 
-<div>$$B_{ij} = \begin{cases} 
+<div>
+$$B_{ij} = \begin{cases} 
       1, & \textit{if vertex j belongs to group i} \\
       0, & \textit{otherwise}
-\end{cases}$$</div>
+\end{cases}$$
+</div>
 
-<p>\begin{center}
-\includegraphics[scale=.5]{Images/BipartiteGraph1.jpg}
-\end{center}
-\begin{center}
-Figure 1.2 Bipartite Graph
-\end{center}</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/BipartiteGraph1.png" alt="Bipartite Graph" class="lazyload"><figcaption class="image-caption">Bipartite Graph</figcaption></figure></p>
 
 <p>The adjancency matrix for the bipartite graph above can be written as a $4$ by $5$ matrix:</p>
 
@@ -413,7 +402,7 @@ $$1 \rightarrow 2 \rightarrow 3 \rightarrow 1 \ \ \ and \ \ \ 1 \rightarrow 3 \r
            
             <p class="copyright-item">
                     <span>:</span>
-                   <span>2333</span>
+                   <span>2298</span>
             </p>
 
              
@@ -482,7 +471,6 @@ $$1 \rightarrow 2 \rightarrow 3 \rightarrow 1 \ \ \ and \ \ \ 1 \rightarrow 3 \r
           }
         });
     </script>
-
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </footer>
 
@@ -498,8 +486,9 @@ $$1 \rightarrow 2 \rightarrow 3 \rightarrow 1 \ \ \ and \ \ \ 1 \rightarrow 3 \r
 
 
     
-    
-    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
     
   
 
