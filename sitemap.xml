@@ -17,6 +17,20 @@
     </url>
   
     <url>
+      <loc>http://ericpena.github.io/2019/war/</loc>
+      
+      <lastmod>2019-03-16T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>http://ericpena.github.io/2019/r-data-types/</loc>
       
       <lastmod>2019-03-04T00:00:00+00:00</lastmod>
@@ -155,6 +169,20 @@
     </url>
   
     <url>
+      <loc>http://ericpena.github.io/categories/function./</loc>
+      
+      <lastmod>2019-03-16T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>http://ericpena.github.io/tags/go/</loc>
       
       <lastmod>2014-04-02T00:00:00+00:00</lastmod>
@@ -241,7 +269,21 @@
     <url>
       <loc>http://ericpena.github.io/categories/programming./</loc>
       
-      <lastmod>2019-03-04T00:00:00+00:00</lastmod>
+      <lastmod>2019-03-16T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://ericpena.github.io/categories/python./</loc>
+      
+      <lastmod>2019-03-16T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -256,6 +298,20 @@
       <loc>http://ericpena.github.io/categories/r-programming./</loc>
       
       <lastmod>2019-03-04T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://ericpena.github.io/categories/recursion./</loc>
+      
+      <lastmod>2019-03-16T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>

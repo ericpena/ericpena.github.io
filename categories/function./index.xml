@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Function. on ERIC PEÑA</title>
+    <link>http://ericpena.github.io/categories/function./</link>
+    <description>Recent content in Function. on ERIC PEÑA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 16 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://ericpena.github.io/categories/function./index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>War</title>
+      <link>http://ericpena.github.io/2019/war/</link>
+      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://ericpena.github.io/2019/war/</guid>
+      <description>War Simulation in Python Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. This is why I chose this as my Python practice problem. This was an attempt to brush up on Python but left me diving head-first into a recursion problem. This program simulates the card-game, &amp;ldquo;I Declare War&amp;rdquo;.</description>
+    </item>
+    
+  </channel>
+</rss>

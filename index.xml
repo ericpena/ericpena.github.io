@@ -187,6 +187,163 @@ Liquid::Template.register_tag(&#39;image&#39;, Jekyll::ImageTag)
     </item>
     
     <item>
+      <title>War</title>
+      <link>http://ericpena.github.io/2019/war/</link>
+      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://ericpena.github.io/2019/war/</guid>
+      <description>
+
+&lt;h1 id=&#34;war-simulation-in-python&#34;&gt;War Simulation in Python&lt;/h1&gt;
+
+&lt;h3 id=&#34;game-designer-greg-costikyan-has-observed-that-since-there-are-no-choices-in-the-game-and-all-outcomes-are-random-it-cannot-be-considered-a-game-by-some-definitions-this-is-why-i-chose-this-as-my-python-practice-problem-this-was-an-attempt-to-brush-up-on-python-but-left-me-diving-head-first-into-a-recursion-problem-this-program-simulates-the-card-game-i-declare-war&#34;&gt;Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. This is why I chose this as my Python practice problem. This was an attempt to brush up on Python but left me diving head-first into a recursion problem. This program simulates the card-game, &amp;ldquo;I Declare War&amp;rdquo;.&lt;/h3&gt;
+
+&lt;h1 id=&#34;the-objective-of-the-game-is-to-win-all-cards&#34;&gt;The objective of the game is to win all cards.&lt;/h1&gt;
+
+&lt;p&gt;The deck is divided evenly among the players, giving each a down stack. In unison, each player reveals the top card of their deck—this is a &amp;ldquo;battle&amp;rdquo;—and the player with the higher card takes both of the cards played and moves them to their reserves stack.&lt;/p&gt;
+
+&lt;p&gt;If the two cards played are of equal value, then there is a &amp;ldquo;war&amp;rdquo;. Both players place the next three cards of their pile face down (depending on the variant) and then another card face-up. The owner of the higher face-up card wins the war and adds all six cards on the table to their reserves deck. If the face-up cards are again equal then the battle repeats with another set of face-down/up cards. This repeats until one player&amp;rsquo;s face-up card is higher than their opponent&amp;rsquo;s. This is what requires recusion to be complete. In theory, there can be any number of &amp;ldquo;wars&amp;rdquo; only constraint by the number of cards in the deck&lt;/p&gt;
+
+&lt;p&gt;Most descriptions of War are unclear about what happens if a player runs out of cards during a war. In this variant, the player immediately loses.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Title: War Simulation
+# Date: 3/16/2019
+# Author: Eric Pena
+
+from random import shuffle
+import random
+import pandas as pd
+import matplotlib.pyplot as plt
+# Create Deck and shuffle it
+deck = []
+deck = range(13) * 4
+shuffle(deck)
+# Deal the cards
+player1 = deck[::2]
+player2 = deck[1::2]
+# Create Reserve Piles
+player1_res = []
+player2_res = []
+# Define more variables
+topcard = 0
+# Game counter
+turn = 1
+# Calculate the total cards a player has: hand + reserves
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def total_cards(h, r):
+	return (len(h) + len(r))
+# Recursive function that happens when war starts	
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def idw(player1, player2, player1_res, player2_res, jackpot):
+	# DEBUG
+	print &amp;quot;WAR BREAKS OUT...&amp;quot;
+	# Add reserve to hand and shuffle if hand is less than 4 cards:
+	if (len(player1) &amp;lt; 4):
+		player1.extend(player1_res)
+		player1_res = []
+		shuffle(player1)
+	if (len(player2) &amp;lt; 4):
+		player2.extend(player2_res)
+		player2_res = []
+		shuffle(player2)
+	# If this is still not enough cards, clear the cards and stop the game
+	if (len(player1) &amp;lt; 4 or len(player2) &amp;lt; 4):
+		player1, player2, player1_res, player2_res = ([] for i in range(4))
+		return player1, player2, player1_res, player2_res
+	# Remove top three cards and put them in reserve pile
+	jackpot.extend([player1[0], player1[1], player1[2], player2[0], player2[1], player2[2]])
+	player1 = player1[3:]
+	player2 = player2[3:]
+
+	# Use fourth card to compare
+	if player1[topcard] &amp;gt; player2[topcard]:
+		print &amp;quot;PLAYER 1 WINS WAR: &amp;quot; + str(player1[topcard]) + &amp;quot; - &amp;quot; + str(player2[topcard])
+		player1_res.extend([player1[topcard], player2[topcard]])
+		player1_res.extend(jackpot)
+		# Remove cards from hand
+		player1 = player1[1:]
+		player2 = player2[1:]
+		return player1, player2, player1_res, player2_res
+	
+	elif player1[topcard] &amp;lt; player2[topcard]:
+		print &amp;quot;PLAYER 2 WINS WAR: &amp;quot; + str(player1[topcard]) + &amp;quot; - &amp;quot; + str(player2[topcard])
+		player2_res.extend([player1[topcard], player2[topcard]])
+		player2_res.extend(jackpot)
+		# Remove cards from hand
+		player1 = player1[1:]
+		player2 = player2[1:]
+		return player1, player2, player1_res, player2_res
+	
+	else:		
+		print &amp;quot;ANOTHER WAR BEGINS: &amp;quot; + str(player1[topcard]) + &amp;quot; - &amp;quot; + str(player2[topcard])
+		jackpot.extend([player1[0], player2[0]])
+		player1 = player1[1:]
+		player2 = player2[1:]
+		return idw(player1, player2, player1_res, player2_res, jackpot)
+
+# Start the game
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def play_game(player1, player2, player1_res, player2_res, turn):
+	# Create a record of the game
+	cols = [&amp;quot;Round&amp;quot;, &amp;quot;P1 card&amp;quot;, &amp;quot;P2 card&amp;quot;, &amp;quot;P1 t-len&amp;quot;, &amp;quot;P2 t-len&amp;quot;, &amp;quot;P1 h-len&amp;quot;, &amp;quot;P2 h-len&amp;quot;]
+	datarec = pd.DataFrame(columns = cols)
+	while (len(player1) != 0 and len(player2) != 0):
+		print &amp;quot;Round: &amp;quot; + str(turn) + &amp;quot;\t|\t&amp;quot; + \
+			str(player1[topcard]) + &amp;quot;\t|\t&amp;quot; + \
+			str(player2[topcard]) + &amp;quot;\t|\t&amp;quot; + \
+			str(total_cards(player1, player1_res)) + &amp;quot;\t|\t&amp;quot; + \
+			str(total_cards(player2, player2_res)) + &amp;quot;\t|\t&amp;quot; + \
+			str(len(player1)) + &amp;quot;\t|\t&amp;quot; + \
+			str(len(player2)) + &amp;quot;\t|\t&amp;quot; + \
+			str(total_cards(player1, player1_res) + total_cards(player2, player2_res))
+		# Add data to pandas dataframe:
+		datarec.loc[turn - 1] = [turn, player1[topcard], player2[topcard], total_cards(player1, player1_res), total_cards(player2, player2_res), len(player1), len(player2)]
+		# Flip top cards and assign:
+		if player1[topcard] &amp;gt; player2[topcard]:
+			player1_res.extend([player1[topcard], player2[topcard]])
+			# Remove topcard from hands
+			player1 = player1[1:]
+			player2 = player2[1:]
+		elif player1[topcard] &amp;lt; player2[topcard]:
+			player2_res.extend([player1[topcard], player2[topcard]])
+			# Remove topcard from hands
+			player1 = player1[1:]
+			player2 = player2[1:]
+		else:
+			print &amp;quot;TOP: &amp;quot; + str(player1[topcard]) + &amp;quot; - &amp;quot; + str(player2[topcard])
+			player1, player2, player1_res, player2_res = idw(player1, player2, player1_res, player2_res,[])
+
+		# Replenish Cards
+		if len(player1) == 0:
+			player1 = player1_res
+			shuffle(player1)
+			player1_res = []
+			# it1 = 0
+		if len(player2) == 0:
+			player2 = player2_res
+			shuffle(player2)
+			player2_res = []
+			# it2 = 0
+		turn += 1
+	return player1, player2, player1_res, player2_res, datarec, turn
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# MAIN PROGRAM:
+print &amp;quot;Round: &amp;quot; + &amp;quot;\t\t|\t&amp;quot; + &amp;quot;P1 card&amp;quot; + &amp;quot;\t|\t&amp;quot; + &amp;quot;P2 card&amp;quot; + &amp;quot;\t|\t&amp;quot; + &amp;quot;P1-T&amp;quot; + &amp;quot;\t|\t&amp;quot; + &amp;quot;P2-T&amp;quot; + &amp;quot;\t|\t&amp;quot; + &amp;quot;P1-H&amp;quot; + &amp;quot;\t|\t&amp;quot; + &amp;quot;P2-H&amp;quot;
+
+player1, player2, player1_res, player2_res, df, turn = play_game(player1, player2, player1_res, player2_res, turn)
+plt.plot(df[&amp;quot;Round&amp;quot;], df[&amp;quot;P1 t-len&amp;quot;])
+plt.plot(df[&amp;quot;Round&amp;quot;], df[&amp;quot;P2 t-len&amp;quot;])
+plt.legend([&#39;Player 1&#39;, &#39;Player 2&#39;])
+plt.title(&amp;quot;War Simulation&amp;quot;)
+plt.xlabel(&amp;quot;Card Flips&amp;quot;)
+plt.ylabel(&amp;quot;Number of Cards For Each Player&amp;quot;)
+plt.show()
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>R Data Types</title>
       <link>http://ericpena.github.io/2019/r-data-types/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
@@ -235,7 +392,7 @@ Liquid::Template.register_tag(&#39;image&#39;, Jekyll::ImageTag)
 x
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code&gt;## [1] 88 12 23 74
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;    ## [1] 88 12 23 74
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;span-style-color-e74c3c-adding-element-span&#34;&gt;&lt;span style=&#34;color:#E74C3C&#34;&gt;Adding Element&lt;/span&gt;&lt;/h3&gt;
@@ -246,7 +403,7 @@ x
 x
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code&gt;## [1]  88  12  23  74 -44
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;    ## [1]  88  12  23  74 -44
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;or:&lt;/p&gt;
@@ -255,7 +412,7 @@ x
 x
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code&gt;## [1]  88  12  23  74 -44
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;    ## [1]  88  12  23  74 -44
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;span-style-color-e74c3c-remove-element-span&#34;&gt;&lt;span style=&#34;color:#E74C3C&#34;&gt;Remove Element&lt;/span&gt;&lt;/h3&gt;
@@ -266,7 +423,7 @@ x
 x
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code&gt;## [1]  88  12  74 -44
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;    ## [1]  88  12  74 -44
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;It&amp;rsquo;s possible to remove several items at once:&lt;/p&gt;

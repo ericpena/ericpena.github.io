@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>Function.</title>
+      <link>http://ericpena.github.io/categories/function./</link>
+      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://ericpena.github.io/categories/function./</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Mathematics.</title>
       <link>http://ericpena.github.io/categories/mathematics./</link>
       <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
@@ -40,9 +49,18 @@
     <item>
       <title>Programming.</title>
       <link>http://ericpena.github.io/categories/programming./</link>
-      <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>http://ericpena.github.io/categories/programming./</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python.</title>
+      <link>http://ericpena.github.io/categories/python./</link>
+      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://ericpena.github.io/categories/python./</guid>
       <description></description>
     </item>
     
@@ -52,6 +70,15 @@
       <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>http://ericpena.github.io/categories/r-programming./</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recursion.</title>
+      <link>http://ericpena.github.io/categories/recursion./</link>
+      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://ericpena.github.io/categories/recursion./</guid>
       <description></description>
     </item>
     
