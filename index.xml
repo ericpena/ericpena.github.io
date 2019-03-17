@@ -196,15 +196,59 @@ Liquid::Template.register_tag(&#39;image&#39;, Jekyll::ImageTag)
 
 &lt;h1 id=&#34;war-simulation-in-python&#34;&gt;War Simulation in Python&lt;/h1&gt;
 
-&lt;h3 id=&#34;game-designer-greg-costikyan-has-observed-that-since-there-are-no-choices-in-the-game-and-all-outcomes-are-random-it-cannot-be-considered-a-game-by-some-definitions-this-is-why-i-chose-this-as-my-python-practice-problem-this-was-an-attempt-to-brush-up-on-python-but-left-me-diving-head-first-into-a-recursion-problem-this-program-simulates-the-card-game-i-declare-war&#34;&gt;Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. This is why I chose this as my Python practice problem. This was an attempt to brush up on Python but left me diving head-first into a recursion problem. This program simulates the card-game, &amp;ldquo;I Declare War&amp;rdquo;.&lt;/h3&gt;
+&lt;h4 id=&#34;game-designer-greg-costikyan-has-observed-that-since-there-are-no-choices-in-the-game-and-all-outcomes-are-random-it-cannot-be-considered-a-game-by-some-definitions-i-chose-to-program-this-game-because-its-complete-random-chance-feature-it-was-an-opportunity-to-practice-python-and-writing-recursive-functions&#34;&gt;Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. I chose to program this game because its complete random chance feature. It was an opportunity to practice python and writing recursive functions.&lt;/h4&gt;
 
 &lt;h1 id=&#34;the-objective-of-the-game-is-to-win-all-cards&#34;&gt;The objective of the game is to win all cards.&lt;/h1&gt;
 
-&lt;p&gt;The deck is divided evenly among the players, giving each a down stack. In unison, each player reveals the top card of their deck—this is a &amp;ldquo;battle&amp;rdquo;—and the player with the higher card takes both of the cards played and moves them to their reserves stack.&lt;/p&gt;
+&lt;p&gt;A 52-card deck is divided evenly among the players, giving each a down stack. In unison, each player reveals the top card of their deck—this is a &amp;ldquo;battle&amp;rdquo;-and the player with the higher card takes both of the cards played and moves them to their reserves stack. The reserves stack is used when there are no longer cards to play in hand.&lt;/p&gt;
 
-&lt;p&gt;If the two cards played are of equal value, then there is a &amp;ldquo;war&amp;rdquo;. Both players place the next three cards of their pile face down (depending on the variant) and then another card face-up. The owner of the higher face-up card wins the war and adds all six cards on the table to their reserves deck. If the face-up cards are again equal then the battle repeats with another set of face-down/up cards. This repeats until one player&amp;rsquo;s face-up card is higher than their opponent&amp;rsquo;s. This is what requires recusion to be complete. In theory, there can be any number of &amp;ldquo;wars&amp;rdquo; only constraint by the number of cards in the deck&lt;/p&gt;
+&lt;p&gt;If the two cards played are of equal value, then there is a &amp;ldquo;war&amp;rdquo;. Both players place the next three cards from their hand face down (depending on the variant) and then another card face-up. The owner of the higher face-up card wins the war and adds all six cards on the table to their reserves deck. If the face-up cards are again equal then the battle repeats with another set of face-down/up cards. This repeats until one player&amp;rsquo;s face-up card is higher than their opponent&amp;rsquo;s. This is the part of the game where recursion is helpful. In theory, there can be any number of &amp;ldquo;wars&amp;rdquo; only constrained by the number of cards in the deck. Most descriptions of War are unclear about what happens if a player runs out of cards during a war. In this variant, the player immediately loses.&lt;/p&gt;
 
-&lt;p&gt;Most descriptions of War are unclear about what happens if a player runs out of cards during a war. In this variant, the player immediately loses.&lt;/p&gt;
+&lt;p&gt;Below are several simulations that were run to explore game behavior&lt;/p&gt;
+
+&lt;h1 id=&#34;simple-game&#34;&gt;Simple Game&lt;/h1&gt;
+
+&lt;p&gt;This is a shorter game than average with &lt;strong&gt;3&lt;/strong&gt; wars which can be identified by the lines with steeper slopes.
+&lt;img src=&#34;http://ericpena.github.io/idw_simulation_2.png&#34; alt=&#34;War Simulation -  3 Wars&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a slightly longer game with only &lt;strong&gt;4&lt;/strong&gt; wars which occur on card flip: 48, 90, 117, and 152.
+&lt;img src=&#34;http://ericpena.github.io/idw_simulation_B.png&#34; alt=&#34;War Simulation - 4 Wars&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;blowing-up&#34;&gt;Blowing Up&lt;/h1&gt;
+
+&lt;p&gt;There is &amp;ldquo;blowing up&amp;rdquo; behavior for some games as well. This behavior is typically exacerbated by wars won by the same player.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img width=&#34;1604&#34; alt=&#34;...&#34; src=&#34;http://ericpena.github.io/idw_simulation_6.png&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img width=&#34;1604&#34; alt=&#34;...&#34; src=&#34;http://ericpena.github.io/idw_simulation_8.png&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img width=&#34;1604&#34; alt=&#34;...&#34; src=&#34;http://ericpena.github.io/idw_simulation_14.png&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img width=&#34;1604&#34; alt=&#34;...&#34; src=&#34;http://ericpena.github.io/idw_simulation_15.png&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;triple-war&#34;&gt;Triple War&lt;/h3&gt;
+
+&lt;p&gt;When wars occur consecutively, a mass number of cards are moved at once. The example below shows a triple war happening which led Player 2 winning the game. The war began at card flip 698.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ericpena.github.io/Triple_War.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;http://ericpena.github.io/idw_simulation_16_triple_war.png&#34; alt=&#34;Three Consecutive Wars&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;the-code&#34;&gt;The Code&lt;/h1&gt;
+
+&lt;p&gt;The program has been written in Python and is copied below for those interested.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Title: War Simulation
 # Date: 3/16/2019
@@ -1493,37 +1537,24 @@ $$1 \rightarrow 2 \rightarrow 3 \rightarrow 1 \ \ \ and \ \ \ 1 \rightarrow 3 \r
 
 &lt;h1 id=&#34;center-i-m-eric-peña-center&#34;&gt;&lt;center&gt;I&amp;rsquo;m Eric Peña.&lt;/center&gt;&lt;/h1&gt;
 
-&lt;h1 id=&#34;center-welcome-to-my-page-center&#34;&gt;&lt;center&gt;Welcome to my page.&lt;/center&gt;&lt;/h1&gt;
-
 &lt;p&gt;&lt;img src=&#34;http://ericpena.github.io/faces.png&#34; alt=&#34;Home_GIF&#34; width=&#34;300&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;center&gt;&lt;/p&gt;
+&lt;h1 id=&#34;center-education-center&#34;&gt;&lt;center&gt;Education&lt;/center&gt;&lt;/h1&gt;
 
-&lt;h1 id=&#34;what-i-do-now&#34;&gt;WHAT I DO NOW&lt;/h1&gt;
+&lt;p&gt;&lt;center&gt;The Ohio State University, B.S. Engineering Physics – Computer Information Science&lt;/center&gt;
+&lt;center&gt;General Assembly - Data Science&lt;/center&gt;&lt;/p&gt;
 
-&lt;p&gt;A&lt;/p&gt;
+&lt;h1 id=&#34;center-experience-center&#34;&gt;&lt;center&gt;Experience&lt;/center&gt;&lt;/h1&gt;
 
-&lt;p&gt;B&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Revenue Management Data Analyst | Diageo (Spirits Manufacturer)&lt;/li&gt;
+&lt;li&gt;Engineer | H.B. Fuller (Chemical Company)&lt;/li&gt;
+&lt;li&gt;Physics Teacher | The OSU Minority Engineering Program&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;C&lt;/p&gt;
+&lt;h1 id=&#34;center-interests-center&#34;&gt;&lt;center&gt;INTERESTS&lt;/center&gt;&lt;/h1&gt;
 
-&lt;h1 id=&#34;what-i-did&#34;&gt;WHAT I DID&lt;/h1&gt;
-
-&lt;p&gt;A&lt;/p&gt;
-
-&lt;p&gt;B&lt;/p&gt;
-
-&lt;p&gt;C&lt;/p&gt;
-
-&lt;h1 id=&#34;what-i-m-interested-in&#34;&gt;WHAT I&amp;rsquo;M INTERESTED IN&lt;/h1&gt;
-
-&lt;p&gt;A&lt;/p&gt;
-
-&lt;p&gt;B&lt;/p&gt;
-
-&lt;p&gt;C&lt;/p&gt;
-
-&lt;p&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;Piano | Music | Science | Math | Biking&lt;/center&gt;&lt;/p&gt;
 
 &lt;!-- Hugo is the **world’s fastest framework for building websites**. It is written in Go.
 

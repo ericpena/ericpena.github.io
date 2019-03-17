@@ -32,7 +32,7 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="War"/>
-<meta name="twitter:description" content="War Simulation in Python Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. This is why I chose this as my Python practice problem. This was an attempt to brush up on Python but left me diving head-first into a recursion problem. This program simulates the card-game, &ldquo;I Declare War&rdquo;."/>
+<meta name="twitter:description" content="War Simulation in Python Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. I chose to program this game because its complete random chance feature. It was an opportunity to practice python and writing recursive functions. The objective of the game is to win all cards. A 52-card deck is divided evenly among the players, giving each a down stack."/>
 
   <script type="application/ld+json">
 {
@@ -51,7 +51,7 @@
   },
   "genre": "posts",
   
-  "wordcount": 860,
+  "wordcount": 995,
   "url": "http://ericpena.github.io/2019/war/",
   "datePublished": "2019-03-16T00:00:00+00:00",
   "dateModified": "2019-03-16T00:00:00+00:00",
@@ -137,6 +137,7 @@
                         <a href="http://ericpena.github.io/categories/programming./"> Programming. </a>
                         <a href="http://ericpena.github.io/categories/recursion./"> Recursion. </a>
                         <a href="http://ericpena.github.io/categories/function./"> Function. </a>
+                        <a href="http://ericpena.github.io/categories/simulation./"> Simulation. </a>
                         
                 </span>
                 &nbsp;&nbsp;5 min
@@ -145,6 +146,8 @@
     <div class="post-content">
         
 
+        
+            
         
 
         
@@ -162,15 +165,59 @@
 
 <h1 id="war-simulation-in-python">War Simulation in Python</h1>
 
-<h3 id="game-designer-greg-costikyan-has-observed-that-since-there-are-no-choices-in-the-game-and-all-outcomes-are-random-it-cannot-be-considered-a-game-by-some-definitions-this-is-why-i-chose-this-as-my-python-practice-problem-this-was-an-attempt-to-brush-up-on-python-but-left-me-diving-head-first-into-a-recursion-problem-this-program-simulates-the-card-game-i-declare-war">Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. This is why I chose this as my Python practice problem. This was an attempt to brush up on Python but left me diving head-first into a recursion problem. This program simulates the card-game, &ldquo;I Declare War&rdquo;.</h3>
+<h4 id="game-designer-greg-costikyan-has-observed-that-since-there-are-no-choices-in-the-game-and-all-outcomes-are-random-it-cannot-be-considered-a-game-by-some-definitions-i-chose-to-program-this-game-because-its-complete-random-chance-feature-it-was-an-opportunity-to-practice-python-and-writing-recursive-functions">Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. I chose to program this game because its complete random chance feature. It was an opportunity to practice python and writing recursive functions.</h4>
 
 <h1 id="the-objective-of-the-game-is-to-win-all-cards">The objective of the game is to win all cards.</h1>
 
-<p>The deck is divided evenly among the players, giving each a down stack. In unison, each player reveals the top card of their deck—this is a &ldquo;battle&rdquo;—and the player with the higher card takes both of the cards played and moves them to their reserves stack.</p>
+<p>A 52-card deck is divided evenly among the players, giving each a down stack. In unison, each player reveals the top card of their deck—this is a &ldquo;battle&rdquo;-and the player with the higher card takes both of the cards played and moves them to their reserves stack. The reserves stack is used when there are no longer cards to play in hand.</p>
 
-<p>If the two cards played are of equal value, then there is a &ldquo;war&rdquo;. Both players place the next three cards of their pile face down (depending on the variant) and then another card face-up. The owner of the higher face-up card wins the war and adds all six cards on the table to their reserves deck. If the face-up cards are again equal then the battle repeats with another set of face-down/up cards. This repeats until one player&rsquo;s face-up card is higher than their opponent&rsquo;s. This is what requires recusion to be complete. In theory, there can be any number of &ldquo;wars&rdquo; only constraint by the number of cards in the deck</p>
+<p>If the two cards played are of equal value, then there is a &ldquo;war&rdquo;. Both players place the next three cards from their hand face down (depending on the variant) and then another card face-up. The owner of the higher face-up card wins the war and adds all six cards on the table to their reserves deck. If the face-up cards are again equal then the battle repeats with another set of face-down/up cards. This repeats until one player&rsquo;s face-up card is higher than their opponent&rsquo;s. This is the part of the game where recursion is helpful. In theory, there can be any number of &ldquo;wars&rdquo; only constrained by the number of cards in the deck. Most descriptions of War are unclear about what happens if a player runs out of cards during a war. In this variant, the player immediately loses.</p>
 
-<p>Most descriptions of War are unclear about what happens if a player runs out of cards during a war. In this variant, the player immediately loses.</p>
+<p>Below are several simulations that were run to explore game behavior</p>
+
+<h1 id="simple-game">Simple Game</h1>
+
+<p>This is a shorter game than average with <strong>3</strong> wars which can be identified by the lines with steeper slopes.
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/idw_simulation_2.png" alt="War Simulation -  3 Wars" class="lazyload"><figcaption class="image-caption">War Simulation -  3 Wars</figcaption></figure></p>
+
+<p>This is a slightly longer game with only <strong>4</strong> wars which occur on card flip: 48, 90, 117, and 152.
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/idw_simulation_B.png" alt="War Simulation - 4 Wars" class="lazyload"><figcaption class="image-caption">War Simulation - 4 Wars</figcaption></figure></p>
+
+<h1 id="blowing-up">Blowing Up</h1>
+
+<p>There is &ldquo;blowing up&rdquo; behavior for some games as well. This behavior is typically exacerbated by wars won by the same player.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><img width="1604" alt="..." src="/idw_simulation_6.png"></td>
+<td align="center"><img width="1604" alt="..." src="/idw_simulation_8.png"></td>
+</tr>
+
+<tr>
+<td align="center"><img width="1604" alt="..." src="/idw_simulation_14.png"></td>
+<td align="center"><img width="1604" alt="..." src="/idw_simulation_15.png"></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="triple-war">Triple War</h3>
+
+<p>When wars occur consecutively, a mass number of cards are moved at once. The example below shows a triple war happening which led Player 2 winning the game. The war began at card flip 698.</p>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/Triple_War.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/idw_simulation_16_triple_war.png" alt="Three Consecutive Wars" class="lazyload"><figcaption class="image-caption">Three Consecutive Wars</figcaption></figure></p>
+
+<h1 id="the-code">The Code</h1>
+
+<p>The program has been written in Python and is copied below for those interested.</p>
 
 <pre><code class="language-python"># Title: War Simulation
 # Date: 3/16/2019
@@ -319,7 +366,7 @@ plt.show()
            
             <p class="copyright-item">
                     <span>:</span>
-                   <span>860</span>
+                   <span>995</span>
             </p>
 
              
@@ -403,8 +450,9 @@ plt.show()
 
 
     
-    
-    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
     
   
 
