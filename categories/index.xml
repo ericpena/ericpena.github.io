@@ -1,102 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on ERIC PEÑA</title>
-    <link>http://ericpena.github.io/categories/</link>
-    <description>Recent content in Categories on ERIC PEÑA</description>
+    <title>Categories on My Blog</title>
+    <link>http://example.org/categories/</link>
+    <description>Recent content in Categories on My Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
     
-	<atom:link href="http://ericpena.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://example.org/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Complex Systems.</title>
-      <link>http://ericpena.github.io/categories/complex-systems./</link>
+      <title>Mathematics</title>
+      <link>http://example.org/categories/mathematics/</link>
       <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://ericpena.github.io/categories/complex-systems./</guid>
+      <guid>http://example.org/categories/mathematics/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Function.</title>
-      <link>http://ericpena.github.io/categories/function./</link>
+      <title>Programming</title>
+      <link>http://example.org/categories/programming/</link>
       <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://ericpena.github.io/categories/function./</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mathematics.</title>
-      <link>http://ericpena.github.io/categories/mathematics./</link>
-      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://ericpena.github.io/categories/mathematics./</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Networks.</title>
-      <link>http://ericpena.github.io/categories/networks./</link>
-      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://ericpena.github.io/categories/networks./</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programming.</title>
-      <link>http://ericpena.github.io/categories/programming./</link>
-      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://ericpena.github.io/categories/programming./</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python.</title>
-      <link>http://ericpena.github.io/categories/python./</link>
-      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://ericpena.github.io/categories/python./</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R Programming.</title>
-      <link>http://ericpena.github.io/categories/r-programming./</link>
-      <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://ericpena.github.io/categories/r-programming./</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Recursion.</title>
-      <link>http://ericpena.github.io/categories/recursion./</link>
-      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://ericpena.github.io/categories/recursion./</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Reference.</title>
-      <link>http://ericpena.github.io/categories/reference./</link>
-      <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://ericpena.github.io/categories/reference./</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Simulation.</title>
-      <link>http://ericpena.github.io/categories/simulation./</link>
-      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://ericpena.github.io/categories/simulation./</guid>
+      <guid>http://example.org/categories/programming/</guid>
       <description></description>
     </item>
     

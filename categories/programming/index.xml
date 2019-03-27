@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on My Blog</title>
-    <link>http://example.org/posts/</link>
-    <description>Recent content in Posts on My Blog</description>
+    <title>Programming on My Blog</title>
+    <link>http://example.org/categories/programming/</link>
+    <description>Recent content in Programming on My Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 16 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://example.org/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -28,27 +28,6 @@
       <guid>http://example.org/posts/r-data-types/</guid>
       <description>&amp;ldquo;Truth is ever to be found in simplicity, and not in the multiplicity and confusion of things.&amp;rdquo;
 Isaac Newton I approached R in the same way I would any language. I immediately delve into for-loops, conditional statements, user-defined functions, classes, and so on. I didn&amp;rsquo;t pay much attention to data types at first - assuming they&amp;rsquo;re not much different than what I&amp;rsquo;ve seen already. I found myself using dataframes and matricies often with low confidence and a lingering confusion.</description>
-    </item>
-    
-    <item>
-      <title>Mathematics of Network Theory</title>
-      <link>http://example.org/posts/network-theory/</link>
-      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/posts/network-theory/</guid>
-      <description>Graphs may be represented in the form of a matrix. Main types of graphs that may be represented are:
- Simple Graph Multigraph Directed Graph Weighted Graph Bipartite Graph  Directed Graph Directed graphs are graphs that contain edges with direction. Vertices may have inward and outward edges.
-Unlike adjacency matricies for simped graphs, adjacency matricies for directed graphs are non-symmetric. Elements of an adjacency matrix for a directed graph may be denoted as: $$A_{ij}$$ which represents an edge from vertex $j$ to $i$.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>http://example.org/posts/about/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/posts/about/</guid>
-      <description>I&amp;rsquo;m Eric Peña. Education The Ohio State University, B.S. Engineering Physics – Computer Information Science General Assembly - Data Science
-Experience  Revenue Management Data Analyst | Diageo (Spirits Manufacturer) Engineer | H.B. Fuller (Chemical Company) Physics Teacher | The OSU Minority Engineering Program  INTERESTS Piano | Music | Science | Math | Biking</description>
     </item>
     
   </channel>
