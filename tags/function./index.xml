@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Function. on My Blog</title>
-    <link>http://example.org/tags/function./</link>
-    <description>Recent content in Function. on My Blog</description>
+    <title>Function. on Eric Peña</title>
+    <link>https://ericpena.github.io/tags/function./</link>
+    <description>Recent content in Function. on Eric Peña</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Sat, 16 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://example.org/tags/function./index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ericpena.github.io/tags/function./index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>War</title>
-      <link>http://example.org/posts/war/</link>
+      <link>https://ericpena.github.io/2019/war/</link>
       <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/war/</guid>
+      <guid>https://ericpena.github.io/2019/war/</guid>
       <description>War Simulation in Python Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. I chose to program this game because its complete random chance feature. It was an opportunity to practice python and writing recursive functions. The objective of the game is to win all cards. A 52-card deck is divided evenly among the players, giving each a down stack.</description>
     </item>
     

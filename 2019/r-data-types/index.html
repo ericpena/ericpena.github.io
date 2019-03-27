@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noodp"/>
   
-  <link rel="prev" href="http://ericpena.github.io/2018/network-theory/" />
-  <link rel="next" href="http://ericpena.github.io/2019/war/" />
-  <link rel="canonical" href="http://ericpena.github.io/2019/r-data-types/" />
+  <link rel="prev" href="https://ericpena.github.io/2018/network-theory/" />
+  <link rel="next" href="https://ericpena.github.io/2019/war/" />
+  <link rel="canonical" href="https://ericpena.github.io/2019/r-data-types/" />
   <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -20,10 +20,10 @@
   <title>
        
        
-           R Data Types | ERIC PEÑA
+           R Data Types | Eric Peña
        
   </title>
-  <meta name="title" content="R Data Types | ERIC PEÑA">
+  <meta name="title" content="R Data Types | Eric Peña">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -32,8 +32,7 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="R Data Types"/>
-<meta name="twitter:description" content="&ldquo;Truth is ever to be found in simplicity, and not in the multiplicity and confusion of things.&rdquo;
-Isaac Newton I approached R in the same way I would any language. I immediately delve into for-loops, conditional statements, user-defined functions, classes, and so on. I didn&rsquo;t pay much attention to data types at first - assuming they&rsquo;re not much different than what I&rsquo;ve seen already. I found myself using dataframes and matricies often with low confidence and a lingering confusion."/>
+<meta name="twitter:description" content="Learn the Basics of R Data Types"/>
 
   <script type="application/ld+json">
 {
@@ -42,18 +41,18 @@ Isaac Newton I approached R in the same way I would any language. I immediately 
   "headline": "R Data Types",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://ericpena.github.io/2019/r-data-types/"
+    "@id": "https://ericpena.github.io/2019/r-data-types/"
   },
   "image": {
     "@type": "ImageObject",
-    "url": "http://ericpena.github.io/IceCream.png",
+    "url": "https://ericpena.github.io/cover.png",
     "width": 800,
     "height": 600
   },
   "genre": "posts",
-  
+  "keywords": "R Programming., Programming., Reference.",
   "wordcount": 2452,
-  "url": "http://ericpena.github.io/2019/r-data-types/",
+  "url": "https://ericpena.github.io/2019/r-data-types/",
   "datePublished": "2019-03-04T00:00:00+00:00",
   "dateModified": "2019-03-04T00:00:00+00:00",
   
@@ -62,7 +61,7 @@ Isaac Newton I approached R in the same way I would any language. I immediately 
     "name": "Fastbyte01",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://ericpena.github.io/IceCream.png",
+      "url": "https://ericpena.github.io/logo.png",
       "width": 127,
       "height": 40
     }
@@ -71,7 +70,7 @@ Isaac Newton I approached R in the same way I would any language. I immediately 
     "@type": "Person",
     "name": "Fastbyte01"
   },
-  "description": ""
+  "description": "Learn the Basics of R Data Types"
 }
 </script>
 </head>
@@ -84,7 +83,7 @@ Isaac Newton I approached R in the same way I would any language. I immediately 
         <nav class="navbar">
     <div class="container">
         <div class="navbar-header header-logo">
-        	<a href="http://ericpena.github.io">ERIC PEÑA</a>
+        	<a href="https://ericpena.github.io">Eric Peña</a>
         </div>
         <div class="menu navbar-right">
                 
@@ -102,7 +101,7 @@ Isaac Newton I approached R in the same way I would any language. I immediately 
 <nav class="navbar-mobile" id="nav-mobile" style="display: none">
      <div class="container">
         <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="http://ericpena.github.io">ERIC PEÑA</a></div>
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://ericpena.github.io">Eric Peña</a></div>
             <div class="menu-toggle">
                 <span></span><span></span><span></span>
             </div>
@@ -127,16 +126,14 @@ Isaac Newton I approached R in the same way I would any language. I immediately 
     <header class="post-header">
         <h1 class="post-title">R Data Types</h1>
         <div class="post-meta">
-              <a href="http://ericpena.github.io" rel="author">E. Peña</a>  ♥ 
+              <a href="https://ericpena.github.io" rel="author">Fastbyte01</a>  ♥ 
                 <span class="post-time">
                      <time datetime=2019-03-04 >4 March 2019</time>
                 </span>
                 
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="http://ericpena.github.io/categories/r-programming./"> R Programming. </a>
-                        <a href="http://ericpena.github.io/categories/programming./"> Programming. </a>
-                        <a href="http://ericpena.github.io/categories/reference./"> Reference. </a>
+                        <a href="https://ericpena.github.io/categories/programming/"> Programming </a>
                         
                 </span>
                 &nbsp;&nbsp;12 min
@@ -1057,7 +1054,7 @@ xff
              
             <p class="copyright-item">
                 <span>:</span>
-                <span>E. Peña </span>
+                <span>Fastbyte01 </span>
                 </p>
             
            
@@ -1076,18 +1073,32 @@ xff
   
     <div class="post-tags">
         
+            <section>
+            <i class="iconfont icon-icon-tag"></i>: 
+            
+            <span class="tag"><a href="https://ericpena.github.io/tags/r-programming./">
+                    #R Programming.</a></span>
+            
+            <span class="tag"><a href="https://ericpena.github.io/tags/programming./">
+                    #Programming.</a></span>
+            
+            <span class="tag"><a href="https://ericpena.github.io/tags/reference./">
+                    #Reference.</a></span>
+            
+            </section>
+        
         <section>
                 <a href="javascript:window.history.back();"></a></span> · 
-                <span><a href="http://ericpena.github.io"></a></span>
+                <span><a href="https://ericpena.github.io"></a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
-        <a href="http://ericpena.github.io/2018/network-theory/" class="prev" rel="prev" title="Mathematics of Network Theory"><i class="iconfont icon-dajiantou"></i>&nbsp;Mathematics of Network Theory</a>
+        <a href="https://ericpena.github.io/2018/network-theory/" class="prev" rel="prev" title="Mathematics of Network Theory"><i class="iconfont icon-dajiantou"></i>&nbsp;Mathematics of Network Theory</a>
          
         
-        <a href="http://ericpena.github.io/2019/war/" class="next" rel="next" title="War">War&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        <a href="https://ericpena.github.io/2019/war/" class="next" rel="next" title="War">War&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
         
     </div>
 
@@ -1109,10 +1120,10 @@ xff
         
         
         
-            <span class="author" itemprop="copyrightHolder"><a href="http://ericpena.github.io">E. Peña</a> | </span>
+            <span class="author" itemprop="copyrightHolder"><a href="https://ericpena.github.io">Fastbyte01</a> | </span>
         
 
-		  <span>Crafted with ❤️</span>
+		  <span>Crafted with Hugo and GithubPages</span>
     </div>
     
     

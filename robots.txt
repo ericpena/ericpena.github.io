@@ -63,4 +63,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: http://ericpena.github.io/sitemap.xml
+Sitemap: https://ericpena.github.io/sitemap.xml
