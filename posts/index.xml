@@ -6,13 +6,23 @@
     <description>Recent content in Posts on Eric Peña</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 16 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 26 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ericpena.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>War</title>
+      <title>Adding Favicons</title>
+      <link>https://ericpena.github.io/2019/hugo-favicon/</link>
+      <pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/2019/hugo-favicon/</guid>
+      <description>Nothing makes a personal website seem polished like a clean, minimalistic favicon. This article quickly lists the steps to add a favicon to a Hugo website like this one.
+ Create a favicon in an art package like Illustrator or Inkscape. Upload your image to Real Favicon Generator Extract the favicon package it creates to the /static/ directory which lives in the root of your HUGO site. Copy the given html and add it to your /layouts/partials/head.</description>
+    </item>
+    
+    <item>
+      <title>War | Coding a Card Game</title>
       <link>https://ericpena.github.io/2019/war/</link>
       <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
       
@@ -28,6 +38,15 @@
       <guid>https://ericpena.github.io/2019/r-data-types/</guid>
       <description>&amp;ldquo;Truth is ever to be found in simplicity, and not in the multiplicity and confusion of things.&amp;rdquo;
 Isaac Newton I approached R in the same way I would any language. I immediately delve into for-loops, conditional statements, user-defined functions, classes, and so on. I didn&amp;rsquo;t pay much attention to data types at first - assuming they&amp;rsquo;re not much different than what I&amp;rsquo;ve seen already. I found myself using dataframes and matricies often with low confidence and a lingering confusion.</description>
+    </item>
+    
+    <item>
+      <title>Generalized Coordinates in Physics</title>
+      <link>https://ericpena.github.io/2019/gen-coord/</link>
+      <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/2019/gen-coord/</guid>
+      <description>Generalized Cyclic Coordinates and Conservation Laws From the Lagrangian Formulation of Theoretical Mechanics These are selected notes from a group of topics I find of particular interest. Although I assume some previous knowledge of classical mechanics from you, I still provide a brief overview of what the Lagrangian method is, where it comes from, how it relates to the more familiar Newtonian formulation, and how these beautiful laws of nature imply conserved quantities in everyday systems.</description>
     </item>
     
     <item>
