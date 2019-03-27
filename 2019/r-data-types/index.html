@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noodp"/>
   
-  <link rel="prev" href="https://ericpena.github.io/2019/gen-coord/" />
+  <link rel="prev" href="https://ericpena.github.io/2018/network-theory/" />
   <link rel="next" href="https://ericpena.github.io/2019/war/" />
   <link rel="canonical" href="https://ericpena.github.io/2019/r-data-types/" />
   <link rel='shortcut icon' type='image/x-icon' href='/favicon/favicon.ico' />
@@ -50,8 +50,8 @@
     "height": 600
   },
   "genre": "posts",
-  "keywords": "R Programming., Programming., Reference.",
-  "wordcount": 2452,
+  "keywords": "R Programming, Programming, Reference",
+  "wordcount": 2456,
   "url": "https://ericpena.github.io/2019/r-data-types/",
   "datePublished": "2019-03-04T00:00:00+00:00",
   "dateModified": "2019-03-04T00:00:00+00:00",
@@ -73,15 +73,6 @@
   "description": "Learn the Basics of R Data Types"
 }
 </script>
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/site.webmanifest">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-
 
 </head>
 
@@ -248,7 +239,7 @@ x
 x
 </code></pre>
 
-<pre><code>## [1] 88 12
+<pre><code class="language-r">    ## [1] 88 12
 </code></pre>
 
 <h3 id="span-style-color-e74c3c-indexing-span"><span style="color:#E74C3C">Indexing</span></h3>
@@ -258,13 +249,13 @@ x[4] &lt;- 3
 x
 </code></pre>
 
-<pre><code>##  [1] 1 1 1 3 1 1 1 1 1 1
+<pre><code class="language-r">    ##  [1] 1 1 1 3 1 1 1 1 1 1
 </code></pre>
 
 <pre><code class="language-r">x[4]
 </code></pre>
 
-<pre><code>## [1] 3
+<pre><code class="language-r">    ## [1] 3
 </code></pre>
 
 <h3 id="span-style-color-e74c3c-filtering-span"><span style="color:#E74C3C">Filtering</span></h3>
@@ -274,7 +265,7 @@ x[9] &lt;- 2
 x[x &gt; 2]
 </code></pre>
 
-<pre><code>## [1] 3 5
+<pre><code class="language-r">    ## [1] 3 5
 </code></pre>
 
 <h3 id="span-style-color-e74c3c-combining-vectors-span"><span style="color:#E74C3C">Combining Vectors</span></h3>
@@ -286,22 +277,22 @@ x[x &gt; 2]
 <pre><code class="language-r">y &lt;- x + x; y
 </code></pre>
 
-<pre><code>##  [1]  2  2  2  6  2 10  2  2  4  2
+<pre><code class="language-r">    ##  [1]  2  2  2  6  2 10  2  2  4  2
 </code></pre>
 
 <pre><code class="language-r">z &lt;- x + c(1,2,3,4,5); z
 </code></pre>
 
-<pre><code>##  [1] 2 3 4 7 6 6 3 4 6 6
+<pre><code class="language-r">    ##  [1] 2 3 4 7 6 6 3 4 6 6
 </code></pre>
 
 <pre><code class="language-r">error &lt;- x + c(1,2,3,4); error
 </code></pre>
 
-<pre><code>## Warning in x + c(1, 2, 3, 4): longer object length is not a multiple of
-## shorter object length
+<pre><code class="language-r">    ## Warning in x + c(1, 2, 3, 4): longer object length is not a multiple of
+    ## shorter object length
 
-##  [1] 2 3 4 7 2 7 4 5 3 3
+    ##  [1] 2 3 4 7 2 7 4 5 3 3
 </code></pre>
 
 <hr>
@@ -321,9 +312,9 @@ x[x &gt; 2]
 y
 </code></pre>
 
-<pre><code>##      [,1] [,2]
-## [1,]    1    3
-## [2,]    2    4
+<pre><code class="language-r">    ##      [,1] [,2]
+    ## [1,]    1    3
+    ## [2,]    2    4
 </code></pre>
 
 <p>Using the <code>byrow</code> argument (default = FALSE):</p>
@@ -332,9 +323,9 @@ y
 m
 </code></pre>
 
-<pre><code>##      [,1] [,2] [,3]
-## [1,]    1    2    3
-## [2,]    4    5    6
+<pre><code class="language-r">    ##      [,1] [,2] [,3]
+    ## [1,]    1    2    3
+    ## [2,]    4    5    6
 </code></pre>
 
 <h3 id="span-style-color-e74c3c-adding-and-removing-rows-and-columns-span"><span style="color:#E74C3C">Adding and Removing Rows and Columns</span></h3>
@@ -346,21 +337,21 @@ m
 <pre><code class="language-r">ones_column &lt;- matrix(rep(1,2)); ones_column; m
 </code></pre>
 
-<pre><code>##      [,1]
-## [1,]    1
-## [2,]    1
+<pre><code class="language-r">    ##      [,1]
+    ## [1,]    1
+    ## [2,]    1
 
-##      [,1] [,2] [,3]
-## [1,]    1    2    3
-## [2,]    4    5    6
+    ##      [,1] [,2] [,3]
+    ## [1,]    1    2    3
+    ## [2,]    4    5    6
 </code></pre>
 
 <pre><code class="language-r">cbind(m, ones_column)
 </code></pre>
 
-<pre><code>##      [,1] [,2] [,3] [,4]
-## [1,]    1    2    3    1
-## [2,]    4    5    6    1
+<pre><code class="language-r">    ##      [,1] [,2] [,3] [,4]
+    ## [1,]    1    2    3    1
+    ## [2,]    4    5    6    1
 </code></pre>
 
 <p>Adding a row: (don&rsquo;t forgot to adjust the row number: <code>nrow = 1</code>)</p>
@@ -368,21 +359,21 @@ m
 <pre><code class="language-r">ones_row &lt;- matrix(rep(1,3), nrow = 1); ones_row; m
 </code></pre>
 
-<pre><code>##      [,1] [,2] [,3]
-## [1,]    1    1    1
+<pre><code class="language-r">    ##      [,1] [,2] [,3]
+    ## [1,]    1    1    1
 
-##      [,1] [,2] [,3]
-## [1,]    1    2    3
-## [2,]    4    5    6
+    ##      [,1] [,2] [,3]
+    ## [1,]    1    2    3
+    ## [2,]    4    5    6
 </code></pre>
 
 <pre><code class="language-r">rbind(ones_row, m)
 </code></pre>
 
-<pre><code>##      [,1] [,2] [,3]
-## [1,]    1    1    1
-## [2,]    1    2    3
-## [3,]    4    5    6
+<pre><code class="language-r">    ##      [,1] [,2] [,3]
+    ## [1,]    1    1    1
+    ## [2,]    1    2    3
+    ## [3,]    4    5    6
 </code></pre>
 
 <p>Rows may be added by creating matricies and copying:</p>
@@ -396,10 +387,10 @@ new_matrix[3,1:3] &lt;- addded_row
 new_matrix
 </code></pre>
 
-<pre><code>##      [,1] [,2] [,3]
-## [1,]    1    2    3
-## [2,]    4    5    6
-## [3,]    7    8    9
+<pre><code class="language-r">    ##      [,1] [,2] [,3]
+    ## [1,]    1    2    3
+    ## [2,]    4    5    6
+    ## [3,]    7    8    9
 </code></pre>
 
 <p>You can use <code>rbind</code> and <code>cbind</code> to reassign values. This is a form of deleting data.</p>
@@ -407,18 +398,18 @@ new_matrix
 <pre><code class="language-r">m &lt;- matrix(1:6, nrow = 3); m
 </code></pre>
 
-<pre><code>##      [,1] [,2]
-## [1,]    1    4
-## [2,]    2    5
-## [3,]    3    6
+<pre><code class="language-r">    ##      [,1] [,2]
+    ## [1,]    1    4
+    ## [2,]    2    5
+    ## [3,]    3    6
 </code></pre>
 
 <pre><code class="language-r">m &lt;- m[c(1,3),]; m
 </code></pre>
 
-<pre><code>##      [,1] [,2]
-## [1,]    1    4
-## [2,]    3    6
+<pre><code class="language-r">    ##      [,1] [,2]
+    ## [1,]    1    4
+    ## [2,]    3    6
 </code></pre>
 
 <h3 id="span-style-color-e74c3c-indexing-span-1"><span style="color:#E74C3C">Indexing</span></h3>
@@ -428,19 +419,19 @@ new_matrix
 <pre><code class="language-r">m[,2]
 </code></pre>
 
-<pre><code>## [1] 4 6
+<pre><code class="language-r">    ## [1] 4 6
 </code></pre>
 
 <pre><code class="language-r">m[2,]
 </code></pre>
 
-<pre><code>## [1] 3 6
+<pre><code class="language-r">    ## [1] 3 6
 </code></pre>
 
 <pre><code class="language-r">m[2,2]
 </code></pre>
 
-<pre><code>## [1] 6
+<pre><code class="language-r">    ## [1] 6
 </code></pre>
 
 <p>Values may be changed in a matrix as well:</p>
@@ -448,9 +439,9 @@ new_matrix
 <pre><code class="language-r">m[2,2] &lt;- 66; m
 </code></pre>
 
-<pre><code>##      [,1] [,2]
-## [1,]    1    4
-## [2,]    3   66
+<pre><code class="language-r">    ##      [,1] [,2]
+    ## [1,]    1    4
+    ## [2,]    3   66
 </code></pre>
 
 <h3 id="span-style-color-e74c3c-filtering-span-1"><span style="color:#E74C3C">Filtering</span></h3>
@@ -458,25 +449,25 @@ new_matrix
 <pre><code class="language-r">x &lt;- matrix(c(1,2,3,2,3,4), nrow = 3, byrow = F); x
 </code></pre>
 
-<pre><code>##      [,1] [,2]
-## [1,]    1    2
-## [2,]    2    3
-## [3,]    3    4
+<pre><code class="language-r">    ##      [,1] [,2]
+    ## [1,]    1    2
+    ## [2,]    2    3
+    ## [3,]    3    4
 </code></pre>
 
 <pre><code class="language-r">x[x[,2] &gt;= 3]
 </code></pre>
 
-<pre><code>## [1] 2 3 3 4
+<pre><code class="language-r">    ## [1] 2 3 3 4
 </code></pre>
 
 <pre><code class="language-r">j &lt;- x[,2] &gt;= 3
 x[j,]
 </code></pre>
 
-<pre><code>##      [,1] [,2]
-## [1,]    2    3
-## [2,]    3    4
+<pre><code class="language-r">    ##      [,1] [,2]
+    ## [1,]    2    3
+    ## [2,]    3    4
 </code></pre>
 
 <h3 id="span-style-color-e74c3c-matrix-math-span"><span style="color:#E74C3C">Matrix Math</span></h3>
@@ -484,9 +475,9 @@ x[j,]
 <pre><code class="language-r">y
 </code></pre>
 
-<pre><code>##      [,1] [,2]
-## [1,]    1    3
-## [2,]    2    4
+<pre><code class="language-r">    ##      [,1] [,2]
+    ## [1,]    1    3
+    ## [2,]    2    4
 </code></pre>
 
 <p>Mathematical Matrix Multiplication</p>
@@ -494,9 +485,9 @@ x[j,]
 <pre><code class="language-r">y %*% y
 </code></pre>
 
-<pre><code>##      [,1] [,2]
-## [1,]    7   15
-## [2,]   10   22
+<pre><code class="language-r">    ##      [,1] [,2]
+    ## [1,]    7   15
+    ## [2,]   10   22
 </code></pre>
 
 <p>Mathematical Muliplication of Matrix by Scalar</p>
@@ -504,9 +495,9 @@ x[j,]
 <pre><code class="language-r">3*y
 </code></pre>
 
-<pre><code>##      [,1] [,2]
-## [1,]    3    9
-## [2,]    6   12
+<pre><code class="language-r">    ##      [,1] [,2]
+    ## [1,]    3    9
+    ## [2,]    6   12
 </code></pre>
 
 <p>Mathematical Matrix Addition</p>
@@ -514,9 +505,9 @@ x[j,]
 <pre><code class="language-r">y + y
 </code></pre>
 
-<pre><code>##      [,1] [,2]
-## [1,]    2    6
-## [2,]    4    8
+<pre><code class="language-r">    ##      [,1] [,2]
+    ## [1,]    2    6
+    ## [2,]    4    8
 </code></pre>
 
 <hr>
@@ -543,14 +534,14 @@ x[j,]
 j
 </code></pre>
 
-<pre><code>## $name
-## [1] &quot;Eric&quot;
-## 
-## $salary
-## [1] 45000
-## 
-## $union
-## [1] TRUE
+<pre><code class="language-r">    ## $name
+    ## [1] &quot;Eric&quot;
+    ## 
+    ## $salary
+    ## [1] 45000
+    ## 
+    ## $union
+    ## [1] TRUE
 </code></pre>
 
 <p>The component names are called <em>tags</em>.</p>
@@ -563,25 +554,25 @@ j
 z
 </code></pre>
 
-<pre><code>## $a
-## [1] &quot;abc&quot;
-## 
-## $b
-## [1] 12
+<pre><code class="language-r">    ## $a
+    ## [1] &quot;abc&quot;
+    ## 
+    ## $b
+    ## [1] 12
 </code></pre>
 
 <pre><code class="language-r">z$c &lt;- &quot;sailing&quot; # add a c component
 z
 </code></pre>
 
-<pre><code>## $a
-## [1] &quot;abc&quot;
-## 
-## $b
-## [1] 12
-## 
-## $c
-## [1] &quot;sailing&quot;
+<pre><code class="language-r">    ## $a
+    ## [1] &quot;abc&quot;
+    ## 
+    ## $b
+    ## [1] 12
+    ## 
+    ## $c
+    ## [1] &quot;sailing&quot;
 </code></pre>
 
 <p>Adding component can also be done via a vector index:</p>
@@ -591,26 +582,26 @@ z[5:7] &lt;- c(F,T,T)
 z
 </code></pre>
 
-<pre><code>## $a
-## [1] &quot;abc&quot;
-## 
-## $b
-## [1] 12
-## 
-## $c
-## [1] &quot;sailing&quot;
-## 
-## [[4]]
-## [1] 28
-## 
-## [[5]]
-## [1] FALSE
-## 
-## [[6]]
-## [1] TRUE
-## 
-## [[7]]
-## [1] TRUE
+<pre><code class="language-r">    ## $a
+    ## [1] &quot;abc&quot;
+    ## 
+    ## $b
+    ## [1] 12
+    ## 
+    ## $c
+    ## [1] &quot;sailing&quot;
+    ## 
+    ## [[4]]
+    ## [1] 28
+    ## 
+    ## [[5]]
+    ## [1] FALSE
+    ## 
+    ## [[6]]
+    ## [1] TRUE
+    ## 
+    ## [[7]]
+    ## [1] TRUE
 </code></pre>
 
 <p>You can also concatenate lists:</p>
@@ -618,17 +609,17 @@ z
 <pre><code class="language-r">cat &lt;- c(list(&quot;Joe&quot;, 55000, T), list(5)); cat
 </code></pre>
 
-<pre><code>## [[1]]
-## [1] &quot;Joe&quot;
-## 
-## [[2]]
-## [1] 55000
-## 
-## [[3]]
-## [1] TRUE
-## 
-## [[4]]
-## [1] 5
+<pre><code class="language-r">    ## [[1]]
+    ## [1] &quot;Joe&quot;
+    ## 
+    ## [[2]]
+    ## [1] 55000
+    ## 
+    ## [[3]]
+    ## [1] TRUE
+    ## 
+    ## [[4]]
+    ## [1] 5
 </code></pre>
 
 <h3 id="span-style-color-e74c3c-remove-element-span-1"><span style="color:#E74C3C">Remove Element</span></h3>
@@ -639,23 +630,23 @@ z
 z
 </code></pre>
 
-<pre><code>## $a
-## [1] &quot;abc&quot;
-## 
-## $c
-## [1] &quot;sailing&quot;
-## 
-## [[3]]
-## [1] 28
-## 
-## [[4]]
-## [1] FALSE
-## 
-## [[5]]
-## [1] TRUE
-## 
-## [[6]]
-## [1] TRUE
+<pre><code class="language-r">    ## $a
+    ## [1] &quot;abc&quot;
+    ## 
+    ## $c
+    ## [1] &quot;sailing&quot;
+    ## 
+    ## [[3]]
+    ## [1] 28
+    ## 
+    ## [[4]]
+    ## [1] FALSE
+    ## 
+    ## [[5]]
+    ## [1] TRUE
+    ## 
+    ## [[6]]
+    ## [1] TRUE
 </code></pre>
 
 <h3 id="span-style-color-e74c3c-indexing-span-2"><span style="color:#E74C3C">Indexing</span></h3>
@@ -665,41 +656,41 @@ z
 <pre><code class="language-r">j$salary
 </code></pre>
 
-<pre><code>## [1] 45000
+<pre><code class="language-r">    ## [1] 45000
 </code></pre>
 
 <pre><code class="language-r">j[[&quot;salary&quot;]]
 </code></pre>
 
-<pre><code>## [1] 45000
+<pre><code class="language-r">    ## [1] 45000
 </code></pre>
 
 <pre><code class="language-r">j[[2]]
 </code></pre>
 
-<pre><code>## [1] 45000
+<pre><code class="language-r">    ## [1] 45000
 </code></pre>
 
 <p><strong>What&rsquo;s the deal with the single and double brackets?</strong></p>
 
-<p>If single brackets <code>[ ]</code> are used, the result is another list - a sublist of the original.</p>
+<p>If single brackets are used, the result is another list - a sublist of the original.</p>
 
 <pre><code class="language-r">j1 &lt;- j[1:2]; j1
 </code></pre>
 
-<pre><code>## $name
-## [1] &quot;Eric&quot;
-## 
-## $salary
-## [1] 45000
+<pre><code class="language-r">    ## $name
+    ## [1] &quot;Eric&quot;
+    ## 
+    ## $salary
+    ## [1] 45000
 </code></pre>
 
-<p>If double brackets <code>[[ ]]</code> are used, it is for referring to a single component and is return in the type of the component.</p>
+<p>If double brackets are used, it is for referring to a single component and is return in the type of the component.</p>
 
 <pre><code class="language-r">j[[2]]
 </code></pre>
 
-<pre><code>## [1] 45000
+<pre><code class="language-r">    ## [1] 45000
 </code></pre>
 
 <p>The following returns an error since it&rsquo;s trying to return several components using a function that is meant to return one:</p>
@@ -714,7 +705,7 @@ z
 <pre><code class="language-r">names(j)
 </code></pre>
 
-<pre><code>## [1] &quot;name&quot;   &quot;salary&quot; &quot;union&quot;
+<pre><code class="language-r">    ## [1] &quot;name&quot;   &quot;salary&quot; &quot;union&quot;
 </code></pre>
 
 <p>We can also get the specific values instead:</p>
@@ -722,8 +713,8 @@ z
 <pre><code class="language-r">ulj &lt;- unlist(j); ulj
 </code></pre>
 
-<pre><code>##    name  salary   union 
-##  &quot;Eric&quot; &quot;45000&quot;  &quot;TRUE&quot;
+<pre><code class="language-r">    ##    name  salary   union 
+    ##  &quot;Eric&quot; &quot;45000&quot;  &quot;TRUE&quot;
 </code></pre>
 
 <p>Each values above has a name. This name may be removed with the following function:</p>
@@ -732,7 +723,7 @@ z
 ulj
 </code></pre>
 
-<pre><code>## [1] &quot;Eric&quot;  &quot;45000&quot; &quot;TRUE&quot;
+<pre><code class="language-r">    ## [1] &quot;Eric&quot;  &quot;45000&quot; &quot;TRUE&quot;
 </code></pre>
 
 <h5 id="using-lapply-and-sapply-functions">Using <code>lapply()</code> and <code>sapply()</code> functions</h5>
@@ -742,11 +733,11 @@ ulj
 <pre><code class="language-r">lapply(list(1:3,25:29), median)
 </code></pre>
 
-<pre><code>## [[1]]
-## [1] 2
-## 
-## [[2]]
-## [1] 27
+<pre><code class="language-r">    ## [[1]]
+    ## [1] 2
+    ## 
+    ## [[2]]
+    ## [1] 27
 </code></pre>
 
 <p><code>sapply()</code> returns a vector-valued answer:</p>
@@ -754,7 +745,7 @@ ulj
 <pre><code class="language-r">sapply(list(1:3,25:29), median)
 </code></pre>
 
-<pre><code>## [1]  2 27
+<pre><code class="language-r">    ## [1]  2 27
 </code></pre>
 
 <h3 id="span-style-color-e74c3c-recursive-lists-span"><span style="color:#E74C3C">Recursive Lists</span></h3>
@@ -767,17 +758,17 @@ a &lt;- list(b, c)
 a
 </code></pre>
 
-<pre><code>## [[1]]
-## [[1]]$u
-## [1] 5
-## 
-## [[1]]$v
-## [1] 12
-## 
-## 
-## [[2]]
-## [[2]]$w
-## [1] 13
+<pre><code class="language-r">    ## [[1]]
+    ## [[1]]$u
+    ## [1] 5
+    ## 
+    ## [[1]]$v
+    ## [1] 12
+    ## 
+    ## 
+    ## [[2]]
+    ## [[2]]$w
+    ## [1] 13
 </code></pre>
 
 <p>TIP: The concatenate function c() has an optional argument <code>recursive</code>, which controls whether <em>flattening</em> occurs when recursive lists are combined.</p>
@@ -801,14 +792,29 @@ d &lt;- data.frame(scientists, born, stringsAsFactors = FALSE)
 d
 </code></pre>
 
-<pre><code>##   scientists born
-## 1   Einstein 1879
-## 2     Newton 1642
+<pre><code class="language-r">    ##   scientists born
+    ## 1   Einstein 1879
+    ## 2     Newton 1642
 </code></pre>
 
 <p>If the named argument <code>stringsAsFactors</code> is not specified, then by default, <code>stringsAsFactors</code> will be TRUE.</p>
 
-<p>Data frames can also be created from external files (.csv, .mtp, .xls, .spss, .txt) using: <br> <code>mydata = read.csv(&quot;mydata.csv&quot;, header = TRUE)</code><br> <code>mydata = read.mtp(&quot;mydata.mtp&quot;)  # read from .mtp file</code><br> <code>mydata = read.xls(&quot;mydata.xls&quot;)  # read from first sheet</code><br> <code>mydata = read.spss(&quot;myfile&quot;, to.data.frame=TRUE)</code><br> <code>mydata = read.table(&quot;mydata.txt&quot;)</code><br></p>
+<p>Data frames can also be created from external files (.csv, .mtp, .xls, .spss, .txt) using: <br></p>
+
+<pre><code class="language-txt">mydata = read.csv(&quot;mydata.csv&quot;, header = TRUE)
+</code></pre>
+
+<pre><code class="language-txt">mydata = read.mtp(&quot;mydata.mtp&quot;)  # read from .mtp file
+</code></pre>
+
+<pre><code class="language-txt">mydata = read.xls(&quot;mydata.xls&quot;)  # read from first sheet
+</code></pre>
+
+<pre><code class="language-txt">mydata = read.spss(&quot;myfile&quot;, to.data.frame=TRUE)
+</code></pre>
+
+<pre><code class="language-txt">mydata = read.table(&quot;mydata.txt&quot;)
+</code></pre>
 
 <p>and many more options.</p>
 
@@ -821,18 +827,18 @@ d
 <pre><code class="language-r">d1
 </code></pre>
 
-<pre><code>##   kids ages
-## 1 jack   12
-## 2 Jill   10
+<pre><code class="language-r">    ##   kids ages
+    ## 1 jack   12
+    ## 2 Jill   10
 </code></pre>
 
 <pre><code class="language-r">rbind(d1, list(&quot;laura&quot;, 19))
 </code></pre>
 
-<pre><code>##    kids ages
-## 1  jack   12
-## 2  Jill   10
-## 3 laura   19
+<pre><code class="language-r">    ##    kids ages
+    ## 1  jack   12
+    ## 2  Jill   10
+    ## 3 laura   19
 </code></pre>
 
 <p>Adding a column</p>
@@ -844,19 +850,19 @@ d
 <pre><code class="language-r">d2
 </code></pre>
 
-<pre><code>##    kids ages
-## 1  jack   12
-## 2  Jill   10
-## 3 laura   19
+<pre><code class="language-r">    ##    kids ages
+    ## 1  jack   12
+    ## 2  Jill   10
+    ## 3 laura   19
 </code></pre>
 
 <pre><code class="language-r">d2 &lt;- d2[-2,]
 d2
 </code></pre>
 
-<pre><code>##    kids ages
-## 1  jack   12
-## 3 laura   19
+<pre><code class="language-r">    ##    kids ages
+    ## 1  jack   12
+    ## 3 laura   19
 </code></pre>
 
 <h3 id="span-style-color-e74c3c-indexing-span-3"><span style="color:#E74C3C">Indexing</span></h3>
@@ -864,13 +870,13 @@ d2
 <pre><code class="language-r">d[[1]]
 </code></pre>
 
-<pre><code>## [1] &quot;Einstein&quot; &quot;Newton&quot;
+<pre><code class="language-r">    ## [1] &quot;Einstein&quot; &quot;Newton&quot;
 </code></pre>
 
 <pre><code class="language-r">d$scientists
 </code></pre>
 
-<pre><code>## [1] &quot;Einstein&quot; &quot;Newton&quot;
+<pre><code class="language-r">    ## [1] &quot;Einstein&quot; &quot;Newton&quot;
 </code></pre>
 
 <p>We may also access elements in a matrix-like way we well:</p>
@@ -878,7 +884,7 @@ d2
 <pre><code class="language-r">d[,1]
 </code></pre>
 
-<pre><code>## [1] &quot;Einstein&quot; &quot;Newton&quot;
+<pre><code class="language-r">    ## [1] &quot;Einstein&quot; &quot;Newton&quot;
 </code></pre>
 
 <p>It can be helpful to know the structure of the data frame and is easy to achieve:</p>
@@ -886,9 +892,9 @@ d2
 <pre><code class="language-r">str(d)
 </code></pre>
 
-<pre><code>## 'data.frame':    2 obs. of  2 variables:
-##  $ scientists: chr  &quot;Einstein&quot; &quot;Newton&quot;
-##  $ born      : num  1879 1642
+<pre><code class="language-r">    ## 'data.frame':    2 obs. of  2 variables:
+    ##  $ scientists: chr  &quot;Einstein&quot; &quot;Newton&quot;
+    ##  $ born      : num  1879 1642
 </code></pre>
 
 <h3 id="span-style-color-e74c3c-filtering-span-3"><span style="color:#E74C3C">Filtering</span></h3>
@@ -899,67 +905,67 @@ d2
 head(cars)
 </code></pre>
 
-<pre><code>##                    mpg  hp    wt cyl
-## Mazda RX4         21.0 110 2.620   6
-## Mazda RX4 Wag     21.0 110 2.875   6
-## Datsun 710        22.8  93 2.320   4
-## Hornet 4 Drive    21.4 110 3.215   6
-## Hornet Sportabout 18.7 175 3.440   8
-## Valiant           18.1 105 3.460   6
+<pre><code class="language-r">    ##                    mpg  hp    wt cyl
+    ## Mazda RX4         21.0 110 2.620   6
+    ## Mazda RX4 Wag     21.0 110 2.875   6
+    ## Datsun 710        22.8  93 2.320   4
+    ## Hornet 4 Drive    21.4 110 3.215   6
+    ## Hornet Sportabout 18.7 175 3.440   8
+    ## Valiant           18.1 105 3.460   6
 </code></pre>
 
 <pre><code class="language-r">cars[cars$cyl == 8,]
 </code></pre>
 
-<pre><code>##                      mpg  hp    wt cyl
-## Hornet Sportabout   18.7 175 3.440   8
-## Duster 360          14.3 245 3.570   8
-## Merc 450SE          16.4 180 4.070   8
-## Merc 450SL          17.3 180 3.730   8
-## Merc 450SLC         15.2 180 3.780   8
-## Cadillac Fleetwood  10.4 205 5.250   8
-## Lincoln Continental 10.4 215 5.424   8
-## Chrysler Imperial   14.7 230 5.345   8
-## Dodge Challenger    15.5 150 3.520   8
-## AMC Javelin         15.2 150 3.435   8
-## Camaro Z28          13.3 245 3.840   8
-## Pontiac Firebird    19.2 175 3.845   8
-## Ford Pantera L      15.8 264 3.170   8
-## Maserati Bora       15.0 335 3.570   8
+<pre><code class="language-r">    ##                      mpg  hp    wt cyl
+    ## Hornet Sportabout   18.7 175 3.440   8
+    ## Duster 360          14.3 245 3.570   8
+    ## Merc 450SE          16.4 180 4.070   8
+    ## Merc 450SL          17.3 180 3.730   8
+    ## Merc 450SLC         15.2 180 3.780   8
+    ## Cadillac Fleetwood  10.4 205 5.250   8
+    ## Lincoln Continental 10.4 215 5.424   8
+    ## Chrysler Imperial   14.7 230 5.345   8
+    ## Dodge Challenger    15.5 150 3.520   8
+    ## AMC Javelin         15.2 150 3.435   8
+    ## Camaro Z28          13.3 245 3.840   8
+    ## Pontiac Firebird    19.2 175 3.845   8
+    ## Ford Pantera L      15.8 264 3.170   8
+    ## Maserati Bora       15.0 335 3.570   8
 </code></pre>
 
 <pre><code class="language-r">cars[,c(&quot;mpg&quot;, &quot;hp&quot;)][cars$wt &lt;= 4,]
 </code></pre>
 
-<pre><code>##                    mpg  hp
-## Mazda RX4         21.0 110
-## Mazda RX4 Wag     21.0 110
-## Datsun 710        22.8  93
-## Hornet 4 Drive    21.4 110
-## Hornet Sportabout 18.7 175
-## Valiant           18.1 105
-## Duster 360        14.3 245
-## Merc 240D         24.4  62
-## Merc 230          22.8  95
-## Merc 280          19.2 123
-## Merc 280C         17.8 123
-## Merc 450SL        17.3 180
-## Merc 450SLC       15.2 180
-## Fiat 128          32.4  66
-## Honda Civic       30.4  52
-## Toyota Corolla    33.9  65
-## Toyota Corona     21.5  97
-## Dodge Challenger  15.5 150
-## AMC Javelin       15.2 150
-## Camaro Z28        13.3 245
-## Pontiac Firebird  19.2 175
-## Fiat X1-9         27.3  66
-## Porsche 914-2     26.0  91
-## Lotus Europa      30.4 113
-## Ford Pantera L    15.8 264
-## Ferrari Dino      19.7 175
-## Maserati Bora     15.0 335
-## Volvo 142E        21.4 109
+<pre><code class="language-r">    ##                    mpg  hp
+    ## Mazda RX4         21.0 110
+    ## Mazda RX4 Wag     21.0 110
+    ## Datsun 710        22.8  93
+    ## Hornet 4 Drive    21.4 110
+    ## Hornet Sportabout 18.7 175
+    ## Valiant           18.1 105
+    ## Duster 360        14.3 245
+    ## Merc 240D         24.4  62
+    ## Merc 230          22.8  95
+    ## Merc 280          19.2 123
+    ## Merc 280C         17.8 123
+    ## Merc 450SL        17.3 180
+    ## Merc 450SLC       15.2 180
+    ## Fiat 128          32.4  66
+    ## Honda Civic       30.4  52
+    ## Toyota Corolla    33.9  65
+    ## Toyota Corona     21.5  97
+    ## Dodge Challenger  15.5 150
+    ## AMC Javelin       15.2 150
+    ## Camaro Z28        13.3 245
+    ## Pontiac Firebird  19.2 175
+    ## Fiat X1-9         27.3  66
+    ## Porsche 914-2     26.0  91
+    ## Lotus Europa      30.4 113
+    ## Ford Pantera L    15.8 264
+    ## Ferrari Dino      19.7 175
+    ## Maserati Bora     15.0 335
+    ## Volvo 142E        21.4 109
 </code></pre>
 
 <hr>
@@ -977,8 +983,8 @@ xf &lt;- factor(x)
 xf
 </code></pre>
 
-<pre><code>## [1] 5  12 13 12
-## Levels: 5 12 13
+<pre><code class="language-r">    ## [1] 5  12 13 12
+    ## Levels: 5 12 13
 </code></pre>
 
 <p>The distinct values in xf: 5, 12, and 13 are the levels</p>
@@ -986,21 +992,21 @@ xf
 <pre><code class="language-r">str(xf)
 </code></pre>
 
-<pre><code>##  Factor w/ 3 levels &quot;5&quot;,&quot;12&quot;,&quot;13&quot;: 1 2 3 2
+<pre><code class="language-r">    ##  Factor w/ 3 levels &quot;5&quot;,&quot;12&quot;,&quot;13&quot;: 1 2 3 2
 </code></pre>
 
 <pre><code class="language-r">unclass(xf)
 </code></pre>
 
-<pre><code>## [1] 1 2 3 2
-## attr(,&quot;levels&quot;)
-## [1] &quot;5&quot;  &quot;12&quot; &quot;13&quot;
+<pre><code class="language-r">    ## [1] 1 2 3 2
+    ## attr(,&quot;levels&quot;)
+    ## [1] &quot;5&quot;  &quot;12&quot; &quot;13&quot;
 </code></pre>
 
 <pre><code class="language-r">length(xf)
 </code></pre>
 
-<pre><code>## [1] 4
+<pre><code class="language-r">    ## [1] 4
 </code></pre>
 
 <h3 id="span-style-color-e74c3c-adding-element-span-3"><span style="color:#E74C3C">Adding Element</span></h3>
@@ -1012,16 +1018,16 @@ xff &lt;- factor(x, levels = c(5, 12, 13, 88))
 xff
 </code></pre>
 
-<pre><code>## [1] 5  12 13 12
-## Levels: 5 12 13 88
+<pre><code class="language-r">    ## [1] 5  12 13 12
+    ## Levels: 5 12 13 88
 </code></pre>
 
 <pre><code class="language-r">xff[2] &lt;- 88
 xff
 </code></pre>
 
-<pre><code>## [1] 5  88 13 12
-## Levels: 5 12 13 88
+<pre><code class="language-r">    ## [1] 5  88 13 12
+    ## Levels: 5 12 13 88
 </code></pre>
 
 <p>Although you cannot add a value that doesn&rsquo;t have a level associated with it:</p>
@@ -1029,16 +1035,16 @@ xff
 <pre><code class="language-r">xff[2] &lt;- 28
 </code></pre>
 
-<pre><code>## invalid factor level, NA generated
+<pre><code class="language-r">    ## invalid factor level, NA generated
+
+### &lt;span style=&quot;color:#E74C3C&quot;&gt;Remove Element&lt;/span&gt;
+
+### &lt;span style=&quot;color:#E74C3C&quot;&gt;Indexing&lt;/span&gt;
+
+### &lt;span style=&quot;color:#E74C3C&quot;&gt;Filtering&lt;/span&gt;
+
+### &lt;span style=&quot;color:#E74C3C&quot;&gt;Math&lt;/span&gt;
 </code></pre>
-
-<h3 id="span-style-color-e74c3c-remove-element-span-3"><span style="color:#E74C3C">Remove Element</span></h3>
-
-<h3 id="span-style-color-e74c3c-indexing-span-4"><span style="color:#E74C3C">Indexing</span></h3>
-
-<h3 id="span-style-color-e74c3c-filtering-span-4"><span style="color:#E74C3C">Filtering</span></h3>
-
-<h3 id="span-style-color-e74c3c-math-span"><span style="color:#E74C3C">Math</span></h3>
 
 <hr>
 
@@ -1050,13 +1056,13 @@ xff
 
 <h3 id="span-style-color-e74c3c-adding-element-span-4"><span style="color:#E74C3C">Adding Element</span></h3>
 
-<h3 id="span-style-color-e74c3c-remove-element-span-4"><span style="color:#E74C3C">Remove Element</span></h3>
+<h3 id="span-style-color-e74c3c-remove-element-span-3"><span style="color:#E74C3C">Remove Element</span></h3>
 
-<h3 id="span-style-color-e74c3c-indexing-span-5"><span style="color:#E74C3C">Indexing</span></h3>
+<h3 id="span-style-color-e74c3c-indexing-span-4"><span style="color:#E74C3C">Indexing</span></h3>
 
-<h3 id="span-style-color-e74c3c-filtering-span-5"><span style="color:#E74C3C">Filtering</span></h3>
+<h3 id="span-style-color-e74c3c-filtering-span-4"><span style="color:#E74C3C">Filtering</span></h3>
 
-<h3 id="span-style-color-e74c3c-math-span-1"><span style="color:#E74C3C">Math</span></h3>
+<h3 id="span-style-color-e74c3c-math-span"><span style="color:#E74C3C">Math</span></h3>
 
     </div>
 
@@ -1070,7 +1076,7 @@ xff
            
             <p class="copyright-item">
                     <span>:</span>
-                   <span>2452</span>
+                   <span>2456</span>
             </p>
 
              
@@ -1086,14 +1092,14 @@ xff
             <section>
             <i class="iconfont icon-icon-tag"></i>: 
             
-            <span class="tag"><a href="https://ericpena.github.io/tags/r-programming./">
-                    #R Programming.</a></span>
+            <span class="tag"><a href="https://ericpena.github.io/tags/r-programming/">
+                    #R Programming</a></span>
             
-            <span class="tag"><a href="https://ericpena.github.io/tags/programming./">
-                    #Programming.</a></span>
+            <span class="tag"><a href="https://ericpena.github.io/tags/programming/">
+                    #Programming</a></span>
             
-            <span class="tag"><a href="https://ericpena.github.io/tags/reference./">
-                    #Reference.</a></span>
+            <span class="tag"><a href="https://ericpena.github.io/tags/reference/">
+                    #Reference</a></span>
             
             </section>
         
@@ -1105,7 +1111,7 @@ xff
 
     <div class="post-nav">
         
-        <a href="https://ericpena.github.io/2019/gen-coord/" class="prev" rel="prev" title="Generalized Coordinates in Physics"><i class="iconfont icon-dajiantou"></i>&nbsp;Generalized Coordinates in Physics</a>
+        <a href="https://ericpena.github.io/2018/network-theory/" class="prev" rel="prev" title="Mathematics of Network Theory"><i class="iconfont icon-dajiantou"></i>&nbsp;Mathematics of Network Theory</a>
          
         
         <a href="https://ericpena.github.io/2019/war/" class="next" rel="next" title="War | Coding a Card Game">War | Coding a Card Game&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>

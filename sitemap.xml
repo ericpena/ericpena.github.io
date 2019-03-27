@@ -45,9 +45,9 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/2019/gen-coord/</loc>
+      <loc>https://ericpena.github.io/2018/network-theory/</loc>
       
-      <lastmod>2019-02-10T00:00:00+00:00</lastmod>
+      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -59,9 +59,9 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/2018/network-theory/</loc>
+      <loc>https://ericpena.github.io/2017/gen-coord/</loc>
       
-      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-19T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -99,7 +99,7 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/tags/complex-systems./</loc>
+      <loc>https://ericpena.github.io/tags/complex-systems/</loc>
       
       <lastmod>2018-12-16T00:00:00+00:00</lastmod>
       
@@ -127,9 +127,23 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/tags/function./</loc>
+      <loc>https://ericpena.github.io/tags/function/</loc>
       
       <lastmod>2019-03-16T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://ericpena.github.io/tags/mathematics/</loc>
+      
+      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -155,21 +169,7 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/tags/mathematics./</loc>
-      
-      <lastmod>2019-02-10T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://ericpena.github.io/tags/networks./</loc>
+      <loc>https://ericpena.github.io/tags/networks/</loc>
       
       <lastmod>2018-12-16T00:00:00+00:00</lastmod>
       
@@ -183,9 +183,9 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/tags/physics./</loc>
+      <loc>https://ericpena.github.io/tags/physics/</loc>
       
-      <lastmod>2019-02-10T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-19T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -197,9 +197,9 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/categories/physics./</loc>
+      <loc>https://ericpena.github.io/categories/physics/</loc>
       
-      <lastmod>2019-02-10T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-19T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -225,22 +225,22 @@
     </url>
   
     <url>
+      <loc>https://ericpena.github.io/tags/programming/</loc>
+      
+      <lastmod>2019-03-26T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://ericpena.github.io/categories/programming/</loc>
       
-      <lastmod>2019-03-16T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://ericpena.github.io/tags/programming./</loc>
-      
       <lastmod>2019-03-26T00:00:00+00:00</lastmod>
       
       
@@ -253,21 +253,7 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/categories/programming./</loc>
-      
-      <lastmod>2019-03-26T00:00:00+00:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://ericpena.github.io/tags/python./</loc>
+      <loc>https://ericpena.github.io/tags/python/</loc>
       
       <lastmod>2019-03-16T00:00:00+00:00</lastmod>
       
@@ -281,7 +267,7 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/tags/r-programming./</loc>
+      <loc>https://ericpena.github.io/tags/r-programming/</loc>
       
       <lastmod>2019-03-04T00:00:00+00:00</lastmod>
       
@@ -295,7 +281,7 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/tags/recursion./</loc>
+      <loc>https://ericpena.github.io/tags/recursion/</loc>
       
       <lastmod>2019-03-16T00:00:00+00:00</lastmod>
       
@@ -309,7 +295,7 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/tags/reference./</loc>
+      <loc>https://ericpena.github.io/tags/reference/</loc>
       
       <lastmod>2019-03-04T00:00:00+00:00</lastmod>
       
@@ -323,7 +309,7 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/tags/simulation./</loc>
+      <loc>https://ericpena.github.io/tags/simulation/</loc>
       
       <lastmod>2019-03-16T00:00:00+00:00</lastmod>
       
@@ -351,7 +337,7 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/tags/website./</loc>
+      <loc>https://ericpena.github.io/tags/website/</loc>
       
       <lastmod>2019-03-26T00:00:00+00:00</lastmod>
       
