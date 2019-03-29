@@ -1474,11 +1474,11 @@ Let&amp;rsquo;s not forget how related force and energy really are:&lt;/p&gt;
 &lt;p&gt;$$\Delta T = T_2 - T_1 = \int_{1}^{2}\textbf{F} \cdot d\textbf{r}$$&lt;/p&gt;
 
 &lt;p&gt;$$U(\textbf{r}) = -\int_{r_0}^r F(\textbf{r}&amp;lsquo;) \cdot d\textbf{r}&amp;lsquo;$$
-To relate Lagrangian and Newtonian methods more directly:
-\begin{center}
-Euler-Lagrange Equation
-\end{center}
-$$\frac{\partial \mathcal{L}}{\partial q_i}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}$$
+To relate Lagrangian and Newtonian methods more directly:&lt;/p&gt;
+
+&lt;h3 id=&#34;euler-lagrange-equation&#34;&gt;Euler-Lagrange Equation&lt;/h3&gt;
+
+&lt;p&gt;$$\frac{\partial \mathcal{L}}{\partial q_i}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}$$
 $$\frac{\partial \mathcal{L}}{\partial q_i} = F_i\ \ \ and\ \ \ \frac{\partial \mathcal{L}}{\partial \dot{q}_i} \equiv p_i$$
 These are referred to as generalized forces and generalized momenta. We may start our discussion of generalized ignorable coordinates and conservation laws now!&lt;/p&gt;
 
@@ -1497,12 +1497,7 @@ A direct way to think of generalized coordinates is to describe the complete
 motion of a system in the fewest number of coordinates. Consider a pendulum bob for one
 moment (yes, another pendulum).&lt;/p&gt;
 
-&lt;p&gt;\begin{center}
-\includegraphics[scale=.5]{Pendulum.jpg}
-\end{center}
-\begin{center}
-Figure 1.1 Simple Pendulum
-\end{center}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ericpena.github.io/img_lagrangian/pendulum.png&#34; alt=&#34;Figure 1 - Pendulum&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We have a choice of using Cartesian coordinates to describe the motion of this
 bob or any other coordinate system we can dream up. The downside of using
@@ -1513,7 +1508,7 @@ obvious symmetrical advantages and can be considered the generalized coordinates
 on what generalized momenta is. Ordinary momentum by definition is $p = mv$ where $v$ is
 one time derivative away from a position variable: $p = m (\dot{x}+\dot{y}+\dot{z})$.
 So we can easily see that generalized momenta is simple the mass of an object times the
-time derivative of its generalized position vectors! Simple! Generalized force can be found the same way except with two time derivatives. $F_t$ in the Figure 1.1 is the
+time derivative of its generalized position vectors! Simple! Generalized force can be found the same way except with two time derivatives. $F_t$ in the Figure 1 is the
 generalized force of the pendulum system. This pendulum can escape from the x-y grid universe and be thought of as moving along one generalized coordinate, $\theta(t)$. (The length of the pendulum, L, if fixed but if it weren&amp;rsquo;t, $r(t)$ could be another generalized coordinate used to describe the system).&lt;/p&gt;
 
 &lt;h3 id=&#34;cyclic-coordinates&#34;&gt;Cyclic Coordinates&lt;/h3&gt;
@@ -1539,14 +1534,9 @@ $$\frac{\partial \mathcal{L}}{\partial \dot{q}_2} = \kappa$$ where $\kappa$ is c
 problem (one of which never gets old). It is stated as follows:&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt; &lt;em&gt;A mass $m$ is free to slide on a frictionless table and is connected, via a string that passes through a hole in the table, to a mass $M$ that hangs below. Assume that $M$
-moves in a vertical line only, and assume that the string always remains taut. Figure 1.2 shows a moment in time of this situation.&lt;/em&gt;&lt;/p&gt;
+moves in a vertical line only, and assume that the string always remains taut. Figure 2 shows a moment in time of this situation.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;\begin{center}
-\includegraphics[scale=.4]{tableBall.jpg}
-\end{center}
-\begin{center}
-Figure 1.2
-\end{center}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ericpena.github.io/img_lagrangian/tableBall.png&#34; alt=&#34;Figure 2 - Example Problem&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The Lagrangian is as follows:
 $$\mathcal{L}=T-U$$
@@ -1577,6 +1567,8 @@ This may seem random to define the energy in such a way but don&amp;rsquo;t worr
 $$\frac{dE}{dt}=-\frac{\partial \mathcal{L}}{\partial t}.$$&lt;/p&gt;
 
 &lt;h3 id=&#34;applications&#34;&gt;Applications&amp;hellip;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ericpena.github.io/img_lagrangian/doublependulum_5.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

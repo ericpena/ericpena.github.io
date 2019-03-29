@@ -51,7 +51,7 @@
   },
   "genre": "posts",
   "keywords": "Mathematics, Physics",
-  "wordcount": 1874,
+  "wordcount": 1856,
   "url": "https://ericpena.github.io/2017/gen-coord/",
   "datePublished": "2017-12-19T00:00:00+00:00",
   "dateModified": "2017-12-19T00:00:00+00:00",
@@ -144,6 +144,8 @@
         
 
         
+            
+        
 
         
         
@@ -232,11 +234,11 @@ Let&rsquo;s not forget how related force and energy really are:</p>
 <p>$$\Delta T = T_2 - T_1 = \int_{1}^{2}\textbf{F} \cdot d\textbf{r}$$</p>
 
 <p>$$U(\textbf{r}) = -\int_{r_0}^r F(\textbf{r}&lsquo;) \cdot d\textbf{r}&lsquo;$$
-To relate Lagrangian and Newtonian methods more directly:
-\begin{center}
-Euler-Lagrange Equation
-\end{center}
-$$\frac{\partial \mathcal{L}}{\partial q_i}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}$$
+To relate Lagrangian and Newtonian methods more directly:</p>
+
+<h3 id="euler-lagrange-equation">Euler-Lagrange Equation</h3>
+
+<p>$$\frac{\partial \mathcal{L}}{\partial q_i}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}$$
 $$\frac{\partial \mathcal{L}}{\partial q_i} = F_i\ \ \ and\ \ \ \frac{\partial \mathcal{L}}{\partial \dot{q}_i} \equiv p_i$$
 These are referred to as generalized forces and generalized momenta. We may start our discussion of generalized ignorable coordinates and conservation laws now!</p>
 
@@ -255,12 +257,7 @@ A direct way to think of generalized coordinates is to describe the complete
 motion of a system in the fewest number of coordinates. Consider a pendulum bob for one
 moment (yes, another pendulum).</p>
 
-<p>\begin{center}
-\includegraphics[scale=.5]{Pendulum.jpg}
-\end{center}
-\begin{center}
-Figure 1.1 Simple Pendulum
-\end{center}</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/img_lagrangian/pendulum.png" alt="Figure 1 - Pendulum" class="lazyload"><figcaption class="image-caption">Figure 1 - Pendulum</figcaption></figure></p>
 
 <p>We have a choice of using Cartesian coordinates to describe the motion of this
 bob or any other coordinate system we can dream up. The downside of using
@@ -271,7 +268,7 @@ obvious symmetrical advantages and can be considered the generalized coordinates
 on what generalized momenta is. Ordinary momentum by definition is $p = mv$ where $v$ is
 one time derivative away from a position variable: $p = m (\dot{x}+\dot{y}+\dot{z})$.
 So we can easily see that generalized momenta is simple the mass of an object times the
-time derivative of its generalized position vectors! Simple! Generalized force can be found the same way except with two time derivatives. $F_t$ in the Figure 1.1 is the
+time derivative of its generalized position vectors! Simple! Generalized force can be found the same way except with two time derivatives. $F_t$ in the Figure 1 is the
 generalized force of the pendulum system. This pendulum can escape from the x-y grid universe and be thought of as moving along one generalized coordinate, $\theta(t)$. (The length of the pendulum, L, if fixed but if it weren&rsquo;t, $r(t)$ could be another generalized coordinate used to describe the system).</p>
 
 <h3 id="cyclic-coordinates">Cyclic Coordinates</h3>
@@ -297,14 +294,9 @@ $$\frac{\partial \mathcal{L}}{\partial \dot{q}_2} = \kappa$$ where $\kappa$ is c
 problem (one of which never gets old). It is stated as follows:</p>
 
 <p><strong>Problem</strong> <em>A mass $m$ is free to slide on a frictionless table and is connected, via a string that passes through a hole in the table, to a mass $M$ that hangs below. Assume that $M$
-moves in a vertical line only, and assume that the string always remains taut. Figure 1.2 shows a moment in time of this situation.</em></p>
+moves in a vertical line only, and assume that the string always remains taut. Figure 2 shows a moment in time of this situation.</em></p>
 
-<p>\begin{center}
-\includegraphics[scale=.4]{tableBall.jpg}
-\end{center}
-\begin{center}
-Figure 1.2
-\end{center}</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/img_lagrangian/tableBall.png" alt="Figure 2 - Example Problem" class="lazyload"><figcaption class="image-caption">Figure 2 - Example Problem</figcaption></figure></p>
 
 <p>The Lagrangian is as follows:
 $$\mathcal{L}=T-U$$
@@ -336,6 +328,8 @@ $$\frac{dE}{dt}=-\frac{\partial \mathcal{L}}{\partial t}.$$</p>
 
 <h3 id="applications">Applications&hellip;</h3>
 
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/img_lagrangian/doublependulum_5.gif" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+
     </div>
 
     <div class="post-copyright">
@@ -348,7 +342,7 @@ $$\frac{dE}{dt}=-\frac{\partial \mathcal{L}}{\partial t}.$$</p>
            
             <p class="copyright-item">
                     <span>:</span>
-                   <span>1874</span>
+                   <span>1856</span>
             </p>
 
              
@@ -441,8 +435,9 @@ $$\frac{dE}{dt}=-\frac{\partial \mathcal{L}}{\partial t}.$$</p>
 
 
     
-    
-    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
     
   
 
