@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  <link rel="prev" href="https://ericpena.github.io/2019/r-data-types/" />
+  <link rel="next" href="https://ericpena.github.io/2019/hugo-favicon/" />
+  <link rel="canonical" href="https://ericpena.github.io/2019/war/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           War | Coding a Card Game | Eric Peña
+       
+  </title>
+  <meta name="title" content="War | Coding a Card Game | Eric Peña">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="War | Coding a Card Game"/>
+<meta name="twitter:description" content="Modeling the War Card Game Bahavior"/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "War | Coding a Card Game",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ericpena.github.io/2019/war/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://ericpena.github.io/cover.png",
+    "width": 800,
+    "height": 600
+  },
+  "genre": "posts",
+  "keywords": "Python, Programming, Recursion, Function, Simulation",
+  "wordcount": 995,
+  "url": "https://ericpena.github.io/2019/war/",
+  "datePublished": "2019-03-16T00:00:00+00:00",
+  "dateModified": "2019-03-16T00:00:00+00:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Fastbyte01",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ericpena.github.io/logo.png",
+      "width": 127,
+      "height": 40
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Fastbyte01"
+  },
+  "description": "Modeling the War Card Game Bahavior"
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://ericpena.github.io">Eric Peña</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://ericpena.github.io">Eric Peña</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">War | Coding a Card Game</h1>
+        <div class="post-meta">
+              <a href="https://ericpena.github.io" rel="author">Eric Peña</a>  ♥ 
+                <span class="post-time">
+                     <time datetime=2019-03-16 >16 March 2019</time>
+                </span>
+                
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://ericpena.github.io/categories/programming/"> Programming </a>
+                        
+                </span>
+                &nbsp;&nbsp;5 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h1 id="war-simulation-in-python">War Simulation in Python</h1>
+
+<h4 id="game-designer-greg-costikyan-has-observed-that-since-there-are-no-choices-in-the-game-and-all-outcomes-are-random-it-cannot-be-considered-a-game-by-some-definitions-i-chose-to-program-this-game-because-its-complete-random-chance-feature-it-was-an-opportunity-to-practice-python-and-writing-recursive-functions">Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. I chose to program this game because its complete random chance feature. It was an opportunity to practice python and writing recursive functions.</h4>
+
+<h1 id="the-objective-of-the-game-is-to-win-all-cards">The objective of the game is to win all cards.</h1>
+
+<p>A 52-card deck is divided evenly among the players, giving each a down stack. In unison, each player reveals the top card of their deck—this is a &ldquo;battle&rdquo;-and the player with the higher card takes both of the cards played and moves them to their reserves stack. The reserves stack is used when there are no longer cards to play in hand.</p>
+
+<p>If the two cards played are of equal value, then there is a &ldquo;war&rdquo;. Both players place the next three cards from their hand face down (depending on the variant) and then another card face-up. The owner of the higher face-up card wins the war and adds all six cards on the table to their reserves deck. If the face-up cards are again equal then the battle repeats with another set of face-down/up cards. This repeats until one player&rsquo;s face-up card is higher than their opponent&rsquo;s. This is the part of the game where recursion is helpful. In theory, there can be any number of &ldquo;wars&rdquo; only constrained by the number of cards in the deck. Most descriptions of War are unclear about what happens if a player runs out of cards during a war. In this variant, the player immediately loses.</p>
+
+<p>Below are several simulations that were run to explore game behavior</p>
+
+<h1 id="simple-game">Simple Game</h1>
+
+<p>This is a shorter game than average with <strong>3</strong> wars which can be identified by the lines with steeper slopes.
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/idw_simulation_2.png" alt="War Simulation -  3 Wars" class="lazyload"><figcaption class="image-caption">War Simulation -  3 Wars</figcaption></figure></p>
+
+<p>This is a slightly longer game with only <strong>4</strong> wars which occur on card flip: 48, 90, 117, and 152.
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/idw_simulation_B.png" alt="War Simulation - 4 Wars" class="lazyload"><figcaption class="image-caption">War Simulation - 4 Wars</figcaption></figure></p>
+
+<h1 id="blowing-up">Blowing Up</h1>
+
+<p>There is &ldquo;blowing up&rdquo; behavior for some games as well. This behavior is typically exacerbated by wars won by the same player.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><img width="1604" alt="..." src="/idw_simulation_6.png"></td>
+<td align="center"><img width="1604" alt="..." src="/idw_simulation_8.png"></td>
+</tr>
+
+<tr>
+<td align="center"><img width="1604" alt="..." src="/idw_simulation_14.png"></td>
+<td align="center"><img width="1604" alt="..." src="/idw_simulation_15.png"></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="triple-war">Triple War</h3>
+
+<p>When wars occur consecutively, a mass number of cards are moved at once. The example below shows a triple war happening which led Player 2 winning the game. The war began at card flip 698.</p>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/Triple_War.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/idw_simulation_16_triple_war.png" alt="Three Consecutive Wars" class="lazyload"><figcaption class="image-caption">Three Consecutive Wars</figcaption></figure></p>
+
+<h1 id="the-code">The Code</h1>
+
+<p>The program has been written in Python and is copied below for those interested.</p>
+
+<pre><code class="language-python"># Title: War Simulation
+# Date: 3/16/2019
+# Author: Eric Pena
+
+from random import shuffle
+import random
+import pandas as pd
+import matplotlib.pyplot as plt
+# Create Deck and shuffle it
+deck = []
+deck = range(13) * 4
+shuffle(deck)
+# Deal the cards
+player1 = deck[::2]
+player2 = deck[1::2]
+# Create Reserve Piles
+player1_res = []
+player2_res = []
+# Define more variables
+topcard = 0
+# Game counter
+turn = 1
+# Calculate the total cards a player has: hand + reserves
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def total_cards(h, r):
+	return (len(h) + len(r))
+# Recursive function that happens when war starts	
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def idw(player1, player2, player1_res, player2_res, jackpot):
+	# DEBUG
+	print &quot;WAR BREAKS OUT...&quot;
+	# Add reserve to hand and shuffle if hand is less than 4 cards:
+	if (len(player1) &lt; 4):
+		player1.extend(player1_res)
+		player1_res = []
+		shuffle(player1)
+	if (len(player2) &lt; 4):
+		player2.extend(player2_res)
+		player2_res = []
+		shuffle(player2)
+	# If this is still not enough cards, clear the cards and stop the game
+	if (len(player1) &lt; 4 or len(player2) &lt; 4):
+		player1, player2, player1_res, player2_res = ([] for i in range(4))
+		return player1, player2, player1_res, player2_res
+	# Remove top three cards and put them in reserve pile
+	jackpot.extend([player1[0], player1[1], player1[2], player2[0], player2[1], player2[2]])
+	player1 = player1[3:]
+	player2 = player2[3:]
+
+	# Use fourth card to compare
+	if player1[topcard] &gt; player2[topcard]:
+		print &quot;PLAYER 1 WINS WAR: &quot; + str(player1[topcard]) + &quot; - &quot; + str(player2[topcard])
+		player1_res.extend([player1[topcard], player2[topcard]])
+		player1_res.extend(jackpot)
+		# Remove cards from hand
+		player1 = player1[1:]
+		player2 = player2[1:]
+		return player1, player2, player1_res, player2_res
+	
+	elif player1[topcard] &lt; player2[topcard]:
+		print &quot;PLAYER 2 WINS WAR: &quot; + str(player1[topcard]) + &quot; - &quot; + str(player2[topcard])
+		player2_res.extend([player1[topcard], player2[topcard]])
+		player2_res.extend(jackpot)
+		# Remove cards from hand
+		player1 = player1[1:]
+		player2 = player2[1:]
+		return player1, player2, player1_res, player2_res
+	
+	else:		
+		print &quot;ANOTHER WAR BEGINS: &quot; + str(player1[topcard]) + &quot; - &quot; + str(player2[topcard])
+		jackpot.extend([player1[0], player2[0]])
+		player1 = player1[1:]
+		player2 = player2[1:]
+		return idw(player1, player2, player1_res, player2_res, jackpot)
+
+# Start the game
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def play_game(player1, player2, player1_res, player2_res, turn):
+	# Create a record of the game
+	cols = [&quot;Round&quot;, &quot;P1 card&quot;, &quot;P2 card&quot;, &quot;P1 t-len&quot;, &quot;P2 t-len&quot;, &quot;P1 h-len&quot;, &quot;P2 h-len&quot;]
+	datarec = pd.DataFrame(columns = cols)
+	while (len(player1) != 0 and len(player2) != 0):
+		print &quot;Round: &quot; + str(turn) + &quot;\t|\t&quot; + \
+			str(player1[topcard]) + &quot;\t|\t&quot; + \
+			str(player2[topcard]) + &quot;\t|\t&quot; + \
+			str(total_cards(player1, player1_res)) + &quot;\t|\t&quot; + \
+			str(total_cards(player2, player2_res)) + &quot;\t|\t&quot; + \
+			str(len(player1)) + &quot;\t|\t&quot; + \
+			str(len(player2)) + &quot;\t|\t&quot; + \
+			str(total_cards(player1, player1_res) + total_cards(player2, player2_res))
+		# Add data to pandas dataframe:
+		datarec.loc[turn - 1] = [turn, player1[topcard], player2[topcard], total_cards(player1, player1_res), total_cards(player2, player2_res), len(player1), len(player2)]
+		# Flip top cards and assign:
+		if player1[topcard] &gt; player2[topcard]:
+			player1_res.extend([player1[topcard], player2[topcard]])
+			# Remove topcard from hands
+			player1 = player1[1:]
+			player2 = player2[1:]
+		elif player1[topcard] &lt; player2[topcard]:
+			player2_res.extend([player1[topcard], player2[topcard]])
+			# Remove topcard from hands
+			player1 = player1[1:]
+			player2 = player2[1:]
+		else:
+			print &quot;TOP: &quot; + str(player1[topcard]) + &quot; - &quot; + str(player2[topcard])
+			player1, player2, player1_res, player2_res = idw(player1, player2, player1_res, player2_res,[])
+
+		# Replenish Cards
+		if len(player1) == 0:
+			player1 = player1_res
+			shuffle(player1)
+			player1_res = []
+			# it1 = 0
+		if len(player2) == 0:
+			player2 = player2_res
+			shuffle(player2)
+			player2_res = []
+			# it2 = 0
+		turn += 1
+	return player1, player2, player1_res, player2_res, datarec, turn
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# MAIN PROGRAM:
+print &quot;Round: &quot; + &quot;\t\t|\t&quot; + &quot;P1 card&quot; + &quot;\t|\t&quot; + &quot;P2 card&quot; + &quot;\t|\t&quot; + &quot;P1-T&quot; + &quot;\t|\t&quot; + &quot;P2-T&quot; + &quot;\t|\t&quot; + &quot;P1-H&quot; + &quot;\t|\t&quot; + &quot;P2-H&quot;
+
+player1, player2, player1_res, player2_res, df, turn = play_game(player1, player2, player1_res, player2_res, turn)
+plt.plot(df[&quot;Round&quot;], df[&quot;P1 t-len&quot;])
+plt.plot(df[&quot;Round&quot;], df[&quot;P2 t-len&quot;])
+plt.legend(['Player 1', 'Player 2'])
+plt.title(&quot;War Simulation&quot;)
+plt.xlabel(&quot;Card Flips&quot;)
+plt.ylabel(&quot;Number of Cards For Each Player&quot;)
+plt.show()
+
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>:</span>
+                <span>Eric Peña </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>:</span>
+                   <span>995</span>
+            </p>
+
+             
+            <p class="copyright-item lincese">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-icon-tag"></i>: 
+            
+            <span class="tag"><a href="https://ericpena.github.io/tags/python/">
+                    #Python</a></span>
+            
+            <span class="tag"><a href="https://ericpena.github.io/tags/programming/">
+                    #Programming</a></span>
+            
+            <span class="tag"><a href="https://ericpena.github.io/tags/recursion/">
+                    #Recursion</a></span>
+            
+            <span class="tag"><a href="https://ericpena.github.io/tags/function/">
+                    #Function</a></span>
+            
+            <span class="tag"><a href="https://ericpena.github.io/tags/simulation/">
+                    #Simulation</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();"></a></span> · 
+                <span><a href="https://ericpena.github.io"></a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://ericpena.github.io/2019/r-data-types/" class="prev" rel="prev" title="R Data Types"><i class="iconfont icon-dajiantou"></i>&nbsp;R Data Types</a>
+         
+        
+        <a href="https://ericpena.github.io/2019/hugo-favicon/" class="next" rel="next" title="Adding Favicons">Adding Favicons&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        
+        &copy;
+        
+        
+        <span itemprop="copyrightYear">2019</span>
+        
+        
+        
+            <span class="author" itemprop="copyrightHolder"><a href="https://ericpena.github.io">Eric Peña</a> | </span>
+        
+
+		  <span>Crafted with Hugo and GithubPages</span>
+    </div>
+    
+    
+    
+
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[','\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: { equationNumbers: { autoNumber: "AMS" },
+                 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+          }
+        });
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

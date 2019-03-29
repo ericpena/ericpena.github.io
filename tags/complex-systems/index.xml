@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Complex Systems on Eric Peña</title>
+    <link>https://ericpena.github.io/tags/complex-systems/</link>
+    <description>Recent content in Complex Systems on Eric Peña</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 16 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ericpena.github.io/tags/complex-systems/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mathematics of Network Theory</title>
+      <link>https://ericpena.github.io/2018/network-theory/</link>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/2018/network-theory/</guid>
+      <description>Graphs may be represented in the form of a matrix. Main types of graphs that may be represented are:
+ Simple Graph Multigraph Directed Graph Weighted Graph Bipartite Graph  Directed Graph Directed graphs are graphs that contain edges with direction. Vertices may have inward and outward edges.
+Unlike adjacency matricies for simped graphs, adjacency matricies for directed graphs are non-symmetric. Elements of an adjacency matrix for a directed graph may be denoted as: $$A_{ij}$$ which represents an edge from vertex $j$ to $i$.</description>
+    </item>
+    
+  </channel>
+</rss>
