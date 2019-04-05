@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>News</title>
+      <link>https://ericpena.github.io/tags/news/</link>
+      <pubDate>Sun, 31 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/tags/news/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Physics</title>
       <link>https://ericpena.github.io/tags/physics/</link>
       <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
@@ -98,6 +107,15 @@
       <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/tags/reference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Resource</title>
+      <link>https://ericpena.github.io/tags/resource/</link>
+      <pubDate>Sun, 31 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/tags/resource/</guid>
       <description></description>
     </item>
     

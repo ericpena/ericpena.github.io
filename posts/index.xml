@@ -6,10 +6,25 @@
     <description>Recent content in Posts on Eric Peña</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 26 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 31 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ericpena.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Complex Systems News Resources</title>
+      <link>https://ericpena.github.io/2019/news/</link>
+      <pubDate>Sun, 31 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/2019/news/</guid>
+      <description> Keeping Up With Complex Systems Science News It can be difficult to find time to keep up with interesting science, especially when articles are dense and abstruse. With an unfortunate name like complex systems, keeping up with the intersting news can be a daunting task.
+ Santa Fe Institute Santa Fe Institute&amp;hellip;
+ Sante Fe Institute Complexity Explorer Complexity Explorer&amp;hellip;
+ Quanta Magazine Quanta&amp;hellip;
+
+Nature Nature&amp;hellip;
+ Quanta Magazine  Quanta Magazine  Quanta Magazine  OTHER FUN SCIENCE RESOURCES Quanta Magazine  Quanta Magazine  Quanta Magazine  Quanta Magazine </description>
+    </item>
     
     <item>
       <title>Adding Favicons</title>
@@ -57,7 +72,7 @@ Unlike adjacency matricies for simped graphs, adjacency matricies for directed g
       <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/2017/gen-coord/</guid>
-      <description>Generalized Cyclic Coordinates and Conservation Laws From the Lagrangian Formulation of Theoretical Mechanics These are selected notes from a group of topics I find of particular interest. Although I assume some previous knowledge of classical mechanics from you, I still provide a brief overview of what the Lagrangian method is, where it comes from, how it relates to the more familiar Newtonian formulation, and how these beautiful laws of nature imply conserved quantities in everyday systems.</description>
+      <description>Generalized Coordinates and Conservation Laws From the Lagrangian Formulation of Theoretical Mechanics These are selected notes from a group of topics I find of particular interest. Although I assume some previous knowledge of classical mechanics from you, I still provide a brief overview of what the Lagrangian method is, where it comes from, how it relates to the more familiar Newtonian formulation, and how these beautiful laws of nature imply conserved quantities in everyday systems.</description>
     </item>
     
   </channel>

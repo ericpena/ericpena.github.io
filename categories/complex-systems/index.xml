@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Complex Systems on Eric Peña</title>
+    <link>https://ericpena.github.io/categories/complex-systems/</link>
+    <description>Recent content in Complex Systems on Eric Peña</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 31 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ericpena.github.io/categories/complex-systems/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Complex Systems News Resources</title>
+      <link>https://ericpena.github.io/2019/news/</link>
+      <pubDate>Sun, 31 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/2019/news/</guid>
+      <description> Keeping Up With Complex Systems Science News It can be difficult to find time to keep up with interesting science, especially when articles are dense and abstruse. With an unfortunate name like complex systems, keeping up with the intersting news can be a daunting task.
+ Santa Fe Institute Santa Fe Institute&amp;hellip;
+ Sante Fe Institute Complexity Explorer Complexity Explorer&amp;hellip;
+ Quanta Magazine Quanta&amp;hellip;
+
+Nature Nature&amp;hellip;
+ Quanta Magazine  Quanta Magazine  Quanta Magazine  OTHER FUN SCIENCE RESOURCES Quanta Magazine  Quanta Magazine  Quanta Magazine  Quanta Magazine </description>
+    </item>
+    
+  </channel>
+</rss>
