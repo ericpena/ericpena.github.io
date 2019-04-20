@@ -3,6 +3,20 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>https://ericpena.github.io/2019/tensors/</loc>
+      
+      <lastmod>2019-04-20T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://ericpena.github.io/2019/news/</loc>
       
       <lastmod>2019-03-31T00:00:00+00:00</lastmod>
@@ -143,7 +157,7 @@
     <url>
       <loc>https://ericpena.github.io/</loc>
       
-      <lastmod>2019-03-31T00:00:00+00:00</lastmod>
+      <lastmod>2019-04-20T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -171,7 +185,7 @@
     <url>
       <loc>https://ericpena.github.io/tags/mathematics/</loc>
       
-      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
+      <lastmod>2019-04-20T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -185,7 +199,7 @@
     <url>
       <loc>https://ericpena.github.io/categories/mathematics/</loc>
       
-      <lastmod>2018-12-16T00:00:00+00:00</lastmod>
+      <lastmod>2019-04-20T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -227,7 +241,7 @@
     <url>
       <loc>https://ericpena.github.io/tags/physics/</loc>
       
-      <lastmod>2017-12-19T00:00:00+00:00</lastmod>
+      <lastmod>2019-04-20T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -255,7 +269,7 @@
     <url>
       <loc>https://ericpena.github.io/posts/</loc>
       
-      <lastmod>2019-03-31T00:00:00+00:00</lastmod>
+      <lastmod>2019-04-20T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>

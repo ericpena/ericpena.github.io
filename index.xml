@@ -6,8 +6,190 @@
     <description>Recent content in Eric Peña on Eric Peña</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 31 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Apr 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Introduction to Tensors</title>
+      <link>https://ericpena.github.io/2019/tensors/</link>
+      <pubDate>Sat, 20 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/2019/tensors/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;https://ericpena.github.io/img_tensors/Vector-1-Form.svg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Motivation:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;General Relativity&lt;/li&gt;
+&lt;li&gt;Inertia Tensor&lt;/li&gt;
+&lt;li&gt;Stress Tensor&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It took me a whole week figure out what a tensor actually is. You will find many definitions and some are only partially correct. Let&amp;rsquo;s walk through the different explanations and learn how to think about them.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;(Array Definition)&lt;/strong&gt; Tensor = Multi-dimensional array of numbers (scalars (rank 0), vectors (rank 1), matricies (rank 2), etc.). This is true in a sense but there is a truer geometrical meaning behind the concept of a tensor.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;(Coordinate Definition)&lt;/strong&gt; Tensor = an object that is invariant under a change of coordinates and has &lt;em&gt;components&lt;/em&gt; that change in a special, predictable way under a change of coordinates. This is also true but let&amp;rsquo;s dive even deeper to learn how a tensor allows this behavior to take place.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;(Abstract Definition)&lt;/strong&gt; Tensor = a collection of vectors and covectors combined together using the tensor product&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The important thing to keep in mind is that vectors exist independently of their components and their components depend on the coordinate system used to define vectors.&lt;/p&gt;
+
+&lt;h1 id=&#34;changing-coordinate-systems&#34;&gt;Changing Coordinate Systems&lt;/h1&gt;
+
+&lt;p&gt;Let&amp;rsquo;s go from an old basis to a new basis&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;Old Basis: {$\vec{e_1}, \vec{e_2}$}&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;New Basis: {$\tilde{\vec{e_1}}, \tilde{\vec{e_2}}$}&lt;/center&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;forward-transformation&#34;&gt;Forward Transformation&lt;/h3&gt;
+
+&lt;p&gt;Suppose:
+$$\tilde{\vec{e_1}} = 2\vec{e_1}+1\vec{e_2}$$
+$$\tilde{\vec{e_2}} = -\frac{1}{2}\vec{e_1}+\frac{1}{4}\vec{e_2}$$
+$$F = \begin{pmatrix}2 &amp;amp; 1\\ -\frac{1}{2} &amp;amp; \frac{1}{4}\end{pmatrix}$$
+where $F$ is the Forward Transformation Matrix.&lt;/p&gt;
+
+&lt;h3 id=&#34;backward-transformation&#34;&gt;Backward Transformation&lt;/h3&gt;
+
+&lt;p&gt;This would make the backward transformation:
+$$\vec{e_1} = \frac{1}{4}\tilde{\vec{e_1}}+(-1)\tilde{\vec{e_2}}$$
+$$\vec{e_2} = \frac{1}{2}\tilde{\vec{e_1}}+2\tilde{\vec{e_2}}$$
+$$B = \begin{pmatrix}\frac{1}{4} &amp;amp; -1\\ \frac{1}{2} &amp;amp; 2\end{pmatrix}$$&lt;/p&gt;
+
+&lt;h3 id=&#34;forward-and-backward-transformation&#34;&gt;Forward and Backward Transformation&lt;/h3&gt;
+
+&lt;p&gt;$$F \cdot B = \begin{pmatrix}2 &amp;amp; 1\\ -\frac{1}{2} &amp;amp; \frac{1}{4}\end{pmatrix} \begin{pmatrix}\frac{1}{4} &amp;amp; -1\\ \frac{1}{2} &amp;amp; 2\end{pmatrix} = \begin{pmatrix}1 &amp;amp; 0\\ 0 &amp;amp; 1\end{pmatrix}$$&lt;/p&gt;
+
+&lt;p&gt;In general:
+$$F \cdot B = \delta_{ij}$$
+$$F = B^{-1}; B = F^{-1}$$
+$$\tilde{\vec{e_i}} = \sum_{j=1}^{n} F_{ij} \vec{e_j}$$
+$$\vec{e_i} = \sum_{j=1}^{n} B_{ij} \tilde{\vec{e_j}}$$&lt;/p&gt;
+
+&lt;h1 id=&#34;vectors&#34;&gt;Vectors&lt;/h1&gt;
+
+&lt;p&gt;Vectors are the first example of a tensor. Vectors are invariant but their components are &lt;em&gt;NOT&lt;/em&gt; invariant. It is also important to know that not all vectors are geometrical Euclidean vectors. Some vectors that are harder to visualize.&lt;/p&gt;
+
+&lt;p&gt;The transformation rules for vectors behave in an opposite way compared to the basis vectors {$\vec{e_1}, \vec{e_2}$}&lt;/p&gt;
+
+&lt;p&gt;$$\vec{v} = \sum_{j=1}^{n}v_j \vec{e_j} = \sum_{i=1}^{n} \tilde{v_i} \tilde{\vec{e_i}}$$&lt;/p&gt;
+
+&lt;p&gt;$$\vec{v} = \sum_{j=1}^{n} v_j \vec{e_j} = \sum_{j=1}^{n} v_j \left( \sum_{j=1}^{n} B_{ij} \tilde{\vec{e_j}} \right) = \sum_{i=1}^{n} \left( \sum_{j=1}^{n} B_{ij} v_j \right) \tilde{\vec{e_i}}$$&lt;/p&gt;
+
+&lt;p&gt;So this shows that:
+$$\tilde{v_i} = \sum_{j=1}^{n} B_{ij} v_j$$
+Which basically means that if you want to define the vector is the new basis, we have to use the backwards transformation matrix. This will take some getting used to since it is opposite of the unit basis. For this reason, vectors are said to contravary and are even called &lt;strong&gt;contravariant vectors&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Basis&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Vectors&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;$$\tilde{\vec{e_i}} = \sum_{j=1}^{n} F_{ij} \vec{e_j}$$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$$\tilde{v_i} = \sum_{j=1}^{n} B_{ij} v_j$$&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;$$\vec{e_i} = \sum_{j=1}^{n} B_{ij} \tilde{\vec{e_j}}$$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$$v_i = \sum_{j=1}^{n} F_{ij} \tilde{v_j}$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;notation&#34;&gt;Notation&lt;/h1&gt;
+
+&lt;p&gt;In tensor calculus, notation can be tricky so it will be helpful to keep a couple tips about notation in mind:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Upper indicies represent contravariant components&lt;/li&gt;
+&lt;li&gt;Lower indicies represent covariant components&lt;/li&gt;
+&lt;li&gt;Einstein notation uses the upper and lower indicies and also drops the $\sum$ symbol&lt;/li&gt;
+&lt;li&gt;When a covector $\alpha_j$ is acting on a vector $v^j$, it can be written as $\alpha_j v^j$ and is assumed to be the sum:
+$$\alpha_j v^j = \sum_{j=1}^n \alpha_j v^j = \alpha_1 v^1 + \alpha_2 v^2 + \alpha_3 v^3 + &amp;hellip; + \alpha_n v^n$$&lt;/li&gt;
+&lt;li&gt;Using this new notation convention, the formulas in the table above can be written as:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Basis&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Vectors&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;$$\tilde{\vec{e_i}} = F_i^j \vec{e_j}$$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$$\tilde{v^i} = B_j^i v^j$$&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;$$\vec{e_i} = B_i^j \tilde{\vec{e_j}}$$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$$v^i = F_j^i \tilde{v^j}$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;covectors&#34;&gt;Covectors&lt;/h1&gt;
+
+&lt;p&gt;Covectors may be harder to visualize since it differs from the arrow Euclidean vectors that is often used in physics. Here are a couple initial notes about covectors:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Covectors can be thought of as row vectors but clarification is needed for this. Row vectors in this sense are not necessarily column vectors flipped on their side. This is only true when using an orthonormal basis. If the basis is not orthonormal, it is more apparent how row vectors are different from column vectors.&lt;/li&gt;
+&lt;li&gt;It is better to think of covectors as functions that act on vectors and map them to real numbers:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;$$\alpha: V \rightarrow \mathbb{R}$$&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;When we visualize vectors, we think of them as Euclidean vectors with components in a system of coordinates. A covector can be visualized as directed stacks of lines (or surfaces). Below are a few images that can help visualize covectors:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ericpena.github.io/img_tensors/covector1.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://ericpena.github.io/img_tensors/covector0.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://ericpena.github.io/img_tensors/covector2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The inner product is a mechanism used to combine a covector and vector. The output is a number that represents the number of surfaces of the covector that are pierced by the vector.&lt;/p&gt;
+
+&lt;h3 id=&#34;covector-rules-to-keep-in-mind&#34;&gt;Covector Rules To Keep In Mind:&lt;/h3&gt;
+
+&lt;p&gt;Covector acting on a vector:
+$$\alpha(\vec{v}) = \alpha_1 v^1 + \alpha_2 v^2 + \alpha_3 v^3 + &amp;hellip; + \alpha_n v^n = \sum_{j=1}^n \alpha_j v^j$$&lt;/p&gt;
+
+&lt;p&gt;Properties of Linearity:
+$$\alpha(\vec{v} + \vec{w}) = \alpha(\vec{v}) + \alpha(\vec{w})$$&lt;/p&gt;
+
+&lt;p&gt;$$\alpha(n \vec{v}) = n \alpha(\vec{v})$$&lt;/p&gt;
+
+&lt;p&gt;$$(\beta + \gamma)(\vec{v}) = \beta(\vec{v}) + \gamma(\vec{v})$$&lt;/p&gt;
+
+&lt;p&gt;Vector Spaces:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;When scaling and combining vectors, a vector space $V$ is spanned&lt;/li&gt;
+&lt;li&gt;Covectors can also be scaled with scalars and combined using addition and multiplication. The vector space spanned by covectors is called the &amp;ldquo;Dual Vector Space&amp;rdquo;, $V^*$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;linear-maps&#34;&gt;Linear Maps&lt;/h1&gt;
+</description>
+    </item>
     
     <item>
       <title>Complex Systems News Resources</title>
@@ -1676,19 +1858,23 @@ $$\frac{dE}{dt}=-\frac{\partial \mathcal{L}}{\partial t}.$$&lt;/p&gt;
 
 &lt;h1 id=&#34;center-education-center&#34;&gt;&lt;center&gt;Education&lt;/center&gt;&lt;/h1&gt;
 
-&lt;ul&gt;
-&lt;li&gt;M.S. Systems Science  |  The State University of New York at Binghamton (2021)
+&lt;p&gt;&lt;img src=&#34;https://ericpena.github.io/img_site/bing1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;Clifford D. Clark Diversity Fellow  |  The State University of New York at Binghamton&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;B.S. Engineering Physics – Computer Information Science  |  The Ohio State University
+&lt;p&gt;&lt;center&gt;M.S. Systems Science  |  The State University of New York at Binghamton (2021)&lt;/center&gt;
+&lt;center&gt;Clifford D. Clark Diversity Fellow  |  The State University of New York at Binghamton&lt;/center&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;Young Scholar  |  The Ohio State University Office of Diversity and Inclusion&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Data Science Bootcamp  |  General Assembly in Chicago&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ericpena.github.io/img_site/osu2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;B.S. Engineering Physics – Computer Information Science  |  The Ohio State University&lt;/center&gt;
+&lt;center&gt;Young Scholar  |  The Ohio State University Office of Diversity and Inclusion&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ericpena.github.io/img_site/ga2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;Data Science Bootcamp  |  General Assembly in Chicago&lt;/center&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;center-experience-center&#34;&gt;&lt;center&gt;Experience&lt;/center&gt;&lt;/h1&gt;
 
