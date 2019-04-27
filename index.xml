@@ -368,6 +368,87 @@ $$\alpha(\vec{v} + \vec{w}) = \alpha(\vec{v}) + \alpha(\vec{w})$$&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://ericpena.github.io/Triple_War.png&#34; alt=&#34;&#34; /&gt;
 &lt;img src=&#34;https://ericpena.github.io/img_war/idw_simulation_16_triple_war.png&#34; alt=&#34;Three Consecutive Wars&#34; /&gt;&lt;/p&gt;
 
+&lt;h1 id=&#34;number-of-wars-per-game&#34;&gt;Number of Wars Per Game&lt;/h1&gt;
+
+&lt;h3 id=&#34;what-is-the-war-and-game-length-relationship&#34;&gt;What is the War and Game Length relationship?&lt;/h3&gt;
+
+&lt;p&gt;One question that we can ask is how does the number was wars in a game relate to the length of the game itself. I modified the program so that it simulated 1000 games and plotted the number of wars versus the length of each game. Below is the result of this simulation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ericpena.github.io/img_war/WCvGL_1.png&#34; alt=&#34;No. of Wars v. Game Length&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see, there is a strong linear relationship between the these two quantities. The $R^2 \approx 1$ value is a helpful indicator of this. The $R^2$ and linear equation are:&lt;/p&gt;
+
+&lt;p&gt;$$R^2 = 0.9225$$
+$$y(x)=0.0549x+1.2212$$&lt;/p&gt;
+
+&lt;h3 id=&#34;how-many-battles-are-played-before-a-war-breaks-out&#34;&gt;How many battles are played before a war breaks out?&lt;/h3&gt;
+
+&lt;p&gt;This slope tells us that there is a war every approximately 19 &amp;ldquo;battles&amp;rdquo; (where a battle is a single card flip). To prove this by dividing the game length data by 19 and replotting. This would make every x-axis unit equal to 19 battles. If our claim is true, there should be a one-to-one relationship between our new unit and the number of wars per game. Let&amp;rsquo;s plot it:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ericpena.github.io/img_war/WCvGL_2.png&#34; alt=&#34;1 War Every ~19 Battles&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The trendline has an equation whose slope is close to 1. This is a good sign that our value of 19 is a nice estimate.&lt;/p&gt;
+
+&lt;p&gt;$$y(x) = 1.0391x+1.4576$$&lt;/p&gt;
+
+&lt;h3 id=&#34;distribution-of-quantities&#34;&gt;Distribution of Quantities&lt;/h3&gt;
+
+&lt;p&gt;It may be helpful to know how the game length or war count themselves are distributed. Below are two histgrams that can give insight into their spread. From the two plots below, we can see that these two distribution are somewhat normal with a slight right skew.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ericpena.github.io/img_war/WCvGL_3.png&#34; alt=&#34;Histograms of Game Lengths and War Counts&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;change-the-size-of-the-war&#34;&gt;Change The Size Of The War!&lt;/h1&gt;
+
+&lt;p&gt;When two cards are equal a war begins. In this variant of the game, three additional cards are played face-down and a fourth card is used to do another comparison. This is essentially what a &amp;ldquo;war&amp;rdquo; is in this game. We can change the size of the wars - which means we can change the number of face-down cards we throw down before we do another comparison. Here is a table:&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;War Size&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Meaning&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;War Size = 2&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2 face-down cards before comparing the 3th card during war&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;War Size = 3&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;3 face-down cards before comparing the 4th card during war&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;War Size = 4&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2 face-down cards before comparing the 5th card during war&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;It would be helpful to plot the WC versus GL plot for each war size. From the plot we can observe how the slope of the linear regression equation changes (or how the &amp;ldquo;war per battle&amp;rdquo; value changes with war size). Click on plot below to see it in detail:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ericpena.github.io/img_war/WCvGL_4.png&#34; alt=&#34;Changing War Size&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;how-does-average-game-length-and-war-count-change-with-war-size&#34;&gt;How does Average Game Length and War Count change with War Size&lt;/h3&gt;
+
+&lt;p&gt;The plot below is a clear picture into how the averages and medians change when we change war size&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ericpena.github.io/img_war/WCvGL_5.png&#34; alt=&#34;How does average GL and WC change with War Size&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It appears that the larger the war size, the more normal the distribution becomes since the average and median approach the same value.&lt;/p&gt;
+
+&lt;p&gt;Another way of looking at the game length for different values of war size would be with a layered bar graph. When the data is ordered and plotted with each war size being a layer, we can create the following graph.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ericpena.github.io/img_war/GL_1.png&#34; alt=&#34;Layered Bar Graph of Game Length for Different War Sizes&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This graph also shows that the larger the War Size, the smaller the Game Length. Is there anything else we can look into for the analysis of this game?&lt;/p&gt;
+
 &lt;h1 id=&#34;the-code&#34;&gt;The Code&lt;/h1&gt;
 
 &lt;p&gt;The program has been written in Python and is copied below for those interested.&lt;/p&gt;
