@@ -1968,9 +1968,10 @@ This may seem random to define the energy in such a way but don&amp;rsquo;t worr
 &lt;p&gt;Without proving it, the following relation summarizes this claim:
 $$\frac{dE}{dt}=-\frac{\partial \mathcal{L}}{\partial t}.$$&lt;/p&gt;
 
-&lt;h3 id=&#34;applications&#34;&gt;Applications&amp;hellip;&lt;/h3&gt;
+&lt;h3 id=&#34;applications&#34;&gt;Applications&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://ericpena.github.io/img_lagrangian/doublependulum_5.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;I programmed this nonlinear double pendulum with Mathamtica (Wolfram Language)
+&lt;img src=&#34;https://ericpena.github.io/img_lagrangian/doublependulum_5.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
