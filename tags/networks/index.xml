@@ -6,10 +6,19 @@
     <description>Recent content in Networks on Eric Peña</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 16 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ericpena.github.io/tags/networks/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Complexity – A Guided Tour</title>
+      <link>https://ericpena.github.io/2019/complexity-reflection-1/</link>
+      <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/2019/complexity-reflection-1/</guid>
+      <description>Providing the multifaceted story of how complex systems has evolved into what it is today is no easy feat. Dr. Melanie Mitchell not only gives a comprehensive historical tour of science and mathematics, she also provides foundational knowledge that any reader can carry to appreciate the essence of what it means for a system to be complex in the technical sense. Early on, she gives a clear definition of complex systems as an interdisciplinary field that studies how large networks of entities with no central controller can organize themselves and exhibit collective behavior given simple rules.</description>
+    </item>
     
     <item>
       <title>Mathematics of Network Theory</title>
