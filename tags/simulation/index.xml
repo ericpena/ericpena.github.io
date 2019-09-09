@@ -6,13 +6,22 @@
     <description>Recent content in Simulation on Eric Peña</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 16 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ericpena.github.io/tags/simulation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>War | Coding a Card Game</title>
+      <title>First Genetic Algorithm — Prints: ericpena</title>
+      <link>https://ericpena.github.io/2019/ga-intro/</link>
+      <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/2019/ga-intro/</guid>
+      <description>Components of a Genetic Algorithm: The Genetic Algorithm Code Written in Python: from fuzzywuzzy import fuzz import random import string class Agent: def __init__(self, length): # Initialize a new agent self.string = &#39;&#39;.join(random.choice(string.ascii_letters) for _ in range(length)) self.fitness = -1 def __str__(self): return &#39;String: &#39; + str(self.string) + &#39; Fitness: &#39; + str(self.fitness) in_str = None in_str_len = None population = 20 generations = 5000 # All the code to evolve def ga(): agents = init_agents(population, in_str_len) for generation in range(generations): print(&#39;Generation: &#39; + str(generation)) agents = fitness(agents) agents = selection(agents) agents = crossover(agents) agents = mutation(agents) if any(agent.</description>
+    </item>
+    
+    <item>
+      <title>War — Coding a Card Game</title>
       <link>https://ericpena.github.io/2019/war/</link>
       <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
       

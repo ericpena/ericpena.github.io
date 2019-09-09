@@ -3,9 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>https://ericpena.github.io/2019/complexity-reflection-1/</loc>
+      <loc>https://ericpena.github.io/2019/ga-intro/</loc>
       
       <lastmod>2019-09-09T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://ericpena.github.io/2019/complexity-reflection-1/</loc>
+      
+      <lastmod>2019-08-26T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -155,7 +169,7 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/tags/complex-systems/</loc>
+      <loc>https://ericpena.github.io/categories/complex-systems/</loc>
       
       <lastmod>2019-09-09T00:00:00+00:00</lastmod>
       
@@ -169,9 +183,9 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/categories/complex-systems/</loc>
+      <loc>https://ericpena.github.io/tags/complex-systems/</loc>
       
-      <lastmod>2019-09-09T00:00:00+00:00</lastmod>
+      <lastmod>2019-08-26T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -199,7 +213,7 @@
     <url>
       <loc>https://ericpena.github.io/tags/function/</loc>
       
-      <lastmod>2019-03-16T00:00:00+00:00</lastmod>
+      <lastmod>2019-09-09T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -211,7 +225,7 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/tags/mathematics/</loc>
+      <loc>https://ericpena.github.io/tags/genetic-algorithm/</loc>
       
       <lastmod>2019-09-09T00:00:00+00:00</lastmod>
       
@@ -239,9 +253,23 @@
     </url>
   
     <url>
+      <loc>https://ericpena.github.io/tags/mathematics/</loc>
+      
+      <lastmod>2019-08-26T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://ericpena.github.io/tags/networks/</loc>
       
-      <lastmod>2019-09-09T00:00:00+00:00</lastmod>
+      <lastmod>2019-08-26T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -267,9 +295,9 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/tags/physics/</loc>
+      <loc>https://ericpena.github.io/categories/physics/</loc>
       
-      <lastmod>2019-04-30T00:00:00+00:00</lastmod>
+      <lastmod>2017-12-19T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -281,9 +309,9 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/categories/physics/</loc>
+      <loc>https://ericpena.github.io/tags/physics/</loc>
       
-      <lastmod>2017-12-19T00:00:00+00:00</lastmod>
+      <lastmod>2019-04-30T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -309,9 +337,9 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/tags/programming/</loc>
+      <loc>https://ericpena.github.io/categories/programming/</loc>
       
-      <lastmod>2019-03-26T00:00:00+00:00</lastmod>
+      <lastmod>2019-09-09T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -323,9 +351,9 @@
     </url>
   
     <url>
-      <loc>https://ericpena.github.io/categories/programming/</loc>
+      <loc>https://ericpena.github.io/tags/programming/</loc>
       
-      <lastmod>2019-03-26T00:00:00+00:00</lastmod>
+      <lastmod>2019-09-09T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -339,7 +367,7 @@
     <url>
       <loc>https://ericpena.github.io/tags/python/</loc>
       
-      <lastmod>2019-03-16T00:00:00+00:00</lastmod>
+      <lastmod>2019-09-09T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -409,7 +437,7 @@
     <url>
       <loc>https://ericpena.github.io/tags/simulation/</loc>
       
-      <lastmod>2019-03-16T00:00:00+00:00</lastmod>
+      <lastmod>2019-09-09T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -423,7 +451,7 @@
     <url>
       <loc>https://ericpena.github.io/tags/</loc>
       
-      <lastmod>2019-09-09T00:00:00+00:00</lastmod>
+      <lastmod>2019-08-26T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>

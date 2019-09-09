@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Eric Peña</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ericpena.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Complex Systems</title>
       <link>https://ericpena.github.io/tags/complex-systems/</link>
-      <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/tags/complex-systems/</guid>
       <description></description>
@@ -23,16 +23,25 @@
     <item>
       <title>Function</title>
       <link>https://ericpena.github.io/tags/function/</link>
-      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/tags/function/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Genetic Algorithm</title>
+      <link>https://ericpena.github.io/tags/genetic-algorithm/</link>
+      <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/tags/genetic-algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Mathematics</title>
       <link>https://ericpena.github.io/tags/mathematics/</link>
-      <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/tags/mathematics/</guid>
       <description></description>
@@ -41,7 +50,7 @@
     <item>
       <title>Networks</title>
       <link>https://ericpena.github.io/tags/networks/</link>
-      <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/tags/networks/</guid>
       <description></description>
@@ -68,7 +77,7 @@
     <item>
       <title>Programming</title>
       <link>https://ericpena.github.io/tags/programming/</link>
-      <pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/tags/programming/</guid>
       <description></description>
@@ -77,7 +86,7 @@
     <item>
       <title>Python</title>
       <link>https://ericpena.github.io/tags/python/</link>
-      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/tags/python/</guid>
       <description></description>
@@ -122,7 +131,7 @@
     <item>
       <title>Simulation</title>
       <link>https://ericpena.github.io/tags/simulation/</link>
-      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/tags/simulation/</guid>
       <description></description>
