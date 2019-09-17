@@ -158,6 +158,30 @@ if __name__ == &#39;__main__&#39;:
 David Hilbert&amp;rsquo;s provocative questions for the mathematics community challenged the stability of mathematics itself. Gödel figured out how to convert statements into mathematical language and learned that there exists self-contradictory mathematical statements&amp;mdash;showing that not everything in mathematics could be proven. Mathematics was viewed as being exacting and able to prove anything at that time. Gödel&amp;rsquo;s Incompleteness Theorem shattered the apparent grandeur of mathematics and worried many practitioners. Alan Turing also came up with a similar answer using what was called a Turing Machine. The result had extended to machine language as well.&lt;/p&gt;
 
 &lt;p&gt;Dr. Mitchell is not only able to clearly explain a topic as abstruse as complex theory, she does so to a general audience without inundating the reader with technical jargon. Since there is not a definition of complexity that the scientific community can agree on, Mitchell offers some thoughts about possible ways that complexity could be defined. She is again very candid about the limitations of these definitions and explains why they would not hold up in isolation. All throughout Part I, she keeps the theme of being informative, honest, and motivating. She is honest about scientists not yet having a clear understanding of the field but also offers other examples in history where this was also true such as the concept of energy before it was well understood. Even today, research on genes and dark matter have yet to be understood fully but are making tremendous progress. I learned a great deal so far from this book and I look forward to the insight it has to offer in the remaining chapters.&lt;/p&gt;
+
+&lt;h1 id=&#34;parts-ii-and-iii&#34;&gt;Parts II and III&lt;/h1&gt;
+
+&lt;p&gt;Melanie Mitchell states that it is hypothesized that the balance between exploration and exploitation of information may serve as a general property of what are now called complex systems. Having read parts II and III of the book, it is evident that this idea could not have been developed without the use of computation, particularly self-replicating systems. Mitchell takes us deeper into the journey of complex systems and focuses on the connection between computation and living systems. From the fine details of a genetic algorithm to large-scope philosophical ideas, she provides different levels of abstraction allowing the reader to appreciate these topics from all angles. The historical account she gives of evolutionary computation reads as if she is alluding to the past and the future almost simultaneously &amp;mdash; she tells where the inspiration has come from and where it could lead.&lt;/p&gt;
+
+&lt;h3 id=&#34;self-replication&#34;&gt;Self Replication&lt;/h3&gt;
+
+&lt;p&gt;Part II begins with the idea of &lt;strong&gt;&lt;em&gt;what life is&lt;/em&gt;&lt;/strong&gt; and what are its properties. Mitchell explains how the idea of self-replicating artificial life is an old idea but continues to live on, even in our movies and artwork today. I thought this was a great introduction to the idea of evolutionary programming. The discussion leads to the idea of reproduction of computer systems that can, for example, print their own code. This is a novel idea on a fundamental level and a great zeroeth-order example to begin understanding its significance; but the fact that DNA, for example, can actually transcribe its own interpreter may provoke one to admit: some systems actually are &lt;em&gt;living&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;genetic-algorithms&#34;&gt;Genetic Algorithms&lt;/h3&gt;
+
+&lt;p&gt;I was inspired by the chapter on genetic algorithms to create my own program&amp;mdash;a simple program that evolves and learns to print the characters:
+&lt;strong&gt;ericpena&lt;/strong&gt;. Although a simple task for a computer to perform, it made apparent the power of this methodology to solve more complicated tasks. John von Neumann is essentially the person who established the idea of self-replicating machines in a tangible way. Although, he thought that replication was not enough as these systems also need to evolve, learn, and compete with one another to survive. It was John Holland that proposed the idea for genetic algorithms that was inspired by how nature evolves to find near-optimal solutions via natural selection. Mitchell gives a great example on how a genetic algorithm can help improve the performance of Robby, the Soda-Can-Collecting Robot. This chapter revealed the vast potential for genetic algorithms and how in many ways they are better than human-developed algorithms for various tasks. One particular discussion that stood out to me regarding Robby is the following: Robby&amp;rsquo;s success isn&amp;rsquo;t necessarily dependent on the individual, step-by-step decisions that Robby makes to collect cans but rather the aggregate of these steps that define a hollistic strategy, a rather successful strategy at that. Mitchell explains this by stating that it isn&amp;rsquo;t always individual genes at work but rather their interactions that produce results.&lt;/p&gt;
+
+&lt;h3 id=&#34;cellular-automata-and-the-nature-of-computability&#34;&gt;Cellular Automata and The Nature of Computability&lt;/h3&gt;
+
+&lt;p&gt;I have been enthralled by cellular automata ever since I first learned about them. In this chapter, Mitchell talks about how computation occurs in nature and what it even means for nature to &amp;ldquo;compute&amp;rdquo;. Similar to the way in which physicists simplify problems to gain understanding&amp;mdash;through frictionless slopes and spherical cows&amp;mdash;scientists have performed a simplification for computation in the form of cellular automata. Although the rules of a cell can be relatively simple, the interconnectedness of a grid of cells can produce complex behavior that can, at times, simulate natural processes such as forest fires, fire flies, and even neurons. The field of cellular automata seemed to have taken a life of its own. John von Neumann, who played a key role in creating cellular automata, proved that it is actually Turing Complete. John Conway&amp;rsquo;s Game of Life programs popularize the discipline even further especially when proving that his game is capable of simulating a universal computer. With the large number of configurations and possibilities, it may have been difficult to wrap one&amp;rsquo;s head around the innate behavior of this mechanism. It was Stephan Wolfram, who nothing short of genius, worked diligently and cleverly to classify the ways in which cellular automata can behave and what patterns it can exhibit. He created libraries of patterns for these things, particularly four classes, and became rather popular for his book on them, {\it A New Kind of Science}. I learned about Wolfram during my undergraduate program and used Mathematica for many of my homework problems&amp;mdash;although I had not read about his beliefs that Mitchell mentions in the reading. I found it interesting that Wolfram believes natural processes are intrinsically computable and can be explained in this way. While in physics, I conceded to the idea that nature is infinitely complex and our best hope in grasping it is to make very accurate approximations with efforts such as quantum mechanics or Einsteinian gravity. However, Mitchell explains that Wolfram believes that nothing can be more complex than a universal computer which forces an upper limit on the complexity that the universe can exhibit&amp;mdash;this is very interesting although I am not sure I agree completely given the unpredictability we read about earlier in the book, particularly in quantum mechanical phenomena. I was nevertheless fascinated by these ideas and will revisit them in the future.&lt;/p&gt;
+
+&lt;p&gt;A connection became apparent to me while reflecting on the chapters on genetic algorithms and cellular automata.  On one hand, many processes in nature consists of simple rules but large in number that coalesce into complex behavior. Cellular automata has this idea built into its very structure. In a way, we can say that the mechanism by which nature evolves and produces complexity is comparable to the way in which cellular automata does so. On the other hand, genetic algorithms were inspired by what occurs in nature, namely natural selection and evolution. I found it fascinating that nature utilizes general principles found in cellular automata and that genetic algorithms mimic what is done in nature. This further reinforces the link between computation and living systems.&lt;/p&gt;
+
+&lt;h3 id=&#34;information-processing&#34;&gt;Information Processing&lt;/h3&gt;
+
+&lt;p&gt;Mitchell guides the reader in understanding information processing particularly in living systems. I enjoyed how she uses different levels of programming, high level and machine language, to home in on the concept of abstraction. She mentions that it&amp;rsquo;s relatively easy to imagine how changes in high level code are translated into low level machine language since the tether between the two is tangible and somewhat predictable. She compares this to cellular automata where the ability to create a productive level of abstraction is not present. This is particular to cellular automata but I imagine that it is a limitation that can be applied to much of complex systems as a whole&amp;mdash;this is, creating a high level framework from which many applications can benefit from especially biological applications.
+The book wonderfully explains information processing both in terms of what information is and how it is processed. It accomplishes this with the help of three real-world examples: the immune system, ant colonies, and biological metabolism. One of my favorite parts&amp;mdash;which Mitchell believes is a quite profound idea&amp;mdash;is that on the {\it meaning} of information. We can think in terms of inputs and outputs but what does the information {\it mean} and what part of a system is doing this type of analysis? As Mitchell points out, this is particularly mysterious for systems with no central controller.&lt;/p&gt;
 </description>
     </item>
     
@@ -942,7 +966,11 @@ x[x &amp;gt; 2]
 
 &lt;h3 id=&#34;span-style-color-e74c3c-introduction-span-1&#34;&gt;&lt;span style=&#34;color:#E74C3C&#34;&gt;Introduction&lt;/span&gt;&lt;/h3&gt;
 
-&lt;p&gt;A matrix is essentially a vector with two attributes. All the columns in a matrix must have the same mode: &lt;em&gt;integer&lt;/em&gt;, &lt;em&gt;numeric&lt;/em&gt;, &lt;em&gt;character&lt;/em&gt;, &lt;em&gt;logical&lt;/em&gt;, &lt;em&gt;complex&lt;/em&gt;, etc. in the same way it does for a vector. Matricies are special cases of a more general R type of object: &lt;em&gt;arrays&lt;/em&gt; - which we will read about next. Arrays can be multidimensional. ### &lt;span style=&#34;color:#E74C3C&#34;&gt;Creation&lt;/span&gt; One way to create a matrix:&lt;/p&gt;
+&lt;p&gt;A matrix is essentially a vector with two attributes. All the columns in a matrix must have the same mode: &lt;em&gt;integer&lt;/em&gt;, &lt;em&gt;numeric&lt;/em&gt;, &lt;em&gt;character&lt;/em&gt;, &lt;em&gt;logical&lt;/em&gt;, &lt;em&gt;complex&lt;/em&gt;, etc. in the same way it does for a vector. Matricies are special cases of a more general R type of object: &lt;em&gt;arrays&lt;/em&gt; - which we will read about next. Arrays can be multidimensional.&lt;/p&gt;
+
+&lt;h3 id=&#34;span-style-color-e74c3c-creation-span-1&#34;&gt;&lt;span style=&#34;color:#E74C3C&#34;&gt;Creation&lt;/span&gt;&lt;/h3&gt;
+
+&lt;p&gt;One way to create a matrix:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;y &amp;lt;- matrix(c(1,2,3,4), nrow = 2, ncol = 2)
 &lt;/code&gt;&lt;/pre&gt;
@@ -1167,7 +1195,7 @@ x[j,]
 
 &lt;p&gt;List are unique in that not all elements have to be of the same mode. List structures can combine different types. An R list is similar to a Python dictionary or C struct. List form the foundation for data frames, object oriented programming (R classes), and more.&lt;/p&gt;
 
-&lt;h3 id=&#34;span-style-color-e74c3c-creation-span-1&#34;&gt;&lt;span style=&#34;color:#E74C3C&#34;&gt;Creation&lt;/span&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;span-style-color-e74c3c-creation-span-2&#34;&gt;&lt;span style=&#34;color:#E74C3C&#34;&gt;Creation&lt;/span&gt;&lt;/h3&gt;
 
 &lt;p&gt;If we wanted to create an employee database, we could start with:&lt;/p&gt;
 
@@ -1422,7 +1450,7 @@ a
 
 &lt;p&gt;Data frames are similar to a two dimensional matrix in that it contains rows and columns structure. However, data frame are heterogeneous; columns can be different modes. Technically, a data frame is a list whose components are equal-lengthed vectors as the columns of the data frame. Data frame are commonly used when doing data manipulation and other data analysis techniques in R.&lt;/p&gt;
 
-&lt;h3 id=&#34;span-style-color-e74c3c-creation-span-2&#34;&gt;&lt;span style=&#34;color:#E74C3C&#34;&gt;Creation&lt;/span&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;span-style-color-e74c3c-creation-span-3&#34;&gt;&lt;span style=&#34;color:#E74C3C&#34;&gt;Creation&lt;/span&gt;&lt;/h3&gt;
 
 &lt;p&gt;Creating a data frame from scratch:&lt;/p&gt;
 
@@ -1617,7 +1645,7 @@ head(cars)
 
 &lt;p&gt;The motivation for factors comes from the concept of categorical data in statistics. An R &lt;code&gt;factor&lt;/code&gt; may be viewed as a vector with more information added. The extra information consists of a record of the distinct values on that vector, called levels.&lt;/p&gt;
 
-&lt;h3 id=&#34;span-style-color-e74c3c-creation-span-3&#34;&gt;&lt;span style=&#34;color:#E74C3C&#34;&gt;Creation&lt;/span&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;span-style-color-e74c3c-creation-span-4&#34;&gt;&lt;span style=&#34;color:#E74C3C&#34;&gt;Creation&lt;/span&gt;&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;x &amp;lt;- c(5, 12, 13, 12)
 xf &amp;lt;- factor(x)
@@ -1693,7 +1721,7 @@ xff
 
 &lt;h3 id=&#34;span-style-color-e74c3c-introduction-span-6&#34;&gt;&lt;span style=&#34;color:#E74C3C&#34;&gt;Introduction&lt;/span&gt;&lt;/h3&gt;
 
-&lt;h3 id=&#34;span-style-color-e74c3c-creation-span-4&#34;&gt;&lt;span style=&#34;color:#E74C3C&#34;&gt;Creation&lt;/span&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;span-style-color-e74c3c-creation-span-5&#34;&gt;&lt;span style=&#34;color:#E74C3C&#34;&gt;Creation&lt;/span&gt;&lt;/h3&gt;
 
 &lt;h3 id=&#34;span-style-color-e74c3c-adding-element-span-4&#34;&gt;&lt;span style=&#34;color:#E74C3C&#34;&gt;Adding Element&lt;/span&gt;&lt;/h3&gt;
 

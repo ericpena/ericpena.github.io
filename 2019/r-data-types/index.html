@@ -51,7 +51,7 @@
   },
   "genre": "posts",
   "keywords": "R Programming, Programming, Reference",
-  "wordcount": 2456,
+  "wordcount": 2455,
   "url": "https://ericpena.github.io/2019/r-data-types/",
   "datePublished": "2019-03-04T00:00:00+00:00",
   "dateModified": "2019-03-04T00:00:00+00:00",
@@ -301,7 +301,11 @@ x[x &gt; 2]
 
 <h3 id="span-style-color-e74c3c-introduction-span-1"><span style="color:#E74C3C">Introduction</span></h3>
 
-<p>A matrix is essentially a vector with two attributes. All the columns in a matrix must have the same mode: <em>integer</em>, <em>numeric</em>, <em>character</em>, <em>logical</em>, <em>complex</em>, etc. in the same way it does for a vector. Matricies are special cases of a more general R type of object: <em>arrays</em> - which we will read about next. Arrays can be multidimensional. ### <span style="color:#E74C3C">Creation</span> One way to create a matrix:</p>
+<p>A matrix is essentially a vector with two attributes. All the columns in a matrix must have the same mode: <em>integer</em>, <em>numeric</em>, <em>character</em>, <em>logical</em>, <em>complex</em>, etc. in the same way it does for a vector. Matricies are special cases of a more general R type of object: <em>arrays</em> - which we will read about next. Arrays can be multidimensional.</p>
+
+<h3 id="span-style-color-e74c3c-creation-span-1"><span style="color:#E74C3C">Creation</span></h3>
+
+<p>One way to create a matrix:</p>
 
 <pre><code class="language-r">y &lt;- matrix(c(1,2,3,4), nrow = 2, ncol = 2)
 </code></pre>
@@ -526,7 +530,7 @@ x[j,]
 
 <p>List are unique in that not all elements have to be of the same mode. List structures can combine different types. An R list is similar to a Python dictionary or C struct. List form the foundation for data frames, object oriented programming (R classes), and more.</p>
 
-<h3 id="span-style-color-e74c3c-creation-span-1"><span style="color:#E74C3C">Creation</span></h3>
+<h3 id="span-style-color-e74c3c-creation-span-2"><span style="color:#E74C3C">Creation</span></h3>
 
 <p>If we wanted to create an employee database, we could start with:</p>
 
@@ -781,7 +785,7 @@ a
 
 <p>Data frames are similar to a two dimensional matrix in that it contains rows and columns structure. However, data frame are heterogeneous; columns can be different modes. Technically, a data frame is a list whose components are equal-lengthed vectors as the columns of the data frame. Data frame are commonly used when doing data manipulation and other data analysis techniques in R.</p>
 
-<h3 id="span-style-color-e74c3c-creation-span-2"><span style="color:#E74C3C">Creation</span></h3>
+<h3 id="span-style-color-e74c3c-creation-span-3"><span style="color:#E74C3C">Creation</span></h3>
 
 <p>Creating a data frame from scratch:</p>
 
@@ -976,7 +980,7 @@ head(cars)
 
 <p>The motivation for factors comes from the concept of categorical data in statistics. An R <code>factor</code> may be viewed as a vector with more information added. The extra information consists of a record of the distinct values on that vector, called levels.</p>
 
-<h3 id="span-style-color-e74c3c-creation-span-3"><span style="color:#E74C3C">Creation</span></h3>
+<h3 id="span-style-color-e74c3c-creation-span-4"><span style="color:#E74C3C">Creation</span></h3>
 
 <pre><code class="language-r">x &lt;- c(5, 12, 13, 12)
 xf &lt;- factor(x)
@@ -1052,7 +1056,7 @@ xff
 
 <h3 id="span-style-color-e74c3c-introduction-span-6"><span style="color:#E74C3C">Introduction</span></h3>
 
-<h3 id="span-style-color-e74c3c-creation-span-4"><span style="color:#E74C3C">Creation</span></h3>
+<h3 id="span-style-color-e74c3c-creation-span-5"><span style="color:#E74C3C">Creation</span></h3>
 
 <h3 id="span-style-color-e74c3c-adding-element-span-4"><span style="color:#E74C3C">Adding Element</span></h3>
 
@@ -1076,7 +1080,7 @@ xff
            
             <p class="copyright-item">
                     <span>:</span>
-                   <span>2456</span>
+                   <span>2455</span>
             </p>
 
              

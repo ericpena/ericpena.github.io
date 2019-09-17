@@ -51,7 +51,7 @@
   },
   "genre": "posts",
   "keywords": "Networks, Mathematics, Complex Systems",
-  "wordcount": 1200,
+  "wordcount": 2433,
   "url": "https://ericpena.github.io/2019/complexity-reflection-1/",
   "datePublished": "2019-08-26T00:00:00+00:00",
   "dateModified": "2019-08-26T00:00:00+00:00",
@@ -137,7 +137,7 @@
                         <a href="https://ericpena.github.io/categories/complex-systems/"> Complex Systems </a>
                         
                 </span>
-                &nbsp;&nbsp;6 min
+                &nbsp;&nbsp;12 min
         </div>
     </header>
     <div class="post-content">
@@ -181,6 +181,30 @@ David Hilbert&rsquo;s provocative questions for the mathematics community challe
 
 <p>Dr. Mitchell is not only able to clearly explain a topic as abstruse as complex theory, she does so to a general audience without inundating the reader with technical jargon. Since there is not a definition of complexity that the scientific community can agree on, Mitchell offers some thoughts about possible ways that complexity could be defined. She is again very candid about the limitations of these definitions and explains why they would not hold up in isolation. All throughout Part I, she keeps the theme of being informative, honest, and motivating. She is honest about scientists not yet having a clear understanding of the field but also offers other examples in history where this was also true such as the concept of energy before it was well understood. Even today, research on genes and dark matter have yet to be understood fully but are making tremendous progress. I learned a great deal so far from this book and I look forward to the insight it has to offer in the remaining chapters.</p>
 
+<h1 id="parts-ii-and-iii">Parts II and III</h1>
+
+<p>Melanie Mitchell states that it is hypothesized that the balance between exploration and exploitation of information may serve as a general property of what are now called complex systems. Having read parts II and III of the book, it is evident that this idea could not have been developed without the use of computation, particularly self-replicating systems. Mitchell takes us deeper into the journey of complex systems and focuses on the connection between computation and living systems. From the fine details of a genetic algorithm to large-scope philosophical ideas, she provides different levels of abstraction allowing the reader to appreciate these topics from all angles. The historical account she gives of evolutionary computation reads as if she is alluding to the past and the future almost simultaneously &mdash; she tells where the inspiration has come from and where it could lead.</p>
+
+<h3 id="self-replication">Self Replication</h3>
+
+<p>Part II begins with the idea of <strong><em>what life is</em></strong> and what are its properties. Mitchell explains how the idea of self-replicating artificial life is an old idea but continues to live on, even in our movies and artwork today. I thought this was a great introduction to the idea of evolutionary programming. The discussion leads to the idea of reproduction of computer systems that can, for example, print their own code. This is a novel idea on a fundamental level and a great zeroeth-order example to begin understanding its significance; but the fact that DNA, for example, can actually transcribe its own interpreter may provoke one to admit: some systems actually are <em>living</em>.</p>
+
+<h3 id="genetic-algorithms">Genetic Algorithms</h3>
+
+<p>I was inspired by the chapter on genetic algorithms to create my own program&mdash;a simple program that evolves and learns to print the characters:
+<strong>ericpena</strong>. Although a simple task for a computer to perform, it made apparent the power of this methodology to solve more complicated tasks. John von Neumann is essentially the person who established the idea of self-replicating machines in a tangible way. Although, he thought that replication was not enough as these systems also need to evolve, learn, and compete with one another to survive. It was John Holland that proposed the idea for genetic algorithms that was inspired by how nature evolves to find near-optimal solutions via natural selection. Mitchell gives a great example on how a genetic algorithm can help improve the performance of Robby, the Soda-Can-Collecting Robot. This chapter revealed the vast potential for genetic algorithms and how in many ways they are better than human-developed algorithms for various tasks. One particular discussion that stood out to me regarding Robby is the following: Robby&rsquo;s success isn&rsquo;t necessarily dependent on the individual, step-by-step decisions that Robby makes to collect cans but rather the aggregate of these steps that define a hollistic strategy, a rather successful strategy at that. Mitchell explains this by stating that it isn&rsquo;t always individual genes at work but rather their interactions that produce results.</p>
+
+<h3 id="cellular-automata-and-the-nature-of-computability">Cellular Automata and The Nature of Computability</h3>
+
+<p>I have been enthralled by cellular automata ever since I first learned about them. In this chapter, Mitchell talks about how computation occurs in nature and what it even means for nature to &ldquo;compute&rdquo;. Similar to the way in which physicists simplify problems to gain understanding&mdash;through frictionless slopes and spherical cows&mdash;scientists have performed a simplification for computation in the form of cellular automata. Although the rules of a cell can be relatively simple, the interconnectedness of a grid of cells can produce complex behavior that can, at times, simulate natural processes such as forest fires, fire flies, and even neurons. The field of cellular automata seemed to have taken a life of its own. John von Neumann, who played a key role in creating cellular automata, proved that it is actually Turing Complete. John Conway&rsquo;s Game of Life programs popularize the discipline even further especially when proving that his game is capable of simulating a universal computer. With the large number of configurations and possibilities, it may have been difficult to wrap one&rsquo;s head around the innate behavior of this mechanism. It was Stephan Wolfram, who nothing short of genius, worked diligently and cleverly to classify the ways in which cellular automata can behave and what patterns it can exhibit. He created libraries of patterns for these things, particularly four classes, and became rather popular for his book on them, {\it A New Kind of Science}. I learned about Wolfram during my undergraduate program and used Mathematica for many of my homework problems&mdash;although I had not read about his beliefs that Mitchell mentions in the reading. I found it interesting that Wolfram believes natural processes are intrinsically computable and can be explained in this way. While in physics, I conceded to the idea that nature is infinitely complex and our best hope in grasping it is to make very accurate approximations with efforts such as quantum mechanics or Einsteinian gravity. However, Mitchell explains that Wolfram believes that nothing can be more complex than a universal computer which forces an upper limit on the complexity that the universe can exhibit&mdash;this is very interesting although I am not sure I agree completely given the unpredictability we read about earlier in the book, particularly in quantum mechanical phenomena. I was nevertheless fascinated by these ideas and will revisit them in the future.</p>
+
+<p>A connection became apparent to me while reflecting on the chapters on genetic algorithms and cellular automata.  On one hand, many processes in nature consists of simple rules but large in number that coalesce into complex behavior. Cellular automata has this idea built into its very structure. In a way, we can say that the mechanism by which nature evolves and produces complexity is comparable to the way in which cellular automata does so. On the other hand, genetic algorithms were inspired by what occurs in nature, namely natural selection and evolution. I found it fascinating that nature utilizes general principles found in cellular automata and that genetic algorithms mimic what is done in nature. This further reinforces the link between computation and living systems.</p>
+
+<h3 id="information-processing">Information Processing</h3>
+
+<p>Mitchell guides the reader in understanding information processing particularly in living systems. I enjoyed how she uses different levels of programming, high level and machine language, to home in on the concept of abstraction. She mentions that it&rsquo;s relatively easy to imagine how changes in high level code are translated into low level machine language since the tether between the two is tangible and somewhat predictable. She compares this to cellular automata where the ability to create a productive level of abstraction is not present. This is particular to cellular automata but I imagine that it is a limitation that can be applied to much of complex systems as a whole&mdash;this is, creating a high level framework from which many applications can benefit from especially biological applications.
+The book wonderfully explains information processing both in terms of what information is and how it is processed. It accomplishes this with the help of three real-world examples: the immune system, ant colonies, and biological metabolism. One of my favorite parts&mdash;which Mitchell believes is a quite profound idea&mdash;is that on the {\it meaning} of information. We can think in terms of inputs and outputs but what does the information {\it mean} and what part of a system is doing this type of analysis? As Mitchell points out, this is particularly mysterious for systems with no central controller.</p>
+
     </div>
 
     <div class="post-copyright">
@@ -193,7 +217,7 @@ David Hilbert&rsquo;s provocative questions for the mathematics community challe
            
             <p class="copyright-item">
                     <span>:</span>
-                   <span>1200</span>
+                   <span>2433</span>
             </p>
 
              
