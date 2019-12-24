@@ -6,10 +6,19 @@
     <description>Recent content in Simulation on Eric Peña</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ericpena.github.io/tags/simulation/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Genetic Algorithm — Cellular Automata Optimization</title>
+      <link>https://ericpena.github.io/2019/ga-liso/</link>
+      <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/2019/ga-liso/</guid>
+      <description>Abstract The mechanism by which nature exhibits emergent patterns and behaviors has been a mystery throughout history. One application that has been developed which tends to mimic nature is Conway’s Game of Life — an application in the field of cellular automata. The ability to predict a final state of a system, given an initial state in the context of Game of Life, come as an insurmountable task. In this work, genetic algorithms are explored along with how they may be used to search for initial conditions such that their final outcomes are optimal.</description>
+    </item>
     
     <item>
       <title>First Genetic Algorithm — Prints: ericpena</title>
@@ -22,10 +31,10 @@
     
     <item>
       <title>War — Coding a Card Game</title>
-      <link>https://ericpena.github.io/2019/war/</link>
+      <link>https://ericpena.github.io/2019/war-2/</link>
       <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ericpena.github.io/2019/war/</guid>
+      <guid>https://ericpena.github.io/2019/war-2/</guid>
       <description>War Simulation in Python Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. I chose to program this game because its complete random chance feature. It was an opportunity to practice python and writing recursive functions. The objective of the game is to win all cards. A 52-card deck is divided evenly among the players, giving each a down stack.</description>
     </item>
     

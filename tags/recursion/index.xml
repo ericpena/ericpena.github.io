@@ -13,10 +13,10 @@
     
     <item>
       <title>War — Coding a Card Game</title>
-      <link>https://ericpena.github.io/2019/war/</link>
+      <link>https://ericpena.github.io/2019/war-2/</link>
       <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ericpena.github.io/2019/war/</guid>
+      <guid>https://ericpena.github.io/2019/war-2/</guid>
       <description>War Simulation in Python Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. I chose to program this game because its complete random chance feature. It was an opportunity to practice python and writing recursive functions. The objective of the game is to win all cards. A 52-card deck is divided evenly among the players, giving each a down stack.</description>
     </item>
     

@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noodp"/>
   
-  <link rel="prev" href="https://ericpena.github.io/2019/complexity-reflection-1/" />
-  <link rel="next" href="https://ericpena.github.io/2019/ga-liso/" />
-  <link rel="canonical" href="https://ericpena.github.io/2019/ga-intro/" />
+  <link rel="prev" href="https://ericpena.github.io/2019/ga-intro/" />
+  <link rel="next" href="https://ericpena.github.io/2019/threshold-network/" />
+  <link rel="canonical" href="https://ericpena.github.io/2019/ga-liso/" />
   <link rel='shortcut icon' type='image/x-icon' href='/favicon/favicon.ico' />
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -20,10 +20,10 @@
   <title>
        
        
-           First Genetic Algorithm — Prints: ericpena | Eric Peña
+           Genetic Algorithm — Cellular Automata Optimization | Eric Peña
        
   </title>
-  <meta name="title" content="First Genetic Algorithm — Prints: ericpena | Eric Peña">
+  <meta name="title" content="Genetic Algorithm — Cellular Automata Optimization | Eric Peña">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -31,17 +31,17 @@
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="First Genetic Algorithm — Prints: ericpena"/>
-<meta name="twitter:description" content="Using genetic algorithm to print my name"/>
+<meta name="twitter:title" content="Genetic Algorithm — Cellular Automata Optimization"/>
+<meta name="twitter:description" content="Using genetic algorithm to optimize initial states"/>
 
   <script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "First Genetic Algorithm — Prints: ericpena",
+  "headline": "Genetic Algorithm — Cellular Automata Optimization",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ericpena.github.io/2019/ga-intro/"
+    "@id": "https://ericpena.github.io/2019/ga-liso/"
   },
   "image": {
     "@type": "ImageObject",
@@ -50,11 +50,11 @@
     "height": 600
   },
   "genre": "posts",
-  "keywords": "Python, Programming, Function, Simulation, Genetic Algorithm",
-  "wordcount": 238,
-  "url": "https://ericpena.github.io/2019/ga-intro/",
-  "datePublished": "2019-09-09T00:00:00+00:00",
-  "dateModified": "2019-09-09T00:00:00+00:00",
+  "keywords": "Python, Programming, Simulation, Genetic Algorithm",
+  "wordcount": 643,
+  "url": "https://ericpena.github.io/2019/ga-liso/",
+  "datePublished": "2019-12-01T00:00:00+00:00",
+  "dateModified": "2019-12-01T00:00:00+00:00",
   
   "publisher": {
     "@type": "Organization",
@@ -70,7 +70,7 @@
     "@type": "Person",
     "name": "Fastbyte01"
   },
-  "description": "Using genetic algorithm to print my name"
+  "description": "Using genetic algorithm to optimize initial states"
 }
 </script>
 
@@ -125,11 +125,11 @@
       		
 <article class="post-warp">
     <header class="post-header">
-        <h1 class="post-title">First Genetic Algorithm — Prints: ericpena</h1>
+        <h1 class="post-title">Genetic Algorithm — Cellular Automata Optimization</h1>
         <div class="post-meta">
               <a href="https://ericpena.github.io" rel="author">Eric Peña</a>  ♥ 
                 <span class="post-time">
-                     <time datetime=2019-09-09 >9 September 2019</time>
+                     <time datetime=2019-12-01 >1 December 2019</time>
                 </span>
                 
                 <i class="iconfont icon-folder"></i>
@@ -138,12 +138,14 @@
                         <a href="https://ericpena.github.io/categories/complex-systems/"> Complex Systems </a>
                         
                 </span>
-                &nbsp;&nbsp;2 min
+                &nbsp;&nbsp;4 min
         </div>
     </header>
     <div class="post-content">
         
 
+        
+            
         
 
         
@@ -159,116 +161,31 @@
 
           
 
-<h1 id="components-of-a-genetic-algorithm">Components of a Genetic Algorithm:</h1>
+<h1 id="abstract">Abstract</h1>
 
-<h1 id="the-genetic-algorithm-code-written-in-python">The Genetic Algorithm Code Written in Python:</h1>
+<p>The mechanism by which nature exhibits emergent patterns and behaviors has been a mystery throughout history. One application that has been developed which tends to mimic nature is Conway’s Game of Life — an application in the field of cellular automata. The ability to predict a final state of a system, given an initial state in the context of Game of Life, come as an insurmountable task. In this work, genetic algorithms are explored along with how they may be used to search for initial conditions such that their final outcomes are optimal. Optimal final states may be defined in terms of growth, diversity, and density of the cellular automaton evolution. This may be beneficial in exploring the way in which coupled components interact in mathematical and physical systems.</p>
 
-<pre><code class="language-python">from fuzzywuzzy import fuzz
-import random
-import string
+<h1 id="motivation">Motivation</h1>
 
-class Agent:
+<p>Many will claim that the ultimate objective of science is to understand and model the natural world. There are many phenomena in nature whose patterns and behavior seem somewhat unpredictable yet these resulting patterns appear highly structured and organized. Scientists and mathematicians have developed techniques such as chaos theory and cellular automata for the attempt to model nature in its truest sense. In this paper we will take an approach to understand how structure stems from randomness in a cellular automata model. A cellular automaton is defined in terms of clear rules on each individual cell and its well defined neighborhood of cells that surround it. We will go into detail as to what this means in later chapters but let us begin by thinking about a two dimensional grid of cells that are all identical. We can even analogize this to a simple universe of people who are all the same and only know how to do the same task: become alive or die. Whether they become alive or die depends on the number of people around them who are either alive or dead given clear, unambiguous rules. Every person in this universe obeys the same universal laws—namely, in this context, the cellular automata rules. Given a clear and finite set of cellular automata rules and given a defined initial state, we can compute the state of a future grid—this will tell us which cells are alive and which are dead, after applying the rules onto the grid some predefined number n times. The defined cellular automata rules used in this report are those defined by Conway’s Game of Life. The well defined rules for Conway’s Game of Life will be explained in section 2.2.</p>
 
-	def __init__(self, length):
+<h1 id="thesis-objective">Thesis Objective</h1>
 
-		# Initialize a new agent
-		self.string = ''.join(random.choice(string.ascii_letters) for _ in range(length))
-		self.fitness = -1
+<p>The objective of this project is to understand which initial conditions (initial states), given a set of welldefined cellular automata rules, produce the most optimized final states after n iterations of applying these rules. The variable being optimized is the fitness value where fitness is defined in terms of what I call growth, diversity, and density of the final state grids. These three terms and how they relate to this specific application are further explained in section 4.4. To make the objective clear, I will state it here and repeat it throughout the report to make sure we are on track with achieving it.</p>
 
-	def __str__(self):
+<blockquote>
+<p>OBJECTIVE: Given well-defined cellular automata rules defined by Conway’s Game of Life, determine an initial state that produces an optimal final state in terms of growth, diversity, and density after a finite number of iterations.</p>
+</blockquote>
 
-		return 'String: ' + str(self.string) + ' Fitness: ' + str(self.fitness)
+<h1 id="thesis-outline">Thesis Outline</h1>
 
-in_str = None
-in_str_len = None
-population = 20
-generations = 5000
+<p>The report is organized in chapters that describe the major components of this project. The topics covered are the background of the application (Chapter 2), an overview of the genetic algorithms and how they are used to optimize initial states (Chapter 3), the details of the genetic algorithm implementation (Chapter 4), a description of the results (Chapter 5), and a few concluding thoughts and considerations for improvements and future work (Chapter 6).</p>
 
-# All the code to evolve
-def ga():
-	
-	agents = init_agents(population, in_str_len)
+<h1 id="the-report">The Report</h1>
 
-	for generation in range(generations):
+<p><center>Click the icon below to read the full report.</center></p>
 
-		print('Generation: ' + str(generation))
-
-		agents = fitness(agents)
-		agents = selection(agents)
-		agents = crossover(agents)
-		agents = mutation(agents)
-
-		if any(agent.fitness &gt;= 90 for agent in agents):
-
-			print('Threshold met!')
-			exit(0)
-
-def init_agents(population, length):
-
-	return [Agent(length) for _ in range(population)]
-
-def fitness(agents):
-
-	for agent in agents:
-
-		agent.fitness = fuzz.ratio(agent.string, in_str)
-
-	return agents
-
-def selection(agents):
-
-	agents = sorted(agents, key=lambda agent: agent.fitness, reverse=True)
-	# agents.sort(key=lambda agent: agent.fitness, reverse=True)
-	print('\n'.join(map(str, agents)))
-	agents = agents[:int(0.2 * len(agents))]
-
-	return agents
-
-def crossover(agents):
-
-	offspring = []
-
-	for _ in range(int((population - len(agents)) / 2)):
-
-		parent1 = random.choice(agents)
-		parent2 = random.choice(agents)
-		child1 = Agent(in_str_len)
-		child2 = Agent(in_str_len)
-		split = random.randint(0, in_str_len)
-		child1.string = parent1.string[0:split] + parent2.string[split:in_str_len]
-		child2.string = parent2.string[0:split] + parent1.string[split:in_str_len]
-
-		offspring.append(child1)
-		offspring.append(child2)
-
-	agents.extend(offspring)
-
-	return agents
-
-def mutation(agents):
-
-	for agent in agents:
-
-		for idx, param in enumerate(agent.string):
-
-			if random.uniform(0.0, 1.0) &lt;= 0.1:
-
-				agent.string = agent.string[0:idx] + \
-					random.choice(string.ascii_letters) + \
-					agent.string[idx + 1:in_str_len]
-
-	return agents
-
-if __name__ == '__main__':
-	
-	in_str = 'ericpena'
-	in_str_len = len(in_str)
-	ga()
-</code></pre>
-
-<h1 id="results">Results</h1>
-
-<p>&hellip;</p>
+<p><a href="/pdf/LISO_Project.pdf" class="image fit"><img src="/pdf/pdf.png" alt="" height="100" width="100"></a></p>
 
     </div>
 
@@ -282,7 +199,7 @@ if __name__ == '__main__':
            
             <p class="copyright-item">
                     <span>:</span>
-                   <span>238</span>
+                   <span>643</span>
             </p>
 
              
@@ -304,9 +221,6 @@ if __name__ == '__main__':
             <span class="tag"><a href="https://ericpena.github.io/tags/programming/">
                     #Programming</a></span>
             
-            <span class="tag"><a href="https://ericpena.github.io/tags/function/">
-                    #Function</a></span>
-            
             <span class="tag"><a href="https://ericpena.github.io/tags/simulation/">
                     #Simulation</a></span>
             
@@ -323,10 +237,10 @@ if __name__ == '__main__':
 
     <div class="post-nav">
         
-        <a href="https://ericpena.github.io/2019/complexity-reflection-1/" class="prev" rel="prev" title="Complexity — A Guided Tour Reflection"><i class="iconfont icon-dajiantou"></i>&nbsp;Complexity — A Guided Tour Reflection</a>
+        <a href="https://ericpena.github.io/2019/ga-intro/" class="prev" rel="prev" title="First Genetic Algorithm — Prints: ericpena"><i class="iconfont icon-dajiantou"></i>&nbsp;First Genetic Algorithm — Prints: ericpena</a>
          
         
-        <a href="https://ericpena.github.io/2019/ga-liso/" class="next" rel="next" title="Genetic Algorithm — Cellular Automata Optimization">Genetic Algorithm — Cellular Automata Optimization&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        <a href="https://ericpena.github.io/2019/threshold-network/" class="next" rel="next" title="Diversity in Threshold Linear Networks">Diversity in Threshold Linear Networks&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
         
     </div>
 
@@ -386,8 +300,9 @@ if __name__ == '__main__':
 
 
     
-    
-    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
     
   
 

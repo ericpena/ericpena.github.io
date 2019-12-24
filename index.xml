@@ -6,8 +6,54 @@
     <description>Recent content in Eric Peña on Eric Peña</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Dec 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Diversity in Threshold Linear Networks</title>
+      <link>https://ericpena.github.io/2019/threshold-network/</link>
+      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/2019/threshold-network/</guid>
+      <description>&lt;div&gt;$$\frac{d x_i}{dt} = -x_i + \left[ \sum_{j=1}^{n} W_{ij} x_j + \theta \right]_+ i = 1, \ldots, n$$&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Genetic Algorithm — Cellular Automata Optimization</title>
+      <link>https://ericpena.github.io/2019/ga-liso/</link>
+      <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/2019/ga-liso/</guid>
+      <description>
+
+&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+
+&lt;p&gt;The mechanism by which nature exhibits emergent patterns and behaviors has been a mystery throughout history. One application that has been developed which tends to mimic nature is Conway’s Game of Life — an application in the field of cellular automata. The ability to predict a final state of a system, given an initial state in the context of Game of Life, come as an insurmountable task. In this work, genetic algorithms are explored along with how they may be used to search for initial conditions such that their final outcomes are optimal. Optimal final states may be defined in terms of growth, diversity, and density of the cellular automaton evolution. This may be beneficial in exploring the way in which coupled components interact in mathematical and physical systems.&lt;/p&gt;
+
+&lt;h1 id=&#34;motivation&#34;&gt;Motivation&lt;/h1&gt;
+
+&lt;p&gt;Many will claim that the ultimate objective of science is to understand and model the natural world. There are many phenomena in nature whose patterns and behavior seem somewhat unpredictable yet these resulting patterns appear highly structured and organized. Scientists and mathematicians have developed techniques such as chaos theory and cellular automata for the attempt to model nature in its truest sense. In this paper we will take an approach to understand how structure stems from randomness in a cellular automata model. A cellular automaton is defined in terms of clear rules on each individual cell and its well defined neighborhood of cells that surround it. We will go into detail as to what this means in later chapters but let us begin by thinking about a two dimensional grid of cells that are all identical. We can even analogize this to a simple universe of people who are all the same and only know how to do the same task: become alive or die. Whether they become alive or die depends on the number of people around them who are either alive or dead given clear, unambiguous rules. Every person in this universe obeys the same universal laws—namely, in this context, the cellular automata rules. Given a clear and finite set of cellular automata rules and given a defined initial state, we can compute the state of a future grid—this will tell us which cells are alive and which are dead, after applying the rules onto the grid some predefined number n times. The defined cellular automata rules used in this report are those defined by Conway’s Game of Life. The well defined rules for Conway’s Game of Life will be explained in section 2.2.&lt;/p&gt;
+
+&lt;h1 id=&#34;thesis-objective&#34;&gt;Thesis Objective&lt;/h1&gt;
+
+&lt;p&gt;The objective of this project is to understand which initial conditions (initial states), given a set of welldefined cellular automata rules, produce the most optimized final states after n iterations of applying these rules. The variable being optimized is the fitness value where fitness is defined in terms of what I call growth, diversity, and density of the final state grids. These three terms and how they relate to this specific application are further explained in section 4.4. To make the objective clear, I will state it here and repeat it throughout the report to make sure we are on track with achieving it.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;OBJECTIVE: Given well-defined cellular automata rules defined by Conway’s Game of Life, determine an initial state that produces an optimal final state in terms of growth, diversity, and density after a finite number of iterations.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;thesis-outline&#34;&gt;Thesis Outline&lt;/h1&gt;
+
+&lt;p&gt;The report is organized in chapters that describe the major components of this project. The topics covered are the background of the application (Chapter 2), an overview of the genetic algorithms and how they are used to optimize initial states (Chapter 3), the details of the genetic algorithm implementation (Chapter 4), a description of the results (Chapter 5), and a few concluding thoughts and considerations for improvements and future work (Chapter 6).&lt;/p&gt;
+
+&lt;h1 id=&#34;the-report&#34;&gt;The Report&lt;/h1&gt;
+
+&lt;p&gt;&lt;center&gt;Click the icon below to read the full report.&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://ericpena.github.io/pdf/LISO_Project.pdf&#34; class=&#34;image fit&#34;&gt;&lt;img src=&#34;https://ericpena.github.io/pdf/pdf.png&#34; alt=&#34;&#34; height=&#34;100&#34; width=&#34;100&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>First Genetic Algorithm — Prints: ericpena</title>
@@ -535,10 +581,10 @@ $$\alpha(\vec{v} + \vec{w}) = \alpha(\vec{v}) + \alpha(\vec{w})$$&lt;/p&gt;
     
     <item>
       <title>War — Coding a Card Game</title>
-      <link>https://ericpena.github.io/2019/war/</link>
+      <link>https://ericpena.github.io/2019/war-2/</link>
       <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ericpena.github.io/2019/war/</guid>
+      <guid>https://ericpena.github.io/2019/war-2/</guid>
       <description>
 
 &lt;h1 id=&#34;war-simulation-in-python&#34;&gt;War Simulation in Python&lt;/h1&gt;
@@ -817,10 +863,10 @@ plt.show()
     
     <item>
       <title>R Data Types</title>
-      <link>https://ericpena.github.io/2019/r-data-types/</link>
+      <link>https://ericpena.github.io/2019/r-data-types-2/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ericpena.github.io/2019/r-data-types/</guid>
+      <guid>https://ericpena.github.io/2019/r-data-types-2/</guid>
       <description>
 
 &lt;h1 id=&#34;truth-is-ever-to-be-found-in-simplicity-and-not-in-the-multiplicity-and-confusion-of-things-br-isaac-newton&#34;&gt;&amp;ldquo;Truth is ever to be found in simplicity, and not in the multiplicity and confusion of things.&amp;rdquo;&lt;br&gt;Isaac Newton&lt;/h1&gt;
