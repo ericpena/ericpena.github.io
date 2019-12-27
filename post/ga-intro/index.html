@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Clifford D. Clark Fellow --- State University of New York">
+  <meta name="description" content="Introduction to Genetic Algorithms --- program that finds optimal text value">
 
   
-  <link rel="alternate" hreflang="en-us" href="/categories/posts/">
+  <link rel="alternate" hreflang="en-us" href="/post/ga-intro/">
 
   
 
@@ -206,49 +206,100 @@
 
 
   
-  <link rel="alternate" href="/categories/posts/index.xml" type="application/rss+xml" title="ERIC PEÑA">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/categories/posts/">
+  <link rel="canonical" href="/post/ga-intro/">
 
   
   
   
   
     
-    
   
   
-  <meta property="twitter:card" content="summary">
+  <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="ERIC PEÑA">
-  <meta property="og:url" content="/categories/posts/">
-  <meta property="og:title" content="Posts | ERIC PEÑA">
-  <meta property="og:description" content="Clifford D. Clark Fellow --- State University of New York"><meta property="og:image" content="/img/icon-192.png">
-  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  <meta property="og:url" content="/post/ga-intro/">
+  <meta property="og:title" content="First Genetic Algorithm | ERIC PEÑA">
+  <meta property="og:description" content="Introduction to Genetic Algorithms --- program that finds optimal text value"><meta property="og:image" content="/post/ga-intro/featured.png">
+  <meta property="twitter:image" content="/post/ga-intro/featured.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2019-12-01T00:00:00&#43;00:00">
+    
+      <meta property="article:published_time" content="2019-09-09T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2019-09-09T00:00:00&#43;00:00">
   
-
-  
-
-
-
 
   
 
 
+    
+
+
+
+
+
+
   
 
 
 
 
 
-  <title>Posts | ERIC PEÑA</title>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/ga-intro/"
+  },
+  "headline": "First Genetic Algorithm",
+  
+  "image": [
+    "/post/ga-intro/featured.png"
+  ],
+  
+  "datePublished": "2019-09-09T00:00:00Z",
+  "dateModified": "2019-09-09T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Eric Peña"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "ERIC PEÑA",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/img/icon-512.png"
+    }
+  },
+  "description": "Introduction to Genetic Algorithms --- program that finds optimal text value"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>First Genetic Algorithm | ERIC PEÑA</title>
 
 </head>
 
@@ -541,6 +592,95 @@
 </nav>
 
 
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>First Genetic Algorithm</h1>
+
+  
+  <p class="page-subtitle">PRINTS: <code>ericpena</code></p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  
+  <span><a href="/authors/admin/">Eric Peña</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Sep 9, 2019
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    2 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categories/posts/">Posts</a></span>
+  
+
+</div>
+
   
 
 
@@ -554,59 +694,356 @@
 
 
 
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 720px;">
+  <div style="position: relative">
+    <img src="/post/ga-intro/featured_hu0fe93707d3b9713f98dce01aff1f81fb_16656_720x0_resize_lanczos_2.png" alt="" class="featured-image">
+    <span class="article-header-caption">Image credit: <a href="http://www.neolightdesign.com/st-regis-saadiyat"><strong>Optimization</strong></a></span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h1 id="components-of-a-genetic-algorithm">Components of a Genetic Algorithm</h1>
+<h1 id="genetic-algorithm-written-in-python">Genetic Algorithm Written in Python</h1>
+<pre><code class="language-python">from fuzzywuzzy import fuzz
+import random
+import string
+
+class Agent:
+
+	def __init__(self, length):
+
+		# Initialize a new agent
+		self.string = ''.join(random.choice(string.ascii_letters) for _ in range(length))
+		self.fitness = -1
+
+	def __str__(self):
+
+		return 'String: ' + str(self.string) + ' Fitness: ' + str(self.fitness)
+
+in_str = None
+in_str_len = None
+population = 20
+generations = 5000
+
+# All the code to evolve
+def ga():
+	
+	agents = init_agents(population, in_str_len)
+
+	for generation in range(generations):
+
+		print('Generation: ' + str(generation))
+
+		agents = fitness(agents)
+		agents = selection(agents)
+		agents = crossover(agents)
+		agents = mutation(agents)
+
+		if any(agent.fitness &gt;= 90 for agent in agents):
+
+			print('Threshold met!')
+			exit(0)
+
+def init_agents(population, length):
+
+	return [Agent(length) for _ in range(population)]
+
+def fitness(agents):
+
+	for agent in agents:
+
+		agent.fitness = fuzz.ratio(agent.string, in_str)
+
+	return agents
+
+def selection(agents):
+
+	agents = sorted(agents, key=lambda agent: agent.fitness, reverse=True)
+	print('\n'.join(map(str, agents)))
+	agents = agents[:int(0.2 * len(agents))]
+
+	return agents
+
+def crossover(agents):
+
+	offspring = []
+
+	for _ in range(int((population - len(agents)) / 2)):
+
+		parent1 = random.choice(agents)
+		parent2 = random.choice(agents)
+		child1 = Agent(in_str_len)
+		child2 = Agent(in_str_len)
+		split = random.randint(0, in_str_len)
+		child1.string = parent1.string[0:split] + parent2.string[split:in_str_len]
+		child2.string = parent2.string[0:split] + parent1.string[split:in_str_len]
+
+		offspring.append(child1)
+		offspring.append(child2)
+
+	agents.extend(offspring)
+
+	return agents
+
+def mutation(agents):
+
+	for agent in agents:
+
+		for idx, param in enumerate(agent.string):
+
+			if random.uniform(0.0, 1.0) &lt;= 0.1:
+
+				agent.string = agent.string[0:idx] + \
+					random.choice(string.ascii_letters) + \
+					agent.string[idx + 1:in_str_len]
+
+	return agents
+
+if __name__ == '__main__':
+	
+	in_str = 'ericpena'
+	in_str_len = len(in_str)
+	ga()
+</code></pre>
+<h1 id="results">Results</h1>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
   
+  <a class="badge badge-light" href="/tags/genetic-algorithms/">Genetic Algorithms</a>
+  
+  <a class="badge badge-light" href="/tags/complex-systems/">Complex Systems</a>
+  
+  <a class="badge badge-light" href="/tags/programming/">Programming</a>
+  
+  <a class="badge badge-light" href="/tags/python/">Python</a>
+  
+  <a class="badge badge-light" href="/tags/simulation/">Simulation</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/ga-intro/&amp;text=First%20Genetic%20Algorithm" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/ga-intro/&amp;t=First%20Genetic%20Algorithm" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=First%20Genetic%20Algorithm&amp;body=/post/ga-intro/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/ga-intro/&amp;title=First%20Genetic%20Algorithm" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=First%20Genetic%20Algorithm%20/post/ga-intro/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/ga-intro/&amp;title=First%20Genetic%20Algorithm" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
 
   
   
   
     
   
-<div class="universal-wrapper pt-3">
-  <h1>Posts</h1>
-
   
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-  <div>
-    <h2><a href="/post/ga-liso/">Genetic Algorithm — Cellular Automata Optimization</a></h2>
-    <div class="article-style">
+  <div class="media author-card content-widget-hr">
+    
       
-      Using genetic algorithm to optimize initial states
+      <img class="portrait mr-3" src="/authors/admin/avatar_hu28e514d532ef9909694c970ff18d48c7_206797_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/">Eric Peña</a></h5>
+      <h6 class="card-subtitle">Clifford D. Clark Fellow &mdash; State University of New York</h6>
+      <p class="card-text">My research interests include distributed robotics, mobile computing and programmable matter.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
       
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/ericpenajr" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/ericpena" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
     </div>
   </div>
+
+
+
+
+
+
+
+
+
   
-  <div>
-    <h2><a href="/post/ga-intro/">First Genetic Algorithm</a></h2>
-    <div class="article-style">
-      
-      Introduction to Genetic Algorithms --- program that finds optimal text value
-      
-    </div>
-  </div>
   
-  <div>
-    <h2><a href="/post/complexity-reflection/">Complexity — A Guided Tour</a></h2>
-    <div class="article-style">
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
       
-      Reflect on the reading of Melanie Mitchell's Complexity
+      <li><a href="/post/complexity-reflection/">Complexity — A Guided Tour</a></li>
       
-    </div>
+    </ul>
   </div>
   
 
-  
 
-</div>
+
+  </div>
+</article>
 
       
 
