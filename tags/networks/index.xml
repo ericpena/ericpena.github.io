@@ -5,12 +5,21 @@
     <link>/tags/networks/</link>
       <atom:link href="/tags/networks/index.xml" rel="self" type="application/rss+xml" />
     <description>Networks</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2019 Eric Peña</copyright><lastBuildDate>Mon, 26 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2019 Eric Peña</copyright><lastBuildDate>Wed, 11 Dec 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Networks</title>
       <link>/tags/networks/</link>
     </image>
+    
+    <item>
+      <title>Diversity in Competitive Threshold Linear Networks</title>
+      <link>/project/ctln/</link>
+      <pubDate>Wed, 11 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/project/ctln/</guid>
+      <description>&lt;div&gt;$$\frac{d x_i}{dt} = -x_i + \left[ \sum_{j=1}^{n} W_{ij} x_j + \theta \right]_+ i = 1, \ldots, n$$&lt;/div&gt;
+&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/1fx30MNJ0vK8NCKlWVHHwYNCAWU1UkN1zVmRUMJ6gjVQ/edit?usp=sharing&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Complexity — A Guided Tour</title>
@@ -48,6 +57,150 @@ The book wonderfully explains information processing both in terms of what infor
 &lt;p&gt;It certainly does aide the reader in having stimulating real-world examples of network structures from which to explore these properties. The examples she delves into are the brain of the worm C. elegans, genetic regulatory networks in our bodies, epidemiological studies, and even ecological insights that the reader can learn from. Mitchell not only explains that the brain of a worm is found to have small-world structure, she also encourages the reader to consider a rather provocative question: &amp;ldquo;Why would evolution favor brain networks with the small-world property?&amp;quot;. Two main ideas stem from this question&amp;mdash;the resilience of scale-free network structures and energy efficiency for global information processing. A fully connected network would use entirely too much energy to complete similar tasks. Mitchell briefly mentions synchronization at the end of the brain example. I understand this topic can get much more involved with how nature utilizes synchronization. The synchronization of fire flies is especially interesting&amp;mdash;more of this can be found in an article written by Renato Mirollo and Steven Strogatz, &amp;ldquo;Synchronization of Pulse-Coupled Biological Oscillators&amp;rdquo;.&lt;/p&gt;
 &lt;p&gt;Mitchell naturally segues into the topic of scaling. The start of this chapter reminded me of Galileo&#39;s Square-Cube Law where he essentially argues that structures cannot simply be scaled up ad infinitum. The core of the argument involves recognizing that volume grows as the cube of the multiplier and the strength of support grows only as the cross-sectional area or square of the multiplier. One of the key messages with regards to scaling is that metabolic rate does not scale linearly with $bodymass$ but rather with $bodymass^{\frac{3}{4}}$. This occurs in a myriad of creatures and shows that they become more efficient as the scaling grows. This power law distribution of metabolic rate versus body-mass is referred to as Kleiber&#39;s law. James Brown, Brian Enquist, and Geoffrey West played pivotal roles in forming the metabolic scaling theory. Geoffrey West wrote a popular book on this subject as well that the general audience can appreciate: &amp;ldquo;Scale: The Universal Laws of Growth, Innovation, Sustainability, and the Pace of Life in Organisms, Cities, Economies, and Companies&amp;rdquo;. He elaborates on how cities and economies tend to exhibit similar power law distributions when they are scaled up as well. Mitchell clearly explains Zipf&#39;s law&amp;mdash;she emphasizes it&#39;s significance and ubiquity and also provides some insight into why this power-law distribution tends to naturally occur. Mitchell shares that this is an important open problem in complexity science but I was particularly interested in Mandelbrot&#39;s argument that the simultaneous optimization of information content and transmission leads directly to Zipf&#39;s law.&lt;/p&gt;
 &lt;p&gt;The conclusion of the book serves the reader in several ways. It ties various concepts together mentioned throughout the book and gives a historical account of the key players that contributed to the field of complex systems. It also explains the goal of complexity as a science while sharing the honest opinions of complexity enthusiasts and critics, alike. Mitchell candidly addresses the major challenges of complexity science such as the lack of an all-encompassing mathematical framework from which complexity can be studied. Most importantly, it leaves us with the refreshing hope for future scientists to work diligently to explore the possibility of a grand unified theory of complexity and to discover what Strogatz refers to as the &amp;ldquo;conceptual equivalent of calculus&amp;rdquo;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mathematics of Network Theory</title>
+      <link>/post/network-theory/</link>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
+      <guid>/post/network-theory/</guid>
+      <description>&lt;p&gt;Graphs may be represented in the form of a matrix. Main types of graphs that may be represented are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Simple Graph&lt;/li&gt;
+&lt;li&gt;Multigraph&lt;/li&gt;
+&lt;li&gt;Directed Graph&lt;/li&gt;
+&lt;li&gt;Weighted Graph&lt;/li&gt;
+&lt;li&gt;Bipartite Graph&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;directed-graph&#34;&gt;Directed Graph&lt;/h3&gt;
+&lt;p&gt;Directed graphs are graphs that contain edges with direction. Vertices may have inward and outward edges.&lt;/p&gt;
+&lt;p&gt;Unlike adjacency matricies for simped graphs, adjacency matricies for directed graphs are non-symmetric. Elements of an adjacency matrix for a directed graph may be denoted as:
+$$A_{ij}$$
+which represents an edge from vertex $j$ to $i$.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/DirectedGraph1.png&#34; alt=&#34;Directed Graph&#34; width=&#34;500&#34;/&gt;
+  &lt;figcaption&gt;Figure 1 — Directed graph with four verticies&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;The corresponding adjacency matrix for the graph above is:
+$$A = \begin{pmatrix}0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0\\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0\\ 1 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0\\ 1 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 \end{pmatrix}$$&lt;/p&gt;
+&lt;h3 id=&#34;cocitation&#34;&gt;Cocitation&lt;/h3&gt;
+&lt;p&gt;The cocitation of two vertices $i$ and $j$ in a directed network is the number of vertices that have outgoing edges pointing to both $i$ and $j$. We can see that:&lt;/p&gt;
+&lt;div&gt;$$A_{ik}A_{jk} = 1$$&lt;/div&gt;
+&lt;p&gt;if $i$ and $j$ are both cited by $k$. If we sum over all these elements we get the following relation:&lt;/p&gt;
+&lt;div&gt;$$C_{ij} = \sum\limits_{k=1}^n A_{ik}A_{jk} = \sum\limits_{k=1}^n A_{ik}A_{kj}^T = AA^T $$&lt;/div&gt;
+&lt;p&gt;This is a cocitation network for which there is an edge between $i$ and $j$ if $C_{ij} &amp;gt; 0$, for $i \neq j$.&lt;/p&gt;
+&lt;p&gt;The diagonal elements of the cocitation matrix are given by:&lt;/p&gt;
+&lt;div&gt;$$C_{ii} = \sum\limits_{k=1}^n A_{ik}^2 = \sum\limits_{k=1}^n A_{ik}$$&lt;/div&gt;
+&lt;p&gt;In constructing the cocitation network we ignore these diagonal elements, meaning that the network&#39;s adjacency matrix is equal to the cocitation matrix but with all the diagonal elements set to zero.&lt;/p&gt;
+&lt;h3 id=&#34;bibliographic-coupling&#34;&gt;Bibliographic Coupling&lt;/h3&gt;
+&lt;p&gt;Cocitation and Bibliographic coupling are similar mathematically but give different results. They&#39;re both affected by the number of in and out edges. Bibliographic Coupling of two vertices are the number of other vertices to which both $i$ and $j$ point to. Bibliographic Coupling is general more stable since the number of citations can vary with time. Bibliographic Coupling is known at time of publishing and doesn&#39;t change at all. This may or may not be a good thing depending on the situation. Mathematically, it can be described by the following:&lt;/p&gt;
+&lt;div&gt;$$B_{ij} = \sum\limits_{k=1}^n A_{ki}A_{kj} = \sum\limits_{k=1}^n A_{ik}^TA_{kj} = A^TA $$&lt;/div&gt;
+&lt;p&gt;The diagonal elements of $\textbf{B}$ are:&lt;/p&gt;
+&lt;div&gt;$$B_{ii} = \sum\limits_{k=1}^n A_{ki}^2 = \sum\limits_{k=1}^n A_{ki}$$&lt;/div&gt;
+&lt;p&gt;$B_{ii}$ is equal to the number of other vertices that vertex $i$ points to - the number of papers $i$ cites.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/DirectedGraph2.png&#34; alt=&#34;Directed Graph&#34; width=&#34;400&#34;/&gt;
+  &lt;figcaption&gt;Figure 2 — Shows cocitation and bibliographic coupling network comparison&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h3 id=&#34;hypergraphs&#34;&gt;Hypergraphs&lt;/h3&gt;
+&lt;p&gt;Networks with link that join more than two vertices are called hypergraphs. These types of graphs are useful when representing family relations for example. Edges that relate more than two vertices are called hyperedges. In sociology, these networks may be called &lt;em&gt;affiliation networks&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;bipartite-networks&#34;&gt;Bipartite Networks&lt;/h3&gt;
+&lt;p&gt;Hypergraphs may be difficult to deal with and represent mathematically but a tool that can help are bipartite graphs - a way of conveniently representing the hypergraph structure. In sociology, this may be called: &lt;em&gt;two-mode networks&lt;/em&gt;. Edges only exist between two vertices of unlike-types.&lt;/p&gt;
+&lt;p&gt;The adjacency matrix for a bipartite graph is a rectangular matrix called an &lt;em&gt;incidence matrix&lt;/em&gt; which is a $g$ by $n$ matrix where $g$ is the number of groups and $n$ are the number of members in the groups.&lt;/p&gt;
+&lt;div&gt;
+$$B_{ij} = \begin{cases} 
+      1, &amp; \textit{if vertex j belongs to group i} \\
+      0, &amp; \textit{otherwise}
+\end{cases}$$
+&lt;/div&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/BipartiteGraph1.png&#34; alt=&#34;Directed Graph&#34; width=&#34;400&#34;/&gt;
+  &lt;figcaption&gt;Figure 3 — Bipartite Graph&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;The adjancency matrix for the bipartite graph above can be written as a $4$ by $5$ matrix:&lt;/p&gt;
+&lt;p&gt;$$B = \begin{pmatrix}1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0\\1 &amp;amp; 1 &amp;amp; 1 &amp;amp; 1 &amp;amp; 0\\0 &amp;amp; 1 &amp;amp; 1 &amp;amp; 0 &amp;amp; 1\\0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 1 &amp;amp; 1\end{pmatrix}$$&lt;/p&gt;
+&lt;p&gt;This is a much easier way of representing the hypergraph of actors to movies for example. For much info, read section 6.6 (p.125) of Networks - An Introduction (Newman).&lt;/p&gt;
+&lt;p&gt;The bipartite graph can be broken down even further by making two one-mode projections. One projection can be made with the &lt;em&gt;groups&lt;/em&gt; side and another can be made with &lt;em&gt;members&lt;/em&gt; side. These projections have the benefit of being simpler to study but are less powerful because information is lost through these projections.&lt;/p&gt;
+&lt;p&gt;The two one-mode projections in words are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The number of groups for which members $i$ and $j$ are both a part of. This is an $n$ x $n$ matrix: $$P = B^TB$$&lt;/li&gt;
+&lt;li&gt;The number of common members of groups $i$ and $j$. This is a $g$ x $g$ matrix: $$P&#39;=BB^T$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;quick-thought&#34;&gt;Quick Thought&lt;/h4&gt;
+&lt;p&gt;Naturally you want to relate this to cociation and bibliographic coupling networks but it may be confusing to do so. The main difference between cocitation and bibliographic coupling is the direction of the arrows. This bipartite network consists of two different types of nodes and un-directed edges. Therefore, you may have some cyclic thinking if you try to relate them too much. Although The &lt;em&gt;first&lt;/em&gt; projection (the one on the members) is similar to the cocitation network in that the diagonals should be ignored and forced to be zero.&lt;/p&gt;
+&lt;h4 id=&#34;information-loss&#34;&gt;Information Loss&lt;/h4&gt;
+&lt;p&gt;Although these projections make life a little easier, it does come at a cost: loss of information. Some of the things we loose are the number of groups in the network and the exact membership of each group. If we make the projection weighted graphs, we can at least get information as to how many commons groups a pair of vertices share for example.&lt;/p&gt;
+&lt;h3 id=&#34;trees&#34;&gt;Trees&lt;/h3&gt;
+&lt;p&gt;A &lt;em&gt;tree&lt;/em&gt; is a connected, undirected network that contains no closed loops. Connected means that every vertex in the network is reachable from every other via some path through the network. A network can also consists of two or more parts. If the individual parts of the network are trees, the then network as a whole is considered a forest. There are leaves on a tree - vertices with one edge on them but topologically, there isn&#39;t really a root.&lt;/p&gt;
+&lt;p&gt;The most important property of a tree is that, since there are no closed loops, there is only one path between any pair of vertices. In a forest, there is at most one path but there may be none.&lt;/p&gt;
+&lt;p&gt;Another very useful property of trees is that a tree of $n$ vertices always has $n-1$ edges. The reverse is also true: any connected network with $n$ vertices and $n-1$ edges is a tree. If such a network were not a tree then there must be a loop in the network somewhere, implying that we could remove an edge without disconnecting any part of the network.&lt;/p&gt;
+&lt;h3 id=&#34;planar-network&#34;&gt;Planar Network&lt;/h3&gt;
+&lt;p&gt;Simply put, a planar network is a network that can be drawn on a plane without having any edges cross. All trees are planar but most of the time, network are not planar (e.g., citation networks, metabolic networks, internet, etc.). Some networks are forced to be planar because of physics space constraints such as rivers or road networks.&lt;/p&gt;
+&lt;p&gt;These types of networks play an important role in the &lt;em&gt;four-color theorem&lt;/em&gt; which state that the number of colors required to color a graph in this way is called the chromatic number of the graph and many mathematical results are known about chromatic numbers.&lt;/p&gt;
+&lt;p&gt;An important to point out is that there is a method of determining if a network is planar. It&#39;s fairly easy to tell by observation if the network is small but when the network is very large, a general method is required.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Kuratowski&#39;s Theorem&lt;/em&gt;: Every non-planar network contains a least one subgraph that is an expansion of $K_5$ and $UG$. (Read more about this on p. 132 of Networks - an Introduction (Newman)).&lt;/p&gt;
+&lt;h3 id=&#34;degree&#34;&gt;Degree&lt;/h3&gt;
+&lt;h4 id=&#34;mean-degree&#34;&gt;Mean Degree&lt;/h4&gt;
+&lt;p&gt;We will denote the degree of vertex $i$ by $k_i$. For an undirected graph of n vertices the degree can be written in terms of the adjacency matrix as:&lt;/p&gt;
+&lt;div&gt;$$k_i = \sum\limits_{j=1}^n A_{ij}$$&lt;/div&gt;
+&lt;p&gt;Every edge in an undirected graph has two ends and if there are m edges in total then there are $2m$ ends of edges. But the number of ends of edges is also equal to the sum of the degrees of all the vertices, so&lt;/p&gt;
+&lt;div&gt;$$2m = \sum\limits_{i=1}^n k_i$$&lt;/div&gt;
+&lt;p&gt;Another way of writing this that is more intuitive is:&lt;/p&gt;
+&lt;div&gt;$$m = \frac{1}{2}\sum\limits_{i=1}^n k_i = \frac{1}{2}\sum\limits_{ij}^n A_{ij}$$&lt;/div&gt;
+&lt;p&gt;The mean degree $c$ of an undirected graph is:&lt;/p&gt;
+&lt;div&gt;$$c = \frac{1}{n} \sum\limits_{i=1}^n k_i$$&lt;/div&gt;
+&lt;p&gt;And combining this with the earlier equation:&lt;/p&gt;
+&lt;p&gt;$$c = \frac{2m}{n}$$&lt;/p&gt;
+&lt;h4 id=&#34;density&#34;&gt;Density&lt;/h4&gt;
+&lt;p&gt;The maximum possible number of edges in a simple graph is $\binom{n}{2} = \frac{1}{2}n(n-1)$. The connectance or density $\rho$ of a graph is the fraction of these edges that are actually present:&lt;/p&gt;
+&lt;p&gt;$$\rho = \frac{m}{\binom{n}{2}}=\frac{2m}{n(n-1)}=\frac{c}{n-1}$$&lt;/p&gt;
+&lt;p&gt;When the network is sufficiently large, $\rho$ may be approximated with just $\frac{c}{n}$.&lt;/p&gt;
+&lt;p&gt;A network where $\rho$ tends to a constant as $n \rightarrow \infty$ is said to be &lt;em&gt;dense&lt;/em&gt;. A network in which $\rho \rightarrow 0$ as $n \rightarrow \infty$ is said to be &lt;em&gt;sparse&lt;/em&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;directed-network-degree&#34;&gt;Directed Network Degree&lt;/h4&gt;
+&lt;p&gt;Vertex degrees in a directed network are more complicated. They are broken up into &lt;em&gt;in-degree&lt;/em&gt; and &lt;em&gt;out-degree&lt;/em&gt;. If $A_{ij}$ is the adjacency matrix of a directed network, the *in* and *out* degree can be written as:&lt;/p&gt;
+&lt;div&gt;$$k_i^{in} = \sum\limits_{j=1}^n A_{ij},\ \ \  k_j^{out} = \sum\limits_{i=1}^n A_{ij}$$&lt;/div&gt;
+&lt;p&gt;We also know the number of edges are:&lt;/p&gt;
+&lt;div&gt;$$m = \sum	\limits_{i=1}^n k_i^{in} = \sum\limits_{j=1}^n k_j^{out} = \sum	\limits_{ij} A_{ij}$$&lt;/div&gt;
+&lt;p&gt;As far as the mean degree of directed networks:&lt;/p&gt;
+&lt;div&gt;$$c_{in} = \frac{1}{n} \sum\limits_{i=1}^n k_i^{in} = \frac{1}{n} \sum\limits_{j=1}^n k_j^{out} = c_{out}$$&lt;/div&gt;
+&lt;p&gt;Combining these two relations, the mean degree can concisely be written as:&lt;/p&gt;
+&lt;p&gt;$$c = \frac{m}{n}$$&lt;/p&gt;
+&lt;h3 id=&#34;paths&#34;&gt;Paths&lt;/h3&gt;
+&lt;p&gt;A path along a network is a route across the network moving from vertex to vertex along the edges. In a directed network, the path can on go in the direction of the edge but can go either way for an undirected network. A path may reach a vertex or go along an edge it has seen before. A path that does not intersect itself is considered a &lt;em&gt;self-avoiding path&lt;/em&gt;. Geodesic paths and Hamiltonian paths are two special cases of self-avoiding paths.&lt;/p&gt;
+&lt;p&gt;The number of paths of length $r$ may be important to study and can be calculated for directed and undirected networks. We will use the fact that for directed and undirected networks, $A_{ij}$ is 1 if there is an edge from vertex $j$ to vertex $i$, and 0 otherwise. We can start by asking how many paths of length 2 are there in a network. Imagine we want to study all paths of length 2 from $j$ to $i$ via $k$. The product $A_{ik}A_{kj}$ is 1 where there is a path of length 2 from $j$ to $i$ via $k$, and 0 otherwise.&lt;/p&gt;
+&lt;div&gt;$$N_{ij}^{(2)} = \sum\limits_{k=1}^n A_{ik}A_{kj}=\left[A^2\right]_{ij}$$&lt;/div&gt;
+&lt;p&gt;We can study the path of length 3 as well. The product $A_{ik}A_{kl}A_{lj}$ is 1 where there exists a path of length 3, and 0 otherwise.&lt;/p&gt;
+&lt;div&gt;$$N_{ij}^{(3)} = \sum\limits_{k,l=1}^n A_{ik}A_{kl}A_{lj}=\left[A^3\right]_{ij}$$&lt;/div&gt;
+&lt;p&gt;Generalizing to any length $r$ gives:&lt;/p&gt;
+&lt;div&gt;$$N_{ij}^{r}=\left[A^r\right]_{ij}$$&lt;/div&gt;
+&lt;p&gt;There is a proof of induction on page 137 of Network - An Introduction (Newman).&lt;/p&gt;
+&lt;p&gt;Another important thing to consider are loops in a network. The number of loops may be calculated as well.&lt;/p&gt;
+&lt;div&gt;$$L_r = \sum\limits_{i=1}^n\left[A^r\right]_{ii}=Tr A^r$$&lt;/div&gt;
+&lt;p&gt;There &amp;lsquo;Tr&amp;rsquo; is the trace of a matrix. The number of loops can be written in terms of the eigenvalues of the adjacency matrix as well. The adjacency matrix can be written as $A=UKU^T$ where $U$ is the orthogonal matrix of eigenvectors and $K$ is the orthogonal matrix of eigenvalues:&lt;/p&gt;
+&lt;p&gt;$$A^r = (UKU^T)^r = UK^rU^T$$&lt;/p&gt;
+&lt;div&gt;$$L_r = Tr(UK^rU^T)=Tr(U^TUK^r)=Tr(k^r)=\sum\limits_i k_i^r$$&lt;/div&gt;
+&lt;p&gt;Where $k_i$ is the $i^{th}$ eigenvalue of the adjacency matrix. This applies to directed and undirected graphs. There is one important thing to note when learning about counting the number of loops on length r. For each consideration below, the calculation for determining the number of loops uses the following criteria for counting distinct loops.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Although there are loop paths that have the same vertices and same order, if there are different starting points, then they are considered separate loops.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$1\rightarrow 2\rightarrow 3 \rightarrow 1 \ \ \ and \ \ \ 2\rightarrow 3\rightarrow 2 \rightarrow 1$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If loops are in the opposite direction, they are counted as distinct loops.
+$$1 \rightarrow 2 \rightarrow 3 \rightarrow 1 \ \ \ and \ \ \ 1 \rightarrow 3 \rightarrow 2 \rightarrow 1$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;geodesic-paths&#34;&gt;Geodesic Paths&lt;/h3&gt;
+&lt;p&gt;A geodesic path is shortest network distance between vertices in question. This is also called &lt;em&gt;geodesic distance&lt;/em&gt; or &lt;em&gt;shortest distance&lt;/em&gt;. Mathematically, a geodesic distance is the smallest value of r such that $\left[ A^r \right]_{ij} &amp;gt; 0$ between vertices $i$ and $j$.&lt;/p&gt;
+&lt;p&gt;It may be the case that no shortest distance exists (for example: for separate components of the network where the distance may be said to be infinity). Another interesting fact - If a path intesects itself, it has a loop and therefore cannot be a geodesic path since it can be shortened by removing this loop.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;diameter&lt;/em&gt; of a graph is the length of the longest geodesic path between any pair of vertices in the network for which a path actually exists.&lt;/p&gt;
+&lt;h3 id=&#34;eulerian-and-hamiltonian-paths&#34;&gt;Eulerian and Hamiltonian Paths&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Eulerian Path&lt;/strong&gt;: a path that traverses each edge in the network exactly once&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hamiltonian Path&lt;/strong&gt;: a path that visits each vertex exactly once&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If there are any vertex degree greater than 2, then the Eulerian path is not self-avoiding since it has to visit vertices more than once in order to traverse tall their edges.&lt;/p&gt;
+&lt;h4 id=&#34;kronigsberg-bridges&#34;&gt;Kronigsberg Bridges&lt;/h4&gt;
+&lt;p&gt;This problem becomes finding an Eulerian path on this network of bridges and the name is in honor of Euler who presented this problem. Euler observed that since any Eulerian path must both enter and leave every vertex it passes (except for the first and last), there can at most be two vertices with odd degree. All four of the vertices in the Kronigsberg Problem has odd degree. More precisely, there can only be 2 or 0 vertices of odd degree for an Eulerian condition to be possible. With this logic, Euler proved the Kronigsberg problem has no solution.&lt;/p&gt;
 </description>
     </item>
     

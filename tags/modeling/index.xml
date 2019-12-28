@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Modeling | ERIC PEÑA</title>
+    <link>/tags/modeling/</link>
+      <atom:link href="/tags/modeling/index.xml" rel="self" type="application/rss+xml" />
+    <description>Modeling</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2019 Eric Peña</copyright><lastBuildDate>Wed, 11 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Modeling</title>
+      <link>/tags/modeling/</link>
+    </image>
+    
+    <item>
+      <title>Diversity in Competitive Threshold Linear Networks</title>
+      <link>/project/ctln/</link>
+      <pubDate>Wed, 11 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/project/ctln/</guid>
+      <description>&lt;div&gt;$$\frac{d x_i}{dt} = -x_i + \left[ \sum_{j=1}^{n} W_{ij} x_j + \theta \right]_+ i = 1, \ldots, n$$&lt;/div&gt;
+&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/1fx30MNJ0vK8NCKlWVHHwYNCAWU1UkN1zVmRUMJ6gjVQ/edit?usp=sharing&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Genetic Algorithm — Cellular Automata Optimization</title>
+      <link>/project/liso-project/</link>
+      <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/project/liso-project/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;The mechanism by which nature exhibits emergent patterns and behaviors has been a mystery throughout history. One application that has been developed which tends to mimic nature is Conway’s Game of Life — an application in the field of cellular automata. The ability to predict a final state of a system, given an initial state in the context of Game of Life, come as an insurmountable task. In this work, genetic algorithms are explored along with how they may be used to search for initial conditions such that their final outcomes are optimal. Optimal final states may be defined in terms of growth, diversity, and density of the cellular automaton evolution. This may be beneficial in exploring the way in which coupled components interact in mathematical and physical systems.&lt;/p&gt;
+&lt;h1 id=&#34;motivation&#34;&gt;Motivation&lt;/h1&gt;
+&lt;p&gt;Many will claim that the ultimate objective of science is to understand and model the natural world. There are many phenomena in nature whose patterns and behavior seem somewhat unpredictable yet these resulting patterns appear highly structured and organized. Scientists and mathematicians have developed techniques such as chaos theory and cellular automata for the attempt to model nature in its truest sense. In this paper we will take an approach to understand how structure stems from randomness in a cellular automata model. A cellular automaton is defined in terms of clear rules on each individual cell and its well defined neighborhood of cells that surround it. We will go into detail as to what this means in later chapters but let us begin by thinking about a two dimensional grid of cells that are all identical. We can even analogize this to a simple universe of people who are all the same and only know how to do the same task: become alive or die. Whether they become alive or die depends on the number of people around them who are either alive or dead given clear, unambiguous rules. Every person in this universe obeys the same universal laws—namely, in this context, the cellular automata rules. Given a clear and finite set of cellular automata rules and given a defined initial state, we can compute the state of a future grid—this will tell us which cells are alive and which are dead, after applying the rules onto the grid some predefined number n times. The defined cellular automata rules used in this report are those defined by Conway’s Game of Life. The well defined rules for Conway’s Game of Life will be explained in section 2.2.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/dna.png&#34; alt=&#34;DNA&#34; width=&#34;300&#34;/&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h1 id=&#34;thesis-objective&#34;&gt;Thesis Objective&lt;/h1&gt;
+&lt;p&gt;The objective of this project is to understand which initial conditions (initial states), given a set of welldefined cellular automata rules, produce the most optimized final states after n iterations of applying these rules. The variable being optimized is the fitness value where fitness is defined in terms of what I call growth, diversity, and density of the final state grids. These three terms and how they relate to this specific application are further explained in section 4.4. To make the objective clear, I will state it here and repeat it throughout the report to make sure we are on track with achieving it.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;OBJECTIVE: Given well-defined cellular automata rules defined by Conway’s Game of Life, determine an initial state that produces an optimal final state in terms of growth, diversity, and density after a finite number of iterations.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;thesis-outline&#34;&gt;Thesis Outline&lt;/h1&gt;
+&lt;p&gt;The report is organized in chapters that describe the major components of this project. The topics covered are the background of the application (Chapter 2), an overview of the genetic algorithms and how they are used to optimize initial states (Chapter 3), the details of the genetic algorithm implementation (Chapter 4), a description of the results (Chapter 5), and a few concluding thoughts and considerations for improvements and future work (Chapter 6).&lt;/p&gt;
+&lt;h1 id=&#34;the-report&#34;&gt;The Report&lt;/h1&gt;
+&lt;center&gt;Click the icon below to read the full report.&lt;/center&gt;
+&lt;p&gt;&lt;a href=&#34;LISO_Project.pdf&#34; class=&#34;image fit&#34;&gt;&lt;img src=&#34;img/pdf.png&#34; alt=&#34;&#34; height=&#34;100&#34; width=&#34;100&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Speed Walking in Chicago</title>
+      <link>/post/speedwalking/</link>
+      <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>/post/speedwalking/</guid>
+      <description>&lt;h1 id=&#34;chicagoan-fast&#34;&gt;Chicagoan Fast&lt;/h1&gt;
+&lt;p&gt;My morning commute to work in the heart of downtown Chicago was very regular: Enjoy blazing hot coffee and listen to an interesting podcast all while super-speed-walking all the way to the office. I often think how much time I would save by teleporting to the office instead. Even while often walking faster than most on the busy morning sidewalks, there are folks that zoom past me but still appear to be walking gracefully.&lt;/p&gt;
+&lt;p&gt;To start, let’s break speed walking down to two main factors: long legs and step frequency (which differs from walking speed). I like to think I take advantage of both of these to maintain optimal walking speed (without looking too ridiculous). The general question to myself was this:&lt;/p&gt;
+&lt;h3 id=&#34;for-someone-whose-legs-are-longer-than-mine-how-much-faster-do-i-have-to-walk-to-keep-up&#34;&gt;For someone whose legs are longer than mine, how much faster do I have to walk to keep up?&lt;/h3&gt;
+&lt;p&gt;Another way to ask this is, how are the leg length and step-frequency related? If two people, Person A and Person B, are walking at the same step frequency but Person B has longer legs than Person A by a factor of alpha (alpha &amp;gt; 0), Person B will clearly have higher walking speed. Therefore, you can ask by what factor does Person A’s step frequency has to increase to keep up with Person B while walking down the street.&lt;/p&gt;
+&lt;p&gt;Let’s go through it logically together. Let&#39;s draw the some simple person possible:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/diagram0.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Given how we&#39;re thinking about this problem, the important values we should be interested in is &lt;strong&gt;Leg Length&lt;/strong&gt; and &lt;strong&gt;Step Frequency&lt;/strong&gt;. The angle created by the legs may be important to so let&#39;s lable it for now.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/diagram1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;first-step-literally&#34;&gt;First Step (Literally)&lt;/h1&gt;
+&lt;h3 id=&#34;what-happens-when-one-step-is-taken-by-person-a-and-person-b&#34;&gt;What happens when one step is taken by &lt;strong&gt;Person A&lt;/strong&gt; and &lt;strong&gt;Person B&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The distance that each person goes in one step is given by:&lt;/p&gt;
+&lt;p&gt;$$d_A = 2A \sin\left(\frac{\alpha_A}{2}\right)$$
+$$d_B = 2B \sin\left(\frac{\alpha_B}{2}\right)$$&lt;/p&gt;
+&lt;p&gt;Where $A$ and $B$ are the length of the legs of &lt;strong&gt;Person A&lt;/strong&gt; and &lt;strong&gt;Person B&lt;/strong&gt;, respectively.&lt;/p&gt;
+&lt;p&gt;Let&#39;s simplify some things before we generalize the problem:&lt;/p&gt;
+&lt;p&gt;$$\tilde{A} = 2A$$
+$$\tilde{B} = 2B$$
+$$\gamma = \sin\left(\frac{\alpha_A}{2}\right) = \sin\left(\frac{\alpha_B}{2}\right)$$
+$$d_A = \tilde{A} \gamma$$
+$$d_B = \tilde{B} \gamma$$&lt;/p&gt;
+&lt;h1 id=&#34;more-steps&#34;&gt;More Steps&lt;/h1&gt;
+&lt;p&gt;As shown above, we&#39;ve made the assumption that $\theta_A = \theta_B$. Let&#39;s generalize this to more than one step. Here we will introduce a person&#39;s &lt;strong&gt;Step Frequency&lt;/strong&gt;, $s_A$ and $s_B$, defined as how many steps a person takes per unit time, $t$.&lt;/p&gt;
+&lt;p&gt;$$d_A(t) = \tilde{A} \gamma s_A t$$
+$$d_B(t) = \tilde{B} \gamma s_B t$$&lt;/p&gt;
+&lt;p&gt;The general form can be thought of as the linear relationship:&lt;/p&gt;
+&lt;p&gt;$$d = \kappa s t$$&lt;/p&gt;
+&lt;p&gt;where $\kappa_A = \tilde{A} \gamma$ or $\kappa_B = \tilde{B} \gamma$.&lt;/p&gt;
+&lt;h1 id=&#34;keep-up&#34;&gt;Keep Up!&lt;/h1&gt;
+&lt;p&gt;Here is the main problem for us to go through in order to answer the original question. Let&#39;s make &lt;strong&gt;Person B&lt;/strong&gt; have longer legs than &lt;strong&gt;Person A&lt;/strong&gt; by a factor of $x$.&lt;/p&gt;
+&lt;p&gt;$$B = x A$$&lt;/p&gt;
+&lt;p&gt;Generally, since &lt;strong&gt;Person B&lt;/strong&gt; has longer legs, the Step Frequency of &lt;strong&gt;Person A&lt;/strong&gt;, $s_A$, has to increase to keep up.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/diagram2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Now let&#39;s look at the ratio $\frac{d_B}{d_A}$:&lt;/p&gt;
+&lt;p&gt;$$\frac{d_B}{d_A} = \frac{2 x A \gamma s_B t}{2 A \gamma s_A t} = \frac{x s_B}{s_A}$$&lt;/p&gt;
+&lt;p&gt;To make distance the same between the two people, we&#39;ll make: $\frac{d_B}{d_A} = 1$&lt;/p&gt;
+&lt;p&gt;$$\frac{d_B}{d_A} = 1 = \frac{x s_B}{s_A}$$
+$$s_A = x s_B$$&lt;/p&gt;
+&lt;h1 id=&#34;what-the-heck-did-we-learn&#34;&gt;WHAT THE HECK DID WE LEARN?&lt;/h1&gt;
+&lt;p&gt;If &lt;strong&gt;Person B&lt;/strong&gt; has legs longer than &lt;strong&gt;Person A&lt;/strong&gt; by a factor of $x$ and $\theta_A$ = $\theta_B$, then &lt;strong&gt;Person A&lt;/strong&gt; can keep up by increasing their step frequency by $x$. Basically &lt;strong&gt;Person A&lt;/strong&gt; can move their legs faster by this factor to keep up with &lt;strong&gt;Person B&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;this-is-very-simplified-what-happens-if-theta-a-neq-theta-b-are-there-other-factors-to-consider&#34;&gt;This is very simplified. What happens if $\theta_A \neq \theta_B$? Are there other factors to consider?&lt;/h3&gt;
+&lt;h1 id=&#34;centerthats-all-gotta-runcenter&#34;&gt;&lt;CENTER&gt;THAT&#39;S ALL, GOTTA RUN&lt;/CENTER&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;img/speed3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Tensors</title>
+      <link>/post/tensors/</link>
+      <pubDate>Sat, 20 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>/post/tensors/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;img/Vector-1-Form.svg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Motivation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;General Relativity&lt;/li&gt;
+&lt;li&gt;Inertia Tensor&lt;/li&gt;
+&lt;li&gt;Stress Tensor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It took me a whole week figure out what a tensor actually is. You will find many definitions and some are only partially correct. Let&#39;s walk through the different explanations and learn how to think about them.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;(Array Definition)&lt;/strong&gt; Tensor = Multi-dimensional array of numbers (scalars (rank 0), vectors (rank 1), matricies (rank 2), etc.). This is true in a sense but there is a truer geometrical meaning behind the concept of a tensor.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;(Coordinate Definition)&lt;/strong&gt; Tensor = an object that is invariant under a change of coordinates and has &lt;em&gt;components&lt;/em&gt; that change in a special, predictable way under a change of coordinates. This is also true but let&#39;s dive even deeper to learn how a tensor allows this behavior to take place.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;(Abstract Definition)&lt;/strong&gt; Tensor = a collection of vectors and covectors combined together using the tensor product&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The important thing to keep in mind is that vectors exist independently of their components and their components depend on the coordinate system used to define vectors.&lt;/p&gt;
+&lt;h1 id=&#34;changing-coordinate-systems&#34;&gt;Changing Coordinate Systems&lt;/h1&gt;
+&lt;p&gt;Let&#39;s go from an old basis to a new basis&lt;/p&gt;
+&lt;center&gt;Old Basis: {$\vec{e_1}, \vec{e_2}$}&lt;/center&gt;
+&lt;center&gt;New Basis: {$\tilde{\vec{e_1}}, \tilde{\vec{e_2}}$}&lt;/center&gt;
+&lt;h3 id=&#34;forward-transformation&#34;&gt;Forward Transformation&lt;/h3&gt;
+&lt;p&gt;Suppose:
+$$\tilde{\vec{e_1}} = 2\vec{e_1}+1\vec{e_2}$$
+$$\tilde{\vec{e_2}} = -\frac{1}{2}\vec{e_1}+\frac{1}{4}\vec{e_2}$$
+$$F = \begin{pmatrix}2 &amp;amp; 1\\ -\frac{1}{2} &amp;amp; \frac{1}{4}\end{pmatrix}$$
+where $F$ is the Forward Transformation Matrix.&lt;/p&gt;
+&lt;h3 id=&#34;backward-transformation&#34;&gt;Backward Transformation&lt;/h3&gt;
+&lt;p&gt;This would make the backward transformation:
+$$\vec{e_1} = \frac{1}{4}\tilde{\vec{e_1}}+(-1)\tilde{\vec{e_2}}$$
+$$\vec{e_2} = \frac{1}{2}\tilde{\vec{e_1}}+2\tilde{\vec{e_2}}$$
+$$B = \begin{pmatrix}\frac{1}{4} &amp;amp; -1\\ \frac{1}{2} &amp;amp; 2\end{pmatrix}$$&lt;/p&gt;
+&lt;h3 id=&#34;forward-and-backward-transformation&#34;&gt;Forward and Backward Transformation&lt;/h3&gt;
+&lt;p&gt;$$F \cdot B = \begin{pmatrix}2 &amp;amp; 1\\ -\frac{1}{2} &amp;amp; \frac{1}{4}\end{pmatrix} \begin{pmatrix}\frac{1}{4} &amp;amp; -1\\ \frac{1}{2} &amp;amp; 2\end{pmatrix} = \begin{pmatrix}1 &amp;amp; 0\\ 0 &amp;amp; 1\end{pmatrix}$$&lt;/p&gt;
+&lt;p&gt;In general:
+$$F \cdot B = \delta_{ij}$$
+$$F = B^{-1}; B = F^{-1}$$
+$$\tilde{\vec{e_i}} = \sum_{j=1}^{n} F_{ij} \vec{e_j}$$
+$$\vec{e_i} = \sum_{j=1}^{n} B_{ij} \tilde{\vec{e_j}}$$&lt;/p&gt;
+&lt;h1 id=&#34;vectors&#34;&gt;Vectors&lt;/h1&gt;
+&lt;p&gt;Vectors are the first example of a tensor. Vectors are invariant but their components are &lt;em&gt;NOT&lt;/em&gt; invariant. It is also important to know that not all vectors are geometrical Euclidean vectors. Some vectors that are harder to visualize.&lt;/p&gt;
+&lt;p&gt;The transformation rules for vectors behave in an opposite way compared to the basis vectors {$\vec{e_1}, \vec{e_2}$}&lt;/p&gt;
+&lt;p&gt;$$\vec{v} = \sum_{j=1}^{n}v_j \vec{e_j} = \sum_{i=1}^{n} \tilde{v_i} \tilde{\vec{e_i}}$$&lt;/p&gt;
+&lt;p&gt;$$\vec{v} = \sum_{j=1}^{n} v_j \vec{e_j} = \sum_{j=1}^{n} v_j \left( \sum_{j=1}^{n} B_{ij} \tilde{\vec{e_j}} \right) = \sum_{i=1}^{n} \left( \sum_{j=1}^{n} B_{ij} v_j \right) \tilde{\vec{e_i}}$$&lt;/p&gt;
+&lt;p&gt;So this shows that:
+$$\tilde{v_i} = \sum_{j=1}^{n} B_{ij} v_j$$
+Which basically means that if you want to define the vector is the new basis, we have to use the backwards transformation matrix. This will take some getting used to since it is opposite of the unit basis. For this reason, vectors are said to contravary and are even called &lt;strong&gt;contravariant vectors&lt;/strong&gt;.&lt;/p&gt;
+&lt;center&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Basis&lt;/th&gt;
+&lt;th&gt;Vectors&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;$$\tilde{\vec{e_i}} = \sum_{j=1}^{n} F_{ij} \vec{e_j}$$&lt;/td&gt;
+&lt;td&gt;$$\tilde{v_i} = \sum_{j=1}^{n} B_{ij} v_j$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;$$\vec{e_i} = \sum_{j=1}^{n} B_{ij} \tilde{\vec{e_j}}$$&lt;/td&gt;
+&lt;td&gt;$$v_i = \sum_{j=1}^{n} F_{ij} \tilde{v_j}$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+# Notation
+In tensor calculus, notation can be tricky so it will be helpful to keep a couple tips about notation in mind:
+&lt;ul&gt;
+&lt;li&gt;Upper indicies represent contravariant components&lt;/li&gt;
+&lt;li&gt;Lower indicies represent covariant components&lt;/li&gt;
+&lt;li&gt;Einstein notation uses the upper and lower indicies and also drops the $\sum$ symbol&lt;/li&gt;
+&lt;li&gt;When a covector $\alpha_j$ is acting on a vector $v^j$, it can be written as $\alpha_j v^j$ and is assumed to be the sum:
+$$\alpha_j v^j = \sum_{j=1}^n \alpha_j v^j = \alpha_1 v^1 + \alpha_2 v^2 + \alpha_3 v^3 + &amp;hellip; + \alpha_n v^n$$&lt;/li&gt;
+&lt;li&gt;Using this new notation convention, the formulas in the table above can be written as:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Basis&lt;/th&gt;
+&lt;th&gt;Vectors&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;$$\tilde{\vec{e_i}} = F_i^j \vec{e_j}$$&lt;/td&gt;
+&lt;td&gt;$$\tilde{v^i} = B_j^i v^j$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;$$\vec{e_i} = B_i^j \tilde{\vec{e_j}}$$&lt;/td&gt;
+&lt;td&gt;$$v^i = F_j^i \tilde{v^j}$$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;h1 id=&#34;covectors&#34;&gt;Covectors&lt;/h1&gt;
+&lt;p&gt;Covectors may be harder to visualize since it differs from the arrow Euclidean vectors that is often used in physics. Here are a couple initial notes about covectors:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Covectors can be thought of as row vectors but clarification is needed for this. Row vectors in this sense are not necessarily column vectors flipped on their side. This is only true when using an orthonormal basis. If the basis is not orthonormal, it is more apparent how row vectors are different from column vectors.&lt;/li&gt;
+&lt;li&gt;It is better to think of covectors as functions that act on vectors and map them to real numbers:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$\alpha: V \rightarrow \mathbb{R}$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When we visualize vectors, we think of them as Euclidean vectors with components in a system of coordinates. A covector can be visualized as directed stacks of lines (or surfaces). Below are a few images that can help visualize covectors:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;img/covector1.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;img/covector0.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;img/covector2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The inner product is a mechanism used to combine a covector and vector. The output is a number that represents the number of surfaces of the covector that are pierced by the vector.&lt;/p&gt;
+&lt;h3 id=&#34;covector-rules-to-keep-in-mind&#34;&gt;Covector Rules To Keep In Mind:&lt;/h3&gt;
+&lt;p&gt;Covector acting on a vector:
+$$\alpha(\vec{v}) = \alpha_1 v^1 + \alpha_2 v^2 + \alpha_3 v^3 + &amp;hellip; + \alpha_n v^n = \sum_{j=1}^n \alpha_j v^j$$&lt;/p&gt;
+&lt;p&gt;Properties of Linearity:
+$$\alpha(\vec{v} + \vec{w}) = \alpha(\vec{v}) + \alpha(\vec{w})$$&lt;/p&gt;
+&lt;p&gt;$$\alpha(n \vec{v}) = n \alpha(\vec{v})$$&lt;/p&gt;
+&lt;p&gt;$$(\beta + \gamma)(\vec{v}) = \beta(\vec{v}) + \gamma(\vec{v})$$&lt;/p&gt;
+&lt;p&gt;Vector Spaces:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When scaling and combining vectors, a vector space $V$ is spanned&lt;/li&gt;
+&lt;li&gt;Covectors can also be scaled with scalars and combined using addition and multiplication. The vector space spanned by covectors is called the &amp;ldquo;Dual Vector Space&amp;rdquo;, $V^*$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;linear-maps&#34;&gt;Linear Maps&lt;/h1&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Complex Systems News Resources</title>
+      <link>/post/news/</link>
+      <pubDate>Sun, 31 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>/post/news/</guid>
+      <description>&lt;h1 id=&#34;keeping-up-with-complex-systems-science-news&#34;&gt;Keeping Up With Complex Systems Science News&lt;/h1&gt;
+&lt;p&gt;It can be difficult to find time to keep up with interesting science, especially when articles are dense and abstruse. With an unfortunate name like complex systems, keeping up with the intersting news can be a daunting task. Here are a few resources that I use to keep up with the fascinating world of complex systems and systems engineering.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;centersanta-fe-institutehttpswwwsantafeedunews-centernewscenter&#34;&gt;&lt;center&gt;&lt;a href=&#34;https://www.santafe.edu/news-center/news&#34;&gt;Santa Fe Institute&lt;/a&gt;&lt;/center&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;img/santafe_logo.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/santafe_example.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;centersante-fe-institute-complexity-explorerhttpswwwcomplexityexplorerorgexplorebrowsecenter&#34;&gt;&lt;center&gt;&lt;a href=&#34;https://www.complexityexplorer.org/explore/browse&#34;&gt;Sante Fe Institute Complexity Explorer&lt;/a&gt;&lt;/center&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;img/explorer_logo.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/explorer_example.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;centerquanta-magazinequantamagazineorgcenter&#34;&gt;&lt;center&gt;&lt;a href=&#34;quantamagazine.org&#34;&gt;Quanta Magazine&lt;/a&gt;&lt;/center&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;img/quanta_logo.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/quanta_example.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+ &lt;hr&gt;
+&lt;h1 id=&#34;centernaturehttpswwwnaturecomsubjectscomplexitycenter&#34;&gt;&lt;center&gt;&lt;a href=&#34;https://www.nature.com/subjects/complexity&#34;&gt;Nature&lt;/a&gt;&lt;/center&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;img/nature_logo.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The Nature journal has a &lt;strong&gt;Complexity&lt;/strong&gt; page that shows the latest new for complex systems.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/nature_example.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Declare War Project</title>
+      <link>/project/war-project/</link>
+      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>/project/war-project/</guid>
+      <description>&lt;h1 id=&#34;war-simulation-in-python&#34;&gt;War Simulation in Python&lt;/h1&gt;
+&lt;h4 id=&#34;game-designer-greg-costikyan-has-observed-that-since-there-are-no-choices-in-the-game-and-all-outcomes-are-random-it-cannot-be-considered-a-game-by-some-definitions-i-chose-to-program-this-game-because-its-complete-random-chance-feature-it-was-an-opportunity-to-practice-python-and-writing-recursive-functions&#34;&gt;Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. I chose to program this game because its complete random chance feature. It was an opportunity to practice python and writing recursive functions.&lt;/h4&gt;
+&lt;h1 id=&#34;the-objective-of-the-game-is-to-win-all-cards&#34;&gt;The objective of the game is to win all cards.&lt;/h1&gt;
+&lt;p&gt;A 52-card deck is divided evenly among the players, giving each a down stack. In unison, each player reveals the top card of their deck—this is a &amp;ldquo;battle&amp;rdquo;-and the player with the higher card takes both of the cards played and moves them to their reserves stack. The reserves stack is used when there are no longer cards to play in hand.&lt;/p&gt;
+&lt;p&gt;If the two cards played are of equal value, then there is a &amp;ldquo;war&amp;rdquo;. Both players place the next three cards from their hand face down (depending on the variant) and then another card face-up. The owner of the higher face-up card wins the war and adds all six cards on the table to their reserves deck. If the face-up cards are again equal then the battle repeats with another set of face-down/up cards. This repeats until one player&#39;s face-up card is higher than their opponent&#39;s. This is the part of the game where recursion is helpful. In theory, there can be any number of &amp;ldquo;wars&amp;rdquo; only constrained by the number of cards in the deck. Most descriptions of War are unclear about what happens if a player runs out of cards during a war. In this variant, the player immediately loses.&lt;/p&gt;
+&lt;p&gt;Below are several simulations that were run to explore game behavior&lt;/p&gt;
+&lt;h1 id=&#34;simple-game&#34;&gt;Simple Game&lt;/h1&gt;
+&lt;p&gt;This is a shorter game than average with &lt;strong&gt;3&lt;/strong&gt; wars which can be identified by the lines with steeper slopes.
+&lt;img src=&#34;img/idw_simulation_2.png&#34; alt=&#34;War Simulation -  3 Wars&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This is a slightly longer game with only &lt;strong&gt;4&lt;/strong&gt; wars which occur on card flip: 48, 90, 117, and 152.
+&lt;img src=&#34;img/idw_simulation_B.png&#34; alt=&#34;War Simulation - 4 Wars&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;blowing-up&#34;&gt;Blowing Up&lt;/h1&gt;
+&lt;p&gt;There is &amp;ldquo;blowing up&amp;rdquo; behavior for some games as well. This behavior is typically exacerbated by wars won by the same player.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img width=&#34;1604&#34; alt=&#34;...&#34; src=&#34;img/idw_simulation_6.png&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img width=&#34;1604&#34; alt=&#34;...&#34; src=&#34;img/idw_simulation_8.png&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img width=&#34;1604&#34; alt=&#34;...&#34; src=&#34;img/idw_simulation_14.png&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img width=&#34;1604&#34; alt=&#34;...&#34; src=&#34;img/idw_simulation_15.png&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;triple-war&#34;&gt;Triple War&lt;/h3&gt;
+&lt;p&gt;When wars occur consecutively, a mass number of cards are moved at once. The example below shows a triple war happening which led Player 2 winning the game. The war began at card flip 698.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/Triple_War.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;img/idw_simulation_16_triple_war.png&#34; alt=&#34;Three Consecutive Wars&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;number-of-wars-per-game&#34;&gt;Number of Wars Per Game&lt;/h1&gt;
+&lt;h3 id=&#34;what-is-the-war-and-game-length-relationship&#34;&gt;What is the War and Game Length relationship?&lt;/h3&gt;
+&lt;p&gt;One question that we can ask is how does the number was wars in a game relate to the length of the game itself. I modified the program so that it simulated 1000 games and plotted the number of wars versus the length of each game. Below is the result of this simulation.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/WCvGL_1.png&#34; alt=&#34;No. of Wars v. Game Length&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As you can see, there is a strong linear relationship between the these two quantities. The $R^2 \approx 1$ value is a helpful indicator of this. The $R^2$ and linear equation are:&lt;/p&gt;
+&lt;p&gt;$$R^2 = 0.9225$$
+$$y(x)=0.0549x+1.2212$$&lt;/p&gt;
+&lt;h3 id=&#34;how-many-battles-are-played-before-a-war-breaks-out&#34;&gt;How many battles are played before a war breaks out?&lt;/h3&gt;
+&lt;p&gt;This slope tells us that there is a war every approximately 19 &amp;ldquo;battles&amp;rdquo; (where a battle is a single card flip). To prove this by dividing the game length data by 19 and replotting. This would make every x-axis unit equal to 19 battles. If our claim is true, there should be a one-to-one relationship between our new unit and the number of wars per game. Let&#39;s plot it:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/WCvGL_2.png&#34; alt=&#34;1 War Every ~19 Battles&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The trendline has an equation whose slope is close to 1. This is a good sign that our value of 19 is a nice estimate.&lt;/p&gt;
+&lt;p&gt;$$y(x) = 1.0391x+1.4576$$&lt;/p&gt;
+&lt;h3 id=&#34;distribution-of-quantities&#34;&gt;Distribution of Quantities&lt;/h3&gt;
+&lt;p&gt;It may be helpful to know how the game length or war count themselves are distributed. Below are two histgrams that can give insight into their spread. From the two plots below, we can see that these two distribution are somewhat normal with a slight right skew.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/WCvGL_3.png&#34; alt=&#34;Histograms of Game Lengths and War Counts&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;change-the-size-of-the-war&#34;&gt;Change The Size Of The War!&lt;/h1&gt;
+&lt;p&gt;When two cards are equal a war begins. In this variant of the game, three additional cards are played face-down and a fourth card is used to do another comparison. This is essentially what a &amp;ldquo;war&amp;rdquo; is in this game. We can change the size of the wars - which means we can change the number of face-down cards we throw down before we do another comparison. Here is a table:&lt;/p&gt;
+&lt;center&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;War Size&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Meaning&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;War Size = 2&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2 face-down cards before comparing the 3th card during war&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;War Size = 3&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;3 face-down cards before comparing the 4th card during war&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;War Size = 4&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2 face-down cards before comparing the 5th card during war&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;p&gt;It would be helpful to plot the WC versus GL plot for each war size. From the plot we can observe how the slope of the linear regression equation changes (or how the &amp;ldquo;war per battle&amp;rdquo; value changes with war size). Click on plot below to see it in detail:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/WCvGL_4.png&#34; alt=&#34;Changing War Size&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;how-does-average-game-length-and-war-count-change-with-war-size&#34;&gt;How does Average Game Length and War Count change with War Size&lt;/h3&gt;
+&lt;p&gt;The plot below is a clear picture into how the averages and medians change when we change war size&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/WCvGL_5.png&#34; alt=&#34;How does average GL and WC change with War Size&#34;&gt;&lt;/p&gt;
+&lt;p&gt;It appears that the larger the war size, the more normal the distribution becomes since the average and median approach the same value.&lt;/p&gt;
+&lt;p&gt;Another way of looking at the game length for different values of war size would be with a layered bar graph. When the data is ordered and plotted with each war size being a layer, we can create the following graph.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/GL_1.png&#34; alt=&#34;Layered Bar Graph of Game Length for Different War Sizes&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This graph also shows that the larger the War Size, the smaller the Game Length. Is there anything else we can look into for the analysis of this game?&lt;/p&gt;
+&lt;h1 id=&#34;the-code&#34;&gt;The Code&lt;/h1&gt;
+&lt;p&gt;The program has been written in Python and is copied below for those interested.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Title: War Simulation
+# Date: 3/16/2019
+# Author: Eric Pena
+
+from random import shuffle
+import random
+import pandas as pd
+import matplotlib.pyplot as plt
+# Create Deck and shuffle it
+deck = []
+deck = range(13) * 4
+shuffle(deck)
+# Deal the cards
+player1 = deck[::2]
+player2 = deck[1::2]
+# Create Reserve Piles
+player1_res = []
+player2_res = []
+# Define more variables
+topcard = 0
+# Game counter
+turn = 1
+# Calculate the total cards a player has: hand + reserves
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def total_cards(h, r):
+	return (len(h) + len(r))
+# Recursive function that happens when war starts	
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def idw(player1, player2, player1_res, player2_res, jackpot):
+	# DEBUG
+	print &amp;quot;WAR BREAKS OUT...&amp;quot;
+	# Add reserve to hand and shuffle if hand is less than 4 cards:
+	if (len(player1) &amp;lt; 4):
+		player1.extend(player1_res)
+		player1_res = []
+		shuffle(player1)
+	if (len(player2) &amp;lt; 4):
+		player2.extend(player2_res)
+		player2_res = []
+		shuffle(player2)
+	# If this is still not enough cards, clear the cards and stop the game
+	if (len(player1) &amp;lt; 4 or len(player2) &amp;lt; 4):
+		player1, player2, player1_res, player2_res = ([] for i in range(4))
+		return player1, player2, player1_res, player2_res
+	# Remove top three cards and put them in reserve pile
+	jackpot.extend([player1[0], player1[1], player1[2], player2[0], player2[1], player2[2]])
+	player1 = player1[3:]
+	player2 = player2[3:]
+
+	# Use fourth card to compare
+	if player1[topcard] &amp;gt; player2[topcard]:
+		print &amp;quot;PLAYER 1 WINS WAR: &amp;quot; + str(player1[topcard]) + &amp;quot; - &amp;quot; + str(player2[topcard])
+		player1_res.extend([player1[topcard], player2[topcard]])
+		player1_res.extend(jackpot)
+		# Remove cards from hand
+		player1 = player1[1:]
+		player2 = player2[1:]
+		return player1, player2, player1_res, player2_res
+	
+	elif player1[topcard] &amp;lt; player2[topcard]:
+		print &amp;quot;PLAYER 2 WINS WAR: &amp;quot; + str(player1[topcard]) + &amp;quot; - &amp;quot; + str(player2[topcard])
+		player2_res.extend([player1[topcard], player2[topcard]])
+		player2_res.extend(jackpot)
+		# Remove cards from hand
+		player1 = player1[1:]
+		player2 = player2[1:]
+		return player1, player2, player1_res, player2_res
+	
+	else:		
+		print &amp;quot;ANOTHER WAR BEGINS: &amp;quot; + str(player1[topcard]) + &amp;quot; - &amp;quot; + str(player2[topcard])
+		jackpot.extend([player1[0], player2[0]])
+		player1 = player1[1:]
+		player2 = player2[1:]
+		return idw(player1, player2, player1_res, player2_res, jackpot)
+
+# Start the game
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def play_game(player1, player2, player1_res, player2_res, turn):
+	# Create a record of the game
+	cols = [&amp;quot;Round&amp;quot;, &amp;quot;P1 card&amp;quot;, &amp;quot;P2 card&amp;quot;, &amp;quot;P1 t-len&amp;quot;, &amp;quot;P2 t-len&amp;quot;, &amp;quot;P1 h-len&amp;quot;, &amp;quot;P2 h-len&amp;quot;]
+	datarec = pd.DataFrame(columns = cols)
+	while (len(player1) != 0 and len(player2) != 0):
+		print &amp;quot;Round: &amp;quot; + str(turn) + &amp;quot;\t|\t&amp;quot; + \
+			str(player1[topcard]) + &amp;quot;\t|\t&amp;quot; + \
+			str(player2[topcard]) + &amp;quot;\t|\t&amp;quot; + \
+			str(total_cards(player1, player1_res)) + &amp;quot;\t|\t&amp;quot; + \
+			str(total_cards(player2, player2_res)) + &amp;quot;\t|\t&amp;quot; + \
+			str(len(player1)) + &amp;quot;\t|\t&amp;quot; + \
+			str(len(player2)) + &amp;quot;\t|\t&amp;quot; + \
+			str(total_cards(player1, player1_res) + total_cards(player2, player2_res))
+		# Add data to pandas dataframe:
+		datarec.loc[turn - 1] = [turn, player1[topcard], player2[topcard], total_cards(player1, player1_res), total_cards(player2, player2_res), len(player1), len(player2)]
+		# Flip top cards and assign:
+		if player1[topcard] &amp;gt; player2[topcard]:
+			player1_res.extend([player1[topcard], player2[topcard]])
+			# Remove topcard from hands
+			player1 = player1[1:]
+			player2 = player2[1:]
+		elif player1[topcard] &amp;lt; player2[topcard]:
+			player2_res.extend([player1[topcard], player2[topcard]])
+			# Remove topcard from hands
+			player1 = player1[1:]
+			player2 = player2[1:]
+		else:
+			print &amp;quot;TOP: &amp;quot; + str(player1[topcard]) + &amp;quot; - &amp;quot; + str(player2[topcard])
+			player1, player2, player1_res, player2_res = idw(player1, player2, player1_res, player2_res,[])
+
+		# Replenish Cards
+		if len(player1) == 0:
+			player1 = player1_res
+			shuffle(player1)
+			player1_res = []
+			# it1 = 0
+		if len(player2) == 0:
+			player2 = player2_res
+			shuffle(player2)
+			player2_res = []
+			# it2 = 0
+		turn += 1
+	return player1, player2, player1_res, player2_res, datarec, turn
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# MAIN PROGRAM:
+print &amp;quot;Round: &amp;quot; + &amp;quot;\t\t|\t&amp;quot; + &amp;quot;P1 card&amp;quot; + &amp;quot;\t|\t&amp;quot; + &amp;quot;P2 card&amp;quot; + &amp;quot;\t|\t&amp;quot; + &amp;quot;P1-T&amp;quot; + &amp;quot;\t|\t&amp;quot; + &amp;quot;P2-T&amp;quot; + &amp;quot;\t|\t&amp;quot; + &amp;quot;P1-H&amp;quot; + &amp;quot;\t|\t&amp;quot; + &amp;quot;P2-H&amp;quot;
+
+player1, player2, player1_res, player2_res, df, turn = play_game(player1, player2, player1_res, player2_res, turn)
+plt.plot(df[&amp;quot;Round&amp;quot;], df[&amp;quot;P1 t-len&amp;quot;])
+plt.plot(df[&amp;quot;Round&amp;quot;], df[&amp;quot;P2 t-len&amp;quot;])
+plt.legend([&#39;Player 1&#39;, &#39;Player 2&#39;])
+plt.title(&amp;quot;War Simulation&amp;quot;)
+plt.xlabel(&amp;quot;Card Flips&amp;quot;)
+plt.ylabel(&amp;quot;Number of Cards For Each Player&amp;quot;)
+plt.show()
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mathematics of Network Theory</title>
+      <link>/post/network-theory/</link>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
+      <guid>/post/network-theory/</guid>
+      <description>&lt;p&gt;Graphs may be represented in the form of a matrix. Main types of graphs that may be represented are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Simple Graph&lt;/li&gt;
+&lt;li&gt;Multigraph&lt;/li&gt;
+&lt;li&gt;Directed Graph&lt;/li&gt;
+&lt;li&gt;Weighted Graph&lt;/li&gt;
+&lt;li&gt;Bipartite Graph&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;directed-graph&#34;&gt;Directed Graph&lt;/h3&gt;
+&lt;p&gt;Directed graphs are graphs that contain edges with direction. Vertices may have inward and outward edges.&lt;/p&gt;
+&lt;p&gt;Unlike adjacency matricies for simped graphs, adjacency matricies for directed graphs are non-symmetric. Elements of an adjacency matrix for a directed graph may be denoted as:
+$$A_{ij}$$
+which represents an edge from vertex $j$ to $i$.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/DirectedGraph1.png&#34; alt=&#34;Directed Graph&#34; width=&#34;500&#34;/&gt;
+  &lt;figcaption&gt;Figure 1 — Directed graph with four verticies&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;The corresponding adjacency matrix for the graph above is:
+$$A = \begin{pmatrix}0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0\\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0\\ 1 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0\\ 1 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 \end{pmatrix}$$&lt;/p&gt;
+&lt;h3 id=&#34;cocitation&#34;&gt;Cocitation&lt;/h3&gt;
+&lt;p&gt;The cocitation of two vertices $i$ and $j$ in a directed network is the number of vertices that have outgoing edges pointing to both $i$ and $j$. We can see that:&lt;/p&gt;
+&lt;div&gt;$$A_{ik}A_{jk} = 1$$&lt;/div&gt;
+&lt;p&gt;if $i$ and $j$ are both cited by $k$. If we sum over all these elements we get the following relation:&lt;/p&gt;
+&lt;div&gt;$$C_{ij} = \sum\limits_{k=1}^n A_{ik}A_{jk} = \sum\limits_{k=1}^n A_{ik}A_{kj}^T = AA^T $$&lt;/div&gt;
+&lt;p&gt;This is a cocitation network for which there is an edge between $i$ and $j$ if $C_{ij} &amp;gt; 0$, for $i \neq j$.&lt;/p&gt;
+&lt;p&gt;The diagonal elements of the cocitation matrix are given by:&lt;/p&gt;
+&lt;div&gt;$$C_{ii} = \sum\limits_{k=1}^n A_{ik}^2 = \sum\limits_{k=1}^n A_{ik}$$&lt;/div&gt;
+&lt;p&gt;In constructing the cocitation network we ignore these diagonal elements, meaning that the network&#39;s adjacency matrix is equal to the cocitation matrix but with all the diagonal elements set to zero.&lt;/p&gt;
+&lt;h3 id=&#34;bibliographic-coupling&#34;&gt;Bibliographic Coupling&lt;/h3&gt;
+&lt;p&gt;Cocitation and Bibliographic coupling are similar mathematically but give different results. They&#39;re both affected by the number of in and out edges. Bibliographic Coupling of two vertices are the number of other vertices to which both $i$ and $j$ point to. Bibliographic Coupling is general more stable since the number of citations can vary with time. Bibliographic Coupling is known at time of publishing and doesn&#39;t change at all. This may or may not be a good thing depending on the situation. Mathematically, it can be described by the following:&lt;/p&gt;
+&lt;div&gt;$$B_{ij} = \sum\limits_{k=1}^n A_{ki}A_{kj} = \sum\limits_{k=1}^n A_{ik}^TA_{kj} = A^TA $$&lt;/div&gt;
+&lt;p&gt;The diagonal elements of $\textbf{B}$ are:&lt;/p&gt;
+&lt;div&gt;$$B_{ii} = \sum\limits_{k=1}^n A_{ki}^2 = \sum\limits_{k=1}^n A_{ki}$$&lt;/div&gt;
+&lt;p&gt;$B_{ii}$ is equal to the number of other vertices that vertex $i$ points to - the number of papers $i$ cites.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/DirectedGraph2.png&#34; alt=&#34;Directed Graph&#34; width=&#34;400&#34;/&gt;
+  &lt;figcaption&gt;Figure 2 — Shows cocitation and bibliographic coupling network comparison&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h3 id=&#34;hypergraphs&#34;&gt;Hypergraphs&lt;/h3&gt;
+&lt;p&gt;Networks with link that join more than two vertices are called hypergraphs. These types of graphs are useful when representing family relations for example. Edges that relate more than two vertices are called hyperedges. In sociology, these networks may be called &lt;em&gt;affiliation networks&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;bipartite-networks&#34;&gt;Bipartite Networks&lt;/h3&gt;
+&lt;p&gt;Hypergraphs may be difficult to deal with and represent mathematically but a tool that can help are bipartite graphs - a way of conveniently representing the hypergraph structure. In sociology, this may be called: &lt;em&gt;two-mode networks&lt;/em&gt;. Edges only exist between two vertices of unlike-types.&lt;/p&gt;
+&lt;p&gt;The adjacency matrix for a bipartite graph is a rectangular matrix called an &lt;em&gt;incidence matrix&lt;/em&gt; which is a $g$ by $n$ matrix where $g$ is the number of groups and $n$ are the number of members in the groups.&lt;/p&gt;
+&lt;div&gt;
+$$B_{ij} = \begin{cases} 
+      1, &amp; \textit{if vertex j belongs to group i} \\
+      0, &amp; \textit{otherwise}
+\end{cases}$$
+&lt;/div&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/BipartiteGraph1.png&#34; alt=&#34;Directed Graph&#34; width=&#34;400&#34;/&gt;
+  &lt;figcaption&gt;Figure 3 — Bipartite Graph&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;The adjancency matrix for the bipartite graph above can be written as a $4$ by $5$ matrix:&lt;/p&gt;
+&lt;p&gt;$$B = \begin{pmatrix}1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0\\1 &amp;amp; 1 &amp;amp; 1 &amp;amp; 1 &amp;amp; 0\\0 &amp;amp; 1 &amp;amp; 1 &amp;amp; 0 &amp;amp; 1\\0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 1 &amp;amp; 1\end{pmatrix}$$&lt;/p&gt;
+&lt;p&gt;This is a much easier way of representing the hypergraph of actors to movies for example. For much info, read section 6.6 (p.125) of Networks - An Introduction (Newman).&lt;/p&gt;
+&lt;p&gt;The bipartite graph can be broken down even further by making two one-mode projections. One projection can be made with the &lt;em&gt;groups&lt;/em&gt; side and another can be made with &lt;em&gt;members&lt;/em&gt; side. These projections have the benefit of being simpler to study but are less powerful because information is lost through these projections.&lt;/p&gt;
+&lt;p&gt;The two one-mode projections in words are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The number of groups for which members $i$ and $j$ are both a part of. This is an $n$ x $n$ matrix: $$P = B^TB$$&lt;/li&gt;
+&lt;li&gt;The number of common members of groups $i$ and $j$. This is a $g$ x $g$ matrix: $$P&#39;=BB^T$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;quick-thought&#34;&gt;Quick Thought&lt;/h4&gt;
+&lt;p&gt;Naturally you want to relate this to cociation and bibliographic coupling networks but it may be confusing to do so. The main difference between cocitation and bibliographic coupling is the direction of the arrows. This bipartite network consists of two different types of nodes and un-directed edges. Therefore, you may have some cyclic thinking if you try to relate them too much. Although The &lt;em&gt;first&lt;/em&gt; projection (the one on the members) is similar to the cocitation network in that the diagonals should be ignored and forced to be zero.&lt;/p&gt;
+&lt;h4 id=&#34;information-loss&#34;&gt;Information Loss&lt;/h4&gt;
+&lt;p&gt;Although these projections make life a little easier, it does come at a cost: loss of information. Some of the things we loose are the number of groups in the network and the exact membership of each group. If we make the projection weighted graphs, we can at least get information as to how many commons groups a pair of vertices share for example.&lt;/p&gt;
+&lt;h3 id=&#34;trees&#34;&gt;Trees&lt;/h3&gt;
+&lt;p&gt;A &lt;em&gt;tree&lt;/em&gt; is a connected, undirected network that contains no closed loops. Connected means that every vertex in the network is reachable from every other via some path through the network. A network can also consists of two or more parts. If the individual parts of the network are trees, the then network as a whole is considered a forest. There are leaves on a tree - vertices with one edge on them but topologically, there isn&#39;t really a root.&lt;/p&gt;
+&lt;p&gt;The most important property of a tree is that, since there are no closed loops, there is only one path between any pair of vertices. In a forest, there is at most one path but there may be none.&lt;/p&gt;
+&lt;p&gt;Another very useful property of trees is that a tree of $n$ vertices always has $n-1$ edges. The reverse is also true: any connected network with $n$ vertices and $n-1$ edges is a tree. If such a network were not a tree then there must be a loop in the network somewhere, implying that we could remove an edge without disconnecting any part of the network.&lt;/p&gt;
+&lt;h3 id=&#34;planar-network&#34;&gt;Planar Network&lt;/h3&gt;
+&lt;p&gt;Simply put, a planar network is a network that can be drawn on a plane without having any edges cross. All trees are planar but most of the time, network are not planar (e.g., citation networks, metabolic networks, internet, etc.). Some networks are forced to be planar because of physics space constraints such as rivers or road networks.&lt;/p&gt;
+&lt;p&gt;These types of networks play an important role in the &lt;em&gt;four-color theorem&lt;/em&gt; which state that the number of colors required to color a graph in this way is called the chromatic number of the graph and many mathematical results are known about chromatic numbers.&lt;/p&gt;
+&lt;p&gt;An important to point out is that there is a method of determining if a network is planar. It&#39;s fairly easy to tell by observation if the network is small but when the network is very large, a general method is required.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Kuratowski&#39;s Theorem&lt;/em&gt;: Every non-planar network contains a least one subgraph that is an expansion of $K_5$ and $UG$. (Read more about this on p. 132 of Networks - an Introduction (Newman)).&lt;/p&gt;
+&lt;h3 id=&#34;degree&#34;&gt;Degree&lt;/h3&gt;
+&lt;h4 id=&#34;mean-degree&#34;&gt;Mean Degree&lt;/h4&gt;
+&lt;p&gt;We will denote the degree of vertex $i$ by $k_i$. For an undirected graph of n vertices the degree can be written in terms of the adjacency matrix as:&lt;/p&gt;
+&lt;div&gt;$$k_i = \sum\limits_{j=1}^n A_{ij}$$&lt;/div&gt;
+&lt;p&gt;Every edge in an undirected graph has two ends and if there are m edges in total then there are $2m$ ends of edges. But the number of ends of edges is also equal to the sum of the degrees of all the vertices, so&lt;/p&gt;
+&lt;div&gt;$$2m = \sum\limits_{i=1}^n k_i$$&lt;/div&gt;
+&lt;p&gt;Another way of writing this that is more intuitive is:&lt;/p&gt;
+&lt;div&gt;$$m = \frac{1}{2}\sum\limits_{i=1}^n k_i = \frac{1}{2}\sum\limits_{ij}^n A_{ij}$$&lt;/div&gt;
+&lt;p&gt;The mean degree $c$ of an undirected graph is:&lt;/p&gt;
+&lt;div&gt;$$c = \frac{1}{n} \sum\limits_{i=1}^n k_i$$&lt;/div&gt;
+&lt;p&gt;And combining this with the earlier equation:&lt;/p&gt;
+&lt;p&gt;$$c = \frac{2m}{n}$$&lt;/p&gt;
+&lt;h4 id=&#34;density&#34;&gt;Density&lt;/h4&gt;
+&lt;p&gt;The maximum possible number of edges in a simple graph is $\binom{n}{2} = \frac{1}{2}n(n-1)$. The connectance or density $\rho$ of a graph is the fraction of these edges that are actually present:&lt;/p&gt;
+&lt;p&gt;$$\rho = \frac{m}{\binom{n}{2}}=\frac{2m}{n(n-1)}=\frac{c}{n-1}$$&lt;/p&gt;
+&lt;p&gt;When the network is sufficiently large, $\rho$ may be approximated with just $\frac{c}{n}$.&lt;/p&gt;
+&lt;p&gt;A network where $\rho$ tends to a constant as $n \rightarrow \infty$ is said to be &lt;em&gt;dense&lt;/em&gt;. A network in which $\rho \rightarrow 0$ as $n \rightarrow \infty$ is said to be &lt;em&gt;sparse&lt;/em&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;directed-network-degree&#34;&gt;Directed Network Degree&lt;/h4&gt;
+&lt;p&gt;Vertex degrees in a directed network are more complicated. They are broken up into &lt;em&gt;in-degree&lt;/em&gt; and &lt;em&gt;out-degree&lt;/em&gt;. If $A_{ij}$ is the adjacency matrix of a directed network, the *in* and *out* degree can be written as:&lt;/p&gt;
+&lt;div&gt;$$k_i^{in} = \sum\limits_{j=1}^n A_{ij},\ \ \  k_j^{out} = \sum\limits_{i=1}^n A_{ij}$$&lt;/div&gt;
+&lt;p&gt;We also know the number of edges are:&lt;/p&gt;
+&lt;div&gt;$$m = \sum	\limits_{i=1}^n k_i^{in} = \sum\limits_{j=1}^n k_j^{out} = \sum	\limits_{ij} A_{ij}$$&lt;/div&gt;
+&lt;p&gt;As far as the mean degree of directed networks:&lt;/p&gt;
+&lt;div&gt;$$c_{in} = \frac{1}{n} \sum\limits_{i=1}^n k_i^{in} = \frac{1}{n} \sum\limits_{j=1}^n k_j^{out} = c_{out}$$&lt;/div&gt;
+&lt;p&gt;Combining these two relations, the mean degree can concisely be written as:&lt;/p&gt;
+&lt;p&gt;$$c = \frac{m}{n}$$&lt;/p&gt;
+&lt;h3 id=&#34;paths&#34;&gt;Paths&lt;/h3&gt;
+&lt;p&gt;A path along a network is a route across the network moving from vertex to vertex along the edges. In a directed network, the path can on go in the direction of the edge but can go either way for an undirected network. A path may reach a vertex or go along an edge it has seen before. A path that does not intersect itself is considered a &lt;em&gt;self-avoiding path&lt;/em&gt;. Geodesic paths and Hamiltonian paths are two special cases of self-avoiding paths.&lt;/p&gt;
+&lt;p&gt;The number of paths of length $r$ may be important to study and can be calculated for directed and undirected networks. We will use the fact that for directed and undirected networks, $A_{ij}$ is 1 if there is an edge from vertex $j$ to vertex $i$, and 0 otherwise. We can start by asking how many paths of length 2 are there in a network. Imagine we want to study all paths of length 2 from $j$ to $i$ via $k$. The product $A_{ik}A_{kj}$ is 1 where there is a path of length 2 from $j$ to $i$ via $k$, and 0 otherwise.&lt;/p&gt;
+&lt;div&gt;$$N_{ij}^{(2)} = \sum\limits_{k=1}^n A_{ik}A_{kj}=\left[A^2\right]_{ij}$$&lt;/div&gt;
+&lt;p&gt;We can study the path of length 3 as well. The product $A_{ik}A_{kl}A_{lj}$ is 1 where there exists a path of length 3, and 0 otherwise.&lt;/p&gt;
+&lt;div&gt;$$N_{ij}^{(3)} = \sum\limits_{k,l=1}^n A_{ik}A_{kl}A_{lj}=\left[A^3\right]_{ij}$$&lt;/div&gt;
+&lt;p&gt;Generalizing to any length $r$ gives:&lt;/p&gt;
+&lt;div&gt;$$N_{ij}^{r}=\left[A^r\right]_{ij}$$&lt;/div&gt;
+&lt;p&gt;There is a proof of induction on page 137 of Network - An Introduction (Newman).&lt;/p&gt;
+&lt;p&gt;Another important thing to consider are loops in a network. The number of loops may be calculated as well.&lt;/p&gt;
+&lt;div&gt;$$L_r = \sum\limits_{i=1}^n\left[A^r\right]_{ii}=Tr A^r$$&lt;/div&gt;
+&lt;p&gt;There &amp;lsquo;Tr&amp;rsquo; is the trace of a matrix. The number of loops can be written in terms of the eigenvalues of the adjacency matrix as well. The adjacency matrix can be written as $A=UKU^T$ where $U$ is the orthogonal matrix of eigenvectors and $K$ is the orthogonal matrix of eigenvalues:&lt;/p&gt;
+&lt;p&gt;$$A^r = (UKU^T)^r = UK^rU^T$$&lt;/p&gt;
+&lt;div&gt;$$L_r = Tr(UK^rU^T)=Tr(U^TUK^r)=Tr(k^r)=\sum\limits_i k_i^r$$&lt;/div&gt;
+&lt;p&gt;Where $k_i$ is the $i^{th}$ eigenvalue of the adjacency matrix. This applies to directed and undirected graphs. There is one important thing to note when learning about counting the number of loops on length r. For each consideration below, the calculation for determining the number of loops uses the following criteria for counting distinct loops.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Although there are loop paths that have the same vertices and same order, if there are different starting points, then they are considered separate loops.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$1\rightarrow 2\rightarrow 3 \rightarrow 1 \ \ \ and \ \ \ 2\rightarrow 3\rightarrow 2 \rightarrow 1$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If loops are in the opposite direction, they are counted as distinct loops.
+$$1 \rightarrow 2 \rightarrow 3 \rightarrow 1 \ \ \ and \ \ \ 1 \rightarrow 3 \rightarrow 2 \rightarrow 1$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;geodesic-paths&#34;&gt;Geodesic Paths&lt;/h3&gt;
+&lt;p&gt;A geodesic path is shortest network distance between vertices in question. This is also called &lt;em&gt;geodesic distance&lt;/em&gt; or &lt;em&gt;shortest distance&lt;/em&gt;. Mathematically, a geodesic distance is the smallest value of r such that $\left[ A^r \right]_{ij} &amp;gt; 0$ between vertices $i$ and $j$.&lt;/p&gt;
+&lt;p&gt;It may be the case that no shortest distance exists (for example: for separate components of the network where the distance may be said to be infinity). Another interesting fact - If a path intesects itself, it has a loop and therefore cannot be a geodesic path since it can be shortened by removing this loop.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;diameter&lt;/em&gt; of a graph is the length of the longest geodesic path between any pair of vertices in the network for which a path actually exists.&lt;/p&gt;
+&lt;h3 id=&#34;eulerian-and-hamiltonian-paths&#34;&gt;Eulerian and Hamiltonian Paths&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Eulerian Path&lt;/strong&gt;: a path that traverses each edge in the network exactly once&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hamiltonian Path&lt;/strong&gt;: a path that visits each vertex exactly once&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If there are any vertex degree greater than 2, then the Eulerian path is not self-avoiding since it has to visit vertices more than once in order to traverse tall their edges.&lt;/p&gt;
+&lt;h4 id=&#34;kronigsberg-bridges&#34;&gt;Kronigsberg Bridges&lt;/h4&gt;
+&lt;p&gt;This problem becomes finding an Eulerian path on this network of bridges and the name is in honor of Euler who presented this problem. Euler observed that since any Eulerian path must both enter and leave every vertex it passes (except for the first and last), there can at most be two vertices with odd degree. All four of the vertices in the Kronigsberg Problem has odd degree. More precisely, there can only be 2 or 0 vertices of odd degree for an Eulerian condition to be possible. With this logic, Euler proved the Kronigsberg problem has no solution.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Lagrangian Mechanics</title>
+      <link>/post/gen-coord/</link>
+      <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>/post/gen-coord/</guid>
+      <description>&lt;h1 id=&#34;generalized-coordinates-and-conservation-laws-from-the-lagrangian-formulation-of-theoretical-mechanics&#34;&gt;Generalized Coordinates and Conservation Laws From the Lagrangian Formulation of Theoretical Mechanics&lt;/h1&gt;
+&lt;p&gt;These are selected notes from a group of topics I find of particular interest. Although I assume some previous knowledge of classical mechanics from you, I still provide a brief overview of what the Lagrangian method is, where it comes from, how it relates to the more familiar Newtonian formulation, and how these beautiful laws of nature imply conserved quantities in everyday systems. The core of these notes include how we can simplify the Lagrangian method by observing conserved quantities by means of cyclic or &amp;ldquo;ignorable&amp;rdquo; generalized coordinates. The Lagrangian is invariant under variations of these types of coordinates. I will explain how cyclic coordinates and Lagrangian invariance imply conservation laws. There are several results that relate Lagrangian invariance and conserved quantities and they are referred to as Noether&#39;s theorem. I am happy to share what I have learned with you!&lt;/p&gt;
+&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;Let&#39;s start with simple laws of motion. They describe how mechanical
+systems evolve in time given certain conditions and constraints. Consider
+yourself standing on the St. Louis Arch (Gateway Arch, whose width &lt;em&gt;and&lt;/em&gt; height are 630 ft.) for some God awful
+reason. You hold out an apple with your hand and drop it so that it is falling
+towards the Earth. We can predict, for example, where the apple will be at some later time by using an equation of motion. Say we took air resistance into account or that it then falls into a huge pool of oil or dropping a water balloon instead that oscillates in free space or dropping a single water droplet while it&#39;s raining.
+Does the rate at which the water droplet accumulate &amp;ldquo;water-mass&amp;rdquo; increase? And if this drop then fell into the pool of oil&amp;hellip; and if the pool sits on a spring&amp;hellip; or two springs&amp;hellip; or an infinite number of springs and etc. We can study a slew of systems using equations of motion (and some canny logical intuition). Newtonian and
+Lagrangian mechanics are just a couple ways a obtaining these types of descriptions of systems we experience everyday.&lt;/p&gt;
+&lt;p&gt;The most obvious difference between these methods is the Newtonian method utilize the external &lt;em&gt;forces&lt;/em&gt; of a system and how they apply in
+some defined coordinate plane while the Lagrangian focuses on the &lt;em&gt;energy&lt;/em&gt; the system
+is experiencing. Now we can begin talking about the Lagrangian and how related these methods actually are.&lt;/p&gt;
+&lt;p&gt;The Lagrangian can be written as:&lt;/p&gt;
+&lt;p&gt;$$ \mathcal{L} = T - U$$&lt;/p&gt;
+&lt;p&gt;The kinetic energy $T$ and the potential energy $U$ are used to make the Lagrangian and
+the Lagrangian is used to find the equations of motion with something called the &lt;em&gt;Lagrange&lt;/em&gt; equations. It can be written as:&lt;/p&gt;
+&lt;p&gt;$$\frac{\partial \mathcal{L}}{\partial q_i}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}$$&lt;/p&gt;
+&lt;p&gt;where $q_i$ are the generalized coordinates that we are using. Since this is still the overview, I will briefly describe where the &lt;em&gt;Lagrange&lt;/em&gt; equation comes from.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;Lagrange&lt;/em&gt; equation is a subset of a far broader area of mathematics called the &lt;em&gt;Calculus of Variations&lt;/em&gt; or &lt;em&gt;Variational Calculus&lt;/em&gt;. It involves finding the maximum and minimum of a quantity that can be expressed as an integral. The general form of what is called the &lt;em&gt;variational problem&lt;/em&gt; is:&lt;/p&gt;
+&lt;p&gt;$$S=\int_{x_1}^{x_2} f[y(x), y&amp;rsquo;(x), x]dx$$&lt;/p&gt;
+&lt;p&gt;The important part is finding the equation $y(x)$ such that the $S$ integral is stationary
+(which means infinitesimal variations of the path $y(x)$ doesn&#39;t change the value of the
+integral). After a tedious derivation, we are left with what is called the
+&lt;em&gt;Euler-Lagrange&lt;/em&gt; equation. Remember that this result is purely mathematical and hasn&#39;t
+been applied to our physics world quite yet.&lt;/p&gt;
+&lt;p&gt;We can talk about these variational methods for pages but let&#39;s get to the meat of it
+all. The reason why variational calculus and the Euler-Lagrange equation are so
+important is because when the function $f[y(x), y&amp;rsquo;(x), x]$ within the integral is the Lagrangian (defined at the top of the page), the integral is called the &lt;em&gt;action&lt;/em&gt; integral and the function that makes the &lt;em&gt;action&lt;/em&gt; integral &lt;em&gt;stationary&lt;/em&gt;
+is the equation of motion of the particle in question.&lt;/p&gt;
+&lt;p&gt;This result is stated in what is called &lt;em&gt;Hamilton&#39;s Principle&lt;/em&gt;.
+It tells us that if we know the energy (and therefore the Lagrangian) of a
+system, then we can know about its motion and how it evolves through time.
+&lt;em&gt;Hamilton&#39;s Principle&lt;/em&gt; is as follows:&lt;/p&gt;
+&lt;h2 id=&#34;hamiltons-principle&#34;&gt;&lt;strong&gt;Hamilton&#39;s Principle&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;The actual path which a particle follows between two points 1 and 2 in a given time interval, $t_1$ to $t_2$, is such that the action integral&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;$$S=\int_{t_1}^{t_2} \mathcal{L} dt$$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;is stationary when taken along the actual path.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Now we may go back to the &lt;em&gt;Lagrange&lt;/em&gt; equation and see that it must provide us with
+the path that an actual particle will travel that experiences the forces and energy described by the Lagrangian.
+$$\frac{\partial \mathcal{L}}{\partial q_i}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}$$&lt;/p&gt;
+&lt;p&gt;If what has been written so far seems vague or a bit generalized, it is because this was
+intended to be more of a reminder than an introduction. Let&#39;s finish this overview with
+the relationship between the Newtonian and Lagrangian formulations.
+The equations that are obtained by these methods must be equal; physics does not change
+depending on the language we use to describe it; they really are one and the same. Just because
+Newton&#39;s laws are usually explicitly written in terms of force doesn&#39;t mean we
+can&#39;t express it in terms of another quantity like momentum for example:
+$$F = ma = m\dot{v} = \dot{p}$$
+Let&#39;s not forget how related force and energy really are:&lt;/p&gt;
+&lt;p&gt;$$\Delta T = T_2 - T_1 = \int_{1}^{2}\textbf{F} \cdot d\textbf{r}$$&lt;/p&gt;
+&lt;p&gt;$$U(\textbf{r}) = -\int_{r_0}^r F(\textbf{r}&#39;) \cdot d\textbf{r}&amp;lsquo;$$
+To relate Lagrangian and Newtonian methods more directly:&lt;/p&gt;
+&lt;h2 id=&#34;euler-lagrange-equation&#34;&gt;Euler-Lagrange Equation&lt;/h2&gt;
+&lt;p&gt;$$\frac{\partial \mathcal{L}}{\partial q_i}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}$$
+$$\frac{\partial \mathcal{L}}{\partial q_i} = F_i\ \ \ and\ \ \ \frac{\partial \mathcal{L}}{\partial \dot{q}_i} \equiv p_i$$
+These are referred to as generalized forces and generalized momenta. We may start our discussion of generalized ignorable coordinates and conservation laws now!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Quick Fun Fact!&lt;/strong&gt; There also exists a Hamiltonian formulation of Classical
+Mechanics that takes advantage of its own coordinate system called &lt;em&gt;Canonical Coordinates&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;generalized-coordinates&#34;&gt;Generalized Coordinates&lt;/h2&gt;
+&lt;p&gt;Generalized momenta and generalized forces are not the same thing as the familiar
+force and momentum we are used to. We can still relate momentum and force in the
+usual manner:
+$$F_i = \frac{d}{dt}p_i,$$
+except these are understood to be defined using generalized coordinates. The fact that
+&lt;em&gt;generalized force&lt;/em&gt; $=$ &lt;em&gt;rate of change of generalized momentum&lt;/em&gt; should not be surprising.
+A direct way to think of generalized coordinates is to describe the complete
+motion of a system in the fewest number of coordinates. Consider a pendulum bob for one
+moment (yes, another pendulum).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/pendulum.png&#34; alt=&#34;Figure 1 - Pendulum&#34;&gt;&lt;/p&gt;
+&lt;p&gt;We have a choice of using Cartesian coordinates to describe the motion of this
+bob or any other coordinate system we can dream up. The downside of using
+Cartesian coordinates $(x,y,z)$, is that $x$, $y$, and $z$ must constantly compensate one another to assure the length L remains constant. We can imagine all the combinations of values that satisfy $(\sqrt{x^2+y^2})^2+l^2(1-z)^2=constant$. Long story short, spherical (or polar) coordinates $(r, \theta, \phi)$ are the most appropriate for this problem for
+obvious symmetrical advantages and can be considered the generalized coordinates that define our system.&lt;/p&gt;
+&lt;p&gt;Now that we have mentioned what generalized coordinates are, we can gain more insight
+on what generalized momenta is. Ordinary momentum by definition is $p = mv$ where $v$ is
+one time derivative away from a position variable: $p = m (\dot{x}+\dot{y}+\dot{z})$.
+So we can easily see that generalized momenta is simple the mass of an object times the
+time derivative of its generalized position vectors! Simple! Generalized force can be found the same way except with two time derivatives. $F_t$ in the Figure 1 is the
+generalized force of the pendulum system. This pendulum can escape from the x-y grid universe and be thought of as moving along one generalized coordinate, $\theta(t)$. (The length of the pendulum, L, if fixed but if it weren&#39;t, $r(t)$ could be another generalized coordinate used to describe the system).&lt;/p&gt;
+&lt;h2 id=&#34;cyclic-coordinates&#34;&gt;Cyclic Coordinates&lt;/h2&gt;
+&lt;p&gt;When the Lagrangian of a system is independent of a generalized coordinate $q_i$, that
+coordinate is sometimes called a &lt;em&gt;cyclic&lt;/em&gt; or &lt;em&gt;ignorable&lt;/em&gt; coordinate.
+Saying the Lagrangian is independent of a particular variable is exactly what it
+sounds like, neither the kinetic nor the potential energy depend on this quantity.
+This leads directly to the fact that there exists a conserved quantity!&lt;/p&gt;
+&lt;p&gt;We can generally express a Lagrangian that is independent of some generalized
+coordinate $q_2$ as:
+$$\mathcal{L}=\mathcal{L}(q_1, q_3, q_4, \cdots, \dot{q}_1, \dot{q}_2, \dot{q}_3, \dot{q}_4, \cdots, t)$$&lt;/p&gt;
+&lt;p&gt;What this means exactly, is that the generalized momentum that corresponds to $q_2$ is
+conserved. This can be written as:
+$$\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_2} = \frac{\partial \mathcal{L}}{\partial q_2} = 0$$
+$$\frac{\partial \mathcal{L}}{\partial \dot{q}_2} = \kappa$$ where $\kappa$ is constant. We can say that this system exhibits conservation of angular momentum!&lt;/p&gt;
+&lt;p&gt;This makes solving equations of motion using Lagrangian even easier than before!&lt;/p&gt;
+&lt;p&gt;Let&#39;s take advantage of this property by examining the $\mathcal{L}$ of a standard classical mechanics
+problem (one of which never gets old). It is stated as follows:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt; &lt;em&gt;A mass $m$ is free to slide on a frictionless table and is connected, via a string that passes through a hole in the table, to a mass $M$ that hangs below. Assume that $M$
+moves in a vertical line only, and assume that the string always remains taut. Figure 2 shows a moment in time of this situation.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/tableBall.png&#34; alt=&#34;Figure 2 - Example Problem&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The Lagrangian is as follows:
+$$\mathcal{L}=T-U$$
+$$\mathcal{L}=\frac{1}{2}M \dot{r}^2+\frac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2)+Mg(l-r)$$
+The important thing to notice about this expression is that there is no $\theta$ variable
+in it anywhere. The Lagrangian is said to be invariant under variations of the generalized
+coordinate $\theta$. The important conclusion to take away from this is that the momentum that corresponds to $\theta$ is conserved or in
+this case, the angular momentum $mr^2\dot{\theta}$. Therefore without much investigating we can quickly see that $\frac{d}{dt}(mr^2\dot{\theta})=0$. This comes directly from the &lt;em&gt;Euler-Langrange&lt;/em&gt; equation obtained by varying $\theta$:&lt;/p&gt;
+&lt;p&gt;$$\frac{\partial \mathcal{L}}{\partial \theta}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{\theta}}$$
+$$0 = \frac{d}{dt}(mr^2\dot{\theta})$$&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;E-L&lt;/em&gt; equation that comes from varying $r$ is:
+$$\frac{\partial \mathcal{L}}{\partial r}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{r}}$$
+$$(M+m)\ddot{r}=mr\dot{\theta}^2-Mg$$&lt;/p&gt;
+&lt;h2 id=&#34;conservation-of-energy&#34;&gt;Conservation of Energy&lt;/h2&gt;
+&lt;p&gt;Energy is also another quantity that is often conversed in these types of mechanical problems. We will introduce an important claim that touches on this conservation law. First let&#39;s give a definition of &lt;em&gt;energy&lt;/em&gt; in terms of the &lt;em&gt;Lagrangian&lt;/em&gt;:
+$$E \equiv (\sum_{i=1}^{N} \frac{\partial \mathcal{L}}{\partial \dot{q}_i} \dot{q}_i) - \mathcal{L}$$
+This may seem random to define the energy in such a way but don&#39;t worry too much about it for now. Without going into too much detail, this result is far from random. In fact, there is a rigorous mathematical reason, called the theory of Legendre transforms, that explains why energy can be written in this form. You see this often in Hamiltonian mechanics since the Hamiltonian is simply the total energy of the system: $T+U$.&lt;/p&gt;
+&lt;p&gt;Now we may introduce the claim mentioned earlier:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If $\mathcal{L}$ has no explicit time dependence (that is, if $\frac{\partial \mathcal{L}}{\partial t} = 0$), then E is conserved (that is, $\frac{dE}{dt} = 0$), assuming that the motion obeys the E-L equations.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Without proving it, the following relation summarizes this claim:
+$$\frac{dE}{dt}=-\frac{\partial \mathcal{L}}{\partial t}.$$&lt;/p&gt;
+&lt;h2 id=&#34;applications&#34;&gt;Applications&lt;/h2&gt;
+&lt;p&gt;I programmed this nonlinear double pendulum with Mathamtica (Wolfram Language)
+&lt;img src=&#34;img/doublependulum_5.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

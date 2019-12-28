@@ -5,7 +5,7 @@
     <link>/project/</link>
       <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2019 Eric Peña</copyright><lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2019 Eric Peña</copyright><lastBuildDate>Wed, 11 Dec 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Projects</title>
@@ -13,23 +13,266 @@
     </image>
     
     <item>
-      <title>External Project</title>
-      <link>/project/external-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/external-project/</guid>
-      <description></description>
+      <title>Diversity in Competitive Threshold Linear Networks</title>
+      <link>/project/ctln/</link>
+      <pubDate>Wed, 11 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/project/ctln/</guid>
+      <description>&lt;div&gt;$$\frac{d x_i}{dt} = -x_i + \left[ \sum_{j=1}^{n} W_{ij} x_j + \theta \right]_+ i = 1, \ldots, n$$&lt;/div&gt;
+&lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/1fx30MNJ0vK8NCKlWVHHwYNCAWU1UkN1zVmRUMJ6gjVQ/edit?usp=sharing&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Internal Project</title>
-      <link>/project/internal-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/internal-project/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+      <title>Genetic Algorithm — Cellular Automata Optimization</title>
+      <link>/project/liso-project/</link>
+      <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/project/liso-project/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;The mechanism by which nature exhibits emergent patterns and behaviors has been a mystery throughout history. One application that has been developed which tends to mimic nature is Conway’s Game of Life — an application in the field of cellular automata. The ability to predict a final state of a system, given an initial state in the context of Game of Life, come as an insurmountable task. In this work, genetic algorithms are explored along with how they may be used to search for initial conditions such that their final outcomes are optimal. Optimal final states may be defined in terms of growth, diversity, and density of the cellular automaton evolution. This may be beneficial in exploring the way in which coupled components interact in mathematical and physical systems.&lt;/p&gt;
+&lt;h1 id=&#34;motivation&#34;&gt;Motivation&lt;/h1&gt;
+&lt;p&gt;Many will claim that the ultimate objective of science is to understand and model the natural world. There are many phenomena in nature whose patterns and behavior seem somewhat unpredictable yet these resulting patterns appear highly structured and organized. Scientists and mathematicians have developed techniques such as chaos theory and cellular automata for the attempt to model nature in its truest sense. In this paper we will take an approach to understand how structure stems from randomness in a cellular automata model. A cellular automaton is defined in terms of clear rules on each individual cell and its well defined neighborhood of cells that surround it. We will go into detail as to what this means in later chapters but let us begin by thinking about a two dimensional grid of cells that are all identical. We can even analogize this to a simple universe of people who are all the same and only know how to do the same task: become alive or die. Whether they become alive or die depends on the number of people around them who are either alive or dead given clear, unambiguous rules. Every person in this universe obeys the same universal laws—namely, in this context, the cellular automata rules. Given a clear and finite set of cellular automata rules and given a defined initial state, we can compute the state of a future grid—this will tell us which cells are alive and which are dead, after applying the rules onto the grid some predefined number n times. The defined cellular automata rules used in this report are those defined by Conway’s Game of Life. The well defined rules for Conway’s Game of Life will be explained in section 2.2.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/dna.png&#34; alt=&#34;DNA&#34; width=&#34;300&#34;/&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h1 id=&#34;thesis-objective&#34;&gt;Thesis Objective&lt;/h1&gt;
+&lt;p&gt;The objective of this project is to understand which initial conditions (initial states), given a set of welldefined cellular automata rules, produce the most optimized final states after n iterations of applying these rules. The variable being optimized is the fitness value where fitness is defined in terms of what I call growth, diversity, and density of the final state grids. These three terms and how they relate to this specific application are further explained in section 4.4. To make the objective clear, I will state it here and repeat it throughout the report to make sure we are on track with achieving it.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;OBJECTIVE: Given well-defined cellular automata rules defined by Conway’s Game of Life, determine an initial state that produces an optimal final state in terms of growth, diversity, and density after a finite number of iterations.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;thesis-outline&#34;&gt;Thesis Outline&lt;/h1&gt;
+&lt;p&gt;The report is organized in chapters that describe the major components of this project. The topics covered are the background of the application (Chapter 2), an overview of the genetic algorithms and how they are used to optimize initial states (Chapter 3), the details of the genetic algorithm implementation (Chapter 4), a description of the results (Chapter 5), and a few concluding thoughts and considerations for improvements and future work (Chapter 6).&lt;/p&gt;
+&lt;h1 id=&#34;the-report&#34;&gt;The Report&lt;/h1&gt;
+&lt;center&gt;Click the icon below to read the full report.&lt;/center&gt;
+&lt;p&gt;&lt;a href=&#34;LISO_Project.pdf&#34; class=&#34;image fit&#34;&gt;&lt;img src=&#34;img/pdf.png&#34; alt=&#34;&#34; height=&#34;100&#34; width=&#34;100&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Declare War Project</title>
+      <link>/project/war-project/</link>
+      <pubDate>Sat, 16 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>/project/war-project/</guid>
+      <description>&lt;h1 id=&#34;war-simulation-in-python&#34;&gt;War Simulation in Python&lt;/h1&gt;
+&lt;h4 id=&#34;game-designer-greg-costikyan-has-observed-that-since-there-are-no-choices-in-the-game-and-all-outcomes-are-random-it-cannot-be-considered-a-game-by-some-definitions-i-chose-to-program-this-game-because-its-complete-random-chance-feature-it-was-an-opportunity-to-practice-python-and-writing-recursive-functions&#34;&gt;Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. I chose to program this game because its complete random chance feature. It was an opportunity to practice python and writing recursive functions.&lt;/h4&gt;
+&lt;h1 id=&#34;the-objective-of-the-game-is-to-win-all-cards&#34;&gt;The objective of the game is to win all cards.&lt;/h1&gt;
+&lt;p&gt;A 52-card deck is divided evenly among the players, giving each a down stack. In unison, each player reveals the top card of their deck—this is a &amp;ldquo;battle&amp;rdquo;-and the player with the higher card takes both of the cards played and moves them to their reserves stack. The reserves stack is used when there are no longer cards to play in hand.&lt;/p&gt;
+&lt;p&gt;If the two cards played are of equal value, then there is a &amp;ldquo;war&amp;rdquo;. Both players place the next three cards from their hand face down (depending on the variant) and then another card face-up. The owner of the higher face-up card wins the war and adds all six cards on the table to their reserves deck. If the face-up cards are again equal then the battle repeats with another set of face-down/up cards. This repeats until one player&#39;s face-up card is higher than their opponent&#39;s. This is the part of the game where recursion is helpful. In theory, there can be any number of &amp;ldquo;wars&amp;rdquo; only constrained by the number of cards in the deck. Most descriptions of War are unclear about what happens if a player runs out of cards during a war. In this variant, the player immediately loses.&lt;/p&gt;
+&lt;p&gt;Below are several simulations that were run to explore game behavior&lt;/p&gt;
+&lt;h1 id=&#34;simple-game&#34;&gt;Simple Game&lt;/h1&gt;
+&lt;p&gt;This is a shorter game than average with &lt;strong&gt;3&lt;/strong&gt; wars which can be identified by the lines with steeper slopes.
+&lt;img src=&#34;img/idw_simulation_2.png&#34; alt=&#34;War Simulation -  3 Wars&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This is a slightly longer game with only &lt;strong&gt;4&lt;/strong&gt; wars which occur on card flip: 48, 90, 117, and 152.
+&lt;img src=&#34;img/idw_simulation_B.png&#34; alt=&#34;War Simulation - 4 Wars&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;blowing-up&#34;&gt;Blowing Up&lt;/h1&gt;
+&lt;p&gt;There is &amp;ldquo;blowing up&amp;rdquo; behavior for some games as well. This behavior is typically exacerbated by wars won by the same player.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img width=&#34;1604&#34; alt=&#34;...&#34; src=&#34;img/idw_simulation_6.png&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img width=&#34;1604&#34; alt=&#34;...&#34; src=&#34;img/idw_simulation_8.png&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img width=&#34;1604&#34; alt=&#34;...&#34; src=&#34;img/idw_simulation_14.png&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;img width=&#34;1604&#34; alt=&#34;...&#34; src=&#34;img/idw_simulation_15.png&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;triple-war&#34;&gt;Triple War&lt;/h3&gt;
+&lt;p&gt;When wars occur consecutively, a mass number of cards are moved at once. The example below shows a triple war happening which led Player 2 winning the game. The war began at card flip 698.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/Triple_War.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;img/idw_simulation_16_triple_war.png&#34; alt=&#34;Three Consecutive Wars&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;number-of-wars-per-game&#34;&gt;Number of Wars Per Game&lt;/h1&gt;
+&lt;h3 id=&#34;what-is-the-war-and-game-length-relationship&#34;&gt;What is the War and Game Length relationship?&lt;/h3&gt;
+&lt;p&gt;One question that we can ask is how does the number was wars in a game relate to the length of the game itself. I modified the program so that it simulated 1000 games and plotted the number of wars versus the length of each game. Below is the result of this simulation.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/WCvGL_1.png&#34; alt=&#34;No. of Wars v. Game Length&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As you can see, there is a strong linear relationship between the these two quantities. The $R^2 \approx 1$ value is a helpful indicator of this. The $R^2$ and linear equation are:&lt;/p&gt;
+&lt;p&gt;$$R^2 = 0.9225$$
+$$y(x)=0.0549x+1.2212$$&lt;/p&gt;
+&lt;h3 id=&#34;how-many-battles-are-played-before-a-war-breaks-out&#34;&gt;How many battles are played before a war breaks out?&lt;/h3&gt;
+&lt;p&gt;This slope tells us that there is a war every approximately 19 &amp;ldquo;battles&amp;rdquo; (where a battle is a single card flip). To prove this by dividing the game length data by 19 and replotting. This would make every x-axis unit equal to 19 battles. If our claim is true, there should be a one-to-one relationship between our new unit and the number of wars per game. Let&#39;s plot it:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/WCvGL_2.png&#34; alt=&#34;1 War Every ~19 Battles&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The trendline has an equation whose slope is close to 1. This is a good sign that our value of 19 is a nice estimate.&lt;/p&gt;
+&lt;p&gt;$$y(x) = 1.0391x+1.4576$$&lt;/p&gt;
+&lt;h3 id=&#34;distribution-of-quantities&#34;&gt;Distribution of Quantities&lt;/h3&gt;
+&lt;p&gt;It may be helpful to know how the game length or war count themselves are distributed. Below are two histgrams that can give insight into their spread. From the two plots below, we can see that these two distribution are somewhat normal with a slight right skew.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/WCvGL_3.png&#34; alt=&#34;Histograms of Game Lengths and War Counts&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;change-the-size-of-the-war&#34;&gt;Change The Size Of The War!&lt;/h1&gt;
+&lt;p&gt;When two cards are equal a war begins. In this variant of the game, three additional cards are played face-down and a fourth card is used to do another comparison. This is essentially what a &amp;ldquo;war&amp;rdquo; is in this game. We can change the size of the wars - which means we can change the number of face-down cards we throw down before we do another comparison. Here is a table:&lt;/p&gt;
+&lt;center&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;War Size&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Meaning&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;War Size = 2&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2 face-down cards before comparing the 3th card during war&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;War Size = 3&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;3 face-down cards before comparing the 4th card during war&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;War Size = 4&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2 face-down cards before comparing the 5th card during war&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;p&gt;It would be helpful to plot the WC versus GL plot for each war size. From the plot we can observe how the slope of the linear regression equation changes (or how the &amp;ldquo;war per battle&amp;rdquo; value changes with war size). Click on plot below to see it in detail:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/WCvGL_4.png&#34; alt=&#34;Changing War Size&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;how-does-average-game-length-and-war-count-change-with-war-size&#34;&gt;How does Average Game Length and War Count change with War Size&lt;/h3&gt;
+&lt;p&gt;The plot below is a clear picture into how the averages and medians change when we change war size&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/WCvGL_5.png&#34; alt=&#34;How does average GL and WC change with War Size&#34;&gt;&lt;/p&gt;
+&lt;p&gt;It appears that the larger the war size, the more normal the distribution becomes since the average and median approach the same value.&lt;/p&gt;
+&lt;p&gt;Another way of looking at the game length for different values of war size would be with a layered bar graph. When the data is ordered and plotted with each war size being a layer, we can create the following graph.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/GL_1.png&#34; alt=&#34;Layered Bar Graph of Game Length for Different War Sizes&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This graph also shows that the larger the War Size, the smaller the Game Length. Is there anything else we can look into for the analysis of this game?&lt;/p&gt;
+&lt;h1 id=&#34;the-code&#34;&gt;The Code&lt;/h1&gt;
+&lt;p&gt;The program has been written in Python and is copied below for those interested.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Title: War Simulation
+# Date: 3/16/2019
+# Author: Eric Pena
+
+from random import shuffle
+import random
+import pandas as pd
+import matplotlib.pyplot as plt
+# Create Deck and shuffle it
+deck = []
+deck = range(13) * 4
+shuffle(deck)
+# Deal the cards
+player1 = deck[::2]
+player2 = deck[1::2]
+# Create Reserve Piles
+player1_res = []
+player2_res = []
+# Define more variables
+topcard = 0
+# Game counter
+turn = 1
+# Calculate the total cards a player has: hand + reserves
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def total_cards(h, r):
+	return (len(h) + len(r))
+# Recursive function that happens when war starts	
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def idw(player1, player2, player1_res, player2_res, jackpot):
+	# DEBUG
+	print &amp;quot;WAR BREAKS OUT...&amp;quot;
+	# Add reserve to hand and shuffle if hand is less than 4 cards:
+	if (len(player1) &amp;lt; 4):
+		player1.extend(player1_res)
+		player1_res = []
+		shuffle(player1)
+	if (len(player2) &amp;lt; 4):
+		player2.extend(player2_res)
+		player2_res = []
+		shuffle(player2)
+	# If this is still not enough cards, clear the cards and stop the game
+	if (len(player1) &amp;lt; 4 or len(player2) &amp;lt; 4):
+		player1, player2, player1_res, player2_res = ([] for i in range(4))
+		return player1, player2, player1_res, player2_res
+	# Remove top three cards and put them in reserve pile
+	jackpot.extend([player1[0], player1[1], player1[2], player2[0], player2[1], player2[2]])
+	player1 = player1[3:]
+	player2 = player2[3:]
+
+	# Use fourth card to compare
+	if player1[topcard] &amp;gt; player2[topcard]:
+		print &amp;quot;PLAYER 1 WINS WAR: &amp;quot; + str(player1[topcard]) + &amp;quot; - &amp;quot; + str(player2[topcard])
+		player1_res.extend([player1[topcard], player2[topcard]])
+		player1_res.extend(jackpot)
+		# Remove cards from hand
+		player1 = player1[1:]
+		player2 = player2[1:]
+		return player1, player2, player1_res, player2_res
+	
+	elif player1[topcard] &amp;lt; player2[topcard]:
+		print &amp;quot;PLAYER 2 WINS WAR: &amp;quot; + str(player1[topcard]) + &amp;quot; - &amp;quot; + str(player2[topcard])
+		player2_res.extend([player1[topcard], player2[topcard]])
+		player2_res.extend(jackpot)
+		# Remove cards from hand
+		player1 = player1[1:]
+		player2 = player2[1:]
+		return player1, player2, player1_res, player2_res
+	
+	else:		
+		print &amp;quot;ANOTHER WAR BEGINS: &amp;quot; + str(player1[topcard]) + &amp;quot; - &amp;quot; + str(player2[topcard])
+		jackpot.extend([player1[0], player2[0]])
+		player1 = player1[1:]
+		player2 = player2[1:]
+		return idw(player1, player2, player1_res, player2_res, jackpot)
+
+# Start the game
+#----------------------------------------------------------------------------------------------------------------------------------------------
+def play_game(player1, player2, player1_res, player2_res, turn):
+	# Create a record of the game
+	cols = [&amp;quot;Round&amp;quot;, &amp;quot;P1 card&amp;quot;, &amp;quot;P2 card&amp;quot;, &amp;quot;P1 t-len&amp;quot;, &amp;quot;P2 t-len&amp;quot;, &amp;quot;P1 h-len&amp;quot;, &amp;quot;P2 h-len&amp;quot;]
+	datarec = pd.DataFrame(columns = cols)
+	while (len(player1) != 0 and len(player2) != 0):
+		print &amp;quot;Round: &amp;quot; + str(turn) + &amp;quot;\t|\t&amp;quot; + \
+			str(player1[topcard]) + &amp;quot;\t|\t&amp;quot; + \
+			str(player2[topcard]) + &amp;quot;\t|\t&amp;quot; + \
+			str(total_cards(player1, player1_res)) + &amp;quot;\t|\t&amp;quot; + \
+			str(total_cards(player2, player2_res)) + &amp;quot;\t|\t&amp;quot; + \
+			str(len(player1)) + &amp;quot;\t|\t&amp;quot; + \
+			str(len(player2)) + &amp;quot;\t|\t&amp;quot; + \
+			str(total_cards(player1, player1_res) + total_cards(player2, player2_res))
+		# Add data to pandas dataframe:
+		datarec.loc[turn - 1] = [turn, player1[topcard], player2[topcard], total_cards(player1, player1_res), total_cards(player2, player2_res), len(player1), len(player2)]
+		# Flip top cards and assign:
+		if player1[topcard] &amp;gt; player2[topcard]:
+			player1_res.extend([player1[topcard], player2[topcard]])
+			# Remove topcard from hands
+			player1 = player1[1:]
+			player2 = player2[1:]
+		elif player1[topcard] &amp;lt; player2[topcard]:
+			player2_res.extend([player1[topcard], player2[topcard]])
+			# Remove topcard from hands
+			player1 = player1[1:]
+			player2 = player2[1:]
+		else:
+			print &amp;quot;TOP: &amp;quot; + str(player1[topcard]) + &amp;quot; - &amp;quot; + str(player2[topcard])
+			player1, player2, player1_res, player2_res = idw(player1, player2, player1_res, player2_res,[])
+
+		# Replenish Cards
+		if len(player1) == 0:
+			player1 = player1_res
+			shuffle(player1)
+			player1_res = []
+			# it1 = 0
+		if len(player2) == 0:
+			player2 = player2_res
+			shuffle(player2)
+			player2_res = []
+			# it2 = 0
+		turn += 1
+	return player1, player2, player1_res, player2_res, datarec, turn
+#----------------------------------------------------------------------------------------------------------------------------------------------
+# MAIN PROGRAM:
+print &amp;quot;Round: &amp;quot; + &amp;quot;\t\t|\t&amp;quot; + &amp;quot;P1 card&amp;quot; + &amp;quot;\t|\t&amp;quot; + &amp;quot;P2 card&amp;quot; + &amp;quot;\t|\t&amp;quot; + &amp;quot;P1-T&amp;quot; + &amp;quot;\t|\t&amp;quot; + &amp;quot;P2-T&amp;quot; + &amp;quot;\t|\t&amp;quot; + &amp;quot;P1-H&amp;quot; + &amp;quot;\t|\t&amp;quot; + &amp;quot;P2-H&amp;quot;
+
+player1, player2, player1_res, player2_res, df, turn = play_game(player1, player2, player1_res, player2_res, turn)
+plt.plot(df[&amp;quot;Round&amp;quot;], df[&amp;quot;P1 t-len&amp;quot;])
+plt.plot(df[&amp;quot;Round&amp;quot;], df[&amp;quot;P2 t-len&amp;quot;])
+plt.legend([&#39;Player 1&#39;, &#39;Player 2&#39;])
+plt.title(&amp;quot;War Simulation&amp;quot;)
+plt.xlabel(&amp;quot;Card Flips&amp;quot;)
+plt.ylabel(&amp;quot;Number of Cards For Each Player&amp;quot;)
+plt.show()
+
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
