@@ -110,6 +110,576 @@
     </item>
     
     <item>
+      <title>Python Character Analysis</title>
+      <link>/project/heatmap-project/</link>
+      <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/project/heatmap-project/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;I have separated my work into sections so ease of flow. All Python code is included in this article. Observations of the data are shown in the histogram and heatmap below.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;header&#34;&gt;Header&lt;/h2&gt;
+&lt;p&gt;The header of my python file gives general information:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Title: Python Character Analysis
+Author: Eric Pena
+Date: Oct. 2019
+
+Text Source:
+Academic Sample
+http://www.thegrammarlab.com/?nor-portfolio=1000000-word-sample-corpora
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;packages&#34;&gt;Packages&lt;/h2&gt;
+&lt;p&gt;Below are important packages that I am importing for the program to work properly.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import fileinput as fi
+import matplotlib.pyplot as plt
+import seaborn as sns
+import string
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;user-defined-functions&#34;&gt;User Defined Functions&lt;/h2&gt;
+&lt;p&gt;I have defined several functions used by the \verb|main()| function:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def read(file):
+	&amp;quot;&amp;quot;&amp;quot;Reads given file and parses characters
+
+	Args:
+		file: the text file to be parsed
+	Returns:
+		charArr: parsed character array
+	&amp;quot;&amp;quot;&amp;quot;
+	return [i for line in fi.input(file) for i in line]
+
+# -------------------------------------------------------------------
+
+def count(array):
+	&amp;quot;&amp;quot;&amp;quot;Counts characters and creates freq table
+
+	Args:
+		array: character array of text
+	Returns:
+		freq: dictionary that represents freq table
+	&amp;quot;&amp;quot;&amp;quot;
+	return {c: array.count(c) for c in array}
+
+
+# -------------------------------------------------------------------
+
+
+def partition2(array):
+	&amp;quot;&amp;quot;&amp;quot;Works similar to Mathematica&#39;s partition function
+		but slightly differently. This function will create
+		a string that combines each pair of characters in
+		order to be hashed through by the count function.
+
+	Args:
+		array: this array
+	Returns:
+		
+	&amp;quot;&amp;quot;&amp;quot;
+	return [str(array[i]) + str(array[i + 1]) for i in range(len(array) - 1)]
+# -------------------------------------------------------------------
+
+
+def dict_print(d):
+	&amp;quot;&amp;quot;&amp;quot;Print function specifically for dictionary
+
+	Args:
+		d: dictionary
+	Returns:
+		None: only prints out the contents of the dictionary
+	&amp;quot;&amp;quot;&amp;quot;
+	[print(key[0] + &#39; --- &#39; + key[1] + &#39; :\t&#39; + str(val)) for key, val in d.items()]
+
+# -------------------------------------------------------------------
+
+
+def to_dataframe(d):
+	&amp;quot;&amp;quot;&amp;quot;converts the dictionary of transitions to a dataframe from which
+		can be turned into a heatmap
+
+	Args:
+		d: dictionary
+	Returns:
+		df: dataframe 
+	&amp;quot;&amp;quot;&amp;quot;
+	# :: Create dataframe
+	df = pd.DataFrame(columns=(&#39;First&#39;, &#39;Second&#39;, &#39;Frequency&#39;))
+
+	# :: Initialize matrix
+	alpha = list(string.ascii_letters)[:26]
+	alpha.append(&#39; &#39;)
+	for i in alpha:
+		for j in alpha:
+			df = df.append(pd.Series([i, j, 0], index=df.columns), ignore_index=True)
+
+	# :: Pivot our dataframe to make a matrix for heatmap
+	df = df.pivot(&amp;quot;First&amp;quot;, &amp;quot;Second&amp;quot;, &amp;quot;Frequency&amp;quot;)
+
+	# :: Add relevant frequencies to the matrix
+	for k in d:
+		df[k[1]][k[0]] = d[k]
+
+	df = df[df.columns].astype(int)
+
+	return df
+# -------------------------------------------------------------------
+
+
+def show_heatmap(df, filename):
+	&amp;quot;&amp;quot;&amp;quot;Create and plot heatmap of data
+
+	Args:
+		df: dataframe of frequencies
+	Returns:
+		None: Instead will plot a heatmap of the data
+	&amp;quot;&amp;quot;&amp;quot;
+	# :: Creae heatmap and customize
+	sns.set()
+	ax = sns.heatmap(df, cmap=&amp;quot;binary&amp;quot;, robust=True, xticklabels=True, yticklabels=True)
+	ax.xaxis.set_label_position(&#39;top&#39;)
+	ax.xaxis.set_ticks_position(&#39;top&#39;)
+	ax.spines[&#39;top&#39;].set_visible(False)
+	ax.tick_params(top=False, left=False)
+	ax.xaxis.label.set_color(&#39;darkgray&#39;)
+	ax.yaxis.label.set_color(&#39;darkgray&#39;)
+	ax.tick_params(axis=&#39;x&#39;, colors=&#39;darkgray&#39;)
+	ax.tick_params(axis=&#39;y&#39;, colors=&#39;darkgray&#39;)
+	plt.xlabel(&#39;Second Letter&#39;, fontsize=18)
+	plt.ylabel(&#39;First Letter&#39;, fontsize=18)
+	plt.show()
+
+	figure = ax.get_figure()
+	figure.savefig(filename, dpi=400)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;main-program&#34;&gt;Main Program&lt;/h2&gt;
+&lt;p&gt;This shows the code for the main program which utilizes the functions above.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def main():
+	# ---------------------------MAIN PROGRAM---------------------------
+	# :: Reads in text file
+	# :: Counts the frequencies
+	# :: Data stored in dictionary
+	# :: Plots histogram of results
+	
+	freq_dict = count(read(&#39;text.txt&#39;))
+	plt.bar(freq_dict.keys(), freq_dict.values(), color=&#39;gray&#39;)
+	plt.title(&#39;Character Histogram&#39;)
+	plt.xlabel(&#39;Characters&#39;)
+	plt.ylabel(&#39;Frequency&#39;)
+	plt.show()
+
+	# :: Reads in text file
+	# :: Partitions in 2-tuples for transitions
+	# :: Data stored in dictionary
+	# :: Frequencies are printed to console/terminal
+	
+	dict_print(count(partition2(read(&#39;text.txt&#39;))))
+
+	df = to_dataframe(count(partition2(read(&#39;text.txt&#39;))))
+	print(df)
+	
+	filename = &#39;/Users/ericpena/iCloud/Binghamton_Courses/500_Computational_Tools/HW2/heatmap.png&#39;
+	show_heatmap(df, filename)
+
+if __name__ == &#39;__main__&#39;:
+	main()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;plot-of-histogram&#34;&gt;Plot of Histogram&lt;/h2&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/hist.png&#34; alt=&#34;Histogram&#34; width=&#34;500&#34;/&gt;
+  &lt;figcaption&gt;Figure 1 — Histogram that shows frequencies of characters appearing in the text&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;histogram-observations&#34;&gt;Histogram Observations&lt;/h2&gt;
+&lt;p&gt;Here are a few observations about the histogram above:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$space\ character$: The space character is by far the most frequent. This makes sense since after each word, a space appears&lt;/li&gt;
+&lt;li&gt;${j, z, x, k}$: Characters such as $j$, $z$, $x$, and $k$ are low frequency &amp;mdash; not often present in common words&lt;/li&gt;
+&lt;li&gt;$vowels$: It makes sense for the frequency of the vowels to be higher than consonants given how English is structured&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;heatmap-of-character-transitions&#34;&gt;Heatmap of Character Transitions&lt;/h2&gt;
+&lt;p&gt;The heat map below visually represents the frequencies of the transitions $c_i \rightarrow c_{i+1}$ where $c_i$ is the $i^{th}$ character in the supplied text file.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/heatmap.png&#34; alt=&#34;Heatmap&#34; width=&#34;500&#34;/&gt;
+  &lt;figcaption&gt;Figure 2 — Heatmap that shows the frequencies of character transitions&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h4 id=&#34;heatmap-observations&#34;&gt;Heatmap Observations&lt;/h4&gt;
+&lt;p&gt;Here are a few observations about the heatmap above:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$Common\ Occurences$: Some common occurrences: $t \rightarrow h$, $i \rightarrow n$, $n \rightarrow t$, $r \rightarrow e$, $t \rightarrow i$&lt;/li&gt;
+&lt;li&gt;$Spaces$: As expected the row and column of the $space$ is quite active &amp;mdash; this makes sense since all words start and end with a $space$&lt;/li&gt;
+&lt;li&gt;$Bare$: It&#39;s interesting but not unexpected that the right bottom right is quite bare &amp;mdash; very low frequencies later in the alphabet&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;robustness-parameter&#34;&gt;Robustness Parameter&lt;/h2&gt;
+&lt;p&gt;The heatmap above is actually using a &lt;code&gt;robust=True&lt;/code&gt; parameter that normalizes the frequencies into a small range in order to improve the visualization. This is an improvement over the heatmap with the original frequencies. See below for the difference between the $RAW$ heatmap and the $ROBUST$ heatmap. More visual information can be obtained by using the $robust$ parameter since the `interesting&amp;rsquo; events are much more pronounced.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/heatmap_robust.png&#34; alt=&#34;Heatmap&#34; width=&#34;700&#34;/&gt;
+  &lt;figcaption&gt;Figure 3 — Shows the difference between the Raw and Robust frequencies for the heatmap&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;appendix--output-data&#34;&gt;Appendix — Output Data&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;histogram-frenquencies&#34;&gt;Histogram Frenquencies&lt;/h4&gt;
+&lt;p&gt;{&amp;lsquo;d&amp;rsquo;: 234, &amp;lsquo;i&amp;rsquo;: 574, &amp;lsquo;f&amp;rsquo;: 233, &amp;lsquo;e&amp;rsquo;: 958, &amp;lsquo;r&amp;rsquo;: 428, &amp;lsquo;n&amp;rsquo;: 492, &amp;lsquo;c&amp;rsquo;: 255, &#39; &amp;lsquo;: 1370, &amp;lsquo;w&amp;rsquo;: 111, &amp;lsquo;h&amp;rsquo;: 344, &amp;lsquo;m&amp;rsquo;: 184, &amp;lsquo;s&amp;rsquo;: 455, &amp;lsquo;t&amp;rsquo;: 653, &amp;lsquo;o&amp;rsquo;: 475, &amp;lsquo;u&amp;rsquo;: 206, &amp;lsquo;a&amp;rsquo;: 561, &amp;lsquo;p&amp;rsquo;: 146, &amp;lsquo;l&amp;rsquo;: 336, &amp;lsquo;y&amp;rsquo;: 77, &amp;lsquo;x&amp;rsquo;: 24, &amp;lsquo;b&amp;rsquo;: 111, &amp;lsquo;k&amp;rsquo;: 15, &amp;lsquo;g&amp;rsquo;: 103, &amp;lsquo;v&amp;rsquo;: 60, &amp;lsquo;q&amp;rsquo;: 20, &amp;lsquo;j&amp;rsquo;: 9, &amp;lsquo;z&amp;rsquo;: 11}&lt;/p&gt;
+&lt;h4 id=&#34;heatmap-frenquencies&#34;&gt;Heatmap Frenquencies&lt;/h4&gt;
+&lt;p&gt;d &amp;mdash; i :	30
+i &amp;mdash; f :	11
+f &amp;mdash; f :	15
+f &amp;mdash; e :	10
+e &amp;mdash; r :	114
+r &amp;mdash; e :	113
+e &amp;mdash; n :	105
+n &amp;mdash; c :	22
+c &amp;mdash; e :	49
+e &amp;mdash;   :	339
+&amp;mdash; w :	79
+w &amp;mdash; h :	23
+h &amp;mdash; e :	210
+&amp;mdash; m :	53
+m &amp;mdash; c :	1
+c &amp;mdash;   :	8
+&amp;mdash; i :	72
+i &amp;mdash; s :	61
+s &amp;mdash;   :	199
+&amp;mdash; t :	252
+t &amp;mdash; h :	212
+m &amp;mdash; o :	13
+o &amp;mdash; i :	5
+s &amp;mdash; t :	41
+t &amp;mdash; u :	11
+u &amp;mdash; r :	46
+&amp;mdash; c :	90
+c &amp;mdash; o :	54
+o &amp;mdash; n :	104
+n &amp;mdash; t :	88
+t &amp;mdash; e :	94
+t &amp;mdash;   :	107
+m &amp;mdash; a :	18
+a &amp;mdash;   :	40
+a &amp;mdash; s :	55
+s &amp;mdash; s :	18
+&amp;mdash; o :	93
+o &amp;mdash; f :	70
+f &amp;mdash;   :	73
+&amp;mdash; s :	69
+s &amp;mdash; a :	14
+a &amp;mdash; m :	23
+m &amp;mdash; p :	25
+p &amp;mdash; l :	14
+l &amp;mdash; e :	47
+&amp;mdash; a :	168
+a &amp;mdash; f :	6
+f &amp;mdash; t :	4
+r &amp;mdash;   :	64
+&amp;mdash; h :	40
+h &amp;mdash; u :	12
+u &amp;mdash; m :	9
+m &amp;mdash; i :	37
+i &amp;mdash; d :	28
+i &amp;mdash; t :	46
+t &amp;mdash; y :	11
+y &amp;mdash;   :	60
+&amp;mdash; e :	40
+e &amp;mdash; x :	11
+x &amp;mdash; p :	3
+p &amp;mdash; o :	41
+o &amp;mdash; s :	28
+s &amp;mdash; u :	28
+a &amp;mdash; n :	92
+n &amp;mdash; d :	65
+d &amp;mdash;   :	140
+m &amp;mdash; d :	1
+&amp;mdash; d :	39
+d &amp;mdash; r :	2
+r &amp;mdash; y :	12
+&amp;mdash; r :	37
+e &amp;mdash; s :	71
+u &amp;mdash; l :	21
+l &amp;mdash; t :	4
+t &amp;mdash; s :	17
+s &amp;mdash; c :	3
+c &amp;mdash; u :	3
+u &amp;mdash; s :	31
+s &amp;mdash; i :	53
+i &amp;mdash; o :	60
+n &amp;mdash;   :	131
+c &amp;mdash; h :	34
+e &amp;mdash; m :	26
+i &amp;mdash; c :	47
+c &amp;mdash; a :	45
+a &amp;mdash; l :	81
+l &amp;mdash;   :	50
+o &amp;mdash; m :	24
+t &amp;mdash; i :	92
+&amp;mdash; f :	103
+f &amp;mdash; i :	59
+i &amp;mdash; b :	38
+b &amp;mdash; e :	59
+r &amp;mdash; s :	37
+w &amp;mdash; e :	33
+e &amp;mdash; l :	40
+l &amp;mdash; l :	49
+&amp;mdash; k :	1
+k &amp;mdash; n :	1
+n &amp;mdash; o :	21
+o &amp;mdash; w :	12
+w &amp;mdash; n :	3
+h &amp;mdash; a :	34
+a &amp;mdash; t :	55
+&amp;mdash; l :	37
+l &amp;mdash; i :	42
+i &amp;mdash; g :	23
+g &amp;mdash; n :	4
+o &amp;mdash; c :	10
+l &amp;mdash; u :	30
+l &amp;mdash; o :	18
+i &amp;mdash; n :	128
+n &amp;mdash; v :	2
+v &amp;mdash; e :	34
+g &amp;mdash; a :	8
+e &amp;mdash; d :	68
+o &amp;mdash; u :	27
+u &amp;mdash; n :	17
+n &amp;mdash; e :	37
+&amp;mdash; q :	2
+q &amp;mdash; u :	20
+u &amp;mdash; a :	8
+i &amp;mdash; e :	24
+d &amp;mdash; o :	5
+o &amp;mdash; e :	2
+&amp;mdash; n :	19
+o &amp;mdash; t :	30
+a &amp;mdash; d :	10
+d &amp;mdash; d :	1
+&amp;mdash; u :	12
+u &amp;mdash; p :	9
+p &amp;mdash;   :	6
+t &amp;mdash; o :	47
+o &amp;mdash;   :	48
+i &amp;mdash; m :	21
+l &amp;mdash; y :	27
+&amp;mdash; b :	46
+e &amp;mdash; c :	25
+a &amp;mdash; u :	9
+s &amp;mdash; e :	44
+n &amp;mdash; l :	4
+a &amp;mdash; j :	1
+j &amp;mdash; o :	1
+o &amp;mdash; r :	66
+a &amp;mdash; r :	64
+e &amp;mdash; p :	6
+r &amp;mdash; t :	15
+d &amp;mdash; e :	24
+e &amp;mdash; t :	32
+r &amp;mdash; m :	17
+&amp;mdash; p :	66
+p &amp;mdash; e :	20
+c &amp;mdash; t :	35
+p &amp;mdash; r :	27
+r &amp;mdash; o :	42
+e &amp;mdash; i :	11
+n &amp;mdash; s :	24
+x &amp;mdash; t :	4
+t &amp;mdash; r :	17
+r &amp;mdash; a :	32
+a &amp;mdash; c :	43
+t &amp;mdash; a :	24
+a &amp;mdash; b :	18
+b &amp;mdash; l :	12
+r &amp;mdash; g :	6
+n &amp;mdash; i :	28
+t &amp;mdash; t :	15
+u &amp;mdash; c :	7
+h &amp;mdash;   :	31
+w &amp;mdash; a :	19
+a &amp;mdash; x :	12
+x &amp;mdash; e :	2
+f &amp;mdash; a :	20
+l &amp;mdash; c :	1
+o &amp;mdash; h :	1
+h &amp;mdash; o :	18
+o &amp;mdash; l :	26
+l &amp;mdash; s :	11
+c &amp;mdash; i :	8
+d &amp;mdash; s :	16
+i &amp;mdash; l :	28
+l &amp;mdash; a :	44
+r &amp;mdash; l :	5
+e &amp;mdash; q :	7
+u &amp;mdash; e :	20
+a &amp;mdash; p :	11
+p &amp;mdash; p :	4
+o &amp;mdash; x :	1
+x &amp;mdash;   :	9
+w &amp;mdash; t :	3
+h &amp;mdash; i :	26
+&amp;mdash; g :	19
+g &amp;mdash; o :	2
+o &amp;mdash; o :	2
+o &amp;mdash; d :	2
+a &amp;mdash; g :	7
+g &amp;mdash; r :	16
+e &amp;mdash; e :	18
+m &amp;mdash; e :	46
+&amp;mdash; v :	22
+v &amp;mdash; a :	20
+b &amp;mdash; y :	10
+e &amp;mdash; z :	2
+z &amp;mdash;   :	2
+n &amp;mdash; z :	1
+z &amp;mdash; a :	1
+f &amp;mdash; l :	8
+a &amp;mdash; v :	12
+g &amp;mdash; h :	10
+b &amp;mdash; a :	11
+r &amp;mdash; n :	11
+n &amp;mdash; h :	6
+s &amp;mdash; k :	6
+k &amp;mdash;   :	7
+e &amp;mdash; a :	39
+r &amp;mdash; c :	2
+g &amp;mdash; e :	13
+u &amp;mdash; g :	5
+g &amp;mdash; u :	10
+u &amp;mdash; i :	13
+e &amp;mdash; y :	5
+n &amp;mdash; g :	33
+g &amp;mdash;   :	29
+f &amp;mdash; r :	9
+m &amp;mdash;   :	19
+r &amp;mdash; i :	36
+e &amp;mdash; o :	6
+o &amp;mdash; g :	3
+p &amp;mdash; h :	4
+e &amp;mdash; g :	6
+g &amp;mdash; i :	7
+o &amp;mdash; p :	10
+r &amp;mdash; f :	13
+s &amp;mdash; h :	13
+w &amp;mdash; s :	3
+h &amp;mdash; t :	7
+a &amp;mdash; i :	13
+w &amp;mdash; i :	15
+s &amp;mdash; w :	3
+x &amp;mdash; i :	4
+m &amp;mdash; u :	7
+d &amp;mdash; u :	7
+i &amp;mdash; q :	9
+p &amp;mdash; i :	7
+i &amp;mdash; i :	1
+i &amp;mdash;   :	1
+e &amp;mdash; f :	7
+p &amp;mdash; a :	9
+c &amp;mdash; k :	3
+k &amp;mdash; e :	5
+e &amp;mdash; v :	10
+f &amp;mdash; u :	9
+b &amp;mdash; s :	1
+s &amp;mdash; o :	13
+r &amp;mdash; p :	4
+p &amp;mdash; t :	6
+m &amp;mdash; n :	8
+f &amp;mdash; o :	26
+n &amp;mdash; f :	6
+d &amp;mdash; a :	3
+i &amp;mdash; a :	23
+h &amp;mdash; l :	1
+i &amp;mdash; k :	3
+n &amp;mdash; y :	1
+n &amp;mdash; a :	19
+r &amp;mdash; v :	1
+l &amp;mdash; w :	1
+a &amp;mdash; y :	3
+y &amp;mdash; s :	2
+v &amp;mdash; i :	5
+r &amp;mdash; r :	8
+s &amp;mdash; p :	5
+i &amp;mdash; z :	3
+z &amp;mdash; e :	4
+o &amp;mdash; b :	1
+b &amp;mdash; t :	1
+i &amp;mdash; p :	1
+y &amp;mdash; i :	2
+i &amp;mdash; v :	10
+c &amp;mdash; r :	9
+c &amp;mdash; c :	2
+g &amp;mdash; y :	1
+&amp;mdash; z :	3
+z &amp;mdash; i :	4
+s &amp;mdash; m :	7
+c &amp;mdash; l :	4
+p &amp;mdash; u :	4
+t &amp;mdash; w :	6
+m &amp;mdash; s :	5
+b &amp;mdash; o :	5
+l &amp;mdash; d :	11
+b &amp;mdash; i :	4
+p &amp;mdash; s :	4
+b &amp;mdash; u :	7
+u &amp;mdash; t :	12
+h &amp;mdash; y :	2
+y &amp;mdash; d :	1
+i &amp;mdash; r :	8
+c &amp;mdash; y :	1
+g &amp;mdash; g :	1
+a &amp;mdash; z :	1
+n &amp;mdash; k :	1
+y &amp;mdash; z :	1
+l &amp;mdash; m :	1
+&amp;mdash; y :	3
+y &amp;mdash; p :	2
+x &amp;mdash; c :	2
+r &amp;mdash; u :	4
+u &amp;mdash; f :	1
+d &amp;mdash; l :	1
+o &amp;mdash; a :	1
+s &amp;mdash; y :	1
+y &amp;mdash; m :	1
+o &amp;mdash; v :	1
+d &amp;mdash; v :	2
+u &amp;mdash;   :	1
+&amp;mdash; j :	5
+j &amp;mdash; u :	2
+y &amp;mdash; t :	3
+a &amp;mdash; q :	1
+y &amp;mdash; r :	1
+g &amp;mdash; l :	1
+w &amp;mdash; o :	6
+r &amp;mdash; d :	5
+u &amp;mdash; d :	2
+u &amp;mdash; b :	3
+y &amp;mdash; e :	4
+u &amp;mdash; o :	1
+m &amp;mdash; m :	1
+e &amp;mdash; w :	6
+w &amp;mdash;   :	5
+s &amp;mdash; b :	1
+g &amp;mdash; f :	1
+m &amp;mdash; b :	3
+a &amp;mdash; w :	1
+a &amp;mdash; k :	1
+b &amp;mdash;   :	1
+n &amp;mdash; u :	2
+k &amp;mdash; s :	2
+n &amp;mdash; j :	1
+j &amp;mdash; a :	1
+s &amp;mdash; r :	1
+a &amp;mdash; e :	1
+j &amp;mdash; e :	5
+a &amp;mdash; h :	1
+r &amp;mdash; b :	1
+o &amp;mdash; j :	1
+e &amp;mdash; u :	2
+v &amp;mdash; o :	1
+s &amp;mdash; l :	4
+h &amp;mdash; m :	1
+h &amp;mdash; r :	2
+d &amp;mdash; w :	3
+w &amp;mdash; r :	1
+e &amp;mdash; j :	1
+s &amp;mdash; q :	1&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>First Genetic Algorithm</title>
       <link>/post/ga-intro/</link>
       <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
