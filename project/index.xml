@@ -17,7 +17,11 @@
       <link>/project/ctln/</link>
       <pubDate>Wed, 11 Dec 2019 00:00:00 +0000</pubDate>
       <guid>/project/ctln/</guid>
-      <description>&lt;div&gt;$$\frac{d x_i}{dt} = -x_i + \left[ \sum_{j=1}^{n} W_{ij} x_j + \theta \right]_+ i = 1, \ldots, n$$&lt;/div&gt;
+      <description>&lt;figure&gt;
+  &lt;img src=&#34;img/network.png&#34; alt=&#34;Network&#34; width=&#34;600&#34;/&gt;
+  &lt;figcaption&gt;Figure 1 — Directed Network Which Represents Threshold Linear Network&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div&gt;$$\frac{d x_i}{dt} = -x_i + \left[ \sum_{j=1}^{n} W_{ij} x_j + \theta \right]_+ i = 1, \ldots, n$$&lt;/div&gt;
 &lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/1fx30MNJ0vK8NCKlWVHHwYNCAWU1UkN1zVmRUMJ6gjVQ/edit?usp=sharing&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;</description>
     </item>
     

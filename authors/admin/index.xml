@@ -125,6 +125,90 @@ if __name__ == &#39;__main__&#39;:
     </item>
     
     <item>
+      <title>Speed of Julia</title>
+      <link>/post/julia/</link>
+      <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/post/julia/</guid>
+      <description>&lt;figure&gt;
+  &lt;img src=&#34;img/logo.png&#34; alt=&#34;Julia Logo&#34; width=&#34;500&#34;/&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;creating-fibn&#34;&gt;Creating fib(n)&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;function fib(n)
+    if (n == 1 || n == 2)
+        return 1
+    else
+        return fib(n - 1) + fib(n - 2)
+    end
+end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;timing-fibn-140&#34;&gt;Timing fib(n) 1:40&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;function fibTime(k)
+    t = []
+    for i in 1:k
+        push!(t, (@timed fib(i))[2])
+    end
+    return t
+end
+
+# :: Print @timed Fibonacci 1 through 40
+println(fibTime(40))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;plotting-timed-results&#34;&gt;Plotting @Timed Results&lt;/h2&gt;
+&lt;p&gt;The timing for Julia is surprisingly very fast!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;using Plots
+plot(fibTime(40), title=&amp;quot;Timed Recursive Fibonacci Algorithm&amp;quot;, 
+	color = :red, fill = (0, .3, :red), legend = false)
+xaxis!(&amp;quot;[n given in fib(n)]&amp;quot;)
+yaxis!(&amp;quot;Time [seconds]&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/timed.png&#34; alt=&#34;Timed&#34; width=&#34;600&#34;/&gt;
+  &lt;figcaption&gt;Figure 1 — Timed Recursive Algorithm That Calculates $n^{th}$ Fibonacci Number in Julia&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;achieve-results-in-python&#34;&gt;Achieve Results in Python&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from matplotlib import pyplot as plt
+import time
+
+def fib(n):
+    if (n == 1) or (n == 2):
+        return 1
+    else:
+        return fib(n - 1) + fib(n - 2)
+
+def fibTimed(k):
+    t = []
+    for i in range(1, k + 1):
+        s = time.time()
+        fib(i)
+        fib_t = time.time() - s
+        t.append(fib_t)
+    return t
+
+result = fibTimed(40)
+print(result)
+plt.plot(result)
+plt.title(&amp;quot;Python @Timed Recursive fib(n) Algorithm&amp;quot;)
+plt.xlabel(&amp;quot;[n given in fin(n)]&amp;quot;)
+plt.ylabel(&amp;quot;Time [seconds]&amp;quot;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;The results from Python are significantly slower than compared to Julia. $Fib(40)$ takes nearly $30$ seconds to complete.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/timed_python.png&#34; alt=&#34;Timed&#34; width=&#34;600&#34;/&gt;
+  &lt;figcaption&gt;Figure 2 — Timed Recursive Algorithm That Calculates $n^{th}$ Fibonacci Number in Python&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;show-julia-versus-python-comparison&#34;&gt;Show Julia Versus Python Comparison&lt;/h2&gt;
+&lt;p&gt;The plot below shows that Julia is significantly more efficient compared to Python for this recursive algorithm.&lt;/p&gt;
+&lt;hr&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/comparison.png&#34; alt=&#34;Compare&#34; width=&#34;600&#34;/&gt;
+  &lt;figcaption&gt;Figure 3 — Timed Recursive Algorithm Between Julia and Python between $n = 30$ and $n = 40$&lt;/figcaption&gt;
+&lt;/figure&gt;</description>
+    </item>
+    
+    <item>
       <title>Complexity — A Guided Tour</title>
       <link>/post/complexity-reflection/</link>
       <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
@@ -340,20 +424,6 @@ $$\alpha(\vec{v} + \vec{w}) = \alpha(\vec{v}) + \alpha(\vec{w})$$&lt;/p&gt;
 &lt;li&gt;Covectors can also be scaled with scalars and combined using addition and multiplication. The vector space spanned by covectors is called the &amp;ldquo;Dual Vector Space&amp;rdquo;, $V^*$.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;linear-maps&#34;&gt;Linear Maps&lt;/h1&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>An example preprint / working paper</title>
-      <link>/publication/preprint/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/preprint/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -1317,44 +1387,6 @@ $$\frac{dE}{dt}=-\frac{\partial \mathcal{L}}{\partial t}.$$&lt;/p&gt;
 &lt;h2 id=&#34;applications&#34;&gt;Applications&lt;/h2&gt;
 &lt;p&gt;I programmed this nonlinear double pendulum with Mathamtica (Wolfram Language)
 &lt;img src=&#34;img/doublependulum_5.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>An example journal article</title>
-      <link>/publication/journal-article/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>/publication/journal-article/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>An example conference paper</title>
-      <link>/publication/conference-paper/</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/conference-paper/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

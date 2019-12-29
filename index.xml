@@ -79,7 +79,11 @@
       <link>/project/ctln/</link>
       <pubDate>Wed, 11 Dec 2019 00:00:00 +0000</pubDate>
       <guid>/project/ctln/</guid>
-      <description>&lt;div&gt;$$\frac{d x_i}{dt} = -x_i + \left[ \sum_{j=1}^{n} W_{ij} x_j + \theta \right]_+ i = 1, \ldots, n$$&lt;/div&gt;
+      <description>&lt;figure&gt;
+  &lt;img src=&#34;img/network.png&#34; alt=&#34;Network&#34; width=&#34;600&#34;/&gt;
+  &lt;figcaption&gt;Figure 1 — Directed Network Which Represents Threshold Linear Network&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div&gt;$$\frac{d x_i}{dt} = -x_i + \left[ \sum_{j=1}^{n} W_{ij} x_j + \theta \right]_+ i = 1, \ldots, n$$&lt;/div&gt;
 &lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/1fx30MNJ0vK8NCKlWVHHwYNCAWU1UkN1zVmRUMJ6gjVQ/edit?usp=sharing&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;</description>
     </item>
     
@@ -792,6 +796,90 @@ if __name__ == &#39;__main__&#39;:
     </item>
     
     <item>
+      <title>Speed of Julia</title>
+      <link>/post/julia/</link>
+      <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/post/julia/</guid>
+      <description>&lt;figure&gt;
+  &lt;img src=&#34;img/logo.png&#34; alt=&#34;Julia Logo&#34; width=&#34;500&#34;/&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;creating-fibn&#34;&gt;Creating fib(n)&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;function fib(n)
+    if (n == 1 || n == 2)
+        return 1
+    else
+        return fib(n - 1) + fib(n - 2)
+    end
+end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;timing-fibn-140&#34;&gt;Timing fib(n) 1:40&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;function fibTime(k)
+    t = []
+    for i in 1:k
+        push!(t, (@timed fib(i))[2])
+    end
+    return t
+end
+
+# :: Print @timed Fibonacci 1 through 40
+println(fibTime(40))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;plotting-timed-results&#34;&gt;Plotting @Timed Results&lt;/h2&gt;
+&lt;p&gt;The timing for Julia is surprisingly very fast!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;using Plots
+plot(fibTime(40), title=&amp;quot;Timed Recursive Fibonacci Algorithm&amp;quot;, 
+	color = :red, fill = (0, .3, :red), legend = false)
+xaxis!(&amp;quot;[n given in fib(n)]&amp;quot;)
+yaxis!(&amp;quot;Time [seconds]&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/timed.png&#34; alt=&#34;Timed&#34; width=&#34;600&#34;/&gt;
+  &lt;figcaption&gt;Figure 1 — Timed Recursive Algorithm That Calculates $n^{th}$ Fibonacci Number in Julia&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;achieve-results-in-python&#34;&gt;Achieve Results in Python&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from matplotlib import pyplot as plt
+import time
+
+def fib(n):
+    if (n == 1) or (n == 2):
+        return 1
+    else:
+        return fib(n - 1) + fib(n - 2)
+
+def fibTimed(k):
+    t = []
+    for i in range(1, k + 1):
+        s = time.time()
+        fib(i)
+        fib_t = time.time() - s
+        t.append(fib_t)
+    return t
+
+result = fibTimed(40)
+print(result)
+plt.plot(result)
+plt.title(&amp;quot;Python @Timed Recursive fib(n) Algorithm&amp;quot;)
+plt.xlabel(&amp;quot;[n given in fin(n)]&amp;quot;)
+plt.ylabel(&amp;quot;Time [seconds]&amp;quot;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;The results from Python are significantly slower than compared to Julia. $Fib(40)$ takes nearly $30$ seconds to complete.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/timed_python.png&#34; alt=&#34;Timed&#34; width=&#34;600&#34;/&gt;
+  &lt;figcaption&gt;Figure 2 — Timed Recursive Algorithm That Calculates $n^{th}$ Fibonacci Number in Python&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;show-julia-versus-python-comparison&#34;&gt;Show Julia Versus Python Comparison&lt;/h2&gt;
+&lt;p&gt;The plot below shows that Julia is significantly more efficient compared to Python for this recursive algorithm.&lt;/p&gt;
+&lt;hr&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/comparison.png&#34; alt=&#34;Compare&#34; width=&#34;600&#34;/&gt;
+  &lt;figcaption&gt;Figure 3 — Timed Recursive Algorithm Between Julia and Python between $n = 30$ and $n = 40$&lt;/figcaption&gt;
+&lt;/figure&gt;</description>
+    </item>
+    
+    <item>
       <title>Complexity — A Guided Tour</title>
       <link>/post/complexity-reflection/</link>
       <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
@@ -1007,20 +1095,6 @@ $$\alpha(\vec{v} + \vec{w}) = \alpha(\vec{v}) + \alpha(\vec{w})$$&lt;/p&gt;
 &lt;li&gt;Covectors can also be scaled with scalars and combined using addition and multiplication. The vector space spanned by covectors is called the &amp;ldquo;Dual Vector Space&amp;rdquo;, $V^*$.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;linear-maps&#34;&gt;Linear Maps&lt;/h1&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>An example preprint / working paper</title>
-      <link>/publication/preprint/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/preprint/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -1943,134 +2017,6 @@ xff
     </item>
     
     <item>
-      <title>Slides</title>
-      <link>/slides/example/</link>
-      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>/slides/example/</guid>
-      <description>&lt;h1 id=&#34;create-slides-in-markdown-with-academic&#34;&gt;Create slides in Markdown with Academic&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/&#34;&gt;Academic&lt;/a&gt; | &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-slides&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Efficiently write slides in Markdown&lt;/li&gt;
-&lt;li&gt;3-in-1: Create, Present, and Publish your slides&lt;/li&gt;
-&lt;li&gt;Supports speaker notes&lt;/li&gt;
-&lt;li&gt;Mobile friendly slides&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Next: &lt;code&gt;Right Arrow&lt;/code&gt; or &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Previous: &lt;code&gt;Left Arrow&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Start: &lt;code&gt;Home&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Finish: &lt;code&gt;End&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Overview: &lt;code&gt;Esc&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Speaker notes: &lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Fullscreen: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Zoom: &lt;code&gt;Alt + Click&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
-&lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Code block:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;porridge = &amp;quot;blueberry&amp;quot;
-if porridge == &amp;quot;blueberry&amp;quot;:
-    print(&amp;quot;Eating...&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
-&lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
-&lt;p&gt;Block math:&lt;/p&gt;
-&lt;p&gt;$$
-f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
-$$&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
-&lt;p&gt;Make content appear incrementally&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
-{{% fragment %}} **Two** {{% /fragment %}}
-{{% fragment %}} Three {{% /fragment %}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;
-One
-&lt;/span&gt;
-&lt;span class=&#34;fragment &#34; &gt;
-&lt;strong&gt;Two&lt;/strong&gt;
-&lt;/span&gt;
-&lt;span class=&#34;fragment &#34; &gt;
-Three
-&lt;/span&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
-&lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% speaker_note %}}
-- Only the speaker can read these notes
-- Press `S` key to view
-{{% /speaker_note %}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
-&lt;aside class=&#34;notes&#34;&gt;
-  &lt;ul&gt;
-&lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
-&lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/aside&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
-&lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
-&lt;li&gt;league: Gray background, white text, blue links&lt;/li&gt;
-&lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
-&lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
-&lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
-&lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
-&lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-
-&lt;section data-noprocess data-shortcode-slide
-  
-      
-      data-background-image=&#34;/img/boards.jpg&#34;
-  &gt;
-
-&lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
-&lt;p&gt;Customize the slide style and background&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/img/boards.jpg&amp;quot; &amp;gt;}}
-{{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
-{{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
-&lt;p&gt;Let&#39;s make headers navy colored.&lt;/p&gt;
-&lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
-.reveal section h2,
-.reveal section h3 {
-  color: navy;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://spectrum.chat/academic&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-slides&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Mathematics of Network Theory</title>
       <link>/post/network-theory/</link>
       <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
@@ -2341,44 +2287,6 @@ $$\frac{dE}{dt}=-\frac{\partial \mathcal{L}}{\partial t}.$$&lt;/p&gt;
 &lt;h2 id=&#34;applications&#34;&gt;Applications&lt;/h2&gt;
 &lt;p&gt;I programmed this nonlinear double pendulum with Mathamtica (Wolfram Language)
 &lt;img src=&#34;img/doublependulum_5.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>An example journal article</title>
-      <link>/publication/journal-article/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>/publication/journal-article/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>An example conference paper</title>
-      <link>/publication/conference-paper/</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/conference-paper/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

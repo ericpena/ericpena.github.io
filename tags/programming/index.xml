@@ -17,7 +17,11 @@
       <link>/project/ctln/</link>
       <pubDate>Wed, 11 Dec 2019 00:00:00 +0000</pubDate>
       <guid>/project/ctln/</guid>
-      <description>&lt;div&gt;$$\frac{d x_i}{dt} = -x_i + \left[ \sum_{j=1}^{n} W_{ij} x_j + \theta \right]_+ i = 1, \ldots, n$$&lt;/div&gt;
+      <description>&lt;figure&gt;
+  &lt;img src=&#34;img/network.png&#34; alt=&#34;Network&#34; width=&#34;600&#34;/&gt;
+  &lt;figcaption&gt;Figure 1 — Directed Network Which Represents Threshold Linear Network&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div&gt;$$\frac{d x_i}{dt} = -x_i + \left[ \sum_{j=1}^{n} W_{ij} x_j + \theta \right]_+ i = 1, \ldots, n$$&lt;/div&gt;
 &lt;p&gt;&lt;iframe src=&#34;https://docs.google.com/presentation/d/1fx30MNJ0vK8NCKlWVHHwYNCAWU1UkN1zVmRUMJ6gjVQ/edit?usp=sharing&#34; frameborder=&#34;0&#34; width=&#34;800&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34; mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;</description>
     </item>
     
@@ -727,6 +731,90 @@ if __name__ == &#39;__main__&#39;:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&#34;results&#34;&gt;Results&lt;/h1&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Speed of Julia</title>
+      <link>/post/julia/</link>
+      <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/post/julia/</guid>
+      <description>&lt;figure&gt;
+  &lt;img src=&#34;img/logo.png&#34; alt=&#34;Julia Logo&#34; width=&#34;500&#34;/&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;creating-fibn&#34;&gt;Creating fib(n)&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;function fib(n)
+    if (n == 1 || n == 2)
+        return 1
+    else
+        return fib(n - 1) + fib(n - 2)
+    end
+end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;timing-fibn-140&#34;&gt;Timing fib(n) 1:40&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;function fibTime(k)
+    t = []
+    for i in 1:k
+        push!(t, (@timed fib(i))[2])
+    end
+    return t
+end
+
+# :: Print @timed Fibonacci 1 through 40
+println(fibTime(40))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;plotting-timed-results&#34;&gt;Plotting @Timed Results&lt;/h2&gt;
+&lt;p&gt;The timing for Julia is surprisingly very fast!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;using Plots
+plot(fibTime(40), title=&amp;quot;Timed Recursive Fibonacci Algorithm&amp;quot;, 
+	color = :red, fill = (0, .3, :red), legend = false)
+xaxis!(&amp;quot;[n given in fib(n)]&amp;quot;)
+yaxis!(&amp;quot;Time [seconds]&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/timed.png&#34; alt=&#34;Timed&#34; width=&#34;600&#34;/&gt;
+  &lt;figcaption&gt;Figure 1 — Timed Recursive Algorithm That Calculates $n^{th}$ Fibonacci Number in Julia&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;achieve-results-in-python&#34;&gt;Achieve Results in Python&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from matplotlib import pyplot as plt
+import time
+
+def fib(n):
+    if (n == 1) or (n == 2):
+        return 1
+    else:
+        return fib(n - 1) + fib(n - 2)
+
+def fibTimed(k):
+    t = []
+    for i in range(1, k + 1):
+        s = time.time()
+        fib(i)
+        fib_t = time.time() - s
+        t.append(fib_t)
+    return t
+
+result = fibTimed(40)
+print(result)
+plt.plot(result)
+plt.title(&amp;quot;Python @Timed Recursive fib(n) Algorithm&amp;quot;)
+plt.xlabel(&amp;quot;[n given in fin(n)]&amp;quot;)
+plt.ylabel(&amp;quot;Time [seconds]&amp;quot;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;The results from Python are significantly slower than compared to Julia. $Fib(40)$ takes nearly $30$ seconds to complete.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/timed_python.png&#34; alt=&#34;Timed&#34; width=&#34;600&#34;/&gt;
+  &lt;figcaption&gt;Figure 2 — Timed Recursive Algorithm That Calculates $n^{th}$ Fibonacci Number in Python&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;show-julia-versus-python-comparison&#34;&gt;Show Julia Versus Python Comparison&lt;/h2&gt;
+&lt;p&gt;The plot below shows that Julia is significantly more efficient compared to Python for this recursive algorithm.&lt;/p&gt;
+&lt;hr&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/comparison.png&#34; alt=&#34;Compare&#34; width=&#34;600&#34;/&gt;
+  &lt;figcaption&gt;Figure 3 — Timed Recursive Algorithm Between Julia and Python between $n = 30$ and $n = 40$&lt;/figcaption&gt;
+&lt;/figure&gt;</description>
     </item>
     
     <item>
