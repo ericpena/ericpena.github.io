@@ -33,17 +33,52 @@
   </url>
   
   <url>
+    <loc>/authors/admin/</loc>
+    <lastmod>2019-12-31T17:07:48-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
+    <lastmod>2019-12-31T17:07:48-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/mathematics/</loc>
+    <lastmod>2019-12-31T17:07:48-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/physics/</loc>
+    <lastmod>2019-12-31T17:07:48-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2019-12-31T17:07:48-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-12-31T17:07:48-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/teaching/</loc>
+    <lastmod>2019-12-31T17:07:48-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/preface-program/</loc>
+    <lastmod>2019-12-31T17:07:48-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/complex-systems/</loc>
     <lastmod>2019-12-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/project/ctln-project/</loc>
-    <lastmod>2019-12-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/mathematics/</loc>
     <lastmod>2019-12-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -73,11 +108,6 @@
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <lastmod>2019-12-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/project/liso-project/</loc>
     <lastmod>2019-12-01T00:00:00+00:00</lastmod>
   </url>
@@ -98,16 +128,6 @@
   </url>
   
   <url>
-    <loc>/authors/admin/</loc>
-    <lastmod>2019-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/</loc>
-    <lastmod>2019-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/</loc>
     <lastmod>2019-09-09T00:00:00+00:00</lastmod>
   </url>
@@ -124,11 +144,6 @@
   
   <url>
     <loc>/categories/posts/</loc>
-    <lastmod>2019-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
     <lastmod>2019-09-09T00:00:00+00:00</lastmod>
   </url>
   
@@ -189,11 +204,6 @@
   
   <url>
     <loc>/post/gen-coord/</loc>
-    <lastmod>2017-12-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/physics/</loc>
     <lastmod>2017-12-19T00:00:00+00:00</lastmod>
   </url>
   

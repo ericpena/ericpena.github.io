@@ -5,7 +5,7 @@
     <link>/tags/</link>
       <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2019 Eric Peña</copyright><lastBuildDate>Wed, 11 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2019 Eric Peña</copyright><lastBuildDate>Tue, 31 Dec 2019 17:07:48 -0500</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Tags</title>
@@ -13,18 +13,34 @@
     </image>
     
     <item>
-      <title>Complex Systems</title>
-      <link>/tags/complex-systems/</link>
-      <pubDate>Wed, 11 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>/tags/complex-systems/</guid>
+      <title>Mathematics</title>
+      <link>/tags/mathematics/</link>
+      <pubDate>Tue, 31 Dec 2019 17:07:48 -0500</pubDate>
+      <guid>/tags/mathematics/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Mathematics</title>
-      <link>/tags/mathematics/</link>
+      <title>Physics</title>
+      <link>/tags/physics/</link>
+      <pubDate>Tue, 31 Dec 2019 17:07:48 -0500</pubDate>
+      <guid>/tags/physics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>/tags/teaching/</link>
+      <pubDate>Tue, 31 Dec 2019 17:07:48 -0500</pubDate>
+      <guid>/tags/teaching/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Complex Systems</title>
+      <link>/tags/complex-systems/</link>
       <pubDate>Wed, 11 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>/tags/mathematics/</guid>
+      <guid>/tags/complex-systems/</guid>
       <description></description>
     </item>
     
@@ -105,14 +121,6 @@
       <link>/tags/r/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
       <guid>/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Physics</title>
-      <link>/tags/physics/</link>
-      <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>/tags/physics/</guid>
       <description></description>
     </item>
     
