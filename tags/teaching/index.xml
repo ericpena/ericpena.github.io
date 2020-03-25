@@ -5,7 +5,7 @@
     <link>/tags/teaching/</link>
       <atom:link href="/tags/teaching/index.xml" rel="self" type="application/rss+xml" />
     <description>Teaching</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2019 Eric Peña</copyright><lastBuildDate>Tue, 31 Dec 2019 17:07:48 -0500</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2020 Eric Peña</copyright><lastBuildDate>Tue, 31 Dec 2019 17:07:48 -0500</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Teaching</title>
@@ -77,7 +77,7 @@ $$dx = v_o cos(\phi) dt$$&lt;/p&gt;
   &lt;img src=&#34;img/area5.png&#34; alt=&#34;Area Under Trajectory Until $\phi = \frac{5\pi}{3}$&#34; width=&#34;700&#34;/&gt;
   &lt;figcaption&gt;Figure 4 — Visualizing Area Under Trajectory of Ball With Various Values of $\phi$ for $0 &lt; \phi &lt; \frac{5\pi}{2}$&lt;/figcaption&gt;
 &lt;/figure&gt;
-&lt;h2 id=&#34;final-questions-to-answers&#34;&gt;Final Questions to Answers&lt;/h2&gt;
+&lt;h2 id=&#34;final-questions-to-answer&#34;&gt;Final Questions to Answer&lt;/h2&gt;
 &lt;p&gt;For completion, let&#39;s answer some basic questions about our ball given the initial conditions states above now that we know the optimal angle $\phi$.&lt;/p&gt;
 &lt;h4 id=&#34;how-long-does-it-take-the-ball-to-land&#34;&gt;How long does it take the ball to land?&lt;/h4&gt;
 &lt;p&gt;$$t = \frac{2 v_o sin(\phi)}{g} = \frac{\sqrt3}{2} = 0.866025\ s$$&lt;/p&gt;
