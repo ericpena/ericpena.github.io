@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Eric Peña">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Generalized Coordinates and Conservation Laws From the Lagrangian Formulation of Theoretical Mechanics">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/gen-coord/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+  
+
+  <link rel="canonical" href="/post/gen-coord/">
+
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="ERIC PEÑA">
+  <meta property="og:url" content="/post/gen-coord/">
+  <meta property="og:title" content="Lagrangian Mechanics | ERIC PEÑA">
+  <meta property="og:description" content="Generalized Coordinates and Conservation Laws From the Lagrangian Formulation of Theoretical Mechanics"><meta property="og:image" content="/post/gen-coord/featured.png">
+  <meta property="twitter:image" content="/post/gen-coord/featured.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2017-12-19T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2017-12-19T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/gen-coord/"
+  },
+  "headline": "Lagrangian Mechanics",
+  
+  "image": [
+    "/post/gen-coord/featured.png"
+  ],
+  
+  "datePublished": "2017-12-19T00:00:00Z",
+  "dateModified": "2017-12-19T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Eric Peña"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "ERIC PEÑA",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/img/icon-512.png"
+    }
+  },
+  "description": "Generalized Coordinates and Conservation Laws From the Lagrangian Formulation of Theoretical Mechanics"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Lagrangian Mechanics | ERIC PEÑA</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">ERIC PEÑA</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">ERIC PEÑA</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#experience"><span>Experience</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Lagrangian Mechanics</h1>
+
+  
+  <p class="page-subtitle">Generalized Coordinates and Conservation Laws From the Lagrangian Formulation of Theoretical Mechanics</p>
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  
+  <span><a href="/authors/admin/">Eric Peña</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Dec 19, 2017
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    9 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categories/posts/">Posts</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h1 id="generalized-coordinates-and-conservation-laws-from-the-lagrangian-formulation-of-theoretical-mechanics">Generalized Coordinates and Conservation Laws From the Lagrangian Formulation of Theoretical Mechanics</h1>
+<p>These are selected notes from a group of topics I find of particular interest. Although I assume some previous knowledge of classical mechanics from you, I still provide a brief overview of what the Lagrangian method is, where it comes from, how it relates to the more familiar Newtonian formulation, and how these beautiful laws of nature imply conserved quantities in everyday systems. The core of these notes include how we can simplify the Lagrangian method by observing conserved quantities by means of cyclic or &ldquo;ignorable&rdquo; generalized coordinates. The Lagrangian is invariant under variations of these types of coordinates. I will explain how cyclic coordinates and Lagrangian invariance imply conservation laws. There are several results that relate Lagrangian invariance and conserved quantities and they are referred to as Noether's theorem. I am happy to share what I have learned with you!</p>
+<h1 id="overview">Overview</h1>
+<p>Let's start with simple laws of motion. They describe how mechanical
+systems evolve in time given certain conditions and constraints. Consider
+yourself standing on the St. Louis Arch (Gateway Arch, whose width <em>and</em> height are 630 ft.) for some God awful
+reason. You hold out an apple with your hand and drop it so that it is falling
+towards the Earth. We can predict, for example, where the apple will be at some later time by using an equation of motion. Say we took air resistance into account or that it then falls into a huge pool of oil or dropping a water balloon instead that oscillates in free space or dropping a single water droplet while it's raining.
+Does the rate at which the water droplet accumulate &ldquo;water-mass&rdquo; increase? And if this drop then fell into the pool of oil&hellip; and if the pool sits on a spring&hellip; or two springs&hellip; or an infinite number of springs and etc. We can study a slew of systems using equations of motion (and some canny logical intuition). Newtonian and
+Lagrangian mechanics are just a couple ways a obtaining these types of descriptions of systems we experience everyday.</p>
+<p>The most obvious difference between these methods is the Newtonian method utilize the external <em>forces</em> of a system and how they apply in
+some defined coordinate plane while the Lagrangian focuses on the <em>energy</em> the system
+is experiencing. Now we can begin talking about the Lagrangian and how related these methods actually are.</p>
+<p>The Lagrangian can be written as:</p>
+<p>$$ \mathcal{L} = T - U$$</p>
+<p>The kinetic energy $T$ and the potential energy $U$ are used to make the Lagrangian and
+the Lagrangian is used to find the equations of motion with something called the <em>Lagrange</em> equations. It can be written as:</p>
+<p>$$\frac{\partial \mathcal{L}}{\partial q_i}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}$$</p>
+<p>where $q_i$ are the generalized coordinates that we are using. Since this is still the overview, I will briefly describe where the <em>Lagrange</em> equation comes from.</p>
+<p>The <em>Lagrange</em> equation is a subset of a far broader area of mathematics called the <em>Calculus of Variations</em> or <em>Variational Calculus</em>. It involves finding the maximum and minimum of a quantity that can be expressed as an integral. The general form of what is called the <em>variational problem</em> is:</p>
+<p>$$S=\int_{x_1}^{x_2} f[y(x), y&rsquo;(x), x]dx$$</p>
+<p>The important part is finding the equation $y(x)$ such that the $S$ integral is stationary
+(which means infinitesimal variations of the path $y(x)$ doesn't change the value of the
+integral). After a tedious derivation, we are left with what is called the
+<em>Euler-Lagrange</em> equation. Remember that this result is purely mathematical and hasn't
+been applied to our physics world quite yet.</p>
+<p>We can talk about these variational methods for pages but let's get to the meat of it
+all. The reason why variational calculus and the Euler-Lagrange equation are so
+important is because when the function $f[y(x), y&rsquo;(x), x]$ within the integral is the Lagrangian (defined at the top of the page), the integral is called the <em>action</em> integral and the function that makes the <em>action</em> integral <em>stationary</em>
+is the equation of motion of the particle in question.</p>
+<p>This result is stated in what is called <em>Hamilton's Principle</em>.
+It tells us that if we know the energy (and therefore the Lagrangian) of a
+system, then we can know about its motion and how it evolves through time.
+<em>Hamilton's Principle</em> is as follows:</p>
+<h2 id="hamiltons-principle"><strong>Hamilton's Principle</strong></h2>
+<p><em>The actual path which a particle follows between two points 1 and 2 in a given time interval, $t_1$ to $t_2$, is such that the action integral</em></p>
+<p>$$S=\int_{t_1}^{t_2} \mathcal{L} dt$$</p>
+<p><em>is stationary when taken along the actual path.</em></p>
+<p>Now we may go back to the <em>Lagrange</em> equation and see that it must provide us with
+the path that an actual particle will travel that experiences the forces and energy described by the Lagrangian.
+$$\frac{\partial \mathcal{L}}{\partial q_i}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}$$</p>
+<p>If what has been written so far seems vague or a bit generalized, it is because this was
+intended to be more of a reminder than an introduction. Let's finish this overview with
+the relationship between the Newtonian and Lagrangian formulations.
+The equations that are obtained by these methods must be equal; physics does not change
+depending on the language we use to describe it; they really are one and the same. Just because
+Newton's laws are usually explicitly written in terms of force doesn't mean we
+can't express it in terms of another quantity like momentum for example:
+$$F = ma = m\dot{v} = \dot{p}$$
+Let's not forget how related force and energy really are:</p>
+<p>$$\Delta T = T_2 - T_1 = \int_{1}^{2}\textbf{F} \cdot d\textbf{r}$$</p>
+<p>$$U(\textbf{r}) = -\int_{r_0}^r F(\textbf{r}') \cdot d\textbf{r}&lsquo;$$
+To relate Lagrangian and Newtonian methods more directly:</p>
+<h2 id="euler-lagrange-equation">Euler-Lagrange Equation</h2>
+<p>$$\frac{\partial \mathcal{L}}{\partial q_i}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}$$
+$$\frac{\partial \mathcal{L}}{\partial q_i} = F_i\ \ \ and\ \ \ \frac{\partial \mathcal{L}}{\partial \dot{q}_i} \equiv p_i$$
+These are referred to as generalized forces and generalized momenta. We may start our discussion of generalized ignorable coordinates and conservation laws now!</p>
+<p><strong>Quick Fun Fact!</strong> There also exists a Hamiltonian formulation of Classical
+Mechanics that takes advantage of its own coordinate system called <em>Canonical Coordinates</em>.</p>
+<h2 id="generalized-coordinates">Generalized Coordinates</h2>
+<p>Generalized momenta and generalized forces are not the same thing as the familiar
+force and momentum we are used to. We can still relate momentum and force in the
+usual manner:
+$$F_i = \frac{d}{dt}p_i,$$
+except these are understood to be defined using generalized coordinates. The fact that
+<em>generalized force</em> $=$ <em>rate of change of generalized momentum</em> should not be surprising.
+A direct way to think of generalized coordinates is to describe the complete
+motion of a system in the fewest number of coordinates. Consider a pendulum bob for one
+moment (yes, another pendulum).</p>
+<p><img src="img/pendulum.png" alt="Figure 1 - Pendulum"></p>
+<p>We have a choice of using Cartesian coordinates to describe the motion of this
+bob or any other coordinate system we can dream up. The downside of using
+Cartesian coordinates $(x,y,z)$, is that $x$, $y$, and $z$ must constantly compensate one another to assure the length L remains constant. We can imagine all the combinations of values that satisfy $(\sqrt{x^2+y^2})^2+l^2(1-z)^2=constant$. Long story short, spherical (or polar) coordinates $(r, \theta, \phi)$ are the most appropriate for this problem for
+obvious symmetrical advantages and can be considered the generalized coordinates that define our system.</p>
+<p>Now that we have mentioned what generalized coordinates are, we can gain more insight
+on what generalized momenta is. Ordinary momentum by definition is $p = mv$ where $v$ is
+one time derivative away from a position variable: $p = m (\dot{x}+\dot{y}+\dot{z})$.
+So we can easily see that generalized momenta is simple the mass of an object times the
+time derivative of its generalized position vectors! Simple! Generalized force can be found the same way except with two time derivatives. $F_t$ in the Figure 1 is the
+generalized force of the pendulum system. This pendulum can escape from the x-y grid universe and be thought of as moving along one generalized coordinate, $\theta(t)$. (The length of the pendulum, L, if fixed but if it weren't, $r(t)$ could be another generalized coordinate used to describe the system).</p>
+<h2 id="cyclic-coordinates">Cyclic Coordinates</h2>
+<p>When the Lagrangian of a system is independent of a generalized coordinate $q_i$, that
+coordinate is sometimes called a <em>cyclic</em> or <em>ignorable</em> coordinate.
+Saying the Lagrangian is independent of a particular variable is exactly what it
+sounds like, neither the kinetic nor the potential energy depend on this quantity.
+This leads directly to the fact that there exists a conserved quantity!</p>
+<p>We can generally express a Lagrangian that is independent of some generalized
+coordinate $q_2$ as:
+$$\mathcal{L}=\mathcal{L}(q_1, q_3, q_4, \cdots, \dot{q}_1, \dot{q}_2, \dot{q}_3, \dot{q}_4, \cdots, t)$$</p>
+<p>What this means exactly, is that the generalized momentum that corresponds to $q_2$ is
+conserved. This can be written as:
+$$\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_2} = \frac{\partial \mathcal{L}}{\partial q_2} = 0$$
+$$\frac{\partial \mathcal{L}}{\partial \dot{q}_2} = \kappa$$ where $\kappa$ is constant. We can say that this system exhibits conservation of angular momentum!</p>
+<p>This makes solving equations of motion using Lagrangian even easier than before!</p>
+<p>Let's take advantage of this property by examining the $\mathcal{L}$ of a standard classical mechanics
+problem (one of which never gets old). It is stated as follows:</p>
+<p><strong>Problem</strong> <em>A mass $m$ is free to slide on a frictionless table and is connected, via a string that passes through a hole in the table, to a mass $M$ that hangs below. Assume that $M$
+moves in a vertical line only, and assume that the string always remains taut. Figure 2 shows a moment in time of this situation.</em></p>
+<p><img src="img/tableBall.png" alt="Figure 2 - Example Problem"></p>
+<p>The Lagrangian is as follows:
+$$\mathcal{L}=T-U$$
+$$\mathcal{L}=\frac{1}{2}M \dot{r}^2+\frac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2)+Mg(l-r)$$
+The important thing to notice about this expression is that there is no $\theta$ variable
+in it anywhere. The Lagrangian is said to be invariant under variations of the generalized
+coordinate $\theta$. The important conclusion to take away from this is that the momentum that corresponds to $\theta$ is conserved or in
+this case, the angular momentum $mr^2\dot{\theta}$. Therefore without much investigating we can quickly see that $\frac{d}{dt}(mr^2\dot{\theta})=0$. This comes directly from the <em>Euler-Langrange</em> equation obtained by varying $\theta$:</p>
+<p>$$\frac{\partial \mathcal{L}}{\partial \theta}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{\theta}}$$
+$$0 = \frac{d}{dt}(mr^2\dot{\theta})$$</p>
+<p>The <em>E-L</em> equation that comes from varying $r$ is:
+$$\frac{\partial \mathcal{L}}{\partial r}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{r}}$$
+$$(M+m)\ddot{r}=mr\dot{\theta}^2-Mg$$</p>
+<h2 id="conservation-of-energy">Conservation of Energy</h2>
+<p>Energy is also another quantity that is often conversed in these types of mechanical problems. We will introduce an important claim that touches on this conservation law. First let's give a definition of <em>energy</em> in terms of the <em>Lagrangian</em>:
+$$E \equiv (\sum_{i=1}^{N} \frac{\partial \mathcal{L}}{\partial \dot{q}_i} \dot{q}_i) - \mathcal{L}$$
+This may seem random to define the energy in such a way but don't worry too much about it for now. Without going into too much detail, this result is far from random. In fact, there is a rigorous mathematical reason, called the theory of Legendre transforms, that explains why energy can be written in this form. You see this often in Hamiltonian mechanics since the Hamiltonian is simply the total energy of the system: $T+U$.</p>
+<p>Now we may introduce the claim mentioned earlier:</p>
+<p><em>If $\mathcal{L}$ has no explicit time dependence (that is, if $\frac{\partial \mathcal{L}}{\partial t} = 0$), then E is conserved (that is, $\frac{dE}{dt} = 0$), assuming that the motion obeys the E-L equations.</em></p>
+<p>Without proving it, the following relation summarizes this claim:
+$$\frac{dE}{dt}=-\frac{\partial \mathcal{L}}{\partial t}.$$</p>
+<h2 id="applications">Applications</h2>
+<p>I programmed this nonlinear double pendulum with Mathematica (Wolfram Language)
+<img src="img/doublependulum_5.gif" alt=""></p>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/physics/">Physics</a>
+  
+  <a class="badge badge-light" href="/tags/complex-systems/">Complex Systems</a>
+  
+  <a class="badge badge-light" href="/tags/modeling/">Modeling</a>
+  
+  <a class="badge badge-light" href="/tags/mathematics/">Mathematics</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/gen-coord/&amp;text=Lagrangian%20Mechanics" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/gen-coord/&amp;t=Lagrangian%20Mechanics" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Lagrangian%20Mechanics&amp;body=/post/gen-coord/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/gen-coord/&amp;title=Lagrangian%20Mechanics" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Lagrangian%20Mechanics%20/post/gen-coord/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/gen-coord/&amp;title=Lagrangian%20Mechanics" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_hud77b1095c01af040e29ad43d8e5848f0_165766_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/">Eric Peña</a></h5>
+      <h6 class="card-subtitle">Clifford D. Clark Fellow &mdash; State University of New York</h6>
+      <p class="card-text">My research interests include System Science, Complex Networks, and Machine Learning.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/ericpenajr" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/ericpena" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/cv.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.600a2e440c16093e23e26e90951c4d4b.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    ©2020 Eric Peña &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

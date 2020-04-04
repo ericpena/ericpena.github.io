@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Physics | ERIC PEÑA</title>
+    <link>/tags/physics/</link>
+      <atom:link href="/tags/physics/index.xml" rel="self" type="application/rss+xml" />
+    <description>Physics</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2020 Eric Peña</copyright><lastBuildDate>Tue, 31 Dec 2019 17:07:48 -0500</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Physics</title>
+      <link>/tags/physics/</link>
+    </image>
+    
+    <item>
+      <title>Teaching Physics in the Minority Engineering Program –– Physics Example</title>
+      <link>/post/preface-program/</link>
+      <pubDate>Tue, 31 Dec 2019 17:07:48 -0500</pubDate>
+      <guid>/post/preface-program/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;I had the pleasure of teaching physics for the Pre First-Year Academic and Career Engagement &lt;a href=&#34;https://mep.engineering.osu.edu/preface-summer-bridge-program&#34;&gt;(PREFACE)&lt;/a&gt; Program. These are students that graduated high school and are transitioning into college to study engineering. The following is a problem I gave my students as a challenge question on their final. Many students found this problem interesting and we had a long discussion about the power of learning theoretical mechanics for the future of their respective degrees.&lt;/p&gt;
+&lt;h2 id=&#34;the-problem&#34;&gt;The Problem&lt;/h2&gt;
+&lt;p&gt;A ball is thrown at speed $v_o$ from zero height on level ground. At what angle $\phi$ (from horizontal) should the ball be thrown such that the area under the trajectory is maximized? (Assume no air resistance)&lt;/p&gt;
+&lt;h2 id=&#34;visualize-the-problem&#34;&gt;Visualize the Problem&lt;/h2&gt;
+&lt;p&gt;It&#39;s important to visualize the problem at hand. We can ask questions such as:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;How does the shape of trajectory change with different $\phi$?&lt;/li&gt;
+&lt;li&gt;How does the area under the curve change with changing $\phi$?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Let&#39;s take a look at what this might look like.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/proj.gif&#34; alt=&#34;Projectile&#34; width=&#34;400&#34;/&gt;
+  &lt;figcaption&gt;Figure 1 — Visualizing Trajectory of Ball&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;the-physics&#34;&gt;The Physics&lt;/h2&gt;
+&lt;p&gt;In order to find the area underneath a curve, we can use calculus. Generally, the area of an arbitrary curve in our x—y plane is:&lt;/p&gt;
+&lt;p&gt;$$\int_{x_o}^{x_f}y dx$$&lt;/p&gt;
+&lt;p&gt;For projectile motion, x and y are expressed as:&lt;/p&gt;
+&lt;p&gt;$$x = x(t) = v_{o,x} t = v_o cos(\phi) t$$&lt;/p&gt;
+&lt;p&gt;$$y = y(t) = v_{o,y} t - \frac{1}{2}g t^2 = v_o sin(\phi) t - \frac{1}{2} g t^2$$&lt;/p&gt;
+&lt;p&gt;We can use these expressions to integrate the curve in order to find the area. Note that x and y are both in terms of t, this is called parameterization because we&#39;re turning a multi-variable equation into an equation with one &amp;ldquo;parametric&amp;rdquo; parameter, t. Let&#39;s first talk about the integral bounds of the new integral that is now in terms of t:&lt;/p&gt;
+&lt;p&gt;It makes sense to allow time to start at zero:
+$$t_o = 0$$&lt;/p&gt;
+&lt;p&gt;Now to find final time, let&#39;s find where the ball hits the ground again:&lt;/p&gt;
+&lt;p&gt;$$v_o sin(\phi) t - \frac{1}{2} g t^2 = 0$$
+$$t_{final} = \frac{2 v_o sin(\phi)}{g}$$&lt;/p&gt;
+&lt;p&gt;To find $dx$, we can take a time differential:
+$$dx = v_o cos(\phi) dt$$&lt;/p&gt;
+&lt;h2 id=&#34;putting-the-pieces-together-to-find-area&#34;&gt;Putting The Pieces Together To Find Area&lt;/h2&gt;
+&lt;p&gt;$$\int_{0}^{\frac{2 v_o sin(\phi)}{g}} (v_o sin(\phi) t - \frac{1}{2} g t^2)(v_o cos(\phi) dt)$$&lt;/p&gt;
+&lt;p&gt;Let&#39;s think about how the area under the curve changes with changing $\phi$. This will help us answer our first question (1).&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/phi.gif&#34; alt=&#34;Changing Phi&#34; width=&#34;500&#34;/&gt;
+  &lt;figcaption&gt;Figure 2 — Visualizing Trajectory of Ball With Changing $\phi$&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Solving this integral gives:&lt;/p&gt;
+&lt;p&gt;$$\frac{2 v^4 cos(\phi) sin^3(\phi)}{3g^2}$$&lt;/p&gt;
+&lt;h2 id=&#34;putting-in-numbers&#34;&gt;Putting In Numbers&lt;/h2&gt;
+&lt;p&gt;To move forward with our analysis, let&#39;s put in some numbers.&lt;/p&gt;
+&lt;p&gt;Let $v_o = 5 \frac{m}{s}$ and $g = 10 \frac{m}{s^2}$&lt;/p&gt;
+&lt;p&gt;In this case, the integral becomes:&lt;/p&gt;
+&lt;p&gt;$$\frac{25}{6}cos(\phi) sin^3(\phi)$$&lt;/p&gt;
+&lt;p&gt;To answer our second question (2) that asks how does the area under the curve change with changing $\phi$, we can draw the plot below.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/area.png&#34; alt=&#34;Area Under Trajectory&#34; width=&#34;700&#34;/&gt;
+  &lt;figcaption&gt;Figure 3 — Visualizing Area Under Trajectory of Ball With Various Values of $\phi$&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;the-answer&#34;&gt;The Answer&lt;/h2&gt;
+&lt;p&gt;To find the answer we take the derivative of the equation that tells us the area with respect to angle, set it equal to zero, then solve for $\phi$.&lt;/p&gt;
+&lt;p&gt;$$\frac{d}{d\phi}\frac{25}{6}cos(\phi) sin^3(\phi) = 0$$&lt;/p&gt;
+&lt;p&gt;Which becomes:&lt;/p&gt;
+&lt;p&gt;$$\frac{25}{2} cos^2(\phi) sin^2(\phi) = \frac{25 sin^4(\phi)}{6}$$&lt;/p&gt;
+&lt;p&gt;After some algebra, the answer becomes:&lt;/p&gt;
+&lt;p&gt;$$\phi = \frac{\pi}{3} = 1.0472$$&lt;/p&gt;
+&lt;p&gt;Although the answer we are looking for is $\frac{\pi}{3}$, there are other non-intuitive, non-physical answers that technically satisfy our problem as well. For example, $\frac{2\pi}{3}$ is another answer. This would mean that we threw the ball behind us. $(-\frac{2\pi}{3})$ is another answer which would mean we threw the ball behind us and into the ground and gravity was reversed - this wouldn&#39;t make much physical sense. If we allowed the plot above to continue, we get a better picture of what is happening.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/area5.png&#34; alt=&#34;Area Under Trajectory Until $\phi = \frac{5\pi}{3}$&#34; width=&#34;700&#34;/&gt;
+  &lt;figcaption&gt;Figure 4 — Visualizing Area Under Trajectory of Ball With Various Values of $\phi$ for $0 &lt; \phi &lt; \frac{5\pi}{2}$&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id=&#34;final-questions-to-answer&#34;&gt;Final Questions to Answer&lt;/h2&gt;
+&lt;p&gt;For completion, let&#39;s answer some basic questions about our ball given the initial conditions states above now that we know the optimal angle $\phi$.&lt;/p&gt;
+&lt;h4 id=&#34;how-long-does-it-take-the-ball-to-land&#34;&gt;How long does it take the ball to land?&lt;/h4&gt;
+&lt;p&gt;$$t = \frac{2 v_o sin(\phi)}{g} = \frac{\sqrt3}{2} = 0.866025\ s$$&lt;/p&gt;
+&lt;h4 id=&#34;how-far-does-the-ball-go&#34;&gt;How far does the ball go?&lt;/h4&gt;
+&lt;p&gt;$$x = v_o cos(\phi) t = \frac{5\sqrt3}{4} = 2.16506\ m$$&lt;/p&gt;
+&lt;h4 id=&#34;how-high-does-the-ball-go&#34;&gt;How high does the ball go?&lt;/h4&gt;
+&lt;p&gt;$$y = v_0 sin(\phi) \frac{t}{2} - \frac{g}{2} \left(\frac{t}{2}\right)^2 = \frac{15}{16} = 0.9375\ m$$&lt;/p&gt;
+&lt;h4 id=&#34;what-is-the-area-under-the-curve-that-is-maximized-at-phi--fracpi3&#34;&gt;What is the area under the curve that is maximized at $\phi = \frac{\pi}{3}$?&lt;/h4&gt;
+&lt;p&gt;$$A = \frac{25}{6} cos(\phi) sin^3(\phi) = \frac{25 \sqrt3}{32} = 1.35316\ m^2$$&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;img/final.gif&#34; alt=&#34;Ball Trajectory At Angle \frac{\pi}{3}&#34; width=&#34;700&#34;/&gt;
+  &lt;figcaption&gt;Figure 5 — Ball Trajectory at Angle $\frac{\pi}{3}$&lt;/figcaption&gt;
+&lt;/figure&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Lagrangian Mechanics</title>
+      <link>/post/gen-coord/</link>
+      <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>/post/gen-coord/</guid>
+      <description>&lt;h1 id=&#34;generalized-coordinates-and-conservation-laws-from-the-lagrangian-formulation-of-theoretical-mechanics&#34;&gt;Generalized Coordinates and Conservation Laws From the Lagrangian Formulation of Theoretical Mechanics&lt;/h1&gt;
+&lt;p&gt;These are selected notes from a group of topics I find of particular interest. Although I assume some previous knowledge of classical mechanics from you, I still provide a brief overview of what the Lagrangian method is, where it comes from, how it relates to the more familiar Newtonian formulation, and how these beautiful laws of nature imply conserved quantities in everyday systems. The core of these notes include how we can simplify the Lagrangian method by observing conserved quantities by means of cyclic or &amp;ldquo;ignorable&amp;rdquo; generalized coordinates. The Lagrangian is invariant under variations of these types of coordinates. I will explain how cyclic coordinates and Lagrangian invariance imply conservation laws. There are several results that relate Lagrangian invariance and conserved quantities and they are referred to as Noether&#39;s theorem. I am happy to share what I have learned with you!&lt;/p&gt;
+&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+&lt;p&gt;Let&#39;s start with simple laws of motion. They describe how mechanical
+systems evolve in time given certain conditions and constraints. Consider
+yourself standing on the St. Louis Arch (Gateway Arch, whose width &lt;em&gt;and&lt;/em&gt; height are 630 ft.) for some God awful
+reason. You hold out an apple with your hand and drop it so that it is falling
+towards the Earth. We can predict, for example, where the apple will be at some later time by using an equation of motion. Say we took air resistance into account or that it then falls into a huge pool of oil or dropping a water balloon instead that oscillates in free space or dropping a single water droplet while it&#39;s raining.
+Does the rate at which the water droplet accumulate &amp;ldquo;water-mass&amp;rdquo; increase? And if this drop then fell into the pool of oil&amp;hellip; and if the pool sits on a spring&amp;hellip; or two springs&amp;hellip; or an infinite number of springs and etc. We can study a slew of systems using equations of motion (and some canny logical intuition). Newtonian and
+Lagrangian mechanics are just a couple ways a obtaining these types of descriptions of systems we experience everyday.&lt;/p&gt;
+&lt;p&gt;The most obvious difference between these methods is the Newtonian method utilize the external &lt;em&gt;forces&lt;/em&gt; of a system and how they apply in
+some defined coordinate plane while the Lagrangian focuses on the &lt;em&gt;energy&lt;/em&gt; the system
+is experiencing. Now we can begin talking about the Lagrangian and how related these methods actually are.&lt;/p&gt;
+&lt;p&gt;The Lagrangian can be written as:&lt;/p&gt;
+&lt;p&gt;$$ \mathcal{L} = T - U$$&lt;/p&gt;
+&lt;p&gt;The kinetic energy $T$ and the potential energy $U$ are used to make the Lagrangian and
+the Lagrangian is used to find the equations of motion with something called the &lt;em&gt;Lagrange&lt;/em&gt; equations. It can be written as:&lt;/p&gt;
+&lt;p&gt;$$\frac{\partial \mathcal{L}}{\partial q_i}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}$$&lt;/p&gt;
+&lt;p&gt;where $q_i$ are the generalized coordinates that we are using. Since this is still the overview, I will briefly describe where the &lt;em&gt;Lagrange&lt;/em&gt; equation comes from.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;Lagrange&lt;/em&gt; equation is a subset of a far broader area of mathematics called the &lt;em&gt;Calculus of Variations&lt;/em&gt; or &lt;em&gt;Variational Calculus&lt;/em&gt;. It involves finding the maximum and minimum of a quantity that can be expressed as an integral. The general form of what is called the &lt;em&gt;variational problem&lt;/em&gt; is:&lt;/p&gt;
+&lt;p&gt;$$S=\int_{x_1}^{x_2} f[y(x), y&amp;rsquo;(x), x]dx$$&lt;/p&gt;
+&lt;p&gt;The important part is finding the equation $y(x)$ such that the $S$ integral is stationary
+(which means infinitesimal variations of the path $y(x)$ doesn&#39;t change the value of the
+integral). After a tedious derivation, we are left with what is called the
+&lt;em&gt;Euler-Lagrange&lt;/em&gt; equation. Remember that this result is purely mathematical and hasn&#39;t
+been applied to our physics world quite yet.&lt;/p&gt;
+&lt;p&gt;We can talk about these variational methods for pages but let&#39;s get to the meat of it
+all. The reason why variational calculus and the Euler-Lagrange equation are so
+important is because when the function $f[y(x), y&amp;rsquo;(x), x]$ within the integral is the Lagrangian (defined at the top of the page), the integral is called the &lt;em&gt;action&lt;/em&gt; integral and the function that makes the &lt;em&gt;action&lt;/em&gt; integral &lt;em&gt;stationary&lt;/em&gt;
+is the equation of motion of the particle in question.&lt;/p&gt;
+&lt;p&gt;This result is stated in what is called &lt;em&gt;Hamilton&#39;s Principle&lt;/em&gt;.
+It tells us that if we know the energy (and therefore the Lagrangian) of a
+system, then we can know about its motion and how it evolves through time.
+&lt;em&gt;Hamilton&#39;s Principle&lt;/em&gt; is as follows:&lt;/p&gt;
+&lt;h2 id=&#34;hamiltons-principle&#34;&gt;&lt;strong&gt;Hamilton&#39;s Principle&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;The actual path which a particle follows between two points 1 and 2 in a given time interval, $t_1$ to $t_2$, is such that the action integral&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;$$S=\int_{t_1}^{t_2} \mathcal{L} dt$$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;is stationary when taken along the actual path.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Now we may go back to the &lt;em&gt;Lagrange&lt;/em&gt; equation and see that it must provide us with
+the path that an actual particle will travel that experiences the forces and energy described by the Lagrangian.
+$$\frac{\partial \mathcal{L}}{\partial q_i}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}$$&lt;/p&gt;
+&lt;p&gt;If what has been written so far seems vague or a bit generalized, it is because this was
+intended to be more of a reminder than an introduction. Let&#39;s finish this overview with
+the relationship between the Newtonian and Lagrangian formulations.
+The equations that are obtained by these methods must be equal; physics does not change
+depending on the language we use to describe it; they really are one and the same. Just because
+Newton&#39;s laws are usually explicitly written in terms of force doesn&#39;t mean we
+can&#39;t express it in terms of another quantity like momentum for example:
+$$F = ma = m\dot{v} = \dot{p}$$
+Let&#39;s not forget how related force and energy really are:&lt;/p&gt;
+&lt;p&gt;$$\Delta T = T_2 - T_1 = \int_{1}^{2}\textbf{F} \cdot d\textbf{r}$$&lt;/p&gt;
+&lt;p&gt;$$U(\textbf{r}) = -\int_{r_0}^r F(\textbf{r}&#39;) \cdot d\textbf{r}&amp;lsquo;$$
+To relate Lagrangian and Newtonian methods more directly:&lt;/p&gt;
+&lt;h2 id=&#34;euler-lagrange-equation&#34;&gt;Euler-Lagrange Equation&lt;/h2&gt;
+&lt;p&gt;$$\frac{\partial \mathcal{L}}{\partial q_i}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}$$
+$$\frac{\partial \mathcal{L}}{\partial q_i} = F_i\ \ \ and\ \ \ \frac{\partial \mathcal{L}}{\partial \dot{q}_i} \equiv p_i$$
+These are referred to as generalized forces and generalized momenta. We may start our discussion of generalized ignorable coordinates and conservation laws now!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Quick Fun Fact!&lt;/strong&gt; There also exists a Hamiltonian formulation of Classical
+Mechanics that takes advantage of its own coordinate system called &lt;em&gt;Canonical Coordinates&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;generalized-coordinates&#34;&gt;Generalized Coordinates&lt;/h2&gt;
+&lt;p&gt;Generalized momenta and generalized forces are not the same thing as the familiar
+force and momentum we are used to. We can still relate momentum and force in the
+usual manner:
+$$F_i = \frac{d}{dt}p_i,$$
+except these are understood to be defined using generalized coordinates. The fact that
+&lt;em&gt;generalized force&lt;/em&gt; $=$ &lt;em&gt;rate of change of generalized momentum&lt;/em&gt; should not be surprising.
+A direct way to think of generalized coordinates is to describe the complete
+motion of a system in the fewest number of coordinates. Consider a pendulum bob for one
+moment (yes, another pendulum).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/pendulum.png&#34; alt=&#34;Figure 1 - Pendulum&#34;&gt;&lt;/p&gt;
+&lt;p&gt;We have a choice of using Cartesian coordinates to describe the motion of this
+bob or any other coordinate system we can dream up. The downside of using
+Cartesian coordinates $(x,y,z)$, is that $x$, $y$, and $z$ must constantly compensate one another to assure the length L remains constant. We can imagine all the combinations of values that satisfy $(\sqrt{x^2+y^2})^2+l^2(1-z)^2=constant$. Long story short, spherical (or polar) coordinates $(r, \theta, \phi)$ are the most appropriate for this problem for
+obvious symmetrical advantages and can be considered the generalized coordinates that define our system.&lt;/p&gt;
+&lt;p&gt;Now that we have mentioned what generalized coordinates are, we can gain more insight
+on what generalized momenta is. Ordinary momentum by definition is $p = mv$ where $v$ is
+one time derivative away from a position variable: $p = m (\dot{x}+\dot{y}+\dot{z})$.
+So we can easily see that generalized momenta is simple the mass of an object times the
+time derivative of its generalized position vectors! Simple! Generalized force can be found the same way except with two time derivatives. $F_t$ in the Figure 1 is the
+generalized force of the pendulum system. This pendulum can escape from the x-y grid universe and be thought of as moving along one generalized coordinate, $\theta(t)$. (The length of the pendulum, L, if fixed but if it weren&#39;t, $r(t)$ could be another generalized coordinate used to describe the system).&lt;/p&gt;
+&lt;h2 id=&#34;cyclic-coordinates&#34;&gt;Cyclic Coordinates&lt;/h2&gt;
+&lt;p&gt;When the Lagrangian of a system is independent of a generalized coordinate $q_i$, that
+coordinate is sometimes called a &lt;em&gt;cyclic&lt;/em&gt; or &lt;em&gt;ignorable&lt;/em&gt; coordinate.
+Saying the Lagrangian is independent of a particular variable is exactly what it
+sounds like, neither the kinetic nor the potential energy depend on this quantity.
+This leads directly to the fact that there exists a conserved quantity!&lt;/p&gt;
+&lt;p&gt;We can generally express a Lagrangian that is independent of some generalized
+coordinate $q_2$ as:
+$$\mathcal{L}=\mathcal{L}(q_1, q_3, q_4, \cdots, \dot{q}_1, \dot{q}_2, \dot{q}_3, \dot{q}_4, \cdots, t)$$&lt;/p&gt;
+&lt;p&gt;What this means exactly, is that the generalized momentum that corresponds to $q_2$ is
+conserved. This can be written as:
+$$\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_2} = \frac{\partial \mathcal{L}}{\partial q_2} = 0$$
+$$\frac{\partial \mathcal{L}}{\partial \dot{q}_2} = \kappa$$ where $\kappa$ is constant. We can say that this system exhibits conservation of angular momentum!&lt;/p&gt;
+&lt;p&gt;This makes solving equations of motion using Lagrangian even easier than before!&lt;/p&gt;
+&lt;p&gt;Let&#39;s take advantage of this property by examining the $\mathcal{L}$ of a standard classical mechanics
+problem (one of which never gets old). It is stated as follows:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt; &lt;em&gt;A mass $m$ is free to slide on a frictionless table and is connected, via a string that passes through a hole in the table, to a mass $M$ that hangs below. Assume that $M$
+moves in a vertical line only, and assume that the string always remains taut. Figure 2 shows a moment in time of this situation.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/tableBall.png&#34; alt=&#34;Figure 2 - Example Problem&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The Lagrangian is as follows:
+$$\mathcal{L}=T-U$$
+$$\mathcal{L}=\frac{1}{2}M \dot{r}^2+\frac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2)+Mg(l-r)$$
+The important thing to notice about this expression is that there is no $\theta$ variable
+in it anywhere. The Lagrangian is said to be invariant under variations of the generalized
+coordinate $\theta$. The important conclusion to take away from this is that the momentum that corresponds to $\theta$ is conserved or in
+this case, the angular momentum $mr^2\dot{\theta}$. Therefore without much investigating we can quickly see that $\frac{d}{dt}(mr^2\dot{\theta})=0$. This comes directly from the &lt;em&gt;Euler-Langrange&lt;/em&gt; equation obtained by varying $\theta$:&lt;/p&gt;
+&lt;p&gt;$$\frac{\partial \mathcal{L}}{\partial \theta}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{\theta}}$$
+$$0 = \frac{d}{dt}(mr^2\dot{\theta})$$&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;E-L&lt;/em&gt; equation that comes from varying $r$ is:
+$$\frac{\partial \mathcal{L}}{\partial r}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{r}}$$
+$$(M+m)\ddot{r}=mr\dot{\theta}^2-Mg$$&lt;/p&gt;
+&lt;h2 id=&#34;conservation-of-energy&#34;&gt;Conservation of Energy&lt;/h2&gt;
+&lt;p&gt;Energy is also another quantity that is often conversed in these types of mechanical problems. We will introduce an important claim that touches on this conservation law. First let&#39;s give a definition of &lt;em&gt;energy&lt;/em&gt; in terms of the &lt;em&gt;Lagrangian&lt;/em&gt;:
+$$E \equiv (\sum_{i=1}^{N} \frac{\partial \mathcal{L}}{\partial \dot{q}_i} \dot{q}_i) - \mathcal{L}$$
+This may seem random to define the energy in such a way but don&#39;t worry too much about it for now. Without going into too much detail, this result is far from random. In fact, there is a rigorous mathematical reason, called the theory of Legendre transforms, that explains why energy can be written in this form. You see this often in Hamiltonian mechanics since the Hamiltonian is simply the total energy of the system: $T+U$.&lt;/p&gt;
+&lt;p&gt;Now we may introduce the claim mentioned earlier:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;If $\mathcal{L}$ has no explicit time dependence (that is, if $\frac{\partial \mathcal{L}}{\partial t} = 0$), then E is conserved (that is, $\frac{dE}{dt} = 0$), assuming that the motion obeys the E-L equations.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Without proving it, the following relation summarizes this claim:
+$$\frac{dE}{dt}=-\frac{\partial \mathcal{L}}{\partial t}.$$&lt;/p&gt;
+&lt;h2 id=&#34;applications&#34;&gt;Applications&lt;/h2&gt;
+&lt;p&gt;I programmed this nonlinear double pendulum with Mathematica (Wolfram Language)
+&lt;img src=&#34;img/doublependulum_5.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
