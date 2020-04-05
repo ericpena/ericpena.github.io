@@ -1033,8 +1033,9 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/about/eric_pena/index.xml</loc>
+    <loc>https://ericpena.github.io/about/index.xml</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -1063,12 +1064,7 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/about/eric_pena/eric_pena.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/about/index.xml</loc>
+    <loc>https://ericpena.github.io/about/eric_pena.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
