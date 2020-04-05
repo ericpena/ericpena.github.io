@@ -83,15 +83,6 @@
     </item>
     
     <item>
-      <title>Abouts</title>
-      <link>https://ericpena.github.io/about/index.xml</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/about/index.xml</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Computer_sciences</title>
       <link>https://ericpena.github.io/computer_science/index.xml</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
@@ -151,6 +142,15 @@
       <pubDate>Mon, 01 Feb 2016 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/articles/index.xml</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ericpena.github.io/about.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/about.html</guid>
       <description></description>
     </item>
     
