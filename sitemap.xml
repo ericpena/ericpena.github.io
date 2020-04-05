@@ -1033,12 +1033,6 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/about/index.xml</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://ericpena.github.io/machine_learning/basics/index.xml</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
@@ -1065,6 +1059,11 @@
   
   <url>
     <loc>https://ericpena.github.io/about/chris_albon.html</loc>
+    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/about/index.xml</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
