@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ericpena.github.io/data_science_management/index.xml</loc>
+    <loc>https://ericpena.github.io/data_science_management.html</loc>
     <lastmod>2020-03-23T00:00:00-07:00</lastmod>
   </url>
   
@@ -23,12 +23,12 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/deep_learning/index.xml</loc>
+    <loc>https://ericpena.github.io/deep_learning.html</loc>
     <lastmod>2020-02-01T00:00:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/git_and_github/index.xml</loc>
+    <loc>https://ericpena.github.io/git_and_github.html</loc>
     <lastmod>2020-02-01T00:00:00-07:00</lastmod>
   </url>
   
@@ -173,7 +173,7 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/snowflake/index.xml</loc>
+    <loc>https://ericpena.github.io/snowflake.html</loc>
     <lastmod>2019-01-28T00:00:00-07:00</lastmod>
   </url>
   
@@ -218,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/python/index.xml</loc>
+    <loc>https://ericpena.github.io/python.html</loc>
     <lastmod>2018-12-16T11:53:49-07:00</lastmod>
   </url>
   
@@ -263,7 +263,7 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/linux/index.xml</loc>
+    <loc>https://ericpena.github.io/linux.html</loc>
     <lastmod>2018-07-16T00:00:00-07:00</lastmod>
   </url>
   
@@ -288,7 +288,7 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/postgresql/index.xml</loc>
+    <loc>https://ericpena.github.io/postgresql.html</loc>
     <lastmod>2018-06-18T11:53:49-07:00</lastmod>
   </url>
   
@@ -343,7 +343,7 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/aws/index.xml</loc>
+    <loc>https://ericpena.github.io/aws.html</loc>
     <lastmod>2018-06-17T00:00:00-07:00</lastmod>
   </url>
   
@@ -1033,33 +1033,33 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/about/index.xml</loc>
+    <loc>https://ericpena.github.io/about.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/machine_learning/basics/index.xml</loc>
+    <loc>https://ericpena.github.io/machine_learning/basics.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/machine_learning/preprocessing_images/index.xml</loc>
+    <loc>https://ericpena.github.io/machine_learning/preprocessing_images.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/machine_learning/preprocessing_structured_data/index.xml</loc>
+    <loc>https://ericpena.github.io/machine_learning/preprocessing_structured_data.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/machine_learning/preprocessing_text/index.xml</loc>
+    <loc>https://ericpena.github.io/machine_learning/preprocessing_text.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/machine_learning/vectors_matrices_and_arrays/index.xml</loc>
+    <loc>https://ericpena.github.io/machine_learning/vectors_matrices_and_arrays.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
@@ -1344,7 +1344,7 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/computer_science/index.xml</loc>
+    <loc>https://ericpena.github.io/computer_science.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
@@ -2249,7 +2249,7 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/machine_learning/index.xml</loc>
+    <loc>https://ericpena.github.io/machine_learning.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
@@ -2394,7 +2394,7 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/mathematics/index.xml</loc>
+    <loc>https://ericpena.github.io/mathematics.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
@@ -2689,7 +2689,7 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/regex/index.xml</loc>
+    <loc>https://ericpena.github.io/regex.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
@@ -2799,7 +2799,7 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/scala/index.xml</loc>
+    <loc>https://ericpena.github.io/scala.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
@@ -2984,7 +2984,7 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/statistics/index.xml</loc>
+    <loc>https://ericpena.github.io/statistics.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
@@ -3209,7 +3209,7 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/articles/index.xml</loc>
+    <loc>https://ericpena.github.io/articles.html</loc>
     <lastmod>2016-02-01T11:53:49-07:00</lastmod>
     <priority>0</priority>
   </url>
