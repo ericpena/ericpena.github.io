@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Queues And Stacks"/>
 <meta name="twitter:description" content="Queues and stacks in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -168,15 +168,15 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 </code></pre></div><h2 id="make-a-queue">Make A Queue</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Option 1: Make a queue</span>
-<span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="p">)</span>
+<span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 
 <span class="c1"># Option 2: Make a queue that, if full, discards any item at the </span>
 <span class="c1"># opposite end to where you added an item.</span>
-<span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="n">maxlen</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </code></pre></div><h2 id="manipulate-queue">Manipulate Queue</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Append an item to the right</span>
 
-<span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">A</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
 
 <span class="c1"># View queue</span>
 <span class="n">queue</span>
@@ -184,28 +184,28 @@ MathJax.Hub.Config({
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Append an item to the left</span>
 
-<span class="n">queue</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">A</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
 
 <span class="c1"># View queue</span>
 <span class="n">queue</span>
 </code></pre></div><pre><code>deque(['A', 1, 2, 3, 4, 5, 6, 7, 8, 9])
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Count occurances of item</span>
-<span class="n">queue</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">A</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
 
 <span class="c1"># View queue</span>
 <span class="n">queue</span>
 </code></pre></div><pre><code>deque(['A', 1, 2, 3, 4, 5, 6, 7, 8, 9])
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Remove and return right-most item</span>
-<span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="p">)</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
 
 <span class="c1"># View queue</span>
 <span class="n">queue</span>
 </code></pre></div><pre><code>deque(['A', 1, 2, 3, 4, 5, 6, 7, 8])
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Remove and return left-most item</span>
-<span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">(</span><span class="p">)</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
 
 
 <span class="c1"># View queue</span>
@@ -213,21 +213,21 @@ MathJax.Hub.Config({
 </code></pre></div><pre><code>deque([1, 2, 3, 4, 5, 6, 7, 8])
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Insert item to the right of an item</span>
-<span class="n">queue</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">A</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">)</span>
 
 <span class="c1"># View queue</span>
 <span class="n">queue</span>
 </code></pre></div><pre><code>deque([1, 2, 'A', 3, 4, 5, 6, 7, 8])
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Reverse the queue</span>
-<span class="n">queue</span><span class="o">.</span><span class="n">reverse</span><span class="p">(</span><span class="p">)</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
 
 <span class="c1"># View queue</span>
 <span class="n">queue</span>
 </code></pre></div><pre><code>deque([8, 7, 6, 5, 4, 3, 'A', 2, 1])
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Delete all items</span>
-<span class="n">queue</span><span class="o">.</span><span class="n">clear</span><span class="p">(</span><span class="p">)</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 
 <span class="c1"># View queue</span>
 <span class="n">queue</span>

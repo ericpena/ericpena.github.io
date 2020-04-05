@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Neural Network Weight Regularization"/>
 <meta name="twitter:description" content="How reduce overfitting with weight regularization of a neural network in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -182,35 +182,35 @@ MathJax.Hub.Config({
 <span class="n">number_of_features</span> <span class="o">=</span> <span class="mi">1000</span>
 
 <span class="c1"># Load data and target vector from movie review data</span>
-<span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">train_target</span><span class="p">)</span><span class="p">,</span> <span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">test_target</span><span class="p">)</span> <span class="o">=</span> <span class="n">imdb</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">num_words</span><span class="o">=</span><span class="n">number_of_features</span><span class="p">)</span>
+<span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">train_target</span><span class="p">),</span> <span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">test_target</span><span class="p">)</span> <span class="o">=</span> <span class="n">imdb</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">num_words</span><span class="o">=</span><span class="n">number_of_features</span><span class="p">)</span>
 
 <span class="c1"># Convert movie review data to a one-hot encoded feature matrix</span>
 <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">num_words</span><span class="o">=</span><span class="n">number_of_features</span><span class="p">)</span>
-<span class="n">train_features</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">sequences_to_matrix</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">binary</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">test_features</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">sequences_to_matrix</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">binary</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">train_features</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">sequences_to_matrix</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;binary&#39;</span><span class="p">)</span>
+<span class="n">test_features</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">sequences_to_matrix</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;binary&#39;</span><span class="p">)</span>
 </code></pre></div><h2 id="create-neural-network-architecture-with-weight-regularization">Create Neural Network Architecture With Weight Regularization</h2>
 <p>In Keras, we can add a weight regularization by including using including <code>kernel_regularizer=regularizers.l2(0.01)</code> a later. In this example, <code>0.01</code> determines how much we penalize higher parameter values.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Start neural network</span>
-<span class="n">network</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="p">)</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
 
 <span class="c1"># Add fully connected layer with a ReLU activation function and L2 regularization</span>
 <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> 
-                         <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">relu</span><span class="s1">&#39;</span><span class="p">,</span> 
-                         <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">regularizers</span><span class="o">.</span><span class="n">l2</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span><span class="p">,</span>
-                         <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">number_of_features</span><span class="p">,</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+                         <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> 
+                         <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">regularizers</span><span class="o">.</span><span class="n">l2</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span>
+                         <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">number_of_features</span><span class="p">,)))</span>
 
 <span class="c1"># Add fully connected layer with a ReLU activation function and L2 regularization</span>
 <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> 
-                         <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">regularizers</span><span class="o">.</span><span class="n">l2</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span><span class="p">,</span>
-                         <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">relu</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+                         <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">regularizers</span><span class="o">.</span><span class="n">l2</span><span class="p">(</span><span class="mf">0.01</span><span class="p">),</span>
+                         <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
 
 
 </code></pre></div><h2 id="compile-neural-network">Compile Neural Network</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Add fully connected layer with a sigmoid activation function</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">sigmoid</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span><span class="c1"># Compile neural network</span>
-<span class="n">network</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">binary_crossentropy</span><span class="s1">&#39;</span><span class="p">,</span> <span class="c1"># Cross-entropy</span>
-                <span class="n">optimizer</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">rmsprop</span><span class="s1">&#39;</span><span class="p">,</span> <span class="c1"># Root Mean Square Propagation</span>
-                <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">accuracy</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span> <span class="c1"># Accuracy performance metric</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span><span class="c1"># Compile neural network</span>
+<span class="n">network</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="c1"># Cross-entropy</span>
+                <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;rmsprop&#39;</span><span class="p">,</span> <span class="c1"># Root Mean Square Propagation</span>
+                <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span> <span class="c1"># Accuracy performance metric</span>
 </code></pre></div><h2 id="train-neural-network">Train Neural Network</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Train neural network</span>
 <span class="n">history</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_features</span><span class="p">,</span> <span class="c1"># Features</span>
@@ -218,7 +218,7 @@ MathJax.Hub.Config({
                       <span class="n">epochs</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="c1"># Number of epochs</span>
                       <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="c1"># No output</span>
                       <span class="n">batch_size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="c1"># Number of observations per batch</span>
-                      <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">test_features</span><span class="p">,</span> <span class="n">test_target</span><span class="p">)</span><span class="p">)</span> <span class="c1"># Data for evaluation</span>
+                      <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">test_features</span><span class="p">,</span> <span class="n">test_target</span><span class="p">))</span> <span class="c1"># Data for evaluation</span>
 </code></pre></div>
 </div>
   <aside>

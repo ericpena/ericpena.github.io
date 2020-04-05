@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Random Integer Between Two Values"/>
 <meta name="twitter:description" content="Random Integer Between Two Values using Scala."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -173,7 +173,7 @@ MathJax.Hub.Config({
 <span class="k">val</span> <span class="n">end</span> <span class="k">=</span> <span class="mi">10</span>
 </code></pre></div><h2 id="generate-random-integer-between-the-start-and-end-values">Generate Random Integer Between The Start And End Values</h2>
 <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="c1">// Then generate a random integer between 0 and the different between end and start + 1
-</span><span class="c1"></span><span class="c1">//(to make it inclusive), then shift the value into the desired range by added the start value
+</span><span class="c1">//(to make it inclusive), then shift the value into the desired range by added the start value
 </span><span class="c1"></span><span class="n">start</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">nextInt</span><span class="o">(</span> <span class="o">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">)</span>  
 </code></pre></div><pre><code>1
 </code></pre>

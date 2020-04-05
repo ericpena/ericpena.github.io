@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Find Values In Both Tables"/>
 <meta name="twitter:description" content="How to find all unique values that are in two table in an SQL database."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -168,11 +168,11 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Create table called elves
 </span><span class="c1"></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">elves</span> <span class="p">(</span>
     <span class="c1">-- string variable
-</span><span class="c1"></span>    <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="p">,</span>
+</span><span class="c1"></span>    <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
     <span class="c1">-- integer variable
 </span><span class="c1"></span>    <span class="n">age</span> <span class="nb">int</span><span class="p">,</span>
     <span class="c1">-- string variable
-</span><span class="c1"></span>    <span class="n">race</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="p">,</span>
+</span><span class="c1"></span>    <span class="n">race</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
     <span class="c1">-- string variable
 </span><span class="c1"></span>    <span class="n">weapon</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
 <span class="p">)</span></code></pre></div>
@@ -180,26 +180,26 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Create table called dwarves
 </span><span class="c1"></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">dwarves</span> <span class="p">(</span>
     <span class="c1">-- string variable
-</span><span class="c1"></span>    <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="p">,</span>
+</span><span class="c1"></span>    <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
     <span class="c1">-- integer variable
 </span><span class="c1"></span>    <span class="n">age</span> <span class="nb">int</span><span class="p">,</span>
     <span class="c1">-- string variable
-</span><span class="c1"></span>    <span class="n">race</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="p">,</span>
+</span><span class="c1"></span>    <span class="n">race</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
     <span class="c1">-- string variable
 </span><span class="c1"></span>    <span class="n">weapon</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
 <span class="p">)</span></code></pre></div>
 <h2 id="insert-rows-into-elf-table">Insert Rows Into Elf Table</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">elves</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">race</span><span class="p">,</span> <span class="n">weapon</span><span class="p">)</span>
-<span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Dallar Woodfoot</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Elf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Bow</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Cordin Garner</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Elf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Bow</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Keat Knigh</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Elf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Sword</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Colbat Nalor</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">124</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Elf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Magic</span><span class="s1">&#39;</span><span class="p">)</span></code></pre></div>
+<span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;Dallar Woodfoot&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;Elf&#39;</span><span class="p">,</span> <span class="s1">&#39;Bow&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Cordin Garner&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="s1">&#39;Elf&#39;</span><span class="p">,</span> <span class="s1">&#39;Bow&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Keat Knigh&#39;</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="s1">&#39;Elf&#39;</span><span class="p">,</span> <span class="s1">&#39;Sword&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Colbat Nalor&#39;</span><span class="p">,</span> <span class="mi">124</span><span class="p">,</span> <span class="s1">&#39;Elf&#39;</span><span class="p">,</span> <span class="s1">&#39;Magic&#39;</span><span class="p">)</span></code></pre></div>
 <h2 id="insert-rows-into-dwarf-table">Insert Rows Into Dwarf Table</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">dwarves</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">race</span><span class="p">,</span> <span class="n">weapon</span><span class="p">)</span>
-<span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Kalog</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Dwarf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Axe</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Dranar</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">145</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Dwarf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Bow</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Bratar</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Dwarf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Axe</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Dragga</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Dwarf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Axe</span><span class="s1">&#39;</span><span class="p">)</span></code></pre></div>
+<span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;Kalog&#39;</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="s1">&#39;Dwarf&#39;</span><span class="p">,</span> <span class="s1">&#39;Axe&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Dranar&#39;</span><span class="p">,</span> <span class="mi">145</span><span class="p">,</span> <span class="s1">&#39;Dwarf&#39;</span><span class="p">,</span> <span class="s1">&#39;Bow&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Bratar&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;Dwarf&#39;</span><span class="p">,</span> <span class="s1">&#39;Axe&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Dragga&#39;</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="s1">&#39;Dwarf&#39;</span><span class="p">,</span> <span class="s1">&#39;Axe&#39;</span><span class="p">)</span></code></pre></div>
 <h2 id="find-all-unique-values-in-both-tables">Find All Unique Values In Both Tables</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Retrieve all weapons from elves
 </span><span class="c1"></span><span class="k">SELECT</span> <span class="n">weapon</span> <span class="k">FROM</span> <span class="n">elves</span>

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pie Chart In MatPlotLib"/>
 <meta name="twitter:description" content="Pie Chart In MatPlotLib."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -169,45 +169,45 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 </code></pre></div><h2 id="create-dataframe">Create dataframe</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">raw_data</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">officer_name</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Jason</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Molly</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Tina</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Jake</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Amy</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span>
-        <span class="sa"></span><span class="s1">&#39;</span><span class="s1">jan_arrests</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span><span class="p">,</span>
-        <span class="sa"></span><span class="s1">&#39;</span><span class="s1">feb_arrests</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">70</span><span class="p">]</span><span class="p">,</span>
-        <span class="sa"></span><span class="s1">&#39;</span><span class="s1">march_arrests</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">51</span><span class="p">]</span><span class="p">}</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">raw_data</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">officer_name</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">jan_arrests</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">feb_arrests</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">march_arrests</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">raw_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;officer_name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Jason&#39;</span><span class="p">,</span> <span class="s1">&#39;Molly&#39;</span><span class="p">,</span> <span class="s1">&#39;Tina&#39;</span><span class="p">,</span> <span class="s1">&#39;Jake&#39;</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;jan_arrests&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+        <span class="s1">&#39;feb_arrests&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">70</span><span class="p">],</span>
+        <span class="s1">&#39;march_arrests&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">51</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">raw_data</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;officer_name&#39;</span><span class="p">,</span> <span class="s1">&#39;jan_arrests&#39;</span><span class="p">,</span> <span class="s1">&#39;feb_arrests&#39;</span><span class="p">,</span> <span class="s1">&#39;march_arrests&#39;</span><span class="p">])</span>
 <span class="n">df</span>
 </code></pre></div><!-- raw HTML omitted -->
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a column with the total arrests for each officer</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">total_arrests</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">jan_arrests</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">feb_arrests</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">march_arrests</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;total_arrests&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;jan_arrests&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;feb_arrests&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;march_arrests&#39;</span><span class="p">]</span>
 <span class="n">df</span>
 </code></pre></div><!-- raw HTML omitted -->
 <h2 id="make-plot">Make plot</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a list of colors (from iWantHue)</span>
-<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">#E13F29</span><span class="s2">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">#D69A80</span><span class="s2">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">#D63B59</span><span class="s2">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">#AE5552</span><span class="s2">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">#CB5C3B</span><span class="s2">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">#EB8076</span><span class="s2">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">#96624E</span><span class="s2">&#34;</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;#E13F29&#34;</span><span class="p">,</span> <span class="s2">&#34;#D69A80&#34;</span><span class="p">,</span> <span class="s2">&#34;#D63B59&#34;</span><span class="p">,</span> <span class="s2">&#34;#AE5552&#34;</span><span class="p">,</span> <span class="s2">&#34;#CB5C3B&#34;</span><span class="p">,</span> <span class="s2">&#34;#EB8076&#34;</span><span class="p">,</span> <span class="s2">&#34;#96624E&#34;</span><span class="p">]</span>
 
 <span class="c1"># Create a pie chart</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span>
     <span class="c1"># using data total)arrests</span>
-    <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">total_arrests</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;total_arrests&#39;</span><span class="p">],</span>
     <span class="c1"># with the labels being officer names</span>
-    <span class="n">labels</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">officer_name</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;officer_name&#39;</span><span class="p">],</span>
     <span class="c1"># with no shadows</span>
     <span class="n">shadow</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
     <span class="c1"># with colors</span>
     <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span>
     <span class="c1"># with one slide exploded out</span>
-    <span class="n">explode</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">)</span><span class="p">,</span>
+    <span class="n">explode</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">),</span>
     <span class="c1"># with the start angle at 90%</span>
     <span class="n">startangle</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span>
     <span class="c1"># with the percent listed as a fraction</span>
-    <span class="n">autopct</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="si">%1.1f</span><span class="si">%%</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f%%</span><span class="s1">&#39;</span><span class="p">,</span>
     <span class="p">)</span>
 
 <span class="c1"># View the plot drop above</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">equal</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
 
 <span class="c1"># View the plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div><p><img src="matplotlib_pie_chart_7_0.png" alt="png"></p>
 
 </div>

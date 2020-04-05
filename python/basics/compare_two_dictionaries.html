@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Compare Two Dictionaries"/>
 <meta name="twitter:description" content="Compare two dictionaries using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -165,28 +165,28 @@ MathJax.Hub.Config({
   <div class="content">
       
   <h2 id="make-two-dictionaries">Make Two Dictionaries</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">importers</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">El Salvador</span><span class="s1">&#39;</span> <span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>
-             <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Nicaragua</span><span class="s1">&#39;</span> <span class="p">:</span> <span class="mi">152</span><span class="p">,</span>
-             <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Spain</span><span class="s1">&#39;</span> <span class="p">:</span> <span class="mi">252</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">importers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;El Salvador&#39;</span> <span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>
+             <span class="s1">&#39;Nicaragua&#39;</span> <span class="p">:</span> <span class="mi">152</span><span class="p">,</span>
+             <span class="s1">&#39;Spain&#39;</span> <span class="p">:</span> <span class="mi">252</span>
             <span class="p">}</span>
 
-<span class="n">exporters</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Spain</span><span class="s1">&#39;</span> <span class="p">:</span> <span class="mi">252</span><span class="p">,</span>
-             <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Germany</span><span class="s1">&#39;</span> <span class="p">:</span> <span class="mi">251</span><span class="p">,</span>
-             <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Italy</span><span class="s1">&#39;</span> <span class="p">:</span> <span class="mi">1563</span>
+<span class="n">exporters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Spain&#39;</span> <span class="p">:</span> <span class="mi">252</span><span class="p">,</span>
+             <span class="s1">&#39;Germany&#39;</span> <span class="p">:</span> <span class="mi">251</span><span class="p">,</span>
+             <span class="s1">&#39;Italy&#39;</span> <span class="p">:</span> <span class="mi">1563</span>
              <span class="p">}</span>
 </code></pre></div><h2 id="find-duplicate-keys">Find Duplicate Keys</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Find the intersection of importers and exporters</span>
-<span class="n">importers</span><span class="o">.</span><span class="n">keys</span><span class="p">(</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">exporters</span><span class="o">.</span><span class="n">keys</span><span class="p">(</span><span class="p">)</span>
+<span class="n">importers</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">exporters</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </code></pre></div><pre><code>{'Spain'}
 </code></pre>
 <h2 id="find-difference-in-keys">Find Difference In Keys</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Find the difference between importers and exporters</span>
-<span class="n">importers</span><span class="o">.</span><span class="n">keys</span><span class="p">(</span><span class="p">)</span> <span class="o">-</span> <span class="n">exporters</span><span class="o">.</span><span class="n">keys</span><span class="p">(</span><span class="p">)</span>
+<span class="n">importers</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="o">-</span> <span class="n">exporters</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 </code></pre></div><pre><code>{'El Salvador', 'Nicaragua'}
 </code></pre>
 <h2 id="find-key-values-pairs-in-common">Find Key, Values Pairs In Common</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Find countries where the amount of exports matches the amount of imports</span>
-<span class="n">importers</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">exporters</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="p">)</span>
+<span class="n">importers</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">exporters</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 </code></pre></div><pre><code>{('Spain', 252)}
 </code></pre>
 

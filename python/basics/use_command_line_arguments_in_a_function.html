@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Use Command Line Arguments In A Function"/>
 <meta name="twitter:description" content="How to use command line arguments in a function in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -171,7 +171,7 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="ch">#!/usr/bin/env python3</span>
 
 <span class="c1"># Create a function with two inputs</span>
-<span class="k">def</span> <span class="nf">sum_two_values</span><span class="p">(</span><span class="n">value_one</span><span class="p">,</span> <span class="n">value_two</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">sum_two_values</span><span class="p">(</span><span class="n">value_one</span><span class="p">,</span> <span class="n">value_two</span><span class="p">):</span>
     
     <span class="c1"># Add together two values</span>
     <span class="n">_sum</span> <span class="o">=</span> <span class="n">value_one</span> <span class="o">+</span> <span class="n">value_two</span>
@@ -181,19 +181,19 @@ MathJax.Hub.Config({
 
 
 <span class="c1"># If the script is run</span>
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">__main__</span><span class="s1">&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     
     <span class="c1"># Create argument parser</span>
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="p">)</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
     
     <span class="c1"># Create an argument called v1 or value_1 that is an integer</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">-v1</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">--value_1</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">The first value.</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-v1&#39;</span><span class="p">,</span> <span class="s1">&#39;--value_1&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The first value.&#39;</span><span class="p">)</span>
     
     <span class="c1"># Create a required argument called v2 or value_2 that is an integer</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">-v2</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">--value_2</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">The second value.</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-v2&#39;</span><span class="p">,</span> <span class="s1">&#39;--value_2&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The second value.&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     
     <span class="c1"># Parse arguments</span>
-    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 
     <span class="c1"># Assign arguments to variables</span>
     <span class="n">value_one</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">v1</span>

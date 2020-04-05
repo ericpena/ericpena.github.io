@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Scheduling Jobs In The Future"/>
 <meta name="twitter:description" content="Scheduling jobs in the future in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -171,19 +171,19 @@ MathJax.Hub.Config({
 <span class="c1"># setup the scheduler with our time settings</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">sched</span><span class="o">.</span><span class="n">scheduler</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a function we want to run in the future.</span>
-<span class="k">def</span> <span class="nf">print_time</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Executive Order 66</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">print_time</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Executive Order 66&#34;</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a function for the delay</span>
-<span class="k">def</span> <span class="nf">print_some_times</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">print_some_times</span><span class="p">():</span>
     <span class="c1"># Create a scheduled job that will run</span>
     <span class="c1"># the function called &#39;print_time&#39;</span>
     <span class="c1"># after 10 seconds, and with priority 1.</span>
     <span class="n">s</span><span class="o">.</span><span class="n">enter</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">print_time</span><span class="p">)</span>
     
     <span class="c1"># Run the scheduler</span>
-    <span class="n">s</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Run the function for the delay</span>
-<span class="n">print_some_times</span><span class="p">(</span><span class="p">)</span>
+<span class="n">print_some_times</span><span class="p">()</span>
 </code></pre></div><pre><code>Executive Order 66
 </code></pre>
 

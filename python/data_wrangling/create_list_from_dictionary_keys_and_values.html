@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Creating Lists From Dictionary Keys And Values"/>
 <meta name="twitter:description" content="Creating Lists From Dictionary Keys And Values Using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -165,17 +165,17 @@ MathJax.Hub.Config({
   <div class="content">
       
   <h3 id="create-a-dictionary">Create a dictionary</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">county</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Cochice</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Pima</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Santa Cruz</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Maricopa</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Yuma</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span> 
-        <span class="sa"></span><span class="s1">&#39;</span><span class="s1">year</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2014</span><span class="p">]</span><span class="p">,</span> 
-        <span class="sa"></span><span class="s1">&#39;</span><span class="s1">fireReports</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span><span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;county&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cochice&#39;</span><span class="p">,</span> <span class="s1">&#39;Pima&#39;</span><span class="p">,</span> <span class="s1">&#39;Santa Cruz&#39;</span><span class="p">,</span> <span class="s1">&#39;Maricopa&#39;</span><span class="p">,</span> <span class="s1">&#39;Yuma&#39;</span><span class="p">],</span> 
+        <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2014</span><span class="p">],</span> 
+        <span class="s1">&#39;fireReports&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]}</span>
 </code></pre></div><h3 id="create-a-list-from-the-dictionary-keys">Create a list from the dictionary keys</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a list of keys</span>
-<span class="nb">list</span><span class="p">(</span><span class="nb">dict</span><span class="o">.</span><span class="n">keys</span><span class="p">(</span><span class="p">)</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 </code></pre></div><pre><code>['fireReports', 'year', 'county']
 </code></pre>
 <h3 id="create-a-list-from-the--dictionary-values">Create a list from the  dictionary values</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a list of values</span>
-<span class="nb">list</span><span class="p">(</span><span class="nb">dict</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="p">)</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 </code></pre></div><pre><code>[[4, 24, 31, 2, 3],
  [2012, 2012, 2013, 2014, 2014],
  ['Cochice', 'Pima', 'Santa Cruz', 'Maricopa', 'Yuma']]

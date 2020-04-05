@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Discretize Features"/>
 <meta name="twitter:description" content="How to discretize features for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -170,11 +170,11 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </code></pre></div><h2 id="create-data">Create Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create feature</span>
-<span class="n">age</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="p">[</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="p">,</span> 
-                <span class="p">[</span><span class="mi">12</span><span class="p">]</span><span class="p">,</span> 
-                <span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="p">,</span> 
-                <span class="p">[</span><span class="mi">36</span><span class="p">]</span><span class="p">,</span> 
-                <span class="p">[</span><span class="mi">65</span><span class="p">]</span><span class="p">]</span><span class="p">)</span>
+<span class="n">age</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">],</span> 
+                <span class="p">[</span><span class="mi">12</span><span class="p">],</span> 
+                <span class="p">[</span><span class="mi">20</span><span class="p">],</span> 
+                <span class="p">[</span><span class="mi">36</span><span class="p">],</span> 
+                <span class="p">[</span><span class="mi">65</span><span class="p">]])</span>
 </code></pre></div><h2 id="option-1-binarize-feature">Option 1: Binarize Feature</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create binarizer</span>
 <span class="n">binarizer</span> <span class="o">=</span> <span class="n">Binarizer</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
@@ -189,7 +189,7 @@ MathJax.Hub.Config({
 </code></pre>
 <h2 id="option-2-break-up-feature-into-bins">Option 2: Break Up Feature Into Bins</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Bin feature</span>
-<span class="n">np</span><span class="o">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">64</span><span class="p">]</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">64</span><span class="p">])</span>
 </code></pre></div><pre><code>array([[0],
        [0],
        [1],

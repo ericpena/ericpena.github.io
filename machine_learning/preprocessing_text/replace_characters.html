@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Replace Characters"/>
 <meta name="twitter:description" content="How to remove characters to clean unstructured text data for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -169,12 +169,12 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">re</span>
 </code></pre></div><h2 id="create-text">Create Text</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create text</span>
-<span class="n">text_data</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Interrobang. By Aishwarya Henriette</span><span class="s1">&#39;</span><span class="p">,</span>
-             <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Parking And Going. By Karl Gautier</span><span class="s1">&#39;</span><span class="p">,</span>
-             <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Today Is The night. By Jarek Prakash</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">text_data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Interrobang. By Aishwarya Henriette&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;Parking And Going. By Karl Gautier&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;Today Is The night. By Jarek Prakash&#39;</span><span class="p">]</span>
 </code></pre></div><h2 id="replace-character-method-1">Replace Character (Method 1)</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Remove periods</span>
-<span class="n">remove_periods</span> <span class="o">=</span> <span class="p">[</span><span class="n">string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">.</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">string</span> <span class="ow">in</span> <span class="n">text_data</span><span class="p">]</span>
+<span class="n">remove_periods</span> <span class="o">=</span> <span class="p">[</span><span class="n">string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">string</span> <span class="ow">in</span> <span class="n">text_data</span><span class="p">]</span>
 
 <span class="c1"># Show text</span>
 <span class="n">remove_periods</span>
@@ -184,8 +184,8 @@ MathJax.Hub.Config({
 </code></pre>
 <h2 id="replace-character-method-2">Replace Character (Method 2)</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create function</span>
-<span class="k">def</span> <span class="nf">replace_letters_with_X</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;</span><span class="s1">[a-zA-Z]</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">X</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">replace_letters_with_X</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[a-zA-Z]&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
 
 <span class="c1"># Apply function</span>
 <span class="p">[</span><span class="n">replace_letters_with_X</span><span class="p">(</span><span class="n">string</span><span class="p">)</span> <span class="k">for</span> <span class="n">string</span> <span class="ow">in</span> <span class="n">remove_periods</span><span class="p">]</span>

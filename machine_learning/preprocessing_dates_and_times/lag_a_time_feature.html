@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Lag A Time Feature"/>
 <meta name="twitter:description" content="How to lag a dates and times feature for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -169,14 +169,14 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </code></pre></div><h2 id="create-date-data">Create Date Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create data frame</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
 <span class="c1"># Create data</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">dates</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">1/1/2001</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">D</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">stock_price</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">2.2</span><span class="p">,</span><span class="mf">3.3</span><span class="p">,</span><span class="mf">4.4</span><span class="p">,</span><span class="mf">5.5</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;dates&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;1/1/2001&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;stock_price&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">2.2</span><span class="p">,</span><span class="mf">3.3</span><span class="p">,</span><span class="mf">4.4</span><span class="p">,</span><span class="mf">5.5</span><span class="p">]</span>
 </code></pre></div><h2 id="lag-time-data-by-one-row">Lag Time Data By One Row</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Lagged values by one row</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">previous_days_stock_price</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">stock_price</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;previous_days_stock_price&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;stock_price&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Show data frame</span>
 <span class="n">df</span>

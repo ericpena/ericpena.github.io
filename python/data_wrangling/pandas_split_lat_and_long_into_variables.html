@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Split Lat/Long Coordinate Variables Into Separate Variables"/>
 <meta name="twitter:description" content="Split lat/long coordinate variables into separate variables."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -168,25 +168,25 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </code></pre></div><h2 id="create-an-example-dataframe">Create an example dataframe</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">raw_data</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">geo</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">40.0024, -105.4102</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">40.0068, -105.266</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">39.9318, -105.2813</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span><span class="p">}</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">raw_data</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">geo</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">raw_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;geo&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;40.0024, -105.4102&#39;</span><span class="p">,</span> <span class="s1">&#39;40.0068, -105.266&#39;</span><span class="p">,</span> <span class="s1">&#39;39.9318, -105.2813&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">raw_data</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;geo&#39;</span><span class="p">])</span>
 <span class="n">df</span>
 </code></pre></div><!-- raw HTML omitted -->
 <h2 id="split-the-geo-variable-into-separate-lat-and-lon-variables">Split the geo variable into separate lat and lon variables</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create two lists for the loop results to be placed</span>
-<span class="n">lat</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
-<span class="n">lon</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="c1"># For each row in a varible,</span>
-<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">geo</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;geo&#39;</span><span class="p">]:</span>
     <span class="c1"># Try to,</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Split the row by comma and append</span>
         <span class="c1"># everything before the comma to lat</span>
-        <span class="n">lat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">,</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">)</span>
+        <span class="n">lat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
         <span class="c1"># Split the row by comma and append</span>
         <span class="c1"># everything after the comma to lon</span>
-        <span class="n">lon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">,</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="p">)</span>
+        <span class="n">lon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
     <span class="c1"># But if you get an error</span>
     <span class="k">except</span><span class="p">:</span>
         <span class="c1"># append a missing value to lat</span>
@@ -195,8 +195,8 @@ MathJax.Hub.Config({
         <span class="n">lon</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">)</span>
 
 <span class="c1"># Create two new columns from lat and lon</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">latitude</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lat</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">longitude</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lon</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lat</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lon</span>
 </code></pre></div><h2 id="view-the-dataframe">View the dataframe</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span>
 </code></pre></div><!-- raw HTML omitted -->

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Mutable Maps"/>
 <meta name="twitter:description" content="Mutable maps using Scala."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -196,7 +196,7 @@ MathJax.Hub.Config({
 </span><span class="c1"></span><span class="n">army</span><span class="o">(</span><span class="s">&#34;Tank&#34;</span><span class="o">)</span> <span class="k">=</span> <span class="s">&#34;Tiger Tank&#34;</span>
 </code></pre></div><h2 id="filter-a-map">Filter A Map</h2>
 <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="c1">// Keep only the key, value pairs that meet the criteria
-</span><span class="c1"></span><span class="n">army</span><span class="o">.</span><span class="n">retain</span><span class="o">(</span><span class="o">(</span><span class="n">k</span><span class="o">,</span><span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">k</span> <span class="o">==</span> <span class="s">&#34;Tank&#34;</span><span class="o">)</span>
+</span><span class="c1"></span><span class="n">army</span><span class="o">.</span><span class="n">retain</span><span class="o">((</span><span class="n">k</span><span class="o">,</span><span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">k</span> <span class="o">==</span> <span class="s">&#34;Tank&#34;</span><span class="o">)</span>
 </code></pre></div><pre><code>Map(Tank -&gt; Tiger Tank)
 </code></pre>
 

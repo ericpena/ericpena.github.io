@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Flatten Sequence Of Sequences"/>
 <meta name="twitter:description" content="Flatten sequence of sequences using Scala."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -167,9 +167,9 @@ MathJax.Hub.Config({
   <h2 id="create-an-array-sequence">Create An Array Sequence</h2>
 <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="c1">// Create an array that contains arrays with first and last names
 </span><span class="c1"></span><span class="k">val</span> <span class="n">fullNames</span> <span class="k">=</span> <span class="nc">Array</span><span class="o">(</span>
-    <span class="nc">Array</span><span class="o">(</span><span class="s">&#34;Jason&#34;</span><span class="o">,</span> <span class="s">&#34;Miller&#34;</span><span class="o">)</span><span class="o">,</span>
-    <span class="nc">Array</span><span class="o">(</span><span class="s">&#34;Jason&#34;</span><span class="o">,</span> <span class="s">&#34;Miller&#34;</span><span class="o">)</span><span class="o">,</span> <span class="c1">// Duplicate
-</span><span class="c1"></span>    <span class="nc">Array</span><span class="o">(</span><span class="s">&#34;Sally&#34;</span><span class="o">,</span> <span class="s">&#34;Fields&#34;</span><span class="o">)</span><span class="o">,</span>
+    <span class="nc">Array</span><span class="o">(</span><span class="s">&#34;Jason&#34;</span><span class="o">,</span> <span class="s">&#34;Miller&#34;</span><span class="o">),</span>
+    <span class="nc">Array</span><span class="o">(</span><span class="s">&#34;Jason&#34;</span><span class="o">,</span> <span class="s">&#34;Miller&#34;</span><span class="o">),</span> <span class="c1">// Duplicate
+</span><span class="c1"></span>    <span class="nc">Array</span><span class="o">(</span><span class="s">&#34;Sally&#34;</span><span class="o">,</span> <span class="s">&#34;Fields&#34;</span><span class="o">),</span>
     <span class="nc">Array</span><span class="o">(</span><span class="s">&#34;Betty&#34;</span><span class="o">,</span> <span class="s">&#34;Johnson&#34;</span><span class="o">)</span>
 <span class="o">)</span>
 </code></pre></div><h2 id="flatten-the-sequence">Flatten The Sequence</h2>

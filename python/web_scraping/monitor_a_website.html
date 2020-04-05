@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Monitor A Website For Changes With Python"/>
 <meta name="twitter:description" content="Monitor a website for changes with Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -166,7 +166,7 @@ MathJax.Hub.Config({
       
   <p>In this snippet, we create a continous loop that, at set times, scrapes a website, checks to see if it contains some text and if so, emails me. Specifically I used this script to find when Venture Beat had published an article about my company.</p>
 <p>It should be noted that there are more efficient ways of setting scripts to run at certain times, notable cron. However, this is a quick and dirty solution.</p>
-<p><em>Note: I've commented out the last few lines of this tutorial, which attempts to send an email. Before running this code, uncomment those lines</em></p>
+<p><em>Note: I&rsquo;ve commented out the last few lines of this tutorial, which attempts to send an email. Before running this code, uncomment those lines</em></p>
 <h2 id="preliminaries">Preliminaries</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Import requests (to download the page)</span>
 <span class="kn">import</span> <span class="nn">requests</span>
@@ -186,16 +186,16 @@ MathJax.Hub.Config({
 <span class="c1"># while this is true (it is true by default),</span>
 <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
     <span class="c1"># set the url as VentureBeat,</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">http://Google.com/</span><span class="s2">&#34;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;http://Google.com/&#34;</span>
     <span class="c1"># set the headers like we are a browser,</span>
-    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">User-Agent</span><span class="s1">&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36</span><span class="s1">&#39;</span><span class="p">}</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36&#39;</span><span class="p">}</span>
     <span class="c1"># download the homepage</span>
     <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
     <span class="c1"># parse the downloaded homepage and grab all text, then,</span>
-    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">lxml</span><span class="s2">&#34;</span><span class="p">)</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s2">&#34;lxml&#34;</span><span class="p">)</span>
     
     <span class="c1"># if the number of times the word &#34;Google&#34; occurs on the page is less than 1,</span>
-    <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Google</span><span class="s2">&#34;</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&#34;Google&#34;</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
         <span class="c1"># wait 60 seconds,</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
         <span class="c1"># continue with the script,</span>
@@ -204,11 +204,11 @@ MathJax.Hub.Config({
     <span class="c1"># but if the word &#34;Google&#34; occurs any other number of times,</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># create an email message with just a subject line,</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Subject: This is Chris</span><span class="se">\&#39;</span><span class="s1">s script talking, CHECK GOOGLE!</span><span class="s1">&#39;</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Subject: This is Chris</span><span class="se">\&#39;</span><span class="s1">s script talking, CHECK GOOGLE!&#39;</span>
         <span class="c1"># set the &#39;from&#39; address,</span>
-        <span class="n">fromaddr</span> <span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">YOUR_EMAIL_ADDRESS</span><span class="s1">&#39;</span>
+        <span class="n">fromaddr</span> <span class="o">=</span> <span class="s1">&#39;YOUR_EMAIL_ADDRESS&#39;</span>
         <span class="c1"># set the &#39;to&#39; addresses,</span>
-        <span class="n">toaddrs</span>  <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">AN_EMAIL_ADDRESS</span><span class="s1">&#39;</span><span class="p">,</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">A_SECOND_EMAIL_ADDRESS</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">A_THIRD_EMAIL_ADDRESS</span><span class="s1">&#39;</span><span class="p">]</span>
+        <span class="n">toaddrs</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AN_EMAIL_ADDRESS&#39;</span><span class="p">,</span><span class="s1">&#39;A_SECOND_EMAIL_ADDRESS&#39;</span><span class="p">,</span> <span class="s1">&#39;A_THIRD_EMAIL_ADDRESS&#39;</span><span class="p">]</span>
         
         <span class="c1"># setup the email server,</span>
         <span class="c1"># server = smtplib.SMTP(&#39;smtp.gmail.com&#39;, 587)</span>
@@ -217,9 +217,9 @@ MathJax.Hub.Config({
         <span class="c1"># server.login(&#34;YOUR_EMAIL_ADDRESS&#34;, &#34;YOUR_PASSWORD&#34;)</span>
         
         <span class="c1"># Print the email&#39;s contents</span>
-        <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">From: </span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">fromaddr</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">To: </span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">toaddrs</span><span class="p">)</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Message: </span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">msg</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;From: &#39;</span> <span class="o">+</span> <span class="n">fromaddr</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;To: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">toaddrs</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Message: &#39;</span> <span class="o">+</span> <span class="n">msg</span><span class="p">)</span>
         
         <span class="c1"># send the email</span>
         <span class="c1"># server.sendmail(fromaddr, toaddrs, msg)</span>

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="List All Files Of Certain Type In A Directory"/>
 <meta name="twitter:description" content="List all files of a certain type in a directory using Python"/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -167,7 +167,7 @@ MathJax.Hub.Config({
   <h2 id="preliminaries">Preliminaries</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
 </code></pre></div><h2 id="list-all-ipynb-files-in-directory">List All .ipynb Files In Directory</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">.ipynb</span><span class="s2">&#34;</span><span class="p">)</span><span class="p">]</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&#34;.ipynb&#34;</span><span class="p">)]</span>
 </code></pre></div><pre><code>['create_a_new_file_and_the_write_to_it.ipynb',
  'unpacking_a_tuple.ipynb',
  'unpacking_function_arguments.ipynb',

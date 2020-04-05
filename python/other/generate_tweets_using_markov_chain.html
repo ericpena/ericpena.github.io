@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Generate Tweets Using Markov Chains"/>
 <meta name="twitter:description" content="Generate tweets using Markov Chains in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -169,15 +169,15 @@ MathJax.Hub.Config({
 </code></pre></div><h2 id="load-corpus">Load Corpus</h2>
 <p>The corpus I am using is just one I found online. The corpus you choose is central to generating realistic text.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Get raw text as string</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">brown.txt</span><span class="s2">&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;brown.txt&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </code></pre></div><h2 id="build-markov-chain">Build Markov Chain</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Build the model.</span>
 <span class="n">text_model</span> <span class="o">=</span> <span class="n">markovify</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div><h1 id="generate-one-tweet">Generate One Tweet</h1>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Print three randomly-generated sentences of no more than 140 characters</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">text_model</span><span class="o">.</span><span class="n">make_short_sentence</span><span class="p">(</span><span class="mi">140</span><span class="p">)</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">text_model</span><span class="o">.</span><span class="n">make_short_sentence</span><span class="p">(</span><span class="mi">140</span><span class="p">))</span>
 </code></pre></div><pre><code>Within a month, calls were still productive and most devotees of baseball attended the dozens of them.
 Even death, therefore, has a leather bolo drawn through a local rajah in 1949.
 He had a rather sharp and confident.

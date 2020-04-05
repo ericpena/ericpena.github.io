@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Make Simulated Data For Regression"/>
 <meta name="twitter:description" content="Make a simulated dataset for regression using scikit-learn."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -182,13 +182,13 @@ MathJax.Hub.Config({
                                          <span class="n">coef</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 </code></pre></div><h2 id="view-simulated-data">View Simulated Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View the features of the first five rows</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Store 1</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Store 2</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Store 3</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Store 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Store 2&#39;</span><span class="p">,</span> <span class="s1">&#39;Store 3&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div><!-- raw HTML omitted -->
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View the output of the first five rows</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Sales</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Sales&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div><!-- raw HTML omitted -->
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View the actual, true coefficients used to generate the data</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">coef</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">True Coefficient Values</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">coef</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;True Coefficient Values&#39;</span><span class="p">])</span>
 </code></pre></div><!-- raw HTML omitted -->
 
 </div>

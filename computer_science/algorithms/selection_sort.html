@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Selection Sort"/>
 <meta name="twitter:description" content="Selection Sort Using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -179,27 +179,27 @@ MathJax.Hub.Config({
 </code></pre>
 <h2 id="create-a-selection-sort-algorithm">Create A Selection Sort Algorithm</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Define a function that takes an unsorted list,</span>
-<span class="k">def</span> <span class="nf">selection_sort</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">selection_sort</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
     
     <span class="c1"># Create a new list containing the values from the inputed list</span>
-    <span class="n">unsorted_sequence</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="p">:</span><span class="p">]</span>
+    <span class="n">unsorted_sequence</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[:]</span>
     
     <span class="c1"># Create a list where we will place the sorted values</span>
-    <span class="n">sorted_sequence</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
+    <span class="n">sorted_sequence</span> <span class="o">=</span> <span class="p">[]</span>
         
     <span class="c1"># While there are still values in the unsorted sequence:</span>
     <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">unsorted_sequence</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="c1"># For each value in the unsorted sequence,</span>
-        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">unsorted_sequence</span><span class="p">)</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">unsorted_sequence</span><span class="p">):</span>
 
             <span class="c1"># Assume it is the smallest value</span>
             <span class="n">smallest_value_index</span> <span class="o">=</span> <span class="n">i</span>
 
             <span class="c1"># Compare it which each other value in the unsorted list</span>
-            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">unsorted_sequence</span><span class="p">)</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">unsorted_sequence</span><span class="p">):</span>
 
                 <span class="c1"># If a smaller value is found</span>
-                <span class="k">if</span> <span class="n">unsorted_sequence</span><span class="p">[</span><span class="n">smallest_value_index</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">unsorted_sequence</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">unsorted_sequence</span><span class="p">[</span><span class="n">smallest_value_index</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">unsorted_sequence</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
                     
                     <span class="c1"># Swap the two values so the new value is the one we think is the smallest</span>
                     <span class="n">smallest_value_index</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="n">smallest_value_index</span>
@@ -211,7 +211,7 @@ MathJax.Hub.Config({
             <span class="n">sorted_sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">smallest_value</span><span class="p">)</span>
 
             <span class="c1"># Print the sorted sequence</span>
-            <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Sorted sequence so far:</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">sorted_sequence</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Sorted sequence so far:&#39;</span><span class="p">,</span> <span class="n">sorted_sequence</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Run the selection sort</span>
 <span class="n">selection_sort</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
 </code></pre></div><pre><code>Sorted sequence so far: [1]

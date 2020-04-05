@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="N Dimension Arrays"/>
 <meta name="twitter:description" content="N dimension arrays using Scala."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -170,23 +170,23 @@ MathJax.Hub.Config({
 <span class="k">val</span> <span class="n">columns</span> <span class="k">=</span> <span class="mi">2</span>
 
 <span class="c1">// Create an array of integers that is 2x2
-</span><span class="c1"></span><span class="k">val</span> <span class="n">matrix</span> <span class="k">=</span> <span class="nc">Array</span><span class="o">.</span><span class="n">ofDim</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span><span class="o">(</span><span class="n">rows</span><span class="o">,</span> <span class="n">columns</span><span class="o">)</span>
+</span><span class="c1"></span><span class="k">val</span> <span class="n">matrix</span> <span class="k">=</span> <span class="nc">Array</span><span class="o">.</span><span class="n">ofDim</span><span class="o">[</span><span class="kt">Int</span><span class="o">](</span><span class="n">rows</span><span class="o">,</span> <span class="n">columns</span><span class="o">)</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="c1">// View array
 </span><span class="c1"></span><span class="n">matrix</span>
 </code></pre></div><pre><code>Array(Array(0, 0), Array(0, 0))
 </code></pre>
 <h2 id="add-values-to-array">Add Values To Array</h2>
 <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="c1">// First row, first column
-</span><span class="c1"></span><span class="n">matrix</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span> <span class="k">=</span> <span class="mi">1</span>
+</span><span class="c1"></span><span class="n">matrix</span><span class="o">(</span><span class="mi">0</span><span class="o">)(</span><span class="mi">0</span><span class="o">)</span> <span class="k">=</span> <span class="mi">1</span>
 
 <span class="c1">// First row, second column
-</span><span class="c1"></span><span class="n">matrix</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="k">=</span> <span class="mi">0</span>
+</span><span class="c1"></span><span class="n">matrix</span><span class="o">(</span><span class="mi">0</span><span class="o">)(</span><span class="mi">1</span><span class="o">)</span> <span class="k">=</span> <span class="mi">0</span>
 
 <span class="c1">// Second row, first column
-</span><span class="c1"></span><span class="n">matrix</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span> <span class="k">=</span> <span class="mi">0</span>
+</span><span class="c1"></span><span class="n">matrix</span><span class="o">(</span><span class="mi">1</span><span class="o">)(</span><span class="mi">0</span><span class="o">)</span> <span class="k">=</span> <span class="mi">0</span>
 
 <span class="c1">// Second row, second column
-</span><span class="c1"></span><span class="n">matrix</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="k">=</span> <span class="mi">1</span>
+</span><span class="c1"></span><span class="n">matrix</span><span class="o">(</span><span class="mi">1</span><span class="o">)(</span><span class="mi">1</span><span class="o">)</span> <span class="k">=</span> <span class="mi">1</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="c1">// View array
 </span><span class="c1"></span><span class="n">matrix</span>
 </code></pre></div><pre><code>Array(Array(1, 0), Array(0, 1))

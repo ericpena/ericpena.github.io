@@ -34,7 +34,7 @@
       <pubDate>Sun, 16 Dec 2018 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/python/object_oriented/create_methods.html</guid>
-      <description>Create Simple Class # Create a class called Soldier class Soldier: &amp;#34;&amp;#34;&amp;#34;Creates a class representing a soldier.&amp;#34;&amp;#34;&amp;#34; # Whenever an object is created from this class, # assign the name and initial rank. def __init__(self, name, rank): self.name = name self.rank = 1 # Promote soldier to a higher rank def promote(self): # Set rank to current rank plus one self.rank = self.rank + 1 Create Soldier Named Jason # Create an instance of Soldier class called &amp;#39;jason&amp;#39; jason = Soldier(&amp;#39;Jason Miller&amp;#39;, 1) View Jason&#39;s Attributes # Display a dictionary of attributes jason.</description>
+      <description>Create Simple Class # Create a class called Soldier class Soldier: &amp;#34;&amp;#34;&amp;#34;Creates a class representing a soldier.&amp;#34;&amp;#34;&amp;#34; # Whenever an object is created from this class, # assign the name and initial rank. def __init__(self, name, rank): self.name = name self.rank = 1 # Promote soldier to a higher rank def promote(self): # Set rank to current rank plus one self.rank = self.rank + 1 Create Soldier Named Jason # Create an instance of Soldier class called &amp;#39;jason&amp;#39; jason = Soldier(&amp;#39;Jason Miller&amp;#39;, 1) View Jason&amp;rsquo;s Attributes # Display a dictionary of attributes jason.</description>
     </item>
     
     <item>
@@ -196,7 +196,7 @@
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/python/web_scraping/beautiful_soup_html_basics.html</guid>
-      <description>Import the modules # Import required modules import requests from bs4 import BeautifulSoup Scrape the html and turn into a beautiful soup object # Create a variable with the url url = &amp;#39;http://chrisralbon.com&amp;#39; # Use requests to get the contents r = requests.get(url) # Get the text of the contents html_content = r.text # Convert the html content into a beautiful soup object soup = BeautifulSoup(html_content, &amp;#39;lxml&amp;#39;) Select the website&#39;s title # View the title tag of the soup object soup.</description>
+      <description>Import the modules # Import required modules import requests from bs4 import BeautifulSoup Scrape the html and turn into a beautiful soup object # Create a variable with the url url = &amp;#39;http://chrisralbon.com&amp;#39; # Use requests to get the contents r = requests.get(url) # Get the text of the contents html_content = r.text # Convert the html content into a beautiful soup object soup = BeautifulSoup(html_content, &amp;#39;lxml&amp;#39;) Select the website&amp;rsquo;s title # View the title tag of the soup object soup.</description>
     </item>
     
     <item>
@@ -425,7 +425,7 @@ Preliminaries import pandas as pd Create Dataframe # Create empty dataframe df =
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/python/basics/create_a_temporary_file.html</guid>
-      <description>Preliminaries from tempfile import NamedTemporaryFile Create A Temporary File f = NamedTemporaryFile(&amp;#39;w+t&amp;#39;) Write To The Temp File # Write to the file, the output is the number of characters f.write(&amp;#39;Nobody lived on Deadweather but us and the pirates. It wasn’t hard to understand why.&amp;#39;) 85  View The Tmp File&#39;s Name f.name &#39;/var/folders/0b/pj3wsd750fjf8xzfb0n127w80000gn/T/tmphv1dkovx&#39;  Read The File # Go to the top of the file f.seek(0) # Read the file f.</description>
+      <description>Preliminaries from tempfile import NamedTemporaryFile Create A Temporary File f = NamedTemporaryFile(&amp;#39;w+t&amp;#39;) Write To The Temp File # Write to the file, the output is the number of characters f.write(&amp;#39;Nobody lived on Deadweather but us and the pirates. It wasn’t hard to understand why.&amp;#39;) 85  View The Tmp File&amp;rsquo;s Name f.name &#39;/var/folders/0b/pj3wsd750fjf8xzfb0n127w80000gn/T/tmphv1dkovx&#39;  Read The File # Go to the top of the file f.seek(0) # Read the file f.</description>
     </item>
     
     <item>
@@ -544,7 +544,7 @@ Lists are mutable.
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/python/web_scraping/beautiful_soup_drill_down.html</guid>
-      <description>Preliminaries # Import required modules import requests from bs4 import BeautifulSoup import pandas as pd Download the HTML and create a Beautiful Soup object # Create a variable with the URL to this tutorial url = &amp;#39;http://en.wikipedia.org/wiki/List_of_A_Song_of_Ice_and_Fire_characters&amp;#39; # Scrape the HTML at the url r = requests.get(url) # Turn the HTML into a Beautiful Soup object soup = BeautifulSoup(r.text, &amp;#34;lxml&amp;#34;) If we looked at the soup object, we&#39;d see that the names we want are in a heirarchical list.</description>
+      <description>Preliminaries # Import required modules import requests from bs4 import BeautifulSoup import pandas as pd Download the HTML and create a Beautiful Soup object # Create a variable with the URL to this tutorial url = &amp;#39;http://en.wikipedia.org/wiki/List_of_A_Song_of_Ice_and_Fire_characters&amp;#39; # Scrape the HTML at the url r = requests.get(url) # Turn the HTML into a Beautiful Soup object soup = BeautifulSoup(r.text, &amp;#34;lxml&amp;#34;) If we looked at the soup object, we&amp;rsquo;d see that the names we want are in a heirarchical list.</description>
     </item>
     
     <item>
@@ -572,7 +572,7 @@ Lists are mutable.
       
       <guid>https://ericpena.github.io/python/basics/exiting_a_loop.html</guid>
       <description>Create A List # Create a list: armies = [&amp;#39;Red Army&amp;#39;, &amp;#39;Blue Army&amp;#39;, &amp;#39;Green Army&amp;#39;] Breaking Out Of A For Loop for army in armies: print(army) if army == &amp;#39;Blue Army&amp;#39;: print(&amp;#39;Blue Army Found! Stopping.&amp;#39;) break Red Army Blue Army Blue Army Found! Stopping.  Notice that the loop stopped after the conditional if statement was satisfied.
-Exiting If Loop Completed A loop will exit when completed, but using an else statement we can add an action at the conclusion of the loop if it hasn&#39;t been exited earlier.</description>
+Exiting If Loop Completed A loop will exit when completed, but using an else statement we can add an action at the conclusion of the loop if it hasn&amp;rsquo;t been exited earlier.</description>
     </item>
     
     <item>
@@ -653,7 +653,7 @@ Exiting If Loop Completed A loop will exit when completed, but using an else sta
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/python/basics/function_annotation_examples.html</guid>
-      <description>Create A Function With Annotations &amp;#39;&amp;#39;&amp;#39;Create a function. The argument &amp;#39;text&amp;#39;is the string to print with the default value &amp;#39;default string&amp;#39;and the argument The argument &amp;#39;n&amp;#39;is an integer of times to print with the default value of 1. The function should return a string.&amp;#39;&amp;#39;&amp;#39; def print_text(text:&amp;#39;string to print&amp;#39;=&amp;#39;default string&amp;#39;, n:&amp;#39;integer, times to print&amp;#39;=1) -&amp;gt; str: return text * n Run The Function # Run the function with arguments print_text(&amp;#39;string&amp;#39;, 4) &#39;stringstringstringstring&#39;  # Run the function with default arguments print_text() &#39;default string&#39;  </description>
+      <description>Create A Function With Annotations &amp;#39;&amp;#39;&amp;#39; Create a function. The argument &amp;#39;text&amp;#39; is the string to print with the default value &amp;#39;default string&amp;#39; and the argument The argument &amp;#39;n&amp;#39; is an integer of times to print with the default value of 1. The function should return a string. &amp;#39;&amp;#39;&amp;#39; def print_text(text:&amp;#39;string to print&amp;#39;=&amp;#39;default string&amp;#39;, n:&amp;#39;integer, times to print&amp;#39;=1) -&amp;gt; str: return text * n Run The Function # Run the function with arguments print_text(&amp;#39;string&amp;#39;, 4) &#39;stringstringstringstring&#39;  # Run the function with default arguments print_text() &#39;default string&#39;  </description>
     </item>
     
     <item>
@@ -709,7 +709,7 @@ Exiting If Loop Completed A loop will exit when completed, but using an else sta
       
       <guid>https://ericpena.github.io/python/data_wrangling/geocoding_and_reverse_geocoding.html</guid>
       <description>Geocoding (converting a physical address or location into latitude/longitude) and reverse geocoding (converting a lat/long to a physical address or location) are common tasks when working with geo-data.
-Python offers a number of packages to make the task incredibly easy. In the tutorial below, I use pygeocoder, a wrapper for Google&#39;s geo-API, to both geocode and reverse geocode.
+Python offers a number of packages to make the task incredibly easy. In the tutorial below, I use pygeocoder, a wrapper for Google&amp;rsquo;s geo-API, to both geocode and reverse geocode.
 Preliminaries First we want to load the packages we will want to use in the script.</description>
     </item>
     
@@ -720,7 +720,7 @@ Preliminaries First we want to load the packages we will want to use in the scri
       
       <guid>https://ericpena.github.io/python/data_wrangling/geolocate_a_city_and_country.html</guid>
       <description>This tutorial creates a function that attempts to take a city and country and return its latitude and longitude. But when the city is unavailable (which is often be the case), the returns the latitude and longitude of the center of the country.
-Preliminaries from geopy.geocoders import Nominatim geolocator = Nominatim() import numpy as np Create Geolocation Function def geolocate(city=None, country=None): &amp;#39;&amp;#39;&amp;#39;Inputs city and country, or just country. Returns the lat/long coordinates of either the city if possible, if not, then returns lat/long of the center of the country.</description>
+Preliminaries from geopy.geocoders import Nominatim geolocator = Nominatim() import numpy as np Create Geolocation Function def geolocate(city=None, country=None): &amp;#39;&amp;#39;&amp;#39; Inputs city and country, or just country. Returns the lat/long coordinates of either the city if possible, if not, then returns lat/long of the center of the country.</description>
     </item>
     
     <item>
@@ -730,7 +730,7 @@ Preliminaries from geopy.geocoders import Nominatim geolocator = Nominatim() imp
       
       <guid>https://ericpena.github.io/python/data_wrangling/geolocate_a_city_or_country.html</guid>
       <description>This tutorial creates a function that attempts to take a city and country and return its latitude and longitude. But when the city is unavailable (which is often be the case), the returns the latitude and longitude of the center of the country.
-Preliminaries from geopy.geocoders import Nominatim geolocator = Nominatim() import numpy as np Create Geolocation Function def geolocate(city=None, country=None): &amp;#39;&amp;#39;&amp;#39;Inputs city and country, or just country. Returns the lat/long coordinates of either the city if possible, if not, then returns lat/long of the center of the country.</description>
+Preliminaries from geopy.geocoders import Nominatim geolocator = Nominatim() import numpy as np Create Geolocation Function def geolocate(city=None, country=None): &amp;#39;&amp;#39;&amp;#39; Inputs city and country, or just country. Returns the lat/long coordinates of either the city if possible, if not, then returns lat/long of the center of the country.</description>
     </item>
     
     <item>
@@ -739,7 +739,7 @@ Preliminaries from geopy.geocoders import Nominatim geolocator = Nominatim() imp
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/python/data_wrangling/pandas_group_by_time.html</guid>
-      <description>Import required modules import pandas as pd import numpy as np Create a dataframe df = pd.DataFrame() df[&amp;#39;german_army&amp;#39;] = np.random.randint(low=20000, high=30000, size=100) df[&amp;#39;allied_army&amp;#39;] = np.random.randint(low=20000, high=40000, size=100) df.index = pd.date_range(&amp;#39;1/1/2014&amp;#39;, periods=100, freq=&amp;#39;H&amp;#39;) df.head() .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  Truncate the dataframe df.truncate(before=&amp;#39;1/2/2014&amp;#39;, after=&amp;#39;1/3/2014&amp;#39;) .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  Set the dataframe&#39;s index df.</description>
+      <description>Import required modules import pandas as pd import numpy as np Create a dataframe df = pd.DataFrame() df[&amp;#39;german_army&amp;#39;] = np.random.randint(low=20000, high=30000, size=100) df[&amp;#39;allied_army&amp;#39;] = np.random.randint(low=20000, high=40000, size=100) df.index = pd.date_range(&amp;#39;1/1/2014&amp;#39;, periods=100, freq=&amp;#39;H&amp;#39;) df.head() .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  Truncate the dataframe df.truncate(before=&amp;#39;1/2/2014&amp;#39;, after=&amp;#39;1/3/2014&amp;#39;) .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  Set the dataframe&amp;rsquo;s index df.</description>
     </item>
     
     <item>
@@ -758,8 +758,8 @@ Preliminaries from geopy.geocoders import Nominatim geolocator = Nominatim() imp
       
       <guid>https://ericpena.github.io/python/data_wrangling/pandas_group_data_by_time.html</guid>
       <description>On March 13, 2016, version 0.18.0 of Pandas was released, with significant changes in how the resampling function operates. This tutorial follows v0.18.0 and will not work for previous versions of pandas.
-First let&#39;s load the modules we care about
-Preliminaries # Import required packages import pandas as pd import datetime import numpy as np Next, let&#39;s create some sample data that we can group by time as an sample. In this example I am creating a dataframe with two columns with 365 rows.</description>
+First let&amp;rsquo;s load the modules we care about
+Preliminaries # Import required packages import pandas as pd import datetime import numpy as np Next, let&amp;rsquo;s create some sample data that we can group by time as an sample. In this example I am creating a dataframe with two columns with 365 rows.</description>
     </item>
     
     <item>
@@ -813,7 +813,7 @@ Preliminaries # Import required packages import pandas as pd import datetime imp
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/python/basics/how_to_use_default_dicts.html</guid>
-      <description>Preliminaries import collections Create A DefaultDict Default Dicts work just like regular dictionaries, except a key is called that doesn&#39;t have a value, a default value (note: value, not key) is supplied.
+      <description>Preliminaries import collections Create A DefaultDict Default Dicts work just like regular dictionaries, except a key is called that doesn&amp;rsquo;t have a value, a default value (note: value, not key) is supplied.
 # Create a defaultdict with the default value of 0 (int&amp;#39;s default value is 0) arrests = collections.defaultdict(int) Add A New Key With A Value # Add an entry of a person with 10 arrests arrests[&amp;#39;Sarah Miller&amp;#39;] = 10 # View dictionary arrests defaultdict(int, {&#39;Sarah Miller&#39;: 10})  Add A New Key Without A Value # Add an entry of a person with no value for arrests, # thus the default value is used arrests[&amp;#39;Bill James&amp;#39;] 0  # View dictionary arrests defaultdict(int, {&#39;Bill James&#39;: 0, &#39;Sarah Miller&#39;: 10})  </description>
     </item>
     
@@ -1024,7 +1024,7 @@ Preliminaries # Import modules import pandas as pd # Set ipython&amp;#39;s max r
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/python/data_visualization/matplotlib_simple_example.html</guid>
-      <description>Tell Jupyter to load matplotlib and display all visuals created inline (that is, on this page) %matplotlib inline Import matplotlib&#39;s pyplot module import matplotlib.pyplot as pyplot Create a simple plot pyplot.plot([1.6, 2.7]) [&amp;lt;matplotlib.lines.Line2D at 0x10c4e7978&amp;gt;]  </description>
+      <description>Tell Jupyter to load matplotlib and display all visuals created inline (that is, on this page) %matplotlib inline Import matplotlib&amp;rsquo;s pyplot module import matplotlib.pyplot as pyplot Create a simple plot pyplot.plot([1.6, 2.7]) [&amp;lt;matplotlib.lines.Line2D at 0x10c4e7978&amp;gt;]  </description>
     </item>
     
     <item>
@@ -1033,7 +1033,7 @@ Preliminaries # Import modules import pandas as pd # Set ipython&amp;#39;s max r
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/python/other/mine_a_twitter_hashtags_and_words.html</guid>
-      <description>This is a script which monitor&#39;s Twitter for tweets containing certain hashtags, words, or phrases. When one of those appears, it saves that tweet, and the user&#39;s information to a csv file. A similar version of this script is available on GitHub here. The main difference between the code presented here and the repo is that here I am added extensive comments in the code explaining what is happening. Also, the code below runs as a Jupyter notebook.</description>
+      <description>This is a script which monitor&amp;rsquo;s Twitter for tweets containing certain hashtags, words, or phrases. When one of those appears, it saves that tweet, and the user&amp;rsquo;s information to a csv file. A similar version of this script is available on GitHub here. The main difference between the code presented here and the repo is that here I am added extensive comments in the code explaining what is happening. Also, the code below runs as a Jupyter notebook.</description>
     </item>
     
     <item>
@@ -1116,7 +1116,7 @@ It should be noted that there are more efficient ways of setting scripts to run 
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/python/data_wrangling/pandas_data_structures.html</guid>
-      <description>Import modules import pandas as pd Series 101 Series are one-dimensional arrays (like R&#39;s vectors)
+      <description>Import modules import pandas as pd Series 101 Series are one-dimensional arrays (like R&amp;rsquo;s vectors)
 Create a series of the number of floodingReports floodingReports = pd.Series([5, 6, 2, 9, 12]) floodingReports 0 5 1 6 2 2 3 9 4 12 dtype: int64  Note that the first column of numbers (0 to 4) are the index.
 Set county names to be the index of the floodingReports series floodingReports = pd.</description>
     </item>
@@ -1136,7 +1136,7 @@ Set county names to be the index of the floodingReports series floodingReports =
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/python/basics/parallel_processing.html</guid>
-      <description>This tutorial is inspired by Chris Kiehl&#39;s great post on multiprocessing.
+      <description>This tutorial is inspired by Chris Kiehl&amp;rsquo;s great post on multiprocessing.
 Preliminaries from multiprocessing import Pool from multiprocessing.dummy import Pool as ThreadPool Create Some Data # Create a list of some data data = range(29999) Create An Operation To Execute On The Data # Create a function that takes a data point def some_function(datum): # and returns the datum raised to the power of itself return datum**datum Traditional Approach %%time # Create an empty for the results results = [] # For each value in the data for datum in data: # Append the output of the function when applied to that datum results.</description>
     </item>
     
@@ -1258,7 +1258,7 @@ Preliminaries from functools import partial Create A Function def multiply(x, y)
       
       <guid>https://ericpena.github.io/python/data_wrangling/pandas_rename_column_headers.html</guid>
       <description>Originally from rgalbo on StackOverflow.
-Preliminaries # Import required modules import pandas as pd Create example data # Create a values as dictionary of lists raw_data = {&amp;#39;0&amp;#39;: [&amp;#39;first_name&amp;#39;, &amp;#39;Molly&amp;#39;, &amp;#39;Tina&amp;#39;, &amp;#39;Jake&amp;#39;, &amp;#39;Amy&amp;#39;], &amp;#39;1&amp;#39;: [&amp;#39;last_name&amp;#39;, &amp;#39;Jacobson&amp;#39;, &amp;#39;Ali&amp;#39;, &amp;#39;Milner&amp;#39;, &amp;#39;Cooze&amp;#39;], &amp;#39;2&amp;#39;: [&amp;#39;age&amp;#39;, 52, 36, 24, 73], &amp;#39;3&amp;#39;: [&amp;#39;preTestScore&amp;#39;, 24, 31, 2, 3]} # Create a dataframe df = pd.DataFrame(raw_data) # View a dataframe df Replace the header value with the first row&#39;s values # Create a new variable called &amp;#39;header&amp;#39; from the first row of the dataset header = df.</description>
+Preliminaries # Import required modules import pandas as pd Create example data # Create a values as dictionary of lists raw_data = {&amp;#39;0&amp;#39;: [&amp;#39;first_name&amp;#39;, &amp;#39;Molly&amp;#39;, &amp;#39;Tina&amp;#39;, &amp;#39;Jake&amp;#39;, &amp;#39;Amy&amp;#39;], &amp;#39;1&amp;#39;: [&amp;#39;last_name&amp;#39;, &amp;#39;Jacobson&amp;#39;, &amp;#39;Ali&amp;#39;, &amp;#39;Milner&amp;#39;, &amp;#39;Cooze&amp;#39;], &amp;#39;2&amp;#39;: [&amp;#39;age&amp;#39;, 52, 36, 24, 73], &amp;#39;3&amp;#39;: [&amp;#39;preTestScore&amp;#39;, 24, 31, 2, 3]} # Create a dataframe df = pd.DataFrame(raw_data) # View a dataframe df Replace the header value with the first row&amp;rsquo;s values # Create a new variable called &amp;#39;header&amp;#39; from the first row of the dataset header = df.</description>
     </item>
     
     <item>
@@ -1295,7 +1295,7 @@ __str__ is the output for the end user. It prints what the user wants to see.</d
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/python/data_wrangling/pandas_saving_dataframe_as_csv.html</guid>
-      <description>import modules import pandas as pd Create dataframe raw_data = {&amp;#39;first_name&amp;#39;: [&amp;#39;Jason&amp;#39;, &amp;#39;Molly&amp;#39;, &amp;#39;Tina&amp;#39;, &amp;#39;Jake&amp;#39;, &amp;#39;Amy&amp;#39;], &amp;#39;last_name&amp;#39;: [&amp;#39;Miller&amp;#39;, &amp;#39;Jacobson&amp;#39;, &amp;#39;Ali&amp;#39;, &amp;#39;Milner&amp;#39;, &amp;#39;Cooze&amp;#39;], &amp;#39;age&amp;#39;: [42, 52, 36, 24, 73], &amp;#39;preTestScore&amp;#39;: [4, 24, 31, 2, 3], &amp;#39;postTestScore&amp;#39;: [25, 94, 57, 62, 70]} df = pd.DataFrame(raw_data, columns = [&amp;#39;first_name&amp;#39;, &amp;#39;last_name&amp;#39;, &amp;#39;age&amp;#39;, &amp;#39;preTestScore&amp;#39;, &amp;#39;postTestScore&amp;#39;]) df Save the dataframe called &amp;ldquo;df&amp;rdquo; as csv Note: I&#39;ve commented out this line of code so it does not run.</description>
+      <description>import modules import pandas as pd Create dataframe raw_data = {&amp;#39;first_name&amp;#39;: [&amp;#39;Jason&amp;#39;, &amp;#39;Molly&amp;#39;, &amp;#39;Tina&amp;#39;, &amp;#39;Jake&amp;#39;, &amp;#39;Amy&amp;#39;], &amp;#39;last_name&amp;#39;: [&amp;#39;Miller&amp;#39;, &amp;#39;Jacobson&amp;#39;, &amp;#39;Ali&amp;#39;, &amp;#39;Milner&amp;#39;, &amp;#39;Cooze&amp;#39;], &amp;#39;age&amp;#39;: [42, 52, 36, 24, 73], &amp;#39;preTestScore&amp;#39;: [4, 24, 31, 2, 3], &amp;#39;postTestScore&amp;#39;: [25, 94, 57, 62, 70]} df = pd.DataFrame(raw_data, columns = [&amp;#39;first_name&amp;#39;, &amp;#39;last_name&amp;#39;, &amp;#39;age&amp;#39;, &amp;#39;preTestScore&amp;#39;, &amp;#39;postTestScore&amp;#39;]) df Save the dataframe called &amp;ldquo;df&amp;rdquo; as csv Note: I&amp;rsquo;ve commented out this line of code so it does not run.</description>
     </item>
     
     <item>
@@ -1444,7 +1444,7 @@ c = plt.scatter(theta, r, c=colors, s=area, cmap=plt.cm.RdYlGn) c1 = plt.scatter
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/python/data_wrangling/pandas_sorting_rows_dataframe.html</guid>
-      <description>import modules import pandas as pd Create dataframe data = {&amp;#39;name&amp;#39;: [&amp;#39;Jason&amp;#39;, &amp;#39;Molly&amp;#39;, &amp;#39;Tina&amp;#39;, &amp;#39;Jake&amp;#39;, &amp;#39;Amy&amp;#39;], &amp;#39;year&amp;#39;: [2012, 2012, 2013, 2014, 2014], &amp;#39;reports&amp;#39;: [1, 2, 1, 2, 3], &amp;#39;coverage&amp;#39;: [2, 2, 3, 3, 3]} df = pd.DataFrame(data, index = [&amp;#39;Cochice&amp;#39;, &amp;#39;Pima&amp;#39;, &amp;#39;Santa Cruz&amp;#39;, &amp;#39;Maricopa&amp;#39;, &amp;#39;Yuma&amp;#39;]) df Sort the dataframe&#39;s rows by reports, in descending order df.sort_values(by=&amp;#39;reports&amp;#39;, ascending=0) Sort the dataframe&#39;s rows by coverage and then by reports, in ascending order df.</description>
+      <description>import modules import pandas as pd Create dataframe data = {&amp;#39;name&amp;#39;: [&amp;#39;Jason&amp;#39;, &amp;#39;Molly&amp;#39;, &amp;#39;Tina&amp;#39;, &amp;#39;Jake&amp;#39;, &amp;#39;Amy&amp;#39;], &amp;#39;year&amp;#39;: [2012, 2012, 2013, 2014, 2014], &amp;#39;reports&amp;#39;: [1, 2, 1, 2, 3], &amp;#39;coverage&amp;#39;: [2, 2, 3, 3, 3]} df = pd.DataFrame(data, index = [&amp;#39;Cochice&amp;#39;, &amp;#39;Pima&amp;#39;, &amp;#39;Santa Cruz&amp;#39;, &amp;#39;Maricopa&amp;#39;, &amp;#39;Yuma&amp;#39;]) df Sort the dataframe&amp;rsquo;s rows by reports, in descending order df.sort_values(by=&amp;#39;reports&amp;#39;, ascending=0) Sort the dataframe&amp;rsquo;s rows by coverage and then by reports, in ascending order df.</description>
     </item>
     
     <item>
@@ -1563,8 +1563,8 @@ Preliminaries import json Step 1: Create a JSON with the API credentials credent
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/python/testing/testable_documentation.html</guid>
-      <description>Preliminaries import doctest Create A Function To Test Note that our test cases are inside the function&#39;s documentation. Each test case is marked by a &amp;gt;&amp;gt;&amp;gt; and the expect output is the line below.
-def summation(a, b): &amp;#34;&amp;#34;&amp;#34;Takes two inputs and outputs their sum.Tests:&amp;gt;&amp;gt;&amp;gt; summation(5, 4)9&amp;gt;&amp;gt;&amp;gt; summation(4, 3)7&amp;gt;&amp;gt;&amp;gt; summation(&amp;#39;foo&amp;#39;,&amp;#39;bar&amp;#39;)&amp;#39;foobar&amp;#39;&amp;gt;&amp;gt;&amp;gt; summation(3,&amp;#39;d&amp;#39;)Traceback (most recent call last):...TypeError: unsupported operand type(s) for +: &amp;#39;int&amp;#39;and &amp;#39;str&amp;#39;&amp;#34;&amp;#34;&amp;#34; return a + b Notice that in the last test, we are making sure the function outputs the correct error.</description>
+      <description>Preliminaries import doctest Create A Function To Test Note that our test cases are inside the function&amp;rsquo;s documentation. Each test case is marked by a &amp;gt;&amp;gt;&amp;gt; and the expect output is the line below.
+def summation(a, b): &amp;#34;&amp;#34;&amp;#34; Takes two inputs and outputs their sum. Tests: &amp;gt;&amp;gt;&amp;gt; summation(5, 4) 9 &amp;gt;&amp;gt;&amp;gt; summation(4, 3) 7 &amp;gt;&amp;gt;&amp;gt; summation(&amp;#39;foo&amp;#39;,&amp;#39;bar&amp;#39;) &amp;#39;foobar&amp;#39; &amp;gt;&amp;gt;&amp;gt; summation(3,&amp;#39;d&amp;#39;) Traceback (most recent call last): ... TypeError: unsupported operand type(s) for +: &amp;#39;int&amp;#39; and &amp;#39;str&amp;#39; &amp;#34;&amp;#34;&amp;#34; return a + b Notice that in the last test, we are making sure the function outputs the correct error.</description>
     </item>
     
     <item>
@@ -1573,7 +1573,7 @@ def summation(a, b): &amp;#34;&amp;#34;&amp;#34;Takes two inputs and outputs the
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/python/basics/try_except_finally.html</guid>
-      <description>Create data # Create some data scores = [23,453,54,235,74,234] Try something that doesn&#39;t work # Try to: try: # Add a list of integers and a string scores + &amp;#39;A string of characters.&amp;#39; # If you get an error, set the error as &amp;#39;e&amp;#39;, except Exception as e: # print the error, e print(&amp;#39;Error:&amp;#39;, e) # Then, finally: # print end program print(&amp;#39;End Program&amp;#39;) Error: can only concatenate list (not &amp;quot;str&amp;quot;) to list End Program  Try something that works # Try to: try: # Print scores print(&amp;#39;Worked!</description>
+      <description>Create data # Create some data scores = [23,453,54,235,74,234] Try something that doesn&amp;rsquo;t work # Try to: try: # Add a list of integers and a string scores + &amp;#39;A string of characters.&amp;#39; # If you get an error, set the error as &amp;#39;e&amp;#39;, except Exception as e: # print the error, e print(&amp;#39;Error:&amp;#39;, e) # Then, finally: # print end program print(&amp;#39;End Program&amp;#39;) Error: can only concatenate list (not &amp;quot;str&amp;quot;) to list End Program  Try something that works # Try to: try: # Print scores print(&amp;#39;Worked!</description>
     </item>
     
     <item>

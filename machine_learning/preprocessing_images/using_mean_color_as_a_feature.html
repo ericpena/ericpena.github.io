@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Mean Color As A Feature"/>
 <meta name="twitter:description" content="How to use the mean color of an image as a feature using OpenCV in Python with the Shi-Tomasi Corner Detector."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -171,13 +171,13 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 </code></pre></div><h2 id="load-image">Load image</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load image as BGR</span>
-<span class="n">image_bgr</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">images/plane_256x256.jpg</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_COLOR</span><span class="p">)</span>
+<span class="n">image_bgr</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/plane_256x256.jpg&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_COLOR</span><span class="p">)</span>
 </code></pre></div><h2 id="calculate-mean-color-of-each-color-channel">Calculate Mean Color Of Each Color Channel</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Calculate the mean of each channel</span>
 <span class="n">channels</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">image_bgr</span><span class="p">)</span>
 
 <span class="c1"># Swap blue and red values (making it RGB, not BGR)</span>
-<span class="n">observation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="p">[</span><span class="p">(</span><span class="n">channels</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="p">,</span> <span class="n">channels</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="p">,</span> <span class="n">channels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">)</span><span class="p">]</span><span class="p">)</span>
+<span class="n">observation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">channels</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">channels</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">channels</span><span class="p">[</span><span class="mi">0</span><span class="p">])])</span>
 </code></pre></div><h2 id="show-values">Show Values</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Show mean channel values</span>
 <span class="n">observation</span>
@@ -185,8 +185,8 @@ MathJax.Hub.Config({
 </code></pre>
 <h2 id="view-mean-image-colors">View Mean Image Colors</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Show image</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">observation</span><span class="p">)</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">off</span><span class="s2">&#34;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">observation</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&#34;off&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div><p><img src="using_mean_color_as_a_feature_10_0.png" alt="png"></p>
 
 </div>

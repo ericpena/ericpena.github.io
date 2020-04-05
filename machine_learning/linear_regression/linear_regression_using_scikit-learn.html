@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linear Regression Using Scikit-Learn"/>
 <meta name="twitter:description" content="How to conduct linear regression in scikit-learn for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -171,15 +171,15 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">warnings</span>
 
 <span class="c1"># Suppress Warning</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">ignore</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">scipy</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">^internal gelsd</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s2">&#34;ignore&#34;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&#34;scipy&#34;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&#34;^internal gelsd&#34;</span><span class="p">)</span>
 </code></pre></div><h2 id="load-boston-housing-dataset">Load Boston Housing Dataset</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load data</span>
-<span class="n">boston</span> <span class="o">=</span> <span class="n">load_boston</span><span class="p">(</span><span class="p">)</span>
+<span class="n">boston</span> <span class="o">=</span> <span class="n">load_boston</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">boston</span><span class="o">.</span><span class="n">data</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">boston</span><span class="o">.</span><span class="n">target</span>
 </code></pre></div><h2 id="fit-a-linear-regression">Fit A Linear Regression</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create linear regression</span>
-<span class="n">regr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">(</span><span class="p">)</span>
+<span class="n">regr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
 
 <span class="c1"># Fit the linear regression</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>

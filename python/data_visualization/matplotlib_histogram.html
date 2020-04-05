@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Histograms In MatPlotLib"/>
 <meta name="twitter:description" content="Histograms In MatPlotLib."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -172,59 +172,59 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">math</span>
 
 <span class="c1"># Set ipython&#39;s max row display</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">display.max_row</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_row&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 
 <span class="c1"># Set iPython&#39;s max column width to 50</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">display.max_columns</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 </code></pre></div><h2 id="create-dataframe">Create dataframe</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">https://www.dropbox.com/s/52cb7kcflr8qm2u/5kings_battles_v1.csv?dl=1</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://www.dropbox.com/s/52cb7kcflr8qm2u/5kings_battles_v1.csv?dl=1&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div><!-- raw HTML omitted -->
 <h2 id="make-plot-with-bins-of-fixed-size">Make plot with bins of fixed size</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Make two variables of the attacker and defender size, but leaving out</span>
 <span class="c1"># cases when there are over 10000 attackers</span>
-<span class="n">data1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">attacker_size</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">attacker_size</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">90000</span><span class="p">]</span>
-<span class="n">data2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">defender_size</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">attacker_size</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">90000</span><span class="p">]</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;attacker_size&#39;</span><span class="p">][</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;attacker_size&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">90000</span><span class="p">]</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;defender_size&#39;</span><span class="p">][</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;attacker_size&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">90000</span><span class="p">]</span>
 
 <span class="c1"># Create bins of 2000 each</span>
-<span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">data1</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="p">)</span><span class="p">,</span> <span class="n">data2</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="p">)</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span> <span class="c1"># fixed bin size</span>
+<span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">data1</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">data2</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">2000</span><span class="p">)</span> <span class="c1"># fixed bin size</span>
 
 <span class="c1"># Plot a histogram of attacker size</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> 
          <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> 
          <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
-         <span class="n">color</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">#EDD834</span><span class="s1">&#39;</span><span class="p">,</span>
-         <span class="n">label</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Attacker</span><span class="s1">&#39;</span><span class="p">)</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#EDD834&#39;</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Attacker&#39;</span><span class="p">)</span>
 
 <span class="c1"># Plot a histogram of defender size</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data2</span><span class="p">,</span> 
          <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> 
          <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
-         <span class="n">color</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">#887E43</span><span class="s1">&#39;</span><span class="p">,</span>
-         <span class="n">label</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Defender</span><span class="s1">&#39;</span><span class="p">)</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#887E43&#39;</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Defender&#39;</span><span class="p">)</span>
 
 <span class="c1"># Set the x and y boundaries of the figure</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 
 <span class="c1"># Set the title and labels</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Histogram of Attacker and Defender Size</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Number of troops</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Number of battles</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">upper right</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histogram of Attacker and Defender Size&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Number of troops&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of battles&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div><p><img src="matplotlib_histogram_6_0.png" alt="png"></p>
 <h2 id="make-plot-with-fixed-number-of-bins">Make plot with fixed number of bins</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Make two variables of the attacker and defender size, but leaving out</span>
 <span class="c1"># cases when there are over 10000 attackers</span>
-<span class="n">data1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">attacker_size</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">attacker_size</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">90000</span><span class="p">]</span>
-<span class="n">data2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">defender_size</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">attacker_size</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">90000</span><span class="p">]</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;attacker_size&#39;</span><span class="p">][</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;attacker_size&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">90000</span><span class="p">]</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;defender_size&#39;</span><span class="p">][</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;attacker_size&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">90000</span><span class="p">]</span>
 
 <span class="c1"># Create 10 bins with the minimum </span>
 <span class="c1"># being the smallest value of data1 and data2 </span>
-<span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">data1</span> <span class="o">+</span> <span class="n">data2</span><span class="p">)</span><span class="p">,</span> 
+<span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">data1</span> <span class="o">+</span> <span class="n">data2</span><span class="p">),</span> 
                    <span class="c1"># the max being the highest value</span>
-                   <span class="nb">max</span><span class="p">(</span><span class="n">data1</span> <span class="o">+</span> <span class="n">data2</span><span class="p">)</span><span class="p">,</span>
+                   <span class="nb">max</span><span class="p">(</span><span class="n">data1</span> <span class="o">+</span> <span class="n">data2</span><span class="p">),</span>
                    <span class="c1"># and divided into 10 bins</span>
                    <span class="mi">10</span><span class="p">)</span>
 
@@ -235,9 +235,9 @@ MathJax.Hub.Config({
          <span class="c1"># with alpha</span>
          <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
          <span class="c1"># with color</span>
-         <span class="n">color</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">#EDD834</span><span class="s1">&#39;</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#EDD834&#39;</span><span class="p">,</span>
          <span class="c1"># labelled attacker</span>
-         <span class="n">label</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Attacker</span><span class="s1">&#39;</span><span class="p">)</span>
+         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Attacker&#39;</span><span class="p">)</span>
 
 <span class="c1"># Plot a histogram of defender size</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data2</span><span class="p">,</span> 
@@ -246,20 +246,20 @@ MathJax.Hub.Config({
          <span class="c1"># with alpha</span>
          <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
          <span class="c1"># with color</span>
-         <span class="n">color</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">#887E43</span><span class="s1">&#39;</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#887E43&#39;</span><span class="p">,</span>
          <span class="c1"># labeled defender</span>
-         <span class="n">label</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Defender</span><span class="s1">&#39;</span><span class="p">)</span>
+         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Defender&#39;</span><span class="p">)</span>
 
 <span class="c1"># Set the x and y boundaries of the figure</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 
 <span class="c1"># Set the title and labels</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Histogram of Attacker and Defender Size</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Number of troops</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Number of battles</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">upper right</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histogram of Attacker and Defender Size&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Number of troops&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of battles&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div><p><img src="matplotlib_histogram_8_0.png" alt="png"></p>
 
 </div>

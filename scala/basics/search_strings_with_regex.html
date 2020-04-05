@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Search Strings Using Regex"/>
 <meta name="twitter:description" content="Search Strings Using Regex using Scala."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -172,12 +172,12 @@ MathJax.Hub.Config({
 </span><span class="c1"></span><span class="k">val</span> <span class="n">find_numbers</span> <span class="k">=</span> <span class="s">&#34;[0-9]+&#34;</span><span class="o">.</span><span class="n">r</span>
 </code></pre></div><h2 id="find-first-match">Find First Match</h2>
 <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="c1">// Apply the regex to find the first match, output the result, otherwise output &#34;None&#34;
-</span><span class="c1"></span><span class="n">find_numbers</span><span class="o">.</span><span class="n">findFirstIn</span><span class="o">(</span><span class="n">attack_order</span><span class="o">)</span><span class="o">.</span><span class="n">getOrElse</span><span class="o">(</span><span class="s">&#34;None&#34;</span><span class="o">)</span>
+</span><span class="c1"></span><span class="n">find_numbers</span><span class="o">.</span><span class="n">findFirstIn</span><span class="o">(</span><span class="n">attack_order</span><span class="o">).</span><span class="n">getOrElse</span><span class="o">(</span><span class="s">&#34;None&#34;</span><span class="o">)</span>
 </code></pre></div><pre><code>382
 </code></pre>
 <h2 id="find-all-matches">Find All Matches</h2>
 <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="c1">// Apply the regex to find all matches and output to an array
-</span><span class="c1"></span><span class="n">find_numbers</span><span class="o">.</span><span class="n">findAllIn</span><span class="o">(</span><span class="n">attack_order</span><span class="o">)</span><span class="o">.</span><span class="n">toArray</span>
+</span><span class="c1"></span><span class="n">find_numbers</span><span class="o">.</span><span class="n">findAllIn</span><span class="o">(</span><span class="n">attack_order</span><span class="o">).</span><span class="n">toArray</span>
 </code></pre></div><pre><code>Array(382, 28)
 </code></pre>
 

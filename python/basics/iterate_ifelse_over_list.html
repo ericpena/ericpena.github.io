@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Iterate An Ifelse Over A List"/>
 <meta name="twitter:description" content="Iterate an ifelse over a list in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -165,20 +165,20 @@ MathJax.Hub.Config({
   <div class="content">
       
   <h2 id="create-some-data">Create some data</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">word_list</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Egypt</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Watching</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Eleanor</span><span class="s1">&#39;</span><span class="p">]</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">word_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Egypt&#39;</span><span class="p">,</span> <span class="s1">&#39;Watching&#39;</span><span class="p">,</span> <span class="s1">&#39;Eleanor&#39;</span><span class="p">]</span>
 
-<span class="n">vowels</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">A</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">E</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">I</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">O</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">U</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">vowels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">]</span>
 </code></pre></div><h2 id="create-a-for-loop">Create a for loop</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># for each item in the word_list,</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_list</span><span class="p">:</span>
     <span class="c1"># if any word starts with e, where e is vowels,</span>
-    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">]</span><span class="p">)</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="n">word</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">]):</span>
         <span class="c1"># then print is valid,</span>
-        <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Is valid</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Is valid&#39;</span><span class="p">)</span>
     <span class="c1"># if not,    </span>
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># print invalid</span>
-        <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Invalid</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Invalid&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>Is valid
 Invalid
 Is valid

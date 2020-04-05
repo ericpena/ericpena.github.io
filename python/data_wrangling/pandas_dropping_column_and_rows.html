@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Dropping Rows And Columns In pandas Dataframe"/>
 <meta name="twitter:description" content="Dropping rows and columns in pandas dataframe."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -167,10 +167,10 @@ MathJax.Hub.Config({
   <h3 id="import-modules">Import modules</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </code></pre></div><h3 id="create-a-dataframe">Create a dataframe</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Jason</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Molly</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Tina</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Jake</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Amy</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span> 
-        <span class="sa"></span><span class="s1">&#39;</span><span class="s1">year</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2014</span><span class="p">]</span><span class="p">,</span> 
-        <span class="sa"></span><span class="s1">&#39;</span><span class="s1">reports</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span><span class="p">}</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Cochice</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Pima</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Santa Cruz</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Maricopa</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Yuma</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Jason&#39;</span><span class="p">,</span> <span class="s1">&#39;Molly&#39;</span><span class="p">,</span> <span class="s1">&#39;Tina&#39;</span><span class="p">,</span> <span class="s1">&#39;Jake&#39;</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">],</span> 
+        <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2014</span><span class="p">],</span> 
+        <span class="s1">&#39;reports&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Cochice&#39;</span><span class="p">,</span> <span class="s1">&#39;Pima&#39;</span><span class="p">,</span> <span class="s1">&#39;Santa Cruz&#39;</span><span class="p">,</span> <span class="s1">&#39;Maricopa&#39;</span><span class="p">,</span> <span class="s1">&#39;Yuma&#39;</span><span class="p">])</span>
 <span class="n">df</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
@@ -184,7 +184,7 @@ MathJax.Hub.Config({
 <p><!-- raw HTML omitted --></p>
 <!-- raw HTML omitted -->
 <h3 id="drop-an-observation-row">Drop an observation (row)</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Cochice</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Pima</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Cochice&#39;</span><span class="p">,</span> <span class="s1">&#39;Pima&#39;</span><span class="p">])</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;
@@ -198,7 +198,7 @@ MathJax.Hub.Config({
 <!-- raw HTML omitted -->
 <h3 id="drop-a-variable-column">Drop a variable (column)</h3>
 <p>Note: axis=1 denotes that we are referring to a column, not a row</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">reports</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;reports&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;
@@ -212,7 +212,7 @@ MathJax.Hub.Config({
 <!-- raw HTML omitted -->
 <h3 id="drop-a-row-if-it-contains-a-certain-value-in-this-case-tina">Drop a row if it contains a certain value (in this case, &ldquo;Tina&rdquo;)</h3>
 <p>Specifically: Create a new dataframe called df that includes all rows where the value of a cell in the name column does not equal &ldquo;Tina&rdquo;</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Tina</span><span class="s1">&#39;</span><span class="p">]</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="s1">&#39;Tina&#39;</span><span class="p">]</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;
@@ -226,7 +226,7 @@ MathJax.Hub.Config({
 <!-- raw HTML omitted -->
 <h3 id="drop-a-row-by-row-number-in-this-case-row-3">Drop a row by row number (in this case, row 3)</h3>
 <p>Note that Pandas uses zero based numbering, so 0 is the first row, 1 is the second row, etc.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;
@@ -239,7 +239,7 @@ MathJax.Hub.Config({
 <p><!-- raw HTML omitted --></p>
 <!-- raw HTML omitted -->
 <p>can be extended to dropping a range</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="p">]</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;
@@ -252,7 +252,7 @@ MathJax.Hub.Config({
 <p><!-- raw HTML omitted --></p>
 <!-- raw HTML omitted -->
 <p>or dropping relative to the end of the DF.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;
@@ -265,7 +265,7 @@ MathJax.Hub.Config({
 <p><!-- raw HTML omitted --></p>
 <!-- raw HTML omitted -->
 <p>you can select ranges relative to the top or drop relative to the bottom of the DF as well.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="c1">#keep top 3</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="c1">#keep top 3</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;
@@ -277,7 +277,7 @@ MathJax.Hub.Config({
 </code></pre>
 <p><!-- raw HTML omitted --></p>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="c1">#drop bottom 3 </span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="c1">#drop bottom 3 </span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;

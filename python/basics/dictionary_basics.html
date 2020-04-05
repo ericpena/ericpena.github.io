@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Dictionary Basics"/>
 <meta name="twitter:description" content="Dictionary basics in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -170,27 +170,27 @@ MathJax.Hub.Config({
 <li>Dictionaries are mutable.</li>
 </ul>
 <h3 id="build-a-dictionary-via-brackets">Build a dictionary via brackets</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">unef_org</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span> <span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">UNEF</span><span class="s1">&#39;</span><span class="p">,</span>
-            <span class="sa"></span><span class="s1">&#39;</span><span class="s1">staff</span><span class="s1">&#39;</span> <span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
-            <span class="sa"></span><span class="s1">&#39;</span><span class="s1">url</span><span class="s1">&#39;</span> <span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">http://unef.org</span><span class="s1">&#39;</span><span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">unef_org</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span> <span class="p">:</span> <span class="s1">&#39;UNEF&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;staff&#39;</span> <span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+            <span class="s1">&#39;url&#39;</span> <span class="p">:</span> <span class="s1">&#39;http://unef.org&#39;</span><span class="p">}</span>
 </code></pre></div><h3 id="view-the-variable">View the variable</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">unef_org</span>
 </code></pre></div><pre><code>{'name': 'UNEF', 'staff': 32, 'url': 'http://unef.org'}
 </code></pre>
 <h1 id="build-a-dict-via-keys">Build a dict via keys</h1>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">who_org</span> <span class="o">=</span> <span class="p">{</span><span class="p">}</span>
-<span class="n">who_org</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">WHO</span><span class="s1">&#39;</span>
-<span class="n">who_org</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">staff</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">10</span><span class="s1">&#39;</span>
-<span class="n">who_org</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">url</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">http://who.org</span><span class="s1">&#39;</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">who_org</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">who_org</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;WHO&#39;</span>
+<span class="n">who_org</span><span class="p">[</span><span class="s1">&#39;staff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;10&#39;</span>
+<span class="n">who_org</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;http://who.org&#39;</span>
 </code></pre></div><h3 id="view-the-variable-1">View the variable</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">who_org</span>
 </code></pre></div><pre><code>{'name': 'WHO', 'staff': '10', 'url': 'http://who.org'}
 </code></pre>
 <h2 id="nesting-in-dictionaries">Nesting in dictionaries</h2>
 <h3 id="build-a-dictionary-via-brackets-1">Build a dictionary via brackets</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">unitas_org</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span> <span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">UNITAS</span><span class="s1">&#39;</span><span class="p">,</span>
-              <span class="sa"></span><span class="s1">&#39;</span><span class="s1">staff</span><span class="s1">&#39;</span> <span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
-              <span class="sa"></span><span class="s1">&#39;</span><span class="s1">url</span><span class="s1">&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">http://unitas.org</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">http://unitas.int</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">unitas_org</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span> <span class="p">:</span> <span class="s1">&#39;UNITAS&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;staff&#39;</span> <span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+              <span class="s1">&#39;url&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;http://unitas.org&#39;</span><span class="p">,</span> <span class="s1">&#39;http://unitas.int&#39;</span><span class="p">]}</span>
 </code></pre></div><h3 id="view-the-variable-2">View the variable</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">unitas_org</span>
 </code></pre></div><pre><code>{'name': 'UNITAS',
@@ -199,7 +199,7 @@ MathJax.Hub.Config({
 </code></pre>
 <h2 id="index-the-nested-list">Index the nested list</h2>
 <h3 id="index-the-second-item-of-the-list-nested-in-the-url-key">Index the second item of the list nested in the url key.</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">unitas_org</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">url</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">unitas_org</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div><pre><code>'http://unitas.int'
 </code></pre>
 

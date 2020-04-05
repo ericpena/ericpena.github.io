@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Selecting The Best Number Of Components For TSVD"/>
 <meta name="twitter:description" content="How to select the best number of component in truncated singular value composition for dimensionality reduction using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -173,10 +173,10 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </code></pre></div><h2 id="load-digits-data-and-make-sparse">Load Digits Data And Make Sparse</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load the data</span>
-<span class="n">digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">(</span><span class="p">)</span>
+<span class="n">digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">()</span>
 
 <span class="c1"># Standardize the feature matrix</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
 <span class="c1"># Make sparse matrix</span>
 <span class="n">X_sparse</span> <span class="o">=</span> <span class="n">csr_matrix</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
@@ -189,7 +189,7 @@ MathJax.Hub.Config({
 <span class="n">tsvd_var_ratios</span> <span class="o">=</span> <span class="n">tsvd</span><span class="o">.</span><span class="n">explained_variance_ratio_</span>
 </code></pre></div><h2 id="create-function-calculating-number-of-components-required-to-pass-threshold">Create Function Calculating Number Of Components Required To Pass Threshold</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a function</span>
-<span class="k">def</span> <span class="nf">select_n_components</span><span class="p">(</span><span class="n">var_ratio</span><span class="p">,</span> <span class="n">goal_var</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">select_n_components</span><span class="p">(</span><span class="n">var_ratio</span><span class="p">,</span> <span class="n">goal_var</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="c1"># Set initial variance explained so far</span>
     <span class="n">total_variance</span> <span class="o">=</span> <span class="mf">0.0</span>
     
@@ -200,13 +200,13 @@ MathJax.Hub.Config({
     <span class="k">for</span> <span class="n">explained_variance</span> <span class="ow">in</span> <span class="n">var_ratio</span><span class="p">:</span>
         
         <span class="c1"># Add the explained variance to the total</span>
-        <span class="n">total_variance</span> <span class="o">+</span><span class="o">=</span> <span class="n">explained_variance</span>
+        <span class="n">total_variance</span> <span class="o">+=</span> <span class="n">explained_variance</span>
         
         <span class="c1"># Add one to the number of components</span>
-        <span class="n">n_components</span> <span class="o">+</span><span class="o">=</span> <span class="mi">1</span>
+        <span class="n">n_components</span> <span class="o">+=</span> <span class="mi">1</span>
         
         <span class="c1"># If we reach our goal level of explained variance</span>
-        <span class="k">if</span> <span class="n">total_variance</span> <span class="o">&gt;</span><span class="o">=</span> <span class="n">goal_var</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">total_variance</span> <span class="o">&gt;=</span> <span class="n">goal_var</span><span class="p">:</span>
             <span class="c1"># End the loop</span>
             <span class="k">break</span>
             

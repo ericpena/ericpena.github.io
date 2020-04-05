@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Iterating Over Dictionary Keys"/>
 <meta name="twitter:description" content="Iterating over dictionary keys using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -165,11 +165,11 @@ MathJax.Hub.Config({
   <div class="content">
       
   <h2 id="create-a-dictionary">Create A Dictionary</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Officers</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Michael Mulligan</span><span class="s1">&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Red Army</span><span class="s1">&#39;</span><span class="p">,</span>
-            <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Steven Johnson</span><span class="s1">&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Blue Army</span><span class="s1">&#39;</span><span class="p">,</span>
-            <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Jessica Billars</span><span class="s1">&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Green Army</span><span class="s1">&#39;</span><span class="p">,</span>
-            <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Sodoni Dogla</span><span class="s1">&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Purple Army</span><span class="s1">&#39;</span><span class="p">,</span>
-            <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Chris Jefferson</span><span class="s1">&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Orange Army</span><span class="s1">&#39;</span><span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Officers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Michael Mulligan&#39;</span><span class="p">:</span> <span class="s1">&#39;Red Army&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Steven Johnson&#39;</span><span class="p">:</span> <span class="s1">&#39;Blue Army&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Jessica Billars&#39;</span><span class="p">:</span> <span class="s1">&#39;Green Army&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Sodoni Dogla&#39;</span><span class="p">:</span> <span class="s1">&#39;Purple Army&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Chris Jefferson&#39;</span><span class="p">:</span> <span class="s1">&#39;Orange Army&#39;</span><span class="p">}</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Officers</span>
 </code></pre></div><pre><code>{'Chris Jefferson': 'Orange Army',
  'Jessica Billars': 'Green Army',
@@ -179,7 +179,7 @@ MathJax.Hub.Config({
 </code></pre>
 <h2 id="use-dictionary-comprehension">Use Dictionary Comprehension</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Display all dictionary entries where the key doesn&#39;t start with &#39;Chris&#39;</span>
-<span class="p">{</span><span class="n">keys</span> <span class="p">:</span> <span class="n">Officers</span><span class="p">[</span><span class="n">keys</span><span class="p">]</span> <span class="k">for</span> <span class="n">keys</span> <span class="ow">in</span> <span class="n">Officers</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">keys</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Chris</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">}</span>
+<span class="p">{</span><span class="n">keys</span> <span class="p">:</span> <span class="n">Officers</span><span class="p">[</span><span class="n">keys</span><span class="p">]</span> <span class="k">for</span> <span class="n">keys</span> <span class="ow">in</span> <span class="n">Officers</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">keys</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Chris&#39;</span><span class="p">)}</span>
 </code></pre></div><pre><code>{'Jessica Billars': 'Green Army',
  'Michael Mulligan': 'Red Army',
  'Sodoni Dogla': 'Purple Army',

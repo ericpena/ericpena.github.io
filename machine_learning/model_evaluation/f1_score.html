@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="F1 Score"/>
 <meta name="twitter:description" content="How to evaluate a Python machine learning using F1 score."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -180,10 +180,10 @@ MathJax.Hub.Config({
                            <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 </code></pre></div><h2 id="create-logistic-regression">Create Logistic Regression</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create logistic regression</span>
-<span class="n">logit</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="p">)</span>
+<span class="n">logit</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
 </code></pre></div><h2 id="cross-validate-model-using-f1">Cross-Validate Model Using F1</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Cross-validate model using precision</span>
-<span class="n">cross_val_score</span><span class="p">(</span><span class="n">logit</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">f1</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">cross_val_score</span><span class="p">(</span><span class="n">logit</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s2">&#34;f1&#34;</span><span class="p">)</span>
 </code></pre></div><pre><code>array([ 0.95166617,  0.95765275,  0.95558223])
 </code></pre>
 

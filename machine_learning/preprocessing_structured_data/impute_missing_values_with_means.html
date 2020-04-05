@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Impute Missing Values With Means"/>
 <meta name="twitter:description" content="Impute Missing Values With Means."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -171,18 +171,18 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">Imputer</span>
 </code></pre></div><h2 id="create-data">Create Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create an empty dataset</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
 <span class="c1"># Create two variables called x0 and x1. Make the first value of x1 a missing value</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">x0</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.3051</span><span class="p">,</span><span class="mf">0.4949</span><span class="p">,</span><span class="mf">0.6974</span><span class="p">,</span><span class="mf">0.3769</span><span class="p">,</span><span class="mf">0.2231</span><span class="p">,</span><span class="mf">0.341</span><span class="p">,</span><span class="mf">0.4436</span><span class="p">,</span><span class="mf">0.5897</span><span class="p">,</span><span class="mf">0.6308</span><span class="p">,</span><span class="mf">0.5</span><span class="p">]</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">x1</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="mf">0.2654</span><span class="p">,</span><span class="mf">0.2615</span><span class="p">,</span><span class="mf">0.5846</span><span class="p">,</span><span class="mf">0.4615</span><span class="p">,</span><span class="mf">0.8308</span><span class="p">,</span><span class="mf">0.4962</span><span class="p">,</span><span class="mf">0.3269</span><span class="p">,</span><span class="mf">0.5346</span><span class="p">,</span><span class="mf">0.6731</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;x0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.3051</span><span class="p">,</span><span class="mf">0.4949</span><span class="p">,</span><span class="mf">0.6974</span><span class="p">,</span><span class="mf">0.3769</span><span class="p">,</span><span class="mf">0.2231</span><span class="p">,</span><span class="mf">0.341</span><span class="p">,</span><span class="mf">0.4436</span><span class="p">,</span><span class="mf">0.5897</span><span class="p">,</span><span class="mf">0.6308</span><span class="p">,</span><span class="mf">0.5</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;x1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="mf">0.2654</span><span class="p">,</span><span class="mf">0.2615</span><span class="p">,</span><span class="mf">0.5846</span><span class="p">,</span><span class="mf">0.4615</span><span class="p">,</span><span class="mf">0.8308</span><span class="p">,</span><span class="mf">0.4962</span><span class="p">,</span><span class="mf">0.3269</span><span class="p">,</span><span class="mf">0.5346</span><span class="p">,</span><span class="mf">0.6731</span><span class="p">]</span>
 
 <span class="c1"># View the dataset</span>
 <span class="n">df</span>
 </code></pre></div><!-- raw HTML omitted -->
 <h2 id="fit-imputer">Fit Imputer</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create an imputer object that looks for &#39;Nan&#39; values, then replaces them with the mean value of the feature by columns (axis=0)</span>
-<span class="n">mean_imputer</span> <span class="o">=</span> <span class="n">Imputer</span><span class="p">(</span><span class="n">missing_values</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">NaN</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">mean</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">mean_imputer</span> <span class="o">=</span> <span class="n">Imputer</span><span class="p">(</span><span class="n">missing_values</span><span class="o">=</span><span class="s1">&#39;NaN&#39;</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Train the imputor on the df dataset</span>
 <span class="n">mean_imputer</span> <span class="o">=</span> <span class="n">mean_imputer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>

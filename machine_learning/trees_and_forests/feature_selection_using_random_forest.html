@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Feature Selection Using Random Forest"/>
 <meta name="twitter:description" content="Feature Selection Using Random Forest with scikit-learn."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -186,10 +186,10 @@ MathJax.Hub.Config({
 </code></pre></div><h2 id="create-the-data">Create The Data</h2>
 <p>The dataset used in this tutorial is the famous <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">iris dataset</a>. The Iris target data contains 50 samples from three species of Iris, <code>y</code> and four feature variables, <code>X</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load the iris dataset</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">(</span><span class="p">)</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
 
 <span class="c1"># Create a list of feature names</span>
-<span class="n">feat_labels</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Sepal Length</span><span class="s1">&#39;</span><span class="p">,</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Sepal Width</span><span class="s1">&#39;</span><span class="p">,</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Petal Length</span><span class="s1">&#39;</span><span class="p">,</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Petal Width</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">feat_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sepal Length&#39;</span><span class="p">,</span><span class="s1">&#39;Sepal Width&#39;</span><span class="p">,</span><span class="s1">&#39;Petal Length&#39;</span><span class="p">,</span><span class="s1">&#39;Petal Width&#39;</span><span class="p">]</span>
 
 <span class="c1"># Create X from the features</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
@@ -220,13 +220,13 @@ MathJax.Hub.Config({
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div><h2 id="train-a-random-forest-classifier">Train A Random Forest Classifier</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a random forest classifier</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Train the classifier</span>
 <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
 <span class="c1"># Print the name and gini importance of each feature</span>
-<span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">feat_labels</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">)</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">feat_labels</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">feature</span><span class="p">)</span>
 </code></pre></div><pre><code>('Sepal Length', 0.11024282328064565)
 ('Sepal Width', 0.016255033655398394)
@@ -250,8 +250,8 @@ MathJax.Hub.Config({
         prefit=False, threshold=0.15)
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Print the names of the most important features</span>
-<span class="k">for</span> <span class="n">feature_list_index</span> <span class="ow">in</span> <span class="n">sfm</span><span class="o">.</span><span class="n">get_support</span><span class="p">(</span><span class="n">indices</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">feat_labels</span><span class="p">[</span><span class="n">feature_list_index</span><span class="p">]</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">feature_list_index</span> <span class="ow">in</span> <span class="n">sfm</span><span class="o">.</span><span class="n">get_support</span><span class="p">(</span><span class="n">indices</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">feat_labels</span><span class="p">[</span><span class="n">feature_list_index</span><span class="p">])</span>
 </code></pre></div><pre><code>Petal Length
 Petal Width
 </code></pre>
@@ -262,7 +262,7 @@ Petal Width
 <span class="n">X_important_test</span> <span class="o">=</span> <span class="n">sfm</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 </code></pre></div><h2 id="train-a-new-random-forest-classifier-using-only-most-important-features">Train A New Random Forest Classifier Using Only Most Important Features</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a new random forest classifier for the most important features</span>
-<span class="n">clf_important</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">clf_important</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Train the new classifier on the new dataset containing the most important features</span>
 <span class="n">clf_important</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_important_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>

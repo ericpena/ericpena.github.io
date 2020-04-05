@@ -96,7 +96,7 @@ Make File touch file.txt Make Directory mkdir example_folder View Directory Cont
       
       <guid>https://ericpena.github.io/linux/basics/rename_file.html</guid>
       <description>The mv (move) command is used to rename files To rename a file, &amp;ldquo;move&amp;rdquo; it from one filename to another.
-Make File touch untitled.txt View Directory Contents Directory ls -l total 0 -rw-rw-r-- 1 chris chris 0 Jul 24 13:22 untitled.txt Make File mv untitled.txt august_records.txt View Directory Contents Directory ls -l total 0 -rw-rw-r-- 1 chris chris 0 Jul 24 13:22 august_records.txt mv Options:  -u Copy only files that don&#39;t exist or are newer than files with the same names in the destination directory -v Show verbose description of copy -i Prompt if copy would override file  </description>
+Make File touch untitled.txt View Directory Contents Directory ls -l total 0 -rw-rw-r-- 1 chris chris 0 Jul 24 13:22 untitled.txt Make File mv untitled.txt august_records.txt View Directory Contents Directory ls -l total 0 -rw-rw-r-- 1 chris chris 0 Jul 24 13:22 august_records.txt mv Options:  -u Copy only files that don&amp;rsquo;t exist or are newer than files with the same names in the destination directory -v Show verbose description of copy -i Prompt if copy would override file  </description>
     </item>
     
     <item>
@@ -208,8 +208,8 @@ ls -d */ anaconda3/ automatic_backups/ Desktop/ Documents/ Downloads/ Music/ nvv
       <pubDate>Sun, 17 Jun 2018 00:00:00 -0700</pubDate>
       
       <guid>https://ericpena.github.io/linux/basics/check_current_date_and_time.html</guid>
-      <description>If we want to see the system&#39;s current date and time, we can use the date command.
-Check System&#39;s Current Time date Tue Jul 17 10:07:27 PDT 2018 Check System&#39;s Current Time In UTC Time date -u Tue Jul 17 17:26:25 UTC 2018 </description>
+      <description>If we want to see the system&amp;rsquo;s current date and time, we can use the date command.
+Check System&amp;rsquo;s Current Time date Tue Jul 17 10:07:27 PDT 2018 Check System&amp;rsquo;s Current Time In UTC Time date -u Tue Jul 17 17:26:25 UTC 2018 </description>
     </item>
     
     <item>
@@ -239,8 +239,8 @@ echo &amp;#39;Alan Jones&amp;#39;, &amp;#39;$50&amp;#39; &amp;gt; sales_records_
       <pubDate>Sun, 17 Jun 2018 00:00:00 -0700</pubDate>
       
       <guid>https://ericpena.github.io/linux/basics/create_command.html</guid>
-      <description>Check If Command&#39;s Name Is Taken type make_example_directory -bash: type: make_example_directory: not found Okay good!
-Create Custom Command Let us create a custom command that creates a bunch of files and subdirectories in a directory. I&#39;ve used this command a few times for tutorial to simulate a real project. We will separate each command using ; so they can all be on one line. Specifically, the commands we will run are:</description>
+      <description>Check If Command&amp;rsquo;s Name Is Taken type make_example_directory -bash: type: make_example_directory: not found Okay good!
+Create Custom Command Let us create a custom command that creates a bunch of files and subdirectories in a directory. I&amp;rsquo;ve used this command a few times for tutorial to simulate a real project. We will separate each command using ; so they can all be on one line. Specifically, the commands we will run are:</description>
     </item>
     
     <item>
@@ -354,8 +354,8 @@ Exit Terminal exit logout Connection to 10.0.1.24 closed. </description>
       
       <guid>https://ericpena.github.io/linux/search/find_programs_location.html</guid>
       <description>Use the which command to find the location of a program on the system. This is particularly useful when you are trying to figure out which version of Python is currently set in the environment.
-Find Program&#39;s Location which python3 /home/chris/anaconda3/bin/python3 Just to prove that this is true, we can change directory, cd, to that location and find the file itself.
-Go To Program&#39;s Location cd /home/chris/anaconda3/bin/ List Contents Of Directory The python* selection means we are only listing files starting with python.</description>
+Find Program&amp;rsquo;s Location which python3 /home/chris/anaconda3/bin/python3 Just to prove that this is true, we can change directory, cd, to that location and find the file itself.
+Go To Program&amp;rsquo;s Location cd /home/chris/anaconda3/bin/ List Contents Of Directory The python* selection means we are only listing files starting with python.</description>
     </item>
     
     <item>
@@ -384,7 +384,7 @@ In plain English: Starting with i being 0, (i=0), as long as i is less than 10 (
       <pubDate>Sun, 17 Jun 2018 00:00:00 -0700</pubDate>
       
       <guid>https://ericpena.github.io/linux/basics/get_help_with_a_command.html</guid>
-      <description>The --help argument is a common choice for quickly learning about a command. Particularly useful, --help shows the arguments for that particular command so we don&#39;t have to look them up online.
+      <description>The --help argument is a common choice for quickly learning about a command. Particularly useful, --help shows the arguments for that particular command so we don&amp;rsquo;t have to look them up online.
 Another option is the whatis command, which prints a one-line description of the command.
 Quickly Describe A Command whatis mkdir mkdir (1) - make directories mkdir (2) - create a directory Note that in this case there are two mkdir commands with slightly different descriptions, but you can ignore that.</description>
     </item>
@@ -474,8 +474,8 @@ Show All Avaliable Commands ls /bin bash cp fgrep loadkeys netcat open setupcon 
       
       <guid>https://ericpena.github.io/linux/basics/list_contents_of_a_directory.html</guid>
       <description>ls is one of the most useful commands when using the Linux command line. ls lists the contents of the directory.
-List Contents Of Directory ls bin compiler_compat conda-meta doc etc include lib libexec LICENSE.txt mkspecs phrasebooks pkgs plugins qml share ssl translations var x86_64-conda_cos6-linux-gnu List Contents Of Directory In Detail Note that the first column contains the file&#39;s permission setting, which are structured as:
- Character 1: Type Of File (d means directory) Characters 2-4: Access Rights For File&#39;s Owner Characters 5-7: Access Rights For File&#39;s Group Characters 7-9: Access Rights For Everyone  ls -l total 188 drwxrwxr-x 2 chris chris 12288 Oct 11 2017 bin drwxrwxr-x 2 chris chris 4096 Oct 11 2017 compiler_compat drwxrwxr-x 2 chris chris 20480 Oct 11 2017 conda-meta drwxrwxr-x 3 chris chris 4096 Oct 11 2017 doc drwxrwxr-x 7 chris chris 4096 Oct 11 2017 etc drwxrwxr-x 31 chris chris 12288 Oct 11 2017 include drwxrwxr-x 22 chris chris 36864 Oct 11 2017 lib drwxrwxr-x 4 chris chris 4096 Oct 11 2017 libexec -rw-r--r-- 1 chris chris 5350 Sep 24 2017 LICENSE.</description>
+List Contents Of Directory ls bin compiler_compat conda-meta doc etc include lib libexec LICENSE.txt mkspecs phrasebooks pkgs plugins qml share ssl translations var x86_64-conda_cos6-linux-gnu List Contents Of Directory In Detail Note that the first column contains the file&amp;rsquo;s permission setting, which are structured as:
+ Character 1: Type Of File (d means directory) Characters 2-4: Access Rights For File&amp;rsquo;s Owner Characters 5-7: Access Rights For File&amp;rsquo;s Group Characters 7-9: Access Rights For Everyone  ls -l total 188 drwxrwxr-x 2 chris chris 12288 Oct 11 2017 bin drwxrwxr-x 2 chris chris 4096 Oct 11 2017 compiler_compat drwxrwxr-x 2 chris chris 20480 Oct 11 2017 conda-meta drwxrwxr-x 3 chris chris 4096 Oct 11 2017 doc drwxrwxr-x 7 chris chris 4096 Oct 11 2017 etc drwxrwxr-x 31 chris chris 12288 Oct 11 2017 include drwxrwxr-x 22 chris chris 36864 Oct 11 2017 lib drwxrwxr-x 4 chris chris 4096 Oct 11 2017 libexec -rw-r--r-- 1 chris chris 5350 Sep 24 2017 LICENSE.</description>
     </item>
     
     <item>
@@ -515,7 +515,7 @@ Ping Google.com ping google.com PING google.com (172.217.4.174) 56(84) bytes of 
       <pubDate>Sun, 17 Jun 2018 00:00:00 -0700</pubDate>
       
       <guid>https://ericpena.github.io/linux/text/quickly_view_file_contents.html</guid>
-      <description>Often we want to quickly take a peek at a file&#39;s contents without opening the file in an editor program. The cat command makes this easy.
+      <description>Often we want to quickly take a peek at a file&amp;rsquo;s contents without opening the file in an editor program. The cat command makes this easy.
 Create A Text File With Some Contents echo &amp;#39;Here is some text content inside of the file.&amp;#39; &amp;gt; example_file.txt View Contents Of Text File cat example_file.txt Here is some text content inside of the file. View Contents Of Text File With Line Numbers cat -n example_file.</description>
     </item>
     
@@ -535,7 +535,7 @@ Create Example File With List Of File Names echo &amp;#39;data_science.txt&amp;#
       <pubDate>Sun, 17 Jun 2018 00:00:00 -0700</pubDate>
       
       <guid>https://ericpena.github.io/linux/search/search_contents_of_all_files_of_certain_type.html</guid>
-      <description>Note: In this tutorial we do not generate the files we will search but rather search the contents of this site&#39;s directory structure.
+      <description>Note: In this tutorial we do not generate the files we will search but rather search the contents of this site&amp;rsquo;s directory structure.
 Recursively Search All Markdown For The Word &amp;ldquo;berry&amp;rdquo;  grep search command -n to display line number of matched pattern -i to make search case insensitive -r to search recursively --color to color the matches so they stand out --include=&#39;*.md&#39; to search only in files ending in .</description>
     </item>
     
@@ -565,7 +565,7 @@ Search Filenames In System locate bashrc /etc/bash.bashrc /etc/skel/.bashrc /hom
       
       <guid>https://ericpena.github.io/linux/basics/see_free_memory.html</guid>
       <description>The best way to check the amount of free memory in a Linux system is to use the free command. This command lists the amount of free memory.
-Check System&#39;s Free Memory free  total used free shared buff/cache available Mem: 65908812 244948 64239140 206180 1424724 64672848 Swap: 50226172 0 50226172 Check System&#39;s Free Memory In A More Human Readable Format free -h  total used free shared buff/cache available Mem: 62G 239M 61G 209M 1.</description>
+Check System&amp;rsquo;s Free Memory free  total used free shared buff/cache available Mem: 65908812 244948 64239140 206180 1424724 64672848 Swap: 50226172 0 50226172 Check System&amp;rsquo;s Free Memory In A More Human Readable Format free -h  total used free shared buff/cache available Mem: 62G 239M 61G 209M 1.</description>
     </item>
     
     <item>
@@ -595,7 +595,7 @@ Create Some Files touch hello_world.txt touch HELLO_world.txt touch HELLO_world.
       
       <guid>https://ericpena.github.io/linux/inputs_and_outputs/silence_errors.html</guid>
       <description>The most common method of silencing an error in Linux is to redirect than error to /dev/null which is like the trash bucket of the system. We can do that by including 2&amp;gt; /dev/null to the end of a command.
-Create Code That Will Produce Error ls a_fake_directory/ ls: a_fake_directory/: No such file or directory Silence Error Notice that we aren&#39;t silencing so much as redirecting into /dev/null. This is like sending the error into a black hole.</description>
+Create Code That Will Produce Error ls a_fake_directory/ ls: a_fake_directory/: No such file or directory Silence Error Notice that we aren&amp;rsquo;t silencing so much as redirecting into /dev/null. This is like sending the error into a black hole.</description>
     </item>
     
     <item>
@@ -614,7 +614,7 @@ Create Example File With List Of Names echo &amp;#39;Luca Gartside&amp;#39; &amp
       <pubDate>Sun, 17 Jun 2018 00:00:00 -0700</pubDate>
       
       <guid>https://ericpena.github.io/linux/basics/synchronize_files_and_directories.html</guid>
-      <description>rsync is a very handy tool for syncing the files and folders in two directories. rsync only copies files that have changed since the time they were sync&#39;d.
+      <description>rsync is a very handy tool for syncing the files and folders in two directories. rsync only copies files that have changed since the time they were sync&amp;rsquo;d.
 Make Two Directories mkdir origin destination Add Files In Origin Directory touch origin/file.txt View Origin Directory Contents ls -l origin total 0 -rw-rw-r-- 1 chris chris 0 Jul 31 20:04 file.txt View Destination Directory Contents ls -l destination total 0 Sync Origin Directory To Destination Directory In this code we sync (rsync) all the files and subdirectories (-a) in origin to destination while printing out details of the process (v), deleting (--delete) any files in destination that no longer exist in origin.</description>
     </item>
     
@@ -634,8 +634,8 @@ traceroute google.com traceroute to google.com (216.58.219.14), 30 hops max, 60 
       <pubDate>Sun, 17 Jun 2018 00:00:00 -0700</pubDate>
       
       <guid>https://ericpena.github.io/linux/basics/view_file_type.html</guid>
-      <description>The file command allows us to view a file&#39;s type.
-Make File echo &amp;#34;This is some text.&amp;#34; &amp;gt; sales.txt View A File&#39;s Type file LICENSE.txt sales.txt: ASCII text </description>
+      <description>The file command allows us to view a file&amp;rsquo;s type.
+Make File echo &amp;#34;This is some text.&amp;#34; &amp;gt; sales.txt View A File&amp;rsquo;s Type file LICENSE.txt sales.txt: ASCII text </description>
     </item>
     
     <item>
@@ -655,7 +655,7 @@ nano hello_world.txt If we want to leave a file we can press ctrl-x.</descriptio
       <pubDate>Sun, 17 Jun 2018 00:00:00 -0700</pubDate>
       
       <guid>https://ericpena.github.io/linux/environment/view_aliases.html</guid>
-      <description>We can see all the aliases in the environment using the alias command. This can be useful if we have setup some aliases operations we do frequently (like cd into a particular project&#39;s folder) and we want to remember what they are.
+      <description>We can see all the aliases in the environment using the alias command. This can be useful if we have setup some aliases operations we do frequently (like cd into a particular project&amp;rsquo;s folder) and we want to remember what they are.
 aliases alias alert=&#39;notify-send --urgency=low -i &amp;quot;$([ $? = 0 ] &amp;amp;&amp;amp; echo terminal || echo error)&amp;quot; &amp;quot;$(history|tail -n1|sed -e &#39;\&#39;&#39;s/^\s*[0-9]\+\s*//;s/[;&amp;amp;|]\s*alert$//&#39;\&#39;&#39;)&amp;quot;&#39; alias egrep=&#39;egrep --color=auto&#39; alias fgrep=&#39;fgrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias l=&#39;ls -CF&#39; alias la=&#39;ls -A&#39; alias lcl=&#39;ls -l&#39; alias ll=&#39;ls -alF&#39; alias ls=&#39;ls --color=auto&#39; </description>
     </item>
     

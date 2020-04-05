@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Load A JSON File Into Pandas"/>
 <meta name="twitter:description" content="How to quickly load a JSON file into pandas."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -169,10 +169,10 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </code></pre></div><h2 id="load-json-file">Load JSON File</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create URL to JSON file (alternatively this can be a filepath)</span>
-<span class="n">url</span> <span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">https://raw.githubusercontent.com/chrisalbon/simulated_datasets/master/data.json</span><span class="s1">&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/chrisalbon/simulated_datasets/master/data.json&#39;</span>
 
 <span class="c1"># Load the first sheet of the JSON file into a data frame</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">columns</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
 
 <span class="c1"># View the first ten rows</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>

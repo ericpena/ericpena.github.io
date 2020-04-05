@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Append Outputs And Errors To File"/>
 <meta name="twitter:description" content="How to write the standard error of a command or program to a file using the Linux command line."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -174,9 +174,9 @@ MathJax.Hub.Config({
 pwd: usage: pwd [-LP]
 </code></pre><h2 id="create-file-to-hold-output-and-errors">Create File To Hold Output And Errors</h2>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">touch log.txt</code></pre></div>
-<h2 id="append-working-codes-output-to-file">Append Working Code's Output To File</h2>
+<h2 id="append-working-codes-output-to-file">Append Working Code&rsquo;s Output To File</h2>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">pwd &amp;&gt;&gt; log.txt</code></pre></div>
-<h2 id="append-error-producing-codes-error-to-file">Append Error-Producing Code's Error To File</h2>
+<h2 id="append-error-producing-codes-error-to-file">Append Error-Producing Code&rsquo;s Error To File</h2>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">pwd -thisisafakeargumenttoproduceerror &amp;&gt;&gt; log.txt</code></pre></div>
 <h2 id="view-file-contents-to-show-both-output-and-error">View File Contents To Show Both Output And Error</h2>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">cat log.txt</code></pre></div>

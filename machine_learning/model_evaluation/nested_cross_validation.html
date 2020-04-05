@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Nested Cross Validation"/>
 <meta name="twitter:description" content="Nested Cross Validation using scikit-learn."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -186,7 +186,7 @@ MathJax.Hub.Config({
 </code></pre></div><h2 id="get-data">Get Data</h2>
 <p>The data for this tutorial is beast cancer data with <a href="http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_breast_cancer.html">30 features and a binary target variable</a>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load the data</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_breast_cancer</span><span class="p">(</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_breast_cancer</span><span class="p">()</span>
 
 <span class="c1"># Create X from the features</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span>
@@ -195,18 +195,18 @@ MathJax.Hub.Config({
 <span class="n">y</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">target</span>
 </code></pre></div><h2 id="standardize-data">Standardize Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a scaler object</span>
-<span class="n">sc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="p">)</span>
+<span class="n">sc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 
 <span class="c1"># Fit the scaler to the feature data and transform</span>
 <span class="n">X_std</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </code></pre></div><h2 id="create-inner-cross-validation-for-parameter-tuning">Create Inner Cross Validation (For Parameter Tuning)</h2>
 <p>This is our inner cross validation. We will use this to hunt for the best parameters for <code>C</code>, the penalty for misclassifying a data point. <code>GridSearchCV</code> will conduct steps 1-6 listed at the top of this tutorial.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a list of 10 candidate values for the C parameter</span>
-<span class="n">C_candidates</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="p">)</span>
+<span class="n">C_candidates</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 
 <span class="c1"># Create a gridsearch object with the support vector classifier and the C value candidates</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">SVC</span><span class="p">(</span><span class="p">)</span><span class="p">,</span> <span class="n">param_grid</span><span class="o">=</span><span class="n">C_candidates</span><span class="p">)</span>
-</code></pre></div><p>The code below isn't necessary for parameter tuning using nested cross validation, however to demonstrate that our inner cross validation grid search can find the best value for the parameter <code>C</code>, we will run it once here:</p>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">SVC</span><span class="p">(),</span> <span class="n">param_grid</span><span class="o">=</span><span class="n">C_candidates</span><span class="p">)</span>
+</code></pre></div><p>The code below isn&rsquo;t necessary for parameter tuning using nested cross validation, however to demonstrate that our inner cross validation grid search can find the best value for the parameter <code>C</code>, we will run it once here:</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Fit the cross validated grid search on the data </span>
 <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_std</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
@@ -220,7 +220,7 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">cross_val_score</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_std</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </code></pre></div><pre><code>array([ 0.94736842,  0.97894737,  0.98412698])
 </code></pre>
-<p>Each the values above is an unbiased evaluation of the model's accuracy, once for each of the three test folds. Averaged together, they would represent the average accuracy of the model found in the inner cross validated grid search.</p>
+<p>Each the values above is an unbiased evaluation of the model&rsquo;s accuracy, once for each of the three test folds. Averaged together, they would represent the average accuracy of the model found in the inner cross validated grid search.</p>
 
 </div>
   <aside>

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linear Regression"/>
 <meta name="twitter:description" content="A simple example of linear regression in scikit-learn"/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -174,9 +174,9 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 </code></pre></div><h2 id="load-data">Load Data</h2>
-<p>With those libraries added, let us load the dataset (the dataset is avaliable in his site's GitHub repo).</p>
+<p>With those libraries added, let us load the dataset (the dataset is avaliable in his site&rsquo;s GitHub repo).</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load the data</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">../data/simulated_data/battledeaths_n300_cor99.csv</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/simulated_data/battledeaths_n300_cor99.csv&#39;</span><span class="p">)</span>
 
 <span class="c1"># Shuffle the data&#39;s rows (This is only necessary because of the way I created</span>
 <span class="c1"># the data using DrawMyData. This would not normally be necessary with a real analysis).</span>
@@ -184,11 +184,11 @@ MathJax.Hub.Config({
 </code></pre></div><h2 id="explore-data">Explore Data</h2>
 <p>Let us take a look at the first few rows of the data just to get an idea about it.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View the first few rows</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div><!-- raw HTML omitted -->
-<p>Now let us plot the data so we can see it's structure.</p>
+<p>Now let us plot the data so we can see it&rsquo;s structure.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Plot the two variables against eachother</span>
-<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">friendly_battledeaths</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">enemy_battledeaths</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">scatter</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;friendly_battledeaths&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;enemy_battledeaths&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1145cdb00&gt;
 </code></pre>
 <p><img src="linear_regression_scikitlearn_12_1.png" alt="png"></p>
@@ -198,25 +198,25 @@ MathJax.Hub.Config({
 <ol>
 <li>Divide the dataset into two datasets: A &lsquo;training&rsquo; dataset that we will use to train our model and a &lsquo;test&rsquo; dataset that we will use to judge the accuracy of that model.</li>
 <li>Train the model on the &lsquo;training&rsquo; data.</li>
-<li>Apply that model to the test data's X variable, creating the model's guesses for the test data's Ys.</li>
-<li>Compare how close the model's predictions for the test data's Ys were to the actual test data Ys.</li>
+<li>Apply that model to the test data&rsquo;s X variable, creating the model&rsquo;s guesses for the test data&rsquo;s Ys.</li>
+<li>Compare how close the model&rsquo;s predictions for the test data&rsquo;s Ys were to the actual test data Ys.</li>
 </ol>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create our predictor/independent variable</span>
 <span class="c1"># and our response/dependent variable</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">friendly_battledeaths</span><span class="s1">&#39;</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">enemy_battledeaths</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;friendly_battledeaths&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;enemy_battledeaths&#39;</span><span class="p">]</span>
 
 <span class="c1"># Create our test data from the first 30 observations</span>
 <span class="n">X_test</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">30</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">y_test</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">30</span><span class="p">]</span>
 
 <span class="c1"># Create our training data from the remaining observations</span>
-<span class="n">X_train</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">30</span><span class="p">:</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">y_train</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">30</span><span class="p">:</span><span class="p">]</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">30</span><span class="p">:]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">30</span><span class="p">:]</span>
 </code></pre></div><h2 id="train-the-linear-model">Train The Linear Model</h2>
 <p>Let us train the model using our training data.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create an object that is an ols regression</span>
-<span class="n">ols</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">(</span><span class="p">)</span>
+<span class="n">ols</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Train the model using our training data</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">ols</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </code></pre></div><h2 id="view-the-results">View The Results</h2>
@@ -229,46 +229,46 @@ MathJax.Hub.Config({
 <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 </code></pre></div><pre><code>0.98573393818904709
 </code></pre>
-<p>Now that we have used the training data to train a model, called <code>model</code>, we can apply it to the test data's Xs to make predictions of the test data's Ys.</p>
+<p>Now that we have used the training data to train a model, called <code>model</code>, we can apply it to the test data&rsquo;s Xs to make predictions of the test data&rsquo;s Ys.</p>
 <p>Previously we used <code>X_train</code> and <code>y_train</code> to train a linear regression model, which we stored as a variable called <code>model</code>. The code <code>model.predict(X_test)</code> applies the trained model to the <code>X_test</code> data, data the model has never seen before to make predicted values of Y.</p>
 <p>This can easily be seen by simply running the code:</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Run the model on X_test and show the first five results</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
 </code></pre></div><pre><code>[7.4633347104887342,
  86.121700007313791,
  13.475493202059415,
  37.523931774900845,
  90.380300060086256]
 </code></pre>
-<p>This array of values is the model's best guesses for the values of the test data's Ys. Compare them to the actual test data Y values:</p>
+<p>This array of values is the model&rsquo;s best guesses for the values of the test data&rsquo;s Ys. Compare them to the actual test data Y values:</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View the first five test Y values</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">y_test</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 </code></pre></div><pre><code>[9.6153999999999993,
  86.153800000000004,
  8.8461999999999996,
  36.538499999999999,
  93.076899999999995]
 </code></pre>
-<p>The difference between the model's predicted values and the actual values is how is we judge as model's accuracy, because a perfectly accurate model would have residuals of zero.</p>
+<p>The difference between the model&rsquo;s predicted values and the actual values is how is we judge as model&rsquo;s accuracy, because a perfectly accurate model would have residuals of zero.</p>
 <p>However, to judge a model, we want a single statistic (number) that we can use as a measure. We want this measure to capture the difference between the predicted values and the actual values across all observations in the data.</p>
 <p>The most common statistic used for quantitative Ys is the <strong>residual sum of squares</strong>:</p>
 <p>$$ RSS = \sum_{i=1}^{n}(y_{i}-f(x_{i}))^{2} $$</p>
-<p>Don't let the mathematical notation throw you off:</p>
+<p>Don&rsquo;t let the mathematical notation throw you off:</p>
 <ul>
 <li>$f(x_{i})$ is the model we trained: <code>model.predict(X_test)</code></li>
-<li>$y_{i}$ is the test data's y: <code>y_test</code></li>
+<li>$y_{i}$ is the test data&rsquo;s y: <code>y_test</code></li>
 <li>$^{2}$ is the exponent: <code>**2</code></li>
 <li>$\sum_{i=1}^{n}$ is the summation: <code>.sum()</code></li>
 </ul>
-<p>In the residual sum of squares, for each observation we find the difference between the model's predicted Y and the actual Y, then square that difference to make all the values positive. Then we add all those squared differences together to get a single number. The final result is a statistic representing how far the model's predictions were from the real values.</p>
+<p>In the residual sum of squares, for each observation we find the difference between the model&rsquo;s predicted Y and the actual Y, then square that difference to make all the values positive. Then we add all those squared differences together to get a single number. The final result is a statistic representing how far the model&rsquo;s predictions were from the real values.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Apply the model we created using the training data </span>
 <span class="c1"># to the test data, and calculate the RSS.</span>
-<span class="p">(</span><span class="p">(</span><span class="n">y_test</span> <span class="o">-</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span><span class="p">)</span> <span class="o">*</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="p">)</span>
+<span class="p">((</span><span class="n">y_test</span> <span class="o">-</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span> <span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </code></pre></div><pre><code>313.6087355571951
 </code></pre>
 <p>Note: You can also use Mean Squared Error, which is RSS divided by the degrees of freedom. But I find it helpful to think in terms of RSS.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Calculate the MSE</span>
-<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span> <span class="o">-</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">*</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span> <span class="o">-</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div><pre><code>10.45362451857317
 </code></pre>
 

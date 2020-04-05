@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Demonstrate The Central Limit Theorem"/>
 <meta name="twitter:description" content="Python introduction to the central limit theorem"/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -173,29 +173,29 @@ MathJax.Hub.Config({
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>  
 </code></pre></div><h2 id="create-population-data-from-non-normal-distribution">Create Population Data From Non-Normal Distribution</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create an empty dataframe</span>
-<span class="n">population</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="p">)</span>
+<span class="n">population</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
 <span class="c1"># Create an column that is 10000 random numbers drawn from a uniform distribution</span>
-<span class="n">population</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">numbers</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">population</span><span class="p">[</span><span class="s1">&#39;numbers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Plot a histogram of the score data.</span>
 <span class="c1"># This confirms the data is not a normal distribution.</span>
-<span class="n">population</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">numbers</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">population</span><span class="p">[</span><span class="s1">&#39;numbers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 </code></pre></div><pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x112c72710&gt;
 </code></pre>
 <p><img src="demonstrate_the_central_limit_theorem_5_1.png" alt="png"></p>
 <h2 id="view-the-true-mean-of-population">View the True Mean Of Population</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View the mean of the numbers</span>
-<span class="n">population</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">numbers</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="p">)</span>
+<span class="n">population</span><span class="p">[</span><span class="s1">&#39;numbers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </code></pre></div><pre><code>4983.824612472138
 </code></pre>
 <h2 id="take-a-sample-mean-repeat-1000-times">Take A Sample Mean, Repeat 1000 Times</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a list</span>
-<span class="n">sampled_means</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
+<span class="n">sampled_means</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="c1"># For 1000  times,</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">):</span>
     <span class="c1"># Take a random sample of 100 rows from the population, take the mean of those rows, append to sampled_means</span>
-    <span class="n">sampled_means</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">population</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">)</span>
+    <span class="n">sampled_means</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">population</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </code></pre></div><h2 id="plot-the-sample-means-of-all-100-samples">Plot The Sample Means Of All 100 Samples</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Plot a histogram of sampled_means. </span>
 <span class="c1"># It is clearly normally distributed and centered around 5000</span>
@@ -206,15 +206,15 @@ MathJax.Hub.Config({
 <p>This is the critical chart, remember that the population distribution was uniform, however, this distribution is approaching normality. This is the key point to the central limit theory, and the reason we can assume sample means are not bias.</p>
 <h2 id="view-the-mean-sample-mean">View The Mean Sample Mean</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View the mean of the sampled_means</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">sampled_means</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">sampled_means</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </code></pre></div><pre><code>4981.465310909289
 </code></pre>
 <h2 id="compare-to-true-mean">Compare To True Mean</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Subtract Mean Sample Mean From True Population Mean</span>
-<span class="n">error</span> <span class="o">=</span> <span class="n">population</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">numbers</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="p">)</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">sampled_means</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="p">)</span>
+<span class="n">error</span> <span class="o">=</span> <span class="n">population</span><span class="p">[</span><span class="s1">&#39;numbers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">sampled_means</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
 <span class="c1"># Print</span>
-<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">The Mean Sample Mean is only </span><span class="si">%f</span><span class="s1"> different the True Population mean!</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">error</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;The Mean Sample Mean is only </span><span class="si">%f</span><span class="s1"> different the True Population mean!&#39;</span> <span class="o">%</span> <span class="n">error</span><span class="p">)</span>
 </code></pre></div><pre><code>The Mean Sample Mean is only 2.359302 different the True Population mean!
 </code></pre>
 

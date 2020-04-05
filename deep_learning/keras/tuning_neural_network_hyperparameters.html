@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Tuning Neural Network Hyperparameters"/>
 <meta name="twitter:description" content="How to tune the hyperparameters of neural networks for deep learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -187,28 +187,28 @@ MathJax.Hub.Config({
                                        <span class="n">n_informative</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
                                        <span class="n">n_redundant</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
                                        <span class="n">n_classes</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
-                                       <span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">]</span><span class="p">,</span>
+                                       <span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">],</span>
                                        <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
 </code></pre></div><h2 id="create-function-that-constructs-a-neural-network">Create Function That Constructs A Neural Network</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create function returning a compiled network</span>
-<span class="k">def</span> <span class="nf">create_network</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">rmsprop</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">create_network</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;rmsprop&#39;</span><span class="p">):</span>
     
     <span class="c1"># Start neural network</span>
-    <span class="n">network</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="p">)</span>
+    <span class="n">network</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
 
     <span class="c1"># Add fully connected layer with a ReLU activation function</span>
-    <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">relu</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">number_of_features</span><span class="p">,</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+    <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">number_of_features</span><span class="p">,)))</span>
 
     <span class="c1"># Add fully connected layer with a ReLU activation function</span>
-    <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">relu</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+    <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
 
     <span class="c1"># Add fully connected layer with a sigmoid activation function</span>
-    <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">sigmoid</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+    <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
 
     <span class="c1"># Compile neural network</span>
-    <span class="n">network</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">binary_crossentropy</span><span class="s1">&#39;</span><span class="p">,</span> <span class="c1"># Cross-entropy</span>
+    <span class="n">network</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="c1"># Cross-entropy</span>
                     <span class="n">optimizer</span><span class="o">=</span><span class="n">optimizer</span><span class="p">,</span> <span class="c1"># Optimizer</span>
-                    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">accuracy</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span> <span class="c1"># Accuracy performance metric</span>
+                    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span> <span class="c1"># Accuracy performance metric</span>
     
     <span class="c1"># Return compiled network</span>
     <span class="k">return</span> <span class="n">network</span>
@@ -219,7 +219,7 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create hyperparameter space</span>
 <span class="n">epochs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 <span class="n">batches</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
-<span class="n">optimizers</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">rmsprop</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">adam</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">optimizers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rmsprop&#39;</span><span class="p">,</span> <span class="s1">&#39;adam&#39;</span><span class="p">]</span>
 
 <span class="c1"># Create hyperparameter options</span>
 <span class="n">hyperparameters</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="n">optimizers</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batches</span><span class="p">)</span>
@@ -229,7 +229,7 @@ MathJax.Hub.Config({
 
 <span class="c1"># Fit grid search</span>
 <span class="n">grid_result</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-</code></pre></div><h2 id="find-best-models-hyperparameters">Find Best Model's Hyperparameters</h2>
+</code></pre></div><h2 id="find-best-models-hyperparameters">Find Best Model&rsquo;s Hyperparameters</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View hyperparameters of best neural network</span>
 <span class="n">grid_result</span><span class="o">.</span><span class="n">best_params_</span>
 </code></pre></div><pre><code>{'batch_size': 10, 'epochs': 5, 'optimizer': 'adam'}

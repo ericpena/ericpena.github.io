@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="LSTM Recurrent Neural Network"/>
 <meta name="twitter:description" content="How to create a long short-term memory recurrent neural network using Keras"/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -182,17 +182,17 @@ MathJax.Hub.Config({
 <span class="n">number_of_features</span> <span class="o">=</span> <span class="mi">1000</span>
 
 <span class="c1"># Load data and target vector from movie review data</span>
-<span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">train_target</span><span class="p">)</span><span class="p">,</span> <span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">test_target</span><span class="p">)</span> <span class="o">=</span> <span class="n">imdb</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">num_words</span><span class="o">=</span><span class="n">number_of_features</span><span class="p">)</span>
+<span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">train_target</span><span class="p">),</span> <span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">test_target</span><span class="p">)</span> <span class="o">=</span> <span class="n">imdb</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">num_words</span><span class="o">=</span><span class="n">number_of_features</span><span class="p">)</span>
 
 <span class="c1"># Use padding or truncation to make each observation have 400 features</span>
 <span class="n">train_features</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">pad_sequences</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
 <span class="n">test_features</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">pad_sequences</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
-</code></pre></div><h2 id="view-first-observations-raw-data">View First Observation's Raw Data</h2>
+</code></pre></div><h2 id="view-first-observations-raw-data">View First Observation&rsquo;s Raw Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View first observation</span>
-<span class="k">print</span><span class="p">(</span><span class="n">train_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">train_data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </code></pre></div><pre><code>[1, 14, 22, 16, 43, 530, 973, 2, 2, 65, 458, 2, 66, 2, 4, 173, 36, 256, 5, 25, 100, 43, 838, 112, 50, 670, 2, 9, 35, 480, 284, 5, 150, 4, 172, 112, 167, 2, 336, 385, 39, 4, 172, 2, 2, 17, 546, 38, 13, 447, 4, 192, 50, 16, 6, 147, 2, 19, 14, 22, 4, 2, 2, 469, 4, 22, 71, 87, 12, 16, 43, 530, 38, 76, 15, 13, 2, 4, 22, 17, 515, 17, 12, 16, 626, 18, 2, 5, 62, 386, 12, 8, 316, 8, 106, 5, 4, 2, 2, 16, 480, 66, 2, 33, 4, 130, 12, 16, 38, 619, 5, 25, 124, 51, 36, 135, 48, 25, 2, 33, 6, 22, 12, 215, 28, 77, 52, 5, 14, 407, 16, 82, 2, 8, 4, 107, 117, 2, 15, 256, 4, 2, 7, 2, 5, 723, 36, 71, 43, 530, 476, 26, 400, 317, 46, 7, 4, 2, 2, 13, 104, 88, 4, 381, 15, 297, 98, 32, 2, 56, 26, 141, 6, 194, 2, 18, 4, 226, 22, 21, 134, 476, 26, 480, 5, 144, 30, 2, 18, 51, 36, 28, 224, 92, 25, 104, 4, 226, 65, 16, 38, 2, 88, 12, 16, 283, 5, 16, 2, 113, 103, 32, 15, 16, 2, 19, 178, 32]
 </code></pre>
-<h2 id="view-first-observations-feature-data">View First Observation's Feature Data</h2>
+<h2 id="view-first-observations-feature-data">View First Observation&rsquo;s Feature Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View first observation</span>
 <span class="n">test_features</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div><pre><code>array([  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
@@ -229,21 +229,21 @@ MathJax.Hub.Config({
 </code></pre>
 <h2 id="create-lstm-neural-network-architecture">Create LSTM Neural Network Architecture</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Start neural network</span>
-<span class="n">network</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="p">)</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
 
 <span class="c1"># Add an embedding layer</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="n">input_dim</span><span class="o">=</span><span class="n">number_of_features</span><span class="p">,</span> <span class="n">output_dim</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="n">input_dim</span><span class="o">=</span><span class="n">number_of_features</span><span class="p">,</span> <span class="n">output_dim</span><span class="o">=</span><span class="mi">128</span><span class="p">))</span>
 
 <span class="c1"># Add a long short-term memory layer with 128 units</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">128</span><span class="p">))</span>
 
 <span class="c1"># Add fully connected layer with a sigmoid activation function</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">sigmoid</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
 </code></pre></div><h2 id="compule-lstm-neural-network-architecture">Compule LSTM Neural Network Architecture</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Compile neural network</span>
-<span class="n">network</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">binary_crossentropy</span><span class="s1">&#39;</span><span class="p">,</span> <span class="c1"># Cross-entropy</span>
-                <span class="n">optimizer</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Adam</span><span class="s1">&#39;</span><span class="p">,</span> <span class="c1"># Adam optimization</span>
-                <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">accuracy</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span> <span class="c1"># Accuracy performance metric</span>
+<span class="n">network</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="c1"># Cross-entropy</span>
+                <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;Adam&#39;</span><span class="p">,</span> <span class="c1"># Adam optimization</span>
+                <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span> <span class="c1"># Accuracy performance metric</span>
 </code></pre></div><h2 id="train-lstm-neural-network-architecture">Train LSTM Neural Network Architecture</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Train neural network</span>
 <span class="n">history</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_features</span><span class="p">,</span> <span class="c1"># Features</span>
@@ -251,7 +251,7 @@ MathJax.Hub.Config({
                       <span class="n">epochs</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="c1"># Number of epochs</span>
                       <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="c1"># Do not print description after each epoch</span>
                       <span class="n">batch_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="c1"># Number of observations per batch</span>
-                      <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">test_features</span><span class="p">,</span> <span class="n">test_target</span><span class="p">)</span><span class="p">)</span> <span class="c1"># Data for evaluation</span>
+                      <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">test_features</span><span class="p">,</span> <span class="n">test_target</span><span class="p">))</span> <span class="c1"># Data for evaluation</span>
 </code></pre></div>
 </div>
   <aside>

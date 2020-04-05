@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hard Wrapping Text"/>
 <meta name="twitter:description" content="Hard wrapping text using pandas."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -168,10 +168,10 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">textwrap</span>
 </code></pre></div><h2 id="create-text">Create Text</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create some text</span>
-<span class="n">excerpt</span> <span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Then there was the bad weather. It would come in one day when the fall was over. We would have to shut the windows in the night against the rain and the cold wind would strip the leaves from the trees in the Place Contrescarpe. The leaves lay sodden in the rain and the wind drove the rain against the big green autobus at the terminal and the Café des Amateurs was crowded and the windows misted over from the heat and the smoke inside.</span><span class="s1">&#39;</span>
+<span class="n">excerpt</span> <span class="o">=</span> <span class="s1">&#39;Then there was the bad weather. It would come in one day when the fall was over. We would have to shut the windows in the night against the rain and the cold wind would strip the leaves from the trees in the Place Contrescarpe. The leaves lay sodden in the rain and the wind drove the rain against the big green autobus at the terminal and the Café des Amateurs was crowded and the windows misted over from the heat and the smoke inside.&#39;</span>
 </code></pre></div><h2 id="hard-wrap-text">Hard Wrap Text</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Hard wrap the excerpt at 50 characters</span>
-<span class="k">print</span><span class="p">(</span><span class="n">textwrap</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">excerpt</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">textwrap</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">excerpt</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
 </code></pre></div><pre><code>Then there was the bad weather. It would come in
 one day when the fall was over. We would have to
 shut the windows in the night against the rain and

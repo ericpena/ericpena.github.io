@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Convert A Categorical Variable Into Dummy Variables"/>
 <meta name="twitter:description" content="Convert A Categorical Variable Into Dummy Variables."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -168,12 +168,12 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">patsy</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create dataframe</span>
-<span class="n">raw_data</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">countrycode</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="p">}</span> 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">raw_data</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">countrycode</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+<span class="n">raw_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;countrycode&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]}</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">raw_data</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;countrycode&#39;</span><span class="p">])</span>
 <span class="n">df</span>
 </code></pre></div><!-- raw HTML omitted -->
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Convert the countrycode variable into three binary variables</span>
-<span class="n">patsy</span><span class="o">.</span><span class="n">dmatrix</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">C(countrycode)-1</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">return_type</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">dataframe</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">patsy</span><span class="o">.</span><span class="n">dmatrix</span><span class="p">(</span><span class="s1">&#39;C(countrycode)-1&#39;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">return_type</span><span class="o">=</span><span class="s1">&#39;dataframe&#39;</span><span class="p">)</span>
 </code></pre></div><!-- raw HTML omitted -->
 
 </div>

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Add Column"/>
 <meta name="twitter:description" content="How to add a column in Snowflake using SQL."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -168,19 +168,19 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Create a table called SUPERHEROES. If it already exists, replace it.
 </span><span class="c1"></span><span class="k">CREATE</span> <span class="k">OR</span> <span class="k">REPLACE</span> <span class="k">TABLE</span> <span class="n">SUPERHEROES</span> <span class="p">(</span>
   <span class="c1">-- Column called ID allowing up to five characters
-</span><span class="c1"></span>  <span class="s2">&#34;</span><span class="s2">ID</span><span class="s2">&#34;</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="p">,</span> 
+</span><span class="c1"></span>  <span class="s2">&#34;ID&#34;</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> 
   <span class="c1">-- Column called NAME allowing up to 100 characters
-</span><span class="c1"></span>  <span class="s2">&#34;</span><span class="s2">NAME</span><span class="s2">&#34;</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="p">,</span>
+</span><span class="c1"></span>  <span class="s2">&#34;NAME&#34;</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
   <span class="c1">-- Column called ALTER_EGO allowing up to 100 characters
-</span><span class="c1"></span>  <span class="s2">&#34;</span><span class="s2">ALTER_EGO</span><span class="s2">&#34;</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="p">)</span><span class="p">;</span></code></pre></div>
+</span><span class="c1"></span>  <span class="s2">&#34;ALTER_EGO&#34;</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="p">);</span></code></pre></div>
 <h2 id="insert-rows-for-each-superhero">Insert Rows For Each Superhero</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Insert rows into SUPERHEROES
 </span><span class="c1"></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">SUPERHEROES</span> 
     <span class="c1">-- With the values
 </span><span class="c1"></span>    <span class="k">VALUES</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">XF6K4</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Chris Maki</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">The Bomber</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">KD5SK</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Donny Mav</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Nuke Miner</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">;</span></code></pre></div>
+    <span class="p">(</span><span class="s1">&#39;XF6K4&#39;</span><span class="p">,</span> <span class="s1">&#39;Chris Maki&#39;</span><span class="p">,</span> <span class="s1">&#39;The Bomber&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;KD5SK&#39;</span><span class="p">,</span> <span class="s1">&#39;Donny Mav&#39;</span><span class="p">,</span> <span class="s1">&#39;Nuke Miner&#39;</span><span class="p">);</span></code></pre></div>
 <h2 id="view-table-of-superheroes">View Table Of Superheroes</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- View the SUPERHEROES table
 </span><span class="c1"></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">SUPERHEROES</span><span class="p">;</span></code></pre></div>
@@ -189,7 +189,7 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Alter the SUPERHEROES table by...
 </span><span class="c1"></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">IF</span> <span class="k">EXISTS</span> <span class="n">SUPERHEROES</span> 
 <span class="c1">-- Adding a column called WEAPON that allows for 100 characters with the default value of &#34;Fists&#34;
-</span><span class="c1"></span><span class="k">ADD</span> <span class="k">COLUMN</span> <span class="n">WEAPON</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="s1">&#39;</span><span class="s1">Fists</span><span class="s1">&#39;</span>
+</span><span class="c1"></span><span class="k">ADD</span> <span class="k">COLUMN</span> <span class="n">WEAPON</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="s1">&#39;Fists&#39;</span>
 <span class="p">;</span></code></pre></div>
 <h2 id="view-table-of-superheroes-1">View Table Of Superheroes</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- View the SUPERHEROES table

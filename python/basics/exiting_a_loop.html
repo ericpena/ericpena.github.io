@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Exiting A Loop"/>
 <meta name="twitter:description" content="Exiting a loop in Python"/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -166,12 +166,12 @@ MathJax.Hub.Config({
       
   <h2 id="create-a-list">Create A List</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a list:</span>
-<span class="n">armies</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Red Army</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Blue Army</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Green Army</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">armies</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Red Army&#39;</span><span class="p">,</span> <span class="s1">&#39;Blue Army&#39;</span><span class="p">,</span> <span class="s1">&#39;Green Army&#39;</span><span class="p">]</span>
 </code></pre></div><h2 id="breaking-out-of-a-for-loop">Breaking Out Of A For Loop</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">army</span> <span class="ow">in</span> <span class="n">armies</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="n">army</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">army</span> <span class="o">==</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Blue Army</span><span class="s1">&#39;</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Blue Army Found! Stopping.</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">army</span> <span class="o">==</span> <span class="s1">&#39;Blue Army&#39;</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Blue Army Found! Stopping.&#39;</span><span class="p">)</span>
         <span class="k">break</span>
 </code></pre></div><pre><code>Red Army
 Blue Army
@@ -179,13 +179,13 @@ Blue Army Found! Stopping.
 </code></pre>
 <p>Notice that the loop stopped after the conditional if statement was satisfied.</p>
 <h2 id="exiting-if-loop-completed">Exiting If Loop Completed</h2>
-<p>A loop will exit when completed, but using an <code>else</code> statement we can add an action at the conclusion of the loop if it hasn't been exited earlier.</p>
+<p>A loop will exit when completed, but using an <code>else</code> statement we can add an action at the conclusion of the loop if it hasn&rsquo;t been exited earlier.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">army</span> <span class="ow">in</span> <span class="n">armies</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="n">army</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">army</span> <span class="o">==</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Orange Army</span><span class="s1">&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">army</span> <span class="o">==</span> <span class="s1">&#39;Orange Army&#39;</span><span class="p">:</span>
         <span class="k">break</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Looped Through The Whole List, No Orange Army Found</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Looped Through The Whole List, No Orange Army Found&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>Red Army
 Blue Army
 Green Army

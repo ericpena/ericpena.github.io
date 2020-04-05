@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Quickly Change A Column Of Strings In Pandas"/>
 <meta name="twitter:description" content="Quickly Change A Column Of Strings In Pandas."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Quickly Change A Column Of Strings In Pandas",
   "url": "https:\/\/ericpena.github.io\/python\/data_wrangling\/pandas_change_column_of_strings.html",
-  "wordCount": "205",
+  "wordCount": "206",
   "datePublished": "2017-12-20T11:53:49-07:00",
   "dateModified": "2017-12-20T11:53:49-07:00",
   "author": {
@@ -169,7 +169,7 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 
 <span class="c1"># Create a list of first names</span>
-<span class="n">first_names</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Steve Murrey</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Jane Fonda</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Sara McGully</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Mary Jane</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+<span class="n">first_names</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;Steve Murrey&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane Fonda&#39;</span><span class="p">,</span> <span class="s1">&#39;Sara McGully&#39;</span><span class="p">,</span> <span class="s1">&#39;Mary Jane&#39;</span><span class="p">])</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># print the column</span>
 <span class="n">first_names</span>
 </code></pre></div><pre><code>0    Steve Murrey
@@ -179,7 +179,7 @@ MathJax.Hub.Config({
 dtype: object
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># print the column with lower case</span>
-<span class="n">first_names</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="p">)</span>
+<span class="n">first_names</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 </code></pre></div><pre><code>0    steve murrey
 1      jane fonda
 2    sara mcgully
@@ -187,7 +187,7 @@ dtype: object
 dtype: object
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># print the column with upper case</span>
-<span class="n">first_names</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">(</span><span class="p">)</span>
+<span class="n">first_names</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 </code></pre></div><pre><code>0    STEVE MURREY
 1      JANE FONDA
 2    SARA MCGULLY
@@ -195,7 +195,7 @@ dtype: object
 dtype: object
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># print the column with title case</span>
-<span class="n">first_names</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="p">)</span>
+<span class="n">first_names</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
 </code></pre></div><pre><code>0    Steve Murrey
 1      Jane Fonda
 2    Sara Mcgully
@@ -203,7 +203,7 @@ dtype: object
 dtype: object
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># print the column split across spaces</span>
-<span class="n">first_names</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2"> </span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">first_names</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)</span>
 </code></pre></div><pre><code>0    [Steve, Murrey]
 1      [Jane, Fonda]
 2    [Sara, McGully]
@@ -211,7 +211,7 @@ dtype: object
 dtype: object
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># print the column with capitalized case</span>
-<span class="n">first_names</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(</span><span class="p">)</span>
+<span class="n">first_names</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
 </code></pre></div><pre><code>0    Steve murrey
 1      Jane fonda
 2    Sara mcgully

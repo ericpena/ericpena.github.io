@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Decision Tree Regression"/>
 <meta name="twitter:description" content="Training a decision tree regression in scikit-learn."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -171,8 +171,8 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
 </code></pre></div><h2 id="load-boston-housing-dataset">Load Boston Housing Dataset</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load data with only two features</span>
-<span class="n">boston</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_boston</span><span class="p">(</span><span class="p">)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">boston</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="p">:</span><span class="p">,</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">boston</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_boston</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">boston</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">boston</span><span class="o">.</span><span class="n">target</span>
 </code></pre></div><h2 id="create-decision-tree">Create Decision Tree</h2>
 <p>Decision tree regression works similar to decision tree classification, however instead of reducing Gini impurity or entropy, potential splits are measured on how much they reduce the mean squared error (MSE):</p>
@@ -185,7 +185,7 @@ MathJax.Hub.Config({
 <span class="n">model</span> <span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </code></pre></div><h2 id="create-observation-to-predict">Create Observation To Predict</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Make new observation</span>
-<span class="n">observation</span> <span class="o">=</span> <span class="p">[</span><span class="p">[</span><span class="mf">0.02</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span><span class="p">]</span>
+<span class="n">observation</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.02</span><span class="p">,</span> <span class="mi">16</span><span class="p">]]</span>
               
 <span class="c1"># Predict observation&#39;s value  </span>
 <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">observation</span><span class="p">)</span>

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Unpacking Function Arguments"/>
 <meta name="twitter:description" content="Unpacking function arguments using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -166,18 +166,18 @@ MathJax.Hub.Config({
       
   <h2 id="create-argument-objects">Create Argument Objects</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a dictionary of arguments</span>
-<span class="n">argument_dict</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">a</span><span class="s1">&#39;</span><span class="p">:</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Alpha</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">b</span><span class="s1">&#39;</span><span class="p">:</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Bravo</span><span class="s1">&#39;</span><span class="p">}</span>
+<span class="n">argument_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="s1">&#39;Alpha&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="s1">&#39;Bravo&#39;</span><span class="p">}</span>
 
 <span class="c1"># Create a list of arguments</span>
-<span class="n">argument_list</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Alpha</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Bravo</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">argument_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Alpha&#39;</span><span class="p">,</span> <span class="s1">&#39;Bravo&#39;</span><span class="p">]</span>
 </code></pre></div><h2 id="create-a-simple-function">Create A Simple Function</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a function that takes two inputs</span>
-<span class="k">def</span> <span class="nf">simple_function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">simple_function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="c1"># and prints them combined</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </code></pre></div><h2 id="run-the-function-with-unpacked-arguments">Run the Function With Unpacked Arguments</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Run the function with the unpacked argument dictionary</span>
-<span class="n">simple_function</span><span class="p">(</span><span class="o">*</span><span class="o">*</span><span class="n">argument_dict</span><span class="p">)</span>
+<span class="n">simple_function</span><span class="p">(</span><span class="o">**</span><span class="n">argument_dict</span><span class="p">)</span>
 </code></pre></div><pre><code>'AlphaBravo'
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Run the function with the unpacked argument list</span>

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Cross Validation With Parameter Tuning Using Grid Search"/>
 <meta name="twitter:description" content="Cross Validation With Parameter Tuning Using Grid Search using Scikit-Learn."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -164,7 +164,7 @@ MathJax.Hub.Config({
   </header>
   <div class="content">
       
-  <p>In machine learning, two tasks are commonly done at the same time in data pipelines: cross validation and (hyper)parameter tuning. Cross validation is the process of training learners using one set of data and testing it using a different set. Parameter tuning is the process to selecting the values for a model's parameters that maximize the accuracy of the model.</p>
+  <p>In machine learning, two tasks are commonly done at the same time in data pipelines: cross validation and (hyper)parameter tuning. Cross validation is the process of training learners using one set of data and testing it using a different set. Parameter tuning is the process to selecting the values for a model&rsquo;s parameters that maximize the accuracy of the model.</p>
 <p>In this tutorial we work through an example which combines cross validation and parameter tuning using scikit-learn.</p>
 <p>Note: This tutorial is based on <a href="http://scikit-learn.org/stable/modules/grid_search.html#grid-search">examples given in the scikit-learn documentation</a>. I have combined a few examples in the documentation, simplified the code, and added extensive explanations/code comments.</p>
 <h2 id="preliminaries">Preliminaries</h2>
@@ -175,7 +175,7 @@ MathJax.Hub.Config({
 </code></pre></div><h2 id="create-two-datasets">Create Two Datasets</h2>
 <p>In the code below, we load the <a href="http://scikit-learn.org/stable/auto_examples/datasets/plot_digits_last_image.html"><code>digits</code> dataset</a>, which contains 64 feature variables. Each feature denotes the darkness of a pixel in an 8 by 8 image of a handwritten digit. We can see these features for the first observation:</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load the digit data</span>
-<span class="n">digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">(</span><span class="p">)</span>
+<span class="n">digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">()</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View the features of the first observation</span>
 <span class="n">digits</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div><pre><code>array([[  0.,   0.,   5.,  13.,   9.,   1.,   0.,   0.,   0.,   0.,  13.,
@@ -185,29 +185,29 @@ MathJax.Hub.Config({
           1.,  12.,   7.,   0.,   0.,   2.,  14.,   5.,  10.,  12.,   0.,
           0.,   0.,   0.,   6.,  13.,  10.,   0.,   0.,   0.]])
 </code></pre>
-<p>The target data is a vector containing the image's true digit. For example, the first observation is a handwritten digit for &lsquo;0&rsquo;.</p>
+<p>The target data is a vector containing the image&rsquo;s true digit. For example, the first observation is a handwritten digit for &lsquo;0&rsquo;.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View the target of the first observation</span>
 <span class="n">digits</span><span class="o">.</span><span class="n">target</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div><pre><code>array([0])
 </code></pre>
-<p>To demonstrate cross validation and parameter tuning, first we are going to divide the digit data into two datasets called <code>data1</code> and <code>data2</code>. <code>data1</code> contains the first 1000 rows of the digits data, while <code>data2</code> contains the remaining ~800 rows. Note that this split is <em>separate</em> to the cross validation we will conduct and is done purely to demonstrate something at the end of the tutorial. In other words, don't worry about <code>data2</code> for now, we will come back to it.</p>
+<p>To demonstrate cross validation and parameter tuning, first we are going to divide the digit data into two datasets called <code>data1</code> and <code>data2</code>. <code>data1</code> contains the first 1000 rows of the digits data, while <code>data2</code> contains the remaining ~800 rows. Note that this split is <em>separate</em> to the cross validation we will conduct and is done purely to demonstrate something at the end of the tutorial. In other words, don&rsquo;t worry about <code>data2</code> for now, we will come back to it.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create dataset 1</span>
-<span class="n">data1_features</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="p">:</span><span class="mi">1000</span><span class="p">]</span>
-<span class="n">data1_target</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">target</span><span class="p">[</span><span class="p">:</span><span class="mi">1000</span><span class="p">]</span>
+<span class="n">data1_features</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">data</span><span class="p">[:</span><span class="mi">1000</span><span class="p">]</span>
+<span class="n">data1_target</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">target</span><span class="p">[:</span><span class="mi">1000</span><span class="p">]</span>
 
 <span class="c1"># Create dataset 2</span>
-<span class="n">data2_features</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">1000</span><span class="p">:</span><span class="p">]</span>
-<span class="n">data2_target</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">target</span><span class="p">[</span><span class="mi">1000</span><span class="p">:</span><span class="p">]</span>
+<span class="n">data2_features</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">1000</span><span class="p">:]</span>
+<span class="n">data2_target</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">target</span><span class="p">[</span><span class="mi">1000</span><span class="p">:]</span>
 </code></pre></div><h2 id="create-parameter-candidates">Create Parameter Candidates</h2>
 <p>Before looking for which combination of parameter values produces the most accurate model, we must specify the different candidate values we want to try. In the code below we have a number of candidate parameter values, including four different values for <code>C</code> (<code>1, 10, 100, 1000</code>), two values for <code>gamma</code> (<code>0.001, 0.0001</code>), and two kernels (<code>linear, rbf</code>). The grid search will try all combinations of parameter values and select the set of parameters which provides the most accurate model.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">parameter_candidates</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">C</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">kernel</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">linear</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">}</span><span class="p">,</span>
-  <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">C</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">gamma</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">]</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">kernel</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">rbf</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">}</span><span class="p">,</span>
+  <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">],</span> <span class="s1">&#39;kernel&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;linear&#39;</span><span class="p">]},</span>
+  <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">],</span> <span class="s1">&#39;gamma&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">],</span> <span class="s1">&#39;kernel&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;rbf&#39;</span><span class="p">]},</span>
 <span class="p">]</span>
 </code></pre></div><h2 id="conduct-grid-search-to-find-parameters-producing-highest-score">Conduct Grid Search To Find Parameters Producing Highest Score</h2>
-<p>Now we are ready to conduct the grid search using scikit-learn's <code>GridSearchCV</code> which stands for grid search cross validation. By default, the <code>GridSearchCV</code>'s cross validation uses 3-fold <code>KFold</code> or <code>StratifiedKFold</code> depending on the situation.</p>
+<p>Now we are ready to conduct the grid search using scikit-learn&rsquo;s <code>GridSearchCV</code> which stands for grid search cross validation. By default, the <code>GridSearchCV</code>'s cross validation uses 3-fold <code>KFold</code> or <code>StratifiedKFold</code> depending on the situation.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a classifier object with the classifier and parameter candidates</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="p">)</span><span class="p">,</span> <span class="n">param_grid</span><span class="o">=</span><span class="n">parameter_candidates</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(),</span> <span class="n">param_grid</span><span class="o">=</span><span class="n">parameter_candidates</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Train the classifier on data1&#39;s feature and target data</span>
 <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data1_features</span><span class="p">,</span> <span class="n">data1_target</span><span class="p">)</span>   
@@ -220,16 +220,16 @@ MathJax.Hub.Config({
        param_grid=[{'kernel': ['linear'], 'C': [1, 10, 100, 1000]}, {'kernel': ['rbf'], 'gamma': [0.001, 0.0001], 'C': [1, 10, 100, 1000]}],
        pre_dispatch='2*n_jobs', refit=True, scoring=None, verbose=0)
 </code></pre>
-<p>Success! We have our results! First, let's look at the accuracy score when we apply the model to the <code>data1</code>'s test data.</p>
+<p>Success! We have our results! First, let&rsquo;s look at the accuracy score when we apply the model to the <code>data1</code>'s test data.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View the accuracy score</span>
-<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Best score for data1:</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span> 
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Best score for data1:&#39;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span> 
 </code></pre></div><pre><code>Best score for data1: 0.942
 </code></pre>
 <p>Which parameters are the best? We can tell scikit-learn to display them:</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View the best parameters for the model found using grid search</span>
-<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Best C:</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">C</span><span class="p">)</span> 
-<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Best Kernel:</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">kernel</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Best Gamma:</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">gamma</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Best C:&#39;</span><span class="p">,</span><span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">C</span><span class="p">)</span> 
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Best Kernel:&#39;</span><span class="p">,</span><span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">kernel</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Best Gamma:&#39;</span><span class="p">,</span><span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">gamma</span><span class="p">)</span>
 </code></pre></div><pre><code>Best C: 10
 Best Kernel: rbf
 Best Gamma: 0.001
@@ -242,7 +242,7 @@ Best Gamma: 0.001
 </code></pre></div><pre><code>0.96988707653701378
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Train a new classifier using the best parameters found by the grid search</span>
-<span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">rbf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data1_features</span><span class="p">,</span> <span class="n">data1_target</span><span class="p">)</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">data2_features</span><span class="p">,</span> <span class="n">data2_target</span><span class="p">)</span>
+<span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;rbf&#39;</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data1_features</span><span class="p">,</span> <span class="n">data1_target</span><span class="p">)</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">data2_features</span><span class="p">,</span> <span class="n">data2_target</span><span class="p">)</span>
 </code></pre></div><pre><code>0.96988707653701378
 </code></pre>
 <p>Success!</p>

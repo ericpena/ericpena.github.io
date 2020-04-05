@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Tag Parts Of Speech"/>
 <meta name="twitter:description" content="How to tag parts of speech in unstructured text data for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -170,10 +170,10 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
 </code></pre></div><h2 id="create-text-data">Create Text Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create text</span>
-<span class="n">text_data</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">Chris loved outdoor running</span><span class="s2">&#34;</span>
+<span class="n">text_data</span> <span class="o">=</span> <span class="s2">&#34;Chris loved outdoor running&#34;</span>
 </code></pre></div><h2 id="tag-parts-of-speech">Tag Parts Of Speech</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Use pre-trained part of speech tagger</span>
-<span class="n">text_tagged</span> <span class="o">=</span> <span class="n">pos_tag</span><span class="p">(</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text_data</span><span class="p">)</span><span class="p">)</span>
+<span class="n">text_tagged</span> <span class="o">=</span> <span class="n">pos_tag</span><span class="p">(</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text_data</span><span class="p">))</span>
 
 <span class="c1"># Show parts of speech</span>
 <span class="n">text_tagged</span>

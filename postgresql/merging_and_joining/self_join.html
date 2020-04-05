@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Self Join Table"/>
 <meta name="twitter:description" content="How to self join tables in an SQL database."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -168,7 +168,7 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Create table called adventurers
 </span><span class="c1"></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">adventurers</span> <span class="p">(</span>
     <span class="c1">-- string variable
-</span><span class="c1"></span>    <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="p">,</span>
+</span><span class="c1"></span>    <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
     <span class="c1">-- integer variable
 </span><span class="c1"></span>    <span class="n">age</span> <span class="nb">int</span><span class="p">,</span>
     <span class="c1">-- string variable
@@ -176,10 +176,10 @@ MathJax.Hub.Config({
 <span class="p">)</span></code></pre></div>
 <h2 id="insert-rows-into-adventurers-table">Insert Rows Into Adventurers Table</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">adventurers</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">child_of</span><span class="p">)</span>
-<span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Dallar Woodfoot</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="k">NULL</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Cordin Garner</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="k">NULL</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Keat Garner</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Cordin Garner</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Colbat Nalor</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">124</span><span class="p">,</span> <span class="k">NULL</span><span class="p">)</span></code></pre></div>
+<span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;Dallar Woodfoot&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="k">NULL</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Cordin Garner&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="k">NULL</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Keat Garner&#39;</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="s1">&#39;Cordin Garner&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Colbat Nalor&#39;</span><span class="p">,</span> <span class="mi">124</span><span class="p">,</span> <span class="k">NULL</span><span class="p">)</span></code></pre></div>
 <h2 id="inner-join-tables">Inner Join Tables</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Select name of copy1 and name of copy2 (renamed &#34;parent&#34;)
 </span><span class="c1"></span><span class="k">SELECT</span> <span class="n">copy1</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">copy2</span><span class="p">.</span><span class="n">name</span> <span class="k">as</span> <span class="n">parent</span>

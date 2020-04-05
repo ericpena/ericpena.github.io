@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Concurrent Processing"/>
 <meta name="twitter:description" content="Concurrent processing in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -170,17 +170,17 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </code></pre></div><h2 id="create-function">Create Function</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create some function that takes a value</span>
-<span class="k">def</span> <span class="nf">some_function</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">some_function</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
     <span class="c1"># And outputs it raised to its own power</span>
-    <span class="k">return</span> <span class="n">value</span><span class="o">*</span><span class="o">*</span><span class="n">value</span>
+    <span class="k">return</span> <span class="n">value</span><span class="o">**</span><span class="n">value</span>
 </code></pre></div><h2 id="run-the-function-on-the-data-concurrently">Run The Function On The Data Concurrently</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># With a pool of workers</span>
-<span class="k">with</span> <span class="n">futures</span><span class="o">.</span><span class="n">ProcessPoolExecutor</span><span class="p">(</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">futures</span><span class="o">.</span><span class="n">ProcessPoolExecutor</span><span class="p">()</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
     <span class="c1"># Map the function to the data</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">some_function</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 </code></pre></div><h2 id="view-results">View Results</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># List the first 5 outputs</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 </code></pre></div><pre><code>[1, 1, 4, 27, 256]
 </code></pre>
 

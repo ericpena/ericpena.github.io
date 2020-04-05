@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Selecting The Best Alpha Value In Ridge Regression"/>
 <meta name="twitter:description" content="How to select the best alpha value when conduct in ridge regression in scikit-learn for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -171,22 +171,22 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 </code></pre></div><h2 id="load-boston-housing-dataset">Load Boston Housing Dataset</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load data</span>
-<span class="n">boston</span> <span class="o">=</span> <span class="n">load_boston</span><span class="p">(</span><span class="p">)</span>
+<span class="n">boston</span> <span class="o">=</span> <span class="n">load_boston</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">boston</span><span class="o">.</span><span class="n">data</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">boston</span><span class="o">.</span><span class="n">target</span>
 </code></pre></div><h2 id="standardize-features">Standardize Features</h2>
 <p>Note: Because in linear regression the value of the coefficients is partially determined by the scale of the feature, and in regularized models all coefficients are summed together, we must make sure to standardize the feature prior to training.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Standarize features</span>
-<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="p">)</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 <span class="n">X_std</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </code></pre></div><h2 id="create-ridge-regression-with-candidate-alpha-values">Create Ridge Regression With Candidate Alpha Values</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create ridge regression with three possible alpha values</span>
-<span class="n">regr_cv</span> <span class="o">=</span> <span class="n">RidgeCV</span><span class="p">(</span><span class="n">alphas</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">]</span><span class="p">)</span>
+<span class="n">regr_cv</span> <span class="o">=</span> <span class="n">RidgeCV</span><span class="p">(</span><span class="n">alphas</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">])</span>
 </code></pre></div><h2 id="fit-ridge-regression">Fit Ridge Regression</h2>
 <p>scikit-learn includes a <code>RidgeCV</code> method that allows us select the ideal value for $\alpha$:</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Fit the linear regression</span>
 <span class="n">model_cv</span> <span class="o">=</span> <span class="n">regr_cv</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_std</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</code></pre></div><h2 id="view-best-models-alpha-value">View Best Model's Alpha Value</h2>
+</code></pre></div><h2 id="view-best-models-alpha-value">View Best Model&rsquo;s Alpha Value</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View alpha</span>
 <span class="n">model_cv</span><span class="o">.</span><span class="n">alpha_</span>
 </code></pre></div><pre><code>1.0

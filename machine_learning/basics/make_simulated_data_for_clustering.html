@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Make Simulated Data For Clustering"/>
 <meta name="twitter:description" content="Make a simulated dataset for clustering."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -180,11 +180,11 @@ MathJax.Hub.Config({
                   <span class="n">shuffle</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 </code></pre></div><h2 id="view-data">View Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a scatterplot of the first and second features</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="p">:</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="p">,</span>
-            <span class="n">X</span><span class="p">[</span><span class="p">:</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span>
+            <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="c1"># Show the scatterplot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div><p><img src="make_simulated_data_for_clustering_6_0.png" alt="png"></p>
 
 </div>

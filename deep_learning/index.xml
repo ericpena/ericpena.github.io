@@ -26,7 +26,7 @@ Preliminaries # Import PyTorch import torch Check If There Are Multiple Devices 
       <pubDate>Sat, 01 Feb 2020 00:00:00 -0700</pubDate>
       
       <guid>https://ericpena.github.io/deep_learning/setup/prevent_nvidia_drivers_from_upgrading.html</guid>
-      <description>Ubuntu and NVIDIA&#39;s drivers are continually being developed. Normally this is a good thing, however an update from either can break a working deep learning environment and by default these updates are automatic.
+      <description>Ubuntu and NVIDIA&amp;rsquo;s drivers are continually being developed. Normally this is a good thing, however an update from either can break a working deep learning environment and by default these updates are automatic.
 After successfully setting up your deep learning system and testing that it works, it is recommended to freeze the system in place by preventing automatic updates of both the NVIDIA drivers and Ubuntu.
 Check NVIDIA Driver Version nvidia-smi</description>
     </item>
@@ -82,7 +82,7 @@ Check NVIDIA Driver Version nvidia-smi</description>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/deep_learning/keras/k-fold_cross-validating_neural_networks.html</guid>
-      <description>If we have smaller data it can be useful to benefit from k-fold cross-validation to maximize our ability to evaluate the neural network&#39;s performance. This is possible in Keras because we can &amp;ldquo;wrap&amp;rdquo; any neural network such that it can use the evaluation features available in scikit-learn, including k-fold cross-validation. To accomplish this, we first have to create a function that returns a compiled neural network. Next we use KerasClassifier (if we have a classifier, if we have a regressor we can use KerasRegressor) to wrap the model so it can be used by scikit-learn.</description>
+      <description>If we have smaller data it can be useful to benefit from k-fold cross-validation to maximize our ability to evaluate the neural network&amp;rsquo;s performance. This is possible in Keras because we can &amp;ldquo;wrap&amp;rdquo; any neural network such that it can use the evaluation features available in scikit-learn, including k-fold cross-validation. To accomplish this, we first have to create a function that returns a compiled neural network. Next we use KerasClassifier (if we have a classifier, if we have a regressor we can use KerasRegressor) to wrap the model so it can be used by scikit-learn.</description>
     </item>
     
     <item>
@@ -118,8 +118,8 @@ Check NVIDIA Driver Version nvidia-smi</description>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/deep_learning/keras/preprocessing_data_for_neural_networks.html</guid>
-      <description>Typically, a neural network&#39;s parameters are initialized (i.e. created) as small random numbers. Neural networks often behave poorly when the feature values much larger than parameter values. Furthermore, since an observation&#39;s feature values will are combined as they pass through individual units, it is important that all features have the same scale.
-For these reasons, it is best practice (although not always necessary, for example when we have all binary features) to standardize each feature such that the feature&#39;s values have the mean of 0 and the standard deviation of 1.</description>
+      <description>Typically, a neural network&amp;rsquo;s parameters are initialized (i.e. created) as small random numbers. Neural networks often behave poorly when the feature values much larger than parameter values. Furthermore, since an observation&amp;rsquo;s feature values will are combined as they pass through individual units, it is important that all features have the same scale.
+For these reasons, it is best practice (although not always necessary, for example when we have all binary features) to standardize each feature such that the feature&amp;rsquo;s values have the mean of 0 and the standard deviation of 1.</description>
     </item>
     
     <item>

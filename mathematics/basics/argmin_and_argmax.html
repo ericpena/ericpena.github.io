@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="argmin and argmax"/>
 <meta name="twitter:description" content="An explanation of argmin and argmax in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -171,20 +171,20 @@ MathJax.Hub.Config({
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div><h2 id="define-a-function-fx">Define A Function, f(x)</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Define a function that,</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="c1"># Outputs x multiplied by a random number drawn from a normal distribution</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div><h2 id="create-some-values-of-x">Create Some Values Of x</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create some values of x</span>
 <span class="n">xs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
 </code></pre></div><h2 id="find-the-argmin-of-fx">Find The Argmin Of f(x)</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#Define argmin that</span>
-<span class="k">def</span> <span class="nf">argmin</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">xs</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">argmin</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">xs</span><span class="p">):</span>
     <span class="c1"># Applies f on all the x&#39;s</span>
     <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">]</span>
 
     <span class="c1"># Finds index of the smallest output of f(x)</span>
-    <span class="n">index_of_min</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="p">)</span>
+    <span class="n">index_of_min</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
         
     <span class="c1"># Returns the x that produced that output</span>
     <span class="k">return</span> <span class="n">xs</span><span class="p">[</span><span class="n">index_of_min</span><span class="p">]</span>
@@ -193,10 +193,10 @@ MathJax.Hub.Config({
 </code></pre></div><pre><code>6
 </code></pre>
 <h2 id="check-our-results">Check Our Results</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">x</span><span class="s1">&#39;</span><span class="p">,</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">|</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">f(x)</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">--------------</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;--------------&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">|</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </code></pre></div><pre><code>x | f(x)
 --------------
 1 | 1.74481176422

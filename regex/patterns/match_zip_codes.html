@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Match ZIP Codes"/>
 <meta name="twitter:description" content="Match ZIP codes in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -169,10 +169,10 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">re</span>
 </code></pre></div><h2 id="create-some-text">Create some text</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a variable containing a text string</span>
-<span class="n">text</span> <span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">3829 South Ave Street, Pheonix, AZ 34923</span><span class="s1">&#39;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;3829 South Ave Street, Pheonix, AZ 34923&#39;</span>
 </code></pre></div><h2 id="apply-regex">Apply regex</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Find any ISBN-10 or ISBN-13 number</span>
-<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;</span><span class="s1">[0-9]{5}(?:-[0-9]{4})?</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[0-9]{5}(?:-[0-9]{4})?&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
 </code></pre></div><pre><code>['34923']
 </code></pre>
 

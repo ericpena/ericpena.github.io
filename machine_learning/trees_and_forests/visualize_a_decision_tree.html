@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Visualize A Decision Tree"/>
 <meta name="twitter:description" content="How to visualize a decision tree regression in scikit-learn."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -173,7 +173,7 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">pydotplus</span>
 </code></pre></div><h2 id="load-iris-data">Load Iris Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load data</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">(</span><span class="p">)</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
 </code></pre></div><h2 id="train-decision-tree">Train Decision Tree</h2>
@@ -192,14 +192,14 @@ MathJax.Hub.Config({
 <span class="n">graph</span> <span class="o">=</span> <span class="n">pydotplus</span><span class="o">.</span><span class="n">graph_from_dot_data</span><span class="p">(</span><span class="n">dot_data</span><span class="p">)</span>  
 
 <span class="c1"># Show graph</span>
-<span class="n">Image</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">create_png</span><span class="p">(</span><span class="p">)</span><span class="p">)</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">create_png</span><span class="p">())</span>
 </code></pre></div><p><img src="visualize_a_decision_tree_8_0.png" alt="png"></p>
 <h2 id="save-decision-tree-image-to-file">Save Decision Tree Image To File</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create PDF</span>
-<span class="n">graph</span><span class="o">.</span><span class="n">write_pdf</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">iris.pdf</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">write_pdf</span><span class="p">(</span><span class="s2">&#34;iris.pdf&#34;</span><span class="p">)</span>
 
 <span class="c1"># Create PNG</span>
-<span class="n">graph</span><span class="o">.</span><span class="n">write_png</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">iris.png</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">write_png</span><span class="p">(</span><span class="s2">&#34;iris.png&#34;</span><span class="p">)</span>
 </code></pre></div><pre><code>True
 </code></pre>
 

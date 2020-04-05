@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Bessels Correction"/>
 <meta name="twitter:description" content="A short explanation of Bessel&#39;s Correction."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -164,7 +164,7 @@ MathJax.Hub.Config({
   </header>
   <div class="content">
       
-  <p>Bessel's correction is the reason we use $n-1$ instead of $n$ in the calculations of sample variance and sample standard deviation.</p>
+  <p>Bessel&rsquo;s correction is the reason we use $n-1$ instead of $n$ in the calculations of sample variance and sample standard deviation.</p>
 <p>Sample variance:</p>
 <p>$$ s^2 = \frac {1}{n-1} \sum_{i=1}^n  \left(x_i - \overline{x} \right)^ 2 $$</p>
 <p>When we calculate sample variance, we are attempting to estimate the population variance, an unknown value. To make this estimate, we estimate this unknown population variance from the mean of the squared deviations of samples from the overall sample mean. A negative sideffect of this estimation technique is that, because we are taking a sample, we are a more likely to observe observations with a smaller deviation because they are more common (e.g. they are the center of the distribution). The means that by definiton we will underestimate the population variance.</p>

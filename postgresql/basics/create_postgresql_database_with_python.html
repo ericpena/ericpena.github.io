@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create PostgreSQL Database With Python"/>
 <meta name="twitter:description" content="How to create a PostgreSQL database using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -170,16 +170,16 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">sqlalchemy_utils</span> <span class="kn">import</span> <span class="n">create_database</span><span class="p">,</span> <span class="n">database_exists</span><span class="p">,</span> <span class="n">drop_database</span>
 
 <span class="c1"># Create PostgreSQL connection</span>
-<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">postgres://localhost/notes_db</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="s2">&#34;postgres://localhost/notes_db&#34;</span><span class="p">)</span>
 
 <span class="c1"># Load sql_magic so we can write SQL in Jupyter Notebooks</span>
 <span class="o">%</span><span class="n">load_ext</span> <span class="n">sql_magic</span>
 
 <span class="c1"># Setup SQL connection to the postgreSQL engine we created</span>
-<span class="o">%</span><span class="n">config</span> <span class="n">SQL</span><span class="o">.</span><span class="n">conn_name</span> <span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">engine</span><span class="s1">&#39;</span>
+<span class="o">%</span><span class="n">config</span> <span class="n">SQL</span><span class="o">.</span><span class="n">conn_name</span> <span class="o">=</span> <span class="s1">&#39;engine&#39;</span>
 </code></pre></div><h2 id="create-database">Create Database</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># If a PostgreSQL database with this name exists</span>
-<span class="k">if</span> <span class="n">database_exists</span><span class="p">(</span><span class="n">engine</span><span class="o">.</span><span class="n">url</span><span class="p">)</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">database_exists</span><span class="p">(</span><span class="n">engine</span><span class="o">.</span><span class="n">url</span><span class="p">):</span>
     <span class="c1"># Delete PostgreSQL database </span>
     <span class="n">drop_database</span><span class="p">(</span><span class="n">engine</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
     <span class="c1"># Create empty PostgreSQL database</span>
@@ -189,28 +189,28 @@ MathJax.Hub.Config({
     <span class="c1"># Create empty PostgreSQL database</span>
     <span class="n">create_database</span><span class="p">(</span><span class="n">engine</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
 </code></pre></div><h2 id="create-table">Create Table</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">%</span><span class="o">%</span><span class="n">read_sql</span> <span class="o">-</span><span class="n">d</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">%%</span><span class="n">read_sql</span> <span class="o">-</span><span class="n">d</span>
 
 <span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">staff</span> <span class="p">(</span> 
-    <span class="n">first_name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="p">,</span> 
-    <span class="n">city_name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="p">,</span>
+    <span class="n">first_name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> 
+    <span class="n">city_name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
     <span class="n">age</span> <span class="nb">int</span>
-<span class="p">)</span><span class="p">;</span>
+<span class="p">);</span>
 </code></pre></div><pre><code>Query started at 12:44:03 PM MST; Query executed in 0.00 m
 </code></pre>
 <h2 id="populate-table-with-data">Populate Table With Data</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">%</span><span class="o">%</span><span class="n">read_sql</span> <span class="o">-</span><span class="n">d</span> 
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">%%</span><span class="n">read_sql</span> <span class="o">-</span><span class="n">d</span> 
 
 <span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">staff</span> <span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">city_name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> 
-<span class="n">VALUES</span> <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Jill</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Miller</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Steve</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Miller</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Sarah</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Jackson</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span><span class="p">;</span>
+<span class="n">VALUES</span> <span class="p">(</span><span class="s1">&#39;Jill&#39;</span><span class="p">,</span> <span class="s1">&#39;Miller&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Steve&#39;</span><span class="p">,</span> <span class="s1">&#39;Miller&#39;</span><span class="p">,</span> <span class="mi">24</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Sarah&#39;</span><span class="p">,</span> <span class="s1">&#39;Jackson&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
 </code></pre></div><pre><code>Query started at 12:44:03 PM MST; Query executed in 0.00 m
 </code></pre>
 <h2 id="retrieve-all-records">Retrieve All Records</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">%</span><span class="o">%</span><span class="n">read_sql</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">%%</span><span class="n">read_sql</span>
 
-<span class="o">-</span><span class="o">-</span> <span class="n">Select</span> <span class="nb">all</span> <span class="n">records</span> <span class="kn">from</span> <span class="nn">the</span> <span class="nn">staff</span> <span class="nn">table</span>
+<span class="o">--</span> <span class="n">Select</span> <span class="nb">all</span> <span class="n">records</span> <span class="kn">from</span> <span class="nn">the</span> <span class="nn">staff</span> <span class="nn">table</span>
 <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">staff</span><span class="p">;</span>
 </code></pre></div><pre><code>Query started at 12:44:03 PM MST; Query executed in 0.00 m
 </code></pre>

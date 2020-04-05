@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Harris Corner Detector"/>
 <meta name="twitter:description" content="How to detect corners images using OpenCV in Python with the Harris Corner Detector."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -172,7 +172,7 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 </code></pre></div><h2 id="load-image">Load image</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load image as grayscale</span>
-<span class="n">image_bgr</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">images/plane_256x256.jpg</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">image_bgr</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/plane_256x256.jpg&#39;</span><span class="p">)</span>
 <span class="n">image_gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image_bgr</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
 <span class="n">image_gray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">image_gray</span><span class="p">)</span>
 </code></pre></div><h2 id="define-corner-parameters">Define Corner Parameters</h2>
@@ -189,14 +189,14 @@ MathJax.Hub.Config({
 
 <span class="c1"># Only keep detector responses greater than threshold, mark as white</span>
 <span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.02</span>
-<span class="n">image_bgr</span><span class="p">[</span><span class="n">detector_responses</span> <span class="o">&gt;</span> <span class="n">threshold</span> <span class="o">*</span> <span class="n">detector_responses</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="p">)</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">]</span>
+<span class="n">image_bgr</span><span class="p">[</span><span class="n">detector_responses</span> <span class="o">&gt;</span> <span class="n">threshold</span> <span class="o">*</span> <span class="n">detector_responses</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">]</span>
 </code></pre></div><h2 id="view-image">View Image</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Convert to grayscale</span>
 <span class="n">image_gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image_bgr</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
 
 <span class="c1"># Show image</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image_gray</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">gray</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">off</span><span class="s2">&#34;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image_gray</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&#34;off&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div><p><img src="harris_corner_detector_13_0.png" alt="png"></p>
 
 </div>

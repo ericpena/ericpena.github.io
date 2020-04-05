@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Chi-Squared For Feature Selection"/>
 <meta name="twitter:description" content="How to remove irrelevant features using chi-squared for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -172,7 +172,7 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">chi2</span>
 </code></pre></div><h2 id="load-data">Load Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load iris data</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">(</span><span class="p">)</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
 
 <span class="c1"># Create features and target</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
@@ -186,8 +186,8 @@ MathJax.Hub.Config({
 <span class="n">X_kbest</span> <span class="o">=</span> <span class="n">chi2_selector</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </code></pre></div><h2 id="view-results">View Results</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Show results</span>
-<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Original number of features:</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Reduced number of features:</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">X_kbest</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Original number of features:&#39;</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Reduced number of features:&#39;</span><span class="p">,</span> <span class="n">X_kbest</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </code></pre></div><pre><code>Original number of features: 4
 Reduced number of features: 2
 </code></pre>

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Loading scikit-learn&#39;s Digits Dataset"/>
 <meta name="twitter:description" content="Loading the built-in digits datasets of scikit-learn."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -46,7 +46,7 @@
 }
 </script> 
 
-    <title>Loading scikit-learn&#39;s Digits Dataset</title>
+    <title>Loading scikit-learn&rsquo;s Digits Dataset</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -171,7 +171,7 @@ MathJax.Hub.Config({
 </code></pre></div><h2 id="load-digits-dataset">Load Digits Dataset</h2>
 <p>Digits is a dataset of handwritten digits. Each feature is the intensity of one pixel of an 8 x 8 image.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load digits dataset</span>
-<span class="n">digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">(</span><span class="p">)</span>
+<span class="n">digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">()</span>
 
 <span class="c1"># Create feature matrix</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">data</span>
@@ -188,7 +188,7 @@ MathJax.Hub.Config({
          1.,  12.,   7.,   0.,   0.,   2.,  14.,   5.,  10.,  12.,   0.,
          0.,   0.,   0.,   6.,  13.,  10.,   0.,   0.,   0.])
 </code></pre>
-<p>The observation's feature values are presented as a vector. However, by using the <code>images</code> method we can load the the same feature values as a matrix and then visualize the actual handwritten character:</p>
+<p>The observation&rsquo;s feature values are presented as a vector. However, by using the <code>images</code> method we can load the the same feature values as a matrix and then visualize the actual handwritten character:</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View the first observation&#39;s feature values as a matrix</span>
 <span class="n">digits</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div><pre><code>array([[  0.,   0.,   5.,  13.,   9.,   1.,   0.,   0.],
@@ -201,9 +201,9 @@ MathJax.Hub.Config({
        [  0.,   0.,   6.,  13.,  10.,   0.,   0.,   0.]])
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Visualize the first observation&#39;s feature values as an image</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gray</span><span class="p">(</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gray</span><span class="p">()</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div><pre><code>&lt;matplotlib.figure.Figure at 0x1068494a8&gt;
 </code></pre>
 <p><img src="loading_scikit-learns_digits-dataset_7_1.png" alt="png"></p>

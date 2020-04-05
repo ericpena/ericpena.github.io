@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Convolutional Neural Network"/>
 <meta name="twitter:description" content="How to train a deep convolutional neural network with Keras in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -174,7 +174,7 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">keras</span> <span class="kn">import</span> <span class="n">backend</span> <span class="k">as</span> <span class="n">K</span> 
 
 <span class="c1"># Set that the color channel value will be first</span>
-<span class="n">K</span><span class="o">.</span><span class="n">set_image_data_format</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">channels_first</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">K</span><span class="o">.</span><span class="n">set_image_data_format</span><span class="p">(</span><span class="s1">&#39;channels_first&#39;</span><span class="p">)</span>
 
 <span class="c1"># Set seed</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -187,13 +187,13 @@ MathJax.Hub.Config({
 <span class="n">width</span> <span class="o">=</span> <span class="mi">28</span>
 
 <span class="c1"># Load data and target from MNIST data</span>
-<span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">train_target</span><span class="p">)</span><span class="p">,</span> <span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">test_target</span><span class="p">)</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="p">)</span>
+<span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">train_target</span><span class="p">),</span> <span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">test_target</span><span class="p">)</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
 
 <span class="c1"># Reshape training image data into features</span>
-<span class="n">train_data</span> <span class="o">=</span> <span class="n">train_data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">train_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+<span class="n">train_data</span> <span class="o">=</span> <span class="n">train_data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">train_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
 
 <span class="c1"># Reshape test image data into features</span>
-<span class="n">test_data</span> <span class="o">=</span> <span class="n">test_data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">test_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="n">test_data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">test_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
 
 <span class="c1"># Rescale pixel intensity to between 0 and 1</span>
 <span class="n">train_features</span> <span class="o">=</span> <span class="n">train_data</span> <span class="o">/</span> <span class="mi">255</span>
@@ -208,33 +208,33 @@ MathJax.Hub.Config({
 <p>First, a feedforward neural networks do not take into account the spatial structure of the pixels. For example, in a 10x10 pixel image we might convert it into a vector of 100 pixel features, and in this case feedforward would consider the first feature (e.g. pixel value) to have the same relationship with the 10th feature as the 11th feature. However, in reality the 10th feature represents a pixel on the far side of the image as the first feature, while the 11th feature represents the pixel immediately below the first pixel.</p>
 <p>Second, and relatedly, feedforward neural networks learn global relationships in the features instead of local patterns. In more practical terms, this means that feedforward neural networks are not able to detect an object regardless of where it appears in an image. For example, imagine we are training a neural network to recognize faces, these faces might appear anywhere in the image from the upper right to the middle to the lower left. The power of convolutional neural networks is their ability handle both of these issues (and others).</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Start neural network</span>
-<span class="n">network</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">(</span><span class="p">)</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
 
 <span class="c1"># Add convolutional layer with 64 filters, a 5x5 window, and ReLU activation function</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">channels</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">relu</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">channels</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
 
 <span class="c1"># Add max pooling layer with a 2x2 window</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
 
 <span class="c1"># Add dropout layer</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>
 
 <span class="c1"># Add layer to flatten input</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Flatten</span><span class="p">(</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Flatten</span><span class="p">())</span>
 
 <span class="c1"># # Add fully connected layer of 128 units with a ReLU activation function</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">relu</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
 
 <span class="c1"># Add dropout layer</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>
 
 <span class="c1"># Add fully connected layer with a softmax activation function</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">number_of_classes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">softmax</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">number_of_classes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">))</span>
 </code></pre></div><h2 id="compile-convolutional-neural-network">Compile Convolutional Neural Network</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Compile neural network</span>
-<span class="n">network</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">categorical_crossentropy</span><span class="s1">&#39;</span><span class="p">,</span> <span class="c1"># Cross-entropy</span>
-                <span class="n">optimizer</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">rmsprop</span><span class="s1">&#39;</span><span class="p">,</span> <span class="c1"># Root Mean Square Propagation</span>
-                <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">accuracy</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span> <span class="c1"># Accuracy performance metric</span>
+<span class="n">network</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;categorical_crossentropy&#39;</span><span class="p">,</span> <span class="c1"># Cross-entropy</span>
+                <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;rmsprop&#39;</span><span class="p">,</span> <span class="c1"># Root Mean Square Propagation</span>
+                <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span> <span class="c1"># Accuracy performance metric</span>
 </code></pre></div><h2 id="train-convolutional-neural-network">Train Convolutional Neural Network</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Train neural network</span>
 <span class="n">network</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_features</span><span class="p">,</span> <span class="c1"># Features</span>
@@ -242,7 +242,7 @@ MathJax.Hub.Config({
             <span class="n">epochs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="c1"># Number of epochs</span>
             <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="c1"># Don&#39;t print description after each epoch</span>
             <span class="n">batch_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="c1"># Number of observations per batch</span>
-            <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">test_features</span><span class="p">,</span> <span class="n">test_target</span><span class="p">)</span><span class="p">)</span> <span class="c1"># Data for evaluation</span>
+            <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">test_features</span><span class="p">,</span> <span class="n">test_target</span><span class="p">))</span> <span class="c1"># Data for evaluation</span>
 </code></pre></div><pre><code>&lt;keras.callbacks.History at 0x103f9b8d0&gt;
 </code></pre>
 

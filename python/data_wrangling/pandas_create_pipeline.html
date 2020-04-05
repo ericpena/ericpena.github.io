@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create A Pipeline In Pandas"/>
 <meta name="twitter:description" content="Create a pipeline in pandas"/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -169,30 +169,30 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </code></pre></div><h2 id="create-dataframe">Create Dataframe</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create empty dataframe</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
 <span class="c1"># Create a column</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">John</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Steve</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Sarah</span><span class="s1">&#39;</span><span class="p">]</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">gender</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Male</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Male</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Female</span><span class="s1">&#39;</span><span class="p">]</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">age</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Steve&#39;</span><span class="p">,</span> <span class="s1">&#39;Sarah&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Male&#39;</span><span class="p">,</span> <span class="s1">&#39;Male&#39;</span><span class="p">,</span> <span class="s1">&#39;Female&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
 
 <span class="c1"># View dataframe</span>
 <span class="n">df</span>
 </code></pre></div><!-- raw HTML omitted -->
 <h2 id="create-functions-to-process-data">Create Functions To Process Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a function that</span>
-<span class="k">def</span> <span class="nf">mean_age_by_group</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">mean_age_by_group</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
     <span class="c1"># groups the data by a column and returns the mean age per group</span>
-    <span class="k">return</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a function that</span>
-<span class="k">def</span> <span class="nf">uppercase_column_name</span><span class="p">(</span><span class="n">dataframe</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">uppercase_column_name</span><span class="p">(</span><span class="n">dataframe</span><span class="p">):</span>
     <span class="c1"># Capitalizes all the column headers</span>
-    <span class="n">dataframe</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">(</span><span class="p">)</span>
+    <span class="n">dataframe</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
     <span class="c1"># And returns them</span>
     <span class="k">return</span> <span class="n">dataframe</span>
 </code></pre></div><h2 id="create-a-pipeline-of-those-functions">Create A Pipeline Of Those Functions</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a pipeline that applies the mean_age_by_group function</span>
-<span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">mean_age_by_group</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">gender</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">mean_age_by_group</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s1">&#39;gender&#39;</span><span class="p">)</span>
    <span class="c1"># then applies the uppercase column name function</span>
    <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">uppercase_column_name</span><span class="p">)</span>
 <span class="p">)</span>

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Select Rows With A Certain Value"/>
 <meta name="twitter:description" content="Select rows with a certain value."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -166,12 +166,12 @@ MathJax.Hub.Config({
       
   <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create an example dataframe</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Jason</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Molly</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span> 
-        <span class="sa"></span><span class="s1">&#39;</span><span class="s1">country</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Syria</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Lebanon</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Spain</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Morocco</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">]</span><span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Jason&#39;</span><span class="p">,</span> <span class="s1">&#39;Molly&#39;</span><span class="p">],</span> 
+        <span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;Syria&#39;</span><span class="p">,</span> <span class="s1">&#39;Lebanon&#39;</span><span class="p">],[</span><span class="s1">&#39;Spain&#39;</span><span class="p">,</span> <span class="s1">&#39;Morocco&#39;</span><span class="p">]]}</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="n">df</span>
 </code></pre></div><!-- raw HTML omitted -->
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">country</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">country</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Syria</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">country</span><span class="p">)</span><span class="p">]</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">country</span><span class="p">:</span> <span class="s1">&#39;Syria&#39;</span> <span class="ow">in</span> <span class="n">country</span><span class="p">)]</span>
 </code></pre></div><!-- raw HTML omitted -->
 
 </div>

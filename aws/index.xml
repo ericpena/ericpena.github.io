@@ -37,7 +37,7 @@ aws s3 mb s3://kicks-pasta-steer make_bucket: kicks-pasta-steer Create Second Bu
       
       <guid>https://ericpena.github.io/aws/basics/run_project_jupyter_on_amazon_ec2.html</guid>
       <description>This is tutorial on running Project Jupyter Notebook on an Amazon EC2 instance. It is based on a tutorial by Piyush Agarwal which did not work for me immediately, but I tweaked a few things and got it working.
-Note: This is not a beginner&#39;s tutorial. I don&#39;t explain some of the steps fully and don&#39;t explain some concepts. There are other tutorials out there for that.
+Note: This is not a beginner&amp;rsquo;s tutorial. I don&amp;rsquo;t explain some of the steps fully and don&amp;rsquo;t explain some concepts. There are other tutorials out there for that.
 Create an AWS account An EC2 instance requires an AWS account.</description>
     </item>
     

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Multinomial Naive Bayes Classifier"/>
 <meta name="twitter:description" content="How to train a Multinomial naive bayes classifer in Scikit-Learn"/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -172,29 +172,29 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
 </code></pre></div><h2 id="create-text-data">Create Text Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create text</span>
-<span class="n">text_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">I love Brazil. Brazil!</span><span class="s1">&#39;</span><span class="p">,</span>
-                      <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Brazil is best</span><span class="s1">&#39;</span><span class="p">,</span>
-                      <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Germany beats both</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+<span class="n">text_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;I love Brazil. Brazil!&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;Brazil is best&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;Germany beats both&#39;</span><span class="p">])</span>
 </code></pre></div><h2 id="create-bag-of-words">Create Bag Of Words</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create bag of words</span>
-<span class="n">count</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="p">)</span>
+<span class="n">count</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
 <span class="n">bag_of_words</span> <span class="o">=</span> <span class="n">count</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">text_data</span><span class="p">)</span>
 
 <span class="c1"># Create feature matrix</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">bag_of_words</span><span class="o">.</span><span class="n">toarray</span><span class="p">(</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">bag_of_words</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
 </code></pre></div><h2 id="create-target-vector">Create Target Vector</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create target vector</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 </code></pre></div><h2 id="train-multinomial-naive-bayes-classifier">Train Multinomial Naive Bayes Classifier</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create multinomial naive Bayes object with prior probabilities of each class</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">MultinomialNB</span><span class="p">(</span><span class="n">class_prior</span><span class="o">=</span><span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span><span class="p">)</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">MultinomialNB</span><span class="p">(</span><span class="n">class_prior</span><span class="o">=</span><span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
 
 <span class="c1"># Train model</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </code></pre></div><h2 id="create-previously-unseen-observation">Create Previously Unseen Observation</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create new observation</span>
-<span class="n">new_observation</span> <span class="o">=</span> <span class="p">[</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="p">]</span>
-</code></pre></div><h2 id="predict-observations-class">Predict Observation's Class</h2>
+<span class="n">new_observation</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+</code></pre></div><h2 id="predict-observations-class">Predict Observation&rsquo;s Class</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Predict new observation&#39;s class</span>
 <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">new_observation</span><span class="p">)</span>
 </code></pre></div><pre><code>array([0])

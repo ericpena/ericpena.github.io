@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Seaborn To Visualize A pandas Dataframe"/>
 <meta name="twitter:description" content="Using seaborn to visualize a pandas dataframe."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -170,14 +170,14 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">x</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">y</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="mi">25</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div><!-- raw HTML omitted -->
 <h2 id="scatterplot">Scatterplot</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">x</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">y</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">fit_reg</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">fit_reg</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </code></pre></div><pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x114563b00&gt;
 </code></pre>
 <p><img src="pandas_with_seaborn_6_1.png" alt="png"></p>
@@ -195,21 +195,21 @@ MathJax.Hub.Config({
 </code></pre>
 <p><img src="pandas_with_seaborn_10_1.png" alt="png"></p>
 <h2 id="histogram">Histogram</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="o">.</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">x</span><span class="p">);</span>
 </code></pre></div><p><img src="pandas_with_seaborn_12_0.png" alt="png"></p>
 <h2 id="boxplot">Boxplot</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">x</span><span class="p">]</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">x</span><span class="p">])</span>
 </code></pre></div><pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1142b8b38&gt;
 </code></pre>
 <p><img src="pandas_with_seaborn_14_1.png" alt="png"></p>
 <h2 id="violin-plot">Violin Plot</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">x</span><span class="p">]</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">x</span><span class="p">])</span>
 </code></pre></div><pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x114444a58&gt;
 </code></pre>
 <p><img src="pandas_with_seaborn_16_1.png" alt="png"></p>
 <h2 id="heatmap">Heatmap</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">x</span><span class="p">]</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">d</span><span class="s2">&#34;</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">([</span><span class="n">df</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">x</span><span class="p">],</span> <span class="n">annot</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&#34;d&#34;</span><span class="p">)</span>
 </code></pre></div><pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x114530c88&gt;
 </code></pre>
 <p><img src="pandas_with_seaborn_18_1.png" alt="png"></p>

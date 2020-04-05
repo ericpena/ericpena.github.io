@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Remove Punctuation"/>
 <meta name="twitter:description" content="How to remove punctuation from unstructured text data for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Remove Punctuation",
   "url": "https:\/\/ericpena.github.io\/machine_learning\/preprocessing_text\/remove_punctuation.html",
-  "wordCount": "63",
+  "wordCount": "64",
   "datePublished": "2017-12-20T11:53:49-07:00",
   "dateModified": "2017-12-20T11:53:49-07:00",
   "author": {
@@ -170,13 +170,13 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </code></pre></div><h2 id="create-text-data">Create Text Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create text</span>
-<span class="n">text_data</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Hi!!!! I. Love. This. Song....</span><span class="s1">&#39;</span><span class="p">,</span> 
-             <span class="sa"></span><span class="s1">&#39;</span><span class="s1">10000</span><span class="s1">%</span><span class="s1"> Agree!!!! #LoveIT</span><span class="s1">&#39;</span><span class="p">,</span> 
-             <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Right?!?!</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">text_data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Hi!!!! I. Love. This. Song....&#39;</span><span class="p">,</span> 
+             <span class="s1">&#39;10000% Agree!!!! #LoveIT&#39;</span><span class="p">,</span> 
+             <span class="s1">&#39;Right?!?!&#39;</span><span class="p">]</span>
 </code></pre></div><h2 id="remove-punctuation">Remove Punctuation</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create function using string.punctuation to remove all punctuation</span>
-<span class="k">def</span> <span class="nf">remove_punctuation</span><span class="p">(</span><span class="n">sentence</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">sentence</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">remove_punctuation</span><span class="p">(</span><span class="n">sentence</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">sentence</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span>
 
 <span class="c1"># Apply function</span>
 <span class="p">[</span><span class="n">remove_punctuation</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span> <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">text_data</span><span class="p">]</span>

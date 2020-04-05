@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Normalize A Column In pandas"/>
 <meta name="twitter:description" content="Normalize a column in pandas."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -173,7 +173,7 @@ MathJax.Hub.Config({
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 </code></pre></div><h2 id="create-unnormalized-data">Create Unnormalized Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create an example dataframe with a column of unnormalized data</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">score</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">234</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="o">-</span><span class="mi">74</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">73</span><span class="p">,</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span><span class="mi">59</span><span class="p">,</span><span class="mi">160</span><span class="p">]</span><span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">234</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="o">-</span><span class="mi">74</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">73</span><span class="p">,</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span><span class="mi">59</span><span class="p">,</span><span class="mi">160</span><span class="p">]}</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="n">df</span>
 </code></pre></div><!-- raw HTML omitted -->
@@ -188,16 +188,16 @@ MathJax.Hub.Config({
 <p><!-- raw HTML omitted --></p>
 <!-- raw HTML omitted -->
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View the unnormalized data</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">score</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">bar</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11b9c88d0&gt;
 </code></pre>
 <p><img src="pandas_normalize_column_5_1.png" alt="png"></p>
 <h2 id="normalize-the-column">Normalize The Column</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create x, where x the &#39;scores&#39; column&#39;s values as floats</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">score</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;score&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 
 <span class="c1"># Create a minimum and maximum processor object</span>
-<span class="n">min_max_scaler</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">MinMaxScaler</span><span class="p">(</span><span class="p">)</span>
+<span class="n">min_max_scaler</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">MinMaxScaler</span><span class="p">()</span>
 
 <span class="c1"># Create an object to transform the data to fit minmax processor</span>
 <span class="n">x_scaled</span> <span class="o">=</span> <span class="n">min_max_scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -218,7 +218,7 @@ MathJax.Hub.Config({
 <p><!-- raw HTML omitted --></p>
 <!-- raw HTML omitted -->
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Plot the dataframe</span>
-<span class="n">df_normalized</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">bar</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df_normalized</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x11ba31c50&gt;
 </code></pre>
 <p><img src="pandas_normalize_column_9_1.png" alt="png"></p>

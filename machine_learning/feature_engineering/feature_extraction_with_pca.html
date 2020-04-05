@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Feature Extraction With PCA"/>
 <meta name="twitter:description" content="Feature extraction with PCA using scikit-learn."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -172,7 +172,7 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 </code></pre></div><h2 id="load-features">Load Features</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load the breast cancer dataset</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_breast_cancer</span><span class="p">(</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_breast_cancer</span><span class="p">()</span>
 
 <span class="c1"># Load the features</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span>
@@ -200,7 +200,7 @@ MathJax.Hub.Config({
 </code></pre>
 <h2 id="standardize-features">Standardize Features</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a scaler object</span>
-<span class="n">sc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="p">)</span>
+<span class="n">sc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 
 <span class="c1"># Fit the scaler to the features and transform</span>
 <span class="n">X_std</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create Baseline Regression Model"/>
 <meta name="twitter:description" content="How to create a baseline regression model in scikit-learn for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -172,7 +172,7 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 </code></pre></div><h2 id="load-boston-housing-dataset">Load Boston Housing Dataset</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load data</span>
-<span class="n">boston</span> <span class="o">=</span> <span class="n">load_boston</span><span class="p">(</span><span class="p">)</span>
+<span class="n">boston</span> <span class="o">=</span> <span class="n">load_boston</span><span class="p">()</span>
 
 <span class="c1"># Create features</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">boston</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">boston</span><span class="o">.</span><span class="n">target</span>
@@ -181,7 +181,7 @@ MathJax.Hub.Config({
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div><h2 id="create-dummy-regression-always-predicts-the-mean-value-of-target">Create Dummy Regression Always Predicts The Mean Value Of Target</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a dummy regressor</span>
-<span class="n">dummy_mean</span> <span class="o">=</span> <span class="n">DummyRegressor</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">mean</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">dummy_mean</span> <span class="o">=</span> <span class="n">DummyRegressor</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
 
 <span class="c1"># &#34;Train&#34; dummy regressor</span>
 <span class="n">dummy_mean</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -189,7 +189,7 @@ MathJax.Hub.Config({
 </code></pre>
 <h2 id="create-dummy-regression-always-predicts-a-constant-value">Create Dummy Regression Always Predicts A Constant Value</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a dummy regressor</span>
-<span class="n">dummy_constant</span> <span class="o">=</span> <span class="n">DummyRegressor</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">constant</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">dummy_constant</span> <span class="o">=</span> <span class="n">DummyRegressor</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="n">constant</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
 <span class="c1"># &#34;Train&#34; dummy regressor</span>
 <span class="n">dummy_constant</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Group Data By Time"/>
 <meta name="twitter:description" content="Group data by time."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -165,44 +165,44 @@ MathJax.Hub.Config({
   <div class="content">
       
   <p>On March 13, 2016, version 0.18.0 of Pandas was released, with significant changes in how the resampling function operates. This tutorial follows v0.18.0 and will not work for previous versions of pandas.</p>
-<p>First let's load the modules we care about</p>
+<p>First let&rsquo;s load the modules we care about</p>
 <h2 id="preliminaries">Preliminaries</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Import required packages</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-</code></pre></div><p>Next, let's create some sample data that we can group by time as an sample. In this example I am creating a dataframe with two columns with 365 rows. One column is a date, the second column is a numeric value.</p>
+</code></pre></div><p>Next, let&rsquo;s create some sample data that we can group by time as an sample. In this example I am creating a dataframe with two columns with 365 rows. One column is a date, the second column is a numeric value.</p>
 <h2 id="create-data">Create Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a datetime variable for today</span>
-<span class="n">base</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">(</span><span class="p">)</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
 <span class="c1"># Create a list variable that creates 365 days of rows of datetime values</span>
-<span class="n">date_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">base</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">365</span><span class="p">)</span><span class="p">]</span>
+<span class="n">date_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">base</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">365</span><span class="p">)]</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a list variable of 365 numeric values</span>
-<span class="n">score_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">365</span><span class="p">)</span><span class="p">)</span>
+<span class="n">score_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">365</span><span class="p">))</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create an empty dataframe</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
 <span class="c1"># Create a column from the datetime variable</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">datetime</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">date_list</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">date_list</span>
 <span class="c1"># Convert that column into a datetime datatype</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">datetime</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">datetime</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">])</span>
 <span class="c1"># Set the datetime column as the index</span>
-<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">datetime</span><span class="s1">&#39;</span><span class="p">]</span> 
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span> 
 <span class="c1"># Create a column from the numeric score variable</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">score</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">score_list</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">score_list</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Let&#39;s take a took at the data</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div><!-- raw HTML omitted -->
 <h2 id="group-data-by-date">Group Data By Date</h2>
 <p>In pandas, the most common way to group by time is to use the .resample() function. In v0.18.0 this function is two-stage. This means that &lsquo;df.resample(&lsquo;M&rsquo;)&rsquo; creates an object to which we can apply other functions (&lsquo;mean&rsquo;, &lsquo;count&rsquo;, &lsquo;sum&rsquo;, etc.)</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Group the data by month, and take the mean for each group (i.e. each month)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">M</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </code></pre></div><!-- raw HTML omitted -->
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Group the data by month, and take the sum for each group (i.e. each month)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">M</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </code></pre></div><!-- raw HTML omitted -->
 <h2 id="grouping-options">Grouping Options</h2>
-<p>There are many options for grouping. You can learn more about them in <a href="http://pandas.pydata.org/pandas-docs/stable/timeseries.html">Pandas's timeseries docs</a>, however, I have also listed them below for your convience.</p>
+<p>There are many options for grouping. You can learn more about them in <a href="http://pandas.pydata.org/pandas-docs/stable/timeseries.html">Pandas&rsquo;s timeseries docs</a>, however, I have also listed them below for your convience.</p>
 <p>| Value | Description
 |&mdash;|
 |B   |    business day frequency

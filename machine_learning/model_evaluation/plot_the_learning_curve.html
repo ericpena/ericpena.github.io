@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Plot The Learning Curve"/>
 <meta name="twitter:description" content="How to plot the learning curve in scikit-learn for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -174,23 +174,23 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">learning_curve</span>
 </code></pre></div><h2 id="load-digits-dataset">Load Digits Dataset</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load data</span>
-<span class="n">digits</span> <span class="o">=</span> <span class="n">load_digits</span><span class="p">(</span><span class="p">)</span>
+<span class="n">digits</span> <span class="o">=</span> <span class="n">load_digits</span><span class="p">()</span>
 
 <span class="c1"># Create feature matrix and target vector</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">digits</span><span class="o">.</span><span class="n">target</span>
 </code></pre></div><h2 id="plot-learning-curve">Plot Learning Curve</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create CV training and test scores for various training set sizes</span>
-<span class="n">train_sizes</span><span class="p">,</span> <span class="n">train_scores</span><span class="p">,</span> <span class="n">test_scores</span> <span class="o">=</span> <span class="n">learning_curve</span><span class="p">(</span><span class="n">RandomForestClassifier</span><span class="p">(</span><span class="p">)</span><span class="p">,</span> 
+<span class="n">train_sizes</span><span class="p">,</span> <span class="n">train_scores</span><span class="p">,</span> <span class="n">test_scores</span> <span class="o">=</span> <span class="n">learning_curve</span><span class="p">(</span><span class="n">RandomForestClassifier</span><span class="p">(),</span> 
                                                         <span class="n">X</span><span class="p">,</span> 
                                                         <span class="n">y</span><span class="p">,</span>
                                                         <span class="c1"># Number of folds in cross-validation</span>
                                                         <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
                                                         <span class="c1"># Evaluation metric</span>
-                                                        <span class="n">scoring</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">accuracy</span><span class="s1">&#39;</span><span class="p">,</span>
+                                                        <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span>
                                                         <span class="c1"># Use all computer cores</span>
-                                                        <span class="n">n_jobs</span><span class="o">=</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> 
+                                                        <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> 
                                                         <span class="c1"># 50 different sizes of the training set</span>
-                                                        <span class="n">train_sizes</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span><span class="p">)</span>
+                                                        <span class="n">train_sizes</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
 
 <span class="c1"># Create means and standard deviations of training set scores</span>
 <span class="n">train_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_scores</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -201,18 +201,18 @@ MathJax.Hub.Config({
 <span class="n">test_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">test_scores</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Draw lines</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">train_mean</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">--</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">#111111</span><span class="s2">&#34;</span><span class="p">,</span>  <span class="n">label</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Training score</span><span class="s2">&#34;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">test_mean</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">#111111</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Cross-validation score</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">train_mean</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&#34;#111111&#34;</span><span class="p">,</span>  <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Training score&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">test_mean</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&#34;#111111&#34;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Cross-validation score&#34;</span><span class="p">)</span>
 
 <span class="c1"># Draw bands</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">train_mean</span> <span class="o">-</span> <span class="n">train_std</span><span class="p">,</span> <span class="n">train_mean</span> <span class="o">+</span> <span class="n">train_std</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">#DDDDDD</span><span class="s2">&#34;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">test_mean</span> <span class="o">-</span> <span class="n">test_std</span><span class="p">,</span> <span class="n">test_mean</span> <span class="o">+</span> <span class="n">test_std</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">#DDDDDD</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">train_mean</span> <span class="o">-</span> <span class="n">train_std</span><span class="p">,</span> <span class="n">train_mean</span> <span class="o">+</span> <span class="n">train_std</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&#34;#DDDDDD&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">train_sizes</span><span class="p">,</span> <span class="n">test_mean</span> <span class="o">-</span> <span class="n">test_std</span><span class="p">,</span> <span class="n">test_mean</span> <span class="o">+</span> <span class="n">test_std</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&#34;#DDDDDD&#34;</span><span class="p">)</span>
 
 <span class="c1"># Create plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Learning Curve</span><span class="s2">&#34;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Training Set Size</span><span class="s2">&#34;</span><span class="p">)</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Accuracy Score</span><span class="s2">&#34;</span><span class="p">)</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">best</span><span class="s2">&#34;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;Learning Curve&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&#34;Training Set Size&#34;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&#34;Accuracy Score&#34;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&#34;best&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div><p><img src="plot_the_learning_curve_7_0.png" alt="png"></p>
 
 </div>

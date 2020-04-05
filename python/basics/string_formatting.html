@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="String Formatting"/>
 <meta name="twitter:description" content="String formatting using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -167,15 +167,15 @@ MathJax.Hub.Config({
   <h3 id="import-the-sys-module">Import the sys module</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
 </code></pre></div><h3 id="print-a-string-with-1-digit-and-one-string">Print a string with 1 digit and one string.</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="sa"></span><span class="s1">&#39;</span><span class="s1">This is </span><span class="si">%d</span><span class="s1"> </span><span class="si">%s</span><span class="s1"> bird!</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">dead</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s1">&#39;This is </span><span class="si">%d</span><span class="s1"> </span><span class="si">%s</span><span class="s1"> bird!&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;dead&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>'This is 1 dead bird!'
 </code></pre>
 <h3 id="print-a-dictionary-based-string">Print a dictionary based string</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="sa"></span><span class="s1">&#39;</span><span class="si">%(number)d</span><span class="s1"> more </span><span class="si">%(food)s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">number</span><span class="s1">&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">food</span><span class="s1">&#39;</span> <span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">burger</span><span class="s1">&#39;</span><span class="p">}</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s1">&#39;</span><span class="si">%(number)d</span><span class="s1"> more </span><span class="si">%(food)s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">{</span><span class="s1">&#39;number&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;food&#39;</span> <span class="p">:</span> <span class="s1">&#39;burger&#39;</span><span class="p">}</span>
 </code></pre></div><pre><code>'1 more burger'
 </code></pre>
 <h3 id="print-a-string-about-my-laptop">Print a string about my laptop.</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="sa"></span><span class="s1">&#39;</span><span class="s1">My {1[kind]} runs {0.platform}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="p">,</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">kind</span><span class="s1">&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">laptop</span><span class="s1">&#39;</span><span class="p">}</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s1">&#39;My {1[kind]} runs {0.platform}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;kind&#39;</span><span class="p">:</span> <span class="s1">&#39;laptop&#39;</span><span class="p">})</span>
 </code></pre></div><pre><code>'My laptop runs darwin'
 </code></pre>
 <h2 id="string-formatting-codes">String Formatting Codes</h2>

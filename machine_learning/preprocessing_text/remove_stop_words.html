@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Remove Stop Words"/>
 <meta name="twitter:description" content="How to remove stop words from unstructured text data for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -170,7 +170,7 @@ MathJax.Hub.Config({
 
 <span class="c1"># You will have to download the set of stop words the first time</span>
 <span class="kn">import</span> <span class="nn">nltk</span>
-<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">stopwords</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>[nltk_data] Downloading package stopwords to
 [nltk_data]     /Users/chrisalbon/nltk_data...
 [nltk_data]   Package stopwords is already up-to-date!
@@ -183,13 +183,13 @@ True
 </code></pre>
 <h2 id="create-word-tokens">Create Word Tokens</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create word tokens</span>
-<span class="n">tokenized_words</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">i</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">am</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">going</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">to</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">go</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">to</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">the</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">store</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">and</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">park</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">tokenized_words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;am&#39;</span><span class="p">,</span> <span class="s1">&#39;going&#39;</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">,</span> <span class="s1">&#39;go&#39;</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="s1">&#39;store&#39;</span><span class="p">,</span> <span class="s1">&#39;and&#39;</span><span class="p">,</span> <span class="s1">&#39;park&#39;</span><span class="p">]</span>
 </code></pre></div><h2 id="load-stop-words">Load Stop Words</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load stop words</span>
-<span class="n">stop_words</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">english</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">stop_words</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">)</span>
 
 <span class="c1"># Show stop words</span>
-<span class="n">stop_words</span><span class="p">[</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">stop_words</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
 </code></pre></div><pre><code>['i', 'me', 'my', 'myself', 'we']
 </code></pre>
 <h2 id="remove-stop-words">Remove Stop Words</h2>

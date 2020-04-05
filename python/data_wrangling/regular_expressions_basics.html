@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Regular Expression Basics"/>
 <meta name="twitter:description" content="Regular expression basics."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -169,45 +169,45 @@ MathJax.Hub.Config({
 </code></pre></div><h3 id="import-sys">Import sys</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sys</span>
 </code></pre></div><h3 id="create-a-simple-text-string">Create a simple text string.</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">text</span> <span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">The quick brown fox jumped over the lazy black bear.</span><span class="s1">&#39;</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;The quick brown fox jumped over the lazy black bear.&#39;</span>
 </code></pre></div><h3 id="create-a-pattern-to-match">Create a pattern to match</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">three_letter_word</span> <span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">\</span><span class="s1">w{3}</span><span class="s1">&#39;</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">three_letter_word</span> <span class="o">=</span> <span class="s1">&#39;\w{3}&#39;</span>
 </code></pre></div><h3 id="convert-the-string-into-a-regex-object">Convert the string into a regex object</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">pattern_re</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">three_letter_word</span><span class="p">)</span><span class="p">;</span> <span class="n">pattern_re</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">pattern_re</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">three_letter_word</span><span class="p">);</span> <span class="n">pattern_re</span>
 </code></pre></div><pre><code>re.compile(r'\w{3}', re.UNICODE)
 </code></pre>
 <h3 id="does-a-three-letter-word-appear-in-text">Does a three letter word appear in text?</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re_search</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">..own</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re_search</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;..own&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
 </code></pre></div><h3 id="if-the-search-query-is-at-all-true">If the search query is at all true,</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">if</span> <span class="n">re_search</span><span class="p">:</span>
     <span class="c1"># Print the search results</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">re_search</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="p">)</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">re_search</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
 </code></pre></div><pre><code>brown
 </code></pre>
 <h2 id="rematch">re.match</h2>
 <p>re.match() is for matching ONLY the beginning of a string or the whole string
 For anything else, use re.search</p>
 <h3 id="match-all-three-letter-words-in-text">Match all three letter words in text</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re_match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">..own</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-</code></pre></div><h3 id="if-re-match-is-true-print-the-match-else-print-no-matches">If re_match is true, print the match, else print &ldquo;No Matches&rdquo;</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re_match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;..own&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</code></pre></div><h3 id="if-re_match-is-true-print-the-match-else-print-no-matches">If re_match is true, print the match, else print &ldquo;No Matches&rdquo;</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">if</span> <span class="n">re_match</span><span class="p">:</span>
     <span class="c1"># Print all the matches</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">re_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="p">)</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">re_match</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="c1"># Print this</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">No matches</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;No matches&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>No matches
 </code></pre>
 <h2 id="resplit">re.split</h2>
 <h3 id="split-up-the-string-using-e-as-the-seperator">Split up the string using &ldquo;e&rdquo; as the seperator.</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re_split</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">e</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span><span class="p">;</span> <span class="n">re_split</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re_split</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">);</span> <span class="n">re_split</span>
 </code></pre></div><pre><code>['Th', ' quick brown fox jump', 'd ov', 'r th', ' lazy black b', 'ar.']
 </code></pre>
 <h2 id="resub">re.sub</h2>
 <p>Replaces occurrences of the regex pattern with something else</p>
 <p>The &ldquo;3&rdquo; references to the maximum number of substitutions to make.</p>
 <h3 id="substitute-the-first-three-instances-of-e-with-e-then-print-it">Substitute the first three instances of &ldquo;e&rdquo; with &ldquo;E&rdquo;, then print it</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re_sub</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">e</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">E</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="p">;</span> <span class="k">print</span><span class="p">(</span><span class="n">re_sub</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re_sub</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="k">print</span><span class="p">(</span><span class="n">re_sub</span><span class="p">)</span>
 </code></pre></div><pre><code>ThE quick brown fox jumpEd ovEr the lazy black bear.
 </code></pre>
 

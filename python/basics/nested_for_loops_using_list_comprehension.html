@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Nested For Loops Using List Comprehension"/>
 <meta name="twitter:description" content="Nested for loops using list comprehension."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -165,10 +165,10 @@ MathJax.Hub.Config({
   <div class="content">
       
   <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create two lists</span>
-<span class="n">squads</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">1st Squad</span><span class="s2">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">2nd Squad</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">3rd Squad</span><span class="s1">&#39;</span><span class="p">]</span>
-<span class="n">regiments</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">51st Regiment</span><span class="s2">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">15th Regiment</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">12th Regiment</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">squads</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;1st Squad&#34;</span><span class="p">,</span> <span class="s1">&#39;2nd Squad&#39;</span><span class="p">,</span> <span class="s1">&#39;3rd Squad&#39;</span><span class="p">]</span>
+<span class="n">regiments</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;51st Regiment&#34;</span><span class="p">,</span> <span class="s1">&#39;15th Regiment&#39;</span><span class="p">,</span> <span class="s1">&#39;12th Regiment&#39;</span><span class="p">]</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a tuple for each regiment in regiments, for each squad in sqauds</span>
-<span class="p">[</span><span class="p">(</span><span class="n">regiment</span><span class="p">,</span> <span class="n">squad</span><span class="p">)</span> <span class="k">for</span> <span class="n">regiment</span> <span class="ow">in</span> <span class="n">regiments</span> <span class="k">for</span> <span class="n">squad</span> <span class="ow">in</span> <span class="n">squads</span> <span class="p">]</span>
+<span class="p">[(</span><span class="n">regiment</span><span class="p">,</span> <span class="n">squad</span><span class="p">)</span> <span class="k">for</span> <span class="n">regiment</span> <span class="ow">in</span> <span class="n">regiments</span> <span class="k">for</span> <span class="n">squad</span> <span class="ow">in</span> <span class="n">squads</span> <span class="p">]</span>
 </code></pre></div><pre><code>[('51st Regiment', '1st Squad'),
  ('51st Regiment', '2nd Squad'),
  ('51st Regiment', '3rd Squad'),

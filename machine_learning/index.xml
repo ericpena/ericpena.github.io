@@ -21,6 +21,33 @@
     
     <item>
       <title></title>
+      <link>https://ericpena.github.io/machine_learning/preprocessing_images/index.xml</link>
+      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/machine_learning/preprocessing_images/index.xml</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/index.xml</link>
+      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/index.xml</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ericpena.github.io/machine_learning/preprocessing_text/index.xml</link>
+      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/machine_learning/preprocessing_text/index.xml</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://ericpena.github.io/machine_learning/vectors_matrices_and_arrays/index.xml</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
@@ -44,7 +71,7 @@
       
       <guid>https://ericpena.github.io/machine_learning/trees_and_forests/adaboost_classifier.html</guid>
       <description>Preliminaries # Load libraries from sklearn.ensemble import AdaBoostClassifier from sklearn import datasets Load Iris Flower Dataset # Load data iris = datasets.load_iris() X = iris.data y = iris.target Create Adaboost Classifier The most important parameters are base_estimator, n_estimators, and learning_rate.
- base_estimator is the learning algorithm to use to train the weak models. This will almost always not needed to be changed because by far the most common learner to use with AdaBoost is a decision tree &amp;ndash; this parameter&#39;s default argument.</description>
+ base_estimator is the learning algorithm to use to train the weak models. This will almost always not needed to be changed because by far the most common learner to use with AdaBoost is a decision tree &amp;ndash; this parameter&amp;rsquo;s default argument.</description>
     </item>
     
     <item>
@@ -77,15 +104,6 @@ Preliminaries # Load libraries from sklearn.datasets import load_iris from sklea
     </item>
     
     <item>
-      <title>Bag Of Words</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_text/bag_of_words.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_text/bag_of_words.html</guid>
-      <description>Preliminaries # Load library import numpy as np from sklearn.feature_extraction.text import CountVectorizer import pandas as pd Create Text Data # Create text text_data = np.array([&amp;#39;I love Brazil. Brazil!&amp;#39;, &amp;#39;Sweden is best&amp;#39;, &amp;#39;Germany beats both&amp;#39;]) Create Bag Of Words # Create the bag of words feature matrix count = CountVectorizer() bag_of_words = count.fit_transform(text_data) # Show feature matrix bag_of_words.toarray() array([[0, 0, 0, 2, 0, 0, 1, 0], [0, 1, 0, 0, 0, 1, 0, 1], [1, 0, 1, 0, 1, 0, 0, 0]], dtype=int64)  View Bag Of Words Matrix Column Headers # Get feature names feature_names = count.</description>
-    </item>
-    
-    <item>
       <title>Bernoulli Naive Bayes Classifier</title>
       <link>https://ericpena.github.io/machine_learning/naive_bayes/bernoulli_naive_bayes_classifier.html</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
@@ -93,24 +111,6 @@ Preliminaries # Load libraries from sklearn.datasets import load_iris from sklea
       <guid>https://ericpena.github.io/machine_learning/naive_bayes/bernoulli_naive_bayes_classifier.html</guid>
       <description>The Bernoulli naive Bayes classifier assumes that all our features are binary such that they take only two values (e.g. a nominal categorical feature that has been one-hot encoded).
 Preliminaries # Load libraries import numpy as np from sklearn.naive_bayes import BernoulliNB Create Binary Feature And Target Data # Create three binary features X = np.random.randint(2, size=(100, 3)) # Create a binary target vector y = np.random.randint(2, size=(100, 1)).ravel() View Feature Data # View first ten observations X[0:10] array([[1, 1, 1], [0, 1, 0], [1, 1, 1], [0, 0, 0], [1, 0, 1], [1, 1, 1], [0, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 0]])  Train Bernoulli Naive Bayes Classifier # Create Bernoulli Naive Bayes object with prior probabilities of each class clf = BernoulliNB(class_prior=[0.</description>
-    </item>
-    
-    <item>
-      <title>Binarize Images</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_images/binarize_image.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_images/binarize_image.html</guid>
-      <description>Preliminaries # Load image import cv2 import numpy as np from matplotlib import pyplot as plt Load Image As Greyscale # Load image as greyscale image_grey = cv2.imread(&amp;#39;images/plane_256x256.jpg&amp;#39;, cv2.IMREAD_GRAYSCALE) Apply Adaptive Thresholding # Apply adaptive thresholding max_output_value = 255 neighorhood_size = 99 subtract_from_mean = 10 image_binarized = cv2.adaptiveThreshold(image_grey, max_output_value, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, neighorhood_size, subtract_from_mean) View Image # Show image plt.imshow(image_binarized, cmap=&amp;#39;gray&amp;#39;), plt.axis(&amp;#34;off&amp;#34;) plt.show() </description>
-    </item>
-    
-    <item>
-      <title>Blurring Images</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_images/blurring_images.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_images/blurring_images.html</guid>
-      <description>Preliminaries # Load image import cv2 import numpy as np from matplotlib import pyplot as plt Load Image As Greyscale # Load image as grayscale image = cv2.imread(&amp;#39;images/plane_256x256.jpg&amp;#39;, cv2.IMREAD_GRAYSCALE) Blur Image # Blur image image_blurry = cv2.blur(image, (5,5)) View Image # Show image plt.imshow(image_blurry, cmap=&amp;#39;gray&amp;#39;), plt.xticks([]), plt.yticks([]) plt.show() </description>
     </item>
     
     <item>
@@ -146,7 +146,7 @@ Preliminaries # Load libraries import numpy as np from sklearn.naive_bayes impor
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/machine_learning/support_vector_machines/calibrate_predicted_probabilities_in_svc.html</guid>
-      <description>SVC&#39;s use of a hyperplane to create decision regions do not naturally output a probability estimate that an observation is a member of a certain class. However, we can in fact output calibrated class probabilities with a few caveats. In an SVC, Platt scaling can be used, wherein first the SVC is trained, then a separate cross-validated logistic regression is trained to map the SVC outputs into probabilities:
+      <description>SVC&amp;rsquo;s use of a hyperplane to create decision regions do not naturally output a probability estimate that an observation is a member of a certain class. However, we can in fact output calibrated class probabilities with a few caveats. In an SVC, Platt scaling can be used, wherein first the SVC is trained, then a separate cross-validated logistic regression is trained to map the SVC outputs into probabilities:
 $$P(y=1 \mid x)={\frac {1}{1+e^{(A*f(x)+B)}}}$$</description>
     </item>
     
@@ -157,15 +157,6 @@ $$P(y=1 \mid x)={\frac {1}{1+e^{(A*f(x)+B)}}}$$</description>
       
       <guid>https://ericpena.github.io/machine_learning/feature_selection/chi-squared_for_feature_selection.html</guid>
       <description>Preliminaries # Load libraries from sklearn.datasets import load_iris from sklearn.feature_selection import SelectKBest from sklearn.feature_selection import chi2 Load Data # Load iris data iris = load_iris() # Create features and target X = iris.data y = iris.target # Convert to categorical data by converting data to integers X = X.astype(int) Compare Chi-Squared Statistics # Select two features with highest chi-squared statistics chi2_selector = SelectKBest(chi2, k=2) X_kbest = chi2_selector.fit_transform(X, y) View Results # Show results print(&amp;#39;Original number of features:&amp;#39;, X.</description>
-    </item>
-    
-    <item>
-      <title>Convert Pandas Categorical Data For Scikit-Learn</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/convert_pandas_categorical_column_into_integers_for_scikit-learn.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/convert_pandas_categorical_column_into_integers_for_scikit-learn.html</guid>
-      <description>Preliminaries # Import required packages from sklearn import preprocessing import pandas as pd Create DataFrame raw_data = {&amp;#39;patient&amp;#39;: [1, 1, 1, 2, 2], &amp;#39;obs&amp;#39;: [1, 2, 3, 1, 2], &amp;#39;treatment&amp;#39;: [0, 1, 0, 1, 0], &amp;#39;score&amp;#39;: [&amp;#39;strong&amp;#39;, &amp;#39;weak&amp;#39;, &amp;#39;normal&amp;#39;, &amp;#39;weak&amp;#39;, &amp;#39;strong&amp;#39;]} df = pd.DataFrame(raw_data, columns = [&amp;#39;patient&amp;#39;, &amp;#39;obs&amp;#39;, &amp;#39;treatment&amp;#39;, &amp;#39;score&amp;#39;]) Fit The Label Encoder # Create a label (category) encoder object le = preprocessing.LabelEncoder() # Fit the encoder to the pandas column le.</description>
     </item>
     
     <item>
@@ -215,15 +206,6 @@ $$P(y=1 \mid x)={\frac {1}{1+e^{(A*f(x)+B)}}}$$</description>
     </item>
     
     <item>
-      <title>Cropping Images</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_images/cropping_images.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_images/cropping_images.html</guid>
-      <description>Preliminaries # Load image import cv2 import numpy as np from matplotlib import pyplot as plt Load Image As Greyscale # Load image as grayscale image = cv2.imread(&amp;#39;images/plane_256x256.jpg&amp;#39;, cv2.IMREAD_GRAYSCALE) Crop Image # Select first half of the columns and all rows image_cropped = image[:,:126] View Image # View image plt.imshow(image_cropped, cmap=&amp;#39;gray&amp;#39;), plt.axis(&amp;#34;off&amp;#34;) plt.show() </description>
-    </item>
-    
-    <item>
       <title>Cross Validation Pipeline</title>
       <link>https://ericpena.github.io/machine_learning/model_evaluation/cross_validation_pipeline.html</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
@@ -239,7 +221,7 @@ $$P(y=1 \mid x)={\frac {1}{1+e^{(A*f(x)+B)}}}$$</description>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/machine_learning/model_evaluation/cross_validation_parameter_tuning_grid_search.html</guid>
-      <description>In machine learning, two tasks are commonly done at the same time in data pipelines: cross validation and (hyper)parameter tuning. Cross validation is the process of training learners using one set of data and testing it using a different set. Parameter tuning is the process to selecting the values for a model&#39;s parameters that maximize the accuracy of the model.
+      <description>In machine learning, two tasks are commonly done at the same time in data pipelines: cross validation and (hyper)parameter tuning. Cross validation is the process of training learners using one set of data and testing it using a different set. Parameter tuning is the process to selecting the values for a model&amp;rsquo;s parameters that maximize the accuracy of the model.
 In this tutorial we work through an example which combines cross validation and parameter tuning using scikit-learn.</description>
     </item>
     
@@ -291,42 +273,6 @@ $$\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$$</description>
     </item>
     
     <item>
-      <title>Delete Observations With Missing Values</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/delete_observations_with_missing_values.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/delete_observations_with_missing_values.html</guid>
-      <description>Preliminaries # Load libraries import numpy as np import pandas as pd Create Feature Matrix # Create feature matrix X = np.array([[1.1, 11.1], [2.2, 22.2], [3.3, 33.3], [4.4, 44.4], [np.nan, 55]]) Delete Observations With Missing Values # Remove observations with missing values X[~np.isnan(X).any(axis=1)] array([[ 1.1, 11.1], [ 2.2, 22.2], [ 3.3, 33.3], [ 4.4, 44.4]])  </description>
-    </item>
-    
-    <item>
-      <title>Deleting Missing Values</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/deleting_missing_values.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/deleting_missing_values.html</guid>
-      <description>Preliminaries # Load library import numpy as np import pandas as pd Create Data Frame # Create feature matrix X = np.array([[1, 2], [6, 3], [8, 4], [9, 5], [np.nan, 4]]) Drop Missing Values Using NumPy # Remove observations with missing values X[~np.isnan(X).any(axis=1)] array([[ 1., 2.], [ 6., 3.], [ 8., 4.], [ 9., 5.]])  Drop Missing Values Using pandas # Load data as a data frame df = pd.</description>
-    </item>
-    
-    <item>
-      <title>Detect Edges</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_images/detect_edges.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_images/detect_edges.html</guid>
-      <description>Preliminaries # Load image import cv2 import numpy as np from matplotlib import pyplot as plt Load image # Load image as greyscale image_gray = cv2.imread(&amp;#39;images/plane_256x256.jpg&amp;#39;, cv2.IMREAD_GRAYSCALE) Detect Edges # Calculate median intensity median_intensity = np.median(image_gray) # Set thresholds to be one standard deviation above and below median intensity lower_threshold = int(max(0, (1.0 - 0.33) * median_intensity)) upper_threshold = int(min(255, (1.0 + 0.33) * median_intensity)) # Apply canny edge detector image_canny = cv2.</description>
-    </item>
-    
-    <item>
-      <title>Detecting Outliers</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/detecting_outliers.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/detecting_outliers.html</guid>
-      <description>Preliminaries # Load libraries import numpy as np from sklearn.covariance import EllipticEnvelope from sklearn.datasets import make_blobs Create Data # Create simulated data X, _ = make_blobs(n_samples = 10, n_features = 2, centers = 1, random_state = 1) # Replace the first observation&amp;#39;s values with extreme values X[0,0] = 10000 X[0,1] = 10000 Detect Outliers EllipticEnvelope assumes the data is normally distributed and based on that assumption &amp;ldquo;draws&amp;rdquo; an ellipse around the data, classifying any observation inside the ellipse as an inlier (labeled as 1) and any observation outside the ellipse as an outlier (labeled as -1).</description>
-    </item>
-    
-    <item>
       <title>Dimensionality Reduction On Sparse Feature Matrix</title>
       <link>https://ericpena.github.io/machine_learning/feature_engineering/dimensionality_reduction_on_sparse_feature_matrix.html</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
@@ -351,15 +297,6 @@ $$\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$$</description>
       
       <guid>https://ericpena.github.io/machine_learning/feature_engineering/dimensionality_reduction_with_pca.html</guid>
       <description>Preliminaries # Load libraries from sklearn.preprocessing import StandardScaler from sklearn.decomposition import PCA from sklearn import datasets Load Data # Load the data digits = datasets.load_digits() Standardize Feature Values # Standardize the feature matrix X = StandardScaler().fit_transform(digits.data) Conduct Principal Component Analysis # Create a PCA that will retain 99% of the variance pca = PCA(n_components=0.99, whiten=True) # Conduct PCA X_pca = pca.fit_transform(X) View Results # Show results print(&amp;#39;Original number of features:&amp;#39;, X.</description>
-    </item>
-    
-    <item>
-      <title>Discretize Features</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/discretize_features.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/discretize_features.html</guid>
-      <description>Preliminaries # Load libraries from sklearn.preprocessing import Binarizer import numpy as np Create Data # Create feature age = np.array([[6], [12], [20], [36], [65]]) Option 1: Binarize Feature # Create binarizer binarizer = Binarizer(18) # Transform feature binarizer.fit_transform(age) array([[0], [0], [1], [1], [1]])  Option 2: Break Up Feature Into Bins # Bin feature np.digitize(age, bins=[20,30,64]) array([[0], [0], [1], [2], [3]])  </description>
     </item>
     
     <item>
@@ -391,39 +328,12 @@ Lasso regression is a common modeling technique to do regularization. The math b
     </item>
     
     <item>
-      <title>Encoding Ordinal Categorical Features</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/encoding_ordinal_categorical_features.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/encoding_ordinal_categorical_features.html</guid>
-      <description>Preliminaries # Load library import pandas as pd Create Feature Matrix # Create features df = pd.DataFrame({&amp;#39;Score&amp;#39;: [&amp;#39;Low&amp;#39;, &amp;#39;Low&amp;#39;, &amp;#39;Medium&amp;#39;, &amp;#39;Medium&amp;#39;, &amp;#39;High&amp;#39;]}) # View data frame df .dataframe thead th { text-align: left; } .dataframe tbody tr th { vertical-align: top; }  Create Scale Map # Create mapper scale_mapper = {&amp;#39;Low&amp;#39;:1, &amp;#39;Medium&amp;#39;:2, &amp;#39;High&amp;#39;:3} Map Scale To Features # Map feature values to scale df[&amp;#39;Scale&amp;#39;] = df[&amp;#39;Score&amp;#39;].replace(scale_mapper) # View data frame df .</description>
-    </item>
-    
-    <item>
-      <title>Enhance Contrast Of Color Image</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_images/enhance_contrast_of_color_image.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_images/enhance_contrast_of_color_image.html</guid>
-      <description>Preliminaries # Load image import cv2 import numpy as np from matplotlib import pyplot as plt Load Image # Load image image_bgr = cv2.imread(&amp;#39;images/plane.jpg&amp;#39;) Convert Image To YUV Color Format # Convert to YUV image_yuv = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2YUV) Enhance Image # Apply histogram equalization image_yuv[:, :, 0] = cv2.equalizeHist(image_yuv[:, :, 0]) Convert To RGB # Convert to RGB image_rgb = cv2.cvtColor(image_yuv, cv2.COLOR_YUV2RGB) View Image # Show image plt.imshow(image_rgb), plt.axis(&amp;#34;off&amp;#34;) plt.show() </description>
-    </item>
-    
-    <item>
-      <title>Enhance Contrast Of Greyscale Image</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_images/enhance_contrast_of_greyscale_image.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_images/enhance_contrast_of_greyscale_image.html</guid>
-      <description>Preliminaries # Load image import cv2 import numpy as np from matplotlib import pyplot as plt Load Image As Greyscale # Load image as grayscale image = cv2.imread(&amp;#39;images/plane_256x256.jpg&amp;#39;, cv2.IMREAD_GRAYSCALE) Enhance Image # Enhance image image_enhanced = cv2.equalizeHist(image) View Image # Show image plt.imshow(image_enhanced, cmap=&amp;#39;gray&amp;#39;), plt.axis(&amp;#34;off&amp;#34;) plt.show() </description>
-    </item>
-    
-    <item>
       <title>Evaluating Clustering</title>
       <link>https://ericpena.github.io/machine_learning/clustering/evaluating_clustering.html</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/machine_learning/clustering/evaluating_clustering.html</guid>
-      <description>Preliminaries import numpy as np from sklearn.metrics import silhouette_score from sklearn import datasets from sklearn.cluster import KMeans from sklearn.datasets import make_blobs Create Feature Data # Generate feature matrix X, _ = make_blobs(n_samples = 1000, n_features = 10, centers = 2, cluster_std = 0.5, shuffle = True, random_state = 1) Cluster Observations # Cluster data using k-means to predict classes model = KMeans(n_clusters=2, random_state=1).fit(X) # Get predicted classes y_hat = model.labels_ Calculate Silhouette Coefficient Formally, the $i$th observation&#39;s silhouette coefficient is:</description>
+      <description>Preliminaries import numpy as np from sklearn.metrics import silhouette_score from sklearn import datasets from sklearn.cluster import KMeans from sklearn.datasets import make_blobs Create Feature Data # Generate feature matrix X, _ = make_blobs(n_samples = 1000, n_features = 10, centers = 2, cluster_std = 0.5, shuffle = True, random_state = 1) Cluster Observations # Cluster data using k-means to predict classes model = KMeans(n_clusters=2, random_state=1).fit(X) # Get predicted classes y_hat = model.labels_ Calculate Silhouette Coefficient Formally, the $i$th observation&amp;rsquo;s silhouette coefficient is:</description>
     </item>
     
     <item>
@@ -442,7 +352,7 @@ Lasso regression is a common modeling technique to do regularization. The math b
       
       <guid>https://ericpena.github.io/machine_learning/logistic_regression/fast_c_hyperparameter_tuning.html</guid>
       <description>Sometimes the characteristics of a learning algorithm allows us to search for the best hyperparameters significantly faster than either brute force or randomized model search methods.
-scikit-learn&#39;s LogisticRegressionCV method includes a parameter Cs. If supplied a list, Cs is the candidate hyperparameter values to select from. If supplied a integer, Cs a list of that many candidate values will is drawn from a logarithmic scale between 0.0001 and and 10000 (a range of reasonable values for C).</description>
+scikit-learn&amp;rsquo;s LogisticRegressionCV method includes a parameter Cs. If supplied a list, Cs is the candidate hyperparameter values to select from. If supplied a integer, Cs a list of that many candidate values will is drawn from a logarithmic scale between 0.0001 and and 10000 (a range of reasonable values for C).</description>
     </item>
     
     <item>
@@ -489,7 +399,7 @@ Second, some preprocessing methods have their own parameter which often have to 
       
       <guid>https://ericpena.github.io/machine_learning/support_vector_machines/find_nearest_neighbors.html</guid>
       <description>Preliminaries # Load libraries from sklearn.neighbors import NearestNeighbors from sklearn import datasets from sklearn.preprocessing import StandardScaler import numpy as np Load Iris Dataset # Load data iris = datasets.load_iris() X = iris.data y = iris.target Standardize Iris Data It is important to standardize our data before we calculate any distances.
-# Create standardizer standardizer = StandardScaler() # Standardize features X_std = standardizer.fit_transform(X) Find Each Observation&#39;s Two Nearest Neighbors # Find three nearest neighbors based on euclidean distance (including itself) nn_euclidean = NearestNeighbors(n_neighbors=3, metric=&amp;#39;euclidean&amp;#39;).</description>
+# Create standardizer standardizer = StandardScaler() # Standardize features X_std = standardizer.fit_transform(X) Find Each Observation&amp;rsquo;s Two Nearest Neighbors # Find three nearest neighbors based on euclidean distance (including itself) nn_euclidean = NearestNeighbors(n_neighbors=3, metric=&amp;#39;euclidean&amp;#39;).</description>
     </item>
     
     <item>
@@ -549,26 +459,6 @@ $$w_j = \frac{n}{kn_{j}}$$</description>
     </item>
     
     <item>
-      <title>Handling Imbalanced Classes With Downsampling</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/handling_imbalanced_classes_with_downsampling.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/handling_imbalanced_classes_with_downsampling.html</guid>
-      <description>In downsampling, we randomly sample without replacement from the majority class (i.e. the class with more observations) to create a new subset of observation equal in size to the minority class.
-Preliminaries # Load libraries import numpy as np from sklearn.datasets import load_iris Load Iris Dataset # Load iris data iris = load_iris() # Create feature matrix X = iris.data # Create target vector y = iris.target Make Iris Dataset Imbalanced # Remove first 40 observations X = X[40:,:] y = y[40:] # Create binary target vector indicating if class 0 y = np.</description>
-    </item>
-    
-    <item>
-      <title>Handling Imbalanced Classes With Upsampling</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/handling_imbalanced_classes_with_upsampling.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/handling_imbalanced_classes_with_upsampling.html</guid>
-      <description>In upsampling, for every observation in the majority class, we randomly select an observation from the minority class with replacement. The end result is the same number of observations from the minority and majority classes.
-Preliminaries # Load libraries import numpy as np from sklearn.datasets import load_iris Load Iris Dataset # Load iris data iris = load_iris() # Create feature matrix X = iris.data # Create target vector y = iris.</description>
-    </item>
-    
-    <item>
       <title>Handling Missing Values In Time Series</title>
       <link>https://ericpena.github.io/machine_learning/preprocessing_dates_and_times/handling_missing_values_in_time_series.html</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
@@ -578,31 +468,12 @@ Preliminaries # Load libraries import numpy as np from sklearn.datasets import l
     </item>
     
     <item>
-      <title>Handling Outliers</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/handling_outliers.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/handling_outliers.html</guid>
-      <description>Preliminaries # Load library import pandas as pd Create Data # Create DataFrame houses = pd.DataFrame() houses[&amp;#39;Price&amp;#39;] = [534433, 392333, 293222, 4322032] houses[&amp;#39;Bathrooms&amp;#39;] = [2, 3.5, 2, 116] houses[&amp;#39;Square_Feet&amp;#39;] = [1500, 2500, 1500, 48000] houses .dataframe thead th { text-align: left; } .dataframe tbody tr th { vertical-align: top; }  Option 1: Drop # Drop observations greater than some value houses[houses[&amp;#39;Bathrooms&amp;#39;] &amp;lt; 20] .dataframe thead th { text-align: left; } .</description>
-    </item>
-    
-    <item>
       <title>Handling Time Zones</title>
       <link>https://ericpena.github.io/machine_learning/preprocessing_dates_and_times/handling_time_zones.html</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/machine_learning/preprocessing_dates_and_times/handling_time_zones.html</guid>
       <description>Preliminaries # Load libraries import pandas as pd from pytz import all_timezones View Timezones # Show ten time zones all_timezones[0:10] [&#39;Africa/Abidjan&#39;, &#39;Africa/Accra&#39;, &#39;Africa/Addis_Ababa&#39;, &#39;Africa/Algiers&#39;, &#39;Africa/Asmara&#39;, &#39;Africa/Asmera&#39;, &#39;Africa/Bamako&#39;, &#39;Africa/Bangui&#39;, &#39;Africa/Banjul&#39;, &#39;Africa/Bissau&#39;]  Create Timestamp With Time Zone # Create datetime pd.Timestamp(&amp;#39;2017-05-01 06:00:00&amp;#39;, tz=&amp;#39;Europe/London&amp;#39;) Timestamp(&#39;2017-05-01 06:00:00+0100&#39;, tz=&#39;Europe/London&#39;)  Create Timestamp Without Time Zone # Create datetime date = pd.Timestamp(&amp;#39;2017-05-01 06:00:00&amp;#39;) Add Time Zone # Set time zone date_in_london = date.tz_localize(&amp;#39;Europe/London&amp;#39;) Convert Time Zone # Change time zone date_in_london.</description>
-    </item>
-    
-    <item>
-      <title>Harris Corner Detector</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_images/harris_corner_detector.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_images/harris_corner_detector.html</guid>
-      <description>The Harris Corner Detector is a commonly used method of detecting the intersection of two edges. It looks for windows (also called neighborhoods or patches) where small movements of the window (imagine shaking the window) creates big changes in the contents of the pixels inside the window.
-Preliminaries # Load image import cv2 import numpy as np from matplotlib import pyplot as plt Load image # Load image as grayscale image_bgr = cv2.</description>
     </item>
     
     <item>
@@ -644,60 +515,12 @@ where $C$ is the penalty for misclassification, $w_j$ is a weight inversely prop
     </item>
     
     <item>
-      <title>Impute Missing Values With Means</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/impute_missing_values_with_means.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/impute_missing_values_with_means.html</guid>
-      <description>Mean imputation replaces missing values with the mean value of that feature/variable. Mean imputation is one of the most &amp;lsquo;naive&amp;rsquo; imputation methods because unlike more complex methods like k-nearest neighbors imputation, it does not use the information we have about an observation to estimate a value for it.
-Preliminaries import pandas as pd import numpy as np from sklearn.preprocessing import Imputer Create Data # Create an empty dataset df = pd.</description>
-    </item>
-    
-    <item>
-      <title>Imputing Missing Class Labels</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/imputing_missing_class_labels.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/imputing_missing_class_labels.html</guid>
-      <description>Preliminaries # Load libraries import numpy as np from sklearn.preprocessing import Imputer Create Feature Matrix With Missing Values # Create feature matrix with categorical feature X = np.array([[0, 2.10, 1.45], [1, 1.18, 1.33], [0, 1.22, 1.27], [0, -0.21, -1.19], [np.nan, 0.87, 1.31], [np.nan, -0.67, -0.22]]) Fill Missing Values&amp;rsquo; Class With Most Frequent Class # Create Imputer object imputer = Imputer(strategy=&amp;#39;most_frequent&amp;#39;, axis=0) # Fill missing values with most frequent class imputer.fit_transform(X) array([[ 0.</description>
-    </item>
-    
-    <item>
-      <title>Imputing Missing Class Labels Using k-Nearest Neighbors</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/imputing_missing_class_labels_using_k-nearest_neighbors.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/imputing_missing_class_labels_using_k-nearest_neighbors.html</guid>
-      <description>Preliminaries # Load libraries import numpy as np from sklearn.neighbors import KNeighborsClassifier Create Feature Matrix # Create feature matrix with categorical feature X = np.array([[0, 2.10, 1.45], [1, 1.18, 1.33], [0, 1.22, 1.27], [1, -0.21, -1.19]]) Create Feature Matrix With Missing Values # Create feature matrix with missing values in the categorical feature X_with_nan = np.array([[np.nan, 0.87, 1.31], [np.nan, -0.67, -0.22]]) Train k-Nearest Neighbor Classifier # Train KNN learner clf = KNeighborsClassifier(3, weights=&amp;#39;distance&amp;#39;) trained_model = clf.</description>
-    </item>
-    
-    <item>
-      <title>Installing OpenCV</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_images/installing_opencv.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_images/installing_opencv.html</guid>
-      <description>While there are a number of good libraries out there, OpenCV is the most popular and documented library for handling images. One of the biggest hurdles to using OpenCV is installing it. However, fortunately we can use Anaconda&#39;s package manager tool conda to install OpenCV in a single line of code in our terminal:
-conda install --channel https://conda.anaconda.org/menpo opencv3
-Afterwards, we can check the installation by opening a notebook, importing OpenCV, and checking the version number (3.</description>
-    </item>
-    
-    <item>
-      <title>Isolate Colors</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_images/isolate_colors.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_images/isolate_colors.html</guid>
-      <description>Preliminaries # Load image import cv2 import numpy as np from matplotlib import pyplot as plt Load Image # Load image image_bgr = cv2.imread(&amp;#39;images/plane_256x256.jpg&amp;#39;) Convert To HSV Color Format # Convert BGR to HSV image_hsv = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2HSV) Create Mask # Define range of blue values in HSV lower_blue = np.array([50,100,50]) upper_blue = np.array([130,255,255]) # Create mask mask = cv2.inRange(image_hsv, lower_blue, upper_blue) Apply Mask # Mask image image_bgr_masked = cv2.bitwise_and(image_bgr, image_bgr, mask=mask) Convert To RGB Format # Convert BGR to RGB image_rgb = cv2.</description>
-    </item>
-    
-    <item>
       <title>k-Means Clustering</title>
       <link>https://ericpena.github.io/machine_learning/clustering/k-means_clustering.html</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/machine_learning/clustering/k-means_clustering.html</guid>
-      <description>Preliminaries # Load libraries from sklearn import datasets from sklearn.preprocessing import StandardScaler from sklearn.cluster import KMeans Load Iris Flower Dataset # Load data iris = datasets.load_iris() X = iris.data Standardize Features # Standarize features scaler = StandardScaler() X_std = scaler.fit_transform(X) Conduct k-Means Clustering # Create k-mean object clt = KMeans(n_clusters=3, random_state=0, n_jobs=-1) # Train model model = clt.fit(X_std) Show Each Observation&#39;s Cluster Membership # View predict class model.labels_ array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 0, 2, 2, 2, 2, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 2, 0, 2, 0, 2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 2], dtype=int32)  Create New Observation # Create new observation new_observation = [[0.</description>
+      <description>Preliminaries # Load libraries from sklearn import datasets from sklearn.preprocessing import StandardScaler from sklearn.cluster import KMeans Load Iris Flower Dataset # Load data iris = datasets.load_iris() X = iris.data Standardize Features # Standarize features scaler = StandardScaler() X_std = scaler.fit_transform(X) Conduct k-Means Clustering # Create k-mean object clt = KMeans(n_clusters=3, random_state=0, n_jobs=-1) # Train model model = clt.fit(X_std) Show Each Observation&amp;rsquo;s Cluster Membership # View predict class model.labels_ array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 0, 2, 2, 2, 2, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 2, 0, 2, 0, 2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 2], dtype=int32)  Create New Observation # Create new observation new_observation = [[0.</description>
     </item>
     
     <item>
@@ -708,7 +531,7 @@ Afterwards, we can check the installation by opening a notebook, importing OpenC
       <guid>https://ericpena.github.io/machine_learning/nearest_neighbors/k-nearest_neighbors_classifer.html</guid>
       <description>K-nearest neighbors classifier (KNN) is a simple and powerful classification learner.
 KNN has three basic parts:
- $y_i$: The class of an observation (what we are trying to predict in the test data). $X_i$: The predictors/IVs/attributes of an observation. $K$: A positive number specified by the researcher. K denotes the number of observations closest to a particular observation that define its &amp;ldquo;neighborhood&amp;rdquo;. For example, K=2 means that each observation&#39;s has a neighorhood comprising of the two other observations closest to it.</description>
+ $y_i$: The class of an observation (what we are trying to predict in the test data). $X_i$: The predictors/IVs/attributes of an observation. $K$: A positive number specified by the researcher. K denotes the number of observations closest to a particular observation that define its &amp;ldquo;neighborhood&amp;rdquo;. For example, K=2 means that each observation&amp;rsquo;s has a neighorhood comprising of the two other observations closest to it.</description>
     </item>
     
     <item>
@@ -738,7 +561,7 @@ KNN has three basic parts:
       <description>Sources: scikit-learn, DrawMyData.
 The purpose of this tutorial is to give a brief introduction into the logic of statistical model building used in machine learning. If you want to read more about the theory behind this tutorial, check out An Introduction To Statistical Learning.
 Let us get started.
-Preliminary import pandas as pd from sklearn import linear_model import random import numpy as np %matplotlib inline Load Data With those libraries added, let us load the dataset (the dataset is avaliable in his site&#39;s GitHub repo).</description>
+Preliminary import pandas as pd from sklearn import linear_model import random import numpy as np %matplotlib inline Load Data With those libraries added, let us load the dataset (the dataset is avaliable in his site&amp;rsquo;s GitHub repo).</description>
     </item>
     
     <item>
@@ -751,15 +574,6 @@ Preliminary import pandas as pd from sklearn import linear_model import random i
     </item>
     
     <item>
-      <title>Load Images</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_images/load_images.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_images/load_images.html</guid>
-      <description>Preliminaries # Load library import cv2 import numpy as np from matplotlib import pyplot as plt Load Image As Greyscale # Load image as grayscale image = cv2.imread(&amp;#39;images/plane.jpg&amp;#39;, cv2.IMREAD_GRAYSCALE) # Show image plt.imshow(image, cmap=&amp;#39;gray&amp;#39;), plt.axis(&amp;#34;off&amp;#34;) plt.show() Load Image As RGB # Load image in color image_bgr = cv2.imread(&amp;#39;images/plane.jpg&amp;#39;, cv2.IMREAD_COLOR) # Convert to RGB image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB) # Show image plt.imshow(image_rgb), plt.axis(&amp;#34;off&amp;#34;) plt.show() View Image Data # Show image data image array([[140, 136, 146, .</description>
-    </item>
-    
-    <item>
       <title>Logistic Regression</title>
       <link>https://ericpena.github.io/machine_learning/logistic_regression/logistic_regression.html</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
@@ -767,7 +581,7 @@ Preliminary import pandas as pd from sklearn import linear_model import random i
       <guid>https://ericpena.github.io/machine_learning/logistic_regression/logistic_regression.html</guid>
       <description>Despite having &amp;ldquo;regression&amp;rdquo; in its name, a logistic regression is actually a widely used binary classifier (i.e. the target vector can only take two values). In a logistic regression, a linear model (e.g. $\beta_{0}+\beta_{1}x$) is included in a logistic (also called sigmoid) function, ${\frac{1}{1+e^{-z}}}$, such that:
 $$P(y_i=1 \mid X)={\frac{1}{1+e^{-(\beta_{0}+\beta_{1}x)}}}$$
-where $P(y_i=1 \mid X)$ is the probability of the $i$th observation&#39;s target value, $y_i$, being class 1, $X$ is the training data, $\beta_0$ and $\beta_1$ are the parameters to be learned, and $e$ is Euler&#39;s number.</description>
+where $P(y_i=1 \mid X)$ is the probability of the $i$th observation&amp;rsquo;s target value, $y_i$, being class 1, $X$ is the training data, $\beta_0$ and $\beta_1$ are the parameters to be learned, and $e$ is Euler&amp;rsquo;s number.</description>
     </item>
     
     <item>
@@ -776,7 +590,7 @@ where $P(y_i=1 \mid X)$ is the probability of the $i$th observation&#39;s target
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/machine_learning/logistic_regression/logistic_regression_on_very_large_data.html</guid>
-      <description>scikit-learn&#39;s LogisticRegression offers a number of techniques for training a logistic regression, called solvers. Most of the time scikit-learn will select the best solver automatically for us or warn us that you cannot do some thing with that solver. However, there is one particular case we should be aware of.
+      <description>scikit-learn&amp;rsquo;s LogisticRegression offers a number of techniques for training a logistic regression, called solvers. Most of the time scikit-learn will select the best solver automatically for us or warn us that you cannot do some thing with that solver. However, there is one particular case we should be aware of.
 While an exact explanation is beyond the bounds of this book, stochastic average gradient descent allows us to train a model much faster than other solvers when our data is very large.</description>
     </item>
     
@@ -825,7 +639,7 @@ Preliminaries import numpy as np from sklearn.linear_model import LogisticRegres
       <guid>https://ericpena.github.io/machine_learning/naive_bayes/multinomial_logistic_regression.html</guid>
       <description>In multinomial logistic regression (MLR) the logistic function we saw in Recipe 15.1 is replaced with a softmax function:
 $$P(y_i=k \mid X)={\frac {e^{\beta_{k}x_{i}}}{{\sum_{j=1}^{K}}e^{\beta_{j}x_{i}}}}$$
-where $P(y_i=k \mid X)$ is the probability the $i$th observation&#39;s target value, $y_i$, is class $k$, and $K$ is the total number of classes. One practical advantage of the MLR is that its predicted probabilities using the predict_proba method are more reliable (i.e. better calibrated).
+where $P(y_i=k \mid X)$ is the probability the $i$th observation&amp;rsquo;s target value, $y_i$, is class $k$, and $K$ is the total number of classes. One practical advantage of the MLR is that its predicted probabilities using the predict_proba method are more reliable (i.e. better calibrated).
 Preliminaries # Load libraries from sklearn.</description>
     </item>
     
@@ -845,7 +659,7 @@ Preliminaries # Load libraries import numpy as np from sklearn.naive_bayes impor
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/machine_learning/naive_bayes/naive_bayes_classifier_from_scratch.html</guid>
-      <description>Naive bayes is simple classifier known for doing well when only a small number of observations is available. In this tutorial we will create a gaussian naive bayes classifier from scratch and use it to predict the class of a previously unseen data point. This tutorial is based on an example on Wikipedia&#39;s naive bayes classifier page, I have implemented it in Python and tweaked some notation to improve explanation.</description>
+      <description>Naive bayes is simple classifier known for doing well when only a small number of observations is available. In this tutorial we will create a gaussian naive bayes classifier from scratch and use it to predict the class of a previously unseen data point. This tutorial is based on an example on Wikipedia&amp;rsquo;s naive bayes classifier page, I have implemented it in Python and tweaked some notation to improve explanation.</description>
     </item>
     
     <item>
@@ -859,49 +673,12 @@ Preliminaries # Load libraries import numpy as np from sklearn.naive_bayes impor
     </item>
     
     <item>
-      <title>Normalizing Observations</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/normalizing_observations.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/normalizing_observations.html</guid>
-      <description>Preliminaries # Load libraries from sklearn.preprocessing import Normalizer import numpy as np Create Feature Matrix # Create feature matrix X = np.array([[0.5, 0.5], [1.1, 3.4], [1.5, 20.2], [1.63, 34.4], [10.9, 3.3]]) Normalize Observations Normalizer rescales the values on individual observations to have unit norm (the sum of their lengths is one).
-# Create normalizer normalizer = Normalizer(norm=&amp;#39;l2&amp;#39;) # Transform feature matrix normalizer.transform(X) array([[ 0.70710678, 0.70710678], [ 0.30782029, 0.95144452], [ 0.07405353, 0.</description>
-    </item>
-    
-    <item>
       <title>One Vs. Rest Logistic Regression</title>
       <link>https://ericpena.github.io/machine_learning/logistic_regression/one-vs-rest_logistic_regression.html</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/machine_learning/logistic_regression/one-vs-rest_logistic_regression.html</guid>
       <description>On their own, logistic regressions are only binary classifiers, meaning they cannot handle target vectors with more than two classes. However, there are clever extensions to logistic regression to do just that. In one-vs-rest logistic regression (OVR) a separate model is trained for each class predicted whether an observation is that class or not (thus making it a binary classification problem). It assumes that each classification problem (e.g. class 0 or not) is independent.</description>
-    </item>
-    
-    <item>
-      <title>One-Hot Encode Features With Multiple Labels</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/one-hot_encode_features_with_multiple_labels.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/one-hot_encode_features_with_multiple_labels.html</guid>
-      <description>Preliminaries # Load libraries from sklearn.preprocessing import MultiLabelBinarizer import numpy as np Create Data # Create NumPy array y = [(&amp;#39;Texas&amp;#39;, &amp;#39;Florida&amp;#39;), (&amp;#39;California&amp;#39;, &amp;#39;Alabama&amp;#39;), (&amp;#39;Texas&amp;#39;, &amp;#39;Florida&amp;#39;), (&amp;#39;Delware&amp;#39;, &amp;#39;Florida&amp;#39;), (&amp;#39;Texas&amp;#39;, &amp;#39;Alabama&amp;#39;)] One-hot Encode Data # Create MultiLabelBinarizer object one_hot = MultiLabelBinarizer() # One-hot encode data one_hot.fit_transform(y) array([[0, 0, 0, 1, 1], [1, 1, 0, 0, 0], [0, 0, 0, 1, 1], [0, 0, 1, 1, 0], [1, 0, 0, 0, 1]])  View Column Headers # View classes one_hot.</description>
-    </item>
-    
-    <item>
-      <title>One-Hot Encode Nominal Categorical Features</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/one-hot_encode_nominal_categorical_features.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/one-hot_encode_nominal_categorical_features.html</guid>
-      <description>Preliminaries # Load libraries import numpy as np import pandas as pd from sklearn.preprocessing import OneHotEncoder Create Data With One Class Label # Create NumPy array x = np.array([[&amp;#39;Texas&amp;#39;], [&amp;#39;California&amp;#39;], [&amp;#39;Texas&amp;#39;], [&amp;#39;Delaware&amp;#39;], [&amp;#39;Texas&amp;#39;]]) One-hot Encode Data (Method 1) # Create LabelBinzarizer object one_hot = OneHotEncoder() # One-hot encode data one_hot.fit_transform(x) &amp;lt;5x3 sparse matrix of type &#39;&amp;lt;class &#39;numpy.float64&#39;&amp;gt;&#39; with 5 stored elements in Compressed Sparse Row format&amp;gt;  View Column Headers # View classes one_hot.</description>
-    </item>
-    
-    <item>
-      <title>Parse HTML</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_text/parse_html.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_text/parse_html.html</guid>
-      <description>Preliminaries # Load library from bs4 import BeautifulSoup Create HTML # Create some HTML code html = &amp;#34;&amp;lt;div class=&amp;#39;full_name&amp;#39;&amp;gt;&amp;lt;span style=&amp;#39;font-weight:bold&amp;#39;&amp;gt;Masego&amp;lt;/span&amp;gt; Azra&amp;lt;/div&amp;gt;&amp;#34; Parse HTML # Parse html soup = BeautifulSoup(html, &amp;#34;lxml&amp;#34;) # Find the div with the class &amp;#34;full_name&amp;#34;, show text soup.find(&amp;#34;div&amp;#34;, { &amp;#34;class&amp;#34; : &amp;#34;full_name&amp;#34; }).text &#39;Masego Azra&#39;  </description>
     </item>
     
     <item>
@@ -959,26 +736,6 @@ Preliminaries # Load libraries import numpy as np from sklearn.naive_bayes impor
     </item>
     
     <item>
-      <title>Preprocessing Categorical Features</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/preprocessing_categorical_features.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/preprocessing_categorical_features.html</guid>
-      <description>Often, machine learning methods (e.g. logistic regression, SVM with a linear kernel, etc) will require that categorical variables be converted into dummy variables (also called OneHot encoding). For example, a single feature Fruit would be converted into three features, Apples, Oranges, and Bananas, one for each category in the categorical feature.
-There are common ways to preprocess categorical features: using pandas or scikit-learn.
-Preliminaries from sklearn import preprocessing from sklearn.pipeline import Pipeline import pandas as pd Create Data raw_data = {&amp;#39;first_name&amp;#39;: [&amp;#39;Jason&amp;#39;, &amp;#39;Molly&amp;#39;, &amp;#39;Tina&amp;#39;, &amp;#39;Jake&amp;#39;, &amp;#39;Amy&amp;#39;], &amp;#39;last_name&amp;#39;: [&amp;#39;Miller&amp;#39;, &amp;#39;Jacobson&amp;#39;, &amp;#39;Ali&amp;#39;, &amp;#39;Milner&amp;#39;, &amp;#39;Cooze&amp;#39;], &amp;#39;age&amp;#39;: [42, 52, 36, 24, 73], &amp;#39;city&amp;#39;: [&amp;#39;San Francisco&amp;#39;, &amp;#39;Baltimore&amp;#39;, &amp;#39;Miami&amp;#39;, &amp;#39;Douglas&amp;#39;, &amp;#39;Boston&amp;#39;]} df = pd.</description>
-    </item>
-    
-    <item>
-      <title>Preprocessing Iris Data</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/preprocessing_iris_data.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/preprocessing_iris_data.html</guid>
-      <description>Preliminaries from sklearn import datasets import numpy as np from sklearn.cross_validation import train_test_split from sklearn.preprocessing import StandardScaler Load Data # Load the iris data iris = datasets.load_iris() # Create a variable for the feature data X = iris.data # Create a variable for the target data y = iris.target Split Data For Cross Validation # Random split the data into four new datasets, training features, training outcome, test features,  # and test outcome.</description>
-    </item>
-    
-    <item>
       <title>Radius-Based Nearest Neighbor Classifier</title>
       <link>https://ericpena.github.io/machine_learning/nearest_neighbors/radius_based_nearest_neighbor_classifier.html</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
@@ -1002,7 +759,7 @@ Preliminaries from sklearn import preprocessing from sklearn.pipeline import Pip
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/machine_learning/trees_and_forests/random_forest_classifier_example.html</guid>
-      <description>This tutorial is based on Yhat&#39;s 2013 tutorial on Random Forests in Python. If you want a good summary of the theory and uses of random forests, I suggest you check out their guide. In the tutorial below, I annotate, correct, and expand on a short code example of random forests they present at the end of the article. Specifically, I 1) update the code so it runs in the latest version of pandas and Python, 2) write detailed comments explaining what is happening in each step, and 3) expand the code in a number of ways.</description>
+      <description>This tutorial is based on Yhat&amp;rsquo;s 2013 tutorial on Random Forests in Python. If you want a good summary of the theory and uses of random forests, I suggest you check out their guide. In the tutorial below, I annotate, correct, and expand on a short code example of random forests they present at the end of the article. Specifically, I 1) update the code so it runs in the latest version of pandas and Python, 2) write detailed comments explaining what is happening in each step, and 3) expand the code in a number of ways.</description>
     </item>
     
     <item>
@@ -1033,51 +790,6 @@ Preliminaries from sklearn import preprocessing from sklearn.pipeline import Pip
     </item>
     
     <item>
-      <title>Remove Backgrounds</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_images/remove_backgrounds.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_images/remove_backgrounds.html</guid>
-      <description>Preliminaries # Load image import cv2 import numpy as np from matplotlib import pyplot as plt Load Image # Load image image_bgr = cv2.imread(&amp;#39;images/plane_256x256.jpg&amp;#39;) Convert To RGB # Convert to RGB image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB) Draw Rectangle Around Foreground # Rectange values: start x, start y, width, height rectangle = (0, 56, 256, 150) Apply GrabCut # Create initial mask mask = np.zeros(image_rgb.shape[:2], np.uint8) # Create temporary arrays used by grabCut bgdModel = np.</description>
-    </item>
-    
-    <item>
-      <title>Remove Punctuation</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_text/remove_punctuation.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_text/remove_punctuation.html</guid>
-      <description>Preliminaries # Load libraries import string import numpy as np Create Text Data # Create text text_data = [&amp;#39;Hi!!!! I. Love. This. Song....&amp;#39;, &amp;#39;10000%Agree!!!! #LoveIT&amp;#39;, &amp;#39;Right?!?!&amp;#39;] Remove Punctuation # Create function using string.punctuation to remove all punctuation def remove_punctuation(sentence: str) -&amp;gt; str: return sentence.translate(str.maketrans(&amp;#39;&amp;#39;, &amp;#39;&amp;#39;, string.punctuation)) # Apply function [remove_punctuation(sentence) for sentence in text_data] [&#39;Hi I Love This Song&#39;, &#39;10000 Agree LoveIT&#39;, &#39;Right&#39;]  </description>
-    </item>
-    
-    <item>
-      <title>Remove Stop Words</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_text/remove_stop_words.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_text/remove_stop_words.html</guid>
-      <description>Preliminaries # Load library from nltk.corpus import stopwords # You will have to download the set of stop words the first time import nltk nltk.download(&amp;#39;stopwords&amp;#39;) [nltk_data] Downloading package stopwords to [nltk_data] /Users/chrisalbon/nltk_data... [nltk_data] Package stopwords is already up-to-date! True  Create Word Tokens # Create word tokens tokenized_words = [&amp;#39;i&amp;#39;, &amp;#39;am&amp;#39;, &amp;#39;going&amp;#39;, &amp;#39;to&amp;#39;, &amp;#39;go&amp;#39;, &amp;#39;to&amp;#39;, &amp;#39;the&amp;#39;, &amp;#39;store&amp;#39;, &amp;#39;and&amp;#39;, &amp;#39;park&amp;#39;] Load Stop Words # Load stop words stop_words = stopwords.words(&amp;#39;english&amp;#39;) # Show stop words stop_words[:5] [&#39;i&#39;, &#39;me&#39;, &#39;my&#39;, &#39;myself&#39;, &#39;we&#39;]  Remove Stop Words # Remove stop words [word for word in tokenized_words if word not in stop_words] [&#39;going&#39;, &#39;go&#39;, &#39;store&#39;, &#39;park&#39;]  </description>
-    </item>
-    
-    <item>
-      <title>Replace Characters</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_text/replace_characters.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_text/replace_characters.html</guid>
-      <description>Preliminaries # Import library import re Create Text # Create text text_data = [&amp;#39;Interrobang. By Aishwarya Henriette&amp;#39;, &amp;#39;Parking And Going. By Karl Gautier&amp;#39;, &amp;#39;Today Is The night. By Jarek Prakash&amp;#39;] Replace Character (Method 1) # Remove periods remove_periods = [string.replace(&amp;#39;.&amp;#39;, &amp;#39;&amp;#39;) for string in text_data] # Show text remove_periods [&#39;Interrobang By Aishwarya Henriette&#39;, &#39;Parking And Going By Karl Gautier&#39;, &#39;Today Is The night By Jarek Prakash&#39;]  Replace Character (Method 2) # Create function def replace_letters_with_X(string: str) -&amp;gt; str: return re.</description>
-    </item>
-    
-    <item>
-      <title>Rescale A Feature</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/rescale_a_feature.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/rescale_a_feature.html</guid>
-      <description>Preliminaries # Load libraries from sklearn import preprocessing import numpy as np Create Feature # Create feature x = np.array([[-500.5], [-100.1], [0], [100.1], [900.9]]) Rescale Feature Using Min-Max # Create scaler minmax_scale = preprocessing.MinMaxScaler(feature_range=(0, 1)) # Scale feature x_scale = minmax_scale.fit_transform(x) # Show feature x_scale array([[ 0. ], [ 0.28571429], [ 0.35714286], [ 0.42857143], [ 1. ]])  </description>
-    </item>
-    
-    <item>
       <title>Ridge Regression</title>
       <link>https://ericpena.github.io/machine_learning/linear_regression/ridge_regression.html</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
@@ -1093,15 +805,6 @@ Preliminaries from sklearn import preprocessing from sklearn.pipeline import Pip
       
       <guid>https://ericpena.github.io/machine_learning/preprocessing_dates_and_times/rolling_time_windows.html</guid>
       <description>Preliminaries # Load library import pandas as pd Create Date Data # Create datetimes time_index = pd.date_range(&amp;#39;01/01/2010&amp;#39;, periods=5, freq=&amp;#39;M&amp;#39;) # Create data frame, set index df = pd.DataFrame(index=time_index) # Create feature df[&amp;#39;Stock_Price&amp;#39;] = [1,2,3,4,5] Create A Rolling Time Window Of Two Rows # Calculate rolling mean df.rolling(window=2).mean() .dataframe thead th { text-align: left; } .dataframe tbody tr th { vertical-align: top; }  # Identify max value in rolling time window df.</description>
-    </item>
-    
-    <item>
-      <title>Save Images</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_images/save_images.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_images/save_images.html</guid>
-      <description>Preliminaries # Load library import cv2 import numpy as np from matplotlib import pyplot as plt Load Image As Greyscale # Load image as grayscale image = cv2.imread(&amp;#39;images/plane.jpg&amp;#39;, cv2.IMREAD_GRAYSCALE) # Show image plt.imshow(image, cmap=&amp;#39;gray&amp;#39;), plt.axis(&amp;#34;off&amp;#34;) plt.show() Save Image # Save image cv2.imwrite(&amp;#39;images/plane_new.jpg&amp;#39;, image) True  </description>
     </item>
     
     <item>
@@ -1152,58 +855,12 @@ Specifically, we can run LinearDiscriminantAnalysis with n_components set to Non
     </item>
     
     <item>
-      <title>Sharpen Images</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_images/sharpen_images.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_images/sharpen_images.html</guid>
-      <description>Preliminaries # Load image import cv2 import numpy as np from matplotlib import pyplot as plt Load Image As Greyscale # Load image as grayscale image = cv2.imread(&amp;#39;images/plane_256x256.jpg&amp;#39;, cv2.IMREAD_GRAYSCALE) Sharpen Image # Create kernel kernel = np.array([[0, -1, 0], [-1, 5,-1], [0, -1, 0]]) # Sharpen image image_sharp = cv2.filter2D(image, -1, kernel) View Image # Show image plt.imshow(image_sharp, cmap=&amp;#39;gray&amp;#39;), plt.axis(&amp;#34;off&amp;#34;) plt.show() </description>
-    </item>
-    
-    <item>
-      <title>Shi-Tomasi Corner Detector</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_images/ski-tomasi_corner_detector.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_images/ski-tomasi_corner_detector.html</guid>
-      <description>Preliminaries # Load image import cv2 import numpy as np from matplotlib import pyplot as plt Load image # Load images image_bgr = cv2.imread(&amp;#39;images/plane_256x256.jpg&amp;#39;) image_gray = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2GRAY) Define Corner Parameters # Number of corners to detect corners_to_detect = 10 minimum_quality_score = 0.05 minimum_distance = 25 Detect Corners # Detect corners corners = cv2.goodFeaturesToTrack(image_gray, corners_to_detect, minimum_quality_score, minimum_distance) corners = np.float32(corners) Mark Corners # Draw white circle at each corner for corner in corners: x, y = corner[0] cv2.</description>
-    </item>
-    
-    <item>
       <title>Split Data Into Training And Test Sets</title>
       <link>https://ericpena.github.io/machine_learning/model_evaluation/split_data_into_training_and_test_sets.html</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/machine_learning/model_evaluation/split_data_into_training_and_test_sets.html</guid>
       <description>Preliminaries # Load libraries from sklearn import datasets from sklearn.preprocessing import StandardScaler from sklearn.model_selection import train_test_split Load Digits Dataset # Load the digits dataset digits = datasets.load_digits() # Create the features matrix X = digits.data # Create the target vector y = digits.target Split Into Training And Test Sets # Create training and test sets X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=1) Fit Standardizer To Training Set # Create standardizer standardizer = StandardScaler() # Fit standardizer to training set standardizer.</description>
-    </item>
-    
-    <item>
-      <title>Standardize A Feature</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_structured_data/standardize_a_feature.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_structured_data/standardize_a_feature.html</guid>
-      <description>Preliminaries # Load libraries from sklearn import preprocessing import numpy as np Create Feature # Create feature x = np.array([[-500.5], [-100.1], [0], [100.1], [900.9]]) Standardize Feature # Create scaler scaler = preprocessing.StandardScaler() # Transform the feature standardized = scaler.fit_transform(x) # Show feature standardized array([[-1.26687088], [-0.39316683], [-0.17474081], [ 0.0436852 ], [ 1.79109332]])  </description>
-    </item>
-    
-    <item>
-      <title>Stemming Words</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_text/stemming_words.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_text/stemming_words.html</guid>
-      <description>Preliminaries # Load library from nltk.stem.porter import PorterStemmer Create Text Data # Create word tokens tokenized_words = [&amp;#39;i&amp;#39;, &amp;#39;am&amp;#39;, &amp;#39;humbled&amp;#39;, &amp;#39;by&amp;#39;, &amp;#39;this&amp;#39;, &amp;#39;traditional&amp;#39;, &amp;#39;meeting&amp;#39;] Stem Words Stemming reduces a word to its stem by identifying and removing affixes (e.g. gerunds) while keeping the root meaning of the word. NLTK&#39;s PorterStemmer implements the widely used Porter stemming algorithm.
-# Create stemmer porter = PorterStemmer() # Apply stemmer [porter.stem(word) for word in tokenized_words] [&#39;i&#39;, &#39;am&#39;, &#39;humbl&#39;, &#39;by&#39;, &#39;thi&#39;, &#39;tradit&#39;, &#39;meet&#39;]  </description>
-    </item>
-    
-    <item>
-      <title>Strip Whitespace</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_text/strip_whitespace.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_text/strip_whitespace.html</guid>
-      <description>Create Text # Create text text_data = [&amp;#39;Interrobang. By Aishwarya Henriette &amp;#39;, &amp;#39;Parking And Going. By Karl Gautier&amp;#39;, &amp;#39;Today Is The night. By Jarek Prakash &amp;#39;] Remove Whitespace # Strip whitespaces strip_whitespace = [string.strip() for string in text_data] # Show text strip_whitespace [&#39;Interrobang. By Aishwarya Henriette&#39;, &#39;Parking And Going. By Karl Gautier&#39;, &#39;Today Is The night. By Jarek Prakash&#39;]  </description>
     </item>
     
     <item>
@@ -1221,26 +878,8 @@ Specifically, we can run LinearDiscriminantAnalysis with n_components set to Non
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/machine_learning/support_vector_machines/svc_parameters_using_rbf_kernel.html</guid>
-      <description>In this tutorial we will visually explore the effects of the two parameters from the support vector classifier (SVC) when using the radial basis function kernel (RBF). This tutorial draws heavily on the code used in Sebastian Raschka&#39;s book Python Machine Learning.
+      <description>In this tutorial we will visually explore the effects of the two parameters from the support vector classifier (SVC) when using the radial basis function kernel (RBF). This tutorial draws heavily on the code used in Sebastian Raschka&amp;rsquo;s book Python Machine Learning.
 Preliminaries # Import packages to visualize the classifer from matplotlib.colors import ListedColormap import matplotlib.pyplot as plt import warnings # Import packages to do the classifying import numpy as np from sklearn.</description>
-    </item>
-    
-    <item>
-      <title>Tag Parts Of Speech</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_text/tag_parts_of_speech.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_text/tag_parts_of_speech.html</guid>
-      <description>Preliminaries # Load libraries from nltk import pos_tag from nltk import word_tokenize Create Text Data # Create text text_data = &amp;#34;Chris loved outdoor running&amp;#34; Tag Parts Of Speech # Use pre-trained part of speech tagger text_tagged = pos_tag(word_tokenize(text_data)) # Show parts of speech text_tagged [(&#39;Chris&#39;, &#39;NNP&#39;), (&#39;loved&#39;, &#39;VBD&#39;), (&#39;outdoor&#39;, &#39;RP&#39;), (&#39;running&#39;, &#39;VBG&#39;)]  Common Penn Treebank Parts Of Speech Tags The output is a list of tuples with the word and the tag of the part of speech.</description>
-    </item>
-    
-    <item>
-      <title>Term Frequency Inverse Document Frequency</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_text/tf-idf.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_text/tf-idf.html</guid>
-      <description>Preliminaries # Load libraries import numpy as np from sklearn.feature_extraction.text import TfidfVectorizer import pandas as pd Create Text Data # Create text text_data = np.array([&amp;#39;I love Brazil. Brazil!&amp;#39;, &amp;#39;Sweden is best&amp;#39;, &amp;#39;Germany beats both&amp;#39;]) Create Feature Matrix # Create the tf-idf feature matrix tfidf = TfidfVectorizer() feature_matrix = tfidf.fit_transform(text_data) # Show tf-idf feature matrix feature_matrix.toarray() array([[ 0. , 0. , 0. , 0.89442719, 0. , 0. , 0.4472136 , 0. ], [ 0.</description>
     </item>
     
     <item>
@@ -1249,17 +888,8 @@ Preliminaries # Import packages to visualize the classifer from matplotlib.color
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/machine_learning/trees_and_forests/titanic_competition_with_random_forest.html</guid>
-      <description>Preliminaries import pandas as pd import numpy as np from sklearn import preprocessing from sklearn.ensemble import RandomForestClassifier from sklearn.model_selection import GridSearchCV, cross_val_score import csv as csv Get The Data You can get the data on Kaggle&#39;s site.
+      <description>Preliminaries import pandas as pd import numpy as np from sklearn import preprocessing from sklearn.ensemble import RandomForestClassifier from sklearn.model_selection import GridSearchCV, cross_val_score import csv as csv Get The Data You can get the data on Kaggle&amp;rsquo;s site.
 # Load the data train = pd.read_csv(&amp;#39;data/train.csv&amp;#39;) test = pd.read_csv(&amp;#39;data/test.csv&amp;#39;) Data Cleaning # Create a list of the features we will eventually want for our model features = [&amp;#39;Age&amp;#39;, &amp;#39;SibSp&amp;#39;,&amp;#39;Parch&amp;#39;,&amp;#39;Fare&amp;#39;,&amp;#39;male&amp;#39;,&amp;#39;embarked_Q&amp;#39;,&amp;#39;embarked_S&amp;#39;,&amp;#39;Pclass_2&amp;#39;, &amp;#39;Pclass_3&amp;#39;] Sex Here we convert the gender labels (male, female) into a dummy variable (1, 0).</description>
-    </item>
-    
-    <item>
-      <title>Tokenize Text</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_text/tokenize_text.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_text/tokenize_text.html</guid>
-      <description>Preliminaries # Load library from nltk.tokenize import word_tokenize, sent_tokenize Create Text Data # Create text string = &amp;#34;The science of today is the technology of tomorrow. Tomorrow is today.&amp;#34; Tokenize Words # Tokenize words word_tokenize(string) [&#39;The&#39;, &#39;science&#39;, &#39;of&#39;, &#39;today&#39;, &#39;is&#39;, &#39;the&#39;, &#39;technology&#39;, &#39;of&#39;, &#39;tomorrow&#39;, &#39;.&#39;, &#39;Tomorrow&#39;, &#39;is&#39;, &#39;today&#39;, &#39;.&#39;]  Tokenize Sentences # Tokenize sentences sent_tokenize(string) [&#39;The science of today is the technology of tomorrow.&#39;, &#39;Tomorrow is today.&#39;]  </description>
     </item>
     
     <item>
@@ -1269,15 +899,6 @@ Preliminaries # Import packages to visualize the classifer from matplotlib.color
       
       <guid>https://ericpena.github.io/machine_learning/feature_engineering/lda_for_dimensionality_reduction.html</guid>
       <description>Preliminaries # Load libraries from sklearn import datasets from sklearn.discriminant_analysis import LinearDiscriminantAnalysis Load Iris Data # Load the Iris flower dataset: iris = datasets.load_iris() X = iris.data y = iris.target Create A Linear # Create an LDA that will reduce the data down to 1 feature lda = LinearDiscriminantAnalysis(n_components=1) # run an LDA and use it to transform the features X_lda = lda.fit(X, y).transform(X) View Results # Print the number of features print(&amp;#39;Original number of features:&amp;#39;, X.</description>
-    </item>
-    
-    <item>
-      <title>Using Mean Color As A Feature</title>
-      <link>https://ericpena.github.io/machine_learning/preprocessing_images/using_mean_color_as_a_feature.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/preprocessing_images/using_mean_color_as_a_feature.html</guid>
-      <description>Preliminaries # Load image import cv2 import numpy as np from matplotlib import pyplot as plt Load image # Load image as BGR image_bgr = cv2.imread(&amp;#39;images/plane_256x256.jpg&amp;#39;, cv2.IMREAD_COLOR) Calculate Mean Color Of Each Color Channel # Calculate the mean of each channel channels = cv2.mean(image_bgr) # Swap blue and red values (making it RGB, not BGR) observation = np.array([(channels[2], channels[1], channels[0])]) Show Values # Show mean channel values observation array([[ 90.53204346, 133.</description>
     </item>
     
     <item>

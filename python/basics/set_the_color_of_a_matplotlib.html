@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Set The Color Of A Matplotlib Plot"/>
 <meta name="twitter:description" content="Set the color of a MatPlotLib plot."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -172,7 +172,7 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">r</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="n">theta</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="n">area</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">*</span> <span class="n">r</span><span class="o">*</span><span class="o">*</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">area</span> <span class="o">=</span> <span class="mi">200</span> <span class="o">*</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="n">theta</span>
 </code></pre></div><h3 id="create-a-scatterplot-using-the-a-colormap">Create a scatterplot using the a colormap.</h3>
 <p>Full list of colormaps: <a href="http://wiki.scipy.org/Cookbook/Matplotlib/Show_colormaps">http://wiki.scipy.org/Cookbook/Matplotlib/Show_colormaps</a></p>

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Handle Imbalanced Classes In Random Forest"/>
 <meta name="twitter:description" content="Handle imbalanced classes in random forests in scikit-learn."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -171,22 +171,22 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
 </code></pre></div><h2 id="load-iris-flower-dataset">Load Iris Flower Dataset</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load data</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">(</span><span class="p">)</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
 </code></pre></div><h2 id="adjust-iris-dataset-to-make-classes-imbalanced">Adjust Iris Dataset To Make Classes Imbalanced</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Make class highly imbalanced by removing first 40 observations</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">40</span><span class="p">:</span><span class="p">,</span><span class="p">:</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">40</span><span class="p">:</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">40</span><span class="p">:,:]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">40</span><span class="p">:]</span>
 
 <span class="c1"># Create target vector indicating if class 0, otherwise 1</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="p">(</span><span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </code></pre></div><h2 id="train-random-forest-while-balancing-classes">Train Random Forest While Balancing Classes</h2>
 <p>When using <code>RandomForestClassifier</code> a useful setting is <code>class_weight=balanced</code> wherein classes are automatically weighted inversely proportional to how frequently they appear in the data. Specifically:</p>
 <p>$$w_j = \frac{n}{kn_{j}}$$</p>
 <p>where $w_j$ is the weight to class $j$, $n$ is the number of observations, $n_j$ is the number of observations in class $j$, and $k$ is the total number of classes.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create decision tree classifer object</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">balanced</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="s2">&#34;balanced&#34;</span><span class="p">)</span>
 
 <span class="c1"># Train model</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>

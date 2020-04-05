@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Generator Expressions"/>
 <meta name="twitter:description" content="Generator expressions in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -165,9 +165,9 @@ MathJax.Hub.Config({
   <div class="content">
       
   <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a list of students</span>
-<span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Abe</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Bob</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Christina</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Derek</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Eleanor</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Abe&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Christina&#39;</span><span class="p">,</span> <span class="s1">&#39;Derek&#39;</span><span class="p">,</span> <span class="s1">&#39;Eleanor&#39;</span><span class="p">]</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a generator expression that yields lower-case versions of the student&#39;s names</span>
-<span class="n">lowercase_names</span> <span class="o">=</span> <span class="p">(</span><span class="n">student</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="p">)</span> <span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">students</span><span class="p">)</span>
+<span class="n">lowercase_names</span> <span class="o">=</span> <span class="p">(</span><span class="n">student</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">students</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View the generator object</span>
 <span class="n">lowercase_names</span>
 </code></pre></div><pre><code>&lt;generator object &lt;genexpr&gt; at 0x104837518&gt;

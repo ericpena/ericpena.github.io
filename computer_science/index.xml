@@ -17,7 +17,7 @@
       
       <guid>https://ericpena.github.io/computer_science/algorithms/big-o_notation.html</guid>
       <description>Big-O notation is used to classify the worst-case &amp;ldquo;speed&amp;rdquo; of an algorithm by looking at the order of magnitude of execution time.
-From best to worst, some common Big-O&#39;s are:
+From best to worst, some common Big-O&amp;rsquo;s are:
  O(1) O(log n) O(n) O(n log n) O(n2) O(n3) O(2n)  Below are some examples of a few of these.
 Create Data # Create a list 100 elements long n = list(range(100)) O(1) - Constant Time-Complexity The length of n has no bearing on the number of steps required to complete the function.</description>
     </item>

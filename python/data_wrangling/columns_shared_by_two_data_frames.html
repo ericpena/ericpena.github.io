@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Columns Shared By Two Data Frames"/>
 <meta name="twitter:description" content="Find the columns shared by two data frames in Pandas."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -169,19 +169,19 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </code></pre></div><h2 id="create-data-frames">Create Data Frames</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a data frame</span>
-<span class="n">dataframe_one</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="p">)</span>
-<span class="n">dataframe_one</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">1</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">1</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">1</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">1</span><span class="s1">&#39;</span><span class="p">]</span>
-<span class="n">dataframe_one</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">B</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">b</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">b</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">b</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">dataframe_one</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">dataframe_one</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">]</span>
+<span class="n">dataframe_one</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
 
 <span class="c1"># Create a second data frame</span>
-<span class="n">dataframe_two</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="p">)</span>
-<span class="n">dataframe_two</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">2</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">2</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">2</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">2</span><span class="s1">&#39;</span><span class="p">]</span>
-<span class="n">dataframe_two</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">B</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">b</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">b</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">b</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">dataframe_two</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">dataframe_two</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">]</span>
+<span class="n">dataframe_two</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
 </code></pre></div><h2 id="find-shared-columns">Find Shared Columns</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Convert each data frame&#39;s columns into sets, then find</span>
 <span class="c1"># the intersection of those two sets. This will be the</span>
 <span class="c1"># set of columns shared by both data frames.</span>
-<span class="nb">set</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">dataframe_one</span><span class="p">)</span><span class="p">,</span> <span class="nb">set</span><span class="p">(</span><span class="n">dataframe_two</span><span class="p">)</span><span class="p">)</span>
+<span class="nb">set</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">dataframe_one</span><span class="p">),</span> <span class="nb">set</span><span class="p">(</span><span class="n">dataframe_two</span><span class="p">))</span>
 </code></pre></div><pre><code>{'B'}
 </code></pre>
 

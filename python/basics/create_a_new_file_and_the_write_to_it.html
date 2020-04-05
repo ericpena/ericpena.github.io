@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create A New File Then Write To It"/>
 <meta name="twitter:description" content="Create A New File Then Write To It Using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -166,18 +166,18 @@ MathJax.Hub.Config({
       
   <h2 id="create-a-new-file-and-write-to-it">Create A New File And Write To It</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a file if it doesn&#39;t already exist</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">file.txt</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">xt</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;xt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="c1"># Write to the file</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">This file now exsits!</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;This file now exsits!&#39;</span><span class="p">)</span>
     <span class="c1"># Close the connection to the file</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div><h2 id="open-the-file-and-read-it">Open The File And Read It</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Open the file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">file.txt</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">rt</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="c1"># Read the data in the file</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="c1"># Close the connection to the file</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div><h2 id="view-the-contents-of-the-file">View The Contents Of The File</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View the data in the file</span>
 <span class="n">data</span>
@@ -188,7 +188,7 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">os</span>
 
 <span class="c1"># Delete the file</span>
-<span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">file.txt</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">)</span>
 </code></pre></div>
 </div>
   <aside>

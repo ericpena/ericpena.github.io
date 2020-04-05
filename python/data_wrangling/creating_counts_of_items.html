@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create Counts Of Items"/>
 <meta name="twitter:description" content="Create Counts Of Items in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -168,7 +168,7 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 </code></pre></div><h2 id="create-a-counter">Create A Counter</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a counter of the fruits eaten today</span>
-<span class="n">fruit_eaten</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Apple</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Apple</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Apple</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Banana</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Pear</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Pineapple</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+<span class="n">fruit_eaten</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">([</span><span class="s1">&#39;Apple&#39;</span><span class="p">,</span> <span class="s1">&#39;Apple&#39;</span><span class="p">,</span> <span class="s1">&#39;Apple&#39;</span><span class="p">,</span> <span class="s1">&#39;Banana&#39;</span><span class="p">,</span> <span class="s1">&#39;Pear&#39;</span><span class="p">,</span> <span class="s1">&#39;Pineapple&#39;</span><span class="p">])</span>
 
 <span class="c1"># View counter</span>
 <span class="n">fruit_eaten</span>
@@ -176,7 +176,7 @@ MathJax.Hub.Config({
 </code></pre>
 <h2 id="update-the-count-for-an-element">Update The Count For An Element</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Update the count for &#39;Pineapple&#39; (because you just ate an pineapple)</span>
-<span class="n">fruit_eaten</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Pineapple</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+<span class="n">fruit_eaten</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="s1">&#39;Pineapple&#39;</span><span class="p">])</span>
 
 <span class="c1"># View the counter</span>
 <span class="n">fruit_eaten</span>

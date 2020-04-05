@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Split Data Into Training And Test Sets"/>
 <meta name="twitter:description" content="How to split data into training and test sets for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -171,7 +171,7 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 </code></pre></div><h2 id="load-digits-dataset">Load Digits Dataset</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load the digits dataset</span>
-<span class="n">digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">(</span><span class="p">)</span>
+<span class="n">digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">()</span>
 
 <span class="c1"># Create the features matrix</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">data</span>
@@ -186,7 +186,7 @@ MathJax.Hub.Config({
                                                     <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div><h2 id="fit-standardizer-to-training-set">Fit Standardizer To Training Set</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create standardizer</span>
-<span class="n">standardizer</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="p">)</span>
+<span class="n">standardizer</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 
 <span class="c1"># Fit standardizer to training set</span>
 <span class="n">standardizer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>

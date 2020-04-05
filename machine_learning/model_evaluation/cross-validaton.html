@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Cross-Validation"/>
 <meta name="twitter:description" content="How to cross-validate models for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -175,7 +175,7 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 </code></pre></div><h2 id="load-digits-dataset">Load Digits Dataset</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load the digits dataset</span>
-<span class="n">digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">(</span><span class="p">)</span>
+<span class="n">digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">()</span>
 
 <span class="c1"># Create the features matrix</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">data</span>
@@ -184,10 +184,10 @@ MathJax.Hub.Config({
 <span class="n">y</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">target</span>
 </code></pre></div><h2 id="create-pipeline">Create Pipeline</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create standardizer</span>
-<span class="n">standardizer</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="p">)</span>
+<span class="n">standardizer</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 
 <span class="c1"># Create logistic regression</span>
-<span class="n">logit</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="p">)</span>
+<span class="n">logit</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
 
 <span class="c1"># Create a pipeline that standardizes, then runs logistic regression</span>
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">standardizer</span><span class="p">,</span> <span class="n">logit</span><span class="p">)</span>
@@ -200,11 +200,11 @@ MathJax.Hub.Config({
                              <span class="n">X</span><span class="p">,</span> <span class="c1"># Feature matrix</span>
                              <span class="n">y</span><span class="p">,</span> <span class="c1"># Target vector</span>
                              <span class="n">cv</span><span class="o">=</span><span class="n">kf</span><span class="p">,</span> <span class="c1"># Cross-validation technique</span>
-                             <span class="n">scoring</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">accuracy</span><span class="s2">&#34;</span><span class="p">,</span> <span class="c1"># Loss function</span>
-                             <span class="n">n_jobs</span><span class="o">=</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Use all CPU scores</span>
+                             <span class="n">scoring</span><span class="o">=</span><span class="s2">&#34;accuracy&#34;</span><span class="p">,</span> <span class="c1"># Loss function</span>
+                             <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Use all CPU scores</span>
 </code></pre></div><h2 id="calculate-mean-performance-score">Calculate Mean Performance Score</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Calculate mean</span>
-<span class="n">cv_results</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="p">)</span>
+<span class="n">cv_results</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </code></pre></div><pre><code>0.96493171942892597
 </code></pre>
 

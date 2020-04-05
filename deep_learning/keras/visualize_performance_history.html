@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Visualize Performance History"/>
 <meta name="twitter:description" content="Visualize neural network performance history in Keras in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -182,29 +182,29 @@ MathJax.Hub.Config({
 <span class="n">number_of_features</span> <span class="o">=</span> <span class="mi">10000</span>
 
 <span class="c1"># Load data and target vector from movie review data</span>
-<span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">train_target</span><span class="p">)</span><span class="p">,</span> <span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">test_target</span><span class="p">)</span> <span class="o">=</span> <span class="n">imdb</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">num_words</span><span class="o">=</span><span class="n">number_of_features</span><span class="p">)</span>
+<span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">train_target</span><span class="p">),</span> <span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">test_target</span><span class="p">)</span> <span class="o">=</span> <span class="n">imdb</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">num_words</span><span class="o">=</span><span class="n">number_of_features</span><span class="p">)</span>
 
 <span class="c1"># Convert movie review data to a one-hot encoded feature matrix</span>
 <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">num_words</span><span class="o">=</span><span class="n">number_of_features</span><span class="p">)</span>
-<span class="n">train_features</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">sequences_to_matrix</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">binary</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">test_features</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">sequences_to_matrix</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">binary</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">train_features</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">sequences_to_matrix</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;binary&#39;</span><span class="p">)</span>
+<span class="n">test_features</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">sequences_to_matrix</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;binary&#39;</span><span class="p">)</span>
 </code></pre></div><h2 id="create-neural-network-architecture">Create Neural Network Architecture</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Start neural network</span>
-<span class="n">network</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="p">)</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
 
 <span class="c1"># Add fully connected layer with a ReLU activation function</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">relu</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">number_of_features</span><span class="p">,</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">number_of_features</span><span class="p">,)))</span>
 
 <span class="c1"># Add fully connected layer with a ReLU activation function</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">relu</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
 
 <span class="c1"># Add fully connected layer with a sigmoid activation function</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">sigmoid</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
 </code></pre></div><h2 id="compile-neural-network">Compile Neural Network</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Compile neural network</span>
-<span class="n">network</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">binary_crossentropy</span><span class="s1">&#39;</span><span class="p">,</span> <span class="c1"># Cross-entropy</span>
-                <span class="n">optimizer</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">rmsprop</span><span class="s1">&#39;</span><span class="p">,</span> <span class="c1"># Root Mean Square Propagation</span>
-                <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">accuracy</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span> <span class="c1"># Accuracy performance metric</span>
+<span class="n">network</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="c1"># Cross-entropy</span>
+                <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;rmsprop&#39;</span><span class="p">,</span> <span class="c1"># Root Mean Square Propagation</span>
+                <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span> <span class="c1"># Accuracy performance metric</span>
 </code></pre></div><h2 id="train-neural-network">Train Neural Network</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Train neural network</span>
 <span class="n">history</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_features</span><span class="p">,</span> <span class="c1"># Features</span>
@@ -212,23 +212,23 @@ MathJax.Hub.Config({
                       <span class="n">epochs</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="c1"># Number of epochs</span>
                       <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="c1"># No output</span>
                       <span class="n">batch_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="c1"># Number of observations per batch</span>
-                      <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">test_features</span><span class="p">,</span> <span class="n">test_target</span><span class="p">)</span><span class="p">)</span> <span class="c1"># Data for evaluation</span>
+                      <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">test_features</span><span class="p">,</span> <span class="n">test_target</span><span class="p">))</span> <span class="c1"># Data for evaluation</span>
 </code></pre></div><h2 id="visualize-neural-network-performance-history">Visualize Neural Network Performance History</h2>
-<p>Specifically, we visualize the neural network's accuracy score on training and test sets over each epoch.</p>
+<p>Specifically, we visualize the neural network&rsquo;s accuracy score on training and test sets over each epoch.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Get training and test accuracy histories</span>
-<span class="n">training_accuracy</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">acc</span><span class="s1">&#39;</span><span class="p">]</span>
-<span class="n">test_accuracy</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">val_acc</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">training_accuracy</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">]</span>
+<span class="n">test_accuracy</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_acc&#39;</span><span class="p">]</span>
 
 <span class="c1"># Create count of the number of epochs</span>
 <span class="n">epoch_count</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">training_accuracy</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Visualize accuracy history</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epoch_count</span><span class="p">,</span> <span class="n">training_accuracy</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">r--</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epoch_count</span><span class="p">,</span> <span class="n">test_accuracy</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">b-</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Training Accuracy</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Test Accuracy</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Epoch</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Accuracy Score</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epoch_count</span><span class="p">,</span> <span class="n">training_accuracy</span><span class="p">,</span> <span class="s1">&#39;r--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epoch_count</span><span class="p">,</span> <span class="n">test_accuracy</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Training Accuracy&#39;</span><span class="p">,</span> <span class="s1">&#39;Test Accuracy&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy Score&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
 </code></pre></div><p><img src="visualize_performance_history_12_0.png" alt="png"></p>
 
 </div>

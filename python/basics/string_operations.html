@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="String Operations"/>
 <meta name="twitter:description" content="String operations using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -171,59 +171,59 @@ MathJax.Hub.Config({
 <li>bytesarray() mutable variable of bytes</li>
 </ul>
 <h3 id="create-some-simulated-text">Create some simulated text.</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string</span> <span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">The quick brown fox jumped over the lazy brown bear.</span><span class="s1">&#39;</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;The quick brown fox jumped over the lazy brown bear.&#39;</span>
 </code></pre></div><h3 id="capitalize-the-first-letter">Capitalize the first letter.</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_capitalized</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_capitalized</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
 <span class="n">string_capitalized</span>
 </code></pre></div><pre><code>'The quick brown fox jumped over the lazy brown bear.'
 </code></pre>
 <h3 id="center-the-string-with-periods-on-either-side-for-a-total-of-79-characters">Center the string with periods on either side, for a total of 79 characters</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_centered</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">79</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">.</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_centered</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">79</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
 <span class="n">string_centered</span>
 </code></pre></div><pre><code>'..............The quick brown fox jumped over the lazy brown bear..............'
 </code></pre>
-<h3 id="count-the-number-of-es-between-the-fifth-and-last-character">Count the number of e's between the fifth and last character</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_counted</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">e</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">)</span><span class="p">)</span>
+<h3 id="count-the-number-of-es-between-the-fifth-and-last-character">Count the number of e&rsquo;s between the fifth and last character</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_counted</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">))</span>
 <span class="n">string_counted</span>
 </code></pre></div><pre><code>4
 </code></pre>
-<h3 id="locate-any-es-between-the-fifth-and-last-character">Locate any e's between the fifth and last character</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_find</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">e</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">)</span><span class="p">)</span>
+<h3 id="locate-any-es-between-the-fifth-and-last-character">Locate any e&rsquo;s between the fifth and last character</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_find</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">))</span>
 <span class="n">string_find</span>
 </code></pre></div><pre><code>24
 </code></pre>
 <h3 id="are-all-characters-are-alphabet">Are all characters are alphabet?</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_isalpha</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">isalpha</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_isalpha</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span>
 <span class="n">string_isalpha</span>
 </code></pre></div><pre><code>False
 </code></pre>
 <h3 id="are-all-characters-digits">Are all characters digits?</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_isdigit</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">isdigit</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_isdigit</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
 <span class="n">string_isdigit</span>
 </code></pre></div><pre><code>False
 </code></pre>
 <h3 id="are-all-characters-lower-case">Are all characters lower case?</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_islower</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">islower</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_islower</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">islower</span><span class="p">()</span>
 <span class="n">string_islower</span>
 </code></pre></div><pre><code>False
 </code></pre>
 <h3 id="are-all-chracters-alphanumeric">Are all chracters alphanumeric?</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_isalnum</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">isalnum</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_isalnum</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">isalnum</span><span class="p">()</span>
 <span class="n">string_isalnum</span>
 </code></pre></div><pre><code>False
 </code></pre>
 <h3 id="are-all-characters-whitespaces">Are all characters whitespaces?</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_isalnum</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">isspace</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_isalnum</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">isspace</span><span class="p">()</span>
 <span class="n">string_isalnum</span>
 </code></pre></div><pre><code>False
 </code></pre>
 <h3 id="is-the-string-properly-titlespaced">Is the string properly titlespaced?</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_istitle</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">istitle</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_istitle</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">istitle</span><span class="p">()</span>
 <span class="n">string_istitle</span>
 </code></pre></div><pre><code>False
 </code></pre>
 <h3 id="are-all-the-characters-uppercase">Are all the characters uppercase?</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_isupper</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">isupper</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_isupper</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span>
 <span class="n">string_isupper</span>
 </code></pre></div><pre><code>False
 </code></pre>
@@ -232,42 +232,42 @@ MathJax.Hub.Config({
 </code></pre></div><pre><code>52
 </code></pre>
 <h3 id="convert-string-to-lower-case">Convert string to lower case</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_lower</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_lower</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 <span class="n">string_lower</span>
 </code></pre></div><pre><code>'the quick brown fox jumped over the lazy brown bear.'
 </code></pre>
 <h3 id="convert-string-to-lower-case-1">Convert string to lower case</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_upper</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">upper</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_upper</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 <span class="n">string_upper</span>
 </code></pre></div><pre><code>'THE QUICK BROWN FOX JUMPED OVER THE LAZY BROWN BEAR.'
 </code></pre>
 <h3 id="convert-string-to-title-case">Convert string to title case</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_title</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_title</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
 <span class="n">string_title</span>
 </code></pre></div><pre><code>'The Quick Brown Fox Jumped Over The Lazy Brown Bear.'
 </code></pre>
 <h3 id="convert-string-the-inverted-case">Convert string the inverted case</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_swapcase</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">swapcase</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_swapcase</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">swapcase</span><span class="p">()</span>
 <span class="n">string_swapcase</span>
 </code></pre></div><pre><code>'tHE QUICK BROWN FOX JUMPED OVER THE LAZY BROWN BEAR.'
 </code></pre>
 <h3 id="remove-all-leading-whitespaces-ie-to-the-left">Remove all leading whitespaces (i.e. to the left)</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_lstrip</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_lstrip</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
 <span class="n">string_lstrip</span>
 </code></pre></div><pre><code>'The quick brown fox jumped over the lazy brown bear.'
 </code></pre>
 <h3 id="remove-all-leading-and-trailing-whitespaces-ie-to-the-left-and-right">Remove all leading and trailing whitespaces (i.e. to the left and right)</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_strip</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_strip</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 <span class="n">string_strip</span>
 </code></pre></div><pre><code>'The quick brown fox jumped over the lazy brown bear.'
 </code></pre>
 <h3 id="remove-all-trailing-whitespaces-ie-to-the-right">Remove all trailing whitespaces (i.e. to the right)</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_rstrip</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_rstrip</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
 <span class="n">string_rstrip</span>
 </code></pre></div><pre><code>'The quick brown fox jumped over the lazy brown bear.'
 </code></pre>
-<h3 id="replace-lower-case-es-with-upper-case-es-to-a-maximum-of-4">Replace lower case e's with upper case E's, to a maximum of 4</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_replace</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">e</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">E</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<h3 id="replace-lower-case-es-with-upper-case-es-to-a-maximum-of-4">Replace lower case e&rsquo;s with upper case E&rsquo;s, to a maximum of 4</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">string_replace</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">string_replace</span>
 </code></pre></div><pre><code>'ThE quick brown fox jumpEd ovEr thE lazy brown bear.'
 </code></pre>

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create A Temporary File"/>
 <meta name="twitter:description" content="reate A Temporary File Using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -167,13 +167,13 @@ MathJax.Hub.Config({
   <h2 id="preliminaries">Preliminaries</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">NamedTemporaryFile</span>
 </code></pre></div><h2 id="create-a-temporary-file">Create A Temporary File</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">f</span> <span class="o">=</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">w+t</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">f</span> <span class="o">=</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="s1">&#39;w+t&#39;</span><span class="p">)</span>
 </code></pre></div><h2 id="write-to-the-temp-file">Write To The Temp File</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Write to the file, the output is the number of characters</span>
-<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Nobody lived on Deadweather but us and the pirates. It wasn’t hard to understand why.</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Nobody lived on Deadweather but us and the pirates. It wasn’t hard to understand why.&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>85
 </code></pre>
-<h2 id="view-the-tmp-files-name">View The Tmp File's Name</h2>
+<h2 id="view-the-tmp-files-name">View The Tmp File&rsquo;s Name</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">f</span><span class="o">.</span><span class="n">name</span>
 </code></pre></div><pre><code>'/var/folders/0b/pj3wsd750fjf8xzfb0n127w80000gn/T/tmphv1dkovx'
 </code></pre>
@@ -182,11 +182,11 @@ MathJax.Hub.Config({
 <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Read the file</span>
-<span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </code></pre></div><pre><code>'Nobody lived on Deadweather but us and the pirates. It wasn’t hard to understand why.'
 </code></pre>
 <h2 id="close-and-thus-delete-the-file">Close (And Thus Delete) The File</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 </div>
   <aside>

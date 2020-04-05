@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Variance And Standard Deviation"/>
 <meta name="twitter:description" content="Calculating Variance And Standard Deviation in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -171,10 +171,10 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create list of values</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">62</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 </code></pre></div><h2 id="calculate-population-variance">Calculate Population Variance</h2>
-<p>Variance is a measurement of the spread of a data's distribution. The higher the variance, the more &ldquo;spread out&rdquo; the data points are. Variance, commonly denoted as $S^{2}$, is calculated like this:</p>
+<p>Variance is a measurement of the spread of a data&rsquo;s distribution. The higher the variance, the more &ldquo;spread out&rdquo; the data points are. Variance, commonly denoted as $S^{2}$, is calculated like this:</p>
 <p>$$ \text{Population Variance} = S_n^{2} = \frac{1}{n}\sum_{i=1}^{n}(x_i-\bar{x})^{2}$$</p>
 <p>$$ \text{Sample Variance} = S_{n-1}^{2} = \frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^{2}$$</p>
-<p>Where $n$ is the number of observations, $\bar{x}$ is the mean of the observations, and $x_i-\bar{x}$ is an individual observation's from the mean of the data. Note that if we were estimating the variance of a population based on a sample from that population, we should use the second equation, replacing $n$ with $n-1$.</p>
+<p>Where $n$ is the number of observations, $\bar{x}$ is the mean of the observations, and $x_i-\bar{x}$ is an individual observation&rsquo;s from the mean of the data. Note that if we were estimating the variance of a population based on a sample from that population, we should use the second equation, replacing $n$ with $n-1$.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Calculate n</span>
 <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
@@ -182,7 +182,7 @@ MathJax.Hub.Config({
 <span class="n">mean</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
 <span class="c1"># Create a list of all deviations from the mean</span>
-<span class="n">all_deviations_from_mean_squared</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
+<span class="n">all_deviations_from_mean_squared</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="c1"># For each observation in the data</span>
 <span class="k">for</span> <span class="n">observation</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
@@ -191,7 +191,7 @@ MathJax.Hub.Config({
     <span class="n">deviation_from_mean</span> <span class="o">=</span> <span class="p">(</span><span class="n">observation</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span>
     
     <span class="c1"># Square it</span>
-    <span class="n">deviation_from_mean_squared</span> <span class="o">=</span> <span class="n">deviation_from_mean</span><span class="o">*</span><span class="o">*</span><span class="mi">2</span>
+    <span class="n">deviation_from_mean_squared</span> <span class="o">=</span> <span class="n">deviation_from_mean</span><span class="o">**</span><span class="mi">2</span>
     
     <span class="c1"># Add the result to our list</span>
     <span class="n">all_deviations_from_mean_squared</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">deviation_from_mean_squared</span><span class="p">)</span>

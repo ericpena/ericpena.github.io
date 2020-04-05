@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Compare Two Floats"/>
 <meta name="twitter:description" content="Compare two floats using Scala."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -172,18 +172,18 @@ MathJax.Hub.Config({
 </span><span class="c1"></span><span class="k">val</span> <span class="n">price_new</span> <span class="k">=</span> <span class="mf">2.343231</span>
 </code></pre></div><h2 id="create-a-function-that-compares-two-floats">Create A Function That Compares Two Floats</h2>
 <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="c1">// Define a function called ~= that contains three arguments: two numbers and a precision level,
-</span><span class="c1"></span><span class="k">def</span> <span class="o">~=</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Double</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Double</span><span class="o">,</span> <span class="n">precision</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+</span><span class="c1"></span><span class="k">def</span> <span class="o">~=(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Double</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Double</span><span class="o">,</span> <span class="n">precision</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
     <span class="c1">// If the absolute difference is less than the precision level, return true, otherwise return false
-</span><span class="c1"></span>    <span class="k">if</span> <span class="o">(</span><span class="o">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">)</span><span class="o">.</span><span class="n">abs</span> <span class="o">&lt;</span> <span class="n">precision</span><span class="o">)</span> <span class="kc">true</span> <span class="k">else</span> <span class="kc">false</span>
+</span><span class="c1"></span>    <span class="k">if</span> <span class="o">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">).</span><span class="n">abs</span> <span class="o">&lt;</span> <span class="n">precision</span><span class="o">)</span> <span class="kc">true</span> <span class="k">else</span> <span class="kc">false</span>
 <span class="o">}</span>
 </code></pre></div><h2 id="apply-function-with-high-precision">Apply Function With High Precision</h2>
 <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="c1">// Compare price_old and price_new with 0.000001 precision
-</span><span class="c1"></span><span class="o">~=</span><span class="o">(</span><span class="n">price_old</span><span class="o">,</span> <span class="n">price_new</span><span class="o">,</span> <span class="mf">0.000001</span><span class="o">)</span>
+</span><span class="c1"></span><span class="o">~=(</span><span class="n">price_old</span><span class="o">,</span> <span class="n">price_new</span><span class="o">,</span> <span class="mf">0.000001</span><span class="o">)</span>
 </code></pre></div><pre><code>false
 </code></pre>
 <h2 id="apply-function-with-low-precision">Apply Function With Low Precision</h2>
 <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="c1">// Compare price_old and price_new with 0.1 precision
-</span><span class="c1"></span><span class="o">~=</span><span class="o">(</span><span class="n">price_old</span><span class="o">,</span> <span class="n">price_new</span><span class="o">,</span> <span class="mf">0.1</span><span class="o">)</span>
+</span><span class="c1"></span><span class="o">~=(</span><span class="n">price_old</span><span class="o">,</span> <span class="n">price_new</span><span class="o">,</span> <span class="mf">0.1</span><span class="o">)</span>
 </code></pre></div><pre><code>true
 </code></pre>
 

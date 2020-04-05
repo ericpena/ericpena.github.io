@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Convert HTML Characters To Strings"/>
 <meta name="twitter:description" content="Convert HTML Characters To Strings Using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -167,7 +167,7 @@ MathJax.Hub.Config({
   <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">## Preliminaries</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">html</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">## Create Text</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">text</span> <span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">This item costs &amp;#165;400 or &amp;#163;4.</span><span class="s1">&#39;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;This item costs &amp;#165;400 or &amp;#163;4.&#39;</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">## Convert To String</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">html</span><span class="o">.</span><span class="n">unescape</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div><pre><code>'This item costs ¥400 or £4.'

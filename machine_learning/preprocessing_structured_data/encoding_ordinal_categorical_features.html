@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Encoding Ordinal Categorical Features"/>
 <meta name="twitter:description" content="How to encode ordinal categorical features for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -169,11 +169,11 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </code></pre></div><h2 id="create-feature-matrix">Create Feature Matrix</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create features</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Score</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Low</span><span class="s1">&#39;</span><span class="p">,</span> 
-                             <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Low</span><span class="s1">&#39;</span><span class="p">,</span> 
-                             <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Medium</span><span class="s1">&#39;</span><span class="p">,</span> 
-                             <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Medium</span><span class="s1">&#39;</span><span class="p">,</span> 
-                             <span class="sa"></span><span class="s1">&#39;</span><span class="s1">High</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">}</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Low&#39;</span><span class="p">,</span> 
+                             <span class="s1">&#39;Low&#39;</span><span class="p">,</span> 
+                             <span class="s1">&#39;Medium&#39;</span><span class="p">,</span> 
+                             <span class="s1">&#39;Medium&#39;</span><span class="p">,</span> 
+                             <span class="s1">&#39;High&#39;</span><span class="p">]})</span>
 
 <span class="c1"># View data frame</span>
 <span class="n">df</span>
@@ -190,12 +190,12 @@ MathJax.Hub.Config({
 <!-- raw HTML omitted -->
 <h2 id="create-scale-map">Create Scale Map</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create mapper</span>
-<span class="n">scale_mapper</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Low</span><span class="s1">&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> 
-                <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Medium</span><span class="s1">&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
-                <span class="sa"></span><span class="s1">&#39;</span><span class="s1">High</span><span class="s1">&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="n">scale_mapper</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Low&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> 
+                <span class="s1">&#39;Medium&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
+                <span class="s1">&#39;High&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
 </code></pre></div><h2 id="map-scale-to-features">Map Scale To Features</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Map feature values to scale</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Scale</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Score</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">scale_mapper</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Scale&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">scale_mapper</span><span class="p">)</span>
 
 <span class="c1"># View data frame</span>
 <span class="n">df</span>

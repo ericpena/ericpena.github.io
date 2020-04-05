@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Multinomial Logistic Regression"/>
 <meta name="twitter:description" content="How to train a multinomial logistic regression in scikit-learn."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -166,7 +166,7 @@ MathJax.Hub.Config({
       
   <p>In multinomial logistic regression (MLR) the logistic function we saw in Recipe 15.1 is replaced with a softmax function:</p>
 <p>$$P(y_i=k \mid X)={\frac {e^{\beta_{k}x_{i}}}{{\sum_{j=1}^{K}}e^{\beta_{j}x_{i}}}}$$</p>
-<p>where $P(y_i=k \mid X)$ is the probability the $i$th observation's target value, $y_i$, is class $k$, and $K$ is the total number of classes. One practical advantage of the MLR is that its predicted probabilities using the <code>predict_proba</code> method are more reliable (i.e. better calibrated).</p>
+<p>where $P(y_i=k \mid X)$ is the probability the $i$th observation&rsquo;s target value, $y_i$, is class $k$, and $K$ is the total number of classes. One practical advantage of the MLR is that its predicted probabilities using the <code>predict_proba</code> method are more reliable (i.e. better calibrated).</p>
 <h2 id="preliminaries">Preliminaries</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load libraries</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
@@ -174,23 +174,23 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 </code></pre></div><h2 id="load-iris-flower-data">Load Iris Flower Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load data</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">(</span><span class="p">)</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
 </code></pre></div><h2 id="standardize-features">Standardize Features</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Standarize features</span>
-<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="p">)</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 <span class="n">X_std</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </code></pre></div><h2 id="create-multinomial-logistic-regression">Create Multinomial Logistic Regression</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create one-vs-rest logistic regression object</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">multi_class</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">multinomial</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">newton-cg</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;multinomial&#39;</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s1">&#39;newton-cg&#39;</span><span class="p">)</span>
 </code></pre></div><h2 id="train-multinomial-logistic-regression">Train Multinomial Logistic Regression</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Train model</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_std</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </code></pre></div><h2 id="create-previously-unseen-observation">Create Previously Unseen Observation</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create new observation</span>
-<span class="n">new_observation</span> <span class="o">=</span> <span class="p">[</span><span class="p">[</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">]</span><span class="p">]</span>
-</code></pre></div><h2 id="predict-observations-class">Predict Observation's Class</h2>
+<span class="n">new_observation</span> <span class="o">=</span> <span class="p">[[</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">]]</span>
+</code></pre></div><h2 id="predict-observations-class">Predict Observation&rsquo;s Class</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Predict class</span>
 <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">new_observation</span><span class="p">)</span>
 </code></pre></div><pre><code>array([1])

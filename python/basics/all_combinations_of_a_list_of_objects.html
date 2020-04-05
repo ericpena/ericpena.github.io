@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="All Combinations For A List Of Objects"/>
 <meta name="twitter:description" content="All Combinations For A List Of Objects."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -169,15 +169,15 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations_with_replacement</span>
 </code></pre></div><h2 id="create-a-list-of-objects">Create a list of objects</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a list of objects to combine</span>
-<span class="n">list_of_objects</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">warplanes</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">armor</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">infantry</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">list_of_objects</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;warplanes&#39;</span><span class="p">,</span> <span class="s1">&#39;armor&#39;</span><span class="p">,</span> <span class="s1">&#39;infantry&#39;</span><span class="p">]</span>
 </code></pre></div><h2 id="find-all-combinations-with-replacement-for-the-list">Find all combinations (with replacement) for the list</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create an empty list object to hold the results of the loop</span>
-<span class="n">combinations</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
+<span class="n">combinations</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="c1"># Create a loop for every item in the length of list_of_objects, that,</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">list_of_objects</span><span class="p">)</span><span class="p">)</span><span class="p">)</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">list_of_objects</span><span class="p">))):</span>
     <span class="c1"># Finds every combination (with replacement) for each object in the list</span>
-    <span class="n">combinations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">combinations_with_replacement</span><span class="p">(</span><span class="n">list_of_objects</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="p">)</span>
+    <span class="n">combinations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">combinations_with_replacement</span><span class="p">(</span><span class="n">list_of_objects</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
 </code></pre></div><pre><code>[&lt;itertools.combinations_with_replacement at 0x7f85d03c6408&gt;,
  &lt;itertools.combinations_with_replacement at 0x7f85d03c6458&gt;,
  &lt;itertools.combinations_with_replacement at 0x7f85d03c64a8&gt;]

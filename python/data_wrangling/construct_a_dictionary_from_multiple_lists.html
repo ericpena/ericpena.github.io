@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Construct A Dictionary From Multiple Lists"/>
 <meta name="twitter:description" content="Construct a dictionary from multiple lists in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -166,13 +166,13 @@ MathJax.Hub.Config({
       
   <h2 id="create-two-lists">Create Two Lists</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a list of theofficer&#39;s name</span>
-<span class="n">officer_names</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Sodoni Dogla</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Chris Jefferson</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Jessica Billars</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Michael Mulligan</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Steven Johnson</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">officer_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sodoni Dogla&#39;</span><span class="p">,</span> <span class="s1">&#39;Chris Jefferson&#39;</span><span class="p">,</span> <span class="s1">&#39;Jessica Billars&#39;</span><span class="p">,</span> <span class="s1">&#39;Michael Mulligan&#39;</span><span class="p">,</span> <span class="s1">&#39;Steven Johnson&#39;</span><span class="p">]</span>
 
 <span class="c1"># Create a list of the officer&#39;s army</span>
-<span class="n">officer_armies</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Purple Army</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Orange Army</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Green Army</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Red Army</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Blue Army</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">officer_armies</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Purple Army&#39;</span><span class="p">,</span> <span class="s1">&#39;Orange Army&#39;</span><span class="p">,</span> <span class="s1">&#39;Green Army&#39;</span><span class="p">,</span> <span class="s1">&#39;Red Army&#39;</span><span class="p">,</span> <span class="s1">&#39;Blue Army&#39;</span><span class="p">]</span>
 </code></pre></div><h2 id="construct-a-dictionary-from-the-two-lists">Construct A Dictionary From The Two Lists</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a dictionary that is the zip of the two lists</span>
-<span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">officer_names</span><span class="p">,</span> <span class="n">officer_armies</span><span class="p">)</span><span class="p">)</span>
+<span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">officer_names</span><span class="p">,</span> <span class="n">officer_armies</span><span class="p">))</span>
 </code></pre></div><pre><code>{'Chris Jefferson': 'Orange Army',
  'Jessica Billars': 'Green Army',
  'Michael Mulligan': 'Red Army',

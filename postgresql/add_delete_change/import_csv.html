@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Import CSV"/>
 <meta name="twitter:description" content="How to import CSV in an SQL database."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -168,40 +168,40 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Create table called adventurers
 </span><span class="c1"></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">adventurers</span> <span class="p">(</span>
     <span class="c1">-- string variable
-</span><span class="c1"></span>    <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="p">,</span>
+</span><span class="c1"></span>    <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
     <span class="c1">-- integer variable
 </span><span class="c1"></span>    <span class="n">age</span> <span class="nb">int</span><span class="p">,</span>
     <span class="c1">-- string variable
-</span><span class="c1"></span>    <span class="n">race</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="p">,</span>
+</span><span class="c1"></span>    <span class="n">race</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
     <span class="c1">-- string variable
 </span><span class="c1"></span>    <span class="n">weapon</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
 <span class="p">)</span></code></pre></div>
 <h2 id="insert-rows">Insert Rows</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Insert into the table adventurers
 </span><span class="c1"></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">adventurers</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">race</span><span class="p">,</span> <span class="n">weapon</span><span class="p">)</span>
-<span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Fjoak Doom-Wife</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Human</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Axe</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Alooneric Cortte</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Elf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Bow</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Piperel Ramsay</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Elf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Sword</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Casimir Yardley</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Elf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Magic</span><span class="s1">&#39;</span><span class="p">)</span></code></pre></div>
+<span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;Fjoak Doom-Wife&#39;</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="s1">&#39;Human&#39;</span><span class="p">,</span> <span class="s1">&#39;Axe&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Alooneric Cortte&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="s1">&#39;Elf&#39;</span><span class="p">,</span> <span class="s1">&#39;Bow&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Piperel Ramsay&#39;</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="s1">&#39;Elf&#39;</span><span class="p">,</span> <span class="s1">&#39;Sword&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Casimir Yardley&#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="s1">&#39;Elf&#39;</span><span class="p">,</span> <span class="s1">&#39;Magic&#39;</span><span class="p">)</span></code></pre></div>
 <h2 id="export-to-csv">Export To CSV</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Export the adventurers table to that file path and 
-</span><span class="c1"></span><span class="c1">-- name using the comma delimiter and with column headings
-</span><span class="c1"></span><span class="k">COPY</span> <span class="n">adventurers</span> <span class="k">TO</span> <span class="s1">&#39;</span><span class="s1">/Users/chrisalbon/example_file.csv</span><span class="s1">&#39;</span> <span class="k">DELIMITER</span> <span class="s1">&#39;</span><span class="s1">,</span><span class="s1">&#39;</span> <span class="n">CSV</span> <span class="n">HEADER</span></code></pre></div>
+</span><span class="c1">-- name using the comma delimiter and with column headings
+</span><span class="c1"></span><span class="k">COPY</span> <span class="n">adventurers</span> <span class="k">TO</span> <span class="s1">&#39;/Users/chrisalbon/example_file.csv&#39;</span> <span class="k">DELIMITER</span> <span class="s1">&#39;,&#39;</span> <span class="n">CSV</span> <span class="n">HEADER</span></code></pre></div>
 <h2 id="create-empty-table">Create Empty Table</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Create table called heroes
 </span><span class="c1"></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">heroes</span> <span class="p">(</span>
     <span class="c1">-- string variable
-</span><span class="c1"></span>    <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="p">,</span>
+</span><span class="c1"></span>    <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
     <span class="c1">-- integer variable
 </span><span class="c1"></span>    <span class="n">age</span> <span class="nb">int</span><span class="p">,</span>
     <span class="c1">-- string variable
-</span><span class="c1"></span>    <span class="n">race</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="p">,</span>
+</span><span class="c1"></span>    <span class="n">race</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
     <span class="c1">-- string variable
 </span><span class="c1"></span>    <span class="n">weapon</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
 <span class="p">)</span></code></pre></div>
 <h2 id="import-csv">Import CSV</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Import to the heros table the CSV file that uses comma delimiters and has column headers
-</span><span class="c1"></span><span class="k">COPY</span> <span class="n">heroes</span> <span class="k">FROM</span> <span class="s1">&#39;</span><span class="s1">/Users/chrisalbon/example_file.csv</span><span class="s1">&#39;</span> <span class="k">DELIMITER</span> <span class="s1">&#39;</span><span class="s1">,</span><span class="s1">&#39;</span> <span class="n">CSV</span> <span class="n">HEADER</span></code></pre></div>
+</span><span class="c1"></span><span class="k">COPY</span> <span class="n">heroes</span> <span class="k">FROM</span> <span class="s1">&#39;/Users/chrisalbon/example_file.csv&#39;</span> <span class="k">DELIMITER</span> <span class="s1">&#39;,&#39;</span> <span class="n">CSV</span> <span class="n">HEADER</span></code></pre></div>
 <h2 id="view-table">View Table</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Get all rows from table
 </span><span class="c1"></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">heroes</span></code></pre></div>

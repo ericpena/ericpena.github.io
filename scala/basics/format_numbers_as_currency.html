@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Format Numbers As Currency"/>
 <meta name="twitter:description" content="Format numbers as currency using Scala."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -172,7 +172,7 @@ MathJax.Hub.Config({
 </code></pre></div><pre><code>$123.46
 </code></pre>
 <h2 id="change-to-a-local-currency">Change To A Local Currency</h2>
-<p>Java's locale uses <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 country codes</a>.</p>
+<p>Java&rsquo;s locale uses <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 country codes</a>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="c1">// Load the java libraries
 </span><span class="c1"></span><span class="k">import</span> <span class="nn">java.util.</span><span class="o">{</span><span class="nc">Currency</span><span class="o">,</span> <span class="nc">Locale</span><span class="o">}</span>
 
@@ -180,7 +180,7 @@ MathJax.Hub.Config({
 </span><span class="c1"></span><span class="k">val</span> <span class="n">format_as_afghan</span> <span class="k">=</span> <span class="n">java</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="nc">NumberFormat</span><span class="o">.</span><span class="n">getCurrencyInstance</span>
 
 <span class="c1">// Set the locale of Currency to Afganistan
-</span><span class="c1"></span><span class="k">val</span> <span class="n">af</span> <span class="k">=</span> <span class="nc">Currency</span><span class="o">.</span><span class="n">getInstance</span><span class="o">(</span><span class="k">new</span> <span class="nc">Locale</span><span class="o">(</span><span class="s">&#34;af&#34;</span><span class="o">,</span> <span class="s">&#34;AF&#34;</span><span class="o">)</span><span class="o">)</span>
+</span><span class="c1"></span><span class="k">val</span> <span class="n">af</span> <span class="k">=</span> <span class="nc">Currency</span><span class="o">.</span><span class="n">getInstance</span><span class="o">(</span><span class="k">new</span> <span class="nc">Locale</span><span class="o">(</span><span class="s">&#34;af&#34;</span><span class="o">,</span> <span class="s">&#34;AF&#34;</span><span class="o">))</span>
 
 <span class="c1">// Set the locale of the numberformat currency package to the Afghan
 </span><span class="c1"></span><span class="n">format_as_afghan</span><span class="o">.</span><span class="n">setCurrency</span><span class="o">(</span><span class="n">af</span><span class="o">)</span>

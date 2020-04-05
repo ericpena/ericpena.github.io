@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Convert pandas Columns Time Zone"/>
 <meta name="twitter:description" content="How to convert the time zone of a pandas column/series in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -184,10 +184,10 @@ MathJax.Hub.Config({
 </code></pre>
 <h2 id="create-pandas-series-of-dates">Create pandas Series Of Dates</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create ten dates</span>
-<span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">2/2/2002</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">M</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;2/2/2002&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">))</span>
 </code></pre></div><h2 id="add-time-zone-of-pandas-series">Add Time Zone Of pandas Series</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Set time zone</span>
-<span class="n">dates_with_abidjan_time_zone</span> <span class="o">=</span> <span class="n">dates</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Africa/Abidjan</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">dates_with_abidjan_time_zone</span> <span class="o">=</span> <span class="n">dates</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="s1">&#39;Africa/Abidjan&#39;</span><span class="p">)</span>
 
 <span class="c1"># View pandas series</span>
 <span class="n">dates_with_abidjan_time_zone</span>
@@ -205,7 +205,7 @@ dtype: datetime64[ns, Africa/Abidjan]
 </code></pre>
 <h2 id="convert-time-zone-of-pandas-series">Convert Time Zone Of pandas Series</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Convert time zone</span>
-<span class="n">dates_with_london_time_zone</span> <span class="o">=</span> <span class="n">dates_with_abidjan_time_zone</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">tz_convert</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Europe/London</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">dates_with_london_time_zone</span> <span class="o">=</span> <span class="n">dates_with_abidjan_time_zone</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">tz_convert</span><span class="p">(</span><span class="s1">&#39;Europe/London&#39;</span><span class="p">)</span>
 
 <span class="c1"># View pandas series</span>
 <span class="n">dates_with_london_time_zone</span>

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="For Loop A Map"/>
 <meta name="twitter:description" content="For loop a map using Scala."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -169,7 +169,7 @@ MathJax.Hub.Config({
                    <span class="s">&#34;number&#34;</span> <span class="o">-&gt;</span> <span class="mi">21</span><span class="o">)</span>
 </code></pre></div><h2 id="loop-with-value-and-index">Loop With Value And Index</h2>
 <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="c1">// Create a value for the returned values, for each key and value in the map,
-</span><span class="c1"></span><span class="k">val</span> <span class="n">numberOfVehicles</span> <span class="k">=</span> <span class="k">for</span> <span class="o">(</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">)</span> <span class="k">&lt;-</span> <span class="n">vehicles</span><span class="o">)</span> <span class="k">yield</span> <span class="o">{</span>
+</span><span class="c1"></span><span class="k">val</span> <span class="n">numberOfVehicles</span> <span class="k">=</span> <span class="k">for</span> <span class="o">((</span><span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">)</span> <span class="k">&lt;-</span> <span class="n">vehicles</span><span class="o">)</span> <span class="k">yield</span> <span class="o">{</span>
                          <span class="c1">// Return the values
 </span><span class="c1"></span>                         <span class="n">value</span>
                        <span class="o">}</span>

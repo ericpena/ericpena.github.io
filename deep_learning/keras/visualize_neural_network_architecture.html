@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Visualize Neural Network Architecutre"/>
 <meta name="twitter:description" content="How to visualize neural network architecture in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -175,23 +175,23 @@ MathJax.Hub.Config({
 </code></pre>
 <h2 id="construct-neural-network-architecture">Construct Neural Network Architecture</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Start neural network</span>
-<span class="n">network</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="p">)</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
 
 <span class="c1"># Add fully connected layer with a ReLU activation function</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">relu</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,)))</span>
 
 <span class="c1"># Add fully connected layer with a ReLU activation function</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">relu</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
 
 <span class="c1"># Add fully connected layer with a sigmoid activation function</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">sigmoid</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
 </code></pre></div><h2 id="visualize-network-architecture">Visualize Network Architecture</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Visualize network architecture</span>
-<span class="n">SVG</span><span class="p">(</span><span class="n">model_to_dot</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">show_shapes</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">dot</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">svg</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+<span class="n">SVG</span><span class="p">(</span><span class="n">model_to_dot</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">show_shapes</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s1">&#39;dot&#39;</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s1">&#39;svg&#39;</span><span class="p">))</span>
 </code></pre></div><p><img src="visualize_neural_network_architecture_6_0.svg" alt="svg"></p>
 <h2 id="save-to-file">Save To File</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Save the visualization as a file</span>
-<span class="n">plot_model</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">show_shapes</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">to_file</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">network.png</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plot_model</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">show_shapes</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">to_file</span><span class="o">=</span><span class="s1">&#39;network.png&#39;</span><span class="p">)</span>
 </code></pre></div>
 </div>
   <aside>

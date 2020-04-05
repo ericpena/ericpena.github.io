@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Recursive Feature Elimination"/>
 <meta name="twitter:description" content="How to do recursive feature elimination for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -172,7 +172,7 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">warnings</span>
 
 <span class="c1"># Suppress an annoying but harmless warning</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">ignore</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">scipy</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">^internal gelsd</span><span class="s2">&#34;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s2">&#34;ignore&#34;</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&#34;scipy&#34;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&#34;^internal gelsd&#34;</span><span class="p">)</span>
 </code></pre></div><h2 id="create-data">Create Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Generate features matrix, target vector, and the true coefficients</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_regression</span><span class="p">(</span><span class="n">n_samples</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span>
@@ -181,10 +181,10 @@ MathJax.Hub.Config({
                        <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 </code></pre></div><h2 id="create-linear-model">Create Linear Model</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a linear regression</span>
-<span class="n">ols</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">(</span><span class="p">)</span>
+<span class="n">ols</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
 </code></pre></div><h2 id="conduct-recursive-feature-elimination">Conduct Recursive Feature Elimination</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create recursive feature eliminator that scores features by mean squared errors</span>
-<span class="n">rfecv</span> <span class="o">=</span> <span class="n">RFECV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">ols</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">neg_mean_squared_error</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">rfecv</span> <span class="o">=</span> <span class="n">RFECV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">ols</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;neg_mean_squared_error&#39;</span><span class="p">)</span>
 
 <span class="c1"># Fit recursive feature eliminator </span>
 <span class="n">rfecv</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Convert Columns Into Rows"/>
 <meta name="twitter:description" content="How to convert columns into rows (i.e. unpivoting) in Snowflake using SQL."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -164,45 +164,45 @@ MathJax.Hub.Config({
   </header>
   <div class="content">
       
-  <p><code>UNPIVOT</code> converts a table's columns into rows.</p>
+  <p><code>UNPIVOT</code> converts a table&rsquo;s columns into rows.</p>
 <h2 id="create-table-of-superheroes">Create Table Of Superheroes</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Create a table called SUPERHEROES.
 </span><span class="c1"></span><span class="k">CREATE</span> <span class="k">OR</span> <span class="k">REPLACE</span> <span class="k">TABLE</span> <span class="n">SUPERHEROES</span> <span class="p">(</span>
   <span class="c1">-- Column called ALTER_EGO allowing up to 100 characters
-</span><span class="c1"></span>  <span class="s2">&#34;</span><span class="s2">ALTER_EGO</span><span class="s2">&#34;</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="p">,</span>
+</span><span class="c1"></span>  <span class="s2">&#34;ALTER_EGO&#34;</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
   <span class="c1">-- Column called BANK_BALANCE of integers
-</span><span class="c1"></span>  <span class="s2">&#34;</span><span class="s2">AGE</span><span class="s2">&#34;</span> <span class="nb">INT</span><span class="p">,</span>
+</span><span class="c1"></span>  <span class="s2">&#34;AGE&#34;</span> <span class="nb">INT</span><span class="p">,</span>
   <span class="c1">-- Column called 2015 of integers
-</span><span class="c1"></span>  <span class="s2">&#34;</span><span class="s2">2015</span><span class="s2">&#34;</span> <span class="nb">INT</span><span class="p">,</span>
+</span><span class="c1"></span>  <span class="s2">&#34;2015&#34;</span> <span class="nb">INT</span><span class="p">,</span>
   <span class="c1">-- Column called 2016 of integers
-</span><span class="c1"></span>  <span class="s2">&#34;</span><span class="s2">2016</span><span class="s2">&#34;</span> <span class="nb">INT</span><span class="p">,</span>
+</span><span class="c1"></span>  <span class="s2">&#34;2016&#34;</span> <span class="nb">INT</span><span class="p">,</span>
   <span class="c1">-- Column called 2017 of integers
-</span><span class="c1"></span>  <span class="s2">&#34;</span><span class="s2">2017</span><span class="s2">&#34;</span> <span class="nb">INT</span><span class="p">,</span>
+</span><span class="c1"></span>  <span class="s2">&#34;2017&#34;</span> <span class="nb">INT</span><span class="p">,</span>
   <span class="c1">-- Column called 2018 of integers
-</span><span class="c1"></span>  <span class="s2">&#34;</span><span class="s2">2018</span><span class="s2">&#34;</span> <span class="nb">INT</span><span class="p">,</span>
+</span><span class="c1"></span>  <span class="s2">&#34;2018&#34;</span> <span class="nb">INT</span><span class="p">,</span>
   <span class="c1">-- Column called 2019 of integers
-</span><span class="c1"></span>  <span class="s2">&#34;</span><span class="s2">2019</span><span class="s2">&#34;</span> <span class="nb">INT</span>
-<span class="p">)</span><span class="p">;</span></code></pre></div>
+</span><span class="c1"></span>  <span class="s2">&#34;2019&#34;</span> <span class="nb">INT</span>
+<span class="p">);</span></code></pre></div>
 <h2 id="insert-rows-for-each-superhero">Insert Rows For Each Superhero</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Insert rows into SUPERHEROES
 </span><span class="c1"></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">SUPERHEROES</span> 
     <span class="c1">-- With the values
 </span><span class="c1"></span>    <span class="k">VALUES</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">The Bomber</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Mr. Money</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Nuke Miner</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">The Knife</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Ninka Baker</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Banana Bomber</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Augustine</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">The Kid</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">The Viking</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">291</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="p">;</span></code></pre></div>
+    <span class="p">(</span><span class="s1">&#39;The Bomber&#39;</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Mr. Money&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Nuke Miner&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;The Knife&#39;</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Ninka Baker&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Banana Bomber&#39;</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Augustine&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;The Kid&#39;</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;The Viking&#39;</span><span class="p">,</span> <span class="mi">291</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span></code></pre></div>
 <h2 id="convert-years-columns-into-rows">Convert Years Columns Into Rows</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Select all columns from SUPERHEROES
 </span><span class="c1"></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">SUPERHEROES</span>
 <span class="c1">-- Convert the columns &#34;2015&#34;, &#34;2016&#34;, &#34;2017&#34;, &#34;2018&#34;, &#34;2019&#34; into
-</span><span class="c1"></span><span class="c1">-- rows with appropriate values in a new a YEARS column 
-</span><span class="c1"></span><span class="n">UNPIVOT</span><span class="p">(</span><span class="k">YEAR</span> <span class="k">FOR</span> <span class="n">YEARS</span> <span class="k">IN</span> <span class="p">(</span><span class="s2">&#34;</span><span class="s2">2015</span><span class="s2">&#34;</span><span class="p">,</span> <span class="s2">&#34;</span><span class="s2">2016</span><span class="s2">&#34;</span><span class="p">,</span> <span class="s2">&#34;</span><span class="s2">2017</span><span class="s2">&#34;</span><span class="p">,</span> <span class="s2">&#34;</span><span class="s2">2018</span><span class="s2">&#34;</span><span class="p">,</span> <span class="s2">&#34;</span><span class="s2">2019</span><span class="s2">&#34;</span><span class="p">)</span><span class="p">)</span><span class="p">;</span></code></pre></div>
+</span><span class="c1">-- rows with appropriate values in a new a YEARS column 
+</span><span class="c1"></span><span class="n">UNPIVOT</span><span class="p">(</span><span class="k">YEAR</span> <span class="k">FOR</span> <span class="n">YEARS</span> <span class="k">IN</span> <span class="p">(</span><span class="s2">&#34;2015&#34;</span><span class="p">,</span> <span class="s2">&#34;2016&#34;</span><span class="p">,</span> <span class="s2">&#34;2017&#34;</span><span class="p">,</span> <span class="s2">&#34;2018&#34;</span><span class="p">,</span> <span class="s2">&#34;2019&#34;</span><span class="p">));</span></code></pre></div>
 <!-- raw HTML omitted -->
 
 </div>

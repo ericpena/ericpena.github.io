@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Function Basics"/>
 <meta name="twitter:description" content="Function basics in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -164,20 +164,20 @@ MathJax.Hub.Config({
   </header>
   <div class="content">
       
-  <h2 id="create-function-called-print-max">Create Function Called print_max</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">print_max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="p">:</span>
+  <h2 id="create-function-called-print_max">Create Function Called print_max</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">print_max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="c1"># if a is larger than b</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
         <span class="c1"># then print this</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">is maximum</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;is maximum&#39;</span><span class="p">)</span>
     <span class="c1"># if a is equal to b</span>
     <span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
         <span class="c1"># print this</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">is equal to</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;is equal to&#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="c1"># otherwise</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># print this</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">is maximum</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;is maximum&#39;</span><span class="p">)</span>
 </code></pre></div><h2 id="run-function-with-two-arguments">Run Function With Two Arguments</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">print_max</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div><pre><code>4 is maximum
@@ -187,20 +187,20 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span>
 </code></pre></div><h2 id="create-function-called-func">Create Function Called Func</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create function</span>
-<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
     <span class="c1"># Create a global variable called x</span>
     <span class="k">global</span> <span class="n">x</span>
 
     <span class="c1"># Print this</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">x is</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;x is&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
     
     <span class="c1"># Set x to 2.</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
     
     <span class="c1"># Print this</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Changed global x to</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Changed global x to&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </code></pre></div><h2 id="run-func">Run func()</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">func</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">func</span><span class="p">()</span>
 </code></pre></div><pre><code>x is 50
 Changed global x to 2
 </code></pre>
@@ -210,14 +210,14 @@ Changed global x to 2
 </code></pre>
 <h2 id="create-function-say-displaying-x-with-default-value-of-1">Create Function Say() Displaying x with default value of 1</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create function</span>
-<span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">times</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">times2</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">times</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">times2</span> <span class="o">=</span> <span class="mi">3</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">times</span><span class="p">,</span> <span class="n">x</span> <span class="o">*</span> <span class="n">times2</span><span class="p">)</span>
 
 <span class="c1"># Run the function say() with the default values</span>
-<span class="n">say</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">!</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">say</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">)</span>
 
 <span class="c1"># Run the function say() with the non-default values of 5 and 10</span>
-<span class="n">say</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">!</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">say</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </code></pre></div><pre><code>! !!!
 !!!!! !!!!!!!!!!
 </code></pre>
@@ -227,17 +227,17 @@ Changed global x to 2
 <li>** dnotes that all keyword arguments from that point to the next arg are used</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a function called total() with three parameters</span>
-<span class="k">def</span> <span class="nf">total</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="o">*</span><span class="n">numbers</span><span class="p">,</span> <span class="o">*</span><span class="o">*</span><span class="n">keywords</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">total</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="o">*</span><span class="n">numbers</span><span class="p">,</span> <span class="o">**</span><span class="n">keywords</span><span class="p">):</span>
     <span class="c1"># Create a variable called count that takes it&#39;s value from initial</span>
     <span class="n">count</span> <span class="o">=</span> <span class="n">initial</span>
     <span class="c1"># for each item in numbers</span>
     <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
         <span class="c1"># add count to that number</span>
-        <span class="n">count</span> <span class="o">+</span><span class="o">=</span> <span class="n">number</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="n">number</span>
     <span class="c1"># for each item in keywords</span>
     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keywords</span><span class="p">:</span>
         <span class="c1"># add count to keyword&#39;s value</span>
-        <span class="n">count</span> <span class="o">+</span><span class="o">=</span> <span class="n">keywords</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="n">keywords</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
     <span class="c1"># return counts</span>
     <span class="k">return</span> <span class="n">count</span>
 

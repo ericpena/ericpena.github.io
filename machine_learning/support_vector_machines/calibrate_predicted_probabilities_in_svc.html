@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Calibrate Predicted Probabilities In SVC"/>
 <meta name="twitter:description" content="How to calibrate predicted probabilities in support vector classifier in Scikit-Learn"/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -164,9 +164,9 @@ MathJax.Hub.Config({
   </header>
   <div class="content">
       
-  <p>SVC's use of a hyperplane to create decision regions do not naturally output a probability estimate that an observation is a member of a certain class. However, we can in fact output calibrated class probabilities with a few caveats. In an SVC, Platt scaling can be used, wherein first the SVC is trained, then a separate cross-validated logistic regression is trained to map the SVC outputs into probabilities:</p>
+  <p>SVC&rsquo;s use of a hyperplane to create decision regions do not naturally output a probability estimate that an observation is a member of a certain class. However, we can in fact output calibrated class probabilities with a few caveats. In an SVC, Platt scaling can be used, wherein first the SVC is trained, then a separate cross-validated logistic regression is trained to map the SVC outputs into probabilities:</p>
 <p>$$P(y=1 \mid x)={\frac {1}{1+e^{(A*f(x)+B)}}}$$</p>
-<p>where $A$ and $B$ are parameter vectors and $f$ is the $i$th observation's signed distance from the hyperplane. When we have more than two classes, an extension of Platt scaling is used.</p>
+<p>where $A$ and $B$ are parameter vectors and $f$ is the $i$th observation&rsquo;s signed distance from the hyperplane. When we have more than two classes, an extension of Platt scaling is used.</p>
 <p>In scikit-learn, the predicted probabilities must be generated when the model is being trained. This can be done by setting <code>SVC</code>'s <code>probability</code> to <code>True</code>. After the model is trained, we can output the estimated probabilities for each class using <code>predict_proba</code>.</p>
 <h2 id="preliminaries">Preliminaries</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load libraries</span>
@@ -176,22 +176,22 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </code></pre></div><h2 id="load-iris-flower-data">Load Iris Flower Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load data</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">(</span><span class="p">)</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
 </code></pre></div><h2 id="standardize-features">Standardize Features</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Standarize features</span>
-<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="p">)</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 <span class="n">X_std</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </code></pre></div><h2 id="train-support-vector-classifier">Train Support Vector Classifier</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create support vector classifier object</span>
-<span class="n">svc</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">linear</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">probability</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">svc</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">probability</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Train classifier</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">svc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_std</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </code></pre></div><h2 id="create-previously-unseen-observation">Create Previously Unseen Observation</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create new observation</span>
-<span class="n">new_observation</span> <span class="o">=</span> <span class="p">[</span><span class="p">[</span><span class="o">.</span><span class="mi">4</span><span class="p">,</span> <span class="o">.</span><span class="mi">4</span><span class="p">,</span> <span class="o">.</span><span class="mi">4</span><span class="p">,</span> <span class="o">.</span><span class="mi">4</span><span class="p">]</span><span class="p">]</span>
+<span class="n">new_observation</span> <span class="o">=</span> <span class="p">[[</span><span class="o">.</span><span class="mi">4</span><span class="p">,</span> <span class="o">.</span><span class="mi">4</span><span class="p">,</span> <span class="o">.</span><span class="mi">4</span><span class="p">,</span> <span class="o">.</span><span class="mi">4</span><span class="p">]]</span>
 </code></pre></div><h2 id="view-predicted-probabilities">View Predicted Probabilities</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View predicted probabilities</span>
 <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">new_observation</span><span class="p">)</span>

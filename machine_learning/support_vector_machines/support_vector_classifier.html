@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Support Vector Classifier"/>
 <meta name="twitter:description" content="How to train a support vector classifier in Scikit-Learn"/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -175,12 +175,12 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </code></pre></div><h2 id="load-iris-flower-data">Load Iris Flower Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load feature and target data</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">(</span><span class="p">)</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
 </code></pre></div><h2 id="standardize-features">Standardize Features</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Standarize features</span>
-<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="p">)</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 <span class="n">X_std</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </code></pre></div><h2 id="train-support-vector-classifier">Train Support Vector Classifier</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create support vector classifier</span>
@@ -190,7 +190,7 @@ MathJax.Hub.Config({
 <span class="n">model</span> <span class="o">=</span> <span class="n">svc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_std</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </code></pre></div><h2 id="create-previously-unseen-observation">Create Previously Unseen Observation</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create new observation</span>
-<span class="n">new_observation</span> <span class="o">=</span> <span class="p">[</span><span class="p">[</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.1</span> <span class="p">,</span> <span class="o">-</span><span class="mf">1.7</span><span class="p">]</span><span class="p">]</span>
+<span class="n">new_observation</span> <span class="o">=</span> <span class="p">[[</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.1</span> <span class="p">,</span> <span class="o">-</span><span class="mf">1.7</span><span class="p">]]</span>
 </code></pre></div><h2 id="predict-class-of-observation">Predict Class Of Observation</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Predict class of new observation</span>
 <span class="n">svc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">new_observation</span><span class="p">)</span>

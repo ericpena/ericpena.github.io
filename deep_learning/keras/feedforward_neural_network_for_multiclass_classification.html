@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Feedforward Neural Network For Multiclass Classification"/>
 <meta name="twitter:description" content="How to use Keras to train a feedforward neural network for multiclass classification in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -182,12 +182,12 @@ MathJax.Hub.Config({
 <span class="n">number_of_features</span> <span class="o">=</span> <span class="mi">5000</span>
 
 <span class="c1"># Load feature and target data</span>
-<span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">train_target_vector</span><span class="p">)</span><span class="p">,</span> <span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">test_target_vector</span><span class="p">)</span> <span class="o">=</span> <span class="n">reuters</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">num_words</span><span class="o">=</span><span class="n">number_of_features</span><span class="p">)</span>
+<span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">train_target_vector</span><span class="p">),</span> <span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">test_target_vector</span><span class="p">)</span> <span class="o">=</span> <span class="n">reuters</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">num_words</span><span class="o">=</span><span class="n">number_of_features</span><span class="p">)</span>
 
 <span class="c1"># Convert feature data to a one-hot encoded feature matrix</span>
 <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">(</span><span class="n">num_words</span><span class="o">=</span><span class="n">number_of_features</span><span class="p">)</span>
-<span class="n">train_features</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">sequences_to_matrix</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">binary</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">test_features</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">sequences_to_matrix</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">binary</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">train_features</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">sequences_to_matrix</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;binary&#39;</span><span class="p">)</span>
+<span class="n">test_features</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">sequences_to_matrix</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;binary&#39;</span><span class="p">)</span>
 
 <span class="c1"># One-hot encode target vector to create a target matrix</span>
 <span class="n">train_target</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">train_target_vector</span><span class="p">)</span>
@@ -195,21 +195,21 @@ MathJax.Hub.Config({
 </code></pre></div><h2 id="construct-neural-network-architecture">Construct Neural Network Architecture</h2>
 <p>In this example we use a loss function suited to multi-class classification, the categorical cross-entropy loss function, <code>categorical_crossentropy</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Start neural network</span>
-<span class="n">network</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="p">)</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
 
 <span class="c1"># Add fully connected layer with a ReLU activation function</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">relu</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">number_of_features</span><span class="p">,</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">number_of_features</span><span class="p">,)))</span>
 
 <span class="c1"># Add fully connected layer with a ReLU activation function</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">relu</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
 
 <span class="c1"># Add fully connected layer with a softmax activation function</span>
-<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">46</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">softmax</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">46</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">))</span>
 </code></pre></div><h2 id="compile-feedforward-neural-network">Compile Feedforward Neural Network</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Compile neural network</span>
-<span class="n">network</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">categorical_crossentropy</span><span class="s1">&#39;</span><span class="p">,</span> <span class="c1"># Cross-entropy</span>
-                <span class="n">optimizer</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">rmsprop</span><span class="s1">&#39;</span><span class="p">,</span> <span class="c1"># Root Mean Square Propagation</span>
-                <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">accuracy</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span> <span class="c1"># Accuracy performance metric</span>
+<span class="n">network</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;categorical_crossentropy&#39;</span><span class="p">,</span> <span class="c1"># Cross-entropy</span>
+                <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;rmsprop&#39;</span><span class="p">,</span> <span class="c1"># Root Mean Square Propagation</span>
+                <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span> <span class="c1"># Accuracy performance metric</span>
 </code></pre></div><h2 id="train-feedforward-neural-network">Train Feedforward Neural Network</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Train neural network</span>
 <span class="n">history</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_features</span><span class="p">,</span> <span class="c1"># Features</span>
@@ -217,7 +217,7 @@ MathJax.Hub.Config({
                       <span class="n">epochs</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="c1"># Three epochs</span>
                       <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="c1"># No output</span>
                       <span class="n">batch_size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="c1"># Number of observations per batch</span>
-                      <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">test_features</span><span class="p">,</span> <span class="n">test_target</span><span class="p">)</span><span class="p">)</span> <span class="c1"># Data to use for evaluation</span>
+                      <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">test_features</span><span class="p">,</span> <span class="n">test_target</span><span class="p">))</span> <span class="c1"># Data to use for evaluation</span>
 </code></pre></div>
 </div>
   <aside>

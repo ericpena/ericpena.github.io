@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Descriptive Statistics For pandas Dataframe"/>
 <meta name="twitter:description" content="Descriptive statistics for pandas dataframe."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -167,23 +167,23 @@ MathJax.Hub.Config({
   <h3 id="import-modules">Import modules</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </code></pre></div><h3 id="create-dataframe">Create dataframe</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Jason</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Molly</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Tina</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Jake</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Amy</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span> 
-        <span class="sa"></span><span class="s1">&#39;</span><span class="s1">age</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">73</span><span class="p">]</span><span class="p">,</span> 
-        <span class="sa"></span><span class="s1">&#39;</span><span class="s1">preTestScore</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span><span class="p">,</span>
-        <span class="sa"></span><span class="s1">&#39;</span><span class="s1">postTestScore</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">70</span><span class="p">]</span><span class="p">}</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">age</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">preTestScore</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">postTestScore</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Jason&#39;</span><span class="p">,</span> <span class="s1">&#39;Molly&#39;</span><span class="p">,</span> <span class="s1">&#39;Tina&#39;</span><span class="p">,</span> <span class="s1">&#39;Jake&#39;</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">],</span> 
+        <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">73</span><span class="p">],</span> 
+        <span class="s1">&#39;preTestScore&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+        <span class="s1">&#39;postTestScore&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">70</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;preTestScore&#39;</span><span class="p">,</span> <span class="s1">&#39;postTestScore&#39;</span><span class="p">])</span>
 <span class="n">df</span>
 </code></pre></div><!-- raw HTML omitted -->
 <h3 id="the-sum-of-all-the-ages">The sum of all the ages</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">age</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </code></pre></div><pre><code>227
 </code></pre>
 <h3 id="mean-pretestscore">Mean preTestScore</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">preTestScore</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;preTestScore&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </code></pre></div><pre><code>12.800000000000001
 </code></pre>
 <h3 id="cumulative-sum-of-pretestscores-moving-from-the-rows-from-the-top">Cumulative sum of preTestScores, moving from the rows from the top</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">preTestScore</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;preTestScore&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
 </code></pre></div><pre><code>0     4
 1    28
 2    59
@@ -192,7 +192,7 @@ MathJax.Hub.Config({
 Name: preTestScore, dtype: int64
 </code></pre>
 <h3 id="summary-statistics-on-pretestscore">Summary statistics on preTestScore</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">preTestScore</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;preTestScore&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </code></pre></div><pre><code>count     5.000000
 mean     12.800000
 std      13.663821
@@ -204,42 +204,42 @@ max      31.000000
 Name: preTestScore, dtype: float64
 </code></pre>
 <h3 id="count-the-number-of-non-na-values">Count the number of non-NA values</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">preTestScore</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;preTestScore&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </code></pre></div><pre><code>5
 </code></pre>
 <h3 id="minimum-value-of-pretestscore">Minimum value of preTestScore</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">preTestScore</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;preTestScore&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 </code></pre></div><pre><code>2
 </code></pre>
 <h3 id="maximum-value-of-pretestscore">Maximum value of preTestScore</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">preTestScore</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;preTestScore&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 </code></pre></div><pre><code>31
 </code></pre>
 <h3 id="median-value-of-pretestscore">Median value of preTestScore</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">preTestScore</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;preTestScore&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
 </code></pre></div><pre><code>4.0
 </code></pre>
 <h3 id="sample-variance-of-pretestscore-values">Sample variance of preTestScore values</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">preTestScore</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;preTestScore&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
 </code></pre></div><pre><code>186.69999999999999
 </code></pre>
 <h3 id="sample-standard-deviation-of-pretestscore-values">Sample standard deviation of preTestScore values</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">preTestScore</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;preTestScore&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 </code></pre></div><pre><code>13.663820841916802
 </code></pre>
 <h3 id="skewness-of-pretestscore-values">Skewness of preTestScore values</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">preTestScore</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;preTestScore&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span>
 </code></pre></div><pre><code>0.74334524573267591
 </code></pre>
 <h3 id="kurtosis-of-pretestscore-values">Kurtosis of preTestScore values</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">preTestScore</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">kurt</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;preTestScore&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">kurt</span><span class="p">()</span>
 </code></pre></div><pre><code>-2.4673543738411525
 </code></pre>
 <h3 id="correlation-matrix-of-values">Correlation Matrix Of Values</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
 </code></pre></div><!-- raw HTML omitted -->
 <h3 id="covariance-matrix-of-values">Covariance Matrix Of Values</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
 </code></pre></div><!-- raw HTML omitted -->
 
 </div>

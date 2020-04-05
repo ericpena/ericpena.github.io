@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Iterate Over A Map"/>
 <meta name="twitter:description" content="Iterate over a map using Scala."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -171,7 +171,7 @@ MathJax.Hub.Config({
                  <span class="s">&#34;CPU&#34;</span> <span class="o">-&gt;</span> <span class="mf">100.00</span><span class="o">)</span>
 </code></pre></div><h2 id="loop-over-a-map">Loop Over A Map</h2>
 <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="c1">// for each key and value in prices
-</span><span class="c1"></span><span class="k">for</span> <span class="o">(</span><span class="o">(</span><span class="n">k</span><span class="o">,</span><span class="n">v</span><span class="o">)</span> <span class="k">&lt;-</span> <span class="n">prices</span><span class="o">)</span> <span class="k">yield</span> <span class="o">{</span>
+</span><span class="c1"></span><span class="k">for</span> <span class="o">((</span><span class="n">k</span><span class="o">,</span><span class="n">v</span><span class="o">)</span> <span class="k">&lt;-</span> <span class="n">prices</span><span class="o">)</span> <span class="k">yield</span> <span class="o">{</span>
     <span class="c1">// Return the value plus 100
 </span><span class="c1"></span>    <span class="n">v</span><span class="o">+</span><span class="mi">100</span>
 <span class="o">}</span>

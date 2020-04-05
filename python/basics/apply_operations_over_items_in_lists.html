@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Apply Operations Over Items In A List"/>
 <meta name="twitter:description" content="Apply Operations Over Items In A List"/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -168,16 +168,16 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a list of casualties from battles</span>
 <span class="n">battleDeaths</span> <span class="o">=</span> <span class="p">[</span><span class="mi">482</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">392</span><span class="p">,</span> <span class="mi">920</span><span class="p">,</span> <span class="mi">813</span><span class="p">,</span> <span class="mi">199</span><span class="p">,</span> <span class="mi">374</span><span class="p">,</span> <span class="mi">237</span><span class="p">,</span> <span class="mi">244</span><span class="p">]</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a function that updates all battle deaths by adding 100</span>
-<span class="k">def</span> <span class="nf">updated</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="p">:</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">100</span>
+<span class="k">def</span> <span class="nf">updated</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">100</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a list that applies updated() to all elements of battleDeaths</span>
-<span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">updated</span><span class="p">,</span> <span class="n">battleDeaths</span><span class="p">)</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">updated</span><span class="p">,</span> <span class="n">battleDeaths</span><span class="p">))</span>
 </code></pre></div><pre><code>[582, 193, 492, 1020, 913, 299, 474, 337, 344]
 </code></pre>
 <h2 id="method-2-for-x-in-y">Method 2: for x in y</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a list of deaths</span>
 <span class="n">casualties</span> <span class="o">=</span> <span class="p">[</span><span class="mi">482</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">392</span><span class="p">,</span> <span class="mi">920</span><span class="p">,</span> <span class="mi">813</span><span class="p">,</span> <span class="mi">199</span><span class="p">,</span> <span class="mi">374</span><span class="p">,</span> <span class="mi">237</span><span class="p">,</span> <span class="mi">244</span><span class="p">]</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a variable where we will put the updated casualty numbers</span>
-<span class="n">casualtiesUpdated</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
+<span class="n">casualtiesUpdated</span> <span class="o">=</span> <span class="p">[]</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a function that for each item in casualties, adds 10</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">casualties</span><span class="p">:</span>
     <span class="n">casualtiesUpdated</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="p">)</span>
@@ -187,7 +187,7 @@ MathJax.Hub.Config({
 </code></pre>
 <h2 id="method-3-lambda-functions">Method 3: lambda functions</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Map the lambda function x() over casualties</span>
-<span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="p">)</span><span class="p">,</span> <span class="n">casualties</span><span class="p">)</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">((</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">100</span><span class="p">),</span> <span class="n">casualties</span><span class="p">))</span>
 </code></pre></div><pre><code>[582, 193, 492, 1020, 913, 299, 474, 337, 344]
 </code></pre>
 

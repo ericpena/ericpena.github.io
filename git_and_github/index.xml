@@ -31,7 +31,7 @@ To fix this:
 Create A New Git Repository   Go to the fold of the project.
   Run git init
   Clone An Existing Git Repository Cloning is the process of pulling down a copy of a repository stored on a server.
-  Go to the parent folder of where you want to repository&#39;s folder to be in.
+  Go to the parent folder of where you want to repository&amp;rsquo;s folder to be in.
   git clone [url to repository&#39;s git file] [name of folder / repository you want]</description>
     </item>
     

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Iterate Over Multiple Lists Simultaneously"/>
 <meta name="twitter:description" content="Iterate over multiple lists simultaneously using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -165,10 +165,10 @@ MathJax.Hub.Config({
   <div class="content">
       
   <h2 id="create-two-lists">Create Two Lists</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">James</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Bob</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Sarah</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Marco</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Nancy</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Sally</span><span class="s1">&#39;</span><span class="p">]</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;James&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Sarah&#39;</span><span class="p">,</span> <span class="s1">&#39;Marco&#39;</span><span class="p">,</span> <span class="s1">&#39;Nancy&#39;</span><span class="p">,</span> <span class="s1">&#39;Sally&#39;</span><span class="p">]</span>
 <span class="n">ages</span> <span class="o">=</span> <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>
 </code></pre></div><h2 id="iterate-over-both-lists-at-once">Iterate Over Both Lists At Once</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">ages</span><span class="p">)</span><span class="p">:</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">ages</span><span class="p">):</span>
      <span class="k">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
 </code></pre></div><pre><code>James 42
 Bob 13

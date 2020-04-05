@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="One-Hot Encode Features With Multiple Labels"/>
 <meta name="twitter:description" content="How to one-hot encode nominal categorical features with multiple labels per observation for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -170,14 +170,14 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </code></pre></div><h2 id="create-data">Create Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create NumPy array</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Texas</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Florida</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span> 
-    <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">California</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Alabama</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span> 
-    <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Texas</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Florida</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span> 
-    <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Delware</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Florida</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span> 
-    <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Texas</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Alabama</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Texas&#39;</span><span class="p">,</span> <span class="s1">&#39;Florida&#39;</span><span class="p">),</span> 
+    <span class="p">(</span><span class="s1">&#39;California&#39;</span><span class="p">,</span> <span class="s1">&#39;Alabama&#39;</span><span class="p">),</span> 
+    <span class="p">(</span><span class="s1">&#39;Texas&#39;</span><span class="p">,</span> <span class="s1">&#39;Florida&#39;</span><span class="p">),</span> 
+    <span class="p">(</span><span class="s1">&#39;Delware&#39;</span><span class="p">,</span> <span class="s1">&#39;Florida&#39;</span><span class="p">),</span> 
+    <span class="p">(</span><span class="s1">&#39;Texas&#39;</span><span class="p">,</span> <span class="s1">&#39;Alabama&#39;</span><span class="p">)]</span>
 </code></pre></div><h2 id="one-hot-encode-data">One-hot Encode Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create MultiLabelBinarizer object</span>
-<span class="n">one_hot</span> <span class="o">=</span> <span class="n">MultiLabelBinarizer</span><span class="p">(</span><span class="p">)</span>
+<span class="n">one_hot</span> <span class="o">=</span> <span class="n">MultiLabelBinarizer</span><span class="p">()</span>
 
 <span class="c1"># One-hot encode data</span>
 <span class="n">one_hot</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>

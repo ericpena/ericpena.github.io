@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Priority Queues"/>
 <meta name="twitter:description" content="Priority queues in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -170,45 +170,45 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a priority queue abstract base class</span>
 <span class="k">class</span> <span class="nc">priority_queue</span><span class="p">:</span>
     <span class="c1"># Initialize the instance</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Create a list to use as the queue</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_queue</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_queue</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="c1"># Create an index to use as ordering</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_index</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="c1"># Create a function to add a task to the queue</span>
-    <span class="k">def</span> <span class="nf">add_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">priority</span><span class="p">)</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">add_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">priority</span><span class="p">):</span>
         <span class="c1"># Push the arguments to the _queue using a heap</span>
-        <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_queue</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="n">priority</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span><span class="p">)</span>
+        <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_queue</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="n">priority</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index</span><span class="p">,</span> <span class="n">item</span><span class="p">))</span>
         <span class="c1"># Add one to the index</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_index</span> <span class="o">+</span><span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_index</span> <span class="o">+=</span> <span class="mi">1</span>
 
     <span class="c1"># Create a function to get the next item from the queue</span>
-    <span class="k">def</span> <span class="nf">next_task</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">next_task</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Return the next item in the queue</span>
-        <span class="k">return</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_queue</span><span class="p">)</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_queue</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a priority queue called task_list</span>
-<span class="n">task_list</span> <span class="o">=</span> <span class="n">priority_queue</span><span class="p">(</span><span class="p">)</span>
+<span class="n">task_list</span> <span class="o">=</span> <span class="n">priority_queue</span><span class="p">()</span>
 </code></pre></div><h2 id="add-items-to-queue">Add Items To Queue</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Add an item to the queue</span>
-<span class="n">task_list</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Clean Dishes</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">task_list</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="s1">&#39;Clean Dishes&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Add an item to the queue</span>
-<span class="n">task_list</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Wash Car</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">task_list</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="s1">&#39;Wash Car&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="c1"># Add an item to the queue</span>
-<span class="n">task_list</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Walk Dog</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">task_list</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="s1">&#39;Walk Dog&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </code></pre></div><h2 id="retrieve-items-from-queue-by-priority">Retrieve Items From Queue By Priority</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Retrieve items from the queue</span>
-<span class="n">task_list</span><span class="o">.</span><span class="n">next_task</span><span class="p">(</span><span class="p">)</span>
+<span class="n">task_list</span><span class="o">.</span><span class="n">next_task</span><span class="p">()</span>
 </code></pre></div><pre><code>'Walk Dog'
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Retrieve items from the queue</span>
-<span class="n">task_list</span><span class="o">.</span><span class="n">next_task</span><span class="p">(</span><span class="p">)</span>
+<span class="n">task_list</span><span class="o">.</span><span class="n">next_task</span><span class="p">()</span>
 </code></pre></div><pre><code>'Wash Car'
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Retrieve items from the queue</span>
-<span class="n">task_list</span><span class="o">.</span><span class="n">next_task</span><span class="p">(</span><span class="p">)</span>
+<span class="n">task_list</span><span class="o">.</span><span class="n">next_task</span><span class="p">()</span>
 </code></pre></div><pre><code>'Clean Dishes'
 </code></pre>
 

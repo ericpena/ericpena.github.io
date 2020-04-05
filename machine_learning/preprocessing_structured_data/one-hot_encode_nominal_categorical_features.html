@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="One-Hot Encode Nominal Categorical Features"/>
 <meta name="twitter:description" content="How to one-hot encode nominal categorical features for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -172,14 +172,14 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
 </code></pre></div><h2 id="create-data-with-one-class-label">Create Data With One Class Label</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create NumPy array</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="p">[</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Texas</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span> 
-              <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">California</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span> 
-              <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Texas</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span> 
-              <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Delaware</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span> 
-              <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Texas</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">]</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s1">&#39;Texas&#39;</span><span class="p">],</span> 
+              <span class="p">[</span><span class="s1">&#39;California&#39;</span><span class="p">],</span> 
+              <span class="p">[</span><span class="s1">&#39;Texas&#39;</span><span class="p">],</span> 
+              <span class="p">[</span><span class="s1">&#39;Delaware&#39;</span><span class="p">],</span> 
+              <span class="p">[</span><span class="s1">&#39;Texas&#39;</span><span class="p">]])</span>
 </code></pre></div><h2 id="one-hot-encode-data-method-1">One-hot Encode Data (Method 1)</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create LabelBinzarizer object</span>
-<span class="n">one_hot</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="p">)</span>
+<span class="n">one_hot</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">()</span>
 
 <span class="c1"># One-hot encode data</span>
 <span class="n">one_hot</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -193,7 +193,7 @@ MathJax.Hub.Config({
 </code></pre>
 <h2 id="one-hot-encode-data-method-2">One-hot Encode Data (Method 2)</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Dummy feature</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="p">:</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe tbody tr th {
     vertical-align: top;

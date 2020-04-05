@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Test For A Specific Exception"/>
 <meta name="twitter:description" content="Test for a specific exception using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -167,18 +167,18 @@ MathJax.Hub.Config({
   <h2 id="preliminaries">Preliminaries</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">unittest</span>
 </code></pre></div><h2 id="create-a-function-to-test">Create A Function To Test</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="p">:</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </code></pre></div><h2 id="create-test-case">Create Test Case</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a test case</span>
-<span class="k">class</span> <span class="nc">TestAdd</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">)</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">TestAdd</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="c1"># Create the unit test</span>
-    <span class="k">def</span> <span class="nf">test_input_string</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">test_input_string</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Test To make sure a TypeError exception is raised</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="n">add</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Banana</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Boat</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="n">add</span><span class="p">(</span><span class="s1">&#39;Banana&#39;</span><span class="p">,</span> <span class="s1">&#39;Boat&#39;</span><span class="p">))</span>
 </code></pre></div><h2 id="run-test">Run Test</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Run the unit test (and don&#39;t shut down the Jupyter Notebook)</span>
-<span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">ignored</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">-v</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span> <span class="nb">exit</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ignored&#39;</span><span class="p">,</span> <span class="s1">&#39;-v&#39;</span><span class="p">],</span> <span class="nb">exit</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </code></pre></div><pre><code>test_input_string (__main__.TestAdd) ... ok
 
 ----------------------------------------------------------------------

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Calculate Difference Between Dates And Times"/>
 <meta name="twitter:description" content="How to calculate differences between dates and times for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -169,21 +169,21 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </code></pre></div><h2 id="create-date-and-time-data">Create Date And Time Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create data frame</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
 <span class="c1"># Create two datetime features</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Arrived</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">01-01-2017</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">01-04-2017</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">]</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Left</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">01-01-2017</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">01-06-2017</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Arrived&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;01-01-2017&#39;</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;01-04-2017&#39;</span><span class="p">)]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Left&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;01-01-2017&#39;</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;01-06-2017&#39;</span><span class="p">)]</span>
 </code></pre></div><h2 id="calculate-difference-method-1">Calculate Difference (Method 1)</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Calculate duration between features</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Left</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Arrived</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Left&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Arrived&#39;</span><span class="p">]</span>
 </code></pre></div><pre><code>0   0 days
 1   2 days
 dtype: timedelta64[ns]
 </code></pre>
 <h2 id="calculate-difference-method-2">Calculate Difference (Method 2)</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Calculate duration between features</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">delta</span><span class="o">.</span><span class="n">days</span> <span class="k">for</span> <span class="n">delta</span> <span class="ow">in</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Left</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Arrived</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">delta</span><span class="o">.</span><span class="n">days</span> <span class="k">for</span> <span class="n">delta</span> <span class="ow">in</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Left&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Arrived&#39;</span><span class="p">]))</span>
 </code></pre></div><pre><code>0    0
 1    2
 dtype: int64

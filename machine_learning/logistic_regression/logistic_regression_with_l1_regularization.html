@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Logistic Regression With L1 Regularization"/>
 <meta name="twitter:description" content="Logistic Regression With L1 Regularization using scikit-learn."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -175,7 +175,7 @@ MathJax.Hub.Config({
 <p>The dataset used in this tutorial is the famous <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">iris dataset</a>. The Iris target data contains 50 samples from three species of Iris, <code>y</code> and four feature variables, <code>X</code>.</p>
 <p>The dataset contains three categories (three species of Iris), however for the sake of simplicity it is easier if the target data is binary. Therefore we will remove the data from the last species of Iris.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load the iris dataset</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">(</span><span class="p">)</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
 
 <span class="c1"># Create X from the features</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
@@ -209,7 +209,7 @@ MathJax.Hub.Config({
 </code></pre></div><h2 id="standardize-features">Standardize Features</h2>
 <p>Because the regularization penalty is comprised of the sum of the absolute value of the coefficients, we need to scale the data so the coefficients are all based on the same scale.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a scaler object</span>
-<span class="n">sc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="p">)</span>
+<span class="n">sc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 
 <span class="c1"># Fit the scaler to the training data and transform</span>
 <span class="n">X_train_std</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
@@ -221,13 +221,13 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mo">001</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">C</span><span class="p">:</span>
-    <span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">penalty</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">l1</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">liblinear</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">penalty</span><span class="o">=</span><span class="s1">&#39;l1&#39;</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s1">&#39;liblinear&#39;</span><span class="p">)</span>
     <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">C:</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Coefficient of each feature:</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Training accuracy:</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train_std</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Test accuracy:</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test_std</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;C:&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Coefficient of each feature:&#39;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Training accuracy:&#39;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train_std</span><span class="p">,</span> <span class="n">y_train</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Test accuracy:&#39;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test_std</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>C: 10
 Coefficient of each feature: [[-0.00902649 -3.83902983  4.34904293  0.        ]]
 Training accuracy: 0.9857142857142858

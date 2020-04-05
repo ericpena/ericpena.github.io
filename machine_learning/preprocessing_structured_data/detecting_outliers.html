@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Detecting Outliers"/>
 <meta name="twitter:description" content="How to detect outliers for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -180,9 +180,9 @@ MathJax.Hub.Config({
 <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10000</span>
 <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10000</span>
 </code></pre></div><h2 id="detect-outliers">Detect Outliers</h2>
-<p><code>EllipticEnvelope</code> assumes the data is normally distributed and based on that assumption &ldquo;draws&rdquo; an ellipse around the data, classifying any observation inside the ellipse as an inlier (labeled as  <code>1</code>) and any observation outside the ellipse as an outlier (labeled as <code>-1</code>). A major limitation of this approach is the need to specify a <code>contamination</code> parameter which is the proportion of observations that are outliers, a value that we don't know.</p>
+<p><code>EllipticEnvelope</code> assumes the data is normally distributed and based on that assumption &ldquo;draws&rdquo; an ellipse around the data, classifying any observation inside the ellipse as an inlier (labeled as  <code>1</code>) and any observation outside the ellipse as an outlier (labeled as <code>-1</code>). A major limitation of this approach is the need to specify a <code>contamination</code> parameter which is the proportion of observations that are outliers, a value that we don&rsquo;t know.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create detector</span>
-<span class="n">outlier_detector</span> <span class="o">=</span> <span class="n">EllipticEnvelope</span><span class="p">(</span><span class="n">contamination</span><span class="o">=</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">outlier_detector</span> <span class="o">=</span> <span class="n">EllipticEnvelope</span><span class="p">(</span><span class="n">contamination</span><span class="o">=.</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Fit detector</span>
 <span class="n">outlier_detector</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>

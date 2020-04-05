@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create Command"/>
 <meta name="twitter:description" content="How to create a command using the Linux command line."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -164,12 +164,12 @@ MathJax.Hub.Config({
   </header>
   <div class="content">
       
-  <h2 id="check-if-commands-name-is-taken">Check If Command's Name Is Taken</h2>
+  <h2 id="check-if-commands-name-is-taken">Check If Command&rsquo;s Name Is Taken</h2>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">type make_example_directory</code></pre></div>
 <pre><code>-bash: type: make_example_directory: not found
 </code></pre><p>Okay good!</p>
 <h2 id="create-custom-command">Create Custom Command</h2>
-<p>Let us create a custom command that creates a bunch of files and subdirectories in a directory. I've used this command a few times for tutorial to simulate a real project. We will separate each command using <code>;</code> so they can all be on one line. Specifically, the commands we will run are:</p>
+<p>Let us create a custom command that creates a bunch of files and subdirectories in a directory. I&rsquo;ve used this command a few times for tutorial to simulate a real project. We will separate each command using <code>;</code> so they can all be on one line. Specifically, the commands we will run are:</p>
 <p><code>touch config.txt; touch data.csv; touch readme.md; mkdir sales_data; mkdir scripts</code></p>
 <p>Notice that the format for creating a command is <code>alias [command_name]='[command contents]'</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">alias make_fake_project=&#39;touch config.txt; touch data.csv; touch readme.md; mkdir sales_data; mkdir scripts&#39;</code></pre></div>

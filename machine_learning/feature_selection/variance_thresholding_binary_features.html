@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Variance Thresholding Binary Features"/>
 <meta name="twitter:description" content="How to select the best binary features for machine learning using variance thresholding in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -171,17 +171,17 @@ MathJax.Hub.Config({
 <span class="c1"># Feature 0: 80% class 0</span>
 <span class="c1"># Feature 1: 80% class 1</span>
 <span class="c1"># Feature 2: 60% class 0, 40% class 1</span>
-<span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="p">,</span>
-     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="p">,</span>
-     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="p">,</span>
-     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="p">,</span>
-     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
 </code></pre></div><h2 id="conduct-variance-thresholding">Conduct Variance Thresholding</h2>
 <p>In binary features (i.e. Bernoulli random variables), variance is calculated as:</p>
 <p>$$\operatorname {Var} (x)= p(1-p)$$</p>
 <p>where $p$ is the proportion of observations of class <code>1</code>. Therefore, by setting $p$, we can remove features where the vast majority of observations are one class.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Run threshold by variance</span>
-<span class="n">thresholder</span> <span class="o">=</span> <span class="n">VarianceThreshold</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="p">(</span><span class="o">.</span><span class="mi">75</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="o">.</span><span class="mi">75</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+<span class="n">thresholder</span> <span class="o">=</span> <span class="n">VarianceThreshold</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="p">(</span><span class="o">.</span><span class="mi">75</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="o">.</span><span class="mi">75</span><span class="p">)))</span>
 <span class="n">thresholder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </code></pre></div><pre><code>array([[0],
        [1],

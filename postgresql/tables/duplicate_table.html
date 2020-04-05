@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Duplicate Table"/>
 <meta name="twitter:description" content="How to duplicate tables in an SQL database."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -168,21 +168,21 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Create table called adventurers
 </span><span class="c1"></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">adventurers</span> <span class="p">(</span>
     <span class="c1">-- string variable
-</span><span class="c1"></span>    <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="p">,</span>
+</span><span class="c1"></span>    <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
     <span class="c1">-- integer variable
 </span><span class="c1"></span>    <span class="n">age</span> <span class="nb">int</span><span class="p">,</span>
     <span class="c1">-- string variable
-</span><span class="c1"></span>    <span class="n">race</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="p">,</span>
+</span><span class="c1"></span>    <span class="n">race</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
     <span class="c1">-- string variable
 </span><span class="c1"></span>    <span class="n">weapon</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
 <span class="p">)</span></code></pre></div>
 <h2 id="insert-row">Insert Row</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Insert into the table adventurers
 </span><span class="c1"></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">adventurers</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">race</span><span class="p">,</span> <span class="n">weapon</span><span class="p">)</span>
-<span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Fjoak Doom-Wife</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Human</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Axe</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Alooneric Cortte</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Elf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Bow</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Piperel Ramsay</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Elf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Sword</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Casimir Yardley</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Elf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Magic</span><span class="s1">&#39;</span><span class="p">)</span></code></pre></div>
+<span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;Fjoak Doom-Wife&#39;</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="s1">&#39;Human&#39;</span><span class="p">,</span> <span class="s1">&#39;Axe&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Alooneric Cortte&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="s1">&#39;Elf&#39;</span><span class="p">,</span> <span class="s1">&#39;Bow&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Piperel Ramsay&#39;</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="s1">&#39;Elf&#39;</span><span class="p">,</span> <span class="s1">&#39;Sword&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Casimir Yardley&#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="s1">&#39;Elf&#39;</span><span class="p">,</span> <span class="s1">&#39;Magic&#39;</span><span class="p">)</span></code></pre></div>
 <h2 id="view-table">View Table</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Retrieve rows from table
 </span><span class="c1"></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">warriors</span></code></pre></div>

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Big-O Notation"/>
 <meta name="twitter:description" content="Understanding big-O notation using Python"/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -165,7 +165,7 @@ MathJax.Hub.Config({
   <div class="content">
       
   <p>Big-O notation is used to classify the worst-case &ldquo;speed&rdquo; of an algorithm by looking at the order of magnitude of execution time.</p>
-<p>From best to worst, some common Big-O's are:</p>
+<p>From best to worst, some common Big-O&rsquo;s are:</p>
 <ul>
 <li>O(1)</li>
 <li>O(log n)</li>
@@ -178,21 +178,21 @@ MathJax.Hub.Config({
 <p>Below are some examples of a few of these.</p>
 <h2 id="create-data">Create Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a list 100 elements long</span>
-<span class="n">n</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
 </code></pre></div><h2 id="o1---constant-time-complexity">O(1) - Constant Time-Complexity</h2>
 <p>The length of <code>n</code> has no bearing on the number of steps required to complete the function. This is the ideal.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a function that, regardless of the length of n,</span>
-<span class="k">def</span> <span class="nf">constant</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">constant</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="c1"># returns 1</span>
-    <span class="k">return</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Number of operations: </span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39;Number of operations: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">constant</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 </code></pre></div><pre><code>'Number of operations: 1'
 </code></pre>
 <h2 id="olog-n---logarithmic-time-complexity">O(log n) - Logarithmic Time-Complexity</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a function that</span>
-<span class="k">def</span> <span class="nf">logarithmic</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">logarithmic</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="c1"># Creates a list of the operations performed</span>
-    <span class="n">operations</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
+    <span class="n">operations</span> <span class="o">=</span> <span class="p">[]</span>
     
     <span class="c1"># While n is longer than 1, repeat this:</span>
     <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
@@ -200,20 +200,20 @@ MathJax.Hub.Config({
         <span class="n">half_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
         
         <span class="c1"># Add half the values of n to operations</span>
-        <span class="n">operations</span> <span class="o">=</span> <span class="n">operations</span> <span class="o">+</span> <span class="p">[</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">half_length</span><span class="p">]</span><span class="p">]</span>
+        <span class="n">operations</span> <span class="o">=</span> <span class="n">operations</span> <span class="o">+</span> <span class="p">[</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">half_length</span><span class="p">]]</span>
         
         <span class="c1"># make n half the length of itself, then restart the loop</span>
         <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">half_length</span><span class="p">]</span>
         
     <span class="c1"># Return the number of operations</span>
-    <span class="k">return</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Number of operations: </span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">operations</span><span class="p">)</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39;Number of operations: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">operations</span><span class="p">))</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">logarithmic</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 </code></pre></div><pre><code>'Number of operations: 6'
 </code></pre>
 <h2 id="on---linear-time-complexity">O(n) - Linear Time-Complexity</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">linear</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="p">:</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">linear</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="c1"># Creates a list of the operations performed</span>
-    <span class="n">operations</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
+    <span class="n">operations</span> <span class="o">=</span> <span class="p">[]</span>
     
     <span class="c1"># For every item in n</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">n</span><span class="p">:</span>
@@ -221,14 +221,14 @@ MathJax.Hub.Config({
         <span class="n">operations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
         
     <span class="c1"># Return the number of operations</span>
-    <span class="k">return</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Number of operations: </span><span class="s1">&#39;</span> <span class="o">+</span>  <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">operations</span><span class="p">)</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39;Number of operations: &#39;</span> <span class="o">+</span>  <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">operations</span><span class="p">))</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">linear</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 </code></pre></div><pre><code>'Number of operations: 100'
 </code></pre>
 <h2 id="onsup2sup---quadratic-time-complexity">O(n<!-- raw HTML omitted -->2<!-- raw HTML omitted -->) - Quadratic Time-Complexity</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">quadratic</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="p">:</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">quadratic</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="c1"># Creates a list of the operations performed</span>
-    <span class="n">operations</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
+    <span class="n">operations</span> <span class="o">=</span> <span class="p">[]</span>
     
     <span class="c1"># For every item in n,</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">n</span><span class="p">:</span>
@@ -238,7 +238,7 @@ MathJax.Hub.Config({
             <span class="n">operations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
             
     <span class="c1"># Return the number of operations</span>
-    <span class="k">return</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Number of operations: </span><span class="s1">&#39;</span> <span class="o">+</span>  <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">operations</span><span class="p">)</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39;Number of operations: &#39;</span> <span class="o">+</span>  <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">operations</span><span class="p">))</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">quadratic</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 </code></pre></div><pre><code>'Number of operations: 10000'
 </code></pre>

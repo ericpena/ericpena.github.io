@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Loading Features From Dictionaries"/>
 <meta name="twitter:description" content="Loading Features From Dictionaries Using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -167,21 +167,21 @@ MathJax.Hub.Config({
   <h2 id="preliminaries">Preliminaries</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.feature_extraction</span> <span class="kn">import</span> <span class="n">DictVectorizer</span>
 </code></pre></div><h2 id="create-a-dictionary">Create A Dictionary</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">staff</span> <span class="o">=</span> <span class="p">[</span><span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Steve Miller</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">age</span><span class="s1">&#39;</span><span class="p">:</span> <span class="mf">33.</span><span class="p">}</span><span class="p">,</span>
-         <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Lyndon Jones</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">age</span><span class="s1">&#39;</span><span class="p">:</span> <span class="mf">12.</span><span class="p">}</span><span class="p">,</span>
-         <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Baxter Morth</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">age</span><span class="s1">&#39;</span><span class="p">:</span> <span class="mf">18.</span><span class="p">}</span><span class="p">]</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">staff</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Steve Miller&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mf">33.</span><span class="p">},</span>
+         <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Lyndon Jones&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mf">12.</span><span class="p">},</span>
+         <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Baxter Morth&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mf">18.</span><span class="p">}]</span>
 </code></pre></div><h2 id="convert-dictionary-to-feature-matrix">Convert Dictionary To Feature Matrix</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create an object for our dictionary vectorizer</span>
-<span class="n">vec</span> <span class="o">=</span> <span class="n">DictVectorizer</span><span class="p">(</span><span class="p">)</span>
+<span class="n">vec</span> <span class="o">=</span> <span class="n">DictVectorizer</span><span class="p">()</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Fit then transform the staff dictionary with vec, then output an array</span>
-<span class="n">vec</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">staff</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">(</span><span class="p">)</span>
+<span class="n">vec</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">staff</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
 </code></pre></div><pre><code>array([[ 33.,   0.,   0.,   1.],
        [ 12.,   0.,   1.,   0.],
        [ 18.,   1.,   0.,   0.]])
 </code></pre>
 <h2 id="view-feature-names">View Feature Names</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Get Feature Names</span>
-<span class="n">vec</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">(</span><span class="p">)</span>
+<span class="n">vec</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">()</span>
 </code></pre></div><pre><code>['age', 'name=Baxter Morth', 'name=Lyndon Jones', 'name=Steve Miller']
 </code></pre>
 

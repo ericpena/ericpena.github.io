@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Named Tuples To Store Data"/>
 <meta name="twitter:description" content="Using named tuples to store data using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -167,9 +167,9 @@ MathJax.Hub.Config({
   <h2 id="preliminaries">Preliminaries</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
 </code></pre></div><h2 id="create-a-named-tuple">Create A Named Tuple</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Vehicle</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Vehicle</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">make model wheels manual</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Vehicle</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Vehicle&#39;</span><span class="p">,</span> <span class="s1">&#39;make model wheels manual&#39;</span><span class="p">)</span>
 </code></pre></div><h2 id="create-an-entry">Create An Entry</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">forrester</span> <span class="o">=</span> <span class="n">Vehicle</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Forrester</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Subaru</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">forrester</span> <span class="o">=</span> <span class="n">Vehicle</span><span class="p">(</span><span class="s1">&#39;Forrester&#39;</span><span class="p">,</span> <span class="s1">&#39;Subaru&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
 </code></pre></div><h2 id="view-the-data-in-entry">View The Data In Entry</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">forrester</span><span class="o">.</span><span class="n">model</span>
 </code></pre></div><pre><code>'Subaru'

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="View A Table&#39;s Comments"/>
 <meta name="twitter:description" content="How to view a table&#39;s comments in SQL using Snowflake.."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "View A Table\x27s Comments",
   "url": "https:\/\/ericpena.github.io\/snowflake\/sql\/tables\/view_table_comments.html",
-  "wordCount": "135",
+  "wordCount": "137",
   "datePublished": "2019-01-28T00:00:00-07:00",
   "dateModified": "2019-01-28T00:00:00-07:00",
   "author": {
@@ -46,7 +46,7 @@
 }
 </script> 
 
-    <title>View A Table&#39;s Comments</title>
+    <title>View A Table&rsquo;s Comments</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -169,21 +169,21 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Create a table called SUPERHEROES. If it already exists, replace it.
 </span><span class="c1"></span><span class="k">CREATE</span> <span class="k">OR</span> <span class="k">REPLACE</span> <span class="k">TABLE</span> <span class="n">SUPERHEROES</span> <span class="p">(</span>
   <span class="c1">-- Column called ID allowing up to five characters with a comment.
-</span><span class="c1"></span>  <span class="s2">&#34;</span><span class="s2">ID</span><span class="s2">&#34;</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">COMMENT</span> <span class="s1">&#39;</span><span class="s1">A unique ID for each superhero.</span><span class="s1">&#39;</span><span class="p">,</span> 
+</span><span class="c1"></span>  <span class="s2">&#34;ID&#34;</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">COMMENT</span> <span class="s1">&#39;A unique ID for each superhero.&#39;</span><span class="p">,</span> 
   <span class="c1">-- Column called ALTER_EGO allowing up to 100 characters with a comment.
-</span><span class="c1"></span>  <span class="s2">&#34;</span><span class="s2">ALTER_EGO</span><span class="s2">&#34;</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">COMMENT</span> <span class="s1">&#39;</span><span class="s1">The superheroe\</span><span class="s1">&#39;</span><span class="n">s</span> <span class="n">pseudonym</span><span class="p">.</span><span class="s1">&#39;</span><span class="s1">
+</span><span class="c1"></span>  <span class="s2">&#34;ALTER_EGO&#34;</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">COMMENT</span> <span class="s1">&#39;The superheroe\&#39;</span><span class="n">s</span> <span class="n">pseudonym</span><span class="p">.</span><span class="s1">&#39;
 </span><span class="s1">) 
 </span><span class="s1">-- A comment for the entire table.
-</span><span class="s1">COMMENT=</span><span class="s1">&#39;</span><span class="n">A</span> <span class="k">table</span> <span class="k">for</span> <span class="n">superheroes</span><span class="p">.</span><span class="s1">&#39;</span><span class="s1">
+</span><span class="s1">COMMENT=&#39;</span><span class="n">A</span> <span class="k">table</span> <span class="k">for</span> <span class="n">superheroes</span><span class="p">.</span><span class="s1">&#39;
 </span><span class="s1">;</span></code></pre></div>
 <h2 id="view-table-metadata">View Table Metadata</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Show the metadata on all tables called SUPERHEROES
-</span><span class="c1"></span><span class="k">SHOW</span> <span class="n">TABLES</span> <span class="k">LIKE</span> <span class="s1">&#39;</span><span class="s1">SUPERHEROES</span><span class="s1">&#39;</span><span class="p">;</span></code></pre></div>
-<h2 id="view-tables-comments">View Table's Comments</h2>
+</span><span class="c1"></span><span class="k">SHOW</span> <span class="n">TABLES</span> <span class="k">LIKE</span> <span class="s1">&#39;SUPERHEROES&#39;</span><span class="p">;</span></code></pre></div>
+<h2 id="view-tables-comments">View Table&rsquo;s Comments</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Select the &#34;name&#34; and &#34;comment&#34; columns
-</span><span class="c1"></span><span class="k">SELECT</span> <span class="s2">&#34;</span><span class="s2">name</span><span class="s2">&#34;</span><span class="p">,</span> <span class="s2">&#34;</span><span class="s2">comment</span><span class="s2">&#34;</span> 
+</span><span class="c1"></span><span class="k">SELECT</span> <span class="s2">&#34;name&#34;</span><span class="p">,</span> <span class="s2">&#34;comment&#34;</span> 
 <span class="c1">-- Of the last query (in this case the SHOW TABLES LIKE &#39;SUPERHEROES query)
-</span><span class="c1"></span><span class="k">FROM</span> <span class="k">TABLE</span><span class="p">(</span><span class="n">RESULT_SCAN</span><span class="p">(</span><span class="n">LAST_QUERY_ID</span><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+</span><span class="c1"></span><span class="k">FROM</span> <span class="k">TABLE</span><span class="p">(</span><span class="n">RESULT_SCAN</span><span class="p">(</span><span class="n">LAST_QUERY_ID</span><span class="p">()))</span>
 <span class="p">;</span></code></pre></div>
 <!-- raw HTML omitted -->
 

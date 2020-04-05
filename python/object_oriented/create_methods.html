@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create Methods"/>
 <meta name="twitter:description" content="How to create methods for a class in object oriented programming in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -167,33 +167,33 @@ MathJax.Hub.Config({
   <h2 id="create-simple-class">Create Simple Class</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a class called Soldier</span>
 <span class="k">class</span> <span class="nc">Soldier</span><span class="p">:</span>
-    <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2">Creates a class representing a soldier.</span><span class="s2">&#34;&#34;&#34;</span>
+    <span class="s2">&#34;&#34;&#34;Creates a class representing a soldier.&#34;&#34;&#34;</span>
     
     <span class="c1"># Whenever an object is created from this class,</span>
     <span class="c1"># assign the name and initial rank.</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">rank</span><span class="p">)</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">rank</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rank</span> <span class="o">=</span> <span class="mi">1</span>
         
     <span class="c1"># Promote soldier to a higher rank</span>
-    <span class="k">def</span> <span class="nf">promote</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">promote</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Set rank to current rank plus one</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rank</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rank</span> <span class="o">+</span> <span class="mi">1</span>
 </code></pre></div><h2 id="create-soldier-named-jason">Create Soldier Named Jason</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create an instance of Soldier class called &#39;jason&#39;</span>
-<span class="n">jason</span> <span class="o">=</span> <span class="n">Soldier</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Jason Miller</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</code></pre></div><h2 id="view-jasons-attributes">View Jason's Attributes</h2>
+<span class="n">jason</span> <span class="o">=</span> <span class="n">Soldier</span><span class="p">(</span><span class="s1">&#39;Jason Miller&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div><h2 id="view-jasons-attributes">View Jason&rsquo;s Attributes</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Display a dictionary of attributes</span>
 <span class="n">jason</span><span class="o">.</span><span class="vm">__dict__</span>
 </code></pre></div><pre><code>{'name': 'Jason Miller', 'rank': 1}
 </code></pre>
-<h2 id="view-jasons-rank">View Jason's Rank</h2>
+<h2 id="view-jasons-rank">View Jason&rsquo;s Rank</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">jason</span><span class="o">.</span><span class="n">rank</span>
 </code></pre></div><pre><code>1
 </code></pre>
 <h2 id="promote-jason">Promote Jason</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">jason</span><span class="o">.</span><span class="n">promote</span><span class="p">(</span><span class="p">)</span>
-</code></pre></div><h2 id="view-jasons-rank-1">View Jason's Rank</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">jason</span><span class="o">.</span><span class="n">promote</span><span class="p">()</span>
+</code></pre></div><h2 id="view-jasons-rank-1">View Jason&rsquo;s Rank</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">jason</span><span class="o">.</span><span class="n">rank</span>
 </code></pre></div><pre><code>2
 </code></pre>

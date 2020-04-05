@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Gaussian Naive Bayes Classifier"/>
 <meta name="twitter:description" content="How to train a Gaussian naive bayes classifer in Scikit-Learn"/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -172,18 +172,18 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
 </code></pre></div><h2 id="load-iris-flower-dataset">Load Iris Flower Dataset</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load data</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">(</span><span class="p">)</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
 </code></pre></div><h2 id="train-gaussian-naive-bayes-classifier">Train Gaussian Naive Bayes Classifier</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create Gaussian Naive Bayes object with prior probabilities of each class</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">(</span><span class="n">priors</span><span class="o">=</span><span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span><span class="p">)</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">(</span><span class="n">priors</span><span class="o">=</span><span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
 
 <span class="c1"># Train model</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </code></pre></div><h2 id="create-previously-unseen-observation">Create Previously Unseen Observation</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create new observation</span>
-<span class="n">new_observation</span> <span class="o">=</span> <span class="p">[</span><span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mf">0.4</span><span class="p">]</span><span class="p">]</span>
+<span class="n">new_observation</span> <span class="o">=</span> <span class="p">[[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mf">0.4</span><span class="p">]]</span>
 </code></pre></div><h2 id="predict-class">Predict Class</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Predict class</span>
 <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">new_observation</span><span class="p">)</span>

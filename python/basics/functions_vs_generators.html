@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Functions Vs. Generators"/>
 <meta name="twitter:description" content="Functions vs. generators in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -166,13 +166,13 @@ MathJax.Hub.Config({
       
   <h2 id="create-a-function">Create A Function</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a function that</span>
-<span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="n">names</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
     <span class="c1"># For each name in a list of names</span>
     <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
         <span class="c1"># Returns the name</span>
         <span class="k">return</span> <span class="n">name</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a variable of that function</span>
-<span class="n">students</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Abe</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Bob</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Christina</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Derek</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Eleanor</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+<span class="n">students</span> <span class="o">=</span> <span class="n">function</span><span class="p">([</span><span class="s1">&#39;Abe&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Christina&#39;</span><span class="p">,</span> <span class="s1">&#39;Derek&#39;</span><span class="p">,</span> <span class="s1">&#39;Eleanor&#39;</span><span class="p">])</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Run the function</span>
 <span class="n">students</span>
 </code></pre></div><pre><code>'Abe'
@@ -181,13 +181,13 @@ MathJax.Hub.Config({
 <h2 id="create-a-generator">Create A Generator</h2>
 <p>A generator is a function, but instead of returning the <code>return</code>, instead returns an iterator. The generator below is exactly the same as the function above except I have replaced <code>return</code> with <code>yield</code> (which defines whether a function with a regular function or a generator function).</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a generator that</span>
-<span class="k">def</span> <span class="nf">generator</span><span class="p">(</span><span class="n">names</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">generator</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
     <span class="c1"># For each name in a list of names</span>
     <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
         <span class="c1"># Yields a generator object</span>
         <span class="k">yield</span> <span class="n">name</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Same as above, create a variable for the generator</span>
-<span class="n">students</span> <span class="o">=</span> <span class="n">generator</span><span class="p">(</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Abe</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Bob</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Christina</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Derek</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Eleanor</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+<span class="n">students</span> <span class="o">=</span> <span class="n">generator</span><span class="p">([</span><span class="s1">&#39;Abe&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Christina&#39;</span><span class="p">,</span> <span class="s1">&#39;Derek&#39;</span><span class="p">,</span> <span class="s1">&#39;Eleanor&#39;</span><span class="p">])</span>
 </code></pre></div><p>Everything has been the same so far, but now things get interesting. Above when we ran <code>students</code> when it was a function, it returned one name. However, now that <code>students</code> refers to a generator, it yields a generator object of names!</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Run the generator</span>
 <span class="n">students</span>
@@ -206,7 +206,7 @@ MathJax.Hub.Config({
 <span class="nb">next</span><span class="p">(</span><span class="n">students</span><span class="p">)</span>
 </code></pre></div><pre><code>'Christina'
 </code></pre>
-<p>It is interesting to note that if we use list(students) we can see all the students still remaining in the generator object's iteration:</p>
+<p>It is interesting to note that if we use list(students) we can see all the students still remaining in the generator object&rsquo;s iteration:</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># List all remaining students in the generator</span>
 <span class="nb">list</span><span class="p">(</span><span class="n">students</span><span class="p">)</span>
 </code></pre></div><pre><code>['Derek', 'Eleanor']

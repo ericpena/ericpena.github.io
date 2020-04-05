@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Make Simulated Data For Classification"/>
 <meta name="twitter:description" content="Make a simulated dataset for classification using scikit-learn."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -180,13 +180,13 @@ MathJax.Hub.Config({
                                        <span class="n">n_classes</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
                                        <span class="c1"># with 20% of observations in the first class, 30% in the second class,</span>
                                        <span class="c1"># and 50% in the third class. (&#39;None&#39; makes balanced classes)</span>
-                                       <span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">3</span><span class="p">,</span> <span class="o">.</span><span class="mi">8</span><span class="p">]</span><span class="p">)</span>
+                                       <span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">3</span><span class="p">,</span> <span class="o">.</span><span class="mi">8</span><span class="p">])</span>
 </code></pre></div><h2 id="view-data">View Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View the first five observations and their 10 features</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">features</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">features</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div><!-- raw HTML omitted -->
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View the first five observation&#39;s classes</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">output</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">output</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div><!-- raw HTML omitted -->
 
 </div>

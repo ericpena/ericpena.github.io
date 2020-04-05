@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Testable Documentation"/>
 <meta name="twitter:description" content="Testable documentation using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Testable Documentation",
   "url": "https:\/\/ericpena.github.io\/python\/testing\/testable_documentation.html",
-  "wordCount": "149",
+  "wordCount": "163",
   "datePublished": "2017-12-20T11:53:49-07:00",
   "dateModified": "2017-12-20T11:53:49-07:00",
   "author": {
@@ -167,27 +167,27 @@ MathJax.Hub.Config({
   <h2 id="preliminaries">Preliminaries</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">doctest</span>
 </code></pre></div><h2 id="create-a-function-to-test">Create A Function To Test</h2>
-<p>Note that our test cases are inside the function's documentation. Each test case is marked by a <code>&gt;&gt;&gt;</code> and the expect output is the line below.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">summation</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="p">:</span>
-    <span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2">
-</span><span class="s2"></span><span class="s2">    Takes two inputs and outputs their sum.</span><span class="s2">
-</span><span class="s2"></span><span class="s2">    </span><span class="s2">
-</span><span class="s2"></span><span class="s2">    Tests:</span><span class="s2">
-</span><span class="s2"></span><span class="s2">    </span><span class="s2">
-</span><span class="s2"></span><span class="s2">    &gt;&gt;&gt; summation(5, 4)</span><span class="s2">
-</span><span class="s2"></span><span class="s2">    9</span><span class="s2">
-</span><span class="s2"></span><span class="s2">    </span><span class="s2">
-</span><span class="s2"></span><span class="s2">    &gt;&gt;&gt; summation(4, 3)</span><span class="s2">
-</span><span class="s2"></span><span class="s2">    7</span><span class="s2">
-</span><span class="s2"></span><span class="s2">    </span><span class="s2">
-</span><span class="s2"></span><span class="s2">    &gt;&gt;&gt; summation(</span><span class="s2">&#39;</span><span class="s2">foo</span><span class="s2">&#39;</span><span class="s2">,</span><span class="s2">&#39;</span><span class="s2">bar</span><span class="s2">&#39;</span><span class="s2">)</span><span class="s2">
-</span><span class="s2"></span><span class="s2">    </span><span class="s2">&#39;</span><span class="s2">foobar</span><span class="s2">&#39;</span><span class="s2">
-</span><span class="s2"></span><span class="s2">    </span><span class="s2">
-</span><span class="s2"></span><span class="s2">    &gt;&gt;&gt; summation(3,</span><span class="s2">&#39;</span><span class="s2">d</span><span class="s2">&#39;</span><span class="s2">)</span><span class="s2">
-</span><span class="s2"></span><span class="s2">    Traceback (most recent call last):</span><span class="s2">
-</span><span class="s2"></span><span class="s2">        ...</span><span class="s2">
-</span><span class="s2"></span><span class="s2">    TypeError: unsupported operand type(s) for +: </span><span class="s2">&#39;</span><span class="s2">int</span><span class="s2">&#39;</span><span class="s2"> and </span><span class="s2">&#39;</span><span class="s2">str</span><span class="s2">&#39;</span><span class="s2">
-</span><span class="s2"></span><span class="s2">    </span><span class="s2">&#34;&#34;&#34;</span>
+<p>Note that our test cases are inside the function&rsquo;s documentation. Each test case is marked by a <code>&gt;&gt;&gt;</code> and the expect output is the line below.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">summation</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    Takes two inputs and outputs their sum.
+</span><span class="s2">    
+</span><span class="s2">    Tests:
+</span><span class="s2">    
+</span><span class="s2">    &gt;&gt;&gt; summation(5, 4)
+</span><span class="s2">    9
+</span><span class="s2">    
+</span><span class="s2">    &gt;&gt;&gt; summation(4, 3)
+</span><span class="s2">    7
+</span><span class="s2">    
+</span><span class="s2">    &gt;&gt;&gt; summation(&#39;foo&#39;,&#39;bar&#39;)
+</span><span class="s2">    &#39;foobar&#39;
+</span><span class="s2">    
+</span><span class="s2">    &gt;&gt;&gt; summation(3,&#39;d&#39;)
+</span><span class="s2">    Traceback (most recent call last):
+</span><span class="s2">        ...
+</span><span class="s2">    TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</span><span class="s2">    &#34;&#34;&#34;</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </code></pre></div><p>Notice that in the last test, we are making sure the function outputs the correct error.</p>
 <h2 id="test-function">Test Function</h2>

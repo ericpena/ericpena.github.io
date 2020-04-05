@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Function Annotation Examples"/>
 <meta name="twitter:description" content="Function annotation examples in Python.."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Function Annotation Examples",
   "url": "https:\/\/ericpena.github.io\/python\/basics\/function_annotation_examples.html",
-  "wordCount": "81",
+  "wordCount": "86",
   "datePublished": "2017-12-20T11:53:49-07:00",
   "dateModified": "2017-12-20T11:53:49-07:00",
   "author": {
@@ -165,25 +165,25 @@ MathJax.Hub.Config({
   <div class="content">
       
   <h2 id="create-a-function-with-annotations">Create A Function With Annotations</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="sa"></span><span class="s1">&#39;&#39;&#39;</span><span class="s1"> </span><span class="s1">
-</span><span class="s1"></span><span class="s1">Create a function. </span><span class="s1">
-</span><span class="s1"></span><span class="s1">
-</span><span class="s1"></span><span class="s1">The argument </span><span class="s1">&#39;</span><span class="s1">text</span><span class="s1">&#39;</span><span class="s1"> is the string to print with the default value </span><span class="s1">&#39;</span><span class="s1">default string</span><span class="s1">&#39;</span><span class="s1">
-</span><span class="s1"></span><span class="s1">and the argument </span><span class="s1">
-</span><span class="s1"></span><span class="s1">
-</span><span class="s1"></span><span class="s1">The argument </span><span class="s1">&#39;</span><span class="s1">n</span><span class="s1">&#39;</span><span class="s1"> is an integer of times to print with the default value of 1. </span><span class="s1">
-</span><span class="s1"></span><span class="s1">
-</span><span class="s1"></span><span class="s1">The function should return a string.</span><span class="s1">
-</span><span class="s1"></span><span class="s1">&#39;&#39;&#39;</span>
-<span class="k">def</span> <span class="nf">print_text</span><span class="p">(</span><span class="n">text</span><span class="p">:</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">string to print</span><span class="s1">&#39;</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">default string</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">integer, times to print</span><span class="s1">&#39;</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s1">&#39;&#39;&#39; 
+</span><span class="s1">Create a function. 
+</span><span class="s1">
+</span><span class="s1">The argument &#39;text&#39; is the string to print with the default value &#39;default string&#39;
+</span><span class="s1">and the argument 
+</span><span class="s1">
+</span><span class="s1">The argument &#39;n&#39; is an integer of times to print with the default value of 1. 
+</span><span class="s1">
+</span><span class="s1">The function should return a string.
+</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="k">def</span> <span class="nf">print_text</span><span class="p">(</span><span class="n">text</span><span class="p">:</span><span class="s1">&#39;string to print&#39;</span><span class="o">=</span><span class="s1">&#39;default string&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span><span class="s1">&#39;integer, times to print&#39;</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">text</span> <span class="o">*</span> <span class="n">n</span>
 </code></pre></div><h2 id="run-the-function">Run The Function</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Run the function with arguments</span>
-<span class="n">print_text</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">string</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">print_text</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 </code></pre></div><pre><code>'stringstringstringstring'
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Run the function with default arguments</span>
-<span class="n">print_text</span><span class="p">(</span><span class="p">)</span>
+<span class="n">print_text</span><span class="p">()</span>
 </code></pre></div><pre><code>'default string'
 </code></pre>
 

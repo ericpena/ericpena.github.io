@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Adaboost Classifier"/>
 <meta name="twitter:description" content="How to conduct adaboost classifier and boosting in scikit-learn for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -171,13 +171,13 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
 </code></pre></div><h2 id="load-iris-flower-dataset">Load Iris Flower Dataset</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load data</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">(</span><span class="p">)</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
 </code></pre></div><h2 id="create-adaboost-classifier">Create Adaboost Classifier</h2>
 <p>The most important parameters are <code>base_estimator</code>, <code>n_estimators</code>, and <code>learning_rate</code>.</p>
 <ul>
-<li><code>base_estimator</code> is the learning algorithm to use to train the weak models. This will almost always not needed to be changed because by far the most common learner to use with AdaBoost is a decision tree &ndash; this parameter's default argument.</li>
+<li><code>base_estimator</code> is the learning algorithm to use to train the weak models. This will almost always not needed to be changed because by far the most common learner to use with AdaBoost is a decision tree &ndash; this parameter&rsquo;s default argument.</li>
 <li><code>n_estimators</code> is the number of models to iteratively train.</li>
 <li><code>learning_rate</code> is the contribution of each model to the weights and defaults to <code>1</code>. Reducing the learning rate will mean the weights will be increased or decreased to a small degree, forcing the model train slower (but sometimes resulting in better performance scores).</li>
 <li><code>loss</code> is exclusive to <code>AdaBoostRegressor</code> and sets the loss function to use when updating weights. This defaults to a linear loss function however can be changed to <code>square</code> or <code>exponential</code>.</li>

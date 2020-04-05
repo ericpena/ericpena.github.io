@@ -79,7 +79,7 @@
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/machine_learning/vectors_matrices_and_arrays/create_a_matrix.html</guid>
-      <description>Preliminaries # Load library import numpy as np Create Matrix # Create matrix matrix = np.array([[1, 4], [2, 5]]) Note NumPy&#39;s mat data structure is less flexible for our purposes and should be avoided.</description>
+      <description>Preliminaries # Load library import numpy as np Create Matrix # Create matrix matrix = np.array([[1, 4], [2, 5]]) Note NumPy&amp;rsquo;s mat data structure is less flexible for our purposes and should be avoided.</description>
     </item>
     
     <item>

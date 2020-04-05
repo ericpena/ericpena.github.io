@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Filter pandas Dataframes"/>
 <meta name="twitter:description" content="Filter pandas Dataframes"/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -167,11 +167,11 @@ MathJax.Hub.Config({
   <h2 id="import-modules">Import modules</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </code></pre></div><h2 id="create-dataframe">Create Dataframe</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Jason</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Molly</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Tina</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Jake</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Amy</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span> 
-        <span class="sa"></span><span class="s1">&#39;</span><span class="s1">year</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2014</span><span class="p">]</span><span class="p">,</span> 
-        <span class="sa"></span><span class="s1">&#39;</span><span class="s1">reports</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span><span class="p">,</span>
-        <span class="sa"></span><span class="s1">&#39;</span><span class="s1">coverage</span><span class="s1">&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">70</span><span class="p">]</span><span class="p">}</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Cochice</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Pima</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Santa Cruz</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Maricopa</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Yuma</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Jason&#39;</span><span class="p">,</span> <span class="s1">&#39;Molly&#39;</span><span class="p">,</span> <span class="s1">&#39;Tina&#39;</span><span class="p">,</span> <span class="s1">&#39;Jake&#39;</span><span class="p">,</span> <span class="s1">&#39;Amy&#39;</span><span class="p">],</span> 
+        <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2014</span><span class="p">],</span> 
+        <span class="s1">&#39;reports&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+        <span class="s1">&#39;coverage&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">70</span><span class="p">]}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Cochice&#39;</span><span class="p">,</span> <span class="s1">&#39;Pima&#39;</span><span class="p">,</span> <span class="s1">&#39;Santa Cruz&#39;</span><span class="p">,</span> <span class="s1">&#39;Maricopa&#39;</span><span class="p">,</span> <span class="s1">&#39;Yuma&#39;</span><span class="p">])</span>
 <span class="n">df</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
@@ -185,7 +185,7 @@ MathJax.Hub.Config({
 <p><!-- raw HTML omitted --></p>
 <!-- raw HTML omitted -->
 <h2 id="view-column">View Column</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span><span class="p">]</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
 </code></pre></div><pre><code>Cochice       Jason
 Pima          Molly
 Santa Cruz     Tina
@@ -194,7 +194,7 @@ Yuma            Amy
 Name: name, dtype: object
 </code></pre>
 <h2 id="view-two-columns">View Two Columns</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">name</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">reports</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">]</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;reports&#39;</span><span class="p">]]</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;
@@ -207,7 +207,7 @@ Name: name, dtype: object
 <p><!-- raw HTML omitted --></p>
 <!-- raw HTML omitted -->
 <h2 id="view-first-two-rows">View First Two Rows</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;
@@ -220,7 +220,7 @@ Name: name, dtype: object
 <p><!-- raw HTML omitted --></p>
 <!-- raw HTML omitted -->
 <h2 id="view-rows-where-coverage-is-greater-than-50">View Rows Where Coverage Is Greater Than 50</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">coverage</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">]</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;coverage&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">]</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;
@@ -233,7 +233,7 @@ Name: name, dtype: object
 <p><!-- raw HTML omitted --></p>
 <!-- raw HTML omitted -->
 <h2 id="view-rows-where-coverage-is-greater-than-50-and-reports-less-than-4">View Rows Where Coverage Is Greater Than 50 And Reports Less Than 4</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">coverage</span><span class="s1">&#39;</span><span class="p">]</span>  <span class="o">&gt;</span> <span class="mi">50</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">reports</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">)</span><span class="p">]</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;coverage&#39;</span><span class="p">]</span>  <span class="o">&gt;</span> <span class="mi">50</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;reports&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">)]</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;

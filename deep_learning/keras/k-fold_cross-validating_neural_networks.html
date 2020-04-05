@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="k-Fold Cross-Validating Neural Networks"/>
 <meta name="twitter:description" content="How to k-fold cross-validate neural networks for deep learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -164,7 +164,7 @@ MathJax.Hub.Config({
   </header>
   <div class="content">
       
-  <p>If we have smaller data it can be useful to benefit from k-fold cross-validation to maximize our ability to evaluate the neural network's performance. This is possible in Keras because we can &ldquo;wrap&rdquo; any neural network such that it can use the evaluation features available in scikit-learn, including k-fold cross-validation. To accomplish this, we first have to create a function that returns a compiled neural network. Next we use <code>KerasClassifier</code> (if we have a classifier, if we have a regressor we can use <code>KerasRegressor</code>) to wrap the model so it can be used by scikit-learn. After this, we can use our neural network like any other scikit-learn learning algorithm (e.g. random forests, logistic regression). In our solution, we used <code>cross_val_score</code> to run a 3-fold cross-validation on our neural network.</p>
+  <p>If we have smaller data it can be useful to benefit from k-fold cross-validation to maximize our ability to evaluate the neural network&rsquo;s performance. This is possible in Keras because we can &ldquo;wrap&rdquo; any neural network such that it can use the evaluation features available in scikit-learn, including k-fold cross-validation. To accomplish this, we first have to create a function that returns a compiled neural network. Next we use <code>KerasClassifier</code> (if we have a classifier, if we have a regressor we can use <code>KerasRegressor</code>) to wrap the model so it can be used by scikit-learn. After this, we can use our neural network like any other scikit-learn learning algorithm (e.g. random forests, logistic regression). In our solution, we used <code>cross_val_score</code> to run a 3-fold cross-validation on our neural network.</p>
 <h2 id="preliminaries">Preliminaries</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load libraries</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -188,28 +188,28 @@ MathJax.Hub.Config({
                                        <span class="n">n_informative</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
                                        <span class="n">n_redundant</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
                                        <span class="n">n_classes</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
-                                       <span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">]</span><span class="p">,</span>
+                                       <span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">],</span>
                                        <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
 </code></pre></div><h2 id="create-function-that-constructs-neural-network">Create Function That Constructs Neural Network</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create function returning a compiled network</span>
-<span class="k">def</span> <span class="nf">create_network</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">create_network</span><span class="p">():</span>
     
     <span class="c1"># Start neural network</span>
-    <span class="n">network</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="p">)</span>
+    <span class="n">network</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
 
     <span class="c1"># Add fully connected layer with a ReLU activation function</span>
-    <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">relu</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">number_of_features</span><span class="p">,</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>
+    <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">number_of_features</span><span class="p">,)))</span>
 
     <span class="c1"># Add fully connected layer with a ReLU activation function</span>
-    <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">relu</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+    <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
 
     <span class="c1"># Add fully connected layer with a sigmoid activation function</span>
-    <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">sigmoid</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">)</span>
+    <span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
 
     <span class="c1"># Compile neural network</span>
-    <span class="n">network</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">binary_crossentropy</span><span class="s1">&#39;</span><span class="p">,</span> <span class="c1"># Cross-entropy</span>
-                    <span class="n">optimizer</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">rmsprop</span><span class="s1">&#39;</span><span class="p">,</span> <span class="c1"># Root Mean Square Propagation</span>
-                    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">accuracy</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span> <span class="c1"># Accuracy performance metric</span>
+    <span class="n">network</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="c1"># Cross-entropy</span>
+                    <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;rmsprop&#39;</span><span class="p">,</span> <span class="c1"># Root Mean Square Propagation</span>
+                    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span> <span class="c1"># Accuracy performance metric</span>
     
     <span class="c1"># Return compiled network</span>
     <span class="k">return</span> <span class="n">network</span>

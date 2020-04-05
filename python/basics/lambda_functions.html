@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Lambda Functions"/>
 <meta name="twitter:description" content="Lambda functions using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -166,12 +166,12 @@ MathJax.Hub.Config({
       
   <p>In Python, it is possible to string lambda functions together.</p>
 <h3 id="create-a-series-called-pipeline-that-contains-three-mini-functions">Create a series, called pipeline, that contains three mini functions</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">pipeline</span> <span class="o">=</span> <span class="p">[</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span>
-            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span><span class="o">*</span><span class="mi">20</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span>
-            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span><span class="o">*</span><span class="mi">200</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">4</span><span class="p">]</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">pipeline</span> <span class="o">=</span> <span class="p">[</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span><span class="mi">20</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span><span class="mi">200</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">4</span><span class="p">]</span>
 </code></pre></div><h3 id="for-each-item-in-pipeline-run-the-lambda-function-with-x--3">For each item in pipeline, run the lambda function with x = 3</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">pipeline</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 </code></pre></div><pre><code>13
 3486784402
 265613988875874769338781322035779626829233452653394495974574961739092490901302182994384699044004

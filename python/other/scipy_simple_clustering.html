@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Simple Clustering With SciPy"/>
 <meta name="twitter:description" content="Simple clustering with SciPy."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -179,9 +179,9 @@ MathJax.Hub.Config({
 <span class="c1"># create 50 coordinatee pairs (i.e. two values)</span>
 <span class="n">year_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </code></pre></div><h3 id="view-the-first-3-entries-of-each-year-of-battles">View the first 3 entries of each year of battles</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">year 1 battles:</span><span class="s1">&#39;</span><span class="p">,</span>  <span class="n">year_1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">year 2 battles:</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">year_2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">year 3 battles:</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">year_3</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s1">&#39;year 1 battles:&#39;</span><span class="p">,</span>  <span class="n">year_1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;year 2 battles:&#39;</span><span class="p">,</span> <span class="n">year_2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;year 3 battles:&#39;</span><span class="p">,</span> <span class="n">year_3</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
 </code></pre></div><pre><code>year 1 battles: [[ 5.25720722  4.78051294]
  [ 4.11980541  6.24062638]
  [ 4.04612449  5.23819217]]
@@ -194,7 +194,7 @@ year 3 battles: [[-0.54820297 -0.97483204]
 </code></pre>
 <h3 id="pool-all-three-years-of-coordinates">Pool all three years of coordinates</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># vertically stack year_1, year_2, and year_3 elements</span>
-<span class="n">battles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="p">[</span><span class="n">year_1</span><span class="p">,</span> <span class="n">year_2</span><span class="p">,</span> <span class="n">year_3</span><span class="p">]</span><span class="p">)</span>
+<span class="n">battles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">year_1</span><span class="p">,</span> <span class="n">year_2</span><span class="p">,</span> <span class="n">year_3</span><span class="p">])</span>
 </code></pre></div><h3 id="cluster-the-battle-locations-into-three-groups">Cluster the battle locations into three groups</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># calculate the centroid coordinates of each cluster </span>
 <span class="c1"># and the variance of all the clusters</span>
@@ -222,7 +222,7 @@ year 3 battles: [[-0.54820297 -0.97483204]
        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], dtype=int32)
 </code></pre>
-<h3 id="view-the-distance-of-each-individual-battle-from-their-clusters-centroid">View the distance of each individual battle from their cluster's centroid</h3>
+<h3 id="view-the-distance-of-each-individual-battle-from-their-clusters-centroid">View the distance of each individual battle from their cluster&rsquo;s centroid</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">distance</span>
 </code></pre></div><pre><code>array([ 0.3397249 ,  1.51252941,  1.00271161,  0.7583883 ,  0.58103782,
         1.81905849,  1.45452846,  1.34523274,  0.69254441,  3.32123157,
@@ -266,9 +266,9 @@ year 3 battles: [[-0.54820297 -0.97483204]
 <span class="n">cluster_2</span> <span class="o">=</span> <span class="n">battles</span><span class="p">[</span><span class="n">identified</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">cluster_3</span> <span class="o">=</span> <span class="n">battles</span><span class="p">[</span><span class="n">identified</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span>
 </code></pre></div><h3 id="print-the-first-three-coordinate-pairs-of-each-cluster">Print the first three coordinate pairs of each cluster</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">cluster_1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cluster_2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">cluster_3</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">cluster_1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cluster_2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cluster_3</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
 </code></pre></div><pre><code>[[ 5.25720722  4.78051294]
  [ 4.11980541  6.24062638]
  [ 4.04612449  5.23819217]]
@@ -283,7 +283,7 @@ year 3 battles: [[-0.54820297 -0.97483204]
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># create a scatter plot there the x-axis is the first column of battles</span>
 <span class="c1"># the y-axis is the second column of battles, the size is 100, and</span>
 <span class="c1"># the color of each point is determined by the indentified variable</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">battles</span><span class="p">[</span><span class="p">:</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="p">,</span> <span class="n">battles</span><span class="p">[</span><span class="p">:</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">identified</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">battles</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">battles</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">identified</span><span class="p">)</span>
 </code></pre></div><pre><code>&lt;matplotlib.collections.PathCollection at 0x10d43f588&gt;
 </code></pre>
 <p><img src="scipy_simple_clustering_26_1.png" alt="png"></p>

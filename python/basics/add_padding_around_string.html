@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Add Padding Around String"/>
 <meta name="twitter:description" content="Add Padding Around String Using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -165,22 +165,22 @@ MathJax.Hub.Config({
   <div class="content">
       
   <h2 id="create-some-text">Create Some Text</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">text</span> <span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Chapter 1</span><span class="s1">&#39;</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Chapter 1&#39;</span>
 </code></pre></div><h2 id="add-padding-around-text">Add Padding Around Text</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Add Spaces Of Padding To The Left</span>
-<span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">&gt;20</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;&gt;20&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>'           Chapter 1'
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Add Spaces Of Padding To The Right</span>
-<span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">&lt;20</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;&lt;20&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>'Chapter 1           '
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Add Spaces Of Padding On Each Side</span>
-<span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">^20</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;^20&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>'     Chapter 1      '
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Add * Of Padding On Each Side</span>
-<span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">*^20</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;*^20&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>'*****Chapter 1******'
 </code></pre>
 

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Looping Over Two Lists"/>
 <meta name="twitter:description" content="Looping over two lists using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -165,14 +165,14 @@ MathJax.Hub.Config({
   <div class="content">
       
   <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a list of length 3:</span>
-<span class="n">armies</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Red Army</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Blue Army</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Green Army</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">armies</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Red Army&#39;</span><span class="p">,</span> <span class="s1">&#39;Blue Army&#39;</span><span class="p">,</span> <span class="s1">&#39;Green Army&#39;</span><span class="p">]</span>
 
 <span class="c1"># Create a list of length 4:</span>
-<span class="n">units</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Red Infantry</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Blue Armor</span><span class="s1">&#39;</span><span class="p">,</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Green Artillery</span><span class="s1">&#39;</span><span class="p">,</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Orange Aircraft</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">units</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Red Infantry&#39;</span><span class="p">,</span> <span class="s1">&#39;Blue Armor&#39;</span><span class="p">,</span><span class="s1">&#39;Green Artillery&#39;</span><span class="p">,</span><span class="s1">&#39;Orange Aircraft&#39;</span><span class="p">]</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># For each element in the first list,</span>
-<span class="k">for</span> <span class="n">army</span><span class="p">,</span> <span class="n">unit</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">armies</span><span class="p">,</span> <span class="n">units</span><span class="p">)</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">army</span><span class="p">,</span> <span class="n">unit</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">armies</span><span class="p">,</span> <span class="n">units</span><span class="p">):</span>
     <span class="c1"># Display the corresponding index element of the second list:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">army</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">has the following options:</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">army</span><span class="p">,</span> <span class="s1">&#39;has the following options:&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="p">)</span>
 </code></pre></div><pre><code>Red Army has the following options: Red Infantry
 Blue Army has the following options: Blue Armor
 Green Army has the following options: Green Artillery

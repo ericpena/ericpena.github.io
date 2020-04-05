@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Rescale A Feature"/>
 <meta name="twitter:description" content="How to rescale a feature for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -171,14 +171,14 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </code></pre></div><h2 id="create-feature">Create Feature</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create feature</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="p">[</span><span class="p">[</span><span class="o">-</span><span class="mf">500.5</span><span class="p">]</span><span class="p">,</span> 
-              <span class="p">[</span><span class="o">-</span><span class="mf">100.1</span><span class="p">]</span><span class="p">,</span> 
-              <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">,</span> 
-              <span class="p">[</span><span class="mf">100.1</span><span class="p">]</span><span class="p">,</span> 
-              <span class="p">[</span><span class="mf">900.9</span><span class="p">]</span><span class="p">]</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">500.5</span><span class="p">],</span> 
+              <span class="p">[</span><span class="o">-</span><span class="mf">100.1</span><span class="p">],</span> 
+              <span class="p">[</span><span class="mi">0</span><span class="p">],</span> 
+              <span class="p">[</span><span class="mf">100.1</span><span class="p">],</span> 
+              <span class="p">[</span><span class="mf">900.9</span><span class="p">]])</span>
 </code></pre></div><h2 id="rescale-feature-using-min-max">Rescale Feature Using Min-Max</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create scaler</span>
-<span class="n">minmax_scale</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">MinMaxScaler</span><span class="p">(</span><span class="n">feature_range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="p">)</span>
+<span class="n">minmax_scale</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">MinMaxScaler</span><span class="p">(</span><span class="n">feature_range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 
 <span class="c1"># Scale feature</span>
 <span class="n">x_scale</span> <span class="o">=</span> <span class="n">minmax_scale</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>

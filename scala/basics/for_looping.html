@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="For Looping"/>
 <meta name="twitter:description" content="For looping using Scala."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -172,7 +172,7 @@ MathJax.Hub.Config({
                         <span class="c1">// Upper case the name
 </span><span class="c1"></span>                        <span class="k">val</span> <span class="n">upperCaseFullNames</span> <span class="k">=</span> <span class="n">person</span><span class="o">.</span><span class="n">toUpperCase</span>
                         <span class="c1">// Get the first name by splitting the full name by space and taking the first element
-</span><span class="c1"></span>                        <span class="k">val</span> <span class="n">firstName</span> <span class="k">=</span> <span class="n">upperCaseFullNames</span><span class="o">.</span><span class="n">split</span><span class="o">(</span><span class="s">&#34; &#34;</span><span class="o">)</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span>
+</span><span class="c1"></span>                        <span class="k">val</span> <span class="n">firstName</span> <span class="k">=</span> <span class="n">upperCaseFullNames</span><span class="o">.</span><span class="n">split</span><span class="o">(</span><span class="s">&#34; &#34;</span><span class="o">)(</span><span class="mi">0</span><span class="o">)</span>
                         <span class="c1">// Return the first name
 </span><span class="c1"></span>                        <span class="n">firstName</span>
                       <span class="o">}</span>
@@ -183,9 +183,9 @@ MathJax.Hub.Config({
 <h2 id="loop-over-every-item-in-the-array-that-meets-a-criteria">Loop Over Every Item In The Array That Meets A Criteria</h2>
 <p>An if statement in a for loop is called a &ldquo;guard.&rdquo;</p>
 <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="c1">// Create a value that is the output, then for each person in staff with the last name of Miller
-</span><span class="c1"></span><span class="k">val</span> <span class="n">staffWithLastNameMiller</span> <span class="k">=</span> <span class="k">for</span> <span class="o">(</span><span class="n">person</span> <span class="k">&lt;-</span> <span class="n">staffMembers</span> <span class="k">if</span> <span class="n">person</span><span class="o">.</span><span class="n">split</span><span class="o">(</span><span class="s">&#34; &#34;</span><span class="o">)</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="o">==</span> <span class="s">&#34;Miller&#34;</span><span class="o">)</span> <span class="k">yield</span> <span class="o">{</span>
+</span><span class="c1"></span><span class="k">val</span> <span class="n">staffWithLastNameMiller</span> <span class="k">=</span> <span class="k">for</span> <span class="o">(</span><span class="n">person</span> <span class="k">&lt;-</span> <span class="n">staffMembers</span> <span class="k">if</span> <span class="n">person</span><span class="o">.</span><span class="n">split</span><span class="o">(</span><span class="s">&#34; &#34;</span><span class="o">)(</span><span class="mi">1</span><span class="o">)</span> <span class="o">==</span> <span class="s">&#34;Miller&#34;</span><span class="o">)</span> <span class="k">yield</span> <span class="o">{</span>
                                 <span class="c1">// Get the first name by splitting the full name by space and taking the first element
-</span><span class="c1"></span>                                <span class="k">val</span> <span class="n">firstName</span> <span class="k">=</span> <span class="n">person</span><span class="o">.</span><span class="n">split</span><span class="o">(</span><span class="s">&#34; &#34;</span><span class="o">)</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span>
+</span><span class="c1"></span>                                <span class="k">val</span> <span class="n">firstName</span> <span class="k">=</span> <span class="n">person</span><span class="o">.</span><span class="n">split</span><span class="o">(</span><span class="s">&#34; &#34;</span><span class="o">)(</span><span class="mi">0</span><span class="o">)</span>
                                 <span class="c1">// Return the first name
 </span><span class="c1"></span>                                <span class="n">firstName</span>
                               <span class="o">}</span>
@@ -194,11 +194,11 @@ MathJax.Hub.Config({
 </code></pre></div><pre><code>Array(Jason, Steve)
 </code></pre>
 <h2 id="loop-with-value-and-index">Loop With Value And Index</h2>
-<p>This is like Python's <code>enumerate()</code>.</p>
+<p>This is like Python&rsquo;s <code>enumerate()</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-scala" data-lang="scala"><span class="c1">// Create a value that is the output, then for each person and index, yield
-</span><span class="c1"></span><span class="k">val</span> <span class="n">staffNamesAndIndex</span> <span class="k">=</span> <span class="k">for</span> <span class="o">(</span><span class="o">(</span><span class="n">person</span><span class="o">,</span> <span class="n">i</span><span class="o">)</span> <span class="k">&lt;-</span> <span class="n">staffMembers</span><span class="o">.</span><span class="n">zipWithIndex</span><span class="o">)</span> <span class="k">yield</span> <span class="o">{</span>
+</span><span class="c1"></span><span class="k">val</span> <span class="n">staffNamesAndIndex</span> <span class="k">=</span> <span class="k">for</span> <span class="o">((</span><span class="n">person</span><span class="o">,</span> <span class="n">i</span><span class="o">)</span> <span class="k">&lt;-</span> <span class="n">staffMembers</span><span class="o">.</span><span class="n">zipWithIndex</span><span class="o">)</span> <span class="k">yield</span> <span class="o">{</span>
                            <span class="c1">// Upper case the name
-</span><span class="c1"></span>                           <span class="k">val</span> <span class="n">firstName</span> <span class="k">=</span> <span class="n">person</span><span class="o">.</span><span class="n">split</span><span class="o">(</span><span class="s">&#34; &#34;</span><span class="o">)</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span>
+</span><span class="c1"></span>                           <span class="k">val</span> <span class="n">firstName</span> <span class="k">=</span> <span class="n">person</span><span class="o">.</span><span class="n">split</span><span class="o">(</span><span class="s">&#34; &#34;</span><span class="o">)(</span><span class="mi">0</span><span class="o">)</span>
                            <span class="c1">// Return a tuple with the first name and index
 </span><span class="c1"></span>                          <span class="o">(</span><span class="n">firstName</span><span class="o">,</span> <span class="n">i</span><span class="o">)</span>
                          <span class="o">}</span>

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Select Date And Time Ranges"/>
 <meta name="twitter:description" content="How to select date and time ranges in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -169,14 +169,14 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </code></pre></div><h2 id="create-pandas-series-time-data">Create pandas Series Time Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create data frame</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 
 <span class="c1"># Create datetimes</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">date</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">1/1/2001</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">H</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;1/1/2001&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;H&#39;</span><span class="p">)</span>
 </code></pre></div><h2 id="select-time-range-method-1">Select Time Range (Method 1)</h2>
 <p>Use this method if your data frame is not indexed by time.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Select observations between two datetimes</span>
-<span class="n">df</span><span class="p">[</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">date</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">2002-1-1 01:00:00</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">date</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">&lt;</span><span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">2002-1-1 04:00:00</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s1">&#39;2002-1-1 01:00:00&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="s1">&#39;2002-1-1 04:00:00&#39;</span><span class="p">)]</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;
@@ -191,10 +191,10 @@ MathJax.Hub.Config({
 <h2 id="select-time-range-method-2">Select Time Range (Method 2)</h2>
 <p>Use this method if your data frame is indexed by time.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Set index</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">date</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
 
 <span class="c1"># Select observations between two datetimes</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">2002-1-1 01:00:00</span><span class="s1">&#39;</span><span class="p">:</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">2002-1-1 04:00:00</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2002-1-1 01:00:00&#39;</span><span class="p">:</span><span class="s1">&#39;2002-1-1 04:00:00&#39;</span><span class="p">]</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Handling Missing Values In Time Series"/>
 <meta name="twitter:description" content="How to handle the missing values in time series in pandas for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -170,16 +170,16 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </code></pre></div><h2 id="create-date-data-with-gap-in-values">Create Date Data With Gap In Values</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create date</span>
-<span class="n">time_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">01/01/2010</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">M</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">time_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;01/01/2010&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
 
 <span class="c1"># Create data frame, set index</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">time_index</span><span class="p">)</span>
 
 <span class="c1"># Create feature with a gap of missing values</span>
-<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Sales</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="mf">5.0</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sales&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="mf">5.0</span><span class="p">]</span>
 </code></pre></div><h2 id="interpolate-missing-values">Interpolate Missing Values</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Interpolate missing values</span>
-<span class="n">df</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">interpolate</span><span class="p">()</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;
@@ -193,7 +193,7 @@ MathJax.Hub.Config({
 <!-- raw HTML omitted -->
 <h2 id="forward-fill-missing-values">Forward-fill Missing Values</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Forward-fill</span>
-<span class="n">df</span><span class="o">.</span><span class="n">ffill</span><span class="p">(</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;
@@ -207,7 +207,7 @@ MathJax.Hub.Config({
 <!-- raw HTML omitted -->
 <h2 id="backfill-missing-values">Backfill Missing Values</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Back-fill</span>
-<span class="n">df</span><span class="o">.</span><span class="n">bfill</span><span class="p">(</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">bfill</span><span class="p">()</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;
@@ -221,7 +221,7 @@ MathJax.Hub.Config({
 <!-- raw HTML omitted -->
 <h2 id="interpolate-missing-values-but-only-up-one-value">Interpolate Missing Values But Only Up One Value</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Interpolate missing values</span>
-<span class="n">df</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">limit_direction</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">forward</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">limit_direction</span><span class="o">=</span><span class="s1">&#39;forward&#39;</span><span class="p">)</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;

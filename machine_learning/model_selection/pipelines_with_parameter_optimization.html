@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pipelines With Parameter Optimization"/>
 <meta name="twitter:description" content="Pipelines with parameter optimization using scikit-learn."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -173,7 +173,7 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 </code></pre></div><h2 id="load-data">Load Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load the breast cancer data</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_breast_cancer</span><span class="p">(</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_breast_cancer</span><span class="p">()</span>
 
 <span class="c1"># Create X from the dataset&#39;s features</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">data</span>
@@ -182,29 +182,29 @@ MathJax.Hub.Config({
 <span class="n">y</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">target</span>
 </code></pre></div><h2 id="create-pipelines">Create Pipelines</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create an scaler object</span>
-<span class="n">sc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="p">)</span>
+<span class="n">sc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 
 <span class="c1"># Create a pca object</span>
-<span class="n">pca</span> <span class="o">=</span> <span class="n">decomposition</span><span class="o">.</span><span class="n">PCA</span><span class="p">(</span><span class="p">)</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">decomposition</span><span class="o">.</span><span class="n">PCA</span><span class="p">()</span>
 
 <span class="c1"># Create a logistic regression object with an L2 penalty</span>
-<span class="n">logistic</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LogisticRegression</span><span class="p">(</span><span class="p">)</span>
+<span class="n">logistic</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LogisticRegression</span><span class="p">()</span>
 
 <span class="c1"># Create a pipeline of three steps. First, standardize the data.</span>
 <span class="c1"># Second, tranform the data with PCA.</span>
 <span class="c1"># Third, train a logistic regression on the data.</span>
-<span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">sc</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">sc</span><span class="p">)</span><span class="p">,</span> 
-                       <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">pca</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">pca</span><span class="p">)</span><span class="p">,</span> 
-                       <span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">logistic</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">logistic</span><span class="p">)</span><span class="p">]</span><span class="p">)</span>
+<span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;sc&#39;</span><span class="p">,</span> <span class="n">sc</span><span class="p">),</span> 
+                       <span class="p">(</span><span class="s1">&#39;pca&#39;</span><span class="p">,</span> <span class="n">pca</span><span class="p">),</span> 
+                       <span class="p">(</span><span class="s1">&#39;logistic&#39;</span><span class="p">,</span> <span class="n">logistic</span><span class="p">)])</span>
 </code></pre></div><h2 id="create-parameter-space">Create Parameter Space</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a list of a sequence of integers from 1 to 30 (the number of features in X + 1)</span>
-<span class="n">n_components</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="p">)</span>
+<span class="n">n_components</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 
 <span class="c1"># Create a list of values of the regularization parameter</span>
 <span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 
 <span class="c1"># Create a list of options for the regularization penalty</span>
-<span class="n">penalty</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">l1</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">l2</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">penalty</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;l1&#39;</span><span class="p">,</span> <span class="s1">&#39;l2&#39;</span><span class="p">]</span>
 
 <span class="c1"># Create a dictionary of all the parameter options </span>
 <span class="c1"># Note has you can access the parameters of steps of a pipeline by using &#39;__’</span>
@@ -218,9 +218,9 @@ MathJax.Hub.Config({
 <span class="c1"># Fit the grid search</span>
 <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View The Best Parameters</span>
-<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Best Penalty:</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="p">)</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">logistic__penalty</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Best C:</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="p">)</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">logistic__C</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Best Number Of Components:</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="p">)</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">pca__n_components</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Best Penalty:&#39;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">get_params</span><span class="p">()[</span><span class="s1">&#39;logistic__penalty&#39;</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Best C:&#39;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">get_params</span><span class="p">()[</span><span class="s1">&#39;logistic__C&#39;</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Best Number Of Components:&#39;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">get_params</span><span class="p">()[</span><span class="s1">&#39;pca__n_components&#39;</span><span class="p">])</span>
 </code></pre></div><h2 id="use-cross-validation-to-evaluate-model">Use Cross Validation To Evaluate Model</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Fit the grid search using 3-Fold cross validation</span>
 <span class="n">cross_val_score</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>

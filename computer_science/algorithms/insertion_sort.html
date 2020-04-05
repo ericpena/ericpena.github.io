@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Insertion Sort"/>
 <meta name="twitter:description" content="Insertion Sort Using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -171,16 +171,16 @@ MathJax.Hub.Config({
 </code></pre>
 <h2 id="create-a-selection-sort-algorithm">Create A Selection Sort Algorithm</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Define an function that takes a list</span>
-<span class="k">def</span> <span class="nf">insertion_sort</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">insertion_sort</span><span class="p">(</span><span class="n">alist</span><span class="p">):</span>
     
     <span class="c1"># Create a sequence from the argument list</span>
-    <span class="n">sequence</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="p">:</span><span class="p">]</span>
+    <span class="n">sequence</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[:]</span>
     
     <span class="c1"># Get the length of the list</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span>
     
     <span class="c1"># For 1 through the length for the sequence:</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
         
         <span class="c1"># save the value of the card</span>
         <span class="n">value</span> <span class="o">=</span> <span class="n">sequence</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
@@ -189,11 +189,11 @@ MathJax.Hub.Config({
         <span class="n">position</span> <span class="o">=</span> <span class="n">i</span>
         
         <span class="c1"># while the card is not the first card and is smaller than the card to it&#39;s left:</span>
-        <span class="k">while</span> <span class="n">position</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="n">sequence</span><span class="p">[</span><span class="n">position</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="p">:</span>
+        <span class="k">while</span> <span class="n">position</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="n">sequence</span><span class="p">[</span><span class="n">position</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
             <span class="c1"># the card overwrites the card to the left</span>
             <span class="n">sequence</span><span class="p">[</span><span class="n">position</span><span class="p">]</span> <span class="o">=</span> <span class="n">sequence</span><span class="p">[</span><span class="n">position</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
             <span class="c1"># And we move on to the next position</span>
-            <span class="n">position</span> <span class="o">-</span><span class="o">=</span> <span class="mi">1</span>
+            <span class="n">position</span> <span class="o">-=</span> <span class="mi">1</span>
             
         <span class="c1"># When we have found the right position (meaning the while loop is false)</span>
         <span class="c1"># put the card in its correct spot in the deck</span>

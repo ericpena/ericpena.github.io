@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Test If Output Is Close To A Value"/>
 <meta name="twitter:description" content="Test if output is close to a value using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -168,18 +168,18 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">unittest</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 </code></pre></div><h2 id="create-function-to-be-tested">Create Function To Be Tested</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="p">:</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </code></pre></div><h2 id="create-test">Create Test</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a test case</span>
-<span class="k">class</span> <span class="nc">TestAdd</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">)</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">TestAdd</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="c1"># Create the unit test</span>
-    <span class="k">def</span> <span class="nf">test_add_two_floats_roughly_equals_11</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">test_add_two_floats_roughly_equals_11</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Test if add(4.48293848, 6.5023845) return roughly (to 1 place) 11 (actual product: 10.98532298)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="n">add</span><span class="p">(</span><span class="mf">4.48293848</span><span class="p">,</span> <span class="mf">6.5023845</span><span class="p">)</span><span class="p">,</span> <span class="n">places</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="n">add</span><span class="p">(</span><span class="mf">4.48293848</span><span class="p">,</span> <span class="mf">6.5023845</span><span class="p">),</span> <span class="n">places</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div><h2 id="run-test">Run Test</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Run the unit test (and don&#39;t shut down the Jupyter Notebook)</span>
-<span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">ignored</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">-v</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span> <span class="nb">exit</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ignored&#39;</span><span class="p">,</span> <span class="s1">&#39;-v&#39;</span><span class="p">],</span> <span class="nb">exit</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </code></pre></div><pre><code>test_add_two_floats_roughly_equals_11 (__main__.TestAdd) ... ok
 
 ----------------------------------------------------------------------

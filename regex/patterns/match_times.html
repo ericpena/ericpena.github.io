@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Match Times"/>
 <meta name="twitter:description" content="Match times in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -169,10 +169,10 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">re</span>
 </code></pre></div><h2 id="create-some-text">Create some text</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a variable containing a text string</span>
-<span class="n">text</span> <span class="o">=</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Chris: 12:34am. Steve: 16:30</span><span class="s1">&#39;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Chris: 12:34am. Steve: 16:30&#39;</span>
 </code></pre></div><h2 id="apply-regex">Apply regex</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Find any text that fits the regex</span>
-<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;</span><span class="s1">([0-1]</span><span class="s1">\</span><span class="s1">d:[0-5]</span><span class="s1">\</span><span class="s1">d)</span><span class="s1">\</span><span class="s1">s*(?:AM|PM)?</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;([0-1]\d:[0-5]\d)\s*(?:AM|PM)?&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
 </code></pre></div><pre><code>['12:34', '16:30']
 </code></pre>
 

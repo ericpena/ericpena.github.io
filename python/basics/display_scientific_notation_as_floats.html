@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Display Scientific Notation As Floats"/>
 <meta name="twitter:description" content="How to display a number in scientific notation as a float."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -184,11 +184,11 @@ MathJax.Hub.Config({
                               <span class="mf">4.98000000e+00</span><span class="p">]</span>
 </code></pre></div><h2 id="display-values-as-floats">Display Values As Floats</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Display value as a float</span>
-<span class="sa"></span><span class="s1">&#39;</span><span class="s1">{:f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value_scientific_notation</span><span class="p">)</span>
+<span class="s1">&#39;{:f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value_scientific_notation</span><span class="p">)</span>
 </code></pre></div><pre><code>'0.006320'
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Display vector values as floats</span>
-<span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">{:f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">vector_scientific_notation</span><span class="p">]</span>
+<span class="p">[</span><span class="s1">&#39;{:f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">vector_scientific_notation</span><span class="p">]</span>
 </code></pre></div><pre><code>['0.006320',
  '18.000000',
  '2.310000',

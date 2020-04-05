@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Sort Rows By A Column&#39;s Values"/>
 <meta name="twitter:description" content="How to sort rows in a table by a column&#39;s values in Snowflake using SQL."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -46,7 +46,7 @@
 }
 </script> 
 
-    <title>Sort Rows By A Column&#39;s Values</title>
+    <title>Sort Rows By A Column&rsquo;s Values</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -168,27 +168,27 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Create a table called SUPERHEROES.
 </span><span class="c1"></span><span class="k">CREATE</span> <span class="k">OR</span> <span class="k">REPLACE</span> <span class="k">TABLE</span> <span class="n">SUPERHEROES</span> <span class="p">(</span>
   <span class="c1">-- Column called ALTER_EGO allowing up to 100 characters
-</span><span class="c1"></span>  <span class="s2">&#34;</span><span class="s2">ALTER_EGO</span><span class="s2">&#34;</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="p">,</span>
+</span><span class="c1"></span>  <span class="s2">&#34;ALTER_EGO&#34;</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
   <span class="c1">-- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point
-</span><span class="c1"></span>  <span class="s2">&#34;</span><span class="s2">AGE</span><span class="s2">&#34;</span> <span class="nb">INT</span><span class="p">,</span>
+</span><span class="c1"></span>  <span class="s2">&#34;AGE&#34;</span> <span class="nb">INT</span><span class="p">,</span>
   <span class="c1">-- Column called STATE allowing up to 100 characters
-</span><span class="c1"></span>  <span class="s2">&#34;</span><span class="s2">STATE</span><span class="s2">&#34;</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="p">)</span><span class="p">;</span></code></pre></div>
+</span><span class="c1"></span>  <span class="s2">&#34;STATE&#34;</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="p">);</span></code></pre></div>
 <h2 id="insert-rows-for-each-superhero">Insert Rows For Each Superhero</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Insert rows into SUPERHEROES
 </span><span class="c1"></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">SUPERHEROES</span> 
     <span class="c1">-- With the values
 </span><span class="c1"></span>    <span class="k">VALUES</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">The Bomber</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">24</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Maine</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Mr. Money</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">12</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Maine</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Nuke Miner</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">59</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Maine</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">The Knife</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">43</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Maine</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Ninka Baker</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">32</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">California</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Banana Bomber</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">34</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">California</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Augustine</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">12</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">California</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">The Kid</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">21</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">New York</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">The Viking</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">291</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">New York</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Skull Hustle</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">10</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">New York</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">;</span></code></pre></div>
+    <span class="p">(</span><span class="s1">&#39;The Bomber&#39;</span><span class="p">,</span> <span class="s1">&#39;24&#39;</span><span class="p">,</span> <span class="s1">&#39;Maine&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Mr. Money&#39;</span><span class="p">,</span> <span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="s1">&#39;Maine&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Nuke Miner&#39;</span><span class="p">,</span> <span class="s1">&#39;59&#39;</span><span class="p">,</span> <span class="s1">&#39;Maine&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;The Knife&#39;</span><span class="p">,</span> <span class="s1">&#39;43&#39;</span><span class="p">,</span> <span class="s1">&#39;Maine&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Ninka Baker&#39;</span><span class="p">,</span> <span class="s1">&#39;32&#39;</span><span class="p">,</span> <span class="s1">&#39;California&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Banana Bomber&#39;</span><span class="p">,</span> <span class="s1">&#39;34&#39;</span><span class="p">,</span> <span class="s1">&#39;California&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Augustine&#39;</span><span class="p">,</span> <span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="s1">&#39;California&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;The Kid&#39;</span><span class="p">,</span> <span class="s1">&#39;21&#39;</span><span class="p">,</span> <span class="s1">&#39;New York&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;The Viking&#39;</span><span class="p">,</span> <span class="s1">&#39;291&#39;</span><span class="p">,</span> <span class="s1">&#39;New York&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Skull Hustle&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;New York&#39;</span><span class="p">);</span></code></pre></div>
 <h2 id="sort-rows-by-age-ascending">Sort Rows By Age (Ascending)</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Select all columns from SUPERHEROES
 </span><span class="c1"></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">SUPERHEROES</span>

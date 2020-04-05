@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Sample Random Rows From A Table"/>
 <meta name="twitter:description" content="How to sample a random set of rows from a table in Snowflake using SQL."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -168,32 +168,32 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Create a table called SUPERHEROES.
 </span><span class="c1"></span><span class="k">CREATE</span> <span class="k">OR</span> <span class="k">REPLACE</span> <span class="k">TABLE</span> <span class="n">SUPERHEROES</span> <span class="p">(</span>
   <span class="c1">-- Column called ALTER_EGO allowing up to 100 characters
-</span><span class="c1"></span>  <span class="s2">&#34;</span><span class="s2">ALTER_EGO</span><span class="s2">&#34;</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="p">,</span>
+</span><span class="c1"></span>  <span class="s2">&#34;ALTER_EGO&#34;</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
   <span class="c1">-- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point
-</span><span class="c1"></span>  <span class="s2">&#34;</span><span class="s2">AGE</span><span class="s2">&#34;</span> <span class="nb">NUMBER</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="p">)</span><span class="p">;</span></code></pre></div>
+</span><span class="c1"></span>  <span class="s2">&#34;AGE&#34;</span> <span class="nb">NUMBER</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">);</span></code></pre></div>
 <h2 id="insert-rows-for-each-superhero">Insert Rows For Each Superhero</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Insert rows into SUPERHEROES
 </span><span class="c1"></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">SUPERHEROES</span> 
     <span class="c1">-- With the values
 </span><span class="c1"></span>    <span class="k">VALUES</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">The Bomber</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">24</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Mr. Money</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">12</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Nuke Miner</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">59</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">The Knife</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">43</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Ninka Baker</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">32</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Banana Bomber</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">34</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Augustine</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">12</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">The Kid</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">21</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">The Viking</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">291</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-    <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Skull Hustle</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">10</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">;</span></code></pre></div>
+    <span class="p">(</span><span class="s1">&#39;The Bomber&#39;</span><span class="p">,</span> <span class="s1">&#39;24&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Mr. Money&#39;</span><span class="p">,</span> <span class="s1">&#39;12&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Nuke Miner&#39;</span><span class="p">,</span> <span class="s1">&#39;59&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;The Knife&#39;</span><span class="p">,</span> <span class="s1">&#39;43&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Ninka Baker&#39;</span><span class="p">,</span> <span class="s1">&#39;32&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Banana Bomber&#39;</span><span class="p">,</span> <span class="s1">&#39;34&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Augustine&#39;</span><span class="p">,</span> <span class="s1">&#39;12&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;The Kid&#39;</span><span class="p">,</span> <span class="s1">&#39;21&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;The Viking&#39;</span><span class="p">,</span> <span class="s1">&#39;291&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Skull Hustle&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">);</span></code></pre></div>
 <h2 id="sample-where-reach-row-has-chance-of-inclusion">Sample Where Reach Row Has Chance Of Inclusion</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Select all columns
 </span><span class="c1"></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="c1">-- From the SUPERHEROES table
 </span><span class="c1"></span><span class="k">FROM</span> <span class="n">SUPERHEROES</span>
 <span class="c1">-- Sample a subset of rows, where each row has a 25% chance of being selected
-</span><span class="c1"></span><span class="n">SAMPLE</span> <span class="k">ROW</span> <span class="p">(</span><span class="mi">25</span><span class="p">)</span><span class="p">;</span></code></pre></div>
+</span><span class="c1"></span><span class="n">SAMPLE</span> <span class="k">ROW</span> <span class="p">(</span><span class="mi">25</span><span class="p">);</span></code></pre></div>
 <!-- raw HTML omitted -->
 <h2 id="sample-where-n-rows-are-desired">Sample Where N Rows Are Desired</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Select all columns
@@ -201,7 +201,7 @@ MathJax.Hub.Config({
 <span class="c1">-- From the SUPERHEROES table
 </span><span class="c1"></span><span class="k">FROM</span> <span class="n">SUPERHEROES</span>
 <span class="c1">-- Sample a subset of 3 rows
-</span><span class="c1"></span><span class="n">SAMPLE</span> <span class="k">ROW</span> <span class="p">(</span><span class="mi">3</span> <span class="k">rows</span><span class="p">)</span><span class="p">;</span></code></pre></div>
+</span><span class="c1"></span><span class="n">SAMPLE</span> <span class="k">ROW</span> <span class="p">(</span><span class="mi">3</span> <span class="k">rows</span><span class="p">);</span></code></pre></div>
 <!-- raw HTML omitted -->
 <h2 id="sample-with-a-need">Sample With A Need</h2>
 <p>Seeds improve repeatability, when rerun on the same data, samples using the same need value (e.g. <code>44</code>) will return the same rows.</p>
@@ -210,7 +210,7 @@ MathJax.Hub.Config({
 <span class="c1">-- From the SUPERHEROES table
 </span><span class="c1"></span><span class="k">FROM</span> <span class="n">SUPERHEROES</span>
 <span class="c1">-- Sample a subset of rows, where each row has a 25% chance of being selected with a seed of 99
-</span><span class="c1"></span><span class="n">SAMPLE</span> <span class="k">ROW</span> <span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="n">SEED</span> <span class="p">(</span><span class="mi">99</span><span class="p">)</span><span class="p">;</span></code></pre></div>
+</span><span class="c1"></span><span class="n">SAMPLE</span> <span class="k">ROW</span> <span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="n">SEED</span> <span class="p">(</span><span class="mi">99</span><span class="p">);</span></code></pre></div>
 <!-- raw HTML omitted -->
 
 </div>

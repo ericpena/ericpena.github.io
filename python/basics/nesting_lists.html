@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Nesting Lists"/>
 <meta name="twitter:description" content="Nesting lists."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -165,9 +165,9 @@ MathJax.Hub.Config({
   <div class="content">
       
   <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a list of three nested lists, each with three items</span>
-<span class="n">state_regions</span> <span class="o">=</span> <span class="p">[</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">California</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Oregon</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Washington</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span>
-        <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Texas</span><span class="s1">&#39;</span><span class="p">,</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Georgia</span><span class="s1">&#39;</span><span class="p">,</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Alabama</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span>
-        <span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Maine</span><span class="s1">&#39;</span><span class="p">,</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Vermont</span><span class="s1">&#39;</span><span class="p">,</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">New York</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">]</span>
+<span class="n">state_regions</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;California&#39;</span><span class="p">,</span> <span class="s1">&#39;Oregon&#39;</span><span class="p">,</span> <span class="s1">&#39;Washington&#39;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Texas&#39;</span><span class="p">,</span><span class="s1">&#39;Georgia&#39;</span><span class="p">,</span><span class="s1">&#39;Alabama&#39;</span><span class="p">],</span>
+        <span class="p">[</span><span class="s1">&#39;Maine&#39;</span><span class="p">,</span><span class="s1">&#39;Vermont&#39;</span><span class="p">,</span><span class="s1">&#39;New York&#39;</span><span class="p">]]</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># View the list</span>
 <span class="n">state_regions</span>
 </code></pre></div><pre><code>[['California', 'Oregon', 'Washington'],
@@ -175,7 +175,7 @@ MathJax.Hub.Config({
  ['Maine', 'Vermont', 'New York']]
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Print the second list&#39;s third item</span>
-<span class="n">state_regions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">state_regions</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
 </code></pre></div><pre><code>'Alabama'
 </code></pre>
 

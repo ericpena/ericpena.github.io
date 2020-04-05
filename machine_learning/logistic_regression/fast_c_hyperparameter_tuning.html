@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Fast C Hyperparameter Tuning"/>
 <meta name="twitter:description" content="How to fast C hyperparameter tuning for logistic regression in scikit-learn for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -165,13 +165,13 @@ MathJax.Hub.Config({
   <div class="content">
       
   <p>Sometimes the characteristics of a learning algorithm allows us to search for the best hyperparameters significantly faster than either brute force or randomized model search methods.</p>
-<p>scikit-learn's <code>LogisticRegressionCV</code> method includes a parameter <code>Cs</code>. If supplied a list, <code>Cs</code> is the candidate hyperparameter values to select from. If supplied a integer, <code>Cs</code> a list of that many candidate values will is drawn from a logarithmic scale between 0.0001 and and 10000 (a range of reasonable values for C).</p>
+<p>scikit-learn&rsquo;s <code>LogisticRegressionCV</code> method includes a parameter <code>Cs</code>. If supplied a list, <code>Cs</code> is the candidate hyperparameter values to select from. If supplied a integer, <code>Cs</code> a list of that many candidate values will is drawn from a logarithmic scale between 0.0001 and and 10000 (a range of reasonable values for C).</p>
 <h2 id="preliminaries">Preliminaries</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load libraries</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">linear_model</span><span class="p">,</span> <span class="n">datasets</span>
 </code></pre></div><h2 id="load-iris-dataset">Load Iris Dataset</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load data</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">(</span><span class="p">)</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
 </code></pre></div><h2 id="use-cross-validation-to-find-the-best-value-of-c">Use Cross-Validation To Find The Best Value Of C</h2>

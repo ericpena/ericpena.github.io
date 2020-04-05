@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="T-Tests"/>
 <meta name="twitter:description" content="T-tests in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -178,7 +178,7 @@ MathJax.Hub.Config({
 </code></pre></div><h2 id="one-sample-two-sided-t-test">One Sample Two-Sided T-Test</h2>
 <p>Imagine the one sample T-test and drawing a (normally shaped) hill centered at <code>1</code> and &ldquo;spread&rdquo; out with a standard deviation of <code>1.5</code>, then placing a flag at <code>0</code> and looking at where on the hill the flag is location. Is it near the top? Far away from the hill? If the flag is near the very bottom of the hill or farther, then the t-test p-score will be below <code>0.05</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Run a t-test to test if the mean of x is statistically significantly different than 0</span>
-<span class="n">pvalue</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_1samp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">pvalue</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_1samp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="c1"># View the p-value</span>
 <span class="n">pvalue</span>
@@ -186,16 +186,16 @@ MathJax.Hub.Config({
 </code></pre>
 <h2 id="two-variable-unpaired-two-sided-t-test-with-equal-variances">Two Variable Unpaired Two-Sided T-Test With Equal Variances</h2>
 <p>Imagine the one sample T-test and drawing two (normally shaped) hills centered at their means and their &lsquo;flattness&rsquo; (individual spread) based on the standard deviation. The T-test looks at how much the two hills are overlapping. Are they basically on top of each other? Do just the bottoms of the hill just barely touch? If the tails of the hills are just barely overlapping or are not overlapping at all, the t-test p-score will be below 0.05.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div><pre><code>0.00035082056802728071
 </code></pre>
 <h2 id="two-variable-unpaired-two-sided-t-test-with-unequal-variances">Two Variable Unpaired Two-Sided T-Test With Unequal Variances</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">equal_var</span><span class="o">=</span><span class="bp">False</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div><pre><code>0.00035089238660076095
 </code></pre>
 <h2 id="two-variable-paired-two-sided-t-test">Two Variable Paired Two-Sided T-Test</h2>
 <p>Paired T-tests are used when we are taking repeated samples and want to take into account the fact that the two distributions we are testing are paired.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">stats</span><span class="o">.</span><span class="n">ttest_rel</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">stats</span><span class="o">.</span><span class="n">ttest_rel</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div><pre><code>0.00034222792790150386
 </code></pre>
 

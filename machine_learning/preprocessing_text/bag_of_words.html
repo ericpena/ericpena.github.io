@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Bag Of Words"/>
 <meta name="twitter:description" content="How to encode unstructured text data as bags of words for machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -172,23 +172,23 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </code></pre></div><h2 id="create-text-data">Create Text Data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create text</span>
-<span class="n">text_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">I love Brazil. Brazil!</span><span class="s1">&#39;</span><span class="p">,</span>
-                      <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Sweden is best</span><span class="s1">&#39;</span><span class="p">,</span>
-                      <span class="sa"></span><span class="s1">&#39;</span><span class="s1">Germany beats both</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">)</span>
+<span class="n">text_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;I love Brazil. Brazil!&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;Sweden is best&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;Germany beats both&#39;</span><span class="p">])</span>
 </code></pre></div><h2 id="create-bag-of-words">Create Bag Of Words</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create the bag of words feature matrix</span>
-<span class="n">count</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="p">)</span>
+<span class="n">count</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
 <span class="n">bag_of_words</span> <span class="o">=</span> <span class="n">count</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">text_data</span><span class="p">)</span>
 
 <span class="c1"># Show feature matrix</span>
-<span class="n">bag_of_words</span><span class="o">.</span><span class="n">toarray</span><span class="p">(</span><span class="p">)</span>
+<span class="n">bag_of_words</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
 </code></pre></div><pre><code>array([[0, 0, 0, 2, 0, 0, 1, 0],
        [0, 1, 0, 0, 0, 1, 0, 1],
        [1, 0, 1, 0, 1, 0, 0, 0]], dtype=int64)
 </code></pre>
 <h2 id="view-bag-of-words-matrix-column-headers">View Bag Of Words Matrix Column Headers</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Get feature names</span>
-<span class="n">feature_names</span> <span class="o">=</span> <span class="n">count</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">(</span><span class="p">)</span>
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">count</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">()</span>
 
 <span class="c1"># View feature names</span>
 <span class="n">feature_names</span>
@@ -196,7 +196,7 @@ MathJax.Hub.Config({
 </code></pre>
 <h2 id="view-as-a-data-frame">View As A Data Frame</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create data frame</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">bag_of_words</span><span class="o">.</span><span class="n">toarray</span><span class="p">(</span><span class="p">)</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">bag_of_words</span><span class="o">.</span><span class="n">toarray</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe thead th {
     text-align: left;

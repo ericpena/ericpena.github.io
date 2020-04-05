@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Test Code Speed"/>
 <meta name="twitter:description" content="Test code speed using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -167,17 +167,17 @@ MathJax.Hub.Config({
   <h2 id="preliminaries">Preliminaries</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">cProfile</span>
 </code></pre></div><h2 id="create-a-slow-function">Create A Slow Function</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">slow_function</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">slow_function</span><span class="p">():</span>
     <span class="n">total</span> <span class="o">=</span> <span class="mf">0.0</span>
     
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span><span class="p">)</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)):</span>
         
-        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span><span class="p">)</span><span class="p">:</span>
-            <span class="n">total</span> <span class="o">+</span><span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)):</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">total</span>
 </code></pre></div><h2 id="test-the-speed-of-the-function">Test The Speed Of The Function</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">cProfile</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">slow_function()</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">time</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">cProfile</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;slow_function()&#39;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>         4 function calls in 13.291 seconds
 
    Ordered by: internal time
@@ -188,7 +188,7 @@ MathJax.Hub.Config({
         1    0.000    0.000   13.291   13.291 &lt;string&gt;:1(&lt;module&gt;)
         1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
 </code></pre>
-<h2 id="how-to-read-cprofiles-output">How To Read cProfile's Output</h2>
+<h2 id="how-to-read-cprofiles-output">How To Read cProfile&rsquo;s Output</h2>
 <ul>
 <li><strong>ncalls:</strong> Number of calls to the function.</li>
 <li><strong>tottime:</strong> Total time.</li>
@@ -198,9 +198,9 @@ MathJax.Hub.Config({
 <li><strong>:lineno(function):</strong> Name of the operation.</li>
 </ul>
 <h2 id="alternative-in-jupyter-notebook">Alternative In Jupyter Notebook:</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">%</span><span class="o">%</span><span class="n">timeit</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">%%</span><span class="n">timeit</span>
 
-<span class="n">slow_function</span><span class="p">(</span><span class="p">)</span>
+<span class="n">slow_function</span><span class="p">()</span>
 </code></pre></div><pre><code>1 loop, best of 3: 12.9 s per loop
 </code></pre>
 

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Probability Mass Functions"/>
 <meta name="twitter:description" content="Probability Mass Functions in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -172,7 +172,7 @@ MathJax.Hub.Config({
 <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 </code></pre></div><h2 id="create-a-count-of-values">Create A Count Of Values</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a dictionary to store the counts</span>
-<span class="n">count</span> <span class="o">=</span> <span class="p">{</span><span class="p">}</span>
+<span class="n">count</span> <span class="o">=</span> <span class="p">{}</span>
 
 <span class="c1"># For each value in the data</span>
 <span class="k">for</span> <span class="n">observation</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
@@ -184,16 +184,16 @@ MathJax.Hub.Config({
 <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
 <span class="c1"># Create a dictionary</span>
-<span class="n">probability_mass_function</span> <span class="o">=</span> <span class="p">{</span><span class="p">}</span>
+<span class="n">probability_mass_function</span> <span class="o">=</span> <span class="p">{}</span>
 
 <span class="c1"># For each unique value,</span>
-<span class="k">for</span> <span class="n">unique_value</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">count</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">unique_value</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">count</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="c1"># Normalize the count by dividing by the length of data, add to the PMC dictionary</span>
     <span class="n">probability_mass_function</span><span class="p">[</span><span class="n">unique_value</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span> <span class="o">/</span> <span class="n">n</span>
 </code></pre></div><h2 id="visualize-the-pmf">Visualize The PMF</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Plot the probability mass function</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">probability_mass_function</span><span class="o">.</span><span class="n">keys</span><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="p">,</span> <span class="n">probability_mass_function</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="p">)</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">g</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">probability_mass_function</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span> <span class="n">probability_mass_function</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div><p><img src="probability_mass_functions_10_0.png" alt="png"></p>
 
 </div>

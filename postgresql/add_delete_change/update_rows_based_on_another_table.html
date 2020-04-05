@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Update Rows Based On Another Table"/>
 <meta name="twitter:description" content="How to update rows based on values in another table in an SQL database."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -168,11 +168,11 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Create table called elves
 </span><span class="c1"></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">elves</span> <span class="p">(</span>
     <span class="c1">-- string variable
-</span><span class="c1"></span>    <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="p">,</span>
+</span><span class="c1"></span>    <span class="n">name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
     <span class="c1">-- integer variable
 </span><span class="c1"></span>    <span class="n">age</span> <span class="nb">int</span><span class="p">,</span>
     <span class="c1">-- string variable
-</span><span class="c1"></span>    <span class="n">race</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="p">,</span>
+</span><span class="c1"></span>    <span class="n">race</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
     <span class="c1">-- string variable
 </span><span class="c1"></span>    <span class="n">alive</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
 <span class="p">)</span></code></pre></div>
@@ -184,14 +184,14 @@ MathJax.Hub.Config({
 <span class="p">)</span></code></pre></div>
 <h2 id="insert-rows-into-elf-table">Insert Rows Into Elf Table</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">elves</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">race</span><span class="p">,</span> <span class="n">alive</span><span class="p">)</span>
-<span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Dallar Woodfoot</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Elf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Yes</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Cordin Garner</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Elf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Yes</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Keat Knigh</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Elf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Yes</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Colbat Nalor</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">124</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Elf</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="s1">Yes</span><span class="s1">&#39;</span><span class="p">)</span></code></pre></div>
+<span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;Dallar Woodfoot&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;Elf&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Cordin Garner&#39;</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="s1">&#39;Elf&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Keat Knigh&#39;</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="s1">&#39;Elf&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Colbat Nalor&#39;</span><span class="p">,</span> <span class="mi">124</span><span class="p">,</span> <span class="s1">&#39;Elf&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">)</span></code></pre></div>
 <h2 id="insert-rows-into-deaths-table">Insert Rows Into Deaths Table</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">deaths</span> <span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Keat Knigh</span><span class="s1">&#39;</span><span class="p">)</span><span class="p">,</span>
-       <span class="p">(</span><span class="s1">&#39;</span><span class="s1">Colbat Nalor</span><span class="s1">&#39;</span><span class="p">)</span></code></pre></div>
+<span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;Keat Knigh&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Colbat Nalor&#39;</span><span class="p">)</span></code></pre></div>
 <h2 id="view-elves-table">View Elves Table</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Retrieve all rows from the view Elf
 </span><span class="c1"></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">elves</span></code></pre></div>
@@ -200,7 +200,7 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="c1">-- Change the value in elves
 </span><span class="c1"></span><span class="k">UPDATE</span> <span class="n">elves</span>
 <span class="c1">-- to set alive to &#34;No&#34;
-</span><span class="c1"></span><span class="k">SET</span> <span class="n">alive</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s1">No</span><span class="s1">&#39;</span>
+</span><span class="c1"></span><span class="k">SET</span> <span class="n">alive</span> <span class="o">=</span> <span class="s1">&#39;No&#39;</span>
 <span class="c1">-- Where the name of the elf is in the list of deaths
 </span><span class="c1"></span><span class="k">WHERE</span> <span class="n">elves</span><span class="p">.</span><span class="n">name</span> <span class="k">in</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">deaths</span><span class="p">.</span><span class="n">name</span> <span class="k">FROM</span> <span class="n">deaths</span><span class="p">)</span></code></pre></div>
 <h2 id="view-elves-table-1">View Elves Table</h2>

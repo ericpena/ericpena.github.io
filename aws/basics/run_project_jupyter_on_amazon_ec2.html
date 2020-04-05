@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Run Project Jupyter Notebooks On Amazon EC2"/>
 <meta name="twitter:description" content="Run Project Jupyter Notebooks On Amazon EC2."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -165,7 +165,7 @@ MathJax.Hub.Config({
   <div class="content">
       
   <p>This is tutorial on running Project Jupyter Notebook on an Amazon EC2 instance. It is based on a <a href="http://blog.impiyush.me/2015/02/running-ipython-notebook-server-on-aws.html">tutorial</a> by Piyush Agarwal which did not work for me immediately, but I tweaked a few things and got it working.</p>
-<p>Note: This is not a beginner's tutorial. I don't explain some of the steps fully and don't explain some concepts. There are other tutorials out there for that.</p>
+<p>Note: This is not a beginner&rsquo;s tutorial. I don&rsquo;t explain some of the steps fully and don&rsquo;t explain some concepts. There are other tutorials out there for that.</p>
 <h2 id="create-an-aws-account">Create an AWS account</h2>
 <p>An EC2 instance requires an AWS account. <a href="https://aws.amazon.com/">You can make an account here</a>.</p>
 <h2 id="navigate-to-ec2">Navigate to EC2</h2>
@@ -195,10 +195,10 @@ MathJax.Hub.Config({
 <p><code>Are you sure you want to continue connecting (yes/no)?</code></p>
 <p><img src="command.png" alt="success!"></p>
 <h2 id="download-anaconda-to-instance">Download Anaconda to instance</h2>
-<p>Visit Anaconda's <a href="https://www.continuum.io/downloads">download page</a> and right click to get the url of the latest version of the Linux 64-bit version. In my case this url was:</p>
+<p>Visit Anaconda&rsquo;s <a href="https://www.continuum.io/downloads">download page</a> and right click to get the url of the latest version of the Linux 64-bit version. In my case this url was:</p>
 <p><code>https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh</code></p>
 <p><img src="anaconda.png" alt="Anaconda!"></p>
-<p>Now, back in the terminal, tell the EC2 instance to download that file. Note: You aren't downloading the file to your computer, you are downloading it to the EC2 instance and installing it from there.</p>
+<p>Now, back in the terminal, tell the EC2 instance to download that file. Note: You aren&rsquo;t downloading the file to your computer, you are downloading it to the EC2 instance and installing it from there.</p>
 <p><code>wget https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh</code></p>
 <p><img src="anaconda_download.png" alt="Anaconda!"></p>
 <h2 id="install-anaconda">Install Anaconda</h2>
@@ -208,7 +208,7 @@ MathJax.Hub.Config({
 <p>&lsquo;Press ENTER to confirm the location&rsquo;</p>
 <p><img src="anaconda_install.png" alt="Anaconda!"></p>
 <p><code>Do you wish the installer to prepend the Anaconda3 install location to PATH in your /home/ubuntu/.bashrc ? [yes|no] [no] &gt;&gt;&gt; yes</code></p>
-<p>If it doesn't allow you to answer yes, you can manually set it through the prompt they show:</p>
+<p>If it doesn&rsquo;t allow you to answer yes, you can manually set it through the prompt they show:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">You may wish to edit your .bashrc or
 prepend the Anaconda3 install location:
 
@@ -275,7 +275,7 @@ c.NotebookApp.port = 8888
 <h2 id="visit-jupyter-notebook-in-browser">Visit Jupyter notebook in browser</h2>
 <p>Your EC2 instance will have a long url, like this:</p>
 <p><code>ec2-52-39-239-66.us-west-2.compute.amazonaws.com</code></p>
-<p>Visit that URL in your browser: (make sure to include the <strong>https</strong> at the beginning, or you'll have access errors.)</p>
+<p>Visit that URL in your browser: (make sure to include the <strong>https</strong> at the beginning, or you&rsquo;ll have access errors.)</p>
 <p><code>https://ec2-52-39-239-66.us-west-2.compute.amazonaws.com:8888/</code></p>
 <p><img src="chrome1.png" alt="chrome"></p>
 <p><img src="chrome2.png" alt="chrome"></p>

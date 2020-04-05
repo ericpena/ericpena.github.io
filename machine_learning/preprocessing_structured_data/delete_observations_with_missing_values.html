@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Delete Observations With Missing Values"/>
 <meta name="twitter:description" content="How to delete observations with missing values."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -170,14 +170,14 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </code></pre></div><h2 id="create-feature-matrix">Create Feature Matrix</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create feature matrix</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="p">[</span><span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">11.1</span><span class="p">]</span><span class="p">,</span> 
-              <span class="p">[</span><span class="mf">2.2</span><span class="p">,</span> <span class="mf">22.2</span><span class="p">]</span><span class="p">,</span> 
-              <span class="p">[</span><span class="mf">3.3</span><span class="p">,</span> <span class="mf">33.3</span><span class="p">]</span><span class="p">,</span> 
-              <span class="p">[</span><span class="mf">4.4</span><span class="p">,</span> <span class="mf">44.4</span><span class="p">]</span><span class="p">,</span> 
-              <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">55</span><span class="p">]</span><span class="p">]</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">11.1</span><span class="p">],</span> 
+              <span class="p">[</span><span class="mf">2.2</span><span class="p">,</span> <span class="mf">22.2</span><span class="p">],</span> 
+              <span class="p">[</span><span class="mf">3.3</span><span class="p">,</span> <span class="mf">33.3</span><span class="p">],</span> 
+              <span class="p">[</span><span class="mf">4.4</span><span class="p">,</span> <span class="mf">44.4</span><span class="p">],</span> 
+              <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">55</span><span class="p">]])</span>
 </code></pre></div><h2 id="delete-observations-with-missing-values">Delete Observations With Missing Values</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Remove observations with missing values</span>
-<span class="n">X</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="p">]</span>
+<span class="n">X</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
 </code></pre></div><pre><code>array([[  1.1,  11.1],
        [  2.2,  22.2],
        [  3.3,  33.3],

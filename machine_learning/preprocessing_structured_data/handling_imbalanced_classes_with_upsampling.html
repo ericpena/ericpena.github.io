@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Handling Imbalanced Classes With Upsampling"/>
 <meta name="twitter:description" content="How to handle imbalanced classes with upsampling during machine learning in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -172,7 +172,7 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
 </code></pre></div><h2 id="load-iris-dataset">Load Iris Dataset</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load iris data</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">(</span><span class="p">)</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
 
 <span class="c1"># Create feature matrix</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
@@ -181,11 +181,11 @@ MathJax.Hub.Config({
 <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
 </code></pre></div><h2 id="make-iris-dataset-imbalanced">Make Iris Dataset Imbalanced</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Remove first 40 observations</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">40</span><span class="p">:</span><span class="p">,</span><span class="p">:</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">40</span><span class="p">:</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">40</span><span class="p">:,:]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">40</span><span class="p">:]</span>
 
 <span class="c1"># Create binary target vector indicating if class 0</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="p">(</span><span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Look at the imbalanced target vector</span>
 <span class="n">y</span>
@@ -197,8 +197,8 @@ MathJax.Hub.Config({
 </code></pre>
 <h2 id="upsampling-minority-class-to-match-majority">Upsampling Minority Class To Match Majority</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Indicies of each class&#39; observations</span>
-<span class="n">i_class0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">i_class1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">y</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">i_class0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">i_class1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">y</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="c1"># Number of observations in each class</span>
 <span class="n">n_class0</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">i_class0</span><span class="p">)</span>
@@ -208,7 +208,7 @@ MathJax.Hub.Config({
 <span class="n">i_class0_upsampled</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">i_class0</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_class1</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
 <span class="c1"># Join together class 0&#39;s upsampled target vector with class 1&#39;s target vector</span>
-<span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i_class0_upsampled</span><span class="p">]</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="n">i_class1</span><span class="p">]</span><span class="p">)</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">y</span><span class="p">[</span><span class="n">i_class0_upsampled</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i_class1</span><span class="p">]))</span>
 </code></pre></div><pre><code>array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,

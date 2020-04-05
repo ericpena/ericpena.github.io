@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Try, Except, and Finally"/>
 <meta name="twitter:description" content="Try, except, and finally using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -167,19 +167,19 @@ MathJax.Hub.Config({
   <h2 id="create-data">Create data</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create some data</span>
 <span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">23</span><span class="p">,</span><span class="mi">453</span><span class="p">,</span><span class="mi">54</span><span class="p">,</span><span class="mi">235</span><span class="p">,</span><span class="mi">74</span><span class="p">,</span><span class="mi">234</span><span class="p">]</span>
-</code></pre></div><h2 id="try-something-that-doesnt-work">Try something that doesn't work</h2>
+</code></pre></div><h2 id="try-something-that-doesnt-work">Try something that doesn&rsquo;t work</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Try to:</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="c1"># Add a list of integers and a string</span>
-    <span class="n">scores</span> <span class="o">+</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">A string of characters.</span><span class="s1">&#39;</span>
+    <span class="n">scores</span> <span class="o">+</span> <span class="s1">&#39;A string of characters.&#39;</span>
 <span class="c1"># If you get an error, set the error as &#39;e&#39;,</span>
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="c1"># print the error, e</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Error:</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Error:&#39;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 <span class="c1"># Then,</span>
 <span class="k">finally</span><span class="p">:</span>
     <span class="c1"># print end program</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">End Program</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;End Program&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>Error: can only concatenate list (not &quot;str&quot;) to list
 End Program
 </code></pre>
@@ -187,15 +187,15 @@ End Program
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Try to:</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="c1"># Print scores</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Worked!</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Worked!&#39;</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
 <span class="c1"># If you get an error, set the error as &#39;e&#39;,</span>
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="c1"># print the error, e</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Error:</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Error:&#39;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 <span class="c1"># Then,</span>
 <span class="k">finally</span><span class="p">:</span>
     <span class="c1"># print end program</span>
-    <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">End program</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;End program&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>Worked! [23, 453, 54, 235, 74, 234]
 End program
 </code></pre>

@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Binary Search"/>
 <meta name="twitter:description" content="Binary Search using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -170,37 +170,37 @@ MathJax.Hub.Config({
 </code></pre></div><pre><code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16, 18, 20]
 </code></pre>
 <h2 id="create-binary-search-algorithm">Create Binary Search Algorithm</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">sorted_list</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span><span class="p">:</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">binary_search</span><span class="p">(</span><span class="n">sorted_list</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
 
-    <span class="sa"></span><span class="s1">&#39;&#39;&#39;</span><span class="s1">This function inputs a sorted list and a target value to find and returns ....</span><span class="s1">&#39;&#39;&#39;</span>
+    <span class="s1">&#39;&#39;&#39;This function inputs a sorted list and a target value to find and returns ....&#39;&#39;&#39;</span>
 
     <span class="c1"># Create variables for the index of the first and last elements</span>
     <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">end</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sorted_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
 
-    <span class="k">while</span> <span class="n">end</span> <span class="o">&gt;</span><span class="o">=</span> <span class="n">start</span><span class="p">:</span>
+    <span class="k">while</span> <span class="n">end</span> <span class="o">&gt;=</span> <span class="n">start</span><span class="p">:</span>
 
         <span class="c1"># Create a variable for the index of the middle term</span>
-        <span class="n">middle</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="o">/</span><span class="o">/</span> <span class="mi">2</span>  <span class="c1"># // is integer division in Python 3.X</span>
+        <span class="n">middle</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># // is integer division in Python 3.X</span>
 
         <span class="c1"># If the target value is less than the middle value of the search area</span>
-        <span class="k">if</span> <span class="n">target</span> <span class="o">&lt;</span> <span class="n">sorted_list</span><span class="p">[</span><span class="n">middle</span><span class="p">]</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="o">&lt;</span> <span class="n">sorted_list</span><span class="p">[</span><span class="n">middle</span><span class="p">]:</span>
             <span class="c1"># Cut the list in half by making the new end value the old middle value minus 1</span>
             <span class="c1"># The minus one is because we already ruled the middle value out, so we can ignore it</span>
             <span class="n">end</span> <span class="o">=</span> <span class="n">middle</span> <span class="o">-</span> <span class="mi">1</span>
 
         <span class="c1">#  Else, if the target value is greater than the middle value of the search area</span>
-        <span class="k">elif</span> <span class="n">target</span> <span class="o">&gt;</span> <span class="n">sorted_list</span><span class="p">[</span><span class="n">middle</span><span class="p">]</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">target</span> <span class="o">&gt;</span> <span class="n">sorted_list</span><span class="p">[</span><span class="n">middle</span><span class="p">]:</span>
             <span class="c1"># Cut the list in half by making the new start value the old middle value plus 1</span>
             <span class="c1"># The plus one is because we already ruled the middle value out, so we can ignore it</span>
             <span class="n">start</span> <span class="o">=</span> <span class="n">middle</span> <span class="o">+</span> <span class="mi">1</span>
 
         <span class="c1"># If it&#39;s not too high or too low, it must be just right, return the location</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Found it at index: {}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">middle</span><span class="p">)</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">(</span><span class="s2">&#34;Found it at index: {}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">middle</span><span class="p">))</span>
 
     <span class="c1"># If we&#39;ve fallen out of the while loop the target value is not in the list</span>
-    <span class="k">return</span> <span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Not in list!</span><span class="s2">&#34;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Not in list!&#34;</span><span class="p">)</span>
 </code></pre></div><h2 id="conduct-binary-search">Conduct Binary Search</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Run binary search</span>
 <span class="n">binary_search</span><span class="p">(</span><span class="n">sorted_list</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>

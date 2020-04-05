@@ -115,7 +115,7 @@
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/scala/basics/format_numbers_as_currency.html</guid>
-      <description>Load The NumberFormat Currency Package // Create a value with the numberformat currency package val format_as_dollars = java.text.NumberFormat.getCurrencyInstance Format A Number As Dollars format_as_dollars.format(123.456789) $123.46  Change To A Local Currency Java&#39;s locale uses ISO 3166-1 country codes.
+      <description>Load The NumberFormat Currency Package // Create a value with the numberformat currency package val format_as_dollars = java.text.NumberFormat.getCurrencyInstance Format A Number As Dollars format_as_dollars.format(123.456789) $123.46  Change To A Local Currency Java&amp;rsquo;s locale uses ISO 3166-1 country codes.
 // Load the java libraries import java.util.{Currency, Locale} // Create a value with the numberformat currency package val format_as_afghan = java.text.NumberFormat.getCurrencyInstance // Set the locale of Currency to Afganistan val af = Currency.</description>
     </item>
     

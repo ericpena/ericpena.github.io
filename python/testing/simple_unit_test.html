@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Simple Unit Test"/>
 <meta name="twitter:description" content="A simple unit test in Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -168,19 +168,19 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">unittest</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 </code></pre></div><h2 id="create-function-to-be-tested">Create Function To Be Tested</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="p">:</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
 </code></pre></div><h2 id="create-test">Create Test</h2>
 <p>Note: It is standard practice to name a unit test <code>test_</code> + <code>&lt;function being tested&gt;</code>. This naming standard allows for automated test using some libraries.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a test case</span>
-<span class="k">class</span> <span class="nc">TestMultiply</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">)</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">TestMultiply</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="c1"># Create the unit test</span>
-    <span class="k">def</span> <span class="nf">test_multiply_two_integers_together</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">test_multiply_two_integers_together</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Test if 4 equals the output of multiply(2,2)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">multiply</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">multiply</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 </code></pre></div><h2 id="run-test">Run Test</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Run the unit test (and don&#39;t shut down the Jupyter Notebook)</span>
-<span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">ignored</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">-v</span><span class="s1">&#39;</span><span class="p">]</span><span class="p">,</span> <span class="nb">exit</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ignored&#39;</span><span class="p">,</span> <span class="s1">&#39;-v&#39;</span><span class="p">],</span> <span class="nb">exit</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </code></pre></div><pre><code>test_multiply_two_integers_together (__main__.TestMultiply) ... ok
 
 ----------------------------------------------------------------------

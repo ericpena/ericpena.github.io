@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Dimensionality Reduction On Sparse Feature Matrix"/>
 <meta name="twitter:description" content="How to conduct dimensionality reduction when the feature matrix is sparse using Python."/>
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.68.3" />
 
     
 <script type="application/ld+json">
@@ -173,10 +173,10 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 </code></pre></div><h2 id="load-digits-data-and-make-sparse">Load Digits Data And Make Sparse</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Load the data</span>
-<span class="n">digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">(</span><span class="p">)</span>
+<span class="n">digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">()</span>
 
 <span class="c1"># Standardize the feature matrix</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
 <span class="c1"># Make sparse matrix</span>
 <span class="n">X_sparse</span> <span class="o">=</span> <span class="n">csr_matrix</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
@@ -188,14 +188,14 @@ MathJax.Hub.Config({
 <span class="n">X_sparse_tsvd</span> <span class="o">=</span> <span class="n">tsvd</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_sparse</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_sparse</span><span class="p">)</span>
 </code></pre></div><h2 id="view-results">View Results</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Show results</span>
-<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Original number of features:</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">X_sparse</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Reduced number of features:</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">X_sparse_tsvd</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Original number of features:&#39;</span><span class="p">,</span> <span class="n">X_sparse</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Reduced number of features:&#39;</span><span class="p">,</span> <span class="n">X_sparse_tsvd</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </code></pre></div><pre><code>Original number of features: 64
 Reduced number of features: 10
 </code></pre>
 <h2 id="view-percent-of-variance-explained-by-new-features">View Percent Of Variance Explained By New Features</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Sum of first three components&#39; explained variance ratios</span>
-<span class="n">tsvd</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="p">)</span>
+<span class="n">tsvd</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </code></pre></div><pre><code>0.30039385372588506
 </code></pre>
 
