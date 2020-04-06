@@ -1,0 +1,302 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>snowflake - Eric Peña</title>
+    <link>https://ericpena.github.io/snowflake/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Jan 2019 00:00:00 -0700</lastBuildDate>
+    
+        <atom:link href="https://ericpena.github.io/snowflake/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Add Column</title>
+      <link>https://ericpena.github.io/snowflake/sql/tables/add_column.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/tables/add_column.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. If it already exists, replace it. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR(5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;XF6K4&amp;#39;, &amp;#39;Chris Maki&amp;#39;, &amp;#39;The Bomber&amp;#39;), (&amp;#39;KD5SK&amp;#39;, &amp;#39;Donny Mav&amp;#39;, &amp;#39;Nuke Miner&amp;#39;); View Table Of Superheroes -- View the SUPERHEROES table SELECT * FROM SUPERHEROES; Add A Column -- Alter the SUPERHEROES table by.</description>
+    </item>
+    
+    <item>
+      <title>Add Comment To Column</title>
+      <link>https://ericpena.github.io/snowflake/sql/tables/add_comment_to_column.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/tables/add_comment_to_column.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. If it already exists, replace it. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR(5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;XF6K4&amp;#39;, &amp;#39;Chris Maki&amp;#39;, &amp;#39;The Bomber&amp;#39;), (&amp;#39;KD5SK&amp;#39;, &amp;#39;Donny Mav&amp;#39;, &amp;#39;Nuke Miner&amp;#39;); Describe Table (To See Comments) -- Describe table DESCRIBE TABLE SUPERHEROES; Add Comment To Column Note: If a comment already exists, this will override it.</description>
+    </item>
+    
+    <item>
+      <title>Convert Columns Into Rows</title>
+      <link>https://ericpena.github.io/snowflake/sql/basics/convert_columns_into_rows.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/basics/convert_columns_into_rows.html</guid>
+      <description>UNPIVOT converts a table&amp;rsquo;s columns into rows.
+Create Table Of Superheroes -- Create a table called SUPERHEROES. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE of integers  &amp;#34;AGE&amp;#34; INT, -- Column called 2015 of integers  &amp;#34;2015&amp;#34; INT, -- Column called 2016 of integers  &amp;#34;2016&amp;#34; INT, -- Column called 2017 of integers  &amp;#34;2017&amp;#34; INT, -- Column called 2018 of integers  &amp;#34;2018&amp;#34; INT, -- Column called 2019 of integers  &amp;#34;2019&amp;#34; INT ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;The Bomber&amp;#39;, 45, 1, 5, 7, 8, 0), (&amp;#39;Mr.</description>
+    </item>
+    
+    <item>
+      <title>Convert Data Types</title>
+      <link>https://ericpena.github.io/snowflake/sql/basics/convert_data_types.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/basics/convert_data_types.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR (5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point  &amp;#34;BANK_BALANCE&amp;#34; NUMBER(38, 2), -- Column called AGE allowing 3 digits with 0 after the decimal point  &amp;#34;AGE&amp;#34; NUMBER(3, 0) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;XF6K4&amp;#39;, &amp;#39;Chris Maki&amp;#39;, &amp;#39;The Bomber&amp;#39;, &amp;#39;-100.</description>
+    </item>
+    
+    <item>
+      <title>Create Dummy Columns</title>
+      <link>https://ericpena.github.io/snowflake/sql/basics/create_dummy_columns.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/basics/create_dummy_columns.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point  &amp;#34;AGE&amp;#34; INT, -- Column called STATE allowing up to 100 characters  &amp;#34;STATE&amp;#34; VARCHAR(100) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;The Bomber&amp;#39;, &amp;#39;24&amp;#39;, &amp;#39;Maine&amp;#39;), (&amp;#39;Mr.</description>
+    </item>
+    
+    <item>
+      <title>Create Or Replace Table</title>
+      <link>https://ericpena.github.io/snowflake/sql/tables/create_or_replace_table.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/tables/create_or_replace_table.html</guid>
+      <description>Create Table This CREATE OR REPLACE method will create a table and if a table with the same name does already exists, will replace that existing table with the new table.
+-- Create a table called SUPERHEROES. If it already exists, replace it. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR (5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point  &amp;#34;BANK_BALANCE&amp;#34; NUMBER(38, 2) ); </description>
+    </item>
+    
+    <item>
+      <title>Create Table</title>
+      <link>https://ericpena.github.io/snowflake/sql/tables/create_table.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/tables/create_table.html</guid>
+      <description>Create Table -- Create a table called SUPERHEROES. CREATE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR (5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point  &amp;#34;BANK_BALANCE&amp;#34; NUMBER(38, 2) ); </description>
+    </item>
+    
+    <item>
+      <title>Create Table From Query</title>
+      <link>https://ericpena.github.io/snowflake/sql/tables/create_table_from_query.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/tables/create_table_from_query.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. If it already exists, replace it. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR (5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point  &amp;#34;BANK_BALANCE&amp;#34; NUMBER(38, 2) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;XF6K4&amp;#39;, &amp;#39;Chris Maki&amp;#39;, &amp;#39;Diamond Ninja&amp;#39;, &amp;#39;-100.</description>
+    </item>
+    
+    <item>
+      <title>Create Table If It Doesn&#39;t Already Exist</title>
+      <link>https://ericpena.github.io/snowflake/sql/tables/create_table_if_does_not_already_exist.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/tables/create_table_if_does_not_already_exist.html</guid>
+      <description>Create Table IF NOT EXISTS tells Snowflake to only create the table if another table with the same name does not already exist. This can be useful if you don&amp;rsquo;t want to run an expensive operation if the data is already there.
+-- Create a table called SUPERHEROES. CREATE TABLE IF NOT EXISTS SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR (5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point  &amp;#34;BANK_BALANCE&amp;#34; NUMBER(38, 2) ); </description>
+    </item>
+    
+    <item>
+      <title>Create Table With Column And Table Comments</title>
+      <link>https://ericpena.github.io/snowflake/sql/tables/create_table_with_column_and_table_comments.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/tables/create_table_with_column_and_table_comments.html</guid>
+      <description>Create Table Of Superheroes With Comments Column comments concern a particular column, while table comments are about the entire table.
+-- Create a table called SUPERHEROES. If it already exists, replace it. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters with a comment.  &amp;#34;ID&amp;#34; VARCHAR (5) COMMENT &amp;#39;A unique ID for each superhero.&amp;#39;, -- Column called ALTER_EGO allowing up to 100 characters with a comment.</description>
+    </item>
+    
+    <item>
+      <title>Create Temporary Table</title>
+      <link>https://ericpena.github.io/snowflake/sql/tables/create_temporary_table.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/tables/create_temporary_table.html</guid>
+      <description>Create Temporary Table The temporary table will last until the session ends.
+-- Create a table called SUPERHEROES. CREATE OR REPLACE TEMP TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR (5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point  &amp;#34;BANK_BALANCE&amp;#34; NUMBER(38, 2) ); </description>
+    </item>
+    
+    <item>
+      <title>Delete A Table</title>
+      <link>https://ericpena.github.io/snowflake/sql/tables/delete_table.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/tables/delete_table.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. If it already exists, replace it. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR(5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;XF6K4&amp;#39;, &amp;#39;Chris Maki&amp;#39;, &amp;#39;The Bomber&amp;#39;), (&amp;#39;KD5SK&amp;#39;, &amp;#39;Donny Mav&amp;#39;, &amp;#39;Nuke Miner&amp;#39;); View Table Of Superheroes -- View the SUPERHEROES table SELECT * FROM SUPERHEROES; Delete Table -- Describe the table SUPERHEROES DROP TABLE SUPERHEROES; View Table Of Superheroes -- View the SUPERHEROES table SELECT * FROM SUPERHEROES; SQL compilation error: Object &#39;SUPERHEROES&#39; does not exist.</description>
+    </item>
+    
+    <item>
+      <title>Describe A Table</title>
+      <link>https://ericpena.github.io/snowflake/sql/tables/describe_table.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/tables/describe_table.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. If it already exists, replace it. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR(5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;XF6K4&amp;#39;, &amp;#39;Chris Maki&amp;#39;, &amp;#39;The Bomber&amp;#39;), (&amp;#39;KD5SK&amp;#39;, &amp;#39;Donny Mav&amp;#39;, &amp;#39;Nuke Miner&amp;#39;); View Table Of Superheroes -- View the SUPERHEROES table SELECT * FROM SUPERHEROES; Describe Table Of Superheroes -- Describe the table SUPERHEROES DESCRIBE TABLE SUPERHEROES; ## Describe Table Of Superheroes  -- Alternative: Describe the table SUPERHEROES DESC TABLE SUPERHEROES; </description>
+    </item>
+    
+    <item>
+      <title>Drop Column</title>
+      <link>https://ericpena.github.io/snowflake/sql/tables/drop_column.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/tables/drop_column.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. If it already exists, replace it. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR(5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;XF6K4&amp;#39;, &amp;#39;Chris Maki&amp;#39;, &amp;#39;The Bomber&amp;#39;), (&amp;#39;KD5SK&amp;#39;, &amp;#39;Donny Mav&amp;#39;, &amp;#39;Nuke Miner&amp;#39;); View Table Of Superheroes -- View the SUPERHEROES table SELECT * FROM SUPERHEROES; Drop A Column -- Alter the SUPERHEROES table by.</description>
+    </item>
+    
+    <item>
+      <title>Get Absolute Values</title>
+      <link>https://ericpena.github.io/snowflake/sql/numeric/get_absolute_values.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/numeric/get_absolute_values.html</guid>
+      <description>Create Temporary Table CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR (5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point  &amp;#34;BANK_BALANCE&amp;#34; NUMBER(38, 2) ); Add Rows, One For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;XF6K4&amp;#39;, &amp;#39;Chris Maki&amp;#39;, &amp;#39;Diamond Ninja&amp;#39;, &amp;#39;-100.</description>
+    </item>
+    
+    <item>
+      <title>Get Rows Meetings Multiple Conditions</title>
+      <link>https://ericpena.github.io/snowflake/sql/basics/get_rows_meeting_multiple_conditions.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/basics/get_rows_meeting_multiple_conditions.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR (5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point  &amp;#34;BANK_BALANCE&amp;#34; NUMBER(38, 2), -- Column called AGE allowing 3 digits with 0 after the decimal point  &amp;#34;AGE&amp;#34; NUMBER(3, 0) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;XF6K4&amp;#39;, &amp;#39;Chris Maki&amp;#39;, &amp;#39;The Bomber&amp;#39;, &amp;#39;-100.</description>
+    </item>
+    
+    <item>
+      <title>Give Column An Alias</title>
+      <link>https://ericpena.github.io/snowflake/sql/basics/give_column_alias.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/basics/give_column_alias.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR (5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point  &amp;#34;BANK_BALANCE&amp;#34; NUMBER(38, 2), -- Column called AGE allowing 3 digits with 0 after the decimal point  &amp;#34;AGE&amp;#34; NUMBER(3, 0) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;XF6K4&amp;#39;, &amp;#39;Chris Maki&amp;#39;, &amp;#39;The Bomber&amp;#39;, &amp;#39;-100.</description>
+    </item>
+    
+    <item>
+      <title>Give Table An Alias</title>
+      <link>https://ericpena.github.io/snowflake/sql/basics/give_table_alias.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/basics/give_table_alias.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR (5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point  &amp;#34;BANK_BALANCE&amp;#34; NUMBER(38, 2), -- Column called AGE allowing 3 digits with 0 after the decimal point  &amp;#34;AGE&amp;#34; NUMBER(3, 0) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;XF6K4&amp;#39;, &amp;#39;Chris Maki&amp;#39;, &amp;#39;The Bomber&amp;#39;, &amp;#39;-100.</description>
+    </item>
+    
+    <item>
+      <title>Left Join</title>
+      <link>https://ericpena.github.io/snowflake/sql/merge_and_join/left_join.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/merge_and_join/left_join.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. If it already exists, replace it. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR(5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point  &amp;#34;BANK_BALANCE&amp;#34; NUMBER(38, 2) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;XF6K4&amp;#39;, &amp;#39;Chris Maki&amp;#39;, &amp;#39;The Bomber&amp;#39;, &amp;#39;-100.</description>
+    </item>
+    
+    <item>
+      <title>Query A Table</title>
+      <link>https://ericpena.github.io/snowflake/sql/basics/query_table.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/basics/query_table.html</guid>
+      <description>Create A Table For Superheroes -- Create a table called SUPERHEROES. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR (5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point  &amp;#34;BANK_BALANCE&amp;#34; NUMBER(38, 2), -- Column called AGE allowing 3 digits with 0 after the decimal point  &amp;#34;AGE&amp;#34; NUMBER(3, 0) ); Insert One Row Per Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;XF6K4&amp;#39;, &amp;#39;Chris Maki&amp;#39;, &amp;#39;The Bomber&amp;#39;, &amp;#39;-100.</description>
+    </item>
+    
+    <item>
+      <title>Query DESCRIBE TABLE like a table</title>
+      <link>https://ericpena.github.io/snowflake/sql/tables/query_describe_statement.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/tables/query_describe_statement.html</guid>
+      <description>DESCRIBE TABLE is a powerful tool for understanding the structure of a table. However, in Snowflake the output of DESCRIBE TABLE is not treated like a regular table (i.e. can be manipulated using SELECT). To query DESCRIBE TABLE as a regular table we have to first run it, then run a SELECT query on the last query run which will be DESCRIBE TABLE.
+Create Table Of Superheroes -- Create a table called SUPERHEROES.</description>
+    </item>
+    
+    <item>
+      <title>Rename Column</title>
+      <link>https://ericpena.github.io/snowflake/sql/tables/rename_column.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/tables/rename_column.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. If it already exists, replace it. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR(5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;XF6K4&amp;#39;, &amp;#39;Chris Maki&amp;#39;, &amp;#39;The Bomber&amp;#39;), (&amp;#39;KD5SK&amp;#39;, &amp;#39;Donny Mav&amp;#39;, &amp;#39;Nuke Miner&amp;#39;); View Table Of Superheroes -- View the SUPERHEROES table SELECT * FROM SUPERHEROES; Rename A Column -- Alter the SUPERHEROES table by.</description>
+    </item>
+    
+    <item>
+      <title>Rename Table</title>
+      <link>https://ericpena.github.io/snowflake/sql/tables/rename_table.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/tables/rename_table.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. If it already exists, replace it. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR(5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point  &amp;#34;BANK_BALANCE&amp;#34; NUMBER(38, 2) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;XF6K4&amp;#39;, &amp;#39;Chris Maki&amp;#39;, &amp;#39;The Bomber&amp;#39;, &amp;#39;-100.</description>
+    </item>
+    
+    <item>
+      <title>Return First Few Rows</title>
+      <link>https://ericpena.github.io/snowflake/sql/basics/return_first_few_rows.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/basics/return_first_few_rows.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point  &amp;#34;AGE&amp;#34; INT, -- Column called STATE allowing up to 100 characters  &amp;#34;STATE&amp;#34; VARCHAR(100) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;The Bomber&amp;#39;, &amp;#39;24&amp;#39;, &amp;#39;Maine&amp;#39;), (&amp;#39;Mr.</description>
+    </item>
+    
+    <item>
+      <title>Return N Rows After Skipping First K Rows</title>
+      <link>https://ericpena.github.io/snowflake/sql/basics/return_n_rows_after_skipping_k_rows.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/basics/return_n_rows_after_skipping_k_rows.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point  &amp;#34;AGE&amp;#34; INT, -- Column called STATE allowing up to 100 characters  &amp;#34;STATE&amp;#34; VARCHAR(100) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;The Bomber&amp;#39;, &amp;#39;24&amp;#39;, &amp;#39;Maine&amp;#39;), (&amp;#39;Mr.</description>
+    </item>
+    
+    <item>
+      <title>Sample Random Rows From A Table</title>
+      <link>https://ericpena.github.io/snowflake/sql/basics/sample_rows_from_table.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/basics/sample_rows_from_table.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point  &amp;#34;AGE&amp;#34; NUMBER(3, 0) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;The Bomber&amp;#39;, &amp;#39;24&amp;#39;), (&amp;#39;Mr. Money&amp;#39;, &amp;#39;12&amp;#39;), (&amp;#39;Nuke Miner&amp;#39;, &amp;#39;59&amp;#39;), (&amp;#39;The Knife&amp;#39;, &amp;#39;43&amp;#39;), (&amp;#39;Ninka Baker&amp;#39;, &amp;#39;32&amp;#39;), (&amp;#39;Banana Bomber&amp;#39;, &amp;#39;34&amp;#39;), (&amp;#39;Augustine&amp;#39;, &amp;#39;12&amp;#39;), (&amp;#39;The Kid&amp;#39;, &amp;#39;21&amp;#39;), (&amp;#39;The Viking&amp;#39;, &amp;#39;291&amp;#39;), (&amp;#39;Skull Hustle&amp;#39;, &amp;#39;10&amp;#39;); Sample Where Reach Row Has Chance Of Inclusion -- Select all columns SELECT * -- From the SUPERHEROES table FROM SUPERHEROES -- Sample a subset of rows, where each row has a 25% chance of being selected SAMPLE ROW (25); Sample Where N Rows Are Desired -- Select all columns SELECT * -- From the SUPERHEROES table FROM SUPERHEROES -- Sample a subset of 3 rows SAMPLE ROW (3 rows); Sample With A Need Seeds improve repeatability, when rerun on the same data, samples using the same need value (e.</description>
+    </item>
+    
+    <item>
+      <title>Sort Rows By A Column&#39;s Values</title>
+      <link>https://ericpena.github.io/snowflake/sql/basics/sort_rows.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/basics/sort_rows.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100), -- Column called BANK_BALANCE allowing 38 digits with 2 after the decimal point  &amp;#34;AGE&amp;#34; INT, -- Column called STATE allowing up to 100 characters  &amp;#34;STATE&amp;#34; VARCHAR(100) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;The Bomber&amp;#39;, &amp;#39;24&amp;#39;, &amp;#39;Maine&amp;#39;), (&amp;#39;Mr.</description>
+    </item>
+    
+    <item>
+      <title>Swap Two Tables</title>
+      <link>https://ericpena.github.io/snowflake/sql/tables/swap_two_tables.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/tables/swap_two_tables.html</guid>
+      <description>SWAP will swap all contents, metadata, and access permissions between two tables. This can be useful by allowing you to build a new version of the table over time and then when you are ready, swapping out the old verison for the new version.
+Create Table Of Superheroes -- Create a table called SUPERHEROES. If it already exists, replace it. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR(5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;XF6K4&amp;#39;, &amp;#39;Chris Maki&amp;#39;, &amp;#39;The Bomber&amp;#39;), (&amp;#39;KD5SK&amp;#39;, &amp;#39;Donny Mav&amp;#39;, &amp;#39;Nuke Miner&amp;#39;); View Table Of Superheroes -- View the SUPERHEROES table SELECT * FROM SUPERHEROES; Create Table Of Villans -- Create a table called VILLANS.</description>
+    </item>
+    
+    <item>
+      <title>Undelete A Table</title>
+      <link>https://ericpena.github.io/snowflake/sql/tables/undelete_table.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/tables/undelete_table.html</guid>
+      <description>Create Table Of Superheroes -- Create a table called SUPERHEROES. If it already exists, replace it. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters  &amp;#34;ID&amp;#34; VARCHAR(5), -- Column called NAME allowing up to 100 characters  &amp;#34;NAME&amp;#34; VARCHAR(100), -- Column called ALTER_EGO allowing up to 100 characters  &amp;#34;ALTER_EGO&amp;#34; VARCHAR(100) ); Insert Rows For Each Superhero -- Insert rows into SUPERHEROES INSERT INTO SUPERHEROES -- With the values  VALUES (&amp;#39;XF6K4&amp;#39;, &amp;#39;Chris Maki&amp;#39;, &amp;#39;The Bomber&amp;#39;), (&amp;#39;KD5SK&amp;#39;, &amp;#39;Donny Mav&amp;#39;, &amp;#39;Nuke Miner&amp;#39;); View Table Of Superheroes -- View the SUPERHEROES table SELECT * FROM SUPERHEROES; Delete Table -- Describe the table SUPERHEROES DROP TABLE SUPERHEROES; Undelete Table Of Superheroes -- Undelete the table SUPERHEROES UNDROP TABLE SUPERHEROES; View Table Of Superheroes -- View the SUPERHEROES table SELECT * FROM SUPERHEROES; </description>
+    </item>
+    
+    <item>
+      <title>View A Column&#39;s Comments</title>
+      <link>https://ericpena.github.io/snowflake/sql/tables/view_column_comments.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/tables/view_column_comments.html</guid>
+      <description>Create Table Of Superheroes With Comments Column comments concern a particular column, while table comments are about the entire table.
+-- Create a table called SUPERHEROES. If it already exists, replace it. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters with a comment.  &amp;#34;ID&amp;#34; VARCHAR (5) COMMENT &amp;#39;A unique ID for each superhero.&amp;#39;, -- Column called ALTER_EGO allowing up to 100 characters with a comment.</description>
+    </item>
+    
+    <item>
+      <title>View A Table&#39;s Comments</title>
+      <link>https://ericpena.github.io/snowflake/sql/tables/view_table_comments.html</link>
+      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/snowflake/sql/tables/view_table_comments.html</guid>
+      <description>Create Table Of Superheroes With Comments Column comments concern a particular column, while table comments are about the entire table.
+-- Create a table called SUPERHEROES. If it already exists, replace it. CREATE OR REPLACE TABLE SUPERHEROES ( -- Column called ID allowing up to five characters with a comment.  &amp;#34;ID&amp;#34; VARCHAR (5) COMMENT &amp;#39;A unique ID for each superhero.&amp;#39;, -- Column called ALTER_EGO allowing up to 100 characters with a comment.</description>
+    </item>
+    
+  </channel>
+</rss>
