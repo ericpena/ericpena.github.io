@@ -1033,6 +1033,12 @@
   </url>
   
   <url>
+    <loc>https://ericpena.github.io/about/index.xml</loc>
+    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ericpena.github.io/machine_learning/basics/index.xml</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
@@ -1054,6 +1060,11 @@
   
   <url>
     <loc>https://ericpena.github.io/machine_learning/vectors_matrices_and_arrays/index.xml</loc>
+    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/about/chris_albon.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
@@ -3226,11 +3237,6 @@
   <url>
     <loc>https://ericpena.github.io/articles/health_systems.html</loc>
     <lastmod>2011-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/about.html</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>
