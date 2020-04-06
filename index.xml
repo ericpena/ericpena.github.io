@@ -29,15 +29,6 @@
     </item>
     
     <item>
-      <title>Physics</title>
-      <link>https://ericpena.github.io/physics/index.xml</link>
-      <pubDate>Sat, 01 Feb 2020 00:00:00 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/physics/index.xml</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Snowflakes</title>
       <link>https://ericpena.github.io/snowflake/index.xml</link>
       <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
@@ -115,6 +106,15 @@
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/mathematics/index.xml</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Physics</title>
+      <link>https://ericpena.github.io/physics/index.xml</link>
+      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/physics/index.xml</guid>
       <description></description>
     </item>
     

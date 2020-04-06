@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>physics - Eric Peña</title>
+    <link>https://ericpena.github.io/physics/setup/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Dec 2017 11:53:49 -0700</lastBuildDate>
+    
+        <atom:link href="https://ericpena.github.io/physics/setup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Loading Features From Dictionaries</title>
+      <link>https://ericpena.github.io/physics/setup/loading_features_from_dictionaries.html</link>
+      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/physics/setup/loading_features_from_dictionaries.html</guid>
+      <description>Preliminaries from sklearn.feature_extraction import DictVectorizer Create A Dictionary staff = [{&amp;#39;name&amp;#39;: &amp;#39;Steve Miller&amp;#39;, &amp;#39;age&amp;#39;: 33.}, {&amp;#39;name&amp;#39;: &amp;#39;Lyndon Jones&amp;#39;, &amp;#39;age&amp;#39;: 12.}, {&amp;#39;name&amp;#39;: &amp;#39;Baxter Morth&amp;#39;, &amp;#39;age&amp;#39;: 18.}] Convert Dictionary To Feature Matrix # Create an object for our dictionary vectorizer vec = DictVectorizer() # Fit then transform the staff dictionary with vec, then output an array vec.fit_transform(staff).toarray() array([[ 33., 0., 0., 1.], [ 12., 0., 1., 0.], [ 18., 1., 0., 0.]])  View Feature Names # Get Feature Names vec.</description>
+    </item>
+    
+  </channel>
+</rss>
