@@ -20,20 +20,20 @@
     </item>
     
     <item>
-      <title>Deep_learnings</title>
-      <link>https://ericpena.github.io/deep_learning/index.xml</link>
-      <pubDate>Sat, 01 Feb 2020 00:00:00 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/deep_learning/index.xml</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Git_and_githubs</title>
       <link>https://ericpena.github.io/git_and_github/index.xml</link>
       <pubDate>Sat, 01 Feb 2020 00:00:00 -0700</pubDate>
       
       <guid>https://ericpena.github.io/git_and_github/index.xml</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Physics</title>
+      <link>https://ericpena.github.io/physics/index.xml</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/physics/index.xml</guid>
       <description></description>
     </item>
     
