@@ -1414,11 +1414,6 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/physics/classical_mechanics/convolutional_neural_network.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ericpena.github.io/python/data_wrangling/pandas_dataframe_count_values.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
@@ -1720,21 +1715,6 @@
   
   <url>
     <loc>https://ericpena.github.io/machine_learning/trees_and_forests/feature_selection_using_random_forest.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/physics/classical_mechanics/feedforward_neural_network_for_binary_classification.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/physics/classical_mechanics/feedforward_neural_network_for_multiclass_classification.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/physics/classical_mechanics/feedforward_neural_network_for_regression.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
@@ -2104,11 +2084,6 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/physics/classical_mechanics/k-fold_cross-validating_neural_networks.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ericpena.github.io/machine_learning/clustering/k-means_clustering.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
@@ -2235,11 +2210,6 @@
   
   <url>
     <loc>https://ericpena.github.io/python/data_wrangling/pandas_lowercase_column_names.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/physics/classical_mechanics/lstm_recurrent_neural_network.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
@@ -2479,16 +2449,6 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/physics/classical_mechanics/neural_network_early_stopping.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/physics/classical_mechanics/neural_network_weight_regularization.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ericpena.github.io/python/data_wrangling/pandas_normalize_column.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
@@ -2605,11 +2565,6 @@
   
   <url>
     <loc>https://ericpena.github.io/machine_learning/preprocessing_structured_data/preprocessing_categorical_features.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/physics/classical_mechanics/preprocessing_data_for_neural_networks.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
@@ -2780,11 +2735,6 @@
   
   <url>
     <loc>https://ericpena.github.io/machine_learning/preprocessing_images/save_images.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/physics/classical_mechanics/save_model_training_progress.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
@@ -3054,7 +3004,7 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/physics/classical_mechanics/adding_dropout.html</loc>
+    <loc>https://ericpena.github.io/physics/classical_mechanics/teaching_physics.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
@@ -3110,11 +3060,6 @@
   
   <url>
     <loc>https://ericpena.github.io/python/basics/try_except_finally.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/physics/classical_mechanics/tuning_neural_network_hyperparameters.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
@@ -3180,16 +3125,6 @@
   
   <url>
     <loc>https://ericpena.github.io/machine_learning/trees_and_forests/visualize_a_decision_tree.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/physics/classical_mechanics/visualize_loss_history.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/physics/classical_mechanics/visualize_neural_network_architecture.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
