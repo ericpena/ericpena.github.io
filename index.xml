@@ -5,10 +5,19 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Mar 2020 00:00:00 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2020 13:41:41 -0400</lastBuildDate>
     
         <atom:link href="https://ericpena.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Complex_systems</title>
+      <link>https://ericpena.github.io/complex_systems/index.xml</link>
+      <pubDate>Tue, 07 Apr 2020 13:41:41 -0400</pubDate>
+      
+      <guid>https://ericpena.github.io/complex_systems/index.xml</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Projects</title>
@@ -20,20 +29,20 @@
     </item>
     
     <item>
+      <title>Statistics</title>
+      <link>https://ericpena.github.io/statistics/index.xml</link>
+      <pubDate>Fri, 20 Dec 2019 11:53:49 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/statistics/index.xml</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title></title>
       <link>https://ericpena.github.io/about/index.xml</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/about/index.xml</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Complex_systems</title>
-      <link>https://ericpena.github.io/complex_systems/index.xml</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/complex_systems/index.xml</guid>
       <description></description>
     </item>
     
@@ -106,15 +115,6 @@
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/r_programming/index.xml</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Statistics</title>
-      <link>https://ericpena.github.io/statistics/index.xml</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/statistics/index.xml</guid>
       <description></description>
     </item>
     

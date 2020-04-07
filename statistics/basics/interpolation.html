@@ -16,23 +16,37 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="About Eric Peña" />
-<meta property="og:description" content="About Eric Peña." />
+<meta property="og:title" content="Linear Interpolation" />
+<meta property="og:description" content="Linear Interpolation Using Python." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ericpena.github.io/about/eric_pena.html" />
-<meta property="article:published_time" content="2017-12-20T11:53:49-07:00" />
-<meta property="article:modified_time" content="2017-12-20T11:53:49-07:00" />
+<meta property="og:url" content="https://ericpena.github.io/statistics/basics/interpolation.html" />
+<meta property="article:published_time" content="2019-12-20T11:53:49-07:00" />
+<meta property="article:modified_time" content="2019-12-20T11:53:49-07:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="About Eric Peña"/>
-<meta name="twitter:description" content="About Eric Peña."/>
+<meta name="twitter:title" content="Linear Interpolation"/>
+<meta name="twitter:description" content="Linear Interpolation Using Python."/>
 <meta name="generator" content="Hugo 0.68.3" />
 
     
-    
-    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Linear Interpolation",
+  "url": "https:\/\/ericpena.github.io\/statistics\/basics\/interpolation.html",
+  "wordCount": "188",
+  "datePublished": "2019-12-20T11:53:49-07:00",
+  "dateModified": "2019-12-20T11:53:49-07:00",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Albon"
+  },
+  "description": "Linear Interpolation Using Python."
+}
+</script> 
 
-    <title>About Eric Peña</title>
+    <title>Linear Interpolation</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -132,54 +146,72 @@ MathJax.Hub.Config({
         <div class="row">
             <div class="col-sm-12">
 
-                
+                 
+
+
 <article>
-  <div class="page">
-    <div class="content">
-      <p><img src="eric_pena.jpg" alt="ericpena"></p>
-<p>I am a <a href="%22https://en.wikipedia.org/wiki/Complex_system%22">Complex Systems Science</a> graduate student and <a href="%22https://www.binghamton.edu/grad-school/cost-aid-funding/financial-support/clifford-clark-fellowship.html%22">Clifford D. Clark Fellow</a> at <a href="%22https://www.binghamton.edu/%22">State University of New York at Binghamton</a>.</p>
-<ul>
-<li>Email: <a href="mailto:eric.pena@binghamton.edu">eric.pena@binghamton.edu</a></li>
-<li>Twitter: <a href="https://twitter.com/ericpenaphysics">@ericpenaphysics</a></li>
-</ul>
-<h2 id="experience">Experience</h2>
-<ul>
-<li><strong>A</strong>, <a href="www.google.com">example</a>, July 2018 - Present
-<ul>
-<li>a <em>(Data Analyst)</em></li>
-</ul>
-</li>
-</ul>
-<h2 id="projects">Projects</h2>
-<ul>
-<li><strong>Website Notes</strong>, <a href="https://ericpena.com">ericpena.com</a>, April 2020 - Present
-<ul>
-<li>a</li>
-</ul>
-</li>
-</ul>
-<h2 id="education">Education</h2>
-<ul>
-<li><strong>M.S., Systems Science</strong>, State University of New York at Binghamton, Binghamton, NY. 2021
-<ul>
-<li>Thesis: TBA</li>
-</ul>
-</li>
-<li><strong>Advanced Graduate Certificate</strong>, State University of New York at Binghamton, Binghamton, NY. 2021
-<ul>
-<li>Collective Dynamics of Complex Systems and Engineering</li>
-</ul>
-</li>
-<li><strong>B.S.</strong>, The Ohio State University, Columbus, OH. 2014
-<ul>
-<li>Engineering Physics &mdash; (concentration): Computer Informational Science and Computational Physics</li>
-</ul>
-</li>
-</ul>
+  <div class="technical_note">
+  <header>
+      
+    <h1 class="technical_note_title">Linear Interpolation</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2019-12-20T11:53:49-07:00 "> 20 Dec 2019</time>
+    </div>
+  </header>
+  <div class="content">
+      
+  <p>Linear interpolation is used when we want to calculate a value between two points.</p>
+<p>Imagine we want to calculate some point, $(x, y)$ that is between two other points $(x_1, y_1)$ and $(x_2, y_2)$. To do this, we first select some value $x$ value (often halfway between $x_2$ and $x_1$ on the x-axis) and then calculate $x$'s corresponding $y$ value using the following formula:</p>
+<p>$$y = y_1 + \frac{y_2 - y_1}{x_2 - x_1} * (x-x_1)$$</p>
+<h2 id="create-two-coordinates">Create Two Coordinates</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Coordinates for x_1 and y_1</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Coordinates for x_2 and y_2</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="mi">100</span>
+</code></pre></div><h2 id="select-x-value">Select x Value</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Select an x value half way between x2 and x1 on the x-axis</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">((</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">x1</span>
+
+<span class="c1"># View x</span>
+<span class="n">x</span>
+</code></pre></div><pre><code>5.0
+</code></pre>
+<h2 id="create-function-for-linear-interpolation">Create Function For Linear Interpolation</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Create a function</span>
+<span class="k">def</span> <span class="nf">interpolate_y</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
+    
+    <span class="c1"># Linear interpolation formula</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">+</span> <span class="p">((</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span>
+    
+    <span class="c1"># Return y</span>
+    <span class="k">return</span> <span class="n">y</span>
+</code></pre></div><h2 id="calculate-y">Calculate y</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Interpolate y</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">interpolate_y</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+</code></pre></div><h2 id="print-x">Print x</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">x</span>
+</code></pre></div><pre><code>5.0
+</code></pre>
+<h2 id="print-y">Print y</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">y</span>
+</code></pre></div><pre><code>50.0
+</code></pre>
+
+</div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/ericpena/pena-notes/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
 
     </div>
-  </div>
 </article>
+
+
 
 
             </div>
