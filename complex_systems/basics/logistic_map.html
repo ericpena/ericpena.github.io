@@ -16,22 +16,37 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Eric Peña" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://ericpena.github.io/" />
-<meta property="og:updated_time" content="2020-04-07T11:53:49-07:00" />
+<meta property="og:title" content="Logistic Map" />
+<meta property="og:description" content="Explaining Logistic Map and Bifurcation Behavior" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ericpena.github.io/complex_systems/basics/logistic_map.html" />
+<meta property="article:published_time" content="2020-04-07T11:53:49-07:00" />
+<meta property="article:modified_time" content="2020-04-07T11:53:49-07:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Eric Peña"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Logistic Map"/>
+<meta name="twitter:description" content="Explaining Logistic Map and Bifurcation Behavior"/>
 <meta name="generator" content="Hugo 0.68.3" />
 
     
-    
-    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Logistic Map",
+  "url": "https:\/\/ericpena.github.io\/complex_systems\/basics\/logistic_map.html",
+  "wordCount": "158",
+  "datePublished": "2020-04-07T11:53:49-07:00",
+  "dateModified": "2020-04-07T11:53:49-07:00",
+  "author": {
+    "@type": "Person",
+    "name": "Eric Peña"
+  },
+  "description": "Explaining Logistic Map and Bifurcation Behavior"
+}
+</script> 
 
-    <title>Eric Peña</title>
+    <title>Logistic Map</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -43,7 +58,7 @@
     <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
 
     
-    <link href="https://ericpena.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Eric Peña All Notes And Articles" /> 
+    <link href="" rel="alternate" type="application/rss+xml" title="Eric Peña All Notes And Articles" /> 
     
     <link href="https://ericpena.github.io//articles/index.xml" rel="alternate" type="application/rss+xml" title="Eric Peña Articles" />
 
@@ -131,145 +146,64 @@ MathJax.Hub.Config({
         <div class="row">
             <div class="col-sm-12">
 
-                
-<main>
-    <div class="homepage">
-        <div class="row">
-            <div class="col-sm-12">
-                <h1>
-                    <span class="minor_line">Eric Peña</span>
-                    <br>
-                    <span class="major_line">Collective Dynamics of Complex Systems</span>
-                    <br>
-                    <span class="minor_line">Mathematical Methods and Related Topics in Science</span>
-                </h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 blurb">
-                <p>
-                    <a href="about/eric_pena.html">Eric Peña</a> is a graduate student and Clark Fellow at <a href="https://www.binghamton.edu/">State University of New York at Binghamton</a>. Notes will be added over time as I sort through and compile all my work.
-                </p>
-            </div>
-        </div>
+                 
 
-        <div class="row" id="physics">
-            <div class="col-sm-12">
-                <h3 class="category_header">Physics</h3>
-            </div>
-        </div>
 
-        
-
-        <div class="row" id="complex_systems">
-            <div class="col-sm-12">
-                <h3 class="category_header">Complex Systems</h3>
-            </div>
-        </div>
-    
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <h4 class="card-header">Basics</h4>
-                    <div class="card-body">
-                        <ul>
-                            
-                            
-                                
-                                    <li><a href="https://ericpena.github.io/complex_systems/basics/logistic_map.html">Logistic Map</a></li>
-                                
-                                    <li><a href="https://ericpena.github.io/complex_systems/basics/mitchell.html">Complexity by Melanie Mitchell</a></li>
-                                
-                            
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row" id="mathematics">
-            <div class="col-sm-12">
-                <h3 class="category_header">Mathematics</h3>
-            </div>
-        </div>
-
-        
-
-        <div class="row" id="statistics">
-            <div class="col-sm-12">
-                <h3 class="category_header">Statistics</h3>
-            </div>
-        </div>
-
-        
-
-        <div class="row" id="network_science">
-            <div class="col-sm-12">
-                <h3 class="category_header">Network Science</h3>
-            </div>
-        </div>
-
-        
-
-        <div class="row" id="machine_learning">
-            <div class="col-sm-12">
-                <h3 class="category_header">Machine Learning</h3>
-            </div>
-        </div>
-
-        
-
-        <div class="row" id="python">
-            <div class="col-sm-12">
-                <h3 class="category_header">Python</h3>
-            </div>
-        </div>
-
-        
-
-        <div class="row" id="mathematica">
-            <div class="col-sm-12">
-                <h3 class="category_header">Mathematica</h3>
-            </div>
-        </div>
-
-        
-
-        <div class="row" id="julia">
-            <div class="col-sm-12">
-                <h3 class="category_header">Julia</h3>
-            </div>
-        </div>
-
-        
-
-        <div class="row" id="r_programming">
-            <div class="col-sm-12">
-                <h3 class="category_header">R Programming</h3>
-            </div>
-        </div>
-
-        
-
-        <div class="row" id="projects">
-            <div class="col-sm-12">
-                <h3 class="category_header">Projects</h3>
-            </div>
-        </div>
-
-        
-
-        <div class="row" id="articles">
-            <div class="col-sm-12">
-                <h3 class="category_header">Articles
-                </h3>
-            </div>
-        </div>
-
-        
-        
+<article>
+  <div class="technical_note">
+  <header>
+      
+    <h1 class="technical_note_title">Logistic Map</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-07T11:53:49-07:00 "> 07 Apr 2020</time>
     </div>
-</main>
+  </header>
+  <div class="content">
+      
+  <h2 id="logistic-map">Logistic Map</h2>
+<p>The famous logistic map is a recurrence relation or polynomial mapping of degree 2. It is a nonlinear difference equation capable of capturing complex nonlinear dynamical behavior including chaos. This map was popularized by the biologist Robert May in a <a href="https://www.researchgate.net/publication/237005499_Simple_Mathematical_Models_With_Very_Complicated_Dynamics">Nature article</a> written in 1976. The equation is as follows:</p>
+<p>$$x_{n+1} = r x_n (1 - x_n)$$</p>
+<p>The parameter $r$ controls the behavior of the system. It turns out that $r=3.6$ is starting to reach the point of chaos.</p>
+<h2 id="preparation">Preparation</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+</code></pre></div><h2 id="defining-logistic-map">Defining Logistic Map</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div><h2 id="period-doubling-bifurcation-r--31">Period Doubling Bifurcation $(r = 3.1)$</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">3.1</span>
+<span class="n">xdata</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+    <span class="n">xdata</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">xdata</span><span class="p">,</span> <span class="s1">&#39;r.&#39;</span><span class="p">);</span>
+</code></pre></div><p><img src="logistic_map_files/logistic_map_7_0.png" alt="png"></p>
+<h2 id="creating-bifurcation-diagram">Creating Bifurcation Diagram</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">avalues</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">xvalues</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">linspace</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.7</span><span class="p">,</span> <span class="mi">500</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mf">0.01</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+            <span class="n">avalues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+            <span class="n">xvalues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        
+<span class="n">plot</span><span class="p">(</span><span class="n">avalues</span><span class="p">,</span> <span class="n">xvalues</span><span class="p">,</span> <span class="s1">&#39;r.&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">);</span>
+</code></pre></div><p><img src="logistic_map_files/logistic_map_9_0.png" alt="png"></p>
+
+</div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/ericpena/pena-notes/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
 
 
             </div>
