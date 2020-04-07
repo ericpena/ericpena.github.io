@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>r_programming - Eric Peña</title>
+    <link>https://ericpena.github.io/r_programming/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Dec 2017 11:53:49 -0700</lastBuildDate>
+    
+        <atom:link href="https://ericpena.github.io/r_programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://ericpena.github.io/r_programming/basics/index.xml</link>
+      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/r_programming/basics/index.xml</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

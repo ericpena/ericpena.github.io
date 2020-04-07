@@ -11,65 +11,11 @@
     
     
     <item>
-      <title>Data_science_managements</title>
-      <link>https://ericpena.github.io/data_science_management/index.xml</link>
+      <title>Projects</title>
+      <link>https://ericpena.github.io/projects/index.xml</link>
       <pubDate>Mon, 23 Mar 2020 00:00:00 -0700</pubDate>
       
-      <guid>https://ericpena.github.io/data_science_management/index.xml</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git_and_githubs</title>
-      <link>https://ericpena.github.io/git_and_github/index.xml</link>
-      <pubDate>Sat, 01 Feb 2020 00:00:00 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/git_and_github/index.xml</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Snowflakes</title>
-      <link>https://ericpena.github.io/snowflake/index.xml</link>
-      <pubDate>Mon, 28 Jan 2019 00:00:00 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/snowflake/index.xml</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pythons</title>
-      <link>https://ericpena.github.io/python/index.xml</link>
-      <pubDate>Sun, 16 Dec 2018 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/python/index.xml</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linuxes</title>
-      <link>https://ericpena.github.io/linux/index.xml</link>
-      <pubDate>Mon, 16 Jul 2018 00:00:00 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/linux/index.xml</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Postgresqls</title>
-      <link>https://ericpena.github.io/postgresql/index.xml</link>
-      <pubDate>Mon, 18 Jun 2018 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/postgresql/index.xml</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Aws</title>
-      <link>https://ericpena.github.io/aws/index.xml</link>
-      <pubDate>Sun, 17 Jun 2018 00:00:00 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/aws/index.xml</guid>
+      <guid>https://ericpena.github.io/projects/index.xml</guid>
       <description></description>
     </item>
     
@@ -83,11 +29,20 @@
     </item>
     
     <item>
-      <title>Computer_sciences</title>
-      <link>https://ericpena.github.io/computer_science/index.xml</link>
+      <title>Complex_systems</title>
+      <link>https://ericpena.github.io/complex_systems/index.xml</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
-      <guid>https://ericpena.github.io/computer_science/index.xml</guid>
+      <guid>https://ericpena.github.io/complex_systems/index.xml</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Julia</title>
+      <link>https://ericpena.github.io/julia/index.xml</link>
+      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/julia/index.xml</guid>
       <description></description>
     </item>
     
@@ -101,11 +56,29 @@
     </item>
     
     <item>
+      <title>Mathematicas</title>
+      <link>https://ericpena.github.io/mathematica/index.xml</link>
+      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/mathematica/index.xml</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Mathematics</title>
       <link>https://ericpena.github.io/mathematics/index.xml</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/mathematics/index.xml</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network_sciences</title>
+      <link>https://ericpena.github.io/network_science/index.xml</link>
+      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/network_science/index.xml</guid>
       <description></description>
     </item>
     
@@ -119,20 +92,20 @@
     </item>
     
     <item>
-      <title>Regexes</title>
-      <link>https://ericpena.github.io/regex/index.xml</link>
+      <title>Pythons</title>
+      <link>https://ericpena.github.io/python/index.xml</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
-      <guid>https://ericpena.github.io/regex/index.xml</guid>
+      <guid>https://ericpena.github.io/python/index.xml</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Scalas</title>
-      <link>https://ericpena.github.io/scala/index.xml</link>
+      <title>R_programmings</title>
+      <link>https://ericpena.github.io/r_programming/index.xml</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
-      <guid>https://ericpena.github.io/scala/index.xml</guid>
+      <guid>https://ericpena.github.io/r_programming/index.xml</guid>
       <description></description>
     </item>
     
