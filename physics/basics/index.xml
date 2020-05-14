@@ -5,19 +5,9 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Dec 2017 11:53:49 -0700</lastBuildDate>
     
         <atom:link href="https://ericpena.github.io/physics/basics/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Add Padding Around String</title>
-      <link>https://ericpena.github.io/physics/basics/add_padding_around_string.html</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/physics/basics/add_padding_around_string.html</guid>
-      <description>Create Some Text text = &amp;#39;Chapter 1&amp;#39; Add Padding Around Text # Add Spaces Of Padding To The Left format(text, &amp;#39;&amp;gt;20&amp;#39;) &#39; Chapter 1&#39;  # Add Spaces Of Padding To The Right format(text, &amp;#39;&amp;lt;20&amp;#39;) &#39;Chapter 1 &#39;  # Add Spaces Of Padding On Each Side format(text, &amp;#39;^20&amp;#39;) &#39; Chapter 1 &#39;  # Add * Of Padding On Each Side format(text, &amp;#39;*^20&amp;#39;) &#39;*****Chapter 1******&#39;  </description>
-    </item>
     
   </channel>
 </rss>

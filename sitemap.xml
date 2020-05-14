@@ -4,27 +4,27 @@
   
   <url>
     <loc>https://ericpena.github.io/complex_systems/basics/index.xml</loc>
-    <lastmod>2020-04-07T11:53:49-07:00</lastmod>
+    <lastmod>2020-04-07T13:41:41-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://ericpena.github.io/complex_systems/index.xml</loc>
-    <lastmod>2020-04-07T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/</loc>
-    <lastmod>2020-04-07T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/complex_systems/basics/logistic_map.html</loc>
-    <lastmod>2020-04-07T11:53:49-07:00</lastmod>
+    <lastmod>2020-04-07T13:41:41-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://ericpena.github.io/complex_systems/basics/mitchell.html</loc>
     <lastmod>2020-04-07T13:41:41-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/</loc>
+    <lastmod>2020-04-07T13:41:41-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/complex_systems/basics/logistic_map.html</loc>
+    <lastmod>2020-03-23T00:00:00-07:00</lastmod>
   </url>
   
   <url>
@@ -38,63 +38,13 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/statistics/basics/index.xml</loc>
-    <lastmod>2019-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/statistics/basics/interpolation.html</loc>
-    <lastmod>2019-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/statistics/index.xml</loc>
-    <lastmod>2019-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ericpena.github.io/about/index.xml</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/julia/basics/index.xml</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ericpena.github.io/machine_learning/basics/index.xml</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/mathematica/basics/index.xml</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/mathematics/basics/index.xml</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/network_science/basics/index.xml</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/physics/basics/index.xml</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/python/basics/index.xml</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/r_programming/basics/index.xml</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
@@ -104,127 +54,12 @@
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/julia/basics/add_padding_around_string.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/mathematica/basics/add_padding_around_string.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/network_science/basics/add_padding_around_string.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/physics/basics/add_padding_around_string.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/python/basics/add_padding_around_string.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/r_programming/basics/add_padding_around_string.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/mathematics/basics/argmin_and_argmax.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/julia/index.xml</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ericpena.github.io/machine_learning/basics/untitled.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/machine_learning/basics/loading_scikit-learns_boston_housing_dataset.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/machine_learning/basics/loading_scikit-learns_digits-dataset.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/machine_learning/basics/loading_scikit-learns_iris_dataset.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ericpena.github.io/machine_learning/index.xml</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/machine_learning/basics/make_simulated_data_for_classification.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/machine_learning/basics/make_simulated_data_for_clustering.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/machine_learning/basics/make_simulated_data_for_regression.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/mathematica/index.xml</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/mathematics/index.xml</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/network_science/index.xml</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/machine_learning/basics/perceptron_in_scikit-learn.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/physics/index.xml</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/python/index.xml</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/r_programming/index.xml</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/machine_learning/basics/saving_machine_learning_models.html</loc>
-    <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/statistics/basics/trimmed_mean.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
@@ -257,6 +92,70 @@
   <url>
     <loc>https://ericpena.github.io/articles/health_systems.html</loc>
     <lastmod>2011-12-20T11:53:49-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/julia/basics/index.xml</loc>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/mathematica/basics/index.xml</loc>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/mathematics/basics/index.xml</loc>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/network_science/basics/index.xml</loc>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/physics/basics/index.xml</loc>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/python/basics/index.xml</loc>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/r_programming/basics/index.xml</loc>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/statistics/basics/index.xml</loc>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/julia/index.xml</loc>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/mathematica/index.xml</loc>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/mathematics/index.xml</loc>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/network_science/index.xml</loc>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/physics/index.xml</loc>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/python/index.xml</loc>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/r_programming/index.xml</loc>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/statistics/index.xml</loc>
   </url>
   
 </urlset>

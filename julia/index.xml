@@ -5,7 +5,6 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Dec 2017 11:53:49 -0700</lastBuildDate>
     
         <atom:link href="https://ericpena.github.io/julia/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +12,7 @@
     <item>
       <title></title>
       <link>https://ericpena.github.io/julia/basics/index.xml</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/julia/basics/index.xml</guid>
       <description></description>

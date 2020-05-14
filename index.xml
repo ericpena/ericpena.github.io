@@ -5,7 +5,7 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Apr 2020 11:53:49 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2020 13:41:41 -0400</lastBuildDate>
     
         <atom:link href="https://ericpena.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +13,7 @@
     <item>
       <title>Complex_systems</title>
       <link>https://ericpena.github.io/complex_systems/index.xml</link>
-      <pubDate>Tue, 07 Apr 2020 11:53:49 -0700</pubDate>
+      <pubDate>Tue, 07 Apr 2020 13:41:41 -0400</pubDate>
       
       <guid>https://ericpena.github.io/complex_systems/index.xml</guid>
       <description></description>
@@ -29,29 +29,11 @@
     </item>
     
     <item>
-      <title>Statistics</title>
-      <link>https://ericpena.github.io/statistics/index.xml</link>
-      <pubDate>Fri, 20 Dec 2019 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/statistics/index.xml</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title></title>
       <link>https://ericpena.github.io/about/index.xml</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://ericpena.github.io/about/index.xml</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Julia</title>
-      <link>https://ericpena.github.io/julia/index.xml</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
-      
-      <guid>https://ericpena.github.io/julia/index.xml</guid>
       <description></description>
     </item>
     
@@ -65,9 +47,27 @@
     </item>
     
     <item>
+      <title></title>
+      <link>https://ericpena.github.io/articles/index.xml</link>
+      <pubDate>Mon, 01 Feb 2016 11:53:49 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/articles/index.xml</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Julia</title>
+      <link>https://ericpena.github.io/julia/index.xml</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/julia/index.xml</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Mathematicas</title>
       <link>https://ericpena.github.io/mathematica/index.xml</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/mathematica/index.xml</guid>
       <description></description>
@@ -76,7 +76,7 @@
     <item>
       <title>Mathematics</title>
       <link>https://ericpena.github.io/mathematics/index.xml</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/mathematics/index.xml</guid>
       <description></description>
@@ -85,7 +85,7 @@
     <item>
       <title>Network_sciences</title>
       <link>https://ericpena.github.io/network_science/index.xml</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/network_science/index.xml</guid>
       <description></description>
@@ -94,7 +94,7 @@
     <item>
       <title>Physics</title>
       <link>https://ericpena.github.io/physics/index.xml</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/physics/index.xml</guid>
       <description></description>
@@ -103,7 +103,7 @@
     <item>
       <title>Pythons</title>
       <link>https://ericpena.github.io/python/index.xml</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/python/index.xml</guid>
       <description></description>
@@ -112,18 +112,18 @@
     <item>
       <title>R_programmings</title>
       <link>https://ericpena.github.io/r_programming/index.xml</link>
-      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/r_programming/index.xml</guid>
       <description></description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://ericpena.github.io/articles/index.xml</link>
-      <pubDate>Mon, 01 Feb 2016 11:53:49 -0700</pubDate>
+      <title>Statistics</title>
+      <link>https://ericpena.github.io/statistics/index.xml</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ericpena.github.io/articles/index.xml</guid>
+      <guid>https://ericpena.github.io/statistics/index.xml</guid>
       <description></description>
     </item>
     

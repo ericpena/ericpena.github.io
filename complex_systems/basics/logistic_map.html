@@ -17,15 +17,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <meta property="og:title" content="Logistic Map" />
-<meta property="og:description" content="Explaining Logistic Map and Bifurcation Behavior" />
+<meta property="og:description" content="Logistic Map" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ericpena.github.io/complex_systems/basics/logistic_map.html" />
-<meta property="article:published_time" content="2020-04-07T11:53:49-07:00" />
-<meta property="article:modified_time" content="2020-04-07T11:53:49-07:00" />
+<meta property="article:published_time" content="2020-03-23T00:00:00-07:00" />
+<meta property="article:modified_time" content="2020-03-23T00:00:00-07:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Logistic Map"/>
-<meta name="twitter:description" content="Explaining Logistic Map and Bifurcation Behavior"/>
+<meta name="twitter:description" content="Logistic Map"/>
 <meta name="generator" content="Hugo 0.68.3" />
 
     
@@ -35,16 +35,18 @@
   "@type": "BlogPosting",
   "headline": "Logistic Map",
   "url": "https:\/\/ericpena.github.io\/complex_systems\/basics\/logistic_map.html",
-  "wordCount": "158",
-  "datePublished": "2020-04-07T11:53:49-07:00",
-  "dateModified": "2020-04-07T11:53:49-07:00",
+  "wordCount": "169",
+  "datePublished": "2020-03-23T00:00:00-07:00",
+  "dateModified": "2020-03-23T00:00:00-07:00",
   "author": {
     "@type": "Person",
     "name": "Eric Peña"
   },
-  "description": "Explaining Logistic Map and Bifurcation Behavior"
+  "description": "Logistic Map"
 }
-</script> 
+</script>
+
+
 
     <title>Logistic Map</title>
 
@@ -146,22 +148,20 @@ MathJax.Hub.Config({
         <div class="row">
             <div class="col-sm-12">
 
-                 
+                
 
 
 <article>
-  <div class="technical_note">
-  <header>
-      
-    <h1 class="technical_note_title">Logistic Map</h1>
-    <div class="technical_note_date">
-      <time datetime=" 2020-04-07T11:53:49-07:00 "> 07 Apr 2020</time>
-    </div>
-  </header>
-  <div class="content">
-      
-  <h2 id="logistic-map">Logistic Map</h2>
-<p>The famous logistic map is a recurrence relation or polynomial mapping of degree 2. It is a nonlinear difference equation capable of capturing complex nonlinear dynamical behavior including chaos. This map was popularized by the biologist Robert May in a <a href="https://www.researchgate.net/publication/237005499_Simple_Mathematical_Models_With_Very_Complicated_Dynamics">Nature article</a> written in 1976. The equation is as follows:</p>
+  <div class="non-technical_note">
+    <header>
+      <h1 class="non-technical_note_title">Logistic Map</h1>
+      <div class="non-technical_note_date">
+        <time datetime=" 2020-03-23T00:00:00-07:00 "> 23 March 2020</time>
+      </div>
+    </header>
+    <div class="content">
+    <h2 id="logistic-map">Logistic Map</h2>
+<p>The famous logistic map is a recurrence relation or polynomial mapping of degree 2. It is a nonlinear difference equation capable of capturing complex nonlinear dynamical behavior including chaos. This map was popularized by the biologist Robert May in a <a href="https://www.researchgate.net/publication/237005499_Simple_Mathematical_Models_With_Very_Complicated_Dynamics">Nature article</a> written in 1976. Sadly, Robert May has passed away recently on April 28, 2020. The equation is as follows:</p>
 <p>$$x_{n+1} = r x_n (1 - x_n)$$</p>
 <p>The parameter $r$ controls the behavior of the system. It turns out that $r=3.6$ is starting to reach the point of chaos.</p>
 <h2 id="preparation">Preparation</h2>
@@ -177,32 +177,26 @@ MathJax.Hub.Config({
     <span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
     <span class="n">xdata</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">xdata</span><span class="p">,</span> <span class="s1">&#39;r.&#39;</span><span class="p">);</span>
-</code></pre></div><p><img src="logistic_map_files/logistic_map_7_0.png" alt="png"></p>
+</code></pre></div><p><img src="logistic_map/logistic_map_8_0.png" alt="png"></p>
 <h2 id="creating-bifurcation-diagram">Creating Bifurcation Diagram</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">avalues</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">rvalues</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">xvalues</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">linspace</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.7</span><span class="p">,</span> <span class="mi">500</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mf">0.01</span>
     <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
-            <span class="n">avalues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+            <span class="n">rvalues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
             <span class="n">xvalues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         
-<span class="n">plot</span><span class="p">(</span><span class="n">avalues</span><span class="p">,</span> <span class="n">xvalues</span><span class="p">,</span> <span class="s1">&#39;r.&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">);</span>
-</code></pre></div><p><img src="logistic_map_files/logistic_map_9_0.png" alt="png"></p>
+<span class="n">plot</span><span class="p">(</span><span class="n">rvalues</span><span class="p">,</span> <span class="n">xvalues</span><span class="p">,</span> <span class="s1">&#39;r.&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">);</span>
+</code></pre></div><p><img src="logistic_map/logistic_map_10_0.png" alt="png"></p>
 
-</div>
-  <aside>
-      <div class="bug_reporting">
-          <h4>Find an error?</h4>
-          <p>All material is saved on GitHub. Please <a href='https://github.com/ericpena/pena-notes/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+  </div>
+  
       </div>
-      </aside>
-
-    </div>
-</article>
-
+      
+  </article>
 
 
 
@@ -215,7 +209,7 @@ MathJax.Hub.Config({
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Eric Peña, <time datetime="2020">2020</time>. All 27 notes and articles are available on <a href="https://github.com/ericpena/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Eric Peña, <time datetime="2020">2020</time>. All 10 notes and articles are available on <a href="https://github.com/ericpena/">GitHub</a>.</span>
         </div>
     </footer>
 
