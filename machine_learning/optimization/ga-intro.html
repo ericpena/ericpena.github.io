@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "First Genetic Algorithm",
   "url": "https:\/\/ericpena.github.io\/machine_learning\/optimization\/ga-intro.html",
-  "wordCount": "499",
+  "wordCount": "529",
   "datePublished": "2020-04-14T00:00:00\x2b00:00",
   "dateModified": "2020-04-14T00:00:00\x2b00:00",
   "author": {
@@ -173,7 +173,7 @@ MathJax.Hub.Config({
 <li>Mutation</li>
 </ul>
 <h1 id="programming-genetic-algorithms-in-python">Programming Genetic Algorithms in Python</h1>
-<p>It&rsquo;s typical to use object oriented programming when developing Genetic Algorithms in code. In our simple example, let&rsquo;s create a class called <code>Agent</code>. In the language of GA, these are called the <em>chromosome</em>. This chromosome will simply be a string in our program but I&rsquo;d recommend always thinking in terms of GA and the termology used in this domain. If the text string represents a chromosome, then the characters that make up this string are its <em>genes</em>.</p>
+<p>It&rsquo;s typical to use object oriented programming when developing Genetic Algorithms in code. In our simple example, let&rsquo;s create a class called <code>Agent</code>. In the language of GA, these are called the <em>chromosome</em>. This chromosome will simply be a string in our program but I&rsquo;d recommend always thinking in terms of GA and the termology used in this domain. If the text string represents a chromosome, then the characters that make up this string are its <em>genes</em>. Below is an example of a simple genetic algorithm that will be given the task of finding the string: <code>ericpena</code>. The algorithm is broken up into distrinct methods for clarity.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">fuzzywuzzy</span> <span class="kn">import</span> <span class="n">fuzz</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">string</span>
