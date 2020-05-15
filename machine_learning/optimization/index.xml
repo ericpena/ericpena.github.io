@@ -16,7 +16,7 @@
       <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/machine_learning/optimization/ga-intro.html</guid>
-      <description>Components of a Genetic Algorithm Genetic Algorithm Written in Python from fuzzywuzzy import fuzz import random import string class Agent: def __init__(self, length): # Initialize a new agent self.string = &amp;#39;&amp;#39;.join(random.choice(string.ascii_letters) for _ in range(length)) self.fitness = -1 def __str__(self): return &amp;#39;String: &amp;#39; + str(self.string) + &amp;#39; Fitness: &amp;#39; + str(self.fitness) in_str = None in_str_len = None population = 20 generations = 5000 # All the code to evolve def ga(): agents = init_agents(population, in_str_len) for generation in range(generations): print(&amp;#39;Generation: &amp;#39; + str(generation)) agents = fitness(agents) agents = selection(agents) agents = crossover(agents) agents = mutation(agents) if any(agent.</description>
+      <description>What is a Genetic Algorithm Evolutionary programming is a family of global optimization techniques that are biologically inspired. It works similarly to the natural process in evolutionary biology. Trial and error is a large component along with stochasticity and survival of the fittest. The type of evolutionary computation that we will focus on is genetic algorithms which became popular by the American Professor of Psychology, Electrical Engineering, and Computer Science, John Holland.</description>
     </item>
     
   </channel>
