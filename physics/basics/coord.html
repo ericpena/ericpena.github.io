@@ -16,7 +16,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Generalized Coordinates" />
+<meta property="og:title" content="Lagrangian Mechanics" />
 <meta property="og:description" content="Generalized Coordinates and Conservation Laws From the Lagrangian Formulation of Theoretical Mechanics" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ericpena.github.io/physics/basics/coord.html" />
@@ -24,7 +24,7 @@
 <meta property="article:modified_time" content="2020-05-20T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Generalized Coordinates"/>
+<meta name="twitter:title" content="Lagrangian Mechanics"/>
 <meta name="twitter:description" content="Generalized Coordinates and Conservation Laws From the Lagrangian Formulation of Theoretical Mechanics"/>
 <meta name="generator" content="Hugo 0.68.3" />
 
@@ -33,9 +33,9 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Generalized Coordinates",
+  "headline": "Lagrangian Mechanics",
   "url": "https:\/\/ericpena.github.io\/physics\/basics\/coord.html",
-  "wordCount": "1864",
+  "wordCount": "1983",
   "datePublished": "2020-05-20T00:00:00\x2b00:00",
   "dateModified": "2020-05-20T00:00:00\x2b00:00",
   "author": {
@@ -48,7 +48,7 @@
 
 
 
-    <title>Generalized Coordinates</title>
+    <title>Lagrangian Mechanics</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -154,7 +154,7 @@ MathJax.Hub.Config({
 <article>
   <div class="non-technical_note">
     <header>
-      <h1 class="non-technical_note_title">Generalized Coordinates</h1>
+      <h1 class="non-technical_note_title">Lagrangian Mechanics</h1>
       <div class="non-technical_note_date">
         <time datetime=" 2020-05-20T00:00:00Z "> 20 May 2020</time>
       </div>
@@ -229,7 +229,7 @@ moment (yes, another pendulum).</p>
 <p><img src="coord/pendulum.png" alt="Figure 1 - Pendulum"></p>
 <p>We have a choice of using Cartesian coordinates to describe the motion of this
 bob or any other coordinate system we can dream up. The downside of using
-Cartesian coordinates $(x,y,z)$, is that $x$, $y$, and $z$ must constantly compensate one another to assure the length L remains constant. We can imagine all the combinations of values that satisfy $(\sqrt{x^2+y^2})^2+l^2(1-z)^2=constant$. Long story short, spherical (or polar) coordinates $(r, \theta, \phi)$ are the most appropriate for this problem for
+Cartesian coordinates $(x,y)$, is that $x$ and $y$ must constantly compensate one another to assure the length L remains constant. We can imagine all the combinations of values that satisfy $x^2+y^2-L^2=0$. Long story short, spherical (or polar) coordinates $(r, \theta, \phi)$ are the most appropriate for this problem for
 obvious symmetrical advantages and can be considered the generalized coordinates that define our system.</p>
 <p>Now that we have mentioned what generalized coordinates are, we can gain more insight
 on what generalized momenta is. Ordinary momentum by definition is $p = mv$ where $v$ is
@@ -255,7 +255,7 @@ $$\frac{\partial \mathcal{L}}{\partial \dot{q}_2} = \kappa$$ where $\kappa$ is c
 problem (one of which never gets old). It is stated as follows:</p>
 <p><strong>Problem</strong> <em>A mass $m$ is free to slide on a frictionless table and is connected, via a string that passes through a hole in the table, to a mass $M$ that hangs below. Assume that $M$
 moves in a vertical line only, and assume that the string always remains taut. Figure 2 shows a moment in time of this situation.</em></p>
-<p><img src="coord/tableBall.png" alt="Figure 2 - Example Problem"></p>
+<p><img src="coord/table.png" alt="Figure 2 - Example Problem"></p>
 <p>The Lagrangian is as follows:
 $$\mathcal{L}=T-U$$
 $$\mathcal{L}=\frac{1}{2}M \dot{r}^2+\frac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2)+Mg(l-r)$$
@@ -279,6 +279,14 @@ $$\frac{dE}{dt}=-\frac{\partial \mathcal{L}}{\partial t}.$$</p>
 <h2 id="applications">Applications</h2>
 <p>I programmed this nonlinear double pendulum with Mathematica (Wolfram Language)
 <img src="coord/doublependulum_5.gif" alt=""></p>
+<h2 id="practice-problem">Practice Problem</h2>
+<p><img src="coord/sticks.png" alt="Figure 3 - Falling Sticks"></p>
+<p>Here is a fun problem you can practice with.</p>
+<p>Two massless sticks of length $2r$, each with a mass $m$ fixed at its middle, are hinged at an end. One stands on top of the other, as shown in above. The bottom end of the lower stick is hinged at the ground. They are held such that the lower stick is vertical, and the upper one is tilted at a small angle $\epsilon$ with respect to the vertical. They are then released. At this instant, what are the angular accelerations of the two sticks? Work in the approximation where $\epsilon$ is very small.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><code>Morin, David. Introduction to classical mechanics: with problems and solutions. Cambridge University Press, 2008.</code></li>
+</ul>
 
   </div>
   
@@ -297,7 +305,7 @@ $$\frac{dE}{dt}=-\frac{\partial \mathcal{L}}{\partial t}.$$</p>
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Eric Peña, <time datetime="2020">2020</time>. All 12 notes and articles are available on <a href="https://github.com/ericpena/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Eric Peña, <time datetime="2020">2020</time>. All 13 notes and articles are available on <a href="https://github.com/ericpena/">GitHub</a>.</span>
         </div>
     </footer>
 
