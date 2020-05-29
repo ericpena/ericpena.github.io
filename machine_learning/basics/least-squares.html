@@ -173,7 +173,7 @@ RSS(\beta) = (\mathbf{y} - \mathbf{X} \beta)^T (\mathbf{y} - \mathbf{X} \beta)
 $$</p>
 <p>where $\textbf{X}$ is an $N \times p$ matrix with each row being an input vector and $\textbf{y}$ is an $N$-vector of the outputs. If we differentiate with respect to $\beta$, then we obtain the following equation:</p>
 <p>$$\textbf{X}^T (\textbf{y} - \textbf{X} \beta) = 0$$</p>
-<p>So long as $\textbf{X}^T \textbf{X}$ is <em>nonsingular</em>, then the unique solution is given by the follwing equation:</p>
+<p>So long as $\textbf{X}^T \textbf{X}$ is <em>nonsingular</em>, then the unique solution is given by the following equation:</p>
 <p>$$\hat \beta = (\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \textbf{y}$$</p>
 <p>where $(\textbf{X}^T \textbf{X})^{-1} \textbf{X}^T \rightarrow$ <em>pseudo-inverse</em> or <em>Moore–Penrose inverse</em></p>
 <p>That is to say the prediction value of the $i^{th}$ input $x_i$ is $\hat y_i = \hat y(x_i) = x_i^T \hat \beta$</p>
