@@ -11,23 +11,14 @@
     
     
     <item>
-      <title>Least Squares Regression</title>
-      <link>https://ericpena.github.io/machine_learning/basics/least-squares.html</link>
+      <title>Linear Regression</title>
+      <link>https://ericpena.github.io/machine_learning/basics/linear-regression.html</link>
       <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ericpena.github.io/machine_learning/basics/least-squares.html</guid>
+      <guid>https://ericpena.github.io/machine_learning/basics/linear-regression.html</guid>
       <description>Mathematical Foundations The linear model is often the first model we learn fitting data. Given a vector of inputs $X^T = (X_1, X_2, \ldots, X_p)$, we can predict the output $Y$ with the following model:
 $$\hat Y = \hat \beta_0 + \sum_{j=1}^p X_j \hat \beta_j$$
 According to this notation, $X^T$ is a row vector and $X$ is a column vector. To achieve our fit by means of Least Squares, we choose the coefficients $\beta$ to minimize the residual sum of squares:</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://ericpena.github.io/machine_learning/basics/untitled.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ericpena.github.io/machine_learning/basics/untitled.html</guid>
-      <description>print(__doc__) # Code source: Jaques Grobler # License: BSD 3 clause import matplotlib.pyplot as plt import numpy as np from sklearn import datasets, linear_model from sklearn.metrics import mean_squared_error, r2_score # Load the diabetes dataset diabetes_X, diabetes_y = datasets.load_diabetes(return_X_y=True) # Use only one feature diabetes_X = diabetes_X[:, np.newaxis, 2] # Split the data into training/testing sets diabetes_X_train = diabetes_X[:-20] diabetes_X_test = diabetes_X[-20:] # Split the targets into training/testing sets diabetes_y_train = diabetes_y[:-20] diabetes_y_test = diabetes_y[-20:] # Create linear regression object regr = linear_model.</description>
     </item>
     
   </channel>
