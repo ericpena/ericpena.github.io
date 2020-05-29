@@ -164,7 +164,7 @@ MathJax.Hub.Config({
 <p>The famous logistic map is a recurrence relation or polynomial mapping of degree 2. It is a nonlinear difference equation capable of capturing complex nonlinear dynamical behavior including chaos. This map was popularized by the biologist Robert May in a <a href="https://www.researchgate.net/publication/237005499_Simple_Mathematical_Models_With_Very_Complicated_Dynamics">Nature article</a> written in 1976. Sadly, Robert May has passed away recently on April 28, 2020. The equation is as follows:</p>
 <p>$$x_{n+1} = r x_n (1 - x_n)$$</p>
 <p>The parameter $r$ controls the behavior of the system. It turns out that $r=3.6$ is starting to reach the point of chaos.</p>
-<h2 id="preparation">Preparation</h2>
+<h2 id="preamble">Preamble</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
 </code></pre></div><h2 id="defining-logistic-map">Defining Logistic Map</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
