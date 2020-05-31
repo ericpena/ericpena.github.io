@@ -18,7 +18,7 @@
       <guid>https://ericpena.github.io/machine_learning/basics/linear-regression.html</guid>
       <description>Mathematical Foundations The linear model is often the first model we learn fitting data. Given a vector of inputs $X^T = (X_1, X_2, \ldots, X_p)$, we can predict the output $Y$ with the following model:
 $$\hat Y = \hat \beta_0 + \sum_{j=1}^p X_j \hat \beta_j$$
-According to this notation, $X^T$ is a row vector and $X$ is a column vector. To achieve our fit by means of Least Squares, we choose the coefficients $\beta$ to minimize the residual sum of squares:</description>
+Many times, it&amp;rsquo;s convenient to include the vector $\textbf{1}$ in $\textbf{X}$ and include the $\hat \beta_0$ in the vector $\hat \beta$ so we may represent this linear model in vector form as an inner product:</description>
     </item>
     
   </channel>
