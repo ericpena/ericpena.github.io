@@ -1,30 +1,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>complex_systems - Eric Peña</title>
-    <link>https://ericpena.github.io/complex_systems/basics/index.xml</link>
+    <link>https://ericpena.github.io/about/eric_pena.html/complex_systems/basics/index.xml</link>
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://ericpena.github.io/complex_systems/basics/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://ericpena.github.io/about/eric_pena.html/complex_systems/basics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Complexity by Melanie Mitchell</title>
-      <link>https://ericpena.github.io/complex_systems/basics/mitchell.html</link>
+      <link>https://ericpena.github.io/about/eric_pena.html/complex_systems/basics/mitchell.html</link>
       <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ericpena.github.io/complex_systems/basics/mitchell.html</guid>
+      <guid>https://ericpena.github.io/about/eric_pena.html/complex_systems/basics/mitchell.html</guid>
       <description>Part I: Introduction Providing the multifaceted story of how complex systems has evolved into what it is today is no easy feat. Dr. Melanie Mitchell not only gives a comprehensive historical tour of science and mathematics, she also provides foundational knowledge that any reader can carry to appreciate the essence of what it means for a system to be complex in the technical sense. Early on, she gives a clear definition of complex systems as an interdisciplinary field that studies how large networks of entities with no central controller can organize themselves and exhibit collective behavior given simple rules.</description>
     </item>
     
     <item>
       <title>Logistic Map</title>
-      <link>https://ericpena.github.io/complex_systems/basics/logistic_map.html</link>
+      <link>https://ericpena.github.io/about/eric_pena.html/complex_systems/basics/logistic_map.html</link>
       <pubDate>Mon, 23 Mar 2020 00:00:00 -0700</pubDate>
       
-      <guid>https://ericpena.github.io/complex_systems/basics/logistic_map.html</guid>
+      <guid>https://ericpena.github.io/about/eric_pena.html/complex_systems/basics/logistic_map.html</guid>
       <description>Logistic Map The famous logistic map is a recurrence relation or polynomial mapping of degree 2. It is a nonlinear difference equation capable of capturing complex nonlinear dynamical behavior including chaos. This map was popularized by the biologist Robert May in a Nature article written in 1976. Sadly, Robert May has passed away recently on April 28, 2020. The equation is as follows:
 $$x_{n+1} = r x_n (1 - x_n)$$</description>
     </item>

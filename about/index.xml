@@ -1,22 +1,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>about - Eric Peña</title>
-    <link>https://ericpena.github.io/about/index.xml</link>
+    <link>https://ericpena.github.io/about/eric_pena.html/about/index.xml</link>
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Dec 2017 11:53:49 -0700</lastBuildDate>
     
-        <atom:link href="https://ericpena.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://ericpena.github.io/about/eric_pena.html/about/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About Eric Peña</title>
-      <link>https://ericpena.github.io/about/eric_pena.html</link>
+      <link>https://ericpena.github.io/about/eric_pena.html/about/eric_pena.html</link>
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
-      <guid>https://ericpena.github.io/about/eric_pena.html</guid>
-      <description>I am a Complex Systems Science graduate student and Clifford D. Clark Fellow at State University of New York at Binghamton.
+      <guid>https://ericpena.github.io/about/eric_pena.html/about/eric_pena.html</guid>
+      <description>I am a Complex Systems Science graduate student and Clifford D. Clark Diversity Fellow at State University of New York at Binghamton.
  Email: eric.pena@binghamton.edu Twitter: @ericpenaphysics  Experience  Statistics and Probability Teacher, example, &amp;mdash; * &amp;mdash;  (&amp;hellip;)   Data Analyst, example, &amp;mdash; * &amp;mdash;  (&amp;hellip;)   Technical Manager, example, July 2018 - Present  (&amp;hellip;)   Physics Teacher, example, July 2018 - Present  Taught incoming Engineering minority students   Physics Classroom Assistant, example, July 2018 - Present  Physics Demonstrations Department    Projects  Website Notes, ericpena.</description>
     </item>
     

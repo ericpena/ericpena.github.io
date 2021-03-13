@@ -1,21 +1,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>statistics - Eric Peña</title>
-    <link>https://ericpena.github.io/statistics/basics/index.xml</link>
+    <link>https://ericpena.github.io/about/eric_pena.html/statistics/basics/index.xml</link>
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 16 Dec 2020 00:00:00 -0700</lastBuildDate>
     
-        <atom:link href="https://ericpena.github.io/statistics/basics/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://ericpena.github.io/about/eric_pena.html/statistics/basics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>P Values</title>
-      <link>https://ericpena.github.io/statistics/basics/p-value.html</link>
+      <link>https://ericpena.github.io/about/eric_pena.html/statistics/basics/p-value.html</link>
       <pubDate>Wed, 16 Dec 2020 00:00:00 -0700</pubDate>
       
-      <guid>https://ericpena.github.io/statistics/basics/p-value.html</guid>
+      <guid>https://ericpena.github.io/about/eric_pena.html/statistics/basics/p-value.html</guid>
       <description>What is a P-Value! (in Hypohtesis Testing) An average person might say p-values are of utmost importance in a student&amp;rsquo;s statistical toolbox. However, while teaching statistics and probability, I have noticed its subtle definition and conceptual underpinnings being grossly under-emphasized. This note may help clarify what a p-value is and how we use it to make decisions.
 While speaking to a class of students, I might start with the p in p-value.</description>
     </item>
