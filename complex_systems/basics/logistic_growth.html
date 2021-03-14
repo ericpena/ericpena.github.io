@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Logistic Growth Model",
   "url": "https:\/\/ericpena.github.io\/complex_systems\/basics\/logistic_growth.html",
-  "wordCount": "490",
+  "wordCount": "533",
   "datePublished": "2021-03-14T00:00:00-07:00",
   "dateModified": "2021-03-14T00:00:00-07:00",
   "author": {
@@ -160,10 +160,9 @@ MathJax.Hub.Config({
 <p>This is generally called the \emph{logistic growth model} written in terms of a difference equation and may be further simplified:
 $$x_t = \left( - \frac{a-1}{K} x_{t-1} + a \right) x_{t-1} = x_{t-1} + r x_{t-1}\left( 1 - \frac{x_{t-1}}{K} \right)$$</p>
 <p>where $r = a -1 $.</p>
-<p>The logistic growth model for varying growth ratios in shown below.</p>
+<p>The logistic growth model for varying growth ratios in shown in <strong>Figure 1</strong>.</p>
 <p><img src="logistic_growth/growth_ratios.png" alt="title"></p>
-<!-- raw HTML omitted -->
-<p>Figure 1. Logistic growth model with varying values of growth ratio $r$, carrying capacity $K = 50$, and initial condition $x_0 = 5$&hellip;</p>
+<p><strong>Figure 1</strong> | Logistic growth model with varying values of growth ratio $r$, carrying capacity $K = 50$, and initial condition $x_0 = 5$.</p>
 <p>This may also be written in terms of a differential equation for the continuous version of this model:</p>
 <p>$$\frac{d x(t)}{d t} = r x(t) \left( 1 - \frac{x(t)}{K}\right)$$</p>
 <h2 id="example">Example</h2>
@@ -175,34 +174,28 @@ $$x_t = \left( - \frac{a-1}{K} x_{t-1} + a \right) x_{t-1} = x_{t-1} + r x_{t-1}
 <p>$$x_t = f(x) x_{t-1}$$</p>
 <p>Since this function should be maximized at a particular population value and decrease elsewhere, a downward parabola seems to be a reasonable starting point. In basic terms, it can be written as:</p>
 <p>$$f(x)=-a (x - p)^2 + b$$</p>
-<p>Chosen values of $a$, $b$, and $p$ are 0.0007, 1.3, and 30, respectively. This function is display below:</p>
+<p>Chosen values of $a$, $b$, and $p$ are 0.0007, 1.3, and 30, respectively. This function is displayed  in <strong>Figure 2</strong>.</p>
+<p><img src="logistic_growth/downward.png" alt="downward"></p>
+<p>The model behaves differently at various initial conditions for this modified logistic growth model. As we can this in this figure, the fate of the population is dependent on the initial conditions. This goes into a concept called stability and equilibrium points which is a very important topic as well regarding differential equations used to model dynamics systems. The solutions of this difference equation can be seen in <strong>Figure 3</strong>.</p>
+<p><img src="logistic_growth/solutions.png" alt="solutions"></p>
+<h2 id="plotting-solutions-using-python">Plotting Solutions using Python</h2>
 <h2 id="preamble">Preamble</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
-</code></pre></div><h2 id="defining-logistic-map">Defining Logistic Map</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
-</code></pre></div><h2 id="period-doubling-bifurcation-r--31">Period Doubling Bifurcation $(r = 3.1)$</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="mf">0.01</span>
-<span class="n">r</span> <span class="o">=</span> <span class="mf">3.1</span>
-<span class="n">xdata</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
-    <span class="n">xdata</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">xdata</span><span class="p">,</span> <span class="s1">&#39;r.&#39;</span><span class="p">);</span>
-</code></pre></div><p><img src="logistic_growth/logistic_growth_15_0.png" alt="png"></p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+</code></pre></div><h2 id="define-parameters-and-iterate">Define Parameters and Iterate</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="mf">1.3</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.0007</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">alpha</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">x</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="s1">&#39;r.-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div><p><img src="logistic_growth/logistic_growth_16_0.png" alt="png"></p>
 <h2 id="creating-bifurcation-diagram">Creating Bifurcation Diagram</h2>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">rvalues</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">xvalues</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">linspace</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.7</span><span class="p">,</span> <span class="mi">500</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="mf">0.01</span>
-    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
-            <span class="n">rvalues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-            <span class="n">xvalues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        
-<span class="n">plot</span><span class="p">(</span><span class="n">rvalues</span><span class="p">,</span> <span class="n">xvalues</span><span class="p">,</span> <span class="s1">&#39;r.&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">);</span>
-</code></pre></div><p><img src="logistic_growth/logistic_growth_17_0.png" alt="png"></p>
 <h1 id="references">References</h1>
 <ul>
 <li><a href="http://bingweb.binghamton.edu/~sayama/textbook/">Modeling and Analysis of Complex Systems (Sayama, H.)</a></li>
