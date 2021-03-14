@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Logistic Growth Model",
   "url": "https:\/\/ericpena.github.io\/complex_systems\/basics\/logistic_growth.html",
-  "wordCount": "533",
+  "wordCount": "535",
   "datePublished": "2021-03-14T00:00:00-07:00",
   "dateModified": "2021-03-14T00:00:00-07:00",
   "author": {
@@ -157,7 +157,7 @@ MathJax.Hub.Config({
 <p>$$f(x) = -\frac{a-1}{K}x+a$$</p>
 <p>We may now use this growth ratio function to put back into our difference equation:</p>
 <p>$$x_t = \left(-\frac{a-1}{K}x_{t-1}+a\right) x_{t-1}$$</p>
-<p>This is generally called the \emph{logistic growth model} written in terms of a difference equation and may be further simplified:
+<p>This is generally called the <em>logistic growth model</em> written in terms of a difference equation and may be further simplified:
 $$x_t = \left( - \frac{a-1}{K} x_{t-1} + a \right) x_{t-1} = x_{t-1} + r x_{t-1}\left( 1 - \frac{x_{t-1}}{K} \right)$$</p>
 <p>where $r = a -1 $.</p>
 <p>The logistic growth model for varying growth ratios in shown in <strong>Figure 1</strong>.</p>
@@ -179,7 +179,6 @@ $$x_t = \left( - \frac{a-1}{K} x_{t-1} + a \right) x_{t-1} = x_{t-1} + r x_{t-1}
 <p>The model behaves differently at various initial conditions for this modified logistic growth model. As we can this in this figure, the fate of the population is dependent on the initial conditions. This goes into a concept called stability and equilibrium points which is a very important topic as well regarding differential equations used to model dynamics systems. The solutions of this difference equation can be seen in <strong>Figure 3</strong>.</p>
 <p><img src="logistic_growth/solutions.png" alt="solutions"></p>
 <h2 id="plotting-solutions-using-python">Plotting Solutions using Python</h2>
-<h2 id="preamble">Preamble</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 </code></pre></div><h2 id="define-parameters-and-iterate">Define Parameters and Iterate</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="mf">1.3</span>
@@ -194,8 +193,9 @@ $$x_t = \left( - \frac{a-1}{K} x_{t-1} + a \right) x_{t-1} = x_{t-1} + r x_{t-1}
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="s1">&#39;r.-&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div><p><img src="logistic_growth/logistic_growth_16_0.png" alt="png"></p>
-<h2 id="creating-bifurcation-diagram">Creating Bifurcation Diagram</h2>
+</code></pre></div><p><img src="logistic_growth/logistic_growth_15_0.png" alt="png"></p>
+<h2 id="mathematica-code-for-solving-differential-equations">Mathematica Code for Solving Differential Equations</h2>
+<p><img src="logistic_growth/mathematica.png" alt="mathematica"></p>
 <h1 id="references">References</h1>
 <ul>
 <li><a href="http://bingweb.binghamton.edu/~sayama/textbook/">Modeling and Analysis of Complex Systems (Sayama, H.)</a></li>
