@@ -5,10 +5,22 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Mar 2021 00:00:00 -0700</lastBuildDate>
     
         <atom:link href="https://ericpena.github.io/complex_systems/basics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Logistic Growth Model</title>
+      <link>https://ericpena.github.io/complex_systems/basics/logistic_growth.html</link>
+      <pubDate>Sun, 14 Mar 2021 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/complex_systems/basics/logistic_growth.html</guid>
+      <description>Logistic Growth Model The simple difference equation below will show exponential growth behavior:
+$$x_t = a x_{t-1}$$
+However, it is often the case that a population cannot grow indefinitely but rather reach a population limit. This limit is called the population&amp;rsquo;s carrying capacity. To create a model with exponential growth but also incorporate this convergence to a population maximum limit, we may start with the following train of thought:
+$$x_t = f(x_{t-1}) x_{t-1}$$</description>
+    </item>
     
     <item>
       <title>Complexity by Melanie Mitchell</title>

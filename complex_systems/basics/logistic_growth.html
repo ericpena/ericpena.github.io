@@ -16,16 +16,16 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Logistic Map" />
-<meta property="og:description" content="Logistic Map" />
+<meta property="og:title" content="Logistic Growth Model" />
+<meta property="og:description" content="Logistic Growth" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ericpena.github.io/complex_systems/basics/logistic_map.html" />
-<meta property="article:published_time" content="2020-03-23T00:00:00-07:00" />
-<meta property="article:modified_time" content="2020-03-23T00:00:00-07:00" />
+<meta property="og:url" content="https://ericpena.github.io/complex_systems/basics/logistic_growth.html" />
+<meta property="article:published_time" content="2021-03-14T00:00:00-07:00" />
+<meta property="article:modified_time" content="2021-03-14T00:00:00-07:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Logistic Map"/>
-<meta name="twitter:description" content="Logistic Map"/>
+<meta name="twitter:title" content="Logistic Growth Model"/>
+<meta name="twitter:description" content="Logistic Growth"/>
 <meta name="generator" content="Hugo 0.68.3" />
 
     
@@ -33,20 +33,20 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Logistic Map",
-  "url": "https:\/\/ericpena.github.io\/complex_systems\/basics\/logistic_map.html",
-  "wordCount": "169",
-  "datePublished": "2020-03-23T00:00:00-07:00",
-  "dateModified": "2020-03-23T00:00:00-07:00",
+  "headline": "Logistic Growth Model",
+  "url": "https:\/\/ericpena.github.io\/complex_systems\/basics\/logistic_growth.html",
+  "wordCount": "318",
+  "datePublished": "2021-03-14T00:00:00-07:00",
+  "dateModified": "2021-03-14T00:00:00-07:00",
   "author": {
     "@type": "Person",
     "name": "Eric Peña"
   },
-  "description": "Logistic Map"
+  "description": "Logistic Growth"
 }
 </script> 
 
-    <title>Logistic Map</title>
+    <title>Logistic Growth Model</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -141,17 +141,29 @@ MathJax.Hub.Config({
   <div class="technical_note">
   <header>
       
-    <h1 class="technical_note_title">Logistic Map</h1>
+    <h1 class="technical_note_title">Logistic Growth Model</h1>
     <div class="technical_note_date">
-      <time datetime=" 2020-03-23T00:00:00-07:00 "> 23 Mar 2020</time>
+      <time datetime=" 2021-03-14T00:00:00-07:00 "> 14 Mar 2021</time>
     </div>
   </header>
   <div class="content">
       
-  <h2 id="logistic-map">Logistic Map</h2>
-<p>The famous logistic map is a recurrence relation or polynomial mapping of degree 2. It is a nonlinear difference equation capable of capturing complex nonlinear dynamical behavior including chaos. This map was popularized by the biologist Robert May in a <a href="https://www.researchgate.net/publication/237005499_Simple_Mathematical_Models_With_Very_Complicated_Dynamics">Nature article</a> written in 1976. Sadly, Robert May has passed away recently on April 28, 2020. The equation is as follows:</p>
-<p>$$x_{n+1} = r x_n (1 - x_n)$$</p>
-<p>The parameter $r$ controls the behavior of the system. It turns out that $r=3.6$ is starting to reach the point of chaos.</p>
+  <h2 id="logistic-growth-model">Logistic Growth Model</h2>
+<p>The simple difference equation below will show exponential growth behavior:</p>
+<p>$$x_t = a x_{t-1}$$</p>
+<p>However, it is often the case that a population cannot grow indefinitely but rather reach a population limit. This limit is called the population&rsquo;s carrying capacity. To create a model with exponential growth but also incorporate this convergence to a population maximum limit, we may start with the following train of thought:</p>
+<p>$$x_t = f(x_{t-1}) x_{t-1}$$</p>
+<p>The constraints that $f(x_{t-1})$ has to satisfy is that it must pass through the points $(x, f(x)) = (0,a) $ and $(K, 1)$, where $K$ is a constant that represents the carrying capacity of the population. The simplest model would be a straight line using these two points:</p>
+<p>$$f(x) = -\frac{a-1}{K}x+a$$</p>
+<p>We may now use this growth ratio function to put back into our difference equation:</p>
+<p>$$x_t = \left(-\frac{a-1}{K}x_{t-1}+a\right) x_{t-1}$$</p>
+<p>This is generally called the \emph{logistic growth model} written in terms of a difference equation and may be further simplified:
+$$x_t = \left( - \frac{a-1}{K} x_{t-1} + a \right) x_{t-1} = x_{t-1} + r x_{t-1}\left( 1 - \frac{x_{t-1}}{K} \right)$$</p>
+<p>where $r = a -1 $.</p>
+<p>The logistic growth model for varying growth ratios in shown below.</p>
+<p><img src="logistic_growth/growth_ratios.png" alt="title"></p>
+<p>This may also be written in terms of a differential equation for the continuous version of this model:</p>
+<p>$$\frac{d x(t)}{d t} = r x(t) \left( 1 - \frac{x(t)}{K}\right)$$</p>
 <h2 id="preamble">Preamble</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
 </code></pre></div><h2 id="defining-logistic-map">Defining Logistic Map</h2>
@@ -165,7 +177,7 @@ MathJax.Hub.Config({
     <span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
     <span class="n">xdata</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">xdata</span><span class="p">,</span> <span class="s1">&#39;r.&#39;</span><span class="p">);</span>
-</code></pre></div><p><img src="logistic_map/logistic_map_8_0.png" alt="png"></p>
+</code></pre></div><p><img src="logistic_growth/logistic_growth_10_0.png" alt="png"></p>
 <h2 id="creating-bifurcation-diagram">Creating Bifurcation Diagram</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">rvalues</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">xvalues</span> <span class="o">=</span> <span class="p">[]</span>
@@ -178,7 +190,12 @@ MathJax.Hub.Config({
             <span class="n">xvalues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         
 <span class="n">plot</span><span class="p">(</span><span class="n">rvalues</span><span class="p">,</span> <span class="n">xvalues</span><span class="p">,</span> <span class="s1">&#39;r.&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">);</span>
-</code></pre></div><p><img src="logistic_map/logistic_map_10_0.png" alt="png"></p>
+</code></pre></div><p><img src="logistic_growth/logistic_growth_12_0.png" alt="png"></p>
+<h1 id="references">References</h1>
+<ul>
+<li><a href="http://bingweb.binghamton.edu/~sayama/textbook/">Modeling and Analysis of Complex Systems (Sayama, H.)</a></li>
+<li><a href="https://www.springer.com/gp/book/9781441965615">Modeling Complex Systems (Boccara, N.)</a></li>
+</ul>
 
 </div>
   <aside>
