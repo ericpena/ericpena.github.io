@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Logistic Growth Model",
   "url": "https:\/\/ericpena.github.io\/complex_systems\/basics\/logistic_growth.html",
-  "wordCount": "468",
+  "wordCount": "467",
   "datePublished": "2021-03-14T00:00:00-07:00",
   "dateModified": "2021-03-14T00:00:00-07:00",
   "author": {
@@ -167,11 +167,9 @@ $$x_t = \left( - \frac{a-1}{K} x_{t-1} + a \right) x_{t-1} = x_{t-1} + r x_{t-1}
 <p>$$\frac{d x(t)}{d t} = r x(t) \left( 1 - \frac{x(t)}{K}\right)$$</p>
 <h2 id="example">Example</h2>
 <p>This example is problem $4.10$ from <em>Modeling and Analysis of Complex Systems (Sayama, H., p.55)</em></p>
-<blockquote>
 <ul>
-<li>Create a mathematical model of population growth in which the growth ratio is highest at a certain optimal population size, but it goes down as the population deviates from the optimal size. Then simulate its behavior and see how its behavior differs from that of the logistic growth model. &gt;*</li>
+<li><em>Create a mathematical model of population growth in which the growth ratio is highest at a certain optimal population size, but it goes down as the population deviates from the optimal size. Then simulate its behavior and see how its behavior differs from that of the logistic growth model.</em></li>
 </ul>
-</blockquote>
 <p>A possible approach could be similar to the logic above which starts with a difference equation whose growth ratio is an arbitrary function, $f(x)$:</p>
 <p>$$x_t = f(x) x_{t-1}$$</p>
 <p>Since this function should be maximized at a particular population value and decrease elsewhere, a downward parabola seems to be a reasonable starting point. In basic terms, it can be written as:</p>
