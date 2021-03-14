@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Logistic Growth Model",
   "url": "https:\/\/ericpena.github.io\/complex_systems\/basics\/logistic_growth.html",
-  "wordCount": "535",
+  "wordCount": "560",
   "datePublished": "2021-03-14T00:00:00-07:00",
   "dateModified": "2021-03-14T00:00:00-07:00",
   "author": {
@@ -176,8 +176,10 @@ $$x_t = \left( - \frac{a-1}{K} x_{t-1} + a \right) x_{t-1} = x_{t-1} + r x_{t-1}
 <p>$$f(x)=-a (x - p)^2 + b$$</p>
 <p>Chosen values of $a$, $b$, and $p$ are 0.0007, 1.3, and 30, respectively. This function is displayed  in <strong>Figure 2</strong>.</p>
 <p><img src="logistic_growth/downward.png" alt="downward"></p>
+<p><strong>Figure 2</strong> | Growth ratio function for modified logistic growth model.</p>
 <p>The model behaves differently at various initial conditions for this modified logistic growth model. As we can this in this figure, the fate of the population is dependent on the initial conditions. This goes into a concept called stability and equilibrium points which is a very important topic as well regarding differential equations used to model dynamics systems. The solutions of this difference equation can be seen in <strong>Figure 3</strong>.</p>
 <p><img src="logistic_growth/solutions.png" alt="solutions"></p>
+<p><strong>Figure 3</strong> | Logistic growth model with modified growth ratio function dependent on population.</p>
 <h2 id="plotting-solutions-using-python">Plotting Solutions using Python</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 </code></pre></div><h2 id="define-parameters-and-iterate">Define Parameters and Iterate</h2>
@@ -193,7 +195,7 @@ $$x_t = \left( - \frac{a-1}{K} x_{t-1} + a \right) x_{t-1} = x_{t-1} + r x_{t-1}
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="s1">&#39;r.-&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div><p><img src="logistic_growth/logistic_growth_15_0.png" alt="png"></p>
+</code></pre></div><p><img src="logistic_growth/logistic_growth_17_0.png" alt="png"></p>
 <h2 id="mathematica-code-for-solving-differential-equations">Mathematica Code for Solving Differential Equations</h2>
 <p><img src="logistic_growth/mathematica.png" alt="mathematica"></p>
 <h1 id="references">References</h1>
