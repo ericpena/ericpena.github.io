@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Logistic Growth Model",
   "url": "https:\/\/ericpena.github.io\/complex_systems\/basics\/logistic_growth.html",
-  "wordCount": "467",
+  "wordCount": "490",
   "datePublished": "2021-03-14T00:00:00-07:00",
   "dateModified": "2021-03-14T00:00:00-07:00",
   "author": {
@@ -163,6 +163,7 @@ $$x_t = \left( - \frac{a-1}{K} x_{t-1} + a \right) x_{t-1} = x_{t-1} + r x_{t-1}
 <p>The logistic growth model for varying growth ratios in shown below.</p>
 <p><img src="logistic_growth/growth_ratios.png" alt="title"></p>
 <!-- raw HTML omitted -->
+<p>Figure 1. Logistic growth model with varying values of growth ratio $r$, carrying capacity $K = 50$, and initial condition $x_0 = 5$&hellip;</p>
 <p>This may also be written in terms of a differential equation for the continuous version of this model:</p>
 <p>$$\frac{d x(t)}{d t} = r x(t) \left( 1 - \frac{x(t)}{K}\right)$$</p>
 <h2 id="example">Example</h2>
@@ -188,7 +189,7 @@ $$x_t = \left( - \frac{a-1}{K} x_{t-1} + a \right) x_{t-1} = x_{t-1} + r x_{t-1}
     <span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
     <span class="n">xdata</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">xdata</span><span class="p">,</span> <span class="s1">&#39;r.&#39;</span><span class="p">);</span>
-</code></pre></div><p><img src="logistic_growth/logistic_growth_13_0.png" alt="png"></p>
+</code></pre></div><p><img src="logistic_growth/logistic_growth_15_0.png" alt="png"></p>
 <h2 id="creating-bifurcation-diagram">Creating Bifurcation Diagram</h2>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">rvalues</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">xvalues</span> <span class="o">=</span> <span class="p">[]</span>
@@ -201,7 +202,7 @@ $$x_t = \left( - \frac{a-1}{K} x_{t-1} + a \right) x_{t-1} = x_{t-1} + r x_{t-1}
             <span class="n">xvalues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         
 <span class="n">plot</span><span class="p">(</span><span class="n">rvalues</span><span class="p">,</span> <span class="n">xvalues</span><span class="p">,</span> <span class="s1">&#39;r.&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">);</span>
-</code></pre></div><p><img src="logistic_growth/logistic_growth_15_0.png" alt="png"></p>
+</code></pre></div><p><img src="logistic_growth/logistic_growth_17_0.png" alt="png"></p>
 <h1 id="references">References</h1>
 <ul>
 <li><a href="http://bingweb.binghamton.edu/~sayama/textbook/">Modeling and Analysis of Complex Systems (Sayama, H.)</a></li>
