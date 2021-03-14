@@ -1,0 +1,25 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>machine_learning - Eric Peña</title>
+    <link>https://ericpena.github.io/machine_learning/basics/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 May 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://ericpena.github.io/machine_learning/basics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linear Regression</title>
+      <link>https://ericpena.github.io/machine_learning/basics/linear-regression.html</link>
+      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/machine_learning/basics/linear-regression.html</guid>
+      <description>Mathematical Foundations The linear model is often the first model we learn fitting data. Given a vector of inputs $X^T = (X_1, X_2, \ldots, X_p)$, we can predict the output $Y$ with the following model:
+$$\hat Y = \hat \beta_0 + \sum_{j=1}^p X_j \hat \beta_j$$
+Many times, it&amp;rsquo;s convenient to include the vector $\textbf{1}$ in $\textbf{X}$ and include the $\hat \beta_0$ in the vector $\hat \beta$ so we may represent this linear model in vector form as an inner product:</description>
+    </item>
+    
+  </channel>
+</rss>

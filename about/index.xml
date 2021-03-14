@@ -1,0 +1,25 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>about - Eric Peña</title>
+    <link>https://ericpena.github.io/about/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Dec 2017 11:53:49 -0700</lastBuildDate>
+    
+        <atom:link href="https://ericpena.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About Eric Peña</title>
+      <link>https://ericpena.github.io/about/eric_pena.html</link>
+      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/about/eric_pena.html</guid>
+      <description>Photo Credit: Samuel Sung
+About Me EMAIL: eric.pena@binghamton.edu Complex Systems Science graduate student and Clifford D. Clark Diversity Fellow at State University of New York at Binghamton.
+Current Projects  Complexity in Conway&amp;rsquo;s Game of Life and other Life-Like Cellular Automata Bayesian Sparse Network Reconstruction Cellular Automata Optimization using Genetic Algorithm Website Portfolio  Experience  Statistics and Probability Teacher, SUNY Binghamton Net Revenue Management Data Analyst, Diageo Engineer, H.B. Fuller Physics Teacher, OSU Physics Physics Demonstrations Assistant, OSU Physics  Education  M.</description>
+    </item>
+    
+  </channel>
+</rss>
