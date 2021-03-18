@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Bayesian Optimization",
   "url": "https:\/\/ericpena.github.io\/machine_learning\/optimization\/bayes-opt.html",
-  "wordCount": "1196",
+  "wordCount": "1228",
   "datePublished": "2020-04-14T00:00:00\x2b00:00",
   "dateModified": "2020-04-14T00:00:00\x2b00:00",
   "author": {
@@ -149,7 +149,10 @@ MathJax.Hub.Config({
   <div class="content">
       
   <h1 id="bayesian-optimization">Bayesian Optimization</h1>
-<p>Below is a walk-through how to perform Bayesian Optimization in Python. This code was borrowed from Martin Krasser. First section is designing a Bayesian Optimization algorithm using Numpy and SciPy. The second section goes into how we can take advantage of a Python package to optimize our function.</p>
+<p>Below is a walk-through how to perform Bayesian Optimization in Python. This code was borrowed from Martin Krasser in order to optimize the following objective function:</p>
+<p>$$f(x) = 2 \sin{(4 x)} \cos{(x)}$$
+$$\text{where, } (1 &lt; x &lt; 4)$$</p>
+<p>The first section goes through designing a Bayesian Optimization algorithm using Numpy and SciPy. The second section goes into how we can take advantage of a Python package to optimize our function. The is one of the cleanest explanations of Bayesian optimization I&rsquo;ve come across so I found it helpful to go through this procedure myself.</p>
 <h1 id="preamble">Preamble</h1>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.gaussian_process</span> <span class="kn">import</span> <span class="n">GaussianProcessRegressor</span>
 <span class="kn">from</span> <span class="nn">sklearn.gaussian_process.kernels</span> <span class="kn">import</span> <span class="n">ConstantKernel</span><span class="p">,</span> <span class="n">Matern</span>
@@ -157,6 +160,7 @@ MathJax.Hub.Config({
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
 <span class="c1"># Install additional dependencies</span>
 <span class="c1"># !pip install scikit-optimize==0.5.2</span>
 <span class="c1"># !pip install GPy==1.9.8</span>
@@ -166,8 +170,6 @@ MathJax.Hub.Config({
 <p>We of course need a function to optimize so let&rsquo;s create one. We also define the bounds and the inital sample points for our optimization problem.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">bounds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]])</span>
 <span class="n">noise</span> <span class="o">=</span> <span class="mf">0.2</span>
-<span class="c1"># def f(X, noise=noise):</span>
-<span class="c1">#     return -np.sin(3*X) - X**2 + 0.7*X + noise * np.random.randn(*X.shape)</span>
 
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="n">noise</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">X</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">+</span> <span class="n">noise</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -380,12 +382,14 @@ MathJax.Hub.Config({
                                  <span class="n">normalize_Y</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
                                  <span class="n">maximize</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-<span class="n">optimizer</span><span class="o">.</span><span class="n">run_optimization</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">optimizer</span><span class="o">.</span><span class="n">run_optimization</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
 <span class="n">optimizer</span><span class="o">.</span><span class="n">plot_acquisition</span><span class="p">()</span>
 </code></pre></div><p><img src="bayes-opt/bayes-opt_24_0.png" alt="png"></p>
 <h1 id="references">References</h1>
-<p><a href="https://nbviewer.jupyter.org/github/krasserm/bayesian-machine-learning/blob/dev/bayesian-optimization/bayesian_optimization.ipynb">https://nbviewer.jupyter.org/github/krasserm/bayesian-machine-learning/blob/dev/bayesian-optimization/bayesian_optimization.ipynb</a>
-<a href="http://krasserm.github.io/2018/03/21/bayesian-optimization/">http://krasserm.github.io/2018/03/21/bayesian-optimization/</a></p>
+<ul>
+<li><a href="https://nbviewer.jupyter.org/github/krasserm/bayesian-machine-learning/blob/dev/bayesian-optimization/bayesian_optimization.ipynb">https://nbviewer.jupyter.org/github/krasserm/bayesian-machine-learning/blob/dev/bayesian-optimization/bayesian_optimization.ipynb</a></li>
+<li><a href="http://krasserm.github.io/2018/03/21/bayesian-optimization/">http://krasserm.github.io/2018/03/21/bayesian-optimization/</a></li>
+</ul>
 
 </div>
   <aside>

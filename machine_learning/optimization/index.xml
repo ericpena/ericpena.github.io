@@ -16,8 +16,9 @@
       <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://ericpena.github.io/machine_learning/optimization/bayes-opt.html</guid>
-      <description>Bayesian Optimization Below is a walk-through how to perform Bayesian Optimization in Python. This code was borrowed from Martin Krasser. First section is designing a Bayesian Optimization algorithm using Numpy and SciPy. The second section goes into how we can take advantage of a Python package to optimize our function.
-Preamble from sklearn.gaussian_process import GaussianProcessRegressor from sklearn.gaussian_process.kernels import ConstantKernel, Matern from scipy.optimize import minimize from scipy.stats import norm import matplotlib.pyplot as plt import numpy as np # Install additional dependencies # !</description>
+      <description>Bayesian Optimization Below is a walk-through how to perform Bayesian Optimization in Python. This code was borrowed from Martin Krasser in order to optimize the following objective function:
+$$f(x) = 2 \sin{(4 x)} \cos{(x)}$$ $$\text{where, } (1 &amp;lt; x &amp;lt; 4)$$
+The first section goes through designing a Bayesian Optimization algorithm using Numpy and SciPy. The second section goes into how we can take advantage of a Python package to optimize our function.</description>
     </item>
     
     <item>
