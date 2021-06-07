@@ -39,16 +39,26 @@
   
   <url>
     <loc>https://ericpena.github.io/machine_learning/basics/index.xml</loc>
-    <lastmod>2020-05-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ericpena.github.io/machine_learning/basics/linear-regression.html</loc>
-    <lastmod>2020-05-29T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://ericpena.github.io/machine_learning/index.xml</loc>
+    <lastmod>2020-07-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/machine_learning/basics/pca-svd.html</loc>
+    <lastmod>2020-07-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/machine_learning/basics/pca-evd.html</loc>
+    <lastmod>2020-06-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ericpena.github.io/machine_learning/basics/linear-regression.html</loc>
     <lastmod>2020-05-29T00:00:00+00:00</lastmod>
   </url>
   
