@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Bayesian Optimization",
   "url": "https:\/\/ericpena.github.io\/machine_learning\/optimization\/bayes-opt.html",
-  "wordCount": "1228",
+  "wordCount": "1238",
   "datePublished": "2020-04-14T00:00:00\x2b00:00",
   "dateModified": "2020-04-14T00:00:00\x2b00:00",
   "author": {
@@ -149,10 +149,10 @@ MathJax.Hub.Config({
   <div class="content">
       
   <h1 id="bayesian-optimization">Bayesian Optimization</h1>
-<p>Below is a walk-through how to perform Bayesian Optimization in Python. This code was borrowed from Martin Krasser in order to optimize the following objective function:</p>
+<p>Below is a walk-through how to perform Bayesian Optimization in Python. This code follows work of Martin Krasser in order to optimize the following objective function:</p>
 <p>$$f(x) = 2 \sin{(4 x)} \cos{(x)}$$
 $$\text{where, } (1 &lt; x &lt; 4)$$</p>
-<p>The first section goes through designing a Bayesian Optimization algorithm using Numpy and SciPy. The second section goes into how we can take advantage of a Python package to optimize our function. The is one of the cleanest explanations of Bayesian optimization I&rsquo;ve come across so I found it helpful to go through this procedure myself.</p>
+<p>The first section goes through designing a Bayesian Optimization algorithm using Numpy and SciPy. The second section goes into how we can take advantage of a Python package to optimize our function. The is one of the cleanest explanations of Bayesian optimization I&rsquo;ve come across so I found it helpful to go through this procedure myself. Bayesian optimization is also often used to perform hyperparameter optimization.</p>
 <h1 id="preamble">Preamble</h1>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.gaussian_process</span> <span class="kn">import</span> <span class="n">GaussianProcessRegressor</span>
 <span class="kn">from</span> <span class="nn">sklearn.gaussian_process.kernels</span> <span class="kn">import</span> <span class="n">ConstantKernel</span><span class="p">,</span> <span class="n">Matern</span>
