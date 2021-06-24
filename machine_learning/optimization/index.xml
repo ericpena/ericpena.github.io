@@ -1,0 +1,34 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>machine_learning - Eric Peña</title>
+    <link>https://ericpena.github.io/machine_learning/optimization/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://ericpena.github.io/machine_learning/optimization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bayesian Optimization</title>
+      <link>https://ericpena.github.io/machine_learning/optimization/bayes-opt.html</link>
+      <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/machine_learning/optimization/bayes-opt.html</guid>
+      <description>Bayesian Optimization Below is a walk-through how to perform Bayesian Optimization in Python. This code follows work of Martin Krasser in order to optimize the following objective function:
+$$f(x) = 2 \sin{(4 x)} \cos{(x)}$$ $$\text{where, } (1 &amp;lt; x &amp;lt; 4)$$
+The first section goes through designing a Bayesian Optimization algorithm using Numpy and SciPy. The second section goes into how we can take advantage of a Python package to optimize our function.</description>
+    </item>
+    
+    <item>
+      <title>First Genetic Algorithm</title>
+      <link>https://ericpena.github.io/machine_learning/optimization/ga-intro.html</link>
+      <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ericpena.github.io/machine_learning/optimization/ga-intro.html</guid>
+      <description>What is a Genetic Algorithm Evolutionary programming is a family of global optimization techniques that are biologically inspired. It works similarly to the natural process in evolutionary biology. Trial and error is a large component along with stochasticity and survival of the fittest. The type of evolutionary computation that we will focus on is genetic algorithms which became popular by the American Professor of Psychology, Electrical Engineering, and Computer Science, John Holland.</description>
+    </item>
+    
+  </channel>
+</rss>
