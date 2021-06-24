@@ -3,210 +3,210 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ericpena.github.io/complex_systems/basics/index.xml</loc>
+    <loc>//ericpena.github.io/complex_systems/basics/index.xml</loc>
     <lastmod>2021-03-14T00:00:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/complex_systems/index.xml</loc>
+    <loc>//ericpena.github.io/complex_systems/index.xml</loc>
     <lastmod>2021-03-14T00:00:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/</loc>
+    <loc>//ericpena.github.io/</loc>
     <lastmod>2021-03-14T00:00:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/complex_systems/basics/logistic_growth.html</loc>
+    <loc>//ericpena.github.io/complex_systems/basics/logistic_growth.html</loc>
     <lastmod>2021-03-14T00:00:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/statistics/basics/index.xml</loc>
+    <loc>//ericpena.github.io/statistics/basics/index.xml</loc>
     <lastmod>2020-12-16T00:00:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/statistics/basics/p-value.html</loc>
+    <loc>//ericpena.github.io/statistics/basics/p-value.html</loc>
     <lastmod>2020-12-16T00:00:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/statistics/index.xml</loc>
+    <loc>//ericpena.github.io/statistics/index.xml</loc>
     <lastmod>2020-12-16T00:00:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/machine_learning/basics/index.xml</loc>
+    <loc>//ericpena.github.io/machine_learning/basics/index.xml</loc>
     <lastmod>2020-07-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/machine_learning/index.xml</loc>
+    <loc>//ericpena.github.io/machine_learning/index.xml</loc>
     <lastmod>2020-07-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/machine_learning/basics/pca-svd.html</loc>
+    <loc>//ericpena.github.io/machine_learning/basics/pca-svd.html</loc>
     <lastmod>2020-07-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/machine_learning/basics/pca-evd.html</loc>
+    <loc>//ericpena.github.io/machine_learning/basics/pca-evd.html</loc>
     <lastmod>2020-06-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/machine_learning/basics/linear-regression.html</loc>
+    <loc>//ericpena.github.io/machine_learning/basics/linear-regression.html</loc>
     <lastmod>2020-05-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/r_programming/basics/index.xml</loc>
+    <loc>//ericpena.github.io/r_programming/basics/index.xml</loc>
     <lastmod>2020-05-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/r_programming/basics/data-types.html</loc>
+    <loc>//ericpena.github.io/r_programming/basics/data-types.html</loc>
     <lastmod>2020-05-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/r_programming/index.xml</loc>
+    <loc>//ericpena.github.io/r_programming/index.xml</loc>
     <lastmod>2020-05-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/physics/basics/index.xml</loc>
+    <loc>//ericpena.github.io/physics/basics/index.xml</loc>
     <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/physics/basics/coord.html</loc>
+    <loc>//ericpena.github.io/physics/basics/coord.html</loc>
     <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/physics/index.xml</loc>
+    <loc>//ericpena.github.io/physics/index.xml</loc>
     <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/machine_learning/optimization/index.xml</loc>
+    <loc>//ericpena.github.io/machine_learning/optimization/index.xml</loc>
     <lastmod>2020-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/machine_learning/optimization/bayes-opt.html</loc>
+    <loc>//ericpena.github.io/machine_learning/optimization/bayes-opt.html</loc>
     <lastmod>2020-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/machine_learning/optimization/ga-intro.html</loc>
+    <loc>//ericpena.github.io/machine_learning/optimization/ga-intro.html</loc>
     <lastmod>2020-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/complex_systems/basics/mitchell.html</loc>
+    <loc>//ericpena.github.io/complex_systems/basics/mitchell.html</loc>
     <lastmod>2020-04-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/complex_systems/basics/logistic_map.html</loc>
+    <loc>//ericpena.github.io/complex_systems/basics/logistic_map.html</loc>
     <lastmod>2020-03-23T00:00:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/projects/index.xml</loc>
+    <loc>//ericpena.github.io/projects/index.xml</loc>
     <lastmod>2020-03-23T00:00:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/projects/what_i_said_to_my_team_during_covid-19.html</loc>
+    <loc>//ericpena.github.io/projects/what_i_said_to_my_team_during_covid-19.html</loc>
     <lastmod>2020-03-23T00:00:00-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/about/index.xml</loc>
+    <loc>//ericpena.github.io/about/index.xml</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/about/eric_pena.html</loc>
+    <loc>//ericpena.github.io/about/eric_pena.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/articles/index.xml</loc>
+    <loc>//ericpena.github.io/articles/index.xml</loc>
     <lastmod>2016-02-01T11:53:49-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/articles/what_i_learned_from_tracking_my_time_at_techstars.html</loc>
+    <loc>//ericpena.github.io/articles/what_i_learned_from_tracking_my_time_at_techstars.html</loc>
     <lastmod>2016-02-01T11:53:49-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/articles/health_system_destruction_renamo_mozambique.html</loc>
+    <loc>//ericpena.github.io/articles/health_system_destruction_renamo_mozambique.html</loc>
     <lastmod>2011-12-20T11:53:49-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/articles/health_system_reconstruction_post_war_kosovo.html</loc>
+    <loc>//ericpena.github.io/articles/health_system_reconstruction_post_war_kosovo.html</loc>
     <lastmod>2011-12-20T11:53:49-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/articles/puzzle_of_rebel_mobilization.html</loc>
+    <loc>//ericpena.github.io/articles/puzzle_of_rebel_mobilization.html</loc>
     <lastmod>2011-12-20T11:53:49-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/articles/health_systems.html</loc>
+    <loc>//ericpena.github.io/articles/health_systems.html</loc>
     <lastmod>2011-12-20T11:53:49-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/julia/basics/index.xml</loc>
+    <loc>//ericpena.github.io/julia/basics/index.xml</loc>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/mathematica/basics/index.xml</loc>
+    <loc>//ericpena.github.io/mathematica/basics/index.xml</loc>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/mathematics/basics/index.xml</loc>
+    <loc>//ericpena.github.io/mathematics/basics/index.xml</loc>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/network_science/basics/index.xml</loc>
+    <loc>//ericpena.github.io/network_science/basics/index.xml</loc>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/python/basics/index.xml</loc>
+    <loc>//ericpena.github.io/python/basics/index.xml</loc>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/julia/index.xml</loc>
+    <loc>//ericpena.github.io/julia/index.xml</loc>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/mathematica/index.xml</loc>
+    <loc>//ericpena.github.io/mathematica/index.xml</loc>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/mathematics/index.xml</loc>
+    <loc>//ericpena.github.io/mathematics/index.xml</loc>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/network_science/index.xml</loc>
+    <loc>//ericpena.github.io/network_science/index.xml</loc>
   </url>
   
   <url>
-    <loc>https://ericpena.github.io/python/index.xml</loc>
+    <loc>//ericpena.github.io/python/index.xml</loc>
   </url>
   
 </urlset>
