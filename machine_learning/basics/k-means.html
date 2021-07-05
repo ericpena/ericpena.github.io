@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "K-Means Clustering From Scratch",
   "url": "\/\/ericpena.github.io\/machine_learning\/basics\/k-means.html",
-  "wordCount": "1028",
+  "wordCount": "1083",
   "datePublished": "2021-07-01T00:00:00\x2b00:00",
   "dateModified": "2021-07-01T00:00:00\x2b00:00",
   "author": {
@@ -149,15 +149,15 @@ MathJax.Hub.Config({
   <div class="content">
       
   <h1 id="introduction">Introduction</h1>
-<p>Imagine we have a scattering of points whose labels or group assignments are completely unknown to us and moreover, we haven&rsquo;t a clue as to the number of groups. Unsupervised clustering helps us in such a situation and allows us to assign a cluster to each point. These clusters are defined their their centroid (centers). K-Means will iteratively update these centroids to find the best location for them.</p>
-<p>Although I think it is critical to understand how to create the K-Means algorithm completely from scratch to get a deep understanding of what is happening. This article includes:</p>
+<p>Imagine we have a scattering of points whose labels or group assignments are completely unknown to us and moreover, we haven&rsquo;t a clue as to the number of groups. Unsupervised clustering helps us in such a situation and allows us to assign a cluster to each point. These clusters are defined by their centroids (centers). The K-Means algorithm will iteratively update these centroids to find the best location for them. It turns out that this clustering problem that K-Means helps solve is a computationally difficult problem (NP-Hard) but nevertheless we will go through the steps in detail here.</p>
+<p>It may help understand this algorithm if we were to create the K-Means algorithm completely from scratch to get a deeper understanding of what is happening. This article includes:</p>
 <ol>
 <li>Simulate data</li>
-<li>Create functions needed by K-Means</li>
+<li>Create functions used by K-Means</li>
 <li>Perform K-Means with specified number of clusters</li>
 <li>Define a score value, perform K-Means with different number of clusters, and choosing the best value for this hyperparameter</li>
-<li>Performing K-Means with the ScikitLearn library</li>
-<li>Compare performance between our home-made implementation and the ScikitLearn implementation</li>
+<li>Performing K-Means with the Scikit-Learn library</li>
+<li>Compare performance between our implementation and the Scikit-Learn implementation</li>
 </ol>
 <h1 id="1-simulate-data">1. Simulate Data</h1>
 <ul>
@@ -252,6 +252,9 @@ MathJax.Hub.Config({
        [ 0.94987571, -1.12258394,  1.        ],
        [-0.24173413,  1.00161447,  2.        ]])
 </code></pre>
+<ul>
+<li>These are the functions needed to perform K-Means. All we have left to do is iteratively apply these functions to obtain optimal values for our clusters.</li>
+</ul>
 <h1 id="3-perform-k-means-with-k--3">3. Perform K-Means with $k = 3$</h1>
 <ul>
 <li>Generate new data and assign all points to the same group</li>
@@ -282,7 +285,7 @@ MathJax.Hub.Config({
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div><p><img src="k-means/k-means_22_0.png" alt="png"></p>
+</code></pre></div><p><img src="k-means/k-means_23_0.png" alt="png"></p>
 <h1 id="4-finding-best-value-for-k">4. Finding Best Value For $k$</h1>
 <ul>
 <li>We can calculate the sum of squared distances between all points and their respective clusters</li>
@@ -324,21 +327,21 @@ MathJax.Hub.Config({
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     
-</code></pre></div><p><img src="k-means/k-means_27_0.png" alt="png"></p>
-<p><img src="k-means/k-means_27_1.png" alt="png"></p>
-<p><img src="k-means/k-means_27_2.png" alt="png"></p>
-<p><img src="k-means/k-means_27_3.png" alt="png"></p>
-<p><img src="k-means/k-means_27_4.png" alt="png"></p>
-<p><img src="k-means/k-means_27_5.png" alt="png"></p>
-<p><img src="k-means/k-means_27_6.png" alt="png"></p>
-<p><img src="k-means/k-means_27_7.png" alt="png"></p>
-<p><img src="k-means/k-means_27_8.png" alt="png"></p>
+</code></pre></div><p><img src="k-means/k-means_28_0.png" alt="png"></p>
+<p><img src="k-means/k-means_28_1.png" alt="png"></p>
+<p><img src="k-means/k-means_28_2.png" alt="png"></p>
+<p><img src="k-means/k-means_28_3.png" alt="png"></p>
+<p><img src="k-means/k-means_28_4.png" alt="png"></p>
+<p><img src="k-means/k-means_28_5.png" alt="png"></p>
+<p><img src="k-means/k-means_28_6.png" alt="png"></p>
+<p><img src="k-means/k-means_28_7.png" alt="png"></p>
+<p><img src="k-means/k-means_28_8.png" alt="png"></p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">],</span> <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">],</span> <span class="s1">&#39;ro-&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Elbow Plot&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;k (Number of Clusters)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Sum of Within Sum of Squared Errors&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div><p><img src="k-means/k-means_28_0.png" alt="png"></p>
+</code></pre></div><p><img src="k-means/k-means_29_0.png" alt="png"></p>
 <h3 id="found-optimal-hyperparameter-k">Found Optimal Hyperparameter, $k$</h3>
 <ul>
 <li>We find that 4 is the optimal number of clusters which was the number of clusters used to simulate the original data (with noise).</li>
@@ -358,7 +361,7 @@ MathJax.Hub.Config({
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div><p><img src="k-means/k-means_33_0.png" alt="png"></p>
+</code></pre></div><p><img src="k-means/k-means_34_0.png" alt="png"></p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">y_pred</span><span class="o">.</span><span class="n">inertia_</span>
 </code></pre></div><pre><code>39.46338949369036
 </code></pre>
