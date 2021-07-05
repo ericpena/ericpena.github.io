@@ -5,10 +5,20 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Jul 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="//ericpena.github.io/machine_learning/basics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>K-Means Clustering From Scratch</title>
+      <link>//ericpena.github.io/machine_learning/basics/k-means.html</link>
+      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>//ericpena.github.io/machine_learning/basics/k-means.html</guid>
+      <description>Introduction Imagine we have a scattering of points whose labels or group assignments are completely unknown to us and moreover, we haven&amp;rsquo;t a clue as to the number of groups. Unsupervised clustering helps us in such a situation and allows us to assign a cluster to each point. These clusters are defined their their centroid (centers). K-Means will iteratively update these centroids to find the best location for them.
+Although I think it is critical to understand how to create the K-Means algorithm completely from scratch to get a deep understanding of what is happening.</description>
+    </item>
     
     <item>
       <title>PCA using Single Value Decomposition</title>

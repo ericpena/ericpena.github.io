@@ -23,15 +23,6 @@ $$x_t = f(x_{t-1}) x_{t-1}$$</description>
     </item>
     
     <item>
-      <title>Complexity by Melanie Mitchell</title>
-      <link>//ericpena.github.io/complex_systems/basics/mitchell.html</link>
-      <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>//ericpena.github.io/complex_systems/basics/mitchell.html</guid>
-      <description>Part I: Introduction Providing the multifaceted story of how complex systems has evolved into what it is today is no easy feat. Dr. Melanie Mitchell not only gives a comprehensive historical tour of science and mathematics, she also provides foundational knowledge that any reader can carry to appreciate the essence of what it means for a system to be complex in the technical sense. Early on, she gives a clear definition of complex systems as an interdisciplinary field that studies how large networks of entities with no central controller can organize themselves and exhibit collective behavior given simple rules.</description>
-    </item>
-    
-    <item>
       <title>Logistic Map</title>
       <link>//ericpena.github.io/complex_systems/basics/logistic_map.html</link>
       <pubDate>Mon, 23 Mar 2020 00:00:00 -0700</pubDate>
