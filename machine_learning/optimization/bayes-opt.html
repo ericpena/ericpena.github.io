@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Bayesian Optimization",
   "url": "\/\/ericpena.github.io\/machine_learning\/optimization\/bayes-opt.html",
-  "wordCount": "1238",
+  "wordCount": "1210",
   "datePublished": "2020-04-14T00:00:00\x2b00:00",
   "dateModified": "2020-04-14T00:00:00\x2b00:00",
   "author": {
@@ -293,9 +293,12 @@ $$\text{where, } (1 &lt; x &lt; 4)$$</p>
             <span class="n">min_x</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span>           
             
     <span class="k">return</span> <span class="n">min_x</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</code></pre></div><p>Now we have all components needed to run Bayesian optimization with the algorithm outlined above. The Gaussian process in the following example is configured with a Matérn kernel which is a generalization of the squared exponential kernel or RBF kernel. The known noise level is configured with the alpha parameter.</p>
-<p>Bayesian optimization runs for 10 iterations. In each iteration, a row with two plots is produced. The left plot shows the noise-free objective function, the surrogate function which is the GP posterior predictive mean, the 95% confidence interval of the mean and the noisy samples obtained from the objective function so far. The right plot shows the acquisition function. The vertical dashed line in both plots shows the proposed sampling point for the next iteration which corresponds to the maximum of the acquisition function.</p>
+</code></pre></div><p>Now we have all components needed to run Bayesian optimization with the algorithm outlined above.</p>
+<p>We have plotted the objective function, the GP posterior predictive mean, the 95% confidence interval of the mean and the samples obtained from the objective function so far with noise. The right plot shows the acquisition function. The maximum of the aquisition function is what&rsquo;s used to propose the next sampling point for the next iteration&mdash;denoted by a black vertical dashed line.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Gaussian process with Matérn kernel as surrogate model</span>
+<span class="c1"># The Gaussian process in the following example is configured with a Matérn kernel</span>
+<span class="c1"># generalization of the squared exponential kernel or RBF kernel</span>
+<span class="c1"># Alpha parameters configures the known noise level</span>
 <span class="n">m52</span> <span class="o">=</span> <span class="n">ConstantKernel</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">Matern</span><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">nu</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
 <span class="n">gpr</span> <span class="o">=</span> <span class="n">GaussianProcessRegressor</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="n">m52</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">noise</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
@@ -385,11 +388,6 @@ $$\text{where, } (1 &lt; x &lt; 4)$$</p>
 <span class="n">optimizer</span><span class="o">.</span><span class="n">run_optimization</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
 <span class="n">optimizer</span><span class="o">.</span><span class="n">plot_acquisition</span><span class="p">()</span>
 </code></pre></div><p><img src="bayes-opt/bayes-opt_24_0.png" alt="png"></p>
-<h1 id="references">References</h1>
-<ul>
-<li><a href="https://nbviewer.jupyter.org/github/krasserm/bayesian-machine-learning/blob/dev/bayesian-optimization/bayesian_optimization.ipynb">https://nbviewer.jupyter.org/github/krasserm/bayesian-machine-learning/blob/dev/bayesian-optimization/bayesian_optimization.ipynb</a></li>
-<li><a href="http://krasserm.github.io/2018/03/21/bayesian-optimization/">http://krasserm.github.io/2018/03/21/bayesian-optimization/</a></li>
-</ul>
 
 </div>
   <aside>
@@ -414,7 +412,7 @@ $$\text{where, } (1 &lt; x &lt; 4)$$</p>
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Eric Peña, <time datetime="2021">2021</time>. All 14 notes and articles are available on <a href="https://github.com/ericpena/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Eric Peña, <time datetime="2021">2021</time>. All 15 notes and articles are available on <a href="https://github.com/ericpena/">GitHub</a>.</span>
         </div>
     </footer>
 
