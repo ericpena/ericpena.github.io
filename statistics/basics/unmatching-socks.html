@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Probability of Socks",
   "url": "\/\/ericpena.github.io\/statistics\/basics\/unmatching-socks.html",
-  "wordCount": "1331",
+  "wordCount": "1326",
   "datePublished": "2021-12-09T00:00:00-07:00",
   "dateModified": "2021-12-09T00:00:00-07:00",
   "author": {
@@ -198,7 +198,7 @@ $$P = \prod^{k - 1 \le n - 1}_{i\text{ = }0}\frac{2\cdot n - 2\cdot i}{2\cdot n 
  (10, 0.0055424451709281414)]
 </code></pre>
 <ul>
-<li>This is also done in the Wolfram Language!</li>
+<li>We can also plug this into Mathematica using the Wolfram Language!</li>
 </ul>
 <p><img src="unmatching-socks/socks-mathematica.png" alt="png"></p>
 <ul>
@@ -217,7 +217,7 @@ $${n \choose k}{2 \choose 1}^k$$</li>
 <li>The ${n \choose k}$ term is the act of choosing $k$ pairs and the ${2 \choose 1}^k$ term is the act of choosing 1 sock (out of two) from each of those $k$ pairs.</li>
 <li>To put it all together, the final probability expression that we&rsquo;re after is:
 $$P = \frac{{n \choose k}{2 \choose 1}^k}{2n \choose k}$$</li>
-<li>Let&rsquo;s show that this is indeed the same thing (in my favorite language of course)!</li>
+<li>Let&rsquo;s show that this is indeed the same thing in Mathematica!</li>
 </ul>
 <p><img src="unmatching-socks/choose-socks.png" alt="png"></p>
 <h1 id="simulation">Simulation!</h1>
@@ -259,10 +259,6 @@ $$P = \frac{{n \choose k}{2 \choose 1}^k}{2n \choose k}$$</li>
 </code></pre></div><pre><code>Probability of choosing 4 socks from 4 pairs is: 22.900000000000002%
 </code></pre>
 <h3 id="compare-this-number-to-the-022857142857142856--we-should-be-pretty-close">Compare this number to the <code>0.22857142857142856</code> —— we should be pretty close!</h3>
-<h1 id="conclusion">Conclusion</h1>
-<ul>
-<li>More to come!</li>
-</ul>
 
 </div>
   <aside>
