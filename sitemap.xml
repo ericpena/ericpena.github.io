@@ -3,12 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>//ericpena.github.io/machine_learning/basics/index.xml</loc>
-    <lastmod>2021-07-01T00:00:00+00:00</lastmod>
+    <loc>//ericpena.github.io/statistics/basics/index.xml</loc>
+    <lastmod>2021-12-09T00:00:00-07:00</lastmod>
   </url>
   
   <url>
     <loc>//ericpena.github.io/</loc>
+    <lastmod>2021-12-09T00:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//ericpena.github.io/statistics/basics/unmatching-socks.html</loc>
+    <lastmod>2021-12-09T00:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//ericpena.github.io/statistics/index.xml</loc>
+    <lastmod>2021-12-09T00:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//ericpena.github.io/machine_learning/basics/index.xml</loc>
     <lastmod>2021-07-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -38,17 +53,7 @@
   </url>
   
   <url>
-    <loc>//ericpena.github.io/statistics/basics/index.xml</loc>
-    <lastmod>2020-12-16T00:00:00-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>//ericpena.github.io/statistics/basics/p-value.html</loc>
-    <lastmod>2020-12-16T00:00:00-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//ericpena.github.io/statistics/index.xml</loc>
     <lastmod>2020-12-16T00:00:00-07:00</lastmod>
   </url>
   

@@ -5,10 +5,19 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Dec 2021 00:00:00 -0700</lastBuildDate>
     
         <atom:link href="//ericpena.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Statistics</title>
+      <link>//ericpena.github.io/statistics/index.xml</link>
+      <pubDate>Thu, 09 Dec 2021 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/statistics/index.xml</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Machine_learnings</title>
@@ -25,15 +34,6 @@
       <pubDate>Sun, 14 Mar 2021 00:00:00 -0700</pubDate>
       
       <guid>//ericpena.github.io/complex_systems/index.xml</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Statistics</title>
-      <link>//ericpena.github.io/statistics/index.xml</link>
-      <pubDate>Wed, 16 Dec 2020 00:00:00 -0700</pubDate>
-      
-      <guid>//ericpena.github.io/statistics/index.xml</guid>
       <description></description>
     </item>
     
