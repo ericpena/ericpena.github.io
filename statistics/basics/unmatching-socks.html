@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Probability of Socks",
   "url": "\/\/ericpena.github.io\/statistics\/basics\/unmatching-socks.html",
-  "wordCount": "1326",
+  "wordCount": "1248",
   "datePublished": "2021-12-09T00:00:00-07:00",
   "dateModified": "2021-12-09T00:00:00-07:00",
   "author": {
@@ -159,9 +159,7 @@ MathJax.Hub.Config({
 <ul>
 <li>For clarity, let&rsquo;s assume there are 3 pairs of socks and we&rsquo;re choosing 3 individual socks one by one.</li>
 <li>We have to think about this as literal as possible so when there are no socks in your hand, we have to choose one. What is the probability of choosing a single sock? Well, it&rsquo;s $100\%$. Of course it is!</li>
-<li>If we want to be more technical, we can calculate the probability of choosing a single sock in this situation by dividing two numbers from one another: (1) The number of ways of choosing 1 sock out of 3 pairs of socks; (2) The number of total ways one can chooose 1 sock out of 3 pairs of socks:
-$$\frac{2n\choose k}{2n \choose k} = \frac{2\cdot3 \choose 3}{2\cdot3 \choose 3}  = 1$$</li>
-<li>Okay, that was a bit silly but the real magic happens when the second sock is chosen. What is the probability of choosing a sock given that it&rsquo;s not similar to one you previously chose?</li>
+<li>The real magic happens when the second sock is chosen. What is the probability of choosing a sock given that it&rsquo;s not similar to one you previously chose?</li>
 <li>Well you have $(2 \cdot n - 1)$ socks left to choose from but only $(2 \cdot n - 2)$ of them are <em>valid</em> (i.e., non-matching). So this conditional probability for the second sock becomes:
 $$\frac{2\cdot n - 2}{2\cdot n - 1}$$</li>
 <li>We want to generalize this a bit so let&rsquo;s say that the first sock we chose was sock zero $(i = 0)$ and the second sock we chose was sock one $(i = 1)$. We will continue this pattern with the $i^{th}$ sock.</li>
