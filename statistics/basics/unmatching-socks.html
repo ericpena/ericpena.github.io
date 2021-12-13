@@ -16,16 +16,16 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Probability of Socks" />
-<meta property="og:description" content="Probability of Socks" />
+<meta property="og:title" content="Probability of Unmatching Socks" />
+<meta property="og:description" content="Probability of Unmatching Socks" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//ericpena.github.io/statistics/basics/unmatching-socks.html" />
 <meta property="article:published_time" content="2021-12-09T00:00:00-07:00" />
 <meta property="article:modified_time" content="2021-12-09T00:00:00-07:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Probability of Socks"/>
-<meta name="twitter:description" content="Probability of Socks"/>
+<meta name="twitter:title" content="Probability of Unmatching Socks"/>
+<meta name="twitter:description" content="Probability of Unmatching Socks"/>
 <meta name="generator" content="Hugo 0.68.3" />
 
     
@@ -33,20 +33,20 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Probability of Socks",
+  "headline": "Probability of Unmatching Socks",
   "url": "\/\/ericpena.github.io\/statistics\/basics\/unmatching-socks.html",
-  "wordCount": "1248",
+  "wordCount": "1553",
   "datePublished": "2021-12-09T00:00:00-07:00",
   "dateModified": "2021-12-09T00:00:00-07:00",
   "author": {
     "@type": "Person",
     "name": "Eric Peña"
   },
-  "description": "Probability of Socks"
+  "description": "Probability of Unmatching Socks"
 }
 </script> 
 
-    <title>Probability of Socks</title>
+    <title>Probability of Unmatching Socks</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -141,14 +141,14 @@ MathJax.Hub.Config({
   <div class="technical_note">
   <header>
       
-    <h1 class="technical_note_title">Probability of Socks</h1>
+    <h1 class="technical_note_title">Probability of Unmatching Socks</h1>
     <div class="technical_note_date">
       <time datetime=" 2021-12-09T00:00:00-07:00 "> 09 Dec 2021</time>
     </div>
   </header>
   <div class="content">
       
-  <h1 id="probability-will-knock-your-socks-off">Probability Will Knock Your Socks Off!</h1>
+  <h1 id="introduction">Introduction</h1>
 <p>Probability pops up everywhere! One day, I was digging in a basket of (clean) clothes in search of socks pulling several of them out one by one. However, I pulled six socks out but none of them matched! I thought to myself: what the heck is the probability of THAT happening? So let&rsquo;s dig into how one might figure this out. But before we start answering this, let&rsquo;s be more clear about what the situation is.</p>
 <p>Consider $n$ pairs of socks randomly scattered in a pile of laundry. You pull $k$ socks out to find out that they are all unmatched!</p>
 <p>With these kinds of problems, one might wonder whether the socks, for example, are being pulled out one by one or if all the socks are selected simultaneously. Are these the same thing? Spoiler Alert: they are. But I want to show you two different ways you can approach this problem which emphasize these two ideas and show that they do indeed give the same answer!</p>
@@ -218,9 +218,47 @@ $$P = \frac{{n \choose k}{2 \choose 1}^k}{2n \choose k}$$</li>
 <li>Let&rsquo;s show that this is indeed the same thing in Mathematica!</li>
 </ul>
 <p><img src="unmatching-socks/choose-socks.png" alt="png"></p>
-<h1 id="simulation">Simulation!</h1>
+<h1 id="generalization-forall-k-le-n-n-k--0">Generalization $\forall k \le n$ $(n, k &gt; 0)$</h1>
 <ul>
-<li>We can of course trust the math especially since we got to the same result with two different approaches. However, it never hurts to create a simulation of the situation.</li>
+<li>
+<p>Here we will further show that one-by-one and simultaneous sock pulling are indeed the same, not only when $n = k$ but for any $k \le n$. Remember that $n$ is the number of pairs to choose from and $k$ are the number of individual socks that are chosen.</p>
+</li>
+<li>
+<p>Recall that the two expressions that we derived above are:
+$$
+\begin{align}
+P_A &amp;= \prod^{k - 1 \le n - 1}_{i\text{ = }0}\frac{2\cdot n - 2\cdot i}{2\cdot n - i} &amp;\text{One-by-One} \\\<br>
+P_B &amp;= \frac{{n \choose k}{2 \choose 1}^k}{2n \choose k} &amp;\text{Simultaneous}
+\end{align}
+$$</p>
+</li>
+<li>
+<p>We can start with the first expression and do some rewriting:</p>
+</li>
+</ul>
+<p>$$P_A = \prod^{k - 1 \le n - 1}<em>{i\text{ = }0}\frac{2\cdot n - 2\cdot i}{2\cdot n - i} = 2^k \prod^{k - 1 \le n - 1}</em>{i\text{ = }0}\frac{n - i}{2\cdot n - i}$$</p>
+<ul>
+<li>The numerator and denominator becomes:</li>
+</ul>
+<p>$$
+\begin{align}
+\prod^{k - 1 \le n - 1}<em>{i\text{ = }0}(n - i) &amp;= \frac{n!}{(n - k)!} &amp;\text{(Numerator)} \\\<br>
+\prod^{k - 1 \le n - 1}</em>{i\text{ = }0}(2n - i) &amp;= \frac{2n!}{(2n - k)!} &amp;\text{(Denominator)}
+\end{align}
+$$</p>
+<ul>
+<li>Putting it all together for $P_A$, we get the following:
+$$P_A = 2^k \prod^{k - 1 \le n - 1}_{i\text{ = }0}\frac{n - i}{2\cdot n - i} = 2^k \cdot \frac{\frac{n!}{(n - k)!}}{\frac{2n!}{(2n - k)!}} = 2^k \cdot \frac{n! \cdot (2n - k)!}{(2n)! \cdot (n - k)!}$$</li>
+<li>Now if we expand $P_B$ in terms of factorials we get the same expression:
+$$P_B = \frac{{n \choose k}{2 \choose 1}^k}{2n \choose k} = 2^k \cdot \frac{\frac{n!}{k! (n - k)!}}{\frac{(2n)!}{k! (2n - k)!}} = 2^k \cdot \frac{n! \cdot (2n - k)!}{(2n)! \cdot (n - k)!}$$</li>
+<li>We can see that these are the same expression!
+$$\therefore P_A = P_B$$</li>
+<li>We can now use this expression to show the probability distribution over these two parameters $n$ and $k$:</li>
+</ul>
+<p><img src="unmatching-socks/nk_arrayplot.png" alt="png"></p>
+<h1 id="simulation">Simulation</h1>
+<ul>
+<li>We can trust the math especially since we got to the same result with two different approaches. However, it never hurts to create a simulation of the situation.</li>
 <li>Let&rsquo;s choose reasonable values for $n$ and $k$: $n = k = 4$.</li>
 <li>The question becomes: what is the probability of choosing 4 unique socks given that there are 4 pairs in the basket?</li>
 </ul>
