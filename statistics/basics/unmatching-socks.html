@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Probability of Unmatching Socks",
   "url": "\/\/ericpena.github.io\/statistics\/basics\/unmatching-socks.html",
-  "wordCount": "1553",
+  "wordCount": "1554",
   "datePublished": "2021-12-09T00:00:00-07:00",
   "dateModified": "2021-12-09T00:00:00-07:00",
   "author": {
@@ -233,22 +233,22 @@ P_B &amp;= \frac{{n \choose k}{2 \choose 1}^k}{2n \choose k} &amp;\text{Simultan
 $$</p>
 </li>
 <li>
-<p>We can start with the first expression and do some rewriting:</p>
+<p>We can start with the first expression and do some rewriting:
+$$
+P_A = \prod^{k - 1 \le n - 1}_{i\text{ = }0}\frac{2\cdot n - 2\cdot i}{2\cdot n - i} = 2^k \prod^{k - 1 \le n - 1}_{i\text{ = }0}\frac{n - i}{2\cdot n - i}
+$$</p>
+</li>
+<li>
+<p>The numerator and denominator of $P_A$ becomes:</p>
 </li>
 </ul>
-<p>$$P_A = \prod^{k - 1 \le n - 1}<em>{i\text{ = }0}\frac{2\cdot n - 2\cdot i}{2\cdot n - i} = 2^k \prod^{k - 1 \le n - 1}</em>{i\text{ = }0}\frac{n - i}{2\cdot n - i}$$</p>
-<ul>
-<li>The numerator and denominator becomes:</li>
-</ul>
-<p>$$
-\begin{align}
-\prod^{k - 1 \le n - 1}<em>{i\text{ = }0}(n - i) &amp;= \frac{n!}{(n - k)!} &amp;\text{(Numerator)} \\\<br>
-\prod^{k - 1 \le n - 1}</em>{i\text{ = }0}(2n - i) &amp;= \frac{2n!}{(2n - k)!} &amp;\text{(Denominator)}
-\end{align}
-$$</p>
+<p>$$\text{Numerator} \rightarrow \prod^{k - 1 \le n - 1}_{i\text{ = }0}(n - i)\text{ = }\frac{n!}{(n - k)!}$$</p>
+<p>$$\text{Denominator} \rightarrow \prod^{k - 1 \le n - 1}_{i\text{ = }0}(2n - i)\text{ = }\frac{(2n)!}{(2n - k)!}$$</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ul>
 <li>Putting it all together for $P_A$, we get the following:
-$$P_A = 2^k \prod^{k - 1 \le n - 1}_{i\text{ = }0}\frac{n - i}{2\cdot n - i} = 2^k \cdot \frac{\frac{n!}{(n - k)!}}{\frac{2n!}{(2n - k)!}} = 2^k \cdot \frac{n! \cdot (2n - k)!}{(2n)! \cdot (n - k)!}$$</li>
+$$P_A = 2^k \prod^{k - 1 \le n - 1}_{i\text{ = }0}\frac{n - i}{2\cdot n - i} = 2^k \cdot \frac{\frac{n!}{(n - k)!}}{\frac{(2n)!}{(2n - k)!}} = 2^k \cdot \frac{n! \cdot (2n - k)!}{(2n)! \cdot (n - k)!}$$</li>
 <li>Now if we expand $P_B$ in terms of factorials we get the same expression:
 $$P_B = \frac{{n \choose k}{2 \choose 1}^k}{2n \choose k} = 2^k \cdot \frac{\frac{n!}{k! (n - k)!}}{\frac{(2n)!}{k! (2n - k)!}} = 2^k \cdot \frac{n! \cdot (2n - k)!}{(2n)! \cdot (n - k)!}$$</li>
 <li>We can see that these are the same expression!
