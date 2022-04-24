@@ -5,13 +5,23 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 24 Apr 2022 00:00:00 -0700</lastBuildDate>
     
         <atom:link href="//ericpena.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Complexity by Melanie Mitchell</title>
+      <title>Cellular Automata Introduction</title>
+      <link>//ericpena.github.io/articles/cellular_automata_intro.html</link>
+      <pubDate>Sun, 24 Apr 2022 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/articles/cellular_automata_intro.html</guid>
+      <description>Motivation  &amp;ldquo;With four parameters I can fit an elephant, and with five I can make him wiggle his trunk.&amp;rdquo; &amp;ndash; John von Neumann
+ Throughout history, science has aimed to understand and model the natural world as accurately as possible despite its inherent complexity. There are many phenomena in nature whose patterns and behavior seem somewhat unpredictable yet these resulting patterns appear highly structured and organized. Scientists and mathematicians have developed techniques (e.</description>
+    </item>
+    
+    <item>
+      <title>Review of Complexity Book by Melanie Mitchell</title>
       <link>//ericpena.github.io/articles/mitchell.html</link>
       <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
       
