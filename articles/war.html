@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "War –– Coding the Card Game",
   "url": "\/\/ericpena.github.io\/articles\/war.html",
-  "wordCount": "1550",
+  "wordCount": "1554",
   "datePublished": "2019-03-16T00:00:00-07:00",
   "dateModified": "2019-03-16T00:00:00-07:00",
   "author": {
@@ -148,8 +148,11 @@ MathJax.Hub.Config({
       </div>
     </header>
     <div class="content">
-    <h1 id="war-simulation-in-python">War Simulation in Python</h1>
-<h4 id="game-designer-greg-costikyan-has-observed-that-since-there-are-no-choices-in-the-game-and-all-outcomes-are-random-it-cannot-be-considered-a-game-by-some-definitions-i-chose-to-program-this-game-because-its-complete-random-chance-feature-it-was-an-opportunity-to-practice-python-and-writing-recursive-functions">Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. I chose to program this game because its complete random chance feature. It was an opportunity to practice python and writing recursive functions.</h4>
+    <h4 id="simulation-and-analysis-of-war-the-card-game">Simulation and Analysis of War (the card game)</h4>
+<blockquote>
+<p>Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. I chose to program this game because its complete random chance feature. It was an opportunity to practice python and writing recursive functions.
+<img src="img_war/featured.png" alt=""></p>
+</blockquote>
 <h1 id="the-objective-of-the-game-is-to-win-all-cards">The objective of the game is to win all cards.</h1>
 <p>A 52-card deck is divided evenly among the players, giving each a down stack. In unison, each player reveals the top card of their deck—this is a &ldquo;battle&rdquo;-and the player with the higher card takes both of the cards played and moves them to their reserves stack. The reserves stack is used when there are no longer cards to play in hand.</p>
 <p>If the two cards played are of equal value, then there is a &ldquo;war&rdquo;. Both players place the next three cards from their hand face down (depending on the variant) and then another card face-up. The owner of the higher face-up card wins the war and adds all six cards on the table to their reserves deck. If the face-up cards are again equal then the battle repeats with another set of face-down/up cards. This repeats until one player&rsquo;s face-up card is higher than their opponent&rsquo;s. This is the part of the game where recursion is helpful. In theory, there can be any number of &ldquo;wars&rdquo; only constrained by the number of cards in the deck. Most descriptions of War are unclear about what happens if a player runs out of cards during a war. In this variant, the player immediately loses.</p>
@@ -386,7 +389,7 @@ $$y(x)=0.0549x+1.2212$$</p>
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Eric Peña, <time datetime="2021">2021</time>. All 24 notes and articles are available on <a href="https://github.com/ericpena/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Eric Peña, <time datetime="2021">2021</time>. All 27 notes and articles are available on <a href="https://github.com/ericpena/">GitHub</a>.</span>
         </div>
     </footer>
 

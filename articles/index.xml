@@ -30,12 +30,22 @@
     </item>
     
     <item>
-      <title>Diversity in Threshold Linear Networks</title>
-      <link>//ericpena.github.io/articles/threshold-network.html</link>
-      <pubDate>Mon, 16 Dec 2019 00:00:00 -0700</pubDate>
+      <title>Physics Problem –– Optimizing Trajectory Angle</title>
+      <link>//ericpena.github.io/articles/falling_balls.html</link>
+      <pubDate>Fri, 13 Dec 2019 00:00:00 -0700</pubDate>
       
-      <guid>//ericpena.github.io/articles/threshold-network.html</guid>
-      <description>$$\frac{d x_i}{dt} = -x_i + \left[ \sum_{j=1}^{n} W_{ij} x_j + \theta \right]_+ i = 1, \ldots, n$$</description>
+      <guid>//ericpena.github.io/articles/falling_balls.html</guid>
+      <description>Introduction I had the pleasure of teaching physics for the Pre First-Year Academic and Career Engagement (PREFACE) Program. These are students that graduated high school and are transitioning into college to study engineering. The following is a problem I gave my students as a challenge question on their final. Many students found this problem interesting and we had a long discussion about the power of learning theoretical mechanics for the future of their respective degrees.</description>
+    </item>
+    
+    <item>
+      <title>Diversity in Competitive Threshold Linear Networks</title>
+      <link>//ericpena.github.io/articles/ctln.html</link>
+      <pubDate>Wed, 11 Dec 2019 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/articles/ctln.html</guid>
+      <description>Figure 1 — Directed Network Which Represents Threshold Linear Network
+Adjacency Matrix Representing Directed Network $$\begin{pmatrix} 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 \\ 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0\end{pmatrix}$$</description>
     </item>
     
     <item>
@@ -45,6 +55,27 @@
       
       <guid>//ericpena.github.io/articles/ga-liso.html</guid>
       <description>Abstract The mechanism by which nature exhibits emergent patterns and behaviors has been a mystery throughout history. One application that has been developed which tends to mimic nature is Conway’s Game of Life — an application in the field of cellular automata. The ability to predict a final state of a system, given an initial state in the context of Game of Life, come as an insurmountable task. In this work, genetic algorithms are explored along with how they may be used to search for initial conditions such that their final outcomes are optimal.</description>
+    </item>
+    
+    <item>
+      <title>Python Character Analysis</title>
+      <link>//ericpena.github.io/articles/charater_analysis.html</link>
+      <pubDate>Thu, 03 Oct 2019 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/articles/charater_analysis.html</guid>
+      <description>Introduction I have separated my work into sections so ease of flow. All Python code is included in this article. Observations of the data are shown in the histogram and heatmap below.
+Header The header of my python file gives general information:
+Title: Python Character Analysis Author: Eric Pena Date: Oct. 2019 Text Source: Academic Sample http://www.thegrammarlab.com/?nor-portfolio=1000000-word-sample-corpora Packages Below are important packages that I am importing for the program to work properly.</description>
+    </item>
+    
+    <item>
+      <title>Speed of Julia</title>
+      <link>//ericpena.github.io/articles/julia_speed.html</link>
+      <pubDate>Mon, 09 Sep 2019 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/articles/julia_speed.html</guid>
+      <description>Creating fib(n) function fib(n) if (n == 1 || n == 2) return 1 else return fib(n - 1) + fib(n - 2) end end Timing fib(n) 1:40 function fibTime(k) t = [] for i in 1:k push!(t, (@timed fib(i))[2]) end return t end # :: Print @timed Fibonacci 1 through 40 println(fibTime(40)) Plotting @Timed Results The timing for Julia is surprisingly very fast!
+using Plots plot(fibTime(40), title=&amp;#34;Timed Recursive Fibonacci Algorithm&amp;#34;, color = :red, fill = (0, .</description>
     </item>
     
     <item>
@@ -83,7 +114,7 @@ Sante Fe Institute Complexity Explorer Quanta Magazine Nature The Nature journal
       <pubDate>Sat, 16 Mar 2019 00:00:00 -0700</pubDate>
       
       <guid>//ericpena.github.io/articles/war.html</guid>
-      <description>War Simulation in Python Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. I chose to program this game because its complete random chance feature. It was an opportunity to practice python and writing recursive functions. The objective of the game is to win all cards. A 52-card deck is divided evenly among the players, giving each a down stack.</description>
+      <description>Simulation and Analysis of War (the card game)  Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. I chose to program this game because its complete random chance feature. It was an opportunity to practice python and writing recursive functions.  The objective of the game is to win all cards.</description>
     </item>
     
     <item>
