@@ -29,5 +29,73 @@
       <description>Part I: Introduction Providing the multifaceted story of how complex systems has evolved into what it is today is no easy feat. Dr. Melanie Mitchell not only gives a comprehensive historical tour of science and mathematics, she also provides foundational knowledge that any reader can carry to appreciate the essence of what it means for a system to be complex in the technical sense. Early on, she gives a clear definition of complex systems as an interdisciplinary field that studies how large networks of entities with no central controller can organize themselves and exhibit collective behavior given simple rules.</description>
     </item>
     
+    <item>
+      <title>Diversity in Threshold Linear Networks</title>
+      <link>//ericpena.github.io/articles/threshold-network.html</link>
+      <pubDate>Mon, 16 Dec 2019 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/articles/threshold-network.html</guid>
+      <description>$$\frac{d x_i}{dt} = -x_i + \left[ \sum_{j=1}^{n} W_{ij} x_j + \theta \right]_+ i = 1, \ldots, n$$</description>
+    </item>
+    
+    <item>
+      <title>Genetic Algorithm — Cellular Automata Optimization</title>
+      <link>//ericpena.github.io/articles/ga-liso.html</link>
+      <pubDate>Sun, 01 Dec 2019 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/articles/ga-liso.html</guid>
+      <description>Abstract The mechanism by which nature exhibits emergent patterns and behaviors has been a mystery throughout history. One application that has been developed which tends to mimic nature is Conway’s Game of Life — an application in the field of cellular automata. The ability to predict a final state of a system, given an initial state in the context of Game of Life, come as an insurmountable task. In this work, genetic algorithms are explored along with how they may be used to search for initial conditions such that their final outcomes are optimal.</description>
+    </item>
+    
+    <item>
+      <title>Speed Walking in Chicago</title>
+      <link>//ericpena.github.io/articles/speed-walking.html</link>
+      <pubDate>Tue, 30 Apr 2019 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/articles/speed-walking.html</guid>
+      <description>Chicagoans Always Speed My morning commute to work in the heart of downtown Chicago is very regular: Enjoy blazing hot coffee and listen to an interesting podcast all while super-speed-walking all the way to the office. I often think how much time I would save by teleporting to the office instead. Even while often walking faster than most on the busy morning sidewalks, there are folks that zoom past me but still appear to be walking gracefully.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Tensors</title>
+      <link>//ericpena.github.io/articles/tensors.html</link>
+      <pubDate>Sat, 20 Apr 2019 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/articles/tensors.html</guid>
+      <description>Motivation:
+ General Relativity Inertia Tensor Stress Tensor  It took me a whole week figure out what a tensor actually is. You will find many definitions and some are only partially correct. Let&amp;rsquo;s walk through the different explanations and learn how to think about them.
+ (Array Definition) Tensor = Multi-dimensional array of numbers (scalars (rank 0), vectors (rank 1), matricies (rank 2), etc.). This is true in a sense but there is a truer geometrical meaning behind the concept of a tensor.</description>
+    </item>
+    
+    <item>
+      <title>Complex Systems News Resources</title>
+      <link>//ericpena.github.io/articles/news.html</link>
+      <pubDate>Sun, 31 Mar 2019 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/articles/news.html</guid>
+      <description>Keeping Up With Complex Systems Science News It can be difficult to find time to keep up with interesting science, especially when articles are dense and abstruse. With an unfortunate name like complex systems, keeping up with the intersting news can be a daunting task. Here are a few resources that I use to keep up with the fascinating world of complex systems and systems engineering.
+Sante Fe Institute Complexity Explorer Quanta Magazine Nature The Nature journal has a Complexity page that shows the latest new for complex systems.</description>
+    </item>
+    
+    <item>
+      <title>War –– Coding the Card Game</title>
+      <link>//ericpena.github.io/articles/war.html</link>
+      <pubDate>Sat, 16 Mar 2019 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/articles/war.html</guid>
+      <description>War Simulation in Python Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. I chose to program this game because its complete random chance feature. It was an opportunity to practice python and writing recursive functions. The objective of the game is to win all cards. A 52-card deck is divided evenly among the players, giving each a down stack.</description>
+    </item>
+    
+    <item>
+      <title>Mathematics of Network Theory</title>
+      <link>//ericpena.github.io/articles/network-theory.html</link>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/articles/network-theory.html</guid>
+      <description>Graphs may be represented in the form of a matrix. Main types of graphs that may be represented are:
+ Simple Graph Multigraph Directed Graph Weighted Graph Bipartite Graph  Directed Graph Directed graphs are graphs that contain edges with direction. Vertices may have inward and outward edges.
+Unlike adjacency matricies for simped graphs, adjacency matricies for directed graphs are non-symmetric. Elements of an adjacency matrix for a directed graph may be denoted as: $$A_{ij}$$ which represents an edge from vertex $j$ to $i$.</description>
+    </item>
+    
   </channel>
 </rss>

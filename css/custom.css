@@ -155,7 +155,8 @@ body > .container {
 }
 
 a {
-  color: #808B96; /*#0046B7*/
+  color: #6fa8dc; /*#0046B7*/
+  /* font-style: italic; */
 }
 
 a:hover {
@@ -534,7 +535,7 @@ Code
 ---------------------------------------------------------*/
 
 pre code{
-  color:#747474;
+  color: #e6e6e6 /*#747474;*/
 }
 
 pre {
@@ -557,7 +558,7 @@ Images
 img{
   max-width: 100%;
   height: auto;
-  width: 100%\9; /* ie8 */
+  width: 100%; /*ie8 \9*/
   display:block;
     margin-left: auto;
     margin-right: auto;
