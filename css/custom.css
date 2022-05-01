@@ -558,7 +558,7 @@ Images
 img{
   max-width: 100%;
   height: auto;
-  width: 100%; /*ie8 \9*/
+  /* width: 100%; ie8 */
   display:block;
     margin-left: auto;
     margin-right: auto;
