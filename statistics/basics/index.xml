@@ -1,0 +1,33 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>statistics - Eric Peña</title>
+    <link>//ericpena.github.io/statistics/basics/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Dec 2021 00:00:00 -0700</lastBuildDate>
+    
+        <atom:link href="//ericpena.github.io/statistics/basics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Probability of Unmatching Socks</title>
+      <link>//ericpena.github.io/statistics/basics/unmatching-socks.html</link>
+      <pubDate>Thu, 09 Dec 2021 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/statistics/basics/unmatching-socks.html</guid>
+      <description>Introduction Probability pops up everywhere! One day, I was digging in a basket of (clean) clothes in search of socks pulling several of them out one by one. However, I pulled six socks out but none of them matched! I thought to myself: what the heck is the probability of THAT happening? So let&amp;rsquo;s dig into how one might figure this out. But before we start answering this, let&amp;rsquo;s be more clear about what the situation is.</description>
+    </item>
+    
+    <item>
+      <title>P Values</title>
+      <link>//ericpena.github.io/statistics/basics/p-value.html</link>
+      <pubDate>Wed, 16 Dec 2020 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/statistics/basics/p-value.html</guid>
+      <description>What is a P-Value! (in Hypohtesis Testing) An average person might say p-values are of utmost importance in a student&amp;rsquo;s statistical toolbox. However, while teaching statistics and probability, I have noticed its subtle definition and conceptual underpinnings being grossly under-emphasized. This note may help clarify what a p-value is and how we use it to make decisions.
+To explain what a p-value is, I will start with the &amp;ldquo;p&amp;rdquo;. What does it stand for?</description>
+    </item>
+    
+  </channel>
+</rss>
