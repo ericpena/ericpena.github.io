@@ -19,14 +19,15 @@
 <meta property="og:title" content="First Genetic Algorithm" />
 <meta property="og:description" content="Logistic Map" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="//ericpena.github.io/machine_learning/optimization/ga-intro.html" />
+<meta property="og:url" content="//ericpena.github.io/machine_learning/optimization/ga-intro.html" /><meta property="article:section" content="machine_learning" />
 <meta property="article:published_time" content="2020-04-14T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-04-14T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="First Genetic Algorithm"/>
 <meta name="twitter:description" content="Logistic Map"/>
-<meta name="generator" content="Hugo 0.68.3" />
+<meta name="generator" content="Hugo 0.89.2" />
 
     
 <script type="application/ld+json">
@@ -36,8 +37,8 @@
   "headline": "First Genetic Algorithm",
   "url": "\/\/ericpena.github.io\/machine_learning\/optimization\/ga-intro.html",
   "wordCount": "529",
-  "datePublished": "2020-04-14T00:00:00\x2b00:00",
-  "dateModified": "2020-04-14T00:00:00\x2b00:00",
+  "datePublished": "2020-04-14T00:00:00\u002b00:00",
+  "dateModified": "2020-04-14T00:00:00\u002b00:00",
   "author": {
     "@type": "Person",
     "name": "Eric Peña"
@@ -162,7 +163,7 @@ MathJax.Hub.Config({
 </ul>
 <h1 id="programming-genetic-algorithms-in-python">Programming Genetic Algorithms in Python</h1>
 <p>It&rsquo;s typical to use object oriented programming when developing Genetic Algorithms in code. In our simple example, let&rsquo;s create a class called <code>Agent</code>. In the language of GA, these are called the <em>chromosome</em>. This chromosome will simply be a string in our program but I&rsquo;d recommend always thinking in terms of GA and the termology used in this domain. If the text string represents a chromosome, then the characters that make up this string are its <em>genes</em>. Below is an example of a simple genetic algorithm that will be given the task of finding the string: <code>ericpena</code>. The algorithm is broken up into distrinct methods for clarity.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">fuzzywuzzy</span> <span class="kn">import</span> <span class="n">fuzz</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">fuzzywuzzy</span> <span class="kn">import</span> <span class="n">fuzz</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">string</span>
 
@@ -178,8 +179,8 @@ MathJax.Hub.Config({
 
 		<span class="k">return</span> <span class="s1">&#39;String: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">string</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; Fitness: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fitness</span><span class="p">)</span>
 </code></pre></div><h1 id="initialize-population">Initialize Population</h1>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">in_str</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="n">in_str_len</span> <span class="o">=</span> <span class="bp">None</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">in_str</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">in_str_len</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">population</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">generations</span> <span class="o">=</span> <span class="mi">2500</span>
 
@@ -187,7 +188,7 @@ MathJax.Hub.Config({
 
 	<span class="k">return</span> <span class="p">[</span><span class="n">Agent</span><span class="p">(</span><span class="n">length</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">population</span><span class="p">)]</span>
 </code></pre></div><h1 id="define-fitness-function">Define Fitness Function</h1>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">fitness</span><span class="p">(</span><span class="n">agents</span><span class="p">):</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">fitness</span><span class="p">(</span><span class="n">agents</span><span class="p">):</span>
 
 	<span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">agents</span><span class="p">:</span>
 
@@ -195,15 +196,15 @@ MathJax.Hub.Config({
 
 	<span class="k">return</span> <span class="n">agents</span>
 </code></pre></div><h1 id="define-selection-criteria">Define Selection Criteria</h1>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">selection</span><span class="p">(</span><span class="n">agents</span><span class="p">):</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">selection</span><span class="p">(</span><span class="n">agents</span><span class="p">):</span>
 
-	<span class="n">agents</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">agents</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">agent</span><span class="p">:</span> <span class="n">agent</span><span class="o">.</span><span class="n">fitness</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-	<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">agents</span><span class="p">)))</span>
+	<span class="n">agents</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">agents</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">agent</span><span class="p">:</span> <span class="n">agent</span><span class="o">.</span><span class="n">fitness</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">agents</span><span class="p">)))</span>
 	<span class="n">agents</span> <span class="o">=</span> <span class="n">agents</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="mf">0.2</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">agents</span><span class="p">))]</span>
 
 	<span class="k">return</span> <span class="n">agents</span>
 </code></pre></div><h1 id="define-crossover-mechanism">Define Crossover Mechanism</h1>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">crossover</span><span class="p">(</span><span class="n">agents</span><span class="p">):</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">crossover</span><span class="p">(</span><span class="n">agents</span><span class="p">):</span>
 
 	<span class="n">offspring</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -224,7 +225,7 @@ MathJax.Hub.Config({
 
 	<span class="k">return</span> <span class="n">agents</span>
 </code></pre></div><h1 id="define-ga-mutation">Define GA Mutation</h1>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">mutation</span><span class="p">(</span><span class="n">agents</span><span class="p">):</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">mutation</span><span class="p">(</span><span class="n">agents</span><span class="p">):</span>
 
 	<span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">agents</span><span class="p">:</span>
 
@@ -238,13 +239,13 @@ MathJax.Hub.Config({
 
 	<span class="k">return</span> <span class="n">agents</span>
 </code></pre></div><h1 id="running-ga">Running GA</h1>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">ga</span><span class="p">():</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">ga</span><span class="p">():</span>
 	
 	<span class="n">agents</span> <span class="o">=</span> <span class="n">init_agents</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">in_str_len</span><span class="p">)</span>
 
 	<span class="k">for</span> <span class="n">generation</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">generations</span><span class="p">):</span>
 
-		<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Generation: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">generation</span><span class="p">))</span>
+		<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Generation: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">generation</span><span class="p">))</span>
 
 		<span class="n">agents</span> <span class="o">=</span> <span class="n">fitness</span><span class="p">(</span><span class="n">agents</span><span class="p">)</span>
 		<span class="n">agents</span> <span class="o">=</span> <span class="n">selection</span><span class="p">(</span><span class="n">agents</span><span class="p">)</span>
@@ -253,9 +254,9 @@ MathJax.Hub.Config({
 
 		<span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">fitness</span> <span class="o">&gt;=</span> <span class="mi">90</span> <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">agents</span><span class="p">):</span>
 
-			<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Threshold met!&#39;</span><span class="p">)</span>
-			<span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+			<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Threshold met!&#39;</span><span class="p">)</span>
+			<span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
 	
 	<span class="n">in_str</span> <span class="o">=</span> <span class="s1">&#39;ericpena&#39;</span>
 	<span class="n">in_str_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">in_str</span><span class="p">)</span>

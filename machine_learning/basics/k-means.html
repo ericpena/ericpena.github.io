@@ -19,14 +19,15 @@
 <meta property="og:title" content="K-Means Clustering From Scratch" />
 <meta property="og:description" content="Performing K-Means Clustering From Scratch" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="//ericpena.github.io/machine_learning/basics/k-means.html" />
+<meta property="og:url" content="//ericpena.github.io/machine_learning/basics/k-means.html" /><meta property="article:section" content="machine_learning" />
 <meta property="article:published_time" content="2021-07-01T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-07-01T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="K-Means Clustering From Scratch"/>
 <meta name="twitter:description" content="Performing K-Means Clustering From Scratch"/>
-<meta name="generator" content="Hugo 0.68.3" />
+<meta name="generator" content="Hugo 0.89.2" />
 
     
 <script type="application/ld+json">
@@ -36,8 +37,8 @@
   "headline": "K-Means Clustering From Scratch",
   "url": "\/\/ericpena.github.io\/machine_learning\/basics\/k-means.html",
   "wordCount": "1083",
-  "datePublished": "2021-07-01T00:00:00\x2b00:00",
-  "dateModified": "2021-07-01T00:00:00\x2b00:00",
+  "datePublished": "2021-07-01T00:00:00\u002b00:00",
+  "dateModified": "2021-07-01T00:00:00\u002b00:00",
   "author": {
     "@type": "Person",
     "name": "Eric Peña"
@@ -163,10 +164,10 @@ MathJax.Hub.Config({
 <ul>
 <li>Let&rsquo;s begin with simply simulating some points that we will then use to cluster</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">points</span> <span class="o">=</span> <span class="p">[[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
 
 <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">points</span><span class="p">]</span>
@@ -187,7 +188,7 @@ MathJax.Hub.Config({
 <li>To choose initial clusters, let&rsquo;s take a sample of our data, calculate the means of our $X$ and $Y$ values and assign this to a cluster</li>
 <li>Let&rsquo;s say we take a small number of samples just to get rough starting clustering</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">initialize_clusters</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">initialize_clusters</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
 
     <span class="n">clusters</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span>
 
@@ -198,7 +199,7 @@ MathJax.Hub.Config({
         <span class="n">clusters</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
 
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">clusters</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">clusters</span> <span class="o">=</span> <span class="n">initialize_clusters</span><span class="p">(</span><span class="n">npoints</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
 </code></pre></div><h3 id="assign-points-to-a-cluster">Assign Points to a Cluster</h3>
 <ul>
@@ -206,9 +207,9 @@ MathJax.Hub.Config({
 <li>We will need a distance method to define &lsquo;closeness&rsquo;</li>
 <li>We will also need a method that allows us to compare each point to all clusters and choose the closes</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">assign_labels</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">clusters</span><span class="p">):</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">assign_labels</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">clusters</span><span class="p">):</span>
 
     <span class="n">lpoints</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 
@@ -222,11 +223,11 @@ MathJax.Hub.Config({
         <span class="n">lpoints</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">lpoints</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
     
     <span class="k">return</span> <span class="n">lpoints</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">lpoints</span> <span class="o">=</span> <span class="n">assign_labels</span><span class="p">(</span><span class="n">npoints</span><span class="p">,</span> <span class="n">clusters</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="n">lpoints</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">lpoints</span> <span class="o">=</span> <span class="n">assign_labels</span><span class="p">(</span><span class="n">npoints</span><span class="p">,</span> <span class="n">clusters</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="n">lpoints</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">lpoints</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">l</span> <span class="o">=</span> <span class="n">lpoints</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">]</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="n">colors</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Initial Clusters&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
@@ -237,7 +238,7 @@ MathJax.Hub.Config({
 <ul>
 <li>Now that we have initial clusters, we can recalculate the clusters</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">calculate_clusters</span><span class="p">(</span><span class="n">points</span><span class="p">):</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">calculate_clusters</span><span class="p">(</span><span class="n">points</span><span class="p">):</span>
     
     <span class="n">cluster_label</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]))</span>
     <span class="n">clusters</span> <span class="o">=</span> <span class="p">[]</span>
@@ -247,7 +248,7 @@ MathJax.Hub.Config({
         <span class="n">clusters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">mask</span><span class="p">,</span> <span class="p">:],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
         
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">clusters</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">calculate_clusters</span><span class="p">(</span><span class="n">npoints</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">calculate_clusters</span><span class="p">(</span><span class="n">npoints</span><span class="p">)</span>
 </code></pre></div><pre><code>array([[-0.90555932, -0.95877451,  0.        ],
        [ 0.94987571, -1.12258394,  1.        ],
        [-0.24173413,  1.00161447,  2.        ]])
@@ -259,12 +260,12 @@ MathJax.Hub.Config({
 <ul>
 <li>Generate new data and assign all points to the same group</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">points</span> <span class="o">=</span> <span class="p">[[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
 
 <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">points</span><span class="p">]</span>
 <span class="n">npoints</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">iterations</span> <span class="o">=</span> <span class="mi">30</span>
 
 <span class="n">clusters</span> <span class="o">=</span> <span class="n">initialize_clusters</span><span class="p">(</span><span class="n">npoints</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
@@ -274,7 +275,7 @@ MathJax.Hub.Config({
     <span class="n">npoints</span> <span class="o">=</span> <span class="n">assign_labels</span><span class="p">(</span><span class="n">npoints</span><span class="p">,</span> <span class="n">clusters</span><span class="p">)</span>
     <span class="c1"># Update cluster</span>
     <span class="n">clusters</span> <span class="o">=</span> <span class="n">calculate_clusters</span><span class="p">(</span><span class="n">npoints</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="n">npoints</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="n">npoints</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">npoints</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">l</span> <span class="o">=</span> <span class="n">npoints</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
 
@@ -290,18 +291,18 @@ MathJax.Hub.Config({
 <ul>
 <li>We can calculate the sum of squared distances between all points and their respective clusters</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">calculate_score</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">clusters</span><span class="p">):</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">calculate_score</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">clusters</span><span class="p">):</span>
     
     <span class="n">dist_list</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">points</span><span class="p">:</span>
         <span class="n">dist_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">distance</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">clusters</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">])])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dist_list</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">calculate_score</span><span class="p">(</span><span class="n">npoints</span><span class="p">,</span> <span class="n">clusters</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">calculate_score</span><span class="p">(</span><span class="n">npoints</span><span class="p">,</span> <span class="n">clusters</span><span class="p">)</span>
 </code></pre></div><pre><code>63.98898775077078
 </code></pre>
 <h3 id="iterate-through-and-find-best-k-value-by-plotting-elbow">Iterate through and find best $k$ value by plotting Elbow</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">iterations</span> <span class="o">=</span> <span class="mi">50</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">iterations</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;C&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 
@@ -336,7 +337,7 @@ MathJax.Hub.Config({
 <p><img src="k-means/k-means_28_6.png" alt="png"></p>
 <p><img src="k-means/k-means_28_7.png" alt="png"></p>
 <p><img src="k-means/k-means_28_8.png" alt="png"></p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">],</span> <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">],</span> <span class="s1">&#39;ro-&#39;</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">],</span> <span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">],</span> <span class="s1">&#39;ro-&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Elbow Plot&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;k (Number of Clusters)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Sum of Within Sum of Squared Errors&#39;</span><span class="p">)</span>
@@ -350,9 +351,9 @@ MathJax.Hub.Config({
 <ul>
 <li>Although we show how KMeans may be implemented ourselves with a few simple ideas, we can take advantage of libraries as well such as ScikitLearn. In fact, it only takes one line!</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">y_pred</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">npoints</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">])</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="n">npoints</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">y_pred</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">npoints</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="n">npoints</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">npoints</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">l</span> <span class="o">=</span> <span class="n">y_pred</span><span class="o">.</span><span class="n">labels_</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="n">colors</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l</span><span class="p">])</span>
@@ -362,14 +363,14 @@ MathJax.Hub.Config({
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div><p><img src="k-means/k-means_34_0.png" alt="png"></p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">y_pred</span><span class="o">.</span><span class="n">inertia_</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">y_pred</span><span class="o">.</span><span class="n">inertia_</span>
 </code></pre></div><pre><code>39.46338949369036
 </code></pre>
 <h1 id="6-comparing-performance">6. Comparing Performance</h1>
 <ul>
 <li>When compared to the scores we obtained from scrach (when $k = 4$), the scores are VERY similar! Just compare the &ldquo;inertia&rdquo; above with the score for $k = 4$ below.</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">scores</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">scores</span>
 </code></pre></div><pre><code>[[1, 236.5967940882629],
  [2, 121.32804203454275],
  [3, 63.98898775077078],

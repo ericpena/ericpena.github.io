@@ -19,14 +19,15 @@
 <meta property="og:title" content="Python Character Analysis" />
 <meta property="og:description" content="Python Character Analysis" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="//ericpena.github.io/articles/charater_analysis.html" />
+<meta property="og:url" content="//ericpena.github.io/articles/charater_analysis.html" /><meta property="article:section" content="articles" />
 <meta property="article:published_time" content="2019-10-03T00:00:00-07:00" />
 <meta property="article:modified_time" content="2019-10-03T00:00:00-07:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Python Character Analysis"/>
 <meta name="twitter:description" content="Python Character Analysis"/>
-<meta name="generator" content="Hugo 0.68.3" />
+<meta name="generator" content="Hugo 0.89.2" />
 
     
 <script type="application/ld+json">
@@ -153,7 +154,7 @@ MathJax.Hub.Config({
 <!-- raw HTML omitted -->
 <h2 id="header">Header</h2>
 <p>The header of my python file gives general information:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Title</span><span class="p">:</span> <span class="n">Python</span> <span class="n">Character</span> <span class="n">Analysis</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">Title</span><span class="p">:</span> <span class="n">Python</span> <span class="n">Character</span> <span class="n">Analysis</span>
 <span class="n">Author</span><span class="p">:</span> <span class="n">Eric</span> <span class="n">Pena</span>
 <span class="n">Date</span><span class="p">:</span> <span class="n">Oct</span><span class="o">.</span> <span class="mi">2019</span>
 
@@ -163,15 +164,15 @@ MathJax.Hub.Config({
 </code></pre></div><!-- raw HTML omitted -->
 <h2 id="packages">Packages</h2>
 <p>Below are important packages that I am importing for the program to work properly.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">fileinput</span> <span class="kn">as</span> <span class="nn">fi</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">fileinput</span> <span class="k">as</span> <span class="nn">fi</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">string</span>
 </code></pre></div><!-- raw HTML omitted -->
 <h2 id="user-defined-functions">User Defined Functions</h2>
 <p>I have defined several functions used by the \verb|main()| function:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="nb">file</span><span class="p">):</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
 	<span class="s2">&#34;&#34;&#34;Reads given file and parses characters
 </span><span class="s2">
 </span><span class="s2">	Args:
@@ -179,7 +180,7 @@ MathJax.Hub.Config({
 </span><span class="s2">	Returns:
 </span><span class="s2">		charArr: parsed character array
 </span><span class="s2">	&#34;&#34;&#34;</span>
-	<span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fi</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">line</span><span class="p">]</span>
+	<span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fi</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">line</span><span class="p">]</span>
 
 <span class="c1"># -------------------------------------------------------------------</span>
 
@@ -220,7 +221,7 @@ MathJax.Hub.Config({
 </span><span class="s2">	Returns:
 </span><span class="s2">		None: only prints out the contents of the dictionary
 </span><span class="s2">	&#34;&#34;&#34;</span>
-	<span class="p">[</span><span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; --- &#39;</span> <span class="o">+</span> <span class="n">key</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; :</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">))</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+	<span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; --- &#39;</span> <span class="o">+</span> <span class="n">key</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; :</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">))</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
 
 <span class="c1"># -------------------------------------------------------------------</span>
 
@@ -242,7 +243,7 @@ MathJax.Hub.Config({
 	<span class="n">alpha</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
 	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span>
 		<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span>
-			<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">ignore_index</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+			<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 	<span class="c1"># :: Pivot our dataframe to make a matrix for heatmap</span>
 	<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="s2">&#34;First&#34;</span><span class="p">,</span> <span class="s2">&#34;Second&#34;</span><span class="p">,</span> <span class="s2">&#34;Frequency&#34;</span><span class="p">)</span>
@@ -267,11 +268,11 @@ MathJax.Hub.Config({
 </span><span class="s2">	&#34;&#34;&#34;</span>
 	<span class="c1"># :: Creae heatmap and customize</span>
 	<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
-	<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&#34;binary&#34;</span><span class="p">,</span> <span class="n">robust</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">xticklabels</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+	<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&#34;binary&#34;</span><span class="p">,</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 	<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_label_position</span><span class="p">(</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
 	<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticks_position</span><span class="p">(</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
-	<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
-	<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+	<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+	<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 	<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;darkgray&#39;</span><span class="p">)</span>
 	<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;darkgray&#39;</span><span class="p">)</span>
 	<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;darkgray&#39;</span><span class="p">)</span>
@@ -285,7 +286,7 @@ MathJax.Hub.Config({
 </code></pre></div><!-- raw HTML omitted -->
 <h2 id="main-program">Main Program</h2>
 <p>This shows the code for the main program which utilizes the functions above.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
 	<span class="c1"># ---------------------------MAIN PROGRAM---------------------------</span>
 	<span class="c1"># :: Reads in text file</span>
 	<span class="c1"># :: Counts the frequencies</span>
@@ -307,7 +308,7 @@ MathJax.Hub.Config({
 	<span class="n">dict_print</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="n">partition2</span><span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;text.txt&#39;</span><span class="p">))))</span>
 
 	<span class="n">df</span> <span class="o">=</span> <span class="n">to_dataframe</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="n">partition2</span><span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;text.txt&#39;</span><span class="p">))))</span>
-	<span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 	
 	<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;/Users/ericpena/iCloud/Binghamton_Courses/500_Computational_Tools/HW2/heatmap.png&#39;</span>
 	<span class="n">show_heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
@@ -336,13 +337,13 @@ Figure 2 — Heatmap that shows the frequencies of character transitions</p>
 <li>$Bare$: It&rsquo;s interesting but not unexpected that the right bottom right is quite bare &mdash; very low frequencies later in the alphabet</li>
 </ul>
 <h2 id="robustness-parameter">Robustness Parameter</h2>
-<p>The heatmap above is actually using a <code>robust=True</code> parameter that normalizes the frequencies into a small range in order to improve the visualization. This is an improvement over the heatmap with the original frequencies. See below for the difference between the $RAW$ heatmap and the $ROBUST$ heatmap. More visual information can be obtained by using the $robust$ parameter since the `interesting&rsquo; events are much more pronounced.</p>
+<p>The heatmap above is actually using a <code>robust=True</code> parameter that normalizes the frequencies into a small range in order to improve the visualization. This is an improvement over the heatmap with the original frequencies. See below for the difference between the $RAW$ heatmap and the $ROBUST$ heatmap. More visual information can be obtained by using the $robust$ parameter since the `interesting' events are much more pronounced.</p>
 <p><img src="img_character_analysis/heatmap_robust.png" alt="">
 Figure 3 — Shows the difference between the Raw and Robust frequencies for the heatmap</p>
 <h2 id="appendix--output-data">Appendix — Output Data</h2>
 <!-- raw HTML omitted -->
 <h4 id="histogram-frenquencies">Histogram Frenquencies</h4>
-<p>{&lsquo;d&rsquo;: 234, &lsquo;i&rsquo;: 574, &lsquo;f&rsquo;: 233, &lsquo;e&rsquo;: 958, &lsquo;r&rsquo;: 428, &lsquo;n&rsquo;: 492, &lsquo;c&rsquo;: 255, ' &lsquo;: 1370, &lsquo;w&rsquo;: 111, &lsquo;h&rsquo;: 344, &lsquo;m&rsquo;: 184, &lsquo;s&rsquo;: 455, &lsquo;t&rsquo;: 653, &lsquo;o&rsquo;: 475, &lsquo;u&rsquo;: 206, &lsquo;a&rsquo;: 561, &lsquo;p&rsquo;: 146, &lsquo;l&rsquo;: 336, &lsquo;y&rsquo;: 77, &lsquo;x&rsquo;: 24, &lsquo;b&rsquo;: 111, &lsquo;k&rsquo;: 15, &lsquo;g&rsquo;: 103, &lsquo;v&rsquo;: 60, &lsquo;q&rsquo;: 20, &lsquo;j&rsquo;: 9, &lsquo;z&rsquo;: 11}</p>
+<p>{&rsquo;d': 234, &lsquo;i&rsquo;: 574, &lsquo;f&rsquo;: 233, &lsquo;e&rsquo;: 958, &lsquo;r&rsquo;: 428, &lsquo;n&rsquo;: 492, &lsquo;c&rsquo;: 255, ' &lsquo;: 1370, &lsquo;w&rsquo;: 111, &lsquo;h&rsquo;: 344, &rsquo;m&rsquo;: 184, &rsquo;s': 455, &rsquo;t': 653, &lsquo;o&rsquo;: 475, &lsquo;u&rsquo;: 206, &lsquo;a&rsquo;: 561, &lsquo;p&rsquo;: 146, &lsquo;l&rsquo;: 336, &lsquo;y&rsquo;: 77, &lsquo;x&rsquo;: 24, &lsquo;b&rsquo;: 111, &lsquo;k&rsquo;: 15, &lsquo;g&rsquo;: 103, &lsquo;v&rsquo;: 60, &lsquo;q&rsquo;: 20, &lsquo;j&rsquo;: 9, &lsquo;z&rsquo;: 11}</p>
 <h4 id="heatmap-frenquencies">Heatmap Frenquencies</h4>
 <p>d &mdash; i :	30
 i &mdash; f :	11
