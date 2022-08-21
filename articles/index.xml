@@ -16,8 +16,8 @@
       <pubDate>Sun, 24 Apr 2022 00:00:00 -0700</pubDate>
       
       <guid>//ericpena.github.io/articles/cellular_automata_intro.html</guid>
-      <description>Motivation  &amp;ldquo;With four parameters I can fit an elephant, and with five I can make him wiggle his trunk.&amp;rdquo; &amp;ndash; John von Neumann
- Throughout history, science has aimed to understand and model the natural world as accurately as possible despite its inherent complexity. There are many phenomena in nature whose patterns and behavior seem somewhat unpredictable yet these resulting patterns appear highly structured and organized. Scientists and mathematicians have developed techniques (e.</description>
+      <description>Motivation &amp;ldquo;With four parameters I can fit an elephant, and with five I can make him wiggle his trunk.&amp;rdquo; &amp;ndash; John von Neumann
+Throughout history, science has aimed to understand and model the natural world as accurately as possible despite its inherent complexity. There are many phenomena in nature whose patterns and behavior seem somewhat unpredictable yet these resulting patterns appear highly structured and organized. Scientists and mathematicians have developed techniques (e.</description>
     </item>
     
     <item>
@@ -94,8 +94,8 @@ using Plots plot(fibTime(40), title=&amp;#34;Timed Recursive Fibonacci Algorithm
       
       <guid>//ericpena.github.io/articles/tensors.html</guid>
       <description>Motivation:
- General Relativity Inertia Tensor Stress Tensor  It took me a whole week figure out what a tensor actually is. You will find many definitions and some are only partially correct. Let&amp;rsquo;s walk through the different explanations and learn how to think about them.
- (Array Definition) Tensor = Multi-dimensional array of numbers (scalars (rank 0), vectors (rank 1), matricies (rank 2), etc.). This is true in a sense but there is a truer geometrical meaning behind the concept of a tensor.</description>
+General Relativity Inertia Tensor Stress Tensor It took me a whole week figure out what a tensor actually is. You will find many definitions and some are only partially correct. Let&amp;rsquo;s walk through the different explanations and learn how to think about them.
+(Array Definition) Tensor = Multi-dimensional array of numbers (scalars (rank 0), vectors (rank 1), matricies (rank 2), etc.). This is true in a sense but there is a truer geometrical meaning behind the concept of a tensor.</description>
     </item>
     
     <item>
@@ -114,7 +114,7 @@ Sante Fe Institute Complexity Explorer Quanta Magazine Nature The Nature journal
       <pubDate>Sat, 16 Mar 2019 00:00:00 -0700</pubDate>
       
       <guid>//ericpena.github.io/articles/war.html</guid>
-      <description>Simulation and Analysis of War (the card game)  Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. I chose to program this game because its complete random chance feature. It was an opportunity to practice python and writing recursive functions.  The objective of the game is to win all cards.</description>
+      <description>Simulation and Analysis of War (the card game) Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. I chose to program this game because its complete random chance feature. It was an opportunity to practice python and writing recursive functions. The objective of the game is to win all cards. A 52-card deck is divided evenly among the players, giving each a down stack.</description>
     </item>
     
     <item>
@@ -124,7 +124,7 @@ Sante Fe Institute Complexity Explorer Quanta Magazine Nature The Nature journal
       
       <guid>//ericpena.github.io/articles/network-theory.html</guid>
       <description>Graphs may be represented in the form of a matrix. Main types of graphs that may be represented are:
- Simple Graph Multigraph Directed Graph Weighted Graph Bipartite Graph  Directed Graph Directed graphs are graphs that contain edges with direction. Vertices may have inward and outward edges.
+Simple Graph Multigraph Directed Graph Weighted Graph Bipartite Graph Directed Graph Directed graphs are graphs that contain edges with direction. Vertices may have inward and outward edges.
 Unlike adjacency matricies for simped graphs, adjacency matricies for directed graphs are non-symmetric. Elements of an adjacency matrix for a directed graph may be denoted as: $$A_{ij}$$ which represents an edge from vertex $j$ to $i$.</description>
     </item>
     

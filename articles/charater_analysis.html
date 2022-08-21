@@ -27,7 +27,10 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Python Character Analysis"/>
 <meta name="twitter:description" content="Python Character Analysis"/>
-<meta name="generator" content="Hugo 0.89.2" />
+
+
+<meta name="generator" content="Hugo 0.101.0" />
+
 
     
 <script type="application/ld+json">
@@ -61,9 +64,6 @@
     <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
 
     
-    <link href="" rel="alternate" type="application/rss+xml" title="Eric Peña All Notes And Articles" /> 
-    
-    <link href="//ericpena.github.io/articles/index.xml" rel="alternate" type="application/rss+xml" title="Eric Peña Articles" />
 
     <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -154,168 +154,168 @@ MathJax.Hub.Config({
 <!-- raw HTML omitted -->
 <h2 id="header">Header</h2>
 <p>The header of my python file gives general information:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">Title</span><span class="p">:</span> <span class="n">Python</span> <span class="n">Character</span> <span class="n">Analysis</span>
-<span class="n">Author</span><span class="p">:</span> <span class="n">Eric</span> <span class="n">Pena</span>
-<span class="n">Date</span><span class="p">:</span> <span class="n">Oct</span><span class="o">.</span> <span class="mi">2019</span>
-
-<span class="n">Text</span> <span class="n">Source</span><span class="p">:</span>
-<span class="n">Academic</span> <span class="n">Sample</span>
-<span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">thegrammarlab</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="err">?</span><span class="n">nor</span><span class="o">-</span><span class="n">portfolio</span><span class="o">=</span><span class="mi">1000000</span><span class="o">-</span><span class="n">word</span><span class="o">-</span><span class="n">sample</span><span class="o">-</span><span class="n">corpora</span>
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">Title</span><span class="p">:</span> <span class="n">Python</span> <span class="n">Character</span> <span class="n">Analysis</span>
+</span></span><span class="line"><span class="cl"><span class="n">Author</span><span class="p">:</span> <span class="n">Eric</span> <span class="n">Pena</span>
+</span></span><span class="line"><span class="cl"><span class="n">Date</span><span class="p">:</span> <span class="n">Oct</span><span class="o">.</span> <span class="mi">2019</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Text</span> <span class="n">Source</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="n">Academic</span> <span class="n">Sample</span>
+</span></span><span class="line"><span class="cl"><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">thegrammarlab</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="err">?</span><span class="n">nor</span><span class="o">-</span><span class="n">portfolio</span><span class="o">=</span><span class="mi">1000000</span><span class="o">-</span><span class="n">word</span><span class="o">-</span><span class="n">sample</span><span class="o">-</span><span class="n">corpora</span>
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <h2 id="packages">Packages</h2>
 <p>Below are important packages that I am importing for the program to work properly.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">fileinput</span> <span class="k">as</span> <span class="nn">fi</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">string</span>
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">fileinput</span> <span class="k">as</span> <span class="nn">fi</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">string</span>
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <h2 id="user-defined-functions">User Defined Functions</h2>
 <p>I have defined several functions used by the \verb|main()| function:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
-	<span class="s2">&#34;&#34;&#34;Reads given file and parses characters
-</span><span class="s2">
-</span><span class="s2">	Args:
-</span><span class="s2">		file: the text file to be parsed
-</span><span class="s2">	Returns:
-</span><span class="s2">		charArr: parsed character array
-</span><span class="s2">	&#34;&#34;&#34;</span>
-	<span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fi</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">line</span><span class="p">]</span>
-
-<span class="c1"># -------------------------------------------------------------------</span>
-
-<span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
-	<span class="s2">&#34;&#34;&#34;Counts characters and creates freq table
-</span><span class="s2">
-</span><span class="s2">	Args:
-</span><span class="s2">		array: character array of text
-</span><span class="s2">	Returns:
-</span><span class="s2">		freq: dictionary that represents freq table
-</span><span class="s2">	&#34;&#34;&#34;</span>
-	<span class="k">return</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span> <span class="n">array</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">array</span><span class="p">}</span>
-
-
-<span class="c1"># -------------------------------------------------------------------</span>
-
-
-<span class="k">def</span> <span class="nf">partition2</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
-	<span class="s2">&#34;&#34;&#34;Works similar to Mathematica&#39;s partition function
-</span><span class="s2">		but slightly differently. This function will create
-</span><span class="s2">		a string that combines each pair of characters in
-</span><span class="s2">		order to be hashed through by the count function.
-</span><span class="s2">
-</span><span class="s2">	Args:
-</span><span class="s2">		array: this array
-</span><span class="s2">	Returns:
-</span><span class="s2">		
-</span><span class="s2">	&#34;&#34;&#34;</span>
-	<span class="k">return</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span>
-<span class="c1"># -------------------------------------------------------------------</span>
-
-
-<span class="k">def</span> <span class="nf">dict_print</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
-	<span class="s2">&#34;&#34;&#34;Print function specifically for dictionary
-</span><span class="s2">
-</span><span class="s2">	Args:
-</span><span class="s2">		d: dictionary
-</span><span class="s2">	Returns:
-</span><span class="s2">		None: only prints out the contents of the dictionary
-</span><span class="s2">	&#34;&#34;&#34;</span>
-	<span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; --- &#39;</span> <span class="o">+</span> <span class="n">key</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; :</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">))</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
-
-<span class="c1"># -------------------------------------------------------------------</span>
-
-
-<span class="k">def</span> <span class="nf">to_dataframe</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
-	<span class="s2">&#34;&#34;&#34;converts the dictionary of transitions to a dataframe from which
-</span><span class="s2">		can be turned into a heatmap
-</span><span class="s2">
-</span><span class="s2">	Args:
-</span><span class="s2">		d: dictionary
-</span><span class="s2">	Returns:
-</span><span class="s2">		df: dataframe 
-</span><span class="s2">	&#34;&#34;&#34;</span>
-	<span class="c1"># :: Create dataframe</span>
-	<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;First&#39;</span><span class="p">,</span> <span class="s1">&#39;Second&#39;</span><span class="p">,</span> <span class="s1">&#39;Frequency&#39;</span><span class="p">))</span>
-
-	<span class="c1"># :: Initialize matrix</span>
-	<span class="n">alpha</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span><span class="p">)[:</span><span class="mi">26</span><span class="p">]</span>
-	<span class="n">alpha</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span>
-		<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span>
-			<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-	<span class="c1"># :: Pivot our dataframe to make a matrix for heatmap</span>
-	<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="s2">&#34;First&#34;</span><span class="p">,</span> <span class="s2">&#34;Second&#34;</span><span class="p">,</span> <span class="s2">&#34;Frequency&#34;</span><span class="p">)</span>
-
-	<span class="c1"># :: Add relevant frequencies to the matrix</span>
-	<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
-		<span class="n">df</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-
-	<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-
-	<span class="k">return</span> <span class="n">df</span>
-<span class="c1"># -------------------------------------------------------------------</span>
-
-
-<span class="k">def</span> <span class="nf">show_heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-	<span class="s2">&#34;&#34;&#34;Create and plot heatmap of data
-</span><span class="s2">
-</span><span class="s2">	Args:
-</span><span class="s2">		df: dataframe of frequencies
-</span><span class="s2">	Returns:
-</span><span class="s2">		None: Instead will plot a heatmap of the data
-</span><span class="s2">	&#34;&#34;&#34;</span>
-	<span class="c1"># :: Creae heatmap and customize</span>
-	<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
-	<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&#34;binary&#34;</span><span class="p">,</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-	<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_label_position</span><span class="p">(</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
-	<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticks_position</span><span class="p">(</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
-	<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-	<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-	<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;darkgray&#39;</span><span class="p">)</span>
-	<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;darkgray&#39;</span><span class="p">)</span>
-	<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;darkgray&#39;</span><span class="p">)</span>
-	<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;darkgray&#39;</span><span class="p">)</span>
-	<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Second Letter&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-	<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;First Letter&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-	<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-	<span class="n">figure</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span>
-	<span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
-</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;&#34;&#34;Reads given file and parses characters
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Args:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		file: the text file to be parsed
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Returns:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		charArr: parsed character array
+</span></span></span><span class="line"><span class="cl"><span class="s2">	&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fi</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">line</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># -------------------------------------------------------------------</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;&#34;&#34;Counts characters and creates freq table
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Args:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		array: character array of text
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Returns:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		freq: dictionary that represents freq table
+</span></span></span><span class="line"><span class="cl"><span class="s2">	&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span> <span class="n">array</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">array</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># -------------------------------------------------------------------</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">partition2</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;&#34;&#34;Works similar to Mathematica&#39;s partition function
+</span></span></span><span class="line"><span class="cl"><span class="s2">		but slightly differently. This function will create
+</span></span></span><span class="line"><span class="cl"><span class="s2">		a string that combines each pair of characters in
+</span></span></span><span class="line"><span class="cl"><span class="s2">		order to be hashed through by the count function.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Args:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		array: this array
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Returns:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		
+</span></span></span><span class="line"><span class="cl"><span class="s2">	&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -------------------------------------------------------------------</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">dict_print</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;&#34;&#34;Print function specifically for dictionary
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Args:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		d: dictionary
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Returns:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		None: only prints out the contents of the dictionary
+</span></span></span><span class="line"><span class="cl"><span class="s2">	&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; --- &#39;</span> <span class="o">+</span> <span class="n">key</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; :</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">))</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># -------------------------------------------------------------------</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">to_dataframe</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;&#34;&#34;converts the dictionary of transitions to a dataframe from which
+</span></span></span><span class="line"><span class="cl"><span class="s2">		can be turned into a heatmap
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Args:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		d: dictionary
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Returns:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		df: dataframe 
+</span></span></span><span class="line"><span class="cl"><span class="s2">	&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Create dataframe</span>
+</span></span><span class="line"><span class="cl">	<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;First&#39;</span><span class="p">,</span> <span class="s1">&#39;Second&#39;</span><span class="p">,</span> <span class="s1">&#39;Frequency&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Initialize matrix</span>
+</span></span><span class="line"><span class="cl">	<span class="n">alpha</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span><span class="p">)[:</span><span class="mi">26</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">	<span class="n">alpha</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">			<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Pivot our dataframe to make a matrix for heatmap</span>
+</span></span><span class="line"><span class="cl">	<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="s2">&#34;First&#34;</span><span class="p">,</span> <span class="s2">&#34;Second&#34;</span><span class="p">,</span> <span class="s2">&#34;Frequency&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Add relevant frequencies to the matrix</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="n">df</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">df</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -------------------------------------------------------------------</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">show_heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;&#34;&#34;Create and plot heatmap of data
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Args:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		df: dataframe of frequencies
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Returns:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		None: Instead will plot a heatmap of the data
+</span></span></span><span class="line"><span class="cl"><span class="s2">	&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Creae heatmap and customize</span>
+</span></span><span class="line"><span class="cl">	<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&#34;binary&#34;</span><span class="p">,</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_label_position</span><span class="p">(</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticks_position</span><span class="p">(</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;darkgray&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;darkgray&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;darkgray&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;darkgray&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Second Letter&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;First Letter&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">figure</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+</span></span></code></pre></div><!-- raw HTML omitted -->
 <h2 id="main-program">Main Program</h2>
 <p>This shows the code for the main program which utilizes the functions above.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-	<span class="c1"># ---------------------------MAIN PROGRAM---------------------------</span>
-	<span class="c1"># :: Reads in text file</span>
-	<span class="c1"># :: Counts the frequencies</span>
-	<span class="c1"># :: Data stored in dictionary</span>
-	<span class="c1"># :: Plots histogram of results</span>
-	
-	<span class="n">freq_dict</span> <span class="o">=</span> <span class="n">count</span><span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;text.txt&#39;</span><span class="p">))</span>
-	<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">freq_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">freq_dict</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-	<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Character Histogram&#39;</span><span class="p">)</span>
-	<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Characters&#39;</span><span class="p">)</span>
-	<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
-	<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-	<span class="c1"># :: Reads in text file</span>
-	<span class="c1"># :: Partitions in 2-tuples for transitions</span>
-	<span class="c1"># :: Data stored in dictionary</span>
-	<span class="c1"># :: Frequencies are printed to console/terminal</span>
-	
-	<span class="n">dict_print</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="n">partition2</span><span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;text.txt&#39;</span><span class="p">))))</span>
-
-	<span class="n">df</span> <span class="o">=</span> <span class="n">to_dataframe</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="n">partition2</span><span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;text.txt&#39;</span><span class="p">))))</span>
-	<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-	
-	<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;/Users/ericpena/iCloud/Binghamton_Courses/500_Computational_Tools/HW2/heatmap.png&#39;</span>
-	<span class="n">show_heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-	<span class="n">main</span><span class="p">()</span>
-</code></pre></div><h2 id="plot-of-histogram">Plot of Histogram</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># ---------------------------MAIN PROGRAM---------------------------</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Reads in text file</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Counts the frequencies</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Data stored in dictionary</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Plots histogram of results</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="n">freq_dict</span> <span class="o">=</span> <span class="n">count</span><span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;text.txt&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">freq_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">freq_dict</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Character Histogram&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Characters&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Reads in text file</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Partitions in 2-tuples for transitions</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Data stored in dictionary</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Frequencies are printed to console/terminal</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="n">dict_print</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="n">partition2</span><span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;text.txt&#39;</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">df</span> <span class="o">=</span> <span class="n">to_dataframe</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="n">partition2</span><span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;text.txt&#39;</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;/Users/ericpena/iCloud/Binghamton_Courses/500_Computational_Tools/HW2/heatmap.png&#39;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">show_heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">main</span><span class="p">()</span>
+</span></span></code></pre></div><h2 id="plot-of-histogram">Plot of Histogram</h2>
 <p><img src="img_character_analysis/hist.png" alt="">
 Figure 1 — Histogram that shows frequencies of characters appearing in the text</p>
 <h2 id="histogram-observations">Histogram Observations</h2>
@@ -337,13 +337,13 @@ Figure 2 — Heatmap that shows the frequencies of character transitions</p>
 <li>$Bare$: It&rsquo;s interesting but not unexpected that the right bottom right is quite bare &mdash; very low frequencies later in the alphabet</li>
 </ul>
 <h2 id="robustness-parameter">Robustness Parameter</h2>
-<p>The heatmap above is actually using a <code>robust=True</code> parameter that normalizes the frequencies into a small range in order to improve the visualization. This is an improvement over the heatmap with the original frequencies. See below for the difference between the $RAW$ heatmap and the $ROBUST$ heatmap. More visual information can be obtained by using the $robust$ parameter since the `interesting' events are much more pronounced.</p>
+<p>The heatmap above is actually using a <code>robust=True</code> parameter that normalizes the frequencies into a small range in order to improve the visualization. This is an improvement over the heatmap with the original frequencies. See below for the difference between the $RAW$ heatmap and the $ROBUST$ heatmap. More visual information can be obtained by using the $robust$ parameter since the `interesting&rsquo; events are much more pronounced.</p>
 <p><img src="img_character_analysis/heatmap_robust.png" alt="">
 Figure 3 — Shows the difference between the Raw and Robust frequencies for the heatmap</p>
 <h2 id="appendix--output-data">Appendix — Output Data</h2>
 <!-- raw HTML omitted -->
 <h4 id="histogram-frenquencies">Histogram Frenquencies</h4>
-<p>{&rsquo;d': 234, &lsquo;i&rsquo;: 574, &lsquo;f&rsquo;: 233, &lsquo;e&rsquo;: 958, &lsquo;r&rsquo;: 428, &lsquo;n&rsquo;: 492, &lsquo;c&rsquo;: 255, ' &lsquo;: 1370, &lsquo;w&rsquo;: 111, &lsquo;h&rsquo;: 344, &rsquo;m&rsquo;: 184, &rsquo;s': 455, &rsquo;t': 653, &lsquo;o&rsquo;: 475, &lsquo;u&rsquo;: 206, &lsquo;a&rsquo;: 561, &lsquo;p&rsquo;: 146, &lsquo;l&rsquo;: 336, &lsquo;y&rsquo;: 77, &lsquo;x&rsquo;: 24, &lsquo;b&rsquo;: 111, &lsquo;k&rsquo;: 15, &lsquo;g&rsquo;: 103, &lsquo;v&rsquo;: 60, &lsquo;q&rsquo;: 20, &lsquo;j&rsquo;: 9, &lsquo;z&rsquo;: 11}</p>
+<p>{&rsquo;d&rsquo;: 234, &lsquo;i&rsquo;: 574, &lsquo;f&rsquo;: 233, &rsquo;e&rsquo;: 958, &lsquo;r&rsquo;: 428, &rsquo;n&rsquo;: 492, &lsquo;c&rsquo;: 255, &rsquo; &lsquo;: 1370, &lsquo;w&rsquo;: 111, &lsquo;h&rsquo;: 344, &rsquo;m&rsquo;: 184, &rsquo;s&rsquo;: 455, &rsquo;t&rsquo;: 653, &lsquo;o&rsquo;: 475, &lsquo;u&rsquo;: 206, &lsquo;a&rsquo;: 561, &lsquo;p&rsquo;: 146, &rsquo;l&rsquo;: 336, &lsquo;y&rsquo;: 77, &lsquo;x&rsquo;: 24, &lsquo;b&rsquo;: 111, &lsquo;k&rsquo;: 15, &lsquo;g&rsquo;: 103, &lsquo;v&rsquo;: 60, &lsquo;q&rsquo;: 20, &lsquo;j&rsquo;: 9, &lsquo;z&rsquo;: 11}</p>
 <h4 id="heatmap-frenquencies">Heatmap Frenquencies</h4>
 <p>d &mdash; i :	30
 i &mdash; f :	11

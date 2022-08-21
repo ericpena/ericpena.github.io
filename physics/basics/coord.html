@@ -27,7 +27,10 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Lagrangian Mechanics"/>
 <meta name="twitter:description" content="Generalized Coordinates and Conservation Laws From the Lagrangian Formulation of Theoretical Mechanics"/>
-<meta name="generator" content="Hugo 0.89.2" />
+
+
+<meta name="generator" content="Hugo 0.101.0" />
+
 
     
 <script type="application/ld+json">
@@ -61,9 +64,6 @@
     <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
 
     
-    <link href="" rel="alternate" type="application/rss+xml" title="Eric Peña All Notes And Articles" /> 
-    
-    <link href="//ericpena.github.io/articles/index.xml" rel="alternate" type="application/rss+xml" title="Eric Peña Articles" />
 
     <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -166,7 +166,7 @@ the Lagrangian is used to find the equations of motion with something called the
 <p>$$\frac{\partial \mathcal{L}}{\partial q_i}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}$$</p>
 <p>where $q_i$ are the generalized coordinates that we are using. Since this is still the overview, I will briefly describe where the <em>Lagrange</em> equation comes from.</p>
 <p>The <em>Lagrange</em> equation is a subset of a far broader area of mathematics called the <em>Calculus of Variations</em> or <em>Variational Calculus</em>. It involves finding the maximum and minimum of a quantity that can be expressed as an integral. The general form of what is called the <em>variational problem</em> is:</p>
-<p>$$S=\int_{x_1}^{x_2} f[y(x), y'(x), x]dx$$</p>
+<p>$$S=\int_{x_1}^{x_2} f[y(x), y&rsquo;(x), x]dx$$</p>
 <p>The important part is finding the equation $y(x)$ such that the $S$ integral is stationary
 (which means infinitesimal variations of the path $y(x)$ doesn&rsquo;t change the value of the
 integral). After a tedious derivation, we are left with what is called the
@@ -174,7 +174,7 @@ integral). After a tedious derivation, we are left with what is called the
 been applied to our physics world quite yet.</p>
 <p>We can talk about these variational methods for pages but let&rsquo;s get to the meat of it
 all. The reason why variational calculus and the Euler-Lagrange equation are so
-important is because when the function $f[y(x), y'(x), x]$ within the integral is the Lagrangian (defined at the top of the page), the integral is called the <em>action</em> integral and the function that makes the <em>action</em> integral <em>stationary</em>
+important is because when the function $f[y(x), y&rsquo;(x), x]$ within the integral is the Lagrangian (defined at the top of the page), the integral is called the <em>action</em> integral and the function that makes the <em>action</em> integral <em>stationary</em>
 is the equation of motion of the particle in question.</p>
 <p>This result is stated in what is called <em>Hamilton&rsquo;s Principle</em>.
 It tells us that if we know the energy (and therefore the Lagrangian) of a
@@ -197,7 +197,7 @@ can&rsquo;t express it in terms of another quantity like momentum for example:
 $$F = ma = m\dot{v} = \dot{p}$$
 Let&rsquo;s not forget how related force and energy really are:</p>
 <p>$$\Delta T = T_2 - T_1 = \int_{1}^{2}\textbf{F} \cdot d\textbf{r}$$</p>
-<p>$$U(\textbf{r}) = -\int_{r_0}^r F(\textbf{r}') \cdot d\textbf{r}'$$
+<p>$$U(\textbf{r}) = -\int_{r_0}^r F(\textbf{r}&rsquo;) \cdot d\textbf{r}&rsquo;$$
 To relate Lagrangian and Newtonian methods more directly:</p>
 <h2 id="euler-lagrange-equation">Euler-Lagrange Equation</h2>
 <p>$$\frac{\partial \mathcal{L}}{\partial q_i}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}$$

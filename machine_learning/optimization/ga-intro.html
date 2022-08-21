@@ -27,7 +27,10 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="First Genetic Algorithm"/>
 <meta name="twitter:description" content="Logistic Map"/>
-<meta name="generator" content="Hugo 0.89.2" />
+
+
+<meta name="generator" content="Hugo 0.101.0" />
+
 
     
 <script type="application/ld+json">
@@ -59,9 +62,6 @@
     <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
 
     
-    <link href="" rel="alternate" type="application/rss+xml" title="Eric Peña All Notes And Articles" /> 
-    
-    <link href="//ericpena.github.io/articles/index.xml" rel="alternate" type="application/rss+xml" title="Eric Peña Articles" />
 
     <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -163,105 +163,105 @@ MathJax.Hub.Config({
 </ul>
 <h1 id="programming-genetic-algorithms-in-python">Programming Genetic Algorithms in Python</h1>
 <p>It&rsquo;s typical to use object oriented programming when developing Genetic Algorithms in code. In our simple example, let&rsquo;s create a class called <code>Agent</code>. In the language of GA, these are called the <em>chromosome</em>. This chromosome will simply be a string in our program but I&rsquo;d recommend always thinking in terms of GA and the termology used in this domain. If the text string represents a chromosome, then the characters that make up this string are its <em>genes</em>. Below is an example of a simple genetic algorithm that will be given the task of finding the string: <code>ericpena</code>. The algorithm is broken up into distrinct methods for clarity.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">fuzzywuzzy</span> <span class="kn">import</span> <span class="n">fuzz</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">string</span>
-
-<span class="k">class</span> <span class="nc">Agent</span><span class="p">:</span>
-
-	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
-
-		<span class="c1"># Initialize a new agent</span>
-		<span class="bp">self</span><span class="o">.</span><span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
-		<span class="bp">self</span><span class="o">.</span><span class="n">fitness</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-
-	<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-		<span class="k">return</span> <span class="s1">&#39;String: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">string</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; Fitness: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fitness</span><span class="p">)</span>
-</code></pre></div><h1 id="initialize-population">Initialize Population</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">in_str</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="n">in_str_len</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="n">population</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">generations</span> <span class="o">=</span> <span class="mi">2500</span>
-
-<span class="k">def</span> <span class="nf">init_agents</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
-
-	<span class="k">return</span> <span class="p">[</span><span class="n">Agent</span><span class="p">(</span><span class="n">length</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">population</span><span class="p">)]</span>
-</code></pre></div><h1 id="define-fitness-function">Define Fitness Function</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">fitness</span><span class="p">(</span><span class="n">agents</span><span class="p">):</span>
-
-	<span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">agents</span><span class="p">:</span>
-
-		<span class="n">agent</span><span class="o">.</span><span class="n">fitness</span> <span class="o">=</span> <span class="n">fuzz</span><span class="o">.</span><span class="n">ratio</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">string</span><span class="p">,</span> <span class="n">in_str</span><span class="p">)</span>
-
-	<span class="k">return</span> <span class="n">agents</span>
-</code></pre></div><h1 id="define-selection-criteria">Define Selection Criteria</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">selection</span><span class="p">(</span><span class="n">agents</span><span class="p">):</span>
-
-	<span class="n">agents</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">agents</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">agent</span><span class="p">:</span> <span class="n">agent</span><span class="o">.</span><span class="n">fitness</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">agents</span><span class="p">)))</span>
-	<span class="n">agents</span> <span class="o">=</span> <span class="n">agents</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="mf">0.2</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">agents</span><span class="p">))]</span>
-
-	<span class="k">return</span> <span class="n">agents</span>
-</code></pre></div><h1 id="define-crossover-mechanism">Define Crossover Mechanism</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">crossover</span><span class="p">(</span><span class="n">agents</span><span class="p">):</span>
-
-	<span class="n">offspring</span> <span class="o">=</span> <span class="p">[]</span>
-
-	<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="n">population</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">agents</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)):</span>
-
-		<span class="n">parent1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">agents</span><span class="p">)</span>
-		<span class="n">parent2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">agents</span><span class="p">)</span>
-		<span class="n">child1</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="n">in_str_len</span><span class="p">)</span>
-		<span class="n">child2</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="n">in_str_len</span><span class="p">)</span>
-		<span class="n">split</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">in_str_len</span><span class="p">)</span>
-		<span class="n">child1</span><span class="o">.</span><span class="n">string</span> <span class="o">=</span> <span class="n">parent1</span><span class="o">.</span><span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">split</span><span class="p">]</span> <span class="o">+</span> <span class="n">parent2</span><span class="o">.</span><span class="n">string</span><span class="p">[</span><span class="n">split</span><span class="p">:</span><span class="n">in_str_len</span><span class="p">]</span>
-		<span class="n">child2</span><span class="o">.</span><span class="n">string</span> <span class="o">=</span> <span class="n">parent2</span><span class="o">.</span><span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">split</span><span class="p">]</span> <span class="o">+</span> <span class="n">parent1</span><span class="o">.</span><span class="n">string</span><span class="p">[</span><span class="n">split</span><span class="p">:</span><span class="n">in_str_len</span><span class="p">]</span>
-
-		<span class="n">offspring</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child1</span><span class="p">)</span>
-		<span class="n">offspring</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child2</span><span class="p">)</span>
-
-	<span class="n">agents</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">offspring</span><span class="p">)</span>
-
-	<span class="k">return</span> <span class="n">agents</span>
-</code></pre></div><h1 id="define-ga-mutation">Define GA Mutation</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">mutation</span><span class="p">(</span><span class="n">agents</span><span class="p">):</span>
-
-	<span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">agents</span><span class="p">:</span>
-
-		<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">string</span><span class="p">):</span>
-
-			<span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">0.1</span><span class="p">:</span>
-
-				<span class="n">agent</span><span class="o">.</span><span class="n">string</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">idx</span><span class="p">]</span> <span class="o">+</span> \
-					<span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span><span class="p">)</span> <span class="o">+</span> \
-					<span class="n">agent</span><span class="o">.</span><span class="n">string</span><span class="p">[</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="n">in_str_len</span><span class="p">]</span>
-
-	<span class="k">return</span> <span class="n">agents</span>
-</code></pre></div><h1 id="running-ga">Running GA</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">ga</span><span class="p">():</span>
-	
-	<span class="n">agents</span> <span class="o">=</span> <span class="n">init_agents</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">in_str_len</span><span class="p">)</span>
-
-	<span class="k">for</span> <span class="n">generation</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">generations</span><span class="p">):</span>
-
-		<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Generation: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">generation</span><span class="p">))</span>
-
-		<span class="n">agents</span> <span class="o">=</span> <span class="n">fitness</span><span class="p">(</span><span class="n">agents</span><span class="p">)</span>
-		<span class="n">agents</span> <span class="o">=</span> <span class="n">selection</span><span class="p">(</span><span class="n">agents</span><span class="p">)</span>
-		<span class="n">agents</span> <span class="o">=</span> <span class="n">crossover</span><span class="p">(</span><span class="n">agents</span><span class="p">)</span>
-		<span class="n">agents</span> <span class="o">=</span> <span class="n">mutation</span><span class="p">(</span><span class="n">agents</span><span class="p">)</span>
-
-		<span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">fitness</span> <span class="o">&gt;=</span> <span class="mi">90</span> <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">agents</span><span class="p">):</span>
-
-			<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Threshold met!&#39;</span><span class="p">)</span>
-			<span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-	
-	<span class="n">in_str</span> <span class="o">=</span> <span class="s1">&#39;ericpena&#39;</span>
-	<span class="n">in_str_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">in_str</span><span class="p">)</span>
-	<span class="n">ga</span><span class="p">()</span>
-</code></pre></div><h1 id="results">Results</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">fuzzywuzzy</span> <span class="kn">import</span> <span class="n">fuzz</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">string</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Agent</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="c1"># Initialize a new agent</span>
+</span></span><span class="line"><span class="cl">		<span class="bp">self</span><span class="o">.</span><span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="bp">self</span><span class="o">.</span><span class="n">fitness</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="s1">&#39;String: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">string</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; Fitness: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fitness</span><span class="p">)</span>
+</span></span></code></pre></div><h1 id="initialize-population">Initialize Population</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">in_str</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl"><span class="n">in_str_len</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl"><span class="n">population</span> <span class="o">=</span> <span class="mi">20</span>
+</span></span><span class="line"><span class="cl"><span class="n">generations</span> <span class="o">=</span> <span class="mi">2500</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">init_agents</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="p">[</span><span class="n">Agent</span><span class="p">(</span><span class="n">length</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">population</span><span class="p">)]</span>
+</span></span></code></pre></div><h1 id="define-fitness-function">Define Fitness Function</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fitness</span><span class="p">(</span><span class="n">agents</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">agents</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">agent</span><span class="o">.</span><span class="n">fitness</span> <span class="o">=</span> <span class="n">fuzz</span><span class="o">.</span><span class="n">ratio</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">string</span><span class="p">,</span> <span class="n">in_str</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">agents</span>
+</span></span></code></pre></div><h1 id="define-selection-criteria">Define Selection Criteria</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">selection</span><span class="p">(</span><span class="n">agents</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">agents</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">agents</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">agent</span><span class="p">:</span> <span class="n">agent</span><span class="o">.</span><span class="n">fitness</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">agents</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">	<span class="n">agents</span> <span class="o">=</span> <span class="n">agents</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="mf">0.2</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">agents</span><span class="p">))]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">agents</span>
+</span></span></code></pre></div><h1 id="define-crossover-mechanism">Define Crossover Mechanism</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">crossover</span><span class="p">(</span><span class="n">agents</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">offspring</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="n">population</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">agents</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">parent1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">agents</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">parent2</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">agents</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">child1</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="n">in_str_len</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">child2</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="n">in_str_len</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">split</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">in_str_len</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">child1</span><span class="o">.</span><span class="n">string</span> <span class="o">=</span> <span class="n">parent1</span><span class="o">.</span><span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">split</span><span class="p">]</span> <span class="o">+</span> <span class="n">parent2</span><span class="o">.</span><span class="n">string</span><span class="p">[</span><span class="n">split</span><span class="p">:</span><span class="n">in_str_len</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">		<span class="n">child2</span><span class="o">.</span><span class="n">string</span> <span class="o">=</span> <span class="n">parent2</span><span class="o">.</span><span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">split</span><span class="p">]</span> <span class="o">+</span> <span class="n">parent1</span><span class="o">.</span><span class="n">string</span><span class="p">[</span><span class="n">split</span><span class="p">:</span><span class="n">in_str_len</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">offspring</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">offspring</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">agents</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">offspring</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">agents</span>
+</span></span></code></pre></div><h1 id="define-ga-mutation">Define GA Mutation</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">mutation</span><span class="p">(</span><span class="n">agents</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">agents</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">string</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">0.1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">				<span class="n">agent</span><span class="o">.</span><span class="n">string</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">idx</span><span class="p">]</span> <span class="o">+</span> \
+</span></span><span class="line"><span class="cl">					<span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span><span class="p">)</span> <span class="o">+</span> \
+</span></span><span class="line"><span class="cl">					<span class="n">agent</span><span class="o">.</span><span class="n">string</span><span class="p">[</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="n">in_str_len</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">agents</span>
+</span></span></code></pre></div><h1 id="running-ga">Running GA</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">ga</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="n">agents</span> <span class="o">=</span> <span class="n">init_agents</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">in_str_len</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="n">generation</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">generations</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Generation: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">generation</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">agents</span> <span class="o">=</span> <span class="n">fitness</span><span class="p">(</span><span class="n">agents</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">agents</span> <span class="o">=</span> <span class="n">selection</span><span class="p">(</span><span class="n">agents</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">agents</span> <span class="o">=</span> <span class="n">crossover</span><span class="p">(</span><span class="n">agents</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">agents</span> <span class="o">=</span> <span class="n">mutation</span><span class="p">(</span><span class="n">agents</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">fitness</span> <span class="o">&gt;=</span> <span class="mi">90</span> <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">agents</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">			<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Threshold met!&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="n">in_str</span> <span class="o">=</span> <span class="s1">&#39;ericpena&#39;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">in_str_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">in_str</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ga</span><span class="p">()</span>
+</span></span></code></pre></div><h1 id="results">Results</h1>
 <ul>
 <li>Generation 0 — String: CKvOGQJL Fitness: 0</li>
 <li>Generation 3 — String: iJdvcmeX Fitness: 38</li>

@@ -16,7 +16,7 @@
       <pubDate>Thu, 21 May 2020 00:00:00 +0000</pubDate>
       
       <guid>//ericpena.github.io/r_programming/basics/data-types.html</guid>
-      <description>&amp;ldquo;Truth is ever to be found in simplicity, and not in the multiplicity and confusion of things.&amp;quot;&amp;mdash;Isaac Newton I approached R in the same way I would any language. I immediately delve into for-loops, conditional statements, user-defined functions, classes, and so on. I didn&amp;rsquo;t pay much attention to data types at first - assuming they&amp;rsquo;re not much different than what I&amp;rsquo;ve seen already. I found myself using dataframes and matricies often with low confidence and a lingering confusion.</description>
+      <description>&amp;ldquo;Truth is ever to be found in simplicity, and not in the multiplicity and confusion of things.&amp;rdquo;&amp;mdash;Isaac Newton I approached R in the same way I would any language. I immediately delve into for-loops, conditional statements, user-defined functions, classes, and so on. I didn&amp;rsquo;t pay much attention to data types at first - assuming they&amp;rsquo;re not much different than what I&amp;rsquo;ve seen already. I found myself using dataframes and matricies often with low confidence and a lingering confusion.</description>
     </item>
     
   </channel>
