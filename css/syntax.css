@@ -34,7 +34,7 @@
 /* LiteralStringChar */ .chroma .sc { color: #FFFF66}
 /* LiteralStringDoc */ .chroma .sd { color: #FFFF66}
 /* LiteralStringEscape */ .chroma .se { color: #FFFF66; ; font-weight: bold }
-/* LiteralStringInterpol */ .chroma .si { background-color: #eeeeee }
+/* LiteralStringInterpol */ .chroma .si { background-color: #333333 }
 /* LiteralStringOther */ .chroma .sx { color: #FFFF66; }
 /* LiteralStringRegex */ .chroma .sr { color: #FFFF66; }
 /* LiteralStringSymbol */ .chroma .ss { color: #FFFF66; }
@@ -45,7 +45,7 @@
 /* LiteralNumberInteger */ .chroma .mi { color: #FF9933; font-weight: bold }
 /* LiteralNumberIntegerLong */ .chroma .il { color: #FF9933; font-weight: bold }
 /* LiteralNumberOct */ .chroma .mo { color: #FF9933; font-weight: bold }
-/* Operator */ .chroma .o { color: #ff6666 }
+/* Operator */ .chroma .o { color: #ff6666}
 /* OperatorWord */ .chroma .ow { color: #ff6666; font-weight: bold }
 /* Comment */ .chroma .c { color: #888888; font-style: italic }
 /* CommentHashbang */ .chroma .ch { color: #888888; font-style: italic }

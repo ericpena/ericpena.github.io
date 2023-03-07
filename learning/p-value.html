@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162942761-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-162942761-1');
+    </script>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="P Values" />
+<meta property="og:description" content="P Values" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//ericpena.github.io/learning/p-value.html" /><meta property="article:section" content="learning" />
+<meta property="article:published_time" content="2020-12-16T00:00:00-07:00" />
+<meta property="article:modified_time" content="2020-12-16T00:00:00-07:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="P Values"/>
+<meta name="twitter:description" content="P Values"/>
+
+
+<meta name="generator" content="Hugo 0.101.0" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "P Values",
+  "url": "\/\/ericpena.github.io\/learning\/p-value.html",
+  "wordCount": "797",
+  "datePublished": "2020-12-16T00:00:00-07:00",
+  "dateModified": "2020-12-16T00:00:00-07:00",
+  "author": {
+    "@type": "Person",
+    "name": "Eric Peña"
+  },
+  "description": "P Values"
+}
+</script> 
+
+    <title>P Values</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    
+    <link href="//ericpena.github.io/css/custom.css" rel="stylesheet">
+    <link href="//ericpena.github.io/css/syntax.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
+
+    
+
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="//ericpena.github.io/about/eric_pena.html">Eric Peña</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="//ericpena.github.io">PEÑA NOTES</a>
+                    </li>
+
+                    
+
+                    
+
+                    
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="//ericpena.github.io/about/eric_pena.html">About Me</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            CONNECT
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://www.linkedin.com/in/eric-pena/" target="_blank">LinkedIn</a>
+                            <a class="dropdown-item" href="https://twitter.com/ericpenax" target="_blank">Twitter</a>
+                            
+                            
+                            
+                            
+                            
+                            
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                 
+
+
+<article>
+  <div class="technical_note">
+  <header>
+      
+    <h1 class="technical_note_title">P Values</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-12-16T00:00:00-07:00 "> 16 Dec 2020</time>
+    </div>
+  </header>
+  <div class="content">
+      
+  <h1 id="what-is-a-p-value-in-hypohtesis-testing">What is a P-Value! (in Hypohtesis Testing)</h1>
+<p>An average person might say p-values are of utmost importance in a student&rsquo;s statistical toolbox. However, while teaching statistics and probability, I have noticed its subtle definition and conceptual underpinnings being grossly under-emphasized. This note may help clarify what a p-value is and how we use it to make decisions.</p>
+<p>To explain what a p-value is, I will start with the &ldquo;<strong>p</strong>&rdquo;. What does it stand for? If you&rsquo;re thinking <em>probability</em>, then you&rsquo;re correct. The tricky question becomes: <em>the probability of what?</em> One definition might be: a p-value is the probability of getting an observed value of the test statistic (or more extreme value), given that the null hypothesis is true. Sounds confusing, I know. Variants of this definition are also used but generally this language doesn&rsquo;t help if you&rsquo;re actually trying to learn it. Let&rsquo;s break this topic down with the use of a story.</p>
+<hr>
+<h1 id="conceptual-understanding">Conceptual Understanding!</h1>
+<ul>
+<li>Imagine a container of <!-- raw HTML omitted --> <em>RED</em><!-- raw HTML omitted --> and <!-- raw HTML omitted --> <em>BLUE</em><!-- raw HTML omitted --> marbles (statistics is the reason marbles are still relevant in life). This container of marbles can represent our <em>population</em>. Let&rsquo;s say we <em>assume</em> there are an equal number of each color. The word <em>assume</em> means that there is an initial beleif. We give this initial belief a special name: the <em>Null Hypothesis</em>.</li>
+</ul>
+<p><img src="p-value/red-blue.png" alt="png"></p>
+<ul>
+<li>In order to test our <em>Null Hypothesis</em>, we collect a <em>sample</em>. <em>Sample</em> is another term statistics also often uses; it&rsquo;s just a subset of our population.</li>
+</ul>
+<p><img src="p-value/blue.png" alt="png"></p>
+<ul>
+<li>If our sample consists of nothing but <strong><!-- raw HTML omitted --> <em>BLUE</em><!-- raw HTML omitted --></strong> marbles, we could ask the question: How likely is it we would get this all <strong><!-- raw HTML omitted --> <em>BLUE</em><!-- raw HTML omitted --></strong> sample <em>given</em> that our initial belief was that <strong><!-- raw HTML omitted --> <em>RED</em><!-- raw HTML omitted --></strong> and <strong><!-- raw HTML omitted --> <em>BLUE</em><!-- raw HTML omitted --></strong> are of equal number in the container?</li>
+<li>This is reflected by the p-value! The p-value is the probabiliy of seeing this sample given our initial belief (or in other words, given our <em>Null Hypothesis</em>).</li>
+<li>If our p-value is low, then we have evidence <em>AGAINST</em> our Null Hypothesis and we say that we &ldquo;reject our Null Hypothesis in favor for the <em>Alternative Hypothesis</em>. The <em>Alternative Hypothesis</em> in our marble example is that the <strong><!-- raw HTML omitted --> <em>RED</em><!-- raw HTML omitted --></strong> and <strong><!-- raw HTML omitted --> <em>BLUE</em><!-- raw HTML omitted --></strong> are not of equal number.</li>
+<li>If, on the other hand, our p-value is high, then we don&rsquo;t have a good enough reason to reject our initial belief. In this case we &ldquo;fail to reject our Null Hypothesis.</li>
+<li>We need some way of determining what is <em>low</em> and what is <em>high</em> when it comes to P-values. This is what we call $\alpha$.</li>
+</ul>
+<h1 id="making-more-concrete">Making More Concrete</h1>
+<h3 id="lets-make-up-a-similar-example">Let&rsquo;s make up a similar example</h3>
+<p><strong>QUESTION:</strong> It is believed that there are an equal number of <strong><!-- raw HTML omitted --> <em>RED</em><!-- raw HTML omitted --></strong> and <strong><!-- raw HTML omitted --> <em>BLUE</em><!-- raw HTML omitted --></strong> marbes in a jar. A sample of size 80 is taken in which 66% of marbles are <strong><!-- raw HTML omitted --> <em>BLUE</em><!-- raw HTML omitted --></strong>. Should we keep our initial belief?</p>
+<h3 id="solution">Solution:</h3>
+<ul>
+<li>Let&rsquo;s say our initial belief of the proportion is denoted as $\pi_0$ (Null Hypothesis). This means: $\pi_0 = 0.50$</li>
+<li>We model this proportion of blue marbles in our sample as a random variable. $\hat p$ whose mean is $0.66$.</li>
+<li>We can assume this random varibles $\hat p$ follows a Normal Distribution so long as $n \cdot p \ge 10$ and $n \cdot (1-p) \ge 10$. This is referred to as the Rule of Sample Proportions. If these assumptions are not true, then we may approximate our distribution with a Binomial.</li>
+<li>$n$ is the sample size and $p$ is our proportion which we will approximate with $\hat p$ (in this case: 66%)</li>
+<li>If this assumption checks out, we can calculate our z-statistic:</li>
+</ul>
+<p>$$Z_{statistic} = \frac{\hat p - \pi_0}{\sqrt{\frac{\pi_0 (1 - \pi_0)}{n}}}$$</p>
+<ul>
+<li>The denominator, $\sqrt{\frac{\pi_0 (1 - \pi_0)}{n}}$, is the standard error of the sampling distribution.</li>
+</ul>
+<p>When we set $\pi_0 = 0.5$, $\hat p = 0.66$, and $n = 80$:</p>
+<p>$$Z_{statistic} = \frac{0.66 - 0.50}{\sqrt{\frac{0.50 (1 - 0.50)}{80}}} = 2.86217$$</p>
+<ul>
+<li>What this allows us to do is draw a Normal Distribution and see where the $Z_{statistic}$ lies.</li>
+<li>First, let&rsquo;s remember what a Standard Normal Distribution looks like:</li>
+</ul>
+<p><img src="p-value/standard-normal.png" alt="png"></p>
+<ul>
+<li>We want to compare this $Z_{statistic}$ for a $Z_{critical}$:</li>
+</ul>
+<p>$$Z_{critical} = Z_{\frac{\alpha}{2}} = Z_{\frac{0.05}{2}} = 2.80703$$</p>
+<p>where we use significance level $\alpha = 0.05$.</p>
+<ul>
+<li>Let&rsquo;s Zoom in to compare these numbers and see where the P Value comes in</li>
+</ul>
+<p><img src="p-value/right-side.png" alt="png"></p>
+<h1 id="conclusion">Conclusion</h1>
+<ul>
+<li>Since $Z_{statistic}$ is greater than $Z_{\frac{\alpha}{2}}$ (which we sometimes call $Z_{critical}$), then we can immediately say that our p-value is less than $\alpha$.</li>
+<li>Remember what a low p-value tells us: the probability of seeing this sample given our intiial belief is LOW! Statistically sigificanly low!</li>
+<li>We simply reject the Null Hypothesis. We say we have enough evidence to show that it is likely untrue that there are an equal number of <strong><!-- raw HTML omitted --> <em>RED</em><!-- raw HTML omitted --></strong> and <strong><!-- raw HTML omitted --> <em>BLUE</em><!-- raw HTML omitted --></strong> marbes in the</li>
+</ul>
+<h1 id="we-did-it">WE DID IT!</h1>
+<ul>
+<li>Try some practice problems on your own</li>
+<li>There is some controversy around the merits of p-values &mdash; think about why this might be</li>
+</ul>
+
+</div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Thank You For Reading!</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/ericpena/pena-notes/issues/new'>submit a suggested change</a> and include the note's URL.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <footer class="footer text-center">
+        <div class="container">
+            <span class="text-muted">Copyright &copy; Eric Peña, <time datetime="2021">2021</time>. All 26 notes and articles are available on <a href="https://github.com/ericpena/">GitHub</a>.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

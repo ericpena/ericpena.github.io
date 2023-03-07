@@ -1,0 +1,142 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>learning - Eric Peña</title>
+    <link>//ericpena.github.io/learning/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Apr 2022 00:00:00 -0700</lastBuildDate>
+    
+        <atom:link href="//ericpena.github.io/learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cellular Automata Introduction</title>
+      <link>//ericpena.github.io/learning/cellular_automata_intro.html</link>
+      <pubDate>Sun, 24 Apr 2022 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/learning/cellular_automata_intro.html</guid>
+      <description>Motivation &amp;ldquo;With four parameters I can fit an elephant, and with five I can make him wiggle his trunk.&amp;rdquo; &amp;ndash; John von Neumann
+Throughout history, science has aimed to understand and model the natural world as accurately as possible despite its inherent complexity. There are many phenomena in nature whose patterns and behavior seem somewhat unpredictable yet these resulting patterns appear highly structured and organized. Scientists and mathematicians have developed techniques (e.</description>
+    </item>
+    
+    <item>
+      <title>Statistical Rethinking Chapter 2 Exercises</title>
+      <link>//ericpena.github.io/learning/chapter-2.html</link>
+      <pubDate>Sat, 23 Apr 2022 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/learning/chapter-2.html</guid>
+      <description>Code 2.3
+import numpy as np import scipy.stats as stats import matplotlib.pyplot as plt import pymc3 as pm import arviz as az plt.style.use(&amp;#39;dark_background&amp;#39;) RANDOM_SEED = 8927 np.random.seed(RANDOM_SEED) # az.style.use(&amp;#34;arviz-darkgrid&amp;#34;) p_grid = np.linspace(0, 1, num=20) prior = np.ones(20) # :: uniform prior = [0 if p &amp;lt; 0.5 else 1 for p in p_grid] # :: step prior = [np.exp(-5*np.abs(p - 0.5)) for p in p_grid] # :: exp likelihood = stats.</description>
+    </item>
+    
+    <item>
+      <title>K-Means Clustering From Scratch</title>
+      <link>//ericpena.github.io/learning/k-means.html</link>
+      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>//ericpena.github.io/learning/k-means.html</guid>
+      <description>Introduction Imagine we have a scattering of points whose labels or group assignments are completely unknown to us and moreover, we haven&amp;rsquo;t a clue as to the number of groups. Unsupervised clustering helps us in such a situation and allows us to assign a cluster to each point. These clusters are defined by their centroids (centers). The K-Means algorithm will iteratively update these centroids to find the best location for them.</description>
+    </item>
+    
+    <item>
+      <title>P Values</title>
+      <link>//ericpena.github.io/learning/p-value.html</link>
+      <pubDate>Wed, 16 Dec 2020 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/learning/p-value.html</guid>
+      <description>What is a P-Value! (in Hypohtesis Testing) An average person might say p-values are of utmost importance in a student&amp;rsquo;s statistical toolbox. However, while teaching statistics and probability, I have noticed its subtle definition and conceptual underpinnings being grossly under-emphasized. This note may help clarify what a p-value is and how we use it to make decisions.
+To explain what a p-value is, I will start with the &amp;ldquo;p&amp;rdquo;. What does it stand for?</description>
+    </item>
+    
+    <item>
+      <title>PCA using Singular Value Decomposition</title>
+      <link>//ericpena.github.io/learning/pca-svd.html</link>
+      <pubDate>Sat, 04 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//ericpena.github.io/learning/pca-svd.html</guid>
+      <description>In another article, Principal Component Analysis was performed using Eigenvalue Decomposition. In this article we take a different approach: Single Value Decomposition. The general idea is that for any matrix we may perform Single Value Decomposition - this is guaranteed. It is a powerful tool that is used in many fields. On the other hand, the Eigenvalue Decomposition does not always exist. Eigenvalue Decomposition can only be done on square, full-rank, positive semi-definite matricies.</description>
+    </item>
+    
+    <item>
+      <title>PCA using Eigenvalue Decomposition</title>
+      <link>//ericpena.github.io/learning/pca-evd.html</link>
+      <pubDate>Mon, 29 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//ericpena.github.io/learning/pca-evd.html</guid>
+      <description>In this article, I go into how we can perform Principal Component Analysis (PCA) using the method of Eigenvalue Decomposition (EVD). Generally, PCA is done by peforming a change of basis on the data, typically by utilizing eigenvectors that find the principal directions of the data. Another important thing to know is that the Eigenvalue Decomposition does not always exist. Eigenvalue Decomposition can only be done on square, full-rank, positive semi-definite matricies.</description>
+    </item>
+    
+    <item>
+      <title>Linear Regression</title>
+      <link>//ericpena.github.io/learning/linear-regression.html</link>
+      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//ericpena.github.io/learning/linear-regression.html</guid>
+      <description>Mathematical Foundations The linear model is often the first model we learn fitting data. Given a vector of inputs $X^T = (X_1, X_2, \ldots, X_p)$, we can predict the output $Y$ with the following model:
+$$\hat Y = \hat \beta_0 + \sum_{j=1}^p X_j \hat \beta_j$$
+Many times, it&amp;rsquo;s convenient to include the vector $\textbf{1}$ in $\textbf{X}$ and include the $\hat \beta_0$ in the vector $\hat \beta$ so we may represent this linear model in vector form as an inner product:</description>
+    </item>
+    
+    <item>
+      <title>Data Types in R</title>
+      <link>//ericpena.github.io/learning/data-types.html</link>
+      <pubDate>Thu, 21 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//ericpena.github.io/learning/data-types.html</guid>
+      <description>&amp;ldquo;Truth is ever to be found in simplicity, and not in the multiplicity and confusion of things.&amp;rdquo;&amp;mdash;Isaac Newton I approached R in the same way I would any language. I immediately delve into for-loops, conditional statements, user-defined functions, classes, and so on. I didn&amp;rsquo;t pay much attention to data types at first - assuming they&amp;rsquo;re not much different than what I&amp;rsquo;ve seen already. I found myself using dataframes and matricies often with low confidence and a lingering confusion.</description>
+    </item>
+    
+    <item>
+      <title>Lagrangian Mechanics</title>
+      <link>//ericpena.github.io/learning/coord.html</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//ericpena.github.io/learning/coord.html</guid>
+      <description>Generalized Coordinates and Conservation Laws From the Lagrangian Formulation of Theoretical Mechanics These are selected notes from a group of topics I find of particular interest. Although I assume some previous knowledge of classical mechanics from you, I still provide a brief overview of what the Lagrangian method is, where it comes from, how it relates to the more familiar Newtonian formulation, and how these beautiful laws of nature imply conserved quantities in everyday systems.</description>
+    </item>
+    
+    <item>
+      <title>Bayesian Optimization</title>
+      <link>//ericpena.github.io/learning/bayes-opt.html</link>
+      <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//ericpena.github.io/learning/bayes-opt.html</guid>
+      <description>Bayesian Optimization Below is a walk-through how to perform Bayesian Optimization in Python. This code follows work of Martin Krasser in order to optimize the following objective function:
+$$f(x) = 2 \sin{(4 x)} \cos{(x)}$$ $$\text{where, } (1 &amp;lt; x &amp;lt; 4)$$
+The first section goes through designing a Bayesian Optimization algorithm using Numpy and SciPy. The second section goes into how we can take advantage of a Python package to optimize our function.</description>
+    </item>
+    
+    <item>
+      <title>First Genetic Algorithm</title>
+      <link>//ericpena.github.io/learning/ga-intro.html</link>
+      <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//ericpena.github.io/learning/ga-intro.html</guid>
+      <description>What is a Genetic Algorithm Evolutionary programming is a family of global optimization techniques that are biologically inspired. It works similarly to the natural process in evolutionary biology. Trial and error is a large component along with stochasticity and survival of the fittest. The type of evolutionary computation that we will focus on is genetic algorithms which became popular by the American Professor of Psychology, Electrical Engineering, and Computer Science, John Holland.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Tensors</title>
+      <link>//ericpena.github.io/learning/tensors.html</link>
+      <pubDate>Sat, 20 Apr 2019 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/learning/tensors.html</guid>
+      <description>Motivation:
+General Relativity Inertia Tensor Stress Tensor It took me a whole week figure out what a tensor actually is. You will find many definitions and some are only partially correct. Let&amp;rsquo;s walk through the different explanations and learn how to think about them.
+(Array Definition) Tensor = Multi-dimensional array of numbers (scalars (rank 0), vectors (rank 1), matricies (rank 2), etc.). This is true in a sense but there is a truer geometrical meaning behind the concept of a tensor.</description>
+    </item>
+    
+    <item>
+      <title>Mathematics of Network Theory</title>
+      <link>//ericpena.github.io/learning/network-theory.html</link>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/learning/network-theory.html</guid>
+      <description>Graphs may be represented in the form of a matrix. Main types of graphs that may be represented are:
+Simple Graph Multigraph Directed Graph Weighted Graph Bipartite Graph Directed Graph Directed graphs are graphs that contain edges with direction. Vertices may have inward and outward edges.
+Unlike adjacency matricies for simped graphs, adjacency matricies for directed graphs are non-symmetric. Elements of an adjacency matrix for a directed graph may be denoted as: $$A_{ij}$$ which represents an edge from vertex $j$ to $i$.</description>
+    </item>
+    
+  </channel>
+</rss>
