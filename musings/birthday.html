@@ -49,7 +49,7 @@ Firstly, if by &ldquo;special day&rdquo; she means birthdays, then this of cours
   "@type": "BlogPosting",
   "headline": "Birthday Everyday",
   "url": "\/\/ericpena.github.io\/musings\/birthday.html",
-  "wordCount": "1315",
+  "wordCount": "1312",
   "datePublished": "2023-03-07T00:00:00-07:00",
   "dateModified": "2023-03-07T00:00:00-07:00",
   "author": {
@@ -182,7 +182,7 @@ MathJax.Hub.Config({
 <h2 id="building-intuition">Building Intuition</h2>
 <ol>
 <li>
-<p>Assuming 365 days in a year, we know that with only 200 people the probability that there&rsquo;s a birthday everyday is zero! (not to be cofused with $0!$ 🤖) The point is: we need at least 365 people for this problem to make any sense.</p>
+<p>Assuming 365 days in a year, we know that with only 200 people the probability that there&rsquo;s a birthday everyday is zero! (not to be confused with $0!=1$ 🤖) The point is: we need at least 365 people for this problem to make any sense.</p>
 </li>
 <li>
 <p><strong>Extremes</strong>: with 365 people, we might expected the probability of a birthday everyday being very low. Furthermore, we can intuit that the probability of a birthday everyday may asymptotically reach 100% as the number of people tends to infinity $(n \rightarrow \infty)$.</p>
@@ -240,15 +240,14 @@ $$P(B | n, k) = \frac{f(n, k)}{g(n, k)}$$</p>
 <li>$f(n, k)$: number of ways of distributing $n$ distinct people among $k$ distinct birthdays, with each days containing at least one person.</li>
 <li>$g(n, k)$: number of ways of distributing $n$ distinct people among $n$ distinct birthdays, allowing for the possibility of having one or more days with no people at all.</li>
 </ul>
-<h3 id="365-people-n--k">365 people (n = k)</h3>
+<h4 id="365-people-n--k">365 people (n = k)</h4>
 <p>Consider we have exactly 365 people, what is the probability that everyone has a distinct birthday? To jump to the point: there are $365!$ ways to rearrange people&rsquo;s <strong>distinct</strong> birthdays and there are $365^{365}$ ways that birthdays can be assigned among 365 people, unrestricted.</p>
 <p>In terms of our functions $f$ and $g$ above, we may say that:
 $$f(n, k) = n!$$
 $$g(n, k) = k^n$$</p>
 <p>$$P(B | n=365, k=365) = \frac{n!}{k^n} = \frac{365!}{365^{365}} = 1.4549552156187034034 \cdot 10^{-157} \approx 0$$</p>
 <p>This shows that it&rsquo;s VERY unlikely that there&rsquo;s a birthday everyday given 365 people.</p>
-<h3 id="more-than-365-people-n--k">More than 365 people (n &gt; k)</h3>
-<h4 id="recursion">Recursion</h4>
+<h4 id="recursive-solution-n-ge-k">Recursive Solution $(n \ge k)$</h4>
 <ul>
 <li>$g(n, k)$: In this case, $g(n, k)$ remains the same as before: $k^n$. In other words, there are still the same number of ways to rearrange $k$ birthdays to $n$ people without any kinds of restriction. This is the easy one.</li>
 <li>$f(n, k)$: It becomes more complicated when we consider the restriction that no days are left empty. To tackle this, we&rsquo;ll consider how many ways there are to rearrange $n$ into $k$ without restriction (basically $g(n, k)$) and subtract the number of arrangements there are with one day empty then subtract the number of arrangements there are with two days empty, and so on.</li>
@@ -263,7 +262,9 @@ $$g(n, k) = k^n$$</p>
 <p>$$f(n, k) = k^n - \sum_{i = 1}^{k - 1}{k \choose i} f(n, i)$$</p>
 <p>where k &gt; 1 and ${k \choose i} = \frac{k!}{i! (k - i)!}$</p>
 <p>$$\therefore P(B | n, k) = \frac{f(n, k)}{g(n, k)} = \frac{k^n - \sum_{i = 1}^{k - 1}{k \choose i} f(n, i)}{k^n}$$</p>
-<h4 id="the-venetian">&ldquo;The Venetian&rdquo;</h4>
+<h4 id="plotting-probabilties">Plotting Probabilties</h4>
+<p><img src="birthday/birthday.png" alt="png"></p>
+<h4 id="the-venetian-solution">&ldquo;The Venetian&rdquo; Solution</h4>
 <p>The Scottish mathematician James Stirling was nicknamed &ldquo;The Venetian&rdquo;. He was a friend of Isaac Newton and well known for important advances to the theory of infinite series and infinitesimal calculus. His most important work is his book, <strong>Methodus Differentialis</strong> (1730) where he includes the asymptotic formula for $n!$ (for the interesed reader).</p>
 <p>The point here is that he is also well known for the <strong>Stirling Numbers</strong> used in the field of combinatorics. The <strong>Stirling number of the second kind</strong> is the number of ways to partition a set of $n$ labeled objects into $k$ unlabeled non-empty subsets and is denoted by ${n \brace k}$.</p>
 <p>This helps us immensely since this is a key idea in the $f(n, k)$ that we found difficulty with above. The Stirling number of the second kind may formally be defined as:</p>
@@ -274,8 +275,6 @@ and of course $g(n, k) = k^n$.</p>
 <p>This leaves us with the final probability calculation:</p>
 <p>$$\therefore P(B | n, k) = \frac{f(n, k)}{g(n, k)} = \frac{k! {n \brace k}}{k^n} = \frac{\sum_{i=0}^{k} (-1)^i {k \choose i}(k - i)^n}{k^n}$$</p>
 <hr>
-<h2 id="plotting-our-solution">Plotting Our Solution</h2>
-<p><img src="birthday/birthday.png" alt="png"></p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Coupon_collector%27s_problem">Coupon Collector&rsquo;s Problem</a></li>

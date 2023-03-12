@@ -16,8 +16,8 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Probability of Unmatching Socks" />
-<meta property="og:description" content="Probability of Unmatching Socks" />
+<meta property="og:title" content="Mismatched Socks" />
+<meta property="og:description" content="Mismatched Socks" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//ericpena.github.io/musings/unmatching-socks.html" /><meta property="article:section" content="musings" />
 <meta property="article:published_time" content="2021-12-09T00:00:00-07:00" />
@@ -25,8 +25,8 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Probability of Unmatching Socks"/>
-<meta name="twitter:description" content="Probability of Unmatching Socks"/>
+<meta name="twitter:title" content="Mismatched Socks"/>
+<meta name="twitter:description" content="Mismatched Socks"/>
 
 
 <meta name="generator" content="Hugo 0.101.0" />
@@ -37,7 +37,7 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Probability of Unmatching Socks",
+  "headline": "Mismatched Socks",
   "url": "\/\/ericpena.github.io\/musings\/unmatching-socks.html",
   "wordCount": "1561",
   "datePublished": "2021-12-09T00:00:00-07:00",
@@ -46,13 +46,13 @@
     "@type": "Person",
     "name": "Eric Peña"
   },
-  "description": "Probability of Unmatching Socks"
+  "description": "Mismatched Socks"
 }
 </script>
 
 
 
-    <title>Probability of Unmatching Socks</title>
+    <title>Mismatched Socks</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -143,19 +143,19 @@ MathJax.Hub.Config({
 <article>
   <div class="non-technical_note">
     <header>
-      <h1 class="non-technical_note_title">Probability of Unmatching Socks</h1>
+      <h1 class="non-technical_note_title">Mismatched Socks</h1>
       <div class="non-technical_note_date">
         <time datetime=" 2021-12-09T00:00:00-07:00 "> 9 December 2021</time>
       </div>
     </header>
     <div class="content">
-    <h1 id="introduction">Introduction</h1>
+    <p><img src="unmatching-socks/3-pairs.png" alt="png"></p>
+<h1 id="introduction">Introduction</h1>
 <p>Probability pops up everywhere! One day, I was digging in a basket of (clean) clothes in search of socks pulling several of them out one by one. However, I pulled six socks out but none of them matched! I thought to myself: what the heck is the probability of THAT happening? So let&rsquo;s dig into how one might figure this out. But before we start answering this, let&rsquo;s be more clear about what the situation is.</p>
 <p>Consider $n$ pairs of socks randomly scattered in a pile of laundry. You pull $k$ socks out to find out that they are all unmatched. <strong>What is the probability of this happening?</strong></p>
 <p>With these kinds of problems, one might wonder whether the socks, for example, are being pulled out one by one or if all the socks are selected simultaneously. Are these the same thing? Spoiler Alert: they are. But I want to show you two different ways you can approach this problem which emphasize these two ideas and show that they do indeed give the same answer!</p>
 <hr>
 <h1 id="pulling-socks-one-by-one">Pulling Socks One-by-One</h1>
-<p><img src="unmatching-socks/3-pairs.png" alt="png"></p>
 <h3 id="choosing-3-socks-from-3-pairs">Choosing 3 Socks from 3 Pairs</h3>
 <ul>
 <li>For clarity, let&rsquo;s assume there are 3 pairs of socks and we&rsquo;re choosing 3 individual socks one by one.</li>
@@ -203,7 +203,7 @@ $$P = \prod^{k - 1 \le n - 1}_{i\text{ = }0}\frac{2\cdot n - 2\cdot i}{2\cdot n 
 <ul>
 <li>Mathematica also has great graphing capabilities!</li>
 </ul>
-<p><img src="unmatching-socks/kn-bar-chart.png" alt="png"></p>
+<p><img src="unmatching-socks/kn-bar-chart-new.png" alt="png"></p>
 <h1 id="choosing-socks-simultaneously">Choosing Socks Simultaneously</h1>
 <ul>
 <li>We could think of this problem slightly differently. That is, we can imagine choosing several socks at the same time and this would technically be the same situation as choosing socks one-by-one.</li>
@@ -256,7 +256,7 @@ $$P_B = \frac{{n \choose k}{2 \choose 1}^k}{2n \choose k} = 2^k \cdot \frac{\fra
 $$\therefore P_A = P_B$$</li>
 <li>We can now use this expression to show the probability distribution over these two parameters $n$ and $k$:</li>
 </ul>
-<p><img src="unmatching-socks/nk_arrayplot.png" alt="png"></p>
+<p><img src="unmatching-socks/nk_arrayplot-new.png" alt="png"></p>
 <h1 id="simulation">Simulation</h1>
 <ul>
 <li>We can trust the math especially since we got to the same result with two different approaches. However, it never hurts to create a simulation of the situation.</li>
