@@ -48,7 +48,9 @@
   },
   "description": "PCA Eigenvalue Decomposition"
 }
-</script> 
+</script>
+
+
 
     <title>PCA using Eigenvalue Decomposition</title>
 
@@ -135,21 +137,19 @@ MathJax.Hub.Config({
         <div class="row">
             <div class="col-sm-12">
 
-                 
+                
 
 
 <article>
-  <div class="technical_note">
-  <header>
-      
-    <h1 class="technical_note_title">PCA using Eigenvalue Decomposition</h1>
-    <div class="technical_note_date">
-      <time datetime=" 2020-06-29T00:00:00Z "> 29 Jun 2020</time>
-    </div>
-  </header>
-  <div class="content">
-      
-  <p>In this article, I go into how we can perform Principal Component Analysis (PCA) using the method of Eigenvalue Decomposition (EVD). Generally, PCA is done by peforming a change of basis on the data, typically by utilizing eigenvectors that find the principal directions of the data. Another important thing to know is that the Eigenvalue Decomposition does not always exist. Eigenvalue Decomposition can only be done on square, full-rank, positive semi-definite matricies. Take a look at the PCA Single Value Decomposition article to learn another way of performing PCA. For now, let&rsquo;s continue with EVD.</p>
+  <div class="non-technical_note">
+    <header>
+      <h1 class="non-technical_note_title">PCA using Eigenvalue Decomposition</h1>
+      <div class="non-technical_note_date">
+        <time datetime=" 2020-06-29T00:00:00Z "> 29 June 2020</time>
+      </div>
+    </header>
+    <div class="content">
+    <p>In this article, I go into how we can perform Principal Component Analysis (PCA) using the method of Eigenvalue Decomposition (EVD). Generally, PCA is done by peforming a change of basis on the data, typically by utilizing eigenvectors that find the principal directions of the data. Another important thing to know is that the Eigenvalue Decomposition does not always exist. Eigenvalue Decomposition can only be done on square, full-rank, positive semi-definite matricies. Take a look at the PCA Single Value Decomposition article to learn another way of performing PCA. For now, let&rsquo;s continue with EVD.</p>
 <p>The general formula for Eigenvalue Decomposition:
 $$\Sigma = W \Lambda W^{-1}$$</p>
 <p>It is also perhaps worth noting that the Trace of $\Lambda$ is written as:</p>
@@ -255,17 +255,11 @@ Eigenvectors:
 </code></pre>
 <p>This is fantastic! We&rsquo;ve found our principal components using Eigenvalue Decomposition. This can be generalized to many dimensions which is where PCA is typically applied for dimensionality reduction. It is important to learn the theory behind machine learning algorithms as oppose to using them as black-box techniques.</p>
 
-</div>
-  <aside>
-      <div class="bug_reporting">
-          <h4>Thank You For Reading!</h4>
-          <p>All material is saved on GitHub. Please <a href='https://github.com/ericpena/pena-notes/issues/new'>submit a suggested change</a> and include the note's URL.</p>
+  </div>
+  
       </div>
-      </aside>
-
-    </div>
-</article>
-
+      
+  </article>
 
 
 
@@ -278,7 +272,7 @@ Eigenvectors:
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Eric Peña, <time datetime="2021">2021</time>. All 26 notes and articles are available on <a href="https://github.com/ericpena/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Eric Peña, <time datetime="2021">2021</time>. All 27 notes and articles are available on <a href="https://github.com/ericpena/">GitHub</a>.</span>
         </div>
     </footer>
 

@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>//ericpena.github.io/musings/index.xml</loc>
+    <lastmod>2023-03-07T00:00:00-07:00</lastmod>
+    <priority>0</priority>
+  </url><url>
+    <loc>//ericpena.github.io/musings/birthday.html</loc>
+    <lastmod>2023-03-07T00:00:00-07:00</lastmod>
+  </url><url>
+    <loc>//ericpena.github.io/</loc>
+    <lastmod>2023-03-07T00:00:00-07:00</lastmod>
+  </url><url>
     <loc>//ericpena.github.io/learning/index.xml</loc>
     <lastmod>2022-04-24T00:00:00-07:00</lastmod>
     <priority>0</priority>
@@ -9,15 +19,8 @@
     <loc>//ericpena.github.io/learning/cellular_automata_intro.html</loc>
     <lastmod>2022-04-24T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>//ericpena.github.io/</loc>
-    <lastmod>2022-04-24T00:00:00-07:00</lastmod>
-  </url><url>
     <loc>//ericpena.github.io/learning/chapter-2.html</loc>
     <lastmod>2022-04-23T00:00:00-07:00</lastmod>
-  </url><url>
-    <loc>//ericpena.github.io/musings/index.xml</loc>
-    <lastmod>2021-12-09T00:00:00-07:00</lastmod>
-    <priority>0</priority>
   </url><url>
     <loc>//ericpena.github.io/musings/unmatching-socks.html</loc>
     <lastmod>2021-12-09T00:00:00-07:00</lastmod>
