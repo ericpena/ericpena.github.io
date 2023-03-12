@@ -49,7 +49,7 @@ Firstly, if by &ldquo;special day&rdquo; she means birthdays, then this of cours
   "@type": "BlogPosting",
   "headline": "Birthday Everyday",
   "url": "\/\/ericpena.github.io\/musings\/birthday.html",
-  "wordCount": "1312",
+  "wordCount": "1324",
   "datePublished": "2023-03-07T00:00:00-07:00",
   "dateModified": "2023-03-07T00:00:00-07:00",
   "author": {
@@ -269,12 +269,12 @@ $$g(n, k) = k^n$$</p>
 <p>The point here is that he is also well known for the <strong>Stirling Numbers</strong> used in the field of combinatorics. The <strong>Stirling number of the second kind</strong> is the number of ways to partition a set of $n$ labeled objects into $k$ unlabeled non-empty subsets and is denoted by ${n \brace k}$.</p>
 <p>This helps us immensely since this is a key idea in the $f(n, k)$ that we found difficulty with above. The Stirling number of the second kind may formally be defined as:</p>
 <p>$${n \brace k} = \frac{1}{k!} \sum_{i=0}^{k} (-1)^i {k \choose i}(k - i)^n$$</p>
-<p>The main consideration for our problem is that it days of the year are actuall labeled and we care what day someone&rsquo;s birthday lands on. In order to correct for this we add an extra $k!$ into the mix. Therefore:
+<p>The main consideration for our problem is that the days of the year are actually labeled and we care what day someone&rsquo;s birthday lands on. In order to correct for this we add an extra $k!$ into our calculation. Therefore:
 $$f(n, k) = k! {n \brace k}$$
-and of course $g(n, k) = k^n$.</p>
+and of course, $g(n, k) = k^n$.</p>
 <p>This leaves us with the final probability calculation:</p>
 <p>$$\therefore P(B | n, k) = \frac{f(n, k)}{g(n, k)} = \frac{k! {n \brace k}}{k^n} = \frac{\sum_{i=0}^{k} (-1)^i {k \choose i}(k - i)^n}{k^n}$$</p>
-<hr>
+<h2 id="this-is-a-cleaner-solution-albeit-harder-to-understand-at-a-glance">This is a cleaner solution, albeit harder to understand at a glance.</h2>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Coupon_collector%27s_problem">Coupon Collector&rsquo;s Problem</a></li>
