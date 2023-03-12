@@ -49,7 +49,7 @@ Firstly, if by &ldquo;special day&rdquo; she means birthdays, then this of cours
   "@type": "BlogPosting",
   "headline": "Birthday Everyday",
   "url": "\/\/ericpena.github.io\/musings\/birthday.html",
-  "wordCount": "1319",
+  "wordCount": "1315",
   "datePublished": "2023-03-07T00:00:00-07:00",
   "dateModified": "2023-03-07T00:00:00-07:00",
   "author": {
@@ -200,7 +200,7 @@ MathJax.Hub.Config({
 <p>In our case, coupons are the distinct days in the year. This expected value isn&rsquo;t the final answer we want but let&rsquo;s see how this works anyways. (may be skipped if you&rsquo;re not interested)</p>
 <ul>
 <li>
-<p>Let $T$ be the number of people we need to inspect to collect all $n$ distinct days in the year. We can image a line of random individuals who are all holding their id cards and we check off the days in the calendar one-by-one.</p>
+<p>Let $T$ be a random variable of the number of people we need to inspect to collect all $n$ distinct days in the year. We can imagine a line of individuals with random birthdays and one-by-one we check off the days in the year.</p>
 </li>
 <li>
 <p>Let $t_i$ be the number of people needed to collect the $i^{th}$ day after $i-1$ days have already been collected. Therefore, $T = t_1 + \cdots + t_n$.</p>
@@ -241,7 +241,7 @@ $$P(B | n, k) = \frac{f(n, k)}{g(n, k)}$$</p>
 <li>$g(n, k)$: number of ways of distributing $n$ distinct people among $n$ distinct birthdays, allowing for the possibility of having one or more days with no people at all.</li>
 </ul>
 <h3 id="365-people-n--k">365 people (n = k)</h3>
-<p>Consider we have exactly 365 people, what is the probability that everone has a distinct birthday? To jump to the point: there are $365!$ ways to rearrange people&rsquo;s <strong>distinct</strong> birthdays and there are $365^{365}$ ways that birthdays can be assigned to among 365 people, unrestricted.</p>
+<p>Consider we have exactly 365 people, what is the probability that everyone has a distinct birthday? To jump to the point: there are $365!$ ways to rearrange people&rsquo;s <strong>distinct</strong> birthdays and there are $365^{365}$ ways that birthdays can be assigned among 365 people, unrestricted.</p>
 <p>In terms of our functions $f$ and $g$ above, we may say that:
 $$f(n, k) = n!$$
 $$g(n, k) = k^n$$</p>
@@ -253,11 +253,11 @@ $$g(n, k) = k^n$$</p>
 <li>$g(n, k)$: In this case, $g(n, k)$ remains the same as before: $k^n$. In other words, there are still the same number of ways to rearrange $k$ birthdays to $n$ people without any kinds of restriction. This is the easy one.</li>
 <li>$f(n, k)$: It becomes more complicated when we consider the restriction that no days are left empty. To tackle this, we&rsquo;ll consider how many ways there are to rearrange $n$ into $k$ without restriction (basically $g(n, k)$) and subtract the number of arrangements there are with one day empty then subtract the number of arrangements there are with two days empty, and so on.</li>
 </ul>
-<p>For example, with the first two empty day situation just described we can write:</p>
+<p>The &ldquo;so on&rdquo; above can be written as:</p>
 <p>$$f(n, k) = k^n - {k \choose 1} \cdot f(n, 1) - {k \choose 2} \cdot f(n, 2) - \cdots - {k \choose n - 1} \cdot f(n, k - 1)$$</p>
 <ul>
-<li>Note that we need the binomial coefficients because there are combinatorial number of ways to rearrange these <em>empty</em> days.</li>
-<li>Note that the last term means that every has the <em>same</em> birthday and that day could be any of the $k$ days.</li>
+<li>Note that we need the binomial coefficients because there are a combinatorial number of ways to rearrange these <em>empty</em> days.</li>
+<li>Note that the last term means that everyone has the <em>same</em> birthday and that day could be any of the $k$ days on the calendar.</li>
 </ul>
 <p>Written more compactly:</p>
 <p>$$f(n, k) = k^n - \sum_{i = 1}^{k - 1}{k \choose i} f(n, i)$$</p>
