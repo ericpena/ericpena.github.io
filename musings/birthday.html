@@ -49,7 +49,7 @@ Firstly, if by &ldquo;special day&rdquo; she means birthdays, then this of cours
   "@type": "BlogPosting",
   "headline": "Birthday Everyday",
   "url": "\/\/ericpena.github.io\/musings\/birthday.html",
-  "wordCount": "1324",
+  "wordCount": "1483",
   "datePublished": "2023-03-07T00:00:00-07:00",
   "dateModified": "2023-03-07T00:00:00-07:00",
   "author": {
@@ -253,7 +253,7 @@ $$g(n, k) = k^n$$</p>
 <li>$f(n, k)$: It becomes more complicated when we consider the restriction that no days are left empty. To tackle this, we&rsquo;ll consider how many ways there are to rearrange $n$ into $k$ without restriction (basically $g(n, k)$) and subtract the number of arrangements there are with one day empty then subtract the number of arrangements there are with two days empty, and so on.</li>
 </ul>
 <p>The &ldquo;so on&rdquo; above can be written as:</p>
-<p>$$f(n, k) = k^n - {k \choose 1} \cdot f(n, 1) - {k \choose 2} \cdot f(n, 2) - \cdots - {k \choose n - 1} \cdot f(n, k - 1)$$</p>
+<p>$$f(n, k) = k^n - {k \choose 1} \cdot f(n, 1) - {k \choose 2} \cdot f(n, 2) - \cdots - {k \choose k - 1} \cdot f(n, k - 1)$$</p>
 <ul>
 <li>Note that we need the binomial coefficients because there are a combinatorial number of ways to rearrange these <em>empty</em> days.</li>
 <li>Note that the last term means that everyone has the <em>same</em> birthday and that day could be any of the $k$ days on the calendar.</li>
@@ -262,8 +262,6 @@ $$g(n, k) = k^n$$</p>
 <p>$$f(n, k) = k^n - \sum_{i = 1}^{k - 1}{k \choose i} f(n, i)$$</p>
 <p>where k &gt; 1 and ${k \choose i} = \frac{k!}{i! (k - i)!}$</p>
 <p>$$\therefore P(B | n, k) = \frac{f(n, k)}{g(n, k)} = \frac{k^n - \sum_{i = 1}^{k - 1}{k \choose i} f(n, i)}{k^n}$$</p>
-<h4 id="plotting-probabilties">Plotting Probabilties</h4>
-<p><img src="birthday/birthday.png" alt="png"></p>
 <h4 id="the-venetian-solution">&ldquo;The Venetian&rdquo; Solution</h4>
 <p>The Scottish mathematician James Stirling was nicknamed &ldquo;The Venetian&rdquo;. He was a friend of Isaac Newton and well known for important advances to the theory of infinite series and infinitesimal calculus. His most important work is his book, <strong>Methodus Differentialis</strong> (1730) where he includes the asymptotic formula for $n!$ (for the interesed reader).</p>
 <p>The point here is that he is also well known for the <strong>Stirling Numbers</strong> used in the field of combinatorics. The <strong>Stirling number of the second kind</strong> is the number of ways to partition a set of $n$ labeled objects into $k$ unlabeled non-empty subsets and is denoted by ${n \brace k}$.</p>
@@ -273,8 +271,36 @@ $$g(n, k) = k^n$$</p>
 $$f(n, k) = k! {n \brace k}$$
 and of course, $g(n, k) = k^n$.</p>
 <p>This leaves us with the final probability calculation:</p>
-<p>$$\therefore P(B | n, k) = \frac{f(n, k)}{g(n, k)} = \frac{k! {n \brace k}}{k^n} = \frac{\sum_{i=0}^{k} (-1)^i {k \choose i}(k - i)^n}{k^n}$$</p>
+<p>$$\therefore P(B | n, k) = \frac{f(n, k)}{g(n, k)} = \frac{k! {n \brace k}}{k^n} = \frac{1}{k^n}\sum_{i=0}^{k} (-1)^i {k \choose i}(k - i)^n$$</p>
 <p>This is a cleaner solution, albeit harder to understand at a glance.</p>
+<h4 id="plotting-probabilties">Plotting Probabilties</h4>
+<p><img src="birthday/birthday.png" alt="png"></p>
+<h2 id="simulation">Simulation</h2>
+<p>We have the advantage of being able to create a simulation without having gone through the mathematics. The following code was done using Mathematica.</p>
+<ul>
+<li><code>n</code>: number of people</li>
+<li><code>k</code>: number of days in the year (possible birthdays)</li>
+<li><code>s</code>: sample size (number of groups of size n for simulation)</li>
+<li><code>x</code>: number of experiments to run to get final distribution</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mathematica" data-lang="mathematica"><span class="line"><span class="cl"><span class="n">f</span><span class="p">[</span><span class="nv">n0_</span><span class="p">,</span><span class="w"> </span><span class="nv">k0_</span><span class="p">,</span><span class="w"> </span><span class="nv">s0_</span><span class="p">,</span><span class="w"> </span><span class="nv">x0_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="n">Module</span><span class="p">[{</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n0</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k0</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s0</span><span class="p">,</span><span class="w"> </span><span class="n">numExp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x0</span><span class="p">,</span><span class="w"> </span><span class="n">probList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}},</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">Do</span><span class="p">[</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">birthdays</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RandomInteger</span><span class="p">[{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">}];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">uniqueBirthdays</span><span class="w"> </span><span class="o">=</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">DeleteDuplicates</span><span class="p">[</span><span class="n">birthdays</span><span class="p">[[</span><span class="nv">#</span><span class="p">]]]</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="o">/@</span><span class="w"> </span><span class="n">Range</span><span class="p">[</span><span class="n">Length</span><span class="p">[</span><span class="n">birthdays</span><span class="p">]];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">countAtLeastOneEachDay</span><span class="w"> </span><span class="o">=</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">CountsBy</span><span class="p">[</span><span class="n">uniqueBirthdays</span><span class="p">,</span><span class="w"> </span><span class="n">ContainsAll</span><span class="p">[</span><span class="nv">#</span><span class="p">,</span><span class="w"> </span><span class="n">Range</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">]]</span><span class="w"> </span><span class="o">&amp;</span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">counts</span><span class="w"> </span><span class="o">=</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">If</span><span class="p">[</span><span class="n">KeyExistsQ</span><span class="p">[</span><span class="n">countAtLeastOneEachDay</span><span class="p">,</span><span class="w"> </span><span class="n">True</span><span class="p">],</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="n">countAtLeastOneEachDay</span><span class="p">[</span><span class="n">True</span><span class="p">],</span><span class="w"> </span><span class="mi">0</span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">AppendTo</span><span class="p">[</span><span class="n">probList</span><span class="p">,</span><span class="w"> </span><span class="n">counts</span><span class="o">/</span><span class="n">s</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">N</span><span class="p">],</span><span class="w"> </span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">numExp</span><span class="p">}];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">Return</span><span class="p">[</span><span class="n">probList</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">]</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>Suppose $n = 2287$ people and $k = 365$ days in the year. The plot below shows the proportion of experiments that result in &ldquo;birthday everyday&rdquo; years. The mean of the values below is $\bar p = 50.116$% and the theoretical probability is $p = 50.0371$%.</li>
+</ul>
+<p><img src="birthday/prob-hist.png" alt="png"></p>
 <hr>
 <h2 id="references">References</h2>
 <ul>
