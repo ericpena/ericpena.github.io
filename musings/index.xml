@@ -5,10 +5,19 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Feb 2024 00:00:00 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 21 May 2024 00:00:00 -0700</lastBuildDate>
     
         <atom:link href="//ericpena.github.io/musings/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>modified coupon collector&#39;s problem</title>
+      <link>//ericpena.github.io/musings/mod_coupon.html</link>
+      <pubDate>Tue, 21 May 2024 00:00:00 -0700</pubDate>
+      
+      <guid>//ericpena.github.io/musings/mod_coupon.html</guid>
+      <description>Full Report (Click Link): [LINK] Introduction In probability theory, the coupon collector&amp;rsquo;s problem refers to the mathematical analysis of collecting every distinct kind of element when randomly choosing elements with replacement. Two initial questions can be asked for this problem: (1) If there are $k$ different kinds of coupons, what is the probability that all $k$ kinds of coupons have been collected after $n$ coupons are collected with replacement? (2) Given $k$ kinds of coupons, how many coupons do you expect you need to draw with replacement before having drawn each coupon at least once?</description>
+    </item>
     
     <item>
       <title>throwing at wall</title>
