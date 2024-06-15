@@ -1,49 +1,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>articles - Eric Peña</title>
-    <link>//ericpena.github.io/articles/index.xml</link>
+    <link>https://ericpena.github.io/articles/index.xml</link>
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="//ericpena.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://ericpena.github.io/articles/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Review of Complexity Book by Melanie Mitchell</title>
-      <link>//ericpena.github.io/articles/mitchell.html</link>
+      <link>https://ericpena.github.io/articles/mitchell.html</link>
       <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>//ericpena.github.io/articles/mitchell.html</guid>
+      <guid>https://ericpena.github.io/articles/mitchell.html</guid>
       <description>Part I: Introduction Providing the multifaceted story of how complex systems has evolved into what it is today is no easy feat. Dr. Melanie Mitchell not only gives a comprehensive historical tour of science and mathematics, she also provides foundational knowledge that any reader can carry to appreciate the essence of what it means for a system to be complex in the technical sense. Early on, she gives a clear definition of complex systems as an interdisciplinary field that studies how large networks of entities with no central controller can organize themselves and exhibit collective behavior given simple rules.</description>
     </item>
     
     <item>
       <title>Diversity in Competitive Threshold Linear Networks</title>
-      <link>//ericpena.github.io/articles/ctln.html</link>
+      <link>https://ericpena.github.io/articles/ctln.html</link>
       <pubDate>Wed, 11 Dec 2019 00:00:00 -0700</pubDate>
       
-      <guid>//ericpena.github.io/articles/ctln.html</guid>
+      <guid>https://ericpena.github.io/articles/ctln.html</guid>
       <description>Figure 1 — Directed Network Which Represents Threshold Linear Network
 Adjacency Matrix Representing Directed Network $$\begin{pmatrix} 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 \\ 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 \\ 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 1 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0 &amp;amp; 0\end{pmatrix}$$</description>
     </item>
     
     <item>
       <title>Genetic Algorithm — Cellular Automata Optimization</title>
-      <link>//ericpena.github.io/articles/ga-liso.html</link>
+      <link>https://ericpena.github.io/articles/ga-liso.html</link>
       <pubDate>Sun, 01 Dec 2019 00:00:00 -0700</pubDate>
       
-      <guid>//ericpena.github.io/articles/ga-liso.html</guid>
+      <guid>https://ericpena.github.io/articles/ga-liso.html</guid>
       <description>Abstract The mechanism by which nature exhibits emergent patterns and behaviors has been a mystery throughout history. One application that has been developed which tends to mimic nature is Conway’s Game of Life — an application in the field of cellular automata. The ability to predict a final state of a system, given an initial state in the context of Game of Life, come as an insurmountable task. In this work, genetic algorithms are explored along with how they may be used to search for initial conditions such that their final outcomes are optimal.</description>
     </item>
     
     <item>
       <title>Python Character Analysis</title>
-      <link>//ericpena.github.io/articles/charater_analysis.html</link>
+      <link>https://ericpena.github.io/articles/charater_analysis.html</link>
       <pubDate>Thu, 03 Oct 2019 00:00:00 -0700</pubDate>
       
-      <guid>//ericpena.github.io/articles/charater_analysis.html</guid>
+      <guid>https://ericpena.github.io/articles/charater_analysis.html</guid>
       <description>Introduction I have separated my work into sections so ease of flow. All Python code is included in this article. Observations of the data are shown in the histogram and heatmap below.
 Header The header of my python file gives general information:
 Title: Python Character Analysis Author: Eric Pena Date: Oct. 2019 Text Source: Academic Sample http://www.thegrammarlab.com/?nor-portfolio=1000000-word-sample-corpora Packages Below are important packages that I am importing for the program to work properly.</description>
@@ -51,39 +51,39 @@ Title: Python Character Analysis Author: Eric Pena Date: Oct. 2019 Text Source: 
     
     <item>
       <title>Speed of Julia</title>
-      <link>//ericpena.github.io/articles/julia_speed.html</link>
+      <link>https://ericpena.github.io/articles/julia_speed.html</link>
       <pubDate>Mon, 09 Sep 2019 00:00:00 -0700</pubDate>
       
-      <guid>//ericpena.github.io/articles/julia_speed.html</guid>
+      <guid>https://ericpena.github.io/articles/julia_speed.html</guid>
       <description>Creating fib(n) function fib(n) if (n == 1 || n == 2) return 1 else return fib(n - 1) + fib(n - 2) end end Timing fib(n) 1:40 function fibTime(k) t = [] for i in 1:k push!(t, (@timed fib(i))[2]) end return t end # :: Print @timed Fibonacci 1 through 40 println(fibTime(40)) Plotting @Timed Results The timing for Julia is surprisingly very fast!
 using Plots plot(fibTime(40), title=&amp;#34;Timed Recursive Fibonacci Algorithm&amp;#34;, color = :red, fill = (0, .</description>
     </item>
     
     <item>
       <title>Speed Walking in Chicago</title>
-      <link>//ericpena.github.io/articles/speed-walking.html</link>
+      <link>https://ericpena.github.io/articles/speed-walking.html</link>
       <pubDate>Tue, 30 Apr 2019 00:00:00 -0700</pubDate>
       
-      <guid>//ericpena.github.io/articles/speed-walking.html</guid>
+      <guid>https://ericpena.github.io/articles/speed-walking.html</guid>
       <description>Chicagoans Always Speed My morning commute to work in the heart of downtown Chicago is very regular: Enjoy blazing hot coffee and listen to an interesting podcast all while super-speed-walking all the way to the office. I often think how much time I would save by teleporting to the office instead. Even while often walking faster than most on the busy morning sidewalks, there are folks that zoom past me but still appear to be walking gracefully.</description>
     </item>
     
     <item>
       <title>Complex Systems News Resources</title>
-      <link>//ericpena.github.io/articles/news.html</link>
+      <link>https://ericpena.github.io/articles/news.html</link>
       <pubDate>Sun, 31 Mar 2019 00:00:00 -0700</pubDate>
       
-      <guid>//ericpena.github.io/articles/news.html</guid>
+      <guid>https://ericpena.github.io/articles/news.html</guid>
       <description>Keeping Up With Complex Systems Science News It can be difficult to find time to keep up with interesting science, especially when articles are dense and abstruse. With an unfortunate name like complex systems, keeping up with the intersting news can be a daunting task. Here are a few resources that I use to keep up with the fascinating world of complex systems and systems engineering.
 Sante Fe Institute Complexity Explorer Quanta Magazine Nature The Nature journal has a Complexity page that shows the latest new for complex systems.</description>
     </item>
     
     <item>
       <title>War –– Coding the Card Game</title>
-      <link>//ericpena.github.io/articles/war.html</link>
+      <link>https://ericpena.github.io/articles/war.html</link>
       <pubDate>Sat, 16 Mar 2019 00:00:00 -0700</pubDate>
       
-      <guid>//ericpena.github.io/articles/war.html</guid>
+      <guid>https://ericpena.github.io/articles/war.html</guid>
       <description>Simulation and Analysis of War (the card game) Game designer Greg Costikyan has observed that since there are no choices in the game, and all outcomes are random, it cannot be considered a game by some definitions. I chose to program this game because its complete random chance feature. It was an opportunity to practice python and writing recursive functions. The objective of the game is to win all cards. A 52-card deck is divided evenly among the players, giving each a down stack.</description>
     </item>
     
