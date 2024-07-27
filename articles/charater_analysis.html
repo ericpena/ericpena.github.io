@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162942761-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-162942761-1');
+    </script>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Python Character Analysis" />
+<meta property="og:description" content="Python Character Analysis" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ericpena.github.io/articles/charater_analysis.html" /><meta property="article:section" content="articles" />
+<meta property="article:published_time" content="2019-10-03T00:00:00-07:00" />
+<meta property="article:modified_time" content="2019-10-03T00:00:00-07:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python Character Analysis"/>
+<meta name="twitter:description" content="Python Character Analysis"/>
+
+
+<meta name="generator" content="Hugo 0.101.0" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Python Character Analysis",
+  "url": "https:\/\/ericpena.github.io\/articles\/charater_analysis.html",
+  "wordCount": "2601",
+  "datePublished": "2019-10-03T00:00:00-07:00",
+  "dateModified": "2019-10-03T00:00:00-07:00",
+  "author": {
+    "@type": "Person",
+    "name": "Eric Peña"
+  },
+  "description": "Python Character Analysis"
+}
+</script>
+
+
+
+    <title>Python Character Analysis</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    
+    <link href="https://ericpena.github.io/css/custom.css" rel="stylesheet">
+    <link href="https://ericpena.github.io/css/syntax.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
+
+    
+
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://ericpena.github.io/about/eric_pena.html">Eric Peña</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://ericpena.github.io">PEÑA NOTES</a>
+                    </li>
+
+                    
+
+                    
+
+                    
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://ericpena.github.io/about/eric_pena.html">About Me</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            CONNECT
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://www.linkedin.com/in/eric-pena/" target="_blank">LinkedIn</a>
+                            <a class="dropdown-item" href="https://twitter.com/ericpenax" target="_blank">X</a>
+                            
+                            <a class="dropdown-item" href="https://github.com/ericpena" target="_blank">GitHub</a>
+                            <a class="dropdown-item" href="mailto:pena.eng.physics@gmail.com" target="_blank">Email</a>
+                            
+                            
+                            
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                
+
+
+<article>
+  <div class="non-technical_note">
+    <header>
+      <h1 class="non-technical_note_title">Python Character Analysis</h1>
+      <div class="non-technical_note_date">
+        <time datetime=" 2019-10-03T00:00:00-07:00 "> 3 October 2019</time>
+      </div>
+    </header>
+    <div class="content">
+    <h2 id="introduction">Introduction</h2>
+<p>I have separated my work into sections so ease of flow. All Python code is included in this article. Observations of the data are shown in the histogram and heatmap below.</p>
+<!-- raw HTML omitted -->
+<h2 id="header">Header</h2>
+<p>The header of my python file gives general information:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">Title</span><span class="p">:</span> <span class="n">Python</span> <span class="n">Character</span> <span class="n">Analysis</span>
+</span></span><span class="line"><span class="cl"><span class="n">Author</span><span class="p">:</span> <span class="n">Eric</span> <span class="n">Pena</span>
+</span></span><span class="line"><span class="cl"><span class="n">Date</span><span class="p">:</span> <span class="n">Oct</span><span class="o">.</span> <span class="mi">2019</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Text</span> <span class="n">Source</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="n">Academic</span> <span class="n">Sample</span>
+</span></span><span class="line"><span class="cl"><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">thegrammarlab</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="err">?</span><span class="n">nor</span><span class="o">-</span><span class="n">portfolio</span><span class="o">=</span><span class="mi">1000000</span><span class="o">-</span><span class="n">word</span><span class="o">-</span><span class="n">sample</span><span class="o">-</span><span class="n">corpora</span>
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<h2 id="packages">Packages</h2>
+<p>Below are important packages that I am importing for the program to work properly.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">fileinput</span> <span class="k">as</span> <span class="nn">fi</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">string</span>
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<h2 id="user-defined-functions">User Defined Functions</h2>
+<p>I have defined several functions used by the \verb|main()| function:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="n">file</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;&#34;&#34;Reads given file and parses characters
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Args:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		file: the text file to be parsed
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Returns:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		charArr: parsed character array
+</span></span></span><span class="line"><span class="cl"><span class="s2">	&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fi</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">line</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># -------------------------------------------------------------------</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;&#34;&#34;Counts characters and creates freq table
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Args:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		array: character array of text
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Returns:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		freq: dictionary that represents freq table
+</span></span></span><span class="line"><span class="cl"><span class="s2">	&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="p">{</span><span class="n">c</span><span class="p">:</span> <span class="n">array</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">array</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># -------------------------------------------------------------------</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">partition2</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;&#34;&#34;Works similar to Mathematica&#39;s partition function
+</span></span></span><span class="line"><span class="cl"><span class="s2">		but slightly differently. This function will create
+</span></span></span><span class="line"><span class="cl"><span class="s2">		a string that combines each pair of characters in
+</span></span></span><span class="line"><span class="cl"><span class="s2">		order to be hashed through by the count function.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Args:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		array: this array
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Returns:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		
+</span></span></span><span class="line"><span class="cl"><span class="s2">	&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -------------------------------------------------------------------</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">dict_print</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;&#34;&#34;Print function specifically for dictionary
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Args:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		d: dictionary
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Returns:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		None: only prints out the contents of the dictionary
+</span></span></span><span class="line"><span class="cl"><span class="s2">	&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; --- &#39;</span> <span class="o">+</span> <span class="n">key</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; :</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">))</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># -------------------------------------------------------------------</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">to_dataframe</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;&#34;&#34;converts the dictionary of transitions to a dataframe from which
+</span></span></span><span class="line"><span class="cl"><span class="s2">		can be turned into a heatmap
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Args:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		d: dictionary
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Returns:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		df: dataframe 
+</span></span></span><span class="line"><span class="cl"><span class="s2">	&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Create dataframe</span>
+</span></span><span class="line"><span class="cl">	<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;First&#39;</span><span class="p">,</span> <span class="s1">&#39;Second&#39;</span><span class="p">,</span> <span class="s1">&#39;Frequency&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Initialize matrix</span>
+</span></span><span class="line"><span class="cl">	<span class="n">alpha</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span><span class="p">)[:</span><span class="mi">26</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">	<span class="n">alpha</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">			<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Pivot our dataframe to make a matrix for heatmap</span>
+</span></span><span class="line"><span class="cl">	<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="s2">&#34;First&#34;</span><span class="p">,</span> <span class="s2">&#34;Second&#34;</span><span class="p">,</span> <span class="s2">&#34;Frequency&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Add relevant frequencies to the matrix</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="n">df</span><span class="p">[</span><span class="n">k</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">df</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -------------------------------------------------------------------</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">show_heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;&#34;&#34;Create and plot heatmap of data
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Args:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		df: dataframe of frequencies
+</span></span></span><span class="line"><span class="cl"><span class="s2">	Returns:
+</span></span></span><span class="line"><span class="cl"><span class="s2">		None: Instead will plot a heatmap of the data
+</span></span></span><span class="line"><span class="cl"><span class="s2">	&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Creae heatmap and customize</span>
+</span></span><span class="line"><span class="cl">	<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&#34;binary&#34;</span><span class="p">,</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_label_position</span><span class="p">(</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticks_position</span><span class="p">(</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;darkgray&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;darkgray&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;darkgray&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;darkgray&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Second Letter&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;First Letter&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">figure</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<h2 id="main-program">Main Program</h2>
+<p>This shows the code for the main program which utilizes the functions above.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># ---------------------------MAIN PROGRAM---------------------------</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Reads in text file</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Counts the frequencies</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Data stored in dictionary</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Plots histogram of results</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="n">freq_dict</span> <span class="o">=</span> <span class="n">count</span><span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;text.txt&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">freq_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">freq_dict</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Character Histogram&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Characters&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Reads in text file</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Partitions in 2-tuples for transitions</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Data stored in dictionary</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># :: Frequencies are printed to console/terminal</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="n">dict_print</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="n">partition2</span><span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;text.txt&#39;</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">df</span> <span class="o">=</span> <span class="n">to_dataframe</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="n">partition2</span><span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;text.txt&#39;</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;/Users/ericpena/iCloud/Binghamton_Courses/500_Computational_Tools/HW2/heatmap.png&#39;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">show_heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">main</span><span class="p">()</span>
+</span></span></code></pre></div><h2 id="plot-of-histogram">Plot of Histogram</h2>
+<p><img src="img_character_analysis/hist.png" alt="">
+Figure 1 — Histogram that shows frequencies of characters appearing in the text</p>
+<h2 id="histogram-observations">Histogram Observations</h2>
+<p>Here are a few observations about the histogram above:</p>
+<ul>
+<li>$space\ character$: The space character is by far the most frequent. This makes sense since after each word, a space appears</li>
+<li>${j, z, x, k}$: Characters such as $j$, $z$, $x$, and $k$ are low frequency &mdash; not often present in common words</li>
+<li>$vowels$: It makes sense for the frequency of the vowels to be higher than consonants given how English is structured</li>
+</ul>
+<h2 id="heatmap-of-character-transitions">Heatmap of Character Transitions</h2>
+<p>The heat map below visually represents the frequencies of the transitions $c_i \rightarrow c_{i+1}$ where $c_i$ is the $i^{th}$ character in the supplied text file.</p>
+<p><img src="img_character_analysis/heatmap.png" alt="">
+Figure 2 — Heatmap that shows the frequencies of character transitions</p>
+<h4 id="heatmap-observations">Heatmap Observations</h4>
+<p>Here are a few observations about the heatmap above:</p>
+<ul>
+<li>$Common\ Occurences$: Some common occurrences: $t \rightarrow h$, $i \rightarrow n$, $n \rightarrow t$, $r \rightarrow e$, $t \rightarrow i$</li>
+<li>$Spaces$: As expected the row and column of the $space$ is quite active &mdash; this makes sense since all words start and end with a $space$</li>
+<li>$Bare$: It&rsquo;s interesting but not unexpected that the right bottom right is quite bare &mdash; very low frequencies later in the alphabet</li>
+</ul>
+<h2 id="robustness-parameter">Robustness Parameter</h2>
+<p>The heatmap above is actually using a <code>robust=True</code> parameter that normalizes the frequencies into a small range in order to improve the visualization. This is an improvement over the heatmap with the original frequencies. See below for the difference between the $RAW$ heatmap and the $ROBUST$ heatmap. More visual information can be obtained by using the $robust$ parameter since the `interesting&rsquo; events are much more pronounced.</p>
+<p><img src="img_character_analysis/heatmap_robust.png" alt="">
+Figure 3 — Shows the difference between the Raw and Robust frequencies for the heatmap</p>
+<h2 id="appendix--output-data">Appendix — Output Data</h2>
+<!-- raw HTML omitted -->
+<h4 id="histogram-frenquencies">Histogram Frenquencies</h4>
+<p>{&rsquo;d&rsquo;: 234, &lsquo;i&rsquo;: 574, &lsquo;f&rsquo;: 233, &rsquo;e&rsquo;: 958, &lsquo;r&rsquo;: 428, &rsquo;n&rsquo;: 492, &lsquo;c&rsquo;: 255, &rsquo; &lsquo;: 1370, &lsquo;w&rsquo;: 111, &lsquo;h&rsquo;: 344, &rsquo;m&rsquo;: 184, &rsquo;s&rsquo;: 455, &rsquo;t&rsquo;: 653, &lsquo;o&rsquo;: 475, &lsquo;u&rsquo;: 206, &lsquo;a&rsquo;: 561, &lsquo;p&rsquo;: 146, &rsquo;l&rsquo;: 336, &lsquo;y&rsquo;: 77, &lsquo;x&rsquo;: 24, &lsquo;b&rsquo;: 111, &lsquo;k&rsquo;: 15, &lsquo;g&rsquo;: 103, &lsquo;v&rsquo;: 60, &lsquo;q&rsquo;: 20, &lsquo;j&rsquo;: 9, &lsquo;z&rsquo;: 11}</p>
+<h4 id="heatmap-frenquencies">Heatmap Frenquencies</h4>
+<p>d &mdash; i :	30
+i &mdash; f :	11
+f &mdash; f :	15
+f &mdash; e :	10
+e &mdash; r :	114
+r &mdash; e :	113
+e &mdash; n :	105
+n &mdash; c :	22
+c &mdash; e :	49
+e &mdash;   :	339
+&mdash; w :	79
+w &mdash; h :	23
+h &mdash; e :	210
+&mdash; m :	53
+m &mdash; c :	1
+c &mdash;   :	8
+&mdash; i :	72
+i &mdash; s :	61
+s &mdash;   :	199
+&mdash; t :	252
+t &mdash; h :	212
+m &mdash; o :	13
+o &mdash; i :	5
+s &mdash; t :	41
+t &mdash; u :	11
+u &mdash; r :	46
+&mdash; c :	90
+c &mdash; o :	54
+o &mdash; n :	104
+n &mdash; t :	88
+t &mdash; e :	94
+t &mdash;   :	107
+m &mdash; a :	18
+a &mdash;   :	40
+a &mdash; s :	55
+s &mdash; s :	18
+&mdash; o :	93
+o &mdash; f :	70
+f &mdash;   :	73
+&mdash; s :	69
+s &mdash; a :	14
+a &mdash; m :	23
+m &mdash; p :	25
+p &mdash; l :	14
+l &mdash; e :	47
+&mdash; a :	168
+a &mdash; f :	6
+f &mdash; t :	4
+r &mdash;   :	64
+&mdash; h :	40
+h &mdash; u :	12
+u &mdash; m :	9
+m &mdash; i :	37
+i &mdash; d :	28
+i &mdash; t :	46
+t &mdash; y :	11
+y &mdash;   :	60
+&mdash; e :	40
+e &mdash; x :	11
+x &mdash; p :	3
+p &mdash; o :	41
+o &mdash; s :	28
+s &mdash; u :	28
+a &mdash; n :	92
+n &mdash; d :	65
+d &mdash;   :	140
+m &mdash; d :	1
+&mdash; d :	39
+d &mdash; r :	2
+r &mdash; y :	12
+&mdash; r :	37
+e &mdash; s :	71
+u &mdash; l :	21
+l &mdash; t :	4
+t &mdash; s :	17
+s &mdash; c :	3
+c &mdash; u :	3
+u &mdash; s :	31
+s &mdash; i :	53
+i &mdash; o :	60
+n &mdash;   :	131
+c &mdash; h :	34
+e &mdash; m :	26
+i &mdash; c :	47
+c &mdash; a :	45
+a &mdash; l :	81
+l &mdash;   :	50
+o &mdash; m :	24
+t &mdash; i :	92
+&mdash; f :	103
+f &mdash; i :	59
+i &mdash; b :	38
+b &mdash; e :	59
+r &mdash; s :	37
+w &mdash; e :	33
+e &mdash; l :	40
+l &mdash; l :	49
+&mdash; k :	1
+k &mdash; n :	1
+n &mdash; o :	21
+o &mdash; w :	12
+w &mdash; n :	3
+h &mdash; a :	34
+a &mdash; t :	55
+&mdash; l :	37
+l &mdash; i :	42
+i &mdash; g :	23
+g &mdash; n :	4
+o &mdash; c :	10
+l &mdash; u :	30
+l &mdash; o :	18
+i &mdash; n :	128
+n &mdash; v :	2
+v &mdash; e :	34
+g &mdash; a :	8
+e &mdash; d :	68
+o &mdash; u :	27
+u &mdash; n :	17
+n &mdash; e :	37
+&mdash; q :	2
+q &mdash; u :	20
+u &mdash; a :	8
+i &mdash; e :	24
+d &mdash; o :	5
+o &mdash; e :	2
+&mdash; n :	19
+o &mdash; t :	30
+a &mdash; d :	10
+d &mdash; d :	1
+&mdash; u :	12
+u &mdash; p :	9
+p &mdash;   :	6
+t &mdash; o :	47
+o &mdash;   :	48
+i &mdash; m :	21
+l &mdash; y :	27
+&mdash; b :	46
+e &mdash; c :	25
+a &mdash; u :	9
+s &mdash; e :	44
+n &mdash; l :	4
+a &mdash; j :	1
+j &mdash; o :	1
+o &mdash; r :	66
+a &mdash; r :	64
+e &mdash; p :	6
+r &mdash; t :	15
+d &mdash; e :	24
+e &mdash; t :	32
+r &mdash; m :	17
+&mdash; p :	66
+p &mdash; e :	20
+c &mdash; t :	35
+p &mdash; r :	27
+r &mdash; o :	42
+e &mdash; i :	11
+n &mdash; s :	24
+x &mdash; t :	4
+t &mdash; r :	17
+r &mdash; a :	32
+a &mdash; c :	43
+t &mdash; a :	24
+a &mdash; b :	18
+b &mdash; l :	12
+r &mdash; g :	6
+n &mdash; i :	28
+t &mdash; t :	15
+u &mdash; c :	7
+h &mdash;   :	31
+w &mdash; a :	19
+a &mdash; x :	12
+x &mdash; e :	2
+f &mdash; a :	20
+l &mdash; c :	1
+o &mdash; h :	1
+h &mdash; o :	18
+o &mdash; l :	26
+l &mdash; s :	11
+c &mdash; i :	8
+d &mdash; s :	16
+i &mdash; l :	28
+l &mdash; a :	44
+r &mdash; l :	5
+e &mdash; q :	7
+u &mdash; e :	20
+a &mdash; p :	11
+p &mdash; p :	4
+o &mdash; x :	1
+x &mdash;   :	9
+w &mdash; t :	3
+h &mdash; i :	26
+&mdash; g :	19
+g &mdash; o :	2
+o &mdash; o :	2
+o &mdash; d :	2
+a &mdash; g :	7
+g &mdash; r :	16
+e &mdash; e :	18
+m &mdash; e :	46
+&mdash; v :	22
+v &mdash; a :	20
+b &mdash; y :	10
+e &mdash; z :	2
+z &mdash;   :	2
+n &mdash; z :	1
+z &mdash; a :	1
+f &mdash; l :	8
+a &mdash; v :	12
+g &mdash; h :	10
+b &mdash; a :	11
+r &mdash; n :	11
+n &mdash; h :	6
+s &mdash; k :	6
+k &mdash;   :	7
+e &mdash; a :	39
+r &mdash; c :	2
+g &mdash; e :	13
+u &mdash; g :	5
+g &mdash; u :	10
+u &mdash; i :	13
+e &mdash; y :	5
+n &mdash; g :	33
+g &mdash;   :	29
+f &mdash; r :	9
+m &mdash;   :	19
+r &mdash; i :	36
+e &mdash; o :	6
+o &mdash; g :	3
+p &mdash; h :	4
+e &mdash; g :	6
+g &mdash; i :	7
+o &mdash; p :	10
+r &mdash; f :	13
+s &mdash; h :	13
+w &mdash; s :	3
+h &mdash; t :	7
+a &mdash; i :	13
+w &mdash; i :	15
+s &mdash; w :	3
+x &mdash; i :	4
+m &mdash; u :	7
+d &mdash; u :	7
+i &mdash; q :	9
+p &mdash; i :	7
+i &mdash; i :	1
+i &mdash;   :	1
+e &mdash; f :	7
+p &mdash; a :	9
+c &mdash; k :	3
+k &mdash; e :	5
+e &mdash; v :	10
+f &mdash; u :	9
+b &mdash; s :	1
+s &mdash; o :	13
+r &mdash; p :	4
+p &mdash; t :	6
+m &mdash; n :	8
+f &mdash; o :	26
+n &mdash; f :	6
+d &mdash; a :	3
+i &mdash; a :	23
+h &mdash; l :	1
+i &mdash; k :	3
+n &mdash; y :	1
+n &mdash; a :	19
+r &mdash; v :	1
+l &mdash; w :	1
+a &mdash; y :	3
+y &mdash; s :	2
+v &mdash; i :	5
+r &mdash; r :	8
+s &mdash; p :	5
+i &mdash; z :	3
+z &mdash; e :	4
+o &mdash; b :	1
+b &mdash; t :	1
+i &mdash; p :	1
+y &mdash; i :	2
+i &mdash; v :	10
+c &mdash; r :	9
+c &mdash; c :	2
+g &mdash; y :	1
+&mdash; z :	3
+z &mdash; i :	4
+s &mdash; m :	7
+c &mdash; l :	4
+p &mdash; u :	4
+t &mdash; w :	6
+m &mdash; s :	5
+b &mdash; o :	5
+l &mdash; d :	11
+b &mdash; i :	4
+p &mdash; s :	4
+b &mdash; u :	7
+u &mdash; t :	12
+h &mdash; y :	2
+y &mdash; d :	1
+i &mdash; r :	8
+c &mdash; y :	1
+g &mdash; g :	1
+a &mdash; z :	1
+n &mdash; k :	1
+y &mdash; z :	1
+l &mdash; m :	1
+&mdash; y :	3
+y &mdash; p :	2
+x &mdash; c :	2
+r &mdash; u :	4
+u &mdash; f :	1
+d &mdash; l :	1
+o &mdash; a :	1
+s &mdash; y :	1
+y &mdash; m :	1
+o &mdash; v :	1
+d &mdash; v :	2
+u &mdash;   :	1
+&mdash; j :	5
+j &mdash; u :	2
+y &mdash; t :	3
+a &mdash; q :	1
+y &mdash; r :	1
+g &mdash; l :	1
+w &mdash; o :	6
+r &mdash; d :	5
+u &mdash; d :	2
+u &mdash; b :	3
+y &mdash; e :	4
+u &mdash; o :	1
+m &mdash; m :	1
+e &mdash; w :	6
+w &mdash;   :	5
+s &mdash; b :	1
+g &mdash; f :	1
+m &mdash; b :	3
+a &mdash; w :	1
+a &mdash; k :	1
+b &mdash;   :	1
+n &mdash; u :	2
+k &mdash; s :	2
+n &mdash; j :	1
+j &mdash; a :	1
+s &mdash; r :	1
+a &mdash; e :	1
+j &mdash; e :	5
+a &mdash; h :	1
+r &mdash; b :	1
+o &mdash; j :	1
+e &mdash; u :	2
+v &mdash; o :	1
+s &mdash; l :	4
+h &mdash; m :	1
+h &mdash; r :	2
+d &mdash; w :	3
+w &mdash; r :	1
+e &mdash; j :	1
+s &mdash; q :	1</p>
+
+  </div>
+  
+      </div>
+      
+  </article>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <footer class="footer text-center">
+        <div class="container">
+            <span class="text-muted">Copyright &copy; Eric Peña, <time datetime="2024">2024</time>. All 29 notes and articles are available on <a href="https://github.com/ericpena/">GitHub</a>.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
