@@ -31,6 +31,15 @@ import numpy as np import scipy.stats as stats import matplotlib.pyplot as plt i
     </item>
     
     <item>
+      <title>Statistical Rethinking Chapter 3 Exercises</title>
+      <link>https://ericpena.github.io/learning/chapter-3.html</link>
+      <pubDate>Sat, 23 Apr 2022 00:00:00 -0700</pubDate>
+      
+      <guid>https://ericpena.github.io/learning/chapter-3.html</guid>
+      <description>knitr::opts_chunk$set(echo = TRUE) library(rethinking) Preliminary Code p_grid &amp;lt;- seq(from=0, to=1, length.out=1000) prior &amp;lt;- rep(1, 1000) likelihood &amp;lt;- dbinom(6, size=9, prob=p_grid) posterior &amp;lt;- likelihood * prior posterior &amp;lt;- posterior / sum(posterior) plot(p_grid, posterior) samples &amp;lt;- sample(p_grid, prob=posterior, size=1e4, replace=TRUE) 3E1. sum(samples &amp;lt; 0.2) / length(samples) ## [1] 5e-04 3E2. sum(samples &amp;gt; 0.8) / length(samples) ## [1] 0.1181 3E4. quantile(samples, 0.2) ## 20% ## 0.5155155 3E5. quantile(samples, 0.8) ## 80% ## 0.7597598 3E6.</description>
+    </item>
+    
+    <item>
       <title>K-Means Clustering From Scratch</title>
       <link>https://ericpena.github.io/learning/k-means.html</link>
       <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
