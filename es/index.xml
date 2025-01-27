@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Eric Peña</title>
-    <link>https://&lt;username&gt;.github.io/es/</link>
+    <link>https://ericpena.github.io/es/</link>
     <description>Recent content on Eric Peña</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <atom:link href="https://<username>.github.io/es/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ericpena.github.io/es/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
