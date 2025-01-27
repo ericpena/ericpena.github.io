@@ -1,0 +1,677 @@
+<!DOCTYPE HTML>
+
+
+<script type="text/javascript">
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+</script>
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<html lang="en">
+	<head>
+	  <title>R Data Types</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="origin">
+
+	
+
+    <meta name="description" content="Senior Data Scientist
+Understanding Complexity Through Data and Statistics">
+    
+    <meta name="generator" content="Hugo 0.138.0">
+
+    
+<link rel="stylesheet" href="../../css/main.min.6470f359d96cadb62114d84a859a08e047c933e85d36b945421da8260b62381977f4f70390c7eab26f30d96e167059bdd0e86e799c562d5d4eba32b5a9d4713c.css" integrity="sha512-ZHDzWdlsrbYhFNhKhZoI4EfJM&#43;hdNrlFQh2oJgtiOBl39PcDkMfqsm8w2W4WcFm90OhueZxWLV1OujK1qdRxPA==">
+
+
+<noscript><link rel="stylesheet" href="../../css/noscript.min.e6f1ba19697eecfddfbf83ff7181b98181998f163d7005f6ae923451556bf85bef357f43dffe1522b92c1efab7fb38441f479e39b7a03e4313a8ef12b0b01f65.css" integrity="sha512-5vG6GWl&#43;7P3fv4P/cYG5gYGZjxY9cAX2rpI0UVVr&#43;FvvNX9D3/4VIrksHvq3&#43;zhEH0eeObegPkMTqO8SsLAfZQ=="></noscript>
+
+
+
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="R Data Types">
+  <meta name="twitter:description" content="This article provides a comprehensive guide to R data types and structures, including vectors, matrices, arrays, lists, data frames, factors, and tables, detailing their creation, manipulation, and use cases with practical examples">
+      <meta name="twitter:site" content="@ericpenax">
+
+    <meta property="og:url" content="https://&lt;username&gt;.github.io/posts/r-types/">
+  <meta property="og:site_name" content="Eric Peña">
+  <meta property="og:title" content="R Data Types">
+  <meta property="og:description" content="This article provides a comprehensive guide to R data types and structures, including vectors, matrices, arrays, lists, data frames, factors, and tables, detailing their creation, manipulation, and use cases with practical examples">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-05-21T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-05-21T00:00:00+00:00">
+    <meta property="article:tag" content="Programming">
+
+    
+	</head>
+	<body class="landing is-preload">
+
+		
+			<div id="page-wrapper">
+
+				
+          <header id="header">
+            <h1><a href="https://%3cusername%3e.github.io/">Eric Peña</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+                  <a href="#menu" class="menuToggle" aria-label='Menu'><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+				              
+				              <li><a href="../../">Home</a></li>
+				              
+				              <li><a href="../../about/">About Me</a></li>
+				              
+				              <li><a href="../../posts/">Posts</a></li>
+				              
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+<article id="main">
+  <header >
+    <h2>R Data Types</h2>
+    
+	</header>
+	<section class="wrapper style5">
+		<div class="inner">
+      <blockquote>
+<p>&ldquo;Truth is ever to be found in simplicity, and not in the multiplicity and confusion of things.&rdquo;&mdash;Isaac Newton</p>
+</blockquote>
+<p>I approached R in the same way I would any language. I immediately delve into for-loops, conditional statements, user-defined functions, classes, and so on. I didn&rsquo;t pay much attention to data types at first - assuming they&rsquo;re not much different than what I&rsquo;ve seen already. I found myself using dataframes and matricies often with low confidence and a lingering confusion. I needed to know how these R data structures were related. I finally created these notes for myself to get a grip on the topic. Hopefully you find value in them as well.</p>
+<p>The data structures we will cover:</p>
+<ul>
+<li><strong><a href="../../posts/r-types/#vector">Vectors</a></strong></li>
+<li><strong><a href="../../posts/r-types/#matrix">Matrices</a></strong></li>
+<li><strong><a href="../../posts/r-types/#array">Arrays</a></strong></li>
+<li><strong><a href="../../posts/r-types/#list">Lists</a></strong></li>
+<li><strong><a href="../../posts/r-types/#dataframe">Data Frames</a></strong></li>
+<li><strong><a href="../../posts/r-types/#factor">Factors</a></strong></li>
+<li><strong><a href="../../posts/r-types/#table">Tables</a></strong></li>
+</ul>
+<p>For each data type, we will review the basics of:</p>
+<ul>
+<li><strong>Creation</strong></li>
+<li><strong>Adding Element</strong></li>
+<li><strong>Deleting Elements</strong></li>
+<li><strong>Indexing</strong></li>
+<li><strong>Filtering</strong></li>
+<li><strong>and More</strong></li>
+</ul>
+<hr>
+<h1 id="vector">Vector</h1>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="span-stylecolore74c3cintroductionspan"><!-- raw HTML omitted -->Introduction<!-- raw HTML omitted --></h3>
+<p>All elements in an R vector must have the same mode: <em>integer</em>, <em>numeric</em>, <em>character</em>, <em>logical</em>, <em>complex</em>, etc.</p>
+<h3 id="span-stylecolore74c3ccreationspan"><!-- raw HTML omitted -->Creation<!-- raw HTML omitted --></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>x <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">88</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">23</span>, <span style="color:#ae81ff">74</span>)
+</span></span><span style="display:flex;"><span>x
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 88 12 23 74</span>
+</span></span></code></pre></div><h3 id="span-stylecolore74c3cadding-elementspan"><!-- raw HTML omitted -->Adding Element<!-- raw HTML omitted --></h3>
+<p>Adding -44 to vector <code>x</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>x <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(x,<span style="color:#ae81ff">-44</span>)
+</span></span><span style="display:flex;"><span>x
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1]  88  12  23  74 -44</span>
+</span></span></code></pre></div><p>or:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>x[5] <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">-44</span>
+</span></span><span style="display:flex;"><span>x
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1]  88  12  23  74 -44</span>
+</span></span></code></pre></div><h3 id="span-stylecolore74c3cremove-elementspan"><!-- raw HTML omitted -->Remove Element<!-- raw HTML omitted --></h3>
+<p>Remove 23 from <code>x</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>x <span style="color:#f92672">&lt;-</span> x[<span style="color:#ae81ff">-3</span>]
+</span></span><span style="display:flex;"><span>x
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1]  88  12  74 -44</span>
+</span></span></code></pre></div><p>It&rsquo;s possible to remove several items at once:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>x <span style="color:#f92672">&lt;-</span> x[<span style="color:#ae81ff">-3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">-5</span>]
+</span></span><span style="display:flex;"><span>x
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 88 12</span>
+</span></span></code></pre></div><h3 id="span-stylecolore74c3cindexingspan"><!-- raw HTML omitted -->Indexing<!-- raw HTML omitted --></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>x <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rep</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>x[4] <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>x
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##  [1] 1 1 1 3 1 1 1 1 1 1</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>x[4]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 3</span>
+</span></span></code></pre></div><h3 id="span-stylecolore74c3cfilteringspan"><!-- raw HTML omitted -->Filtering<!-- raw HTML omitted --></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>x[6] <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>x[9] <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>x[x <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 3 5</span>
+</span></span></code></pre></div><h3 id="span-stylecolore74c3ccombining-vectorsspan"><!-- raw HTML omitted -->Combining Vectors<!-- raw HTML omitted --></h3>
+<p>Find the length of a vector with <code>length(x)</code>:</p>
+<p>When adding two vectors, the lengths of the vectors must be the same or one must be a multiple length of the other. When a vector isn&rsquo;t long enough to add to another vectors, it will keep repeating itself however many times it needs in order for the lengths to match.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>y <span style="color:#f92672">&lt;-</span> x <span style="color:#f92672">+</span> x; y
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##  [1]  2  2  2  6  2 10  2  2  4  2</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>z <span style="color:#f92672">&lt;-</span> x <span style="color:#f92672">+</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>); z
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##  [1] 2 3 4 7 6 6 3 4 6 6</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>error <span style="color:#f92672">&lt;-</span> x <span style="color:#f92672">+</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>); error
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## Warning in x + c(1, 2, 3, 4): longer object length is not a multiple of</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## shorter object length</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">##  [1] 2 3 4 7 2 7 4 5 3 3</span>
+</span></span></code></pre></div><hr>
+<h1 id="matrix">Matrix</h1>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="span-stylecolore74c3cintroductionspan-1"><!-- raw HTML omitted -->Introduction<!-- raw HTML omitted --></h3>
+<p>A matrix is essentially a vector with two attributes. All the columns in a matrix must have the same mode: <em>integer</em>, <em>numeric</em>, <em>character</em>, <em>logical</em>, <em>complex</em>, etc. in the same way it does for a vector. Matricies are special cases of a more general R type of object: <em>arrays</em> - which we will read about next. Arrays can be multidimensional.</p>
+<h3 id="span-stylecolore74c3ccreationspan-1"><!-- raw HTML omitted -->Creation<!-- raw HTML omitted --></h3>
+<p>One way to create a matrix:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>y <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">matrix</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>), nrow <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, ncol <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>)
+</span></span></code></pre></div><p>or simply:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>y <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">matrix</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>), nrow <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>y
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##      [,1] [,2]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1,]    1    3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [2,]    2    4</span>
+</span></span></code></pre></div><p>Using the <code>byrow</code> argument (default = FALSE):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>m <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">matrix</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>), nrow <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, byrow <span style="color:#f92672">=</span> T)
+</span></span><span style="display:flex;"><span>m
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##      [,1] [,2] [,3]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1,]    1    2    3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [2,]    4    5    6</span>
+</span></span></code></pre></div><h3 id="span-stylecolore74c3cadding-and-removing-rows-and-columnsspan"><!-- raw HTML omitted -->Adding and Removing Rows and Columns<!-- raw HTML omitted --></h3>
+<p>Rows and columns may be added and deleting from a matrix with operations analogous to the vector operations of adding and deleting. These functions are <code>rbind</code> and <code>cbind</code>.</p>
+<p>Adding a column:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>ones_column <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">matrix</span>(<span style="color:#a6e22e">rep</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>)); ones_column; m
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##      [,1]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1,]    1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [2,]    1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">##      [,1] [,2] [,3]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1,]    1    2    3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [2,]    4    5    6</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">cbind</span>(m, ones_column)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##      [,1] [,2] [,3] [,4]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1,]    1    2    3    1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [2,]    4    5    6    1</span>
+</span></span></code></pre></div><p>Adding a row: (don&rsquo;t forgot to adjust the row number: <code>nrow = 1</code>)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>ones_row <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">matrix</span>(<span style="color:#a6e22e">rep</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>), nrow <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>); ones_row; m
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##      [,1] [,2] [,3]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1,]    1    1    1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">##      [,1] [,2] [,3]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1,]    1    2    3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [2,]    4    5    6</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">rbind</span>(ones_row, m)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##      [,1] [,2] [,3]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1,]    1    1    1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [2,]    1    2    3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [3,]    4    5    6</span>
+</span></span></code></pre></div><p>Rows may be added by creating matricies and copying:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>new_matrix <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">matrix</span>(nrow <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>, ncol <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>addded_row <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">matrix</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>), nrow <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>new_matrix[1<span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>] <span style="color:#f92672">&lt;-</span> m
+</span></span><span style="display:flex;"><span>new_matrix[3,<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>] <span style="color:#f92672">&lt;-</span> addded_row
+</span></span><span style="display:flex;"><span>new_matrix
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##      [,1] [,2] [,3]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1,]    1    2    3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [2,]    4    5    6</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [3,]    7    8    9</span>
+</span></span></code></pre></div><p>You can use <code>rbind</code> and <code>cbind</code> to reassign values. This is a form of deleting data.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>m <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">matrix</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">6</span>, nrow <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>); m
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##      [,1] [,2]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1,]    1    4</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [2,]    2    5</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [3,]    3    6</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>m <span style="color:#f92672">&lt;-</span> m<span style="color:#a6e22e">[c</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>),]; m
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##      [,1] [,2]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1,]    1    4</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [2,]    3    6</span>
+</span></span></code></pre></div><h3 id="span-stylecolore74c3cindexingspan-1"><!-- raw HTML omitted -->Indexing<!-- raw HTML omitted --></h3>
+<p>To retrieve information from a matrix:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>m[,<span style="color:#ae81ff">2</span>]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 4 6</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>m[2,]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 3 6</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>m[2,<span style="color:#ae81ff">2</span>]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 6</span>
+</span></span></code></pre></div><p>Values may be changed in a matrix as well:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>m[2,<span style="color:#ae81ff">2</span>] <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">66</span>; m
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##      [,1] [,2]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1,]    1    4</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [2,]    3   66</span>
+</span></span></code></pre></div><h3 id="span-stylecolore74c3cfilteringspan-1"><!-- raw HTML omitted -->Filtering<!-- raw HTML omitted --></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>x <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">matrix</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>), nrow <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>, byrow <span style="color:#f92672">=</span> F); x
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##      [,1] [,2]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1,]    1    2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [2,]    2    3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [3,]    3    4</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>x[x[,<span style="color:#ae81ff">2</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">3</span>]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 2 3 3 4</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>j <span style="color:#f92672">&lt;-</span> x[,<span style="color:#ae81ff">2</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>x[j,]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##      [,1] [,2]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1,]    2    3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [2,]    3    4</span>
+</span></span></code></pre></div><h3 id="span-stylecolore74c3cmatrix-mathspan"><!-- raw HTML omitted -->Matrix Math<!-- raw HTML omitted --></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>y
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##      [,1] [,2]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1,]    1    3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [2,]    2    4</span>
+</span></span></code></pre></div><p>Mathematical Matrix Multiplication</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>y <span style="color:#f92672">%*%</span> y
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##      [,1] [,2]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1,]    7   15</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [2,]   10   22</span>
+</span></span></code></pre></div><p>Mathematical Muliplication of Matrix by Scalar</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>y
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##      [,1] [,2]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1,]    3    9</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [2,]    6   12</span>
+</span></span></code></pre></div><p>Mathematical Matrix Addition</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>y <span style="color:#f92672">+</span> y
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##      [,1] [,2]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1,]    2    6</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [2,]    4    8</span>
+</span></span></code></pre></div><hr>
+<h1 id="array">Array</h1>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="span-stylecolore74c3cintroductionspan-2"><!-- raw HTML omitted -->Introduction<!-- raw HTML omitted --></h3>
+<p>The mechanics of an array is very similar to that of a matrix in R. Unlike a matrix, an array can represent data in higher than two dimensions. We may build a three-dimensional array by conbining two matricies, we can build four-dimensional arrays by combining two or more three-dimensional arrays, and so on.</p>
+<hr>
+<h1 id="list">List</h1>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="span-stylecolore74c3cintroductionspan-3"><!-- raw HTML omitted -->Introduction<!-- raw HTML omitted --></h3>
+<p>List are unique in that not all elements have to be of the same mode. List structures can combine different types. An R list is similar to a Python dictionary or C struct. List form the foundation for data frames, object oriented programming (R classes), and more.</p>
+<h3 id="span-stylecolore74c3ccreationspan-2"><!-- raw HTML omitted -->Creation<!-- raw HTML omitted --></h3>
+<p>If we wanted to create an employee database, we could start with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>j <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Eric&#34;</span>, salary <span style="color:#f92672">=</span> <span style="color:#ae81ff">45000</span>, union <span style="color:#f92672">=</span> T)
+</span></span><span style="display:flex;"><span>j
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## $name</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] &#34;Eric&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## $salary</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 45000</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## $union</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] TRUE</span>
+</span></span></code></pre></div><p>The component names are called <em>tags</em>.</p>
+<h3 id="span-stylecolore74c3cadding-elementspan-1"><!-- raw HTML omitted -->Adding Element<!-- raw HTML omitted --></h3>
+<p>New components can be added after a list is created:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>z <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>(a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;abc&#34;</span>, b <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>)
+</span></span><span style="display:flex;"><span>z
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## $a</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] &#34;abc&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## $b</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 12</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>z<span style="color:#f92672">$</span>c <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;sailing&#34;</span> <span style="color:#75715e"># add a c component</span>
+</span></span><span style="display:flex;"><span>z
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## $a</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] &#34;abc&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## $b</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 12</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## $c</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] &#34;sailing&#34;</span>
+</span></span></code></pre></div><p>Adding component can also be done via a vector index:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>z[[4]] <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">28</span>
+</span></span><span style="display:flex;"><span>z[5<span style="color:#f92672">:</span><span style="color:#ae81ff">7</span>] <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(F,T,T)
+</span></span><span style="display:flex;"><span>z
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## $a</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] &#34;abc&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## $b</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 12</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## $c</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] &#34;sailing&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [[4]]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 28</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [[5]]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] FALSE</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [[6]]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] TRUE</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [[7]]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] TRUE</span>
+</span></span></code></pre></div><p>You can also concatenate lists:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>cat <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#a6e22e">list</span>(<span style="color:#e6db74">&#34;Joe&#34;</span>, <span style="color:#ae81ff">55000</span>, T), <span style="color:#a6e22e">list</span>(<span style="color:#ae81ff">5</span>)); cat
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [[1]]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] &#34;Joe&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [[2]]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 55000</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [[3]]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] TRUE</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [[4]]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 5</span>
+</span></span></code></pre></div><h3 id="span-stylecolore74c3cremove-elementspan-1"><!-- raw HTML omitted -->Remove Element<!-- raw HTML omitted --></h3>
+<p>You can delete a list component by setting it equal to <code>NULL</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>z<span style="color:#f92672">$</span>b <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+</span></span><span style="display:flex;"><span>z
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## $a</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] &#34;abc&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## $c</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] &#34;sailing&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [[3]]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 28</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [[4]]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] FALSE</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [[5]]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] TRUE</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [[6]]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] TRUE</span>
+</span></span></code></pre></div><h3 id="span-stylecolore74c3cindexingspan-2"><!-- raw HTML omitted -->Indexing<!-- raw HTML omitted --></h3>
+<p>You can access a list component in several different ways:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>j<span style="color:#f92672">$</span>salary
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 45000</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>j[[<span style="color:#e6db74">&#34;salary&#34;</span>]]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 45000</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>j[[2]]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 45000</span>
+</span></span></code></pre></div><p><strong>What&rsquo;s the deal with the single and double brackets?</strong></p>
+<p>If single brackets are used, the result is another list - a sublist of the original.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>j1 <span style="color:#f92672">&lt;-</span> j[1<span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>]; j1
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## $name</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] &#34;Eric&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## $salary</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 45000</span>
+</span></span></code></pre></div><p>If double brackets are used, it is for referring to a single component and is return in the type of the component.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>j[[2]]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 45000</span>
+</span></span></code></pre></div><p>The following returns an error since it&rsquo;s trying to return several components using a function that is meant to return one:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#75715e"># j[[1:2]]</span>
+</span></span></code></pre></div><h3 id="span-stylecolore74c3cfilteringspan-2"><!-- raw HTML omitted -->Filtering<!-- raw HTML omitted --></h3>
+<p>Accessing list components:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">names</span>(j)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] &#34;name&#34;   &#34;salary&#34; &#34;union&#34;</span>
+</span></span></code></pre></div><p>We can also get the specific values instead:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>ulj <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">unlist</span>(j); ulj
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##    name  salary   union </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">##  &#34;Eric&#34; &#34;45000&#34;  &#34;TRUE&#34;</span>
+</span></span></code></pre></div><p>Each values above has a name. This name may be removed with the following function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">names</span>(ulj) <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+</span></span><span style="display:flex;"><span>ulj
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] &#34;Eric&#34;  &#34;45000&#34; &#34;TRUE&#34;</span>
+</span></span></code></pre></div><h5 id="using-lapply-and-sapply-functions">Using <code>lapply()</code> and <code>sapply()</code> functions</h5>
+<p>This applies a specific function on each of the compoenents of a list and returns another list:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">lapply</span>(<span style="color:#a6e22e">list</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">25</span><span style="color:#f92672">:</span><span style="color:#ae81ff">29</span>), median)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [[1]]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [[2]]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 27</span>
+</span></span></code></pre></div><p><code>sapply()</code> returns a vector-valued answer:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">sapply</span>(<span style="color:#a6e22e">list</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">25</span><span style="color:#f92672">:</span><span style="color:#ae81ff">29</span>), median)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1]  2 27</span>
+</span></span></code></pre></div><h3 id="span-stylecolore74c3crecursive-listsspan"><!-- raw HTML omitted -->Recursive Lists<!-- raw HTML omitted --></h3>
+<p>You can have lists within lists:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>b <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>(u <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>, v <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>)
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>(w <span style="color:#f92672">=</span> <span style="color:#ae81ff">13</span>)
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>(b, c)
+</span></span><span style="display:flex;"><span>a
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [[1]]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [[1]]$u</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 5</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [[1]]$v</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 12</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [[2]]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [[2]]$w</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 13</span>
+</span></span></code></pre></div><p>TIP: The concatenate function c() has an optional argument <code>recursive</code>, which controls whether <em>flattening</em> occurs when recursive lists are combined.</p>
+<hr>
+<h1 id="dataframe">Dataframe</h1>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="span-stylecolore74c3cintroductionspan-4"><!-- raw HTML omitted -->Introduction<!-- raw HTML omitted --></h3>
+<p>Data frames are similar to a two dimensional matrix in that it contains rows and columns structure. However, data frame are heterogeneous; columns can be different modes. Technically, a data frame is a list whose components are equal-lengthed vectors as the columns of the data frame. Data frame are commonly used when doing data manipulation and other data analysis techniques in R.</p>
+<h3 id="span-stylecolore74c3ccreationspan-3"><!-- raw HTML omitted -->Creation<!-- raw HTML omitted --></h3>
+<p>Creating a data frame from scratch:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>scientists <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Einstein&#34;</span>, <span style="color:#e6db74">&#34;Newton&#34;</span>)
+</span></span><span style="display:flex;"><span>born <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1879</span>, <span style="color:#ae81ff">1642</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>d <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.frame</span>(scientists, born, stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)
+</span></span><span style="display:flex;"><span>d
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##   scientists born</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## 1   Einstein 1879</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## 2     Newton 1642</span>
+</span></span></code></pre></div><p>If the named argument <code>stringsAsFactors</code> is not specified, then by default, <code>stringsAsFactors</code> will be TRUE.</p>
+<p>Data frames can also be created from external files (.csv, .mtp, .xls, .spss, .txt) using: <!-- raw HTML omitted --></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>mydata = read.csv(&#34;mydata.csv&#34;, header = TRUE)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>mydata = read.mtp(&#34;mydata.mtp&#34;)  # read from .mtp file
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>mydata = read.xls(&#34;mydata.xls&#34;)  # read from first sheet
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>mydata = read.spss(&#34;myfile&#34;, to.data.frame=TRUE)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>mydata = read.table(&#34;mydata.txt&#34;)
+</span></span></code></pre></div><p>and many more options.</p>
+<h3 id="span-stylecolore74c3cadding-elementspan-2"><!-- raw HTML omitted -->Adding Element<!-- raw HTML omitted --></h3>
+<p>The <code>rbind()</code> and <code>cbind()</code> matrix functions also work in data frames to add new rows or columns of the same length.</p>
+<p>Adding a new row:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>d1
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##   kids ages</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## 1 jack   12</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## 2 Jill   10</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">rbind</span>(d1, <span style="color:#a6e22e">list</span>(<span style="color:#e6db74">&#34;laura&#34;</span>, <span style="color:#ae81ff">19</span>))
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##    kids ages</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## 1  jack   12</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## 2  Jill   10</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## 3 laura   19</span>
+</span></span></code></pre></div><p>Adding a column</p>
+<h3 id="span-stylecolore74c3cremove-elementspan-2"><!-- raw HTML omitted -->Remove Element<!-- raw HTML omitted --></h3>
+<p>Data deletion in a data frame is similar to that of a vector.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>d2
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##    kids ages</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## 1  jack   12</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## 2  Jill   10</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## 3 laura   19</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>d2 <span style="color:#f92672">&lt;-</span> d2[<span style="color:#ae81ff">-2</span>,]
+</span></span><span style="display:flex;"><span>d2
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##    kids ages</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## 1  jack   12</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## 3 laura   19</span>
+</span></span></code></pre></div><h3 id="span-stylecolore74c3cindexingspan-3"><!-- raw HTML omitted -->Indexing<!-- raw HTML omitted --></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>d[[1]]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] &#34;Einstein&#34; &#34;Newton&#34;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>d<span style="color:#f92672">$</span>scientists
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] &#34;Einstein&#34; &#34;Newton&#34;</span>
+</span></span></code></pre></div><p>We may also access elements in a matrix-like way we well:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>d[,<span style="color:#ae81ff">1</span>]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] &#34;Einstein&#34; &#34;Newton&#34;</span>
+</span></span></code></pre></div><p>It can be helpful to know the structure of the data frame and is easy to achieve:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">str</span>(d)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## &#39;data.frame&#39;:    2 obs. of  2 variables:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">##  $ scientists: chr  &#34;Einstein&#34; &#34;Newton&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">##  $ born      : num  1879 1642</span>
+</span></span></code></pre></div><h3 id="span-stylecolore74c3cfilteringspan-3"><!-- raw HTML omitted -->Filtering<!-- raw HTML omitted --></h3>
+<p>Let&rsquo;s take a look at how to filter data in a data frame:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>cars <span style="color:#f92672">&lt;-</span> cars<span style="color:#a6e22e">[c</span>(<span style="color:#e6db74">&#34;mpg&#34;</span>, <span style="color:#e6db74">&#34;hp&#34;</span>, <span style="color:#e6db74">&#34;wt&#34;</span>,<span style="color:#e6db74">&#34;cyl&#34;</span>)]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">head</span>(cars)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##                    mpg  hp    wt cyl</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Mazda RX4         21.0 110 2.620   6</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Mazda RX4 Wag     21.0 110 2.875   6</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Datsun 710        22.8  93 2.320   4</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Hornet 4 Drive    21.4 110 3.215   6</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Hornet Sportabout 18.7 175 3.440   8</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Valiant           18.1 105 3.460   6</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>cars[cars<span style="color:#f92672">$</span>cyl <span style="color:#f92672">==</span> <span style="color:#ae81ff">8</span>,]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##                      mpg  hp    wt cyl</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Hornet Sportabout   18.7 175 3.440   8</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Duster 360          14.3 245 3.570   8</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Merc 450SE          16.4 180 4.070   8</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Merc 450SL          17.3 180 3.730   8</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Merc 450SLC         15.2 180 3.780   8</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Cadillac Fleetwood  10.4 205 5.250   8</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Lincoln Continental 10.4 215 5.424   8</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Chrysler Imperial   14.7 230 5.345   8</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Dodge Challenger    15.5 150 3.520   8</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## AMC Javelin         15.2 150 3.435   8</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Camaro Z28          13.3 245 3.840   8</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Pontiac Firebird    19.2 175 3.845   8</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Ford Pantera L      15.8 264 3.170   8</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Maserati Bora       15.0 335 3.570   8</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>cars[,<span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;mpg&#34;</span>, <span style="color:#e6db74">&#34;hp&#34;</span>)][cars<span style="color:#f92672">$</span>wt <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">4</span>,]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##                    mpg  hp</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Mazda RX4         21.0 110</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Mazda RX4 Wag     21.0 110</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Datsun 710        22.8  93</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Hornet 4 Drive    21.4 110</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Hornet Sportabout 18.7 175</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Valiant           18.1 105</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Duster 360        14.3 245</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Merc 240D         24.4  62</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Merc 230          22.8  95</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Merc 280          19.2 123</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Merc 280C         17.8 123</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Merc 450SL        17.3 180</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Merc 450SLC       15.2 180</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Fiat 128          32.4  66</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Honda Civic       30.4  52</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Toyota Corolla    33.9  65</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Toyota Corona     21.5  97</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Dodge Challenger  15.5 150</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## AMC Javelin       15.2 150</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Camaro Z28        13.3 245</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Pontiac Firebird  19.2 175</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Fiat X1-9         27.3  66</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Porsche 914-2     26.0  91</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Lotus Europa      30.4 113</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Ford Pantera L    15.8 264</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Ferrari Dino      19.7 175</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Maserati Bora     15.0 335</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Volvo 142E        21.4 109</span>
+</span></span></code></pre></div><hr>
+<h1 id="factor">Factor</h1>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="span-stylecolore74c3cintroductionspan-5"><!-- raw HTML omitted -->Introduction<!-- raw HTML omitted --></h3>
+<p>The motivation for factors comes from the concept of categorical data in statistics. An R <code>factor</code> may be viewed as a vector with more information added. The extra information consists of a record of the distinct values on that vector, called levels.</p>
+<h3 id="span-stylecolore74c3ccreationspan-4"><!-- raw HTML omitted -->Creation<!-- raw HTML omitted --></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>x <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">13</span>, <span style="color:#ae81ff">12</span>)
+</span></span><span style="display:flex;"><span>xf <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">factor</span>(x)
+</span></span><span style="display:flex;"><span>xf
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 5  12 13 12</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Levels: 5 12 13</span>
+</span></span></code></pre></div><p>The distinct values in xf: 5, 12, and 13 are the levels</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">str</span>(xf)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">##  Factor w/ 3 levels &#34;5&#34;,&#34;12&#34;,&#34;13&#34;: 1 2 3 2</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">unclass</span>(xf)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 1 2 3 2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## attr(,&#34;levels&#34;)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## [1] &#34;5&#34;  &#34;12&#34; &#34;13&#34;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">length</span>(xf)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 4</span>
+</span></span></code></pre></div><h3 id="span-stylecolore74c3cadding-elementspan-3"><!-- raw HTML omitted -->Adding Element<!-- raw HTML omitted --></h3>
+<p>Future new levels can be anticipated as well:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>x <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">13</span>, <span style="color:#ae81ff">12</span>)
+</span></span><span style="display:flex;"><span>xff <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">factor</span>(x, levels <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">13</span>, <span style="color:#ae81ff">88</span>))
+</span></span><span style="display:flex;"><span>xff
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 5  12 13 12</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Levels: 5 12 13 88</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>xff[2] <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">88</span>
+</span></span><span style="display:flex;"><span>xff
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## [1] 5  88 13 12</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## Levels: 5 12 13 88</span>
+</span></span></code></pre></div><p>Although you cannot add a value that doesn&rsquo;t have a level associated with it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>xff[2] <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">28</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#75715e">## invalid factor level, NA generated</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### &lt;span style=&#34;color:#E74C3C&#34;&gt;Remove Element&lt;/span&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### &lt;span style=&#34;color:#E74C3C&#34;&gt;Indexing&lt;/span&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### &lt;span style=&#34;color:#E74C3C&#34;&gt;Filtering&lt;/span&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### &lt;span style=&#34;color:#E74C3C&#34;&gt;Math&lt;/span&gt;</span>
+</span></span></code></pre></div><hr>
+<h1 id="table">Table</h1>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="span-stylecolore74c3cintroductionspan-6"><!-- raw HTML omitted -->Introduction<!-- raw HTML omitted --></h3>
+<h3 id="span-stylecolore74c3ccreationspan-5"><!-- raw HTML omitted -->Creation<!-- raw HTML omitted --></h3>
+<h3 id="span-stylecolore74c3cadding-elementspan-4"><!-- raw HTML omitted -->Adding Element<!-- raw HTML omitted --></h3>
+<h3 id="span-stylecolore74c3cremove-elementspan-3"><!-- raw HTML omitted -->Remove Element<!-- raw HTML omitted --></h3>
+<h3 id="span-stylecolore74c3cindexingspan-4"><!-- raw HTML omitted -->Indexing<!-- raw HTML omitted --></h3>
+<h3 id="span-stylecolore74c3cfilteringspan-4"><!-- raw HTML omitted -->Filtering<!-- raw HTML omitted --></h3>
+<h3 id="span-stylecolore74c3cmathspan"><!-- raw HTML omitted -->Math<!-- raw HTML omitted --></h3>
+
+		</div>
+	</section>
+</article>
+				
+					<footer id="footer">
+						<ul class="icons">
+              
+              <li><a href="https://www.linkedin.com/in/eric-pena" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+              
+              
+              <li><a href="https://twitter.com/ericpenax" class="icon brands fa-twitter" target="_blank" rel="noopener noreferrer"><span class="label">Twitter</span></a></li>
+              
+              
+              <li><a href="https://mstdn.science/@ericpena" class="icon brands fa-mastodon" target="_blank" rel="noopener noreferrer"><span class="label">Mastodon</span></a></li>
+              
+              
+              <li><a href="https://github.com/ericpena" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+              
+              
+              
+              
+              <li><a href="https://instagram.com/ericpena" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
+              
+              
+              
+              <li><a href="mailto:eric.pena@binghamton.edu" class="icon solid fa-envelope" target="_blank" rel="noopener noreferrer"><span class="label">Email</span></a></li>
+              
+              
+
+						</ul>
+						<ul class="copyright">
+              <li>&copy; 2025 Eric Peña</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+      
+
+
+
+
+
+
+
+
+
+<script src="../../js/bundle.min.935254271ae3006602cb92b38ba70062a462cefc8d3aa575338369d256bb8422a69fc18f64450e74b7e6c240b20a252f522f3b9f323294bdf9ed466f5fb28ee9.js" integrity="sha512-k1JUJxrjAGYCy5Kzi6cAYqRizvyNOqV1M4Np0la7hCKmn8GPZEUOdLfmwkCyCiUvUi87nzIylL357UZvX7KO6Q=="></script>
+
+
+	</body>
+</html>
+

@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+
+
+<script type="text/javascript">
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+</script>
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<html lang="en">
+	<head>
+	  <title>Statistical Rethinking (Ch. 2)</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="origin">
+
+	
+
+    <meta name="description" content="Senior Data Scientist
+Understanding Complexity Through Data and Statistics">
+    
+    <meta name="generator" content="Hugo 0.138.0">
+
+    
+<link rel="stylesheet" href="../../css/main.min.6470f359d96cadb62114d84a859a08e047c933e85d36b945421da8260b62381977f4f70390c7eab26f30d96e167059bdd0e86e799c562d5d4eba32b5a9d4713c.css" integrity="sha512-ZHDzWdlsrbYhFNhKhZoI4EfJM&#43;hdNrlFQh2oJgtiOBl39PcDkMfqsm8w2W4WcFm90OhueZxWLV1OujK1qdRxPA==">
+
+
+<noscript><link rel="stylesheet" href="../../css/noscript.min.e6f1ba19697eecfddfbf83ff7181b98181998f163d7005f6ae923451556bf85bef357f43dffe1522b92c1efab7fb38441f479e39b7a03e4313a8ef12b0b01f65.css" integrity="sha512-5vG6GWl&#43;7P3fv4P/cYG5gYGZjxY9cAX2rpI0UVVr&#43;FvvNX9D3/4VIrksHvq3&#43;zhEH0eeObegPkMTqO8SsLAfZQ=="></noscript>
+
+
+
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Statistical Rethinking (Ch. 2)">
+  <meta name="twitter:description" content="This article provides solutions and explanations for the exercises in Chapter 2 of Statistical Rethinking, focusing on foundational concepts in Bayesian statistics and probabilistic reasoning">
+      <meta name="twitter:site" content="@ericpenax">
+
+    <meta property="og:url" content="https://&lt;username&gt;.github.io/posts/stat-think-2/">
+  <meta property="og:site_name" content="Eric Peña">
+  <meta property="og:title" content="Statistical Rethinking (Ch. 2)">
+  <meta property="og:description" content="This article provides solutions and explanations for the exercises in Chapter 2 of Statistical Rethinking, focusing on foundational concepts in Bayesian statistics and probabilistic reasoning">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-04-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2022-04-23T00:00:00+00:00">
+    <meta property="article:tag" content="Statistics">
+    <meta property="article:tag" content="Programming">
+
+    
+	</head>
+	<body class="landing is-preload">
+
+		
+			<div id="page-wrapper">
+
+				
+          <header id="header">
+            <h1><a href="https://%3cusername%3e.github.io/">Eric Peña</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+                  <a href="#menu" class="menuToggle" aria-label='Menu'><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+				              
+				              <li><a href="../../">Home</a></li>
+				              
+				              <li><a href="../../about/">About Me</a></li>
+				              
+				              <li><a href="../../posts/">Posts</a></li>
+				              
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+<article id="main">
+  <header >
+    <h2>Statistical Rethinking (Ch. 2)</h2>
+    
+	</header>
+	<section class="wrapper style5">
+		<div class="inner">
+      <p>Code 2.3</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> scipy.stats <span style="color:#66d9ef">as</span> stats
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pymc3 <span style="color:#66d9ef">as</span> pm
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> arviz <span style="color:#66d9ef">as</span> az
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>style<span style="color:#f92672">.</span>use(<span style="color:#e6db74">&#39;dark_background&#39;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>RANDOM_SEED <span style="color:#f92672">=</span> <span style="color:#ae81ff">8927</span>
+</span></span><span style="display:flex;"><span>np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>seed(RANDOM_SEED)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># az.style.use(&#34;arviz-darkgrid&#34;)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>p_grid <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, num<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>)
+</span></span><span style="display:flex;"><span>prior <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>ones(<span style="color:#ae81ff">20</span>) <span style="color:#75715e"># :: uniform</span>
+</span></span><span style="display:flex;"><span>prior <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span> <span style="color:#66d9ef">if</span> p <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0.5</span> <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> p_grid] <span style="color:#75715e"># :: step</span>
+</span></span><span style="display:flex;"><span>prior <span style="color:#f92672">=</span> [np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span><span style="color:#f92672">*</span>np<span style="color:#f92672">.</span>abs(p <span style="color:#f92672">-</span> <span style="color:#ae81ff">0.5</span>)) <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> p_grid] <span style="color:#75715e"># :: exp</span>
+</span></span><span style="display:flex;"><span>likelihood <span style="color:#f92672">=</span> stats<span style="color:#f92672">.</span>binom<span style="color:#f92672">.</span>pmf(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">9</span>, p_grid)
+</span></span><span style="display:flex;"><span>unstd_posterior <span style="color:#f92672">=</span> likelihood <span style="color:#f92672">*</span> prior
+</span></span><span style="display:flex;"><span>posterior <span style="color:#f92672">=</span> unstd_posterior <span style="color:#f92672">/</span> np<span style="color:#f92672">.</span>sum(unstd_posterior)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>plot(p_grid, prior, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lightblue&#39;</span>, marker<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;.&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;prior&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>plot(p_grid, likelihood, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lightgreen&#39;</span>, marker<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;.&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;likelihood&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>plot(p_grid, posterior, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;darkred&#39;</span>, marker<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;.&#39;</span>, markersize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;posterior&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#39;probability of water&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;posterior probability&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>legend()
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>grid(<span style="color:#66d9ef">True</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lightgray&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img alt="png" src="../../images/stat-think-2/chapter-2_5_0.png"></p>
+<p>code 2.6</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>repeat((<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">6</span>))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> pm<span style="color:#f92672">.</span>Model() <span style="color:#66d9ef">as</span> normal_approximation:
+</span></span><span style="display:flex;"><span>    p <span style="color:#f92672">=</span> pm<span style="color:#f92672">.</span>Uniform(<span style="color:#e6db74">&#34;p&#34;</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)  <span style="color:#75715e"># uniform priors</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># binomial likelihood</span>
+</span></span><span style="display:flex;"><span>    w <span style="color:#f92672">=</span> pm<span style="color:#f92672">.</span>Binomial(<span style="color:#e6db74">&#34;w&#34;</span>, n<span style="color:#f92672">=</span>len(data), p<span style="color:#f92672">=</span>p, observed<span style="color:#f92672">=</span>data<span style="color:#f92672">.</span>sum())
+</span></span><span style="display:flex;"><span>    mean_q <span style="color:#f92672">=</span> pm<span style="color:#f92672">.</span>find_MAP()
+</span></span><span style="display:flex;"><span>    std_q <span style="color:#f92672">=</span> ((<span style="color:#ae81ff">1</span> <span style="color:#f92672">/</span> pm<span style="color:#f92672">.</span>find_hessian(mean_q, vars<span style="color:#f92672">=</span>[p])) <span style="color:#f92672">**</span> <span style="color:#ae81ff">0.5</span>)[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># display summary of quadratic approximation</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;  Mean, Standard deviation</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">p </span><span style="color:#e6db74">{:.2}</span><span style="color:#e6db74">, </span><span style="color:#e6db74">{:.2}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>format(
+</span></span><span style="display:flex;"><span>    mean_q[<span style="color:#e6db74">&#34;p&#34;</span>], std_q[<span style="color:#ae81ff">0</span>]))
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<pre><code>  Mean, Standard deviation
+p 0.67, 0.16
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Compute the 89% percentile interval</span>
+</span></span><span style="display:flex;"><span>norm <span style="color:#f92672">=</span> stats<span style="color:#f92672">.</span>norm(mean_q, std_q)
+</span></span><span style="display:flex;"><span>prob <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.89</span>
+</span></span><span style="display:flex;"><span>z <span style="color:#f92672">=</span> stats<span style="color:#f92672">.</span>norm<span style="color:#f92672">.</span>ppf([(<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> prob) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>, (<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> prob) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span>pi <span style="color:#f92672">=</span> mean_q[<span style="color:#e6db74">&#34;p&#34;</span>] <span style="color:#f92672">+</span> std_q <span style="color:#f92672">*</span> z
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;5.5%, 94.5% </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{:.2}</span><span style="color:#e6db74">, </span><span style="color:#e6db74">{:.2}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>format(pi[<span style="color:#ae81ff">0</span>], pi[<span style="color:#ae81ff">1</span>]))
+</span></span></code></pre></div><pre><code>5.5%, 94.5% 
+0.42, 0.92
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># analytical calculation</span>
+</span></span><span style="display:flex;"><span>w, n <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">9</span>
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>plot(x, stats<span style="color:#f92672">.</span>beta<span style="color:#f92672">.</span>pdf(x, w <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, n <span style="color:#f92672">-</span> w <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>), label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;True posterior&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># quadratic approximation</span>
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>plot(x, stats<span style="color:#f92672">.</span>norm<span style="color:#f92672">.</span>pdf(x, mean_q[<span style="color:#e6db74">&#34;p&#34;</span>],
+</span></span><span style="display:flex;"><span>         std_q), label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Quadratic approximation&#34;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;n = </span><span style="color:#e6db74">{</span>n<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#34;Proportion water&#34;</span>)
+</span></span></code></pre></div><pre><code>Text(0.5, 0, 'Proportion water')
+</code></pre>
+<p><img alt="png" src="../../images/stat-think-2/chapter-2_9_1.png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Figure 2.8</span>
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>w, n <span style="color:#f92672">=</span> [<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">24</span>], [<span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">18</span>, <span style="color:#ae81ff">36</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">21</span>, <span style="color:#ae81ff">7</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> idx, ps <span style="color:#f92672">in</span> enumerate(zip(w, n)):
+</span></span><span style="display:flex;"><span>    data <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>repeat((<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>), (ps[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span> ps[<span style="color:#ae81ff">0</span>], ps[<span style="color:#ae81ff">0</span>]))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> pm<span style="color:#f92672">.</span>Model() <span style="color:#66d9ef">as</span> normal_approximation:
+</span></span><span style="display:flex;"><span>        p <span style="color:#f92672">=</span> pm<span style="color:#f92672">.</span>Uniform(<span style="color:#e6db74">&#34;p&#34;</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)  <span style="color:#75715e"># uniform priors</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># binomial likelihood</span>
+</span></span><span style="display:flex;"><span>        w <span style="color:#f92672">=</span> pm<span style="color:#f92672">.</span>Binomial(<span style="color:#e6db74">&#34;w&#34;</span>, n<span style="color:#f92672">=</span>len(data), p<span style="color:#f92672">=</span>p, observed<span style="color:#f92672">=</span>data<span style="color:#f92672">.</span>sum())
+</span></span><span style="display:flex;"><span>        mean_q <span style="color:#f92672">=</span> pm<span style="color:#f92672">.</span>find_MAP()
+</span></span><span style="display:flex;"><span>        std_q <span style="color:#f92672">=</span> ((<span style="color:#ae81ff">1</span> <span style="color:#f92672">/</span> pm<span style="color:#f92672">.</span>find_hessian(mean_q, vars<span style="color:#f92672">=</span>[p])) <span style="color:#f92672">**</span> <span style="color:#ae81ff">0.5</span>)[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ax[idx]<span style="color:#f92672">.</span>plot(x, stats<span style="color:#f92672">.</span>beta<span style="color:#f92672">.</span>pdf(x, ps[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, ps[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span>
+</span></span><span style="display:flex;"><span>                 ps[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>), label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;True posterior&#34;</span>)
+</span></span><span style="display:flex;"><span>    ax[idx]<span style="color:#f92672">.</span>plot(x, stats<span style="color:#f92672">.</span>norm<span style="color:#f92672">.</span>pdf(x, mean_q[<span style="color:#e6db74">&#34;p&#34;</span>], std_q),
+</span></span><span style="display:flex;"><span>                 label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Quadratic approximation&#34;</span>)
+</span></span><span style="display:flex;"><span>    ax[idx]<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#34;probability of water&#34;</span>)
+</span></span><span style="display:flex;"><span>    ax[idx]<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#34;density&#34;</span>)
+</span></span><span style="display:flex;"><span>    ax[idx]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;$n=</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">$&#34;</span><span style="color:#f92672">.</span>format(ps[<span style="color:#ae81ff">1</span>]))
+</span></span><span style="display:flex;"><span>    ax[idx]<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;upper left&#34;</span>)
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><img alt="png" src="../../images/stat-think-2/chapter-2_10_6.png"></p>
+<p>2M1.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>grid <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">21</span>)
+</span></span><span style="display:flex;"><span>prior <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>ones(<span style="color:#ae81ff">21</span>)
+</span></span><span style="display:flex;"><span>likelihood1 <span style="color:#f92672">=</span> stats<span style="color:#f92672">.</span>binom<span style="color:#f92672">.</span>pmf(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, grid)
+</span></span><span style="display:flex;"><span>posterior1 <span style="color:#f92672">=</span> likelihood1<span style="color:#f92672">*</span>prior <span style="color:#f92672">/</span> np<span style="color:#f92672">.</span>sum(likelihood<span style="color:#f92672">*</span>prior)
+</span></span><span style="display:flex;"><span>likelihood2 <span style="color:#f92672">=</span> stats<span style="color:#f92672">.</span>binom<span style="color:#f92672">.</span>pmf(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, grid)
+</span></span><span style="display:flex;"><span>posterior2 <span style="color:#f92672">=</span> likelihood2<span style="color:#f92672">*</span>prior <span style="color:#f92672">/</span> np<span style="color:#f92672">.</span>sum(likelihood<span style="color:#f92672">*</span>prior)
+</span></span><span style="display:flex;"><span>likelihood3 <span style="color:#f92672">=</span> stats<span style="color:#f92672">.</span>binom<span style="color:#f92672">.</span>pmf(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, grid)
+</span></span><span style="display:flex;"><span>posterior3 <span style="color:#f92672">=</span> likelihood3<span style="color:#f92672">*</span>prior <span style="color:#f92672">/</span> np<span style="color:#f92672">.</span>sum(likelihood<span style="color:#f92672">*</span>prior)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">4</span>))
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>plot(grid, posterior1, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;yellow&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;WWW&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>plot(grid, posterior2, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lightgreen&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;WWWL&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>plot(grid, posterior3, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;pink&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;LWWLWWW&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>grid(<span style="color:#66d9ef">True</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;white&#39;</span>, alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.3</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#39;Probability of Water&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;Posterior Probability&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_ylim(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.25</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>legend()
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img alt="png" src="../../images/stat-think-2/chapter-2_13_0.png"></p>
+<p>2M2.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>grid <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">21</span>)
+</span></span><span style="display:flex;"><span>prior <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span> <span style="color:#66d9ef">if</span> p <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0.5</span> <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> grid]
+</span></span><span style="display:flex;"><span>likelihood1 <span style="color:#f92672">=</span> stats<span style="color:#f92672">.</span>binom<span style="color:#f92672">.</span>pmf(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, grid)
+</span></span><span style="display:flex;"><span>posterior1 <span style="color:#f92672">=</span> likelihood1<span style="color:#f92672">*</span>prior <span style="color:#f92672">/</span> np<span style="color:#f92672">.</span>sum(likelihood<span style="color:#f92672">*</span>prior)
+</span></span><span style="display:flex;"><span>likelihood2 <span style="color:#f92672">=</span> stats<span style="color:#f92672">.</span>binom<span style="color:#f92672">.</span>pmf(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, grid)
+</span></span><span style="display:flex;"><span>posterior2 <span style="color:#f92672">=</span> likelihood2<span style="color:#f92672">*</span>prior <span style="color:#f92672">/</span> np<span style="color:#f92672">.</span>sum(likelihood<span style="color:#f92672">*</span>prior)
+</span></span><span style="display:flex;"><span>likelihood3 <span style="color:#f92672">=</span> stats<span style="color:#f92672">.</span>binom<span style="color:#f92672">.</span>pmf(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, grid)
+</span></span><span style="display:flex;"><span>posterior3 <span style="color:#f92672">=</span> likelihood3<span style="color:#f92672">*</span>prior <span style="color:#f92672">/</span> np<span style="color:#f92672">.</span>sum(likelihood<span style="color:#f92672">*</span>prior)
+</span></span><span style="display:flex;"><span>fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">4</span>))
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>plot(grid, posterior1, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;yellow&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;WWW&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>plot(grid, posterior2, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lightgreen&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;WWWL&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>plot(grid, posterior3, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;pink&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;LWWLWWW&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>grid(<span style="color:#66d9ef">True</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;white&#39;</span>, alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.3</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#39;Probability of Water&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;Posterior Probability&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_ylim(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.3</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>legend()
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img alt="png" src="../../images/stat-think-2/chapter-2_15_0.png"></p>
+<p>2M3.</p>
+<p>Suppose two globes. One for Earth and one for Mars. Earth has 70% water. Mars is 100% land. One of the globes (don&rsquo;t know which) was tossed in the air and produced a &rsquo;land&rsquo; observation. Assume each globe was equally likely to be tossed. Show that the posterior probability that the globe was the Earth, conditional on seeing &rsquo;land&rsquo; (P(Earth|Land)), is 0.23.</p>
+<p>$$P(Earth|Land) = \frac{P(Land | Earth) \cdot P(Earth)}{P(Land)}$$
+$$P(Earth|Land) = \frac{0.3 \cdot 0.5}{P(Land)} = \frac{0.15}{P(Land)}$$
+$$P(Land) = P(Land|Earth)\cdot P(Earth) + P(Land|Mars)\cdot P(Mars)$$
+$$P(Land) = 0.3\cdot 0.5 + 1\cdot 0.5 = 0.65$$
+$$P(Earth|Land) = \frac{0.15}{0.65} = 0.23076923076923075$$</p>
+<p>2M4.</p>
+<ul>
+<li>Deck with three cards.</li>
+<li>Each card has two sides.</li>
+<li>Each side is black or white.</li>
+<li>One card has two black sides.</li>
+<li>Second card has one black and one white.</li>
+<li>Third cards has two white sides.</li>
+<li>Cards shuffled.</li>
+<li>Card drawn with black facing up.</li>
+<li>Show other side being black is 2/3.</li>
+</ul>
+<p>$$C_1  \rightarrow (B,W), C_2  \rightarrow (B,B), C_3  \rightarrow (W,W)$$</p>
+<p>There are 3 ways of getting a black side facing upward and there are only two ways that this can happen where black is also on the other side: $\frac{2}{3}$.</p>
+<p>2M5.</p>
+<p>$$C_1  \rightarrow (B,W), C_2  \rightarrow (B,B), C_3  \rightarrow (W,W), C_4 \rightarrow (B,B)$$</p>
+<p>$$P = \frac{4}{5}$$</p>
+<p>2M6.</p>
+<ul>
+<li>Black sides are heavier than cards with white sides.</li>
+<li>Pulling black card from bag is less likely</li>
+<li>For every way to pull the BB card from the bag, there are 2 ways to pull the BW card and 3 ways to pull the WW card.</li>
+</ul>
+<p>$$2 \cdot P_{BB} = P_{BW}$$
+$$3 \cdot P_{BB} = P_{WW}$$
+$$P_{BB} = \frac{1}{1+2+3}$$
+$$P_{BW} = \frac{2}{1+2+3}$$
+$$P_{WW} = \frac{3}{1+2+3}$$
+$$P(B) = P(B|BB)\cdot P(BB) + P(B|BW)\cdot P(BW) + P(B|WW)\cdot P(WW)$$
+$$P(BB|B) = \frac{P(B|BB)\cdot P(BB)}{P(B)} = \frac{1}{2}$$</p>
+<p>2M7.</p>
+<p>$$P(BB | B_1, W_2) = \frac{P(B_1, W_2 | BB)\cdot P(BB)}{P(B_1, W_2)}$$</p>
+<p>2H1.</p>
+<p>$$P(t_2, | t_1) = P(t_2 | t_1, A) \cdot P(A | t_1) + P(t_2 | t_1, B) \cdot P(B | t_1)$$</p>
+<ul>
+<li>The problem gave us the information that $P(t|A) = 0.1$ and $P(t|B) = 0.2$:</li>
+<li>Since giving twins is an inpendent event, then we know $P(t_2 | t_1, A) = P(t_2 | A)$ and same for $B$.</li>
+<li>Look specifically at $P(A | t_1)$ and $P(A | t_2)$:
+$$P(A | t_1) = \frac{P(t_1 | A) \cdot P(A)}{P(t_1)}$$
+$$P(A | t_1) = \frac{P(t_1 | A) \cdot P(A)}{P(t_1|A)\cdot P(A) + P(t_1|B)\cdot P(B)}$$</li>
+</ul>
+<p>$$P(t_2, | t_1) = P(t_2 | A) \cdot \left( \frac{P(t_1 | A) \cdot P(A)}{P(t_1|A)\cdot P(A) + P(t_1|B)\cdot P(B)} \right) + P(t_2 | B) \cdot \left( \frac{P(t_1 | B) \cdot P(B)}{P(t_1|A)\cdot P(A) + P(t_1|B)\cdot P(B)} \right) = \frac{1}{6}$$</p>
+<p>2H2.</p>
+<p>$$P(A | t) = \frac{P(t | A) \cdot P(A)}{P(t|A)\cdot P(A) + P(t|B)\cdot P(B)} = \frac{3}{20}$$</p>
+<p>2H3.</p>
+<p>Panda mother has a second bith and that it is not twins, but a singleton infant. Compute the posterior probability that this panda is of species A.</p>
+<p>$$P(A | s_2, t_1) = \frac{P(s_2, t_1 | A) \cdot P(A)}{P(s_2, t_1)}$$
+Since giving births is independent: $P(s_2, t_1 | A) = P(s_2 | A) \cdot P(t_1 | A)$</p>
+<p>Determining denominator $P(s_2, t_1)$:
+$$P(s_2, t_1) = P(s_2, t_1 | A) \cdot P(A) + P(s_2, t_1 | B) \cdot P(B)$$
+$$P(s_2, t_1) = P(s_2 | A) \cdot P(t_1 | A) \cdot P(A) + P(s_2 | B) \cdot P(t_1 | B) \cdot P(B)$$
+Putting it all together:
+$$P(A | s_2, t_1) = \frac{P(s_2 | A) \cdot P(t_1 | A) \cdot P(A)}{P(s_2 | A) \cdot P(t_1 | A) \cdot P(A) + P(s_2 | B) \cdot P(t_1 | B) \cdot P(B)}$$
+$$\frac{(0.9\cdot 0.1\cdot 0.5)}{(0.9\cdot 0.1\cdot 0.5) + (0.8\cdot 0.2\cdot 0.5)} = 36%$$</p>
+<p>2H4.</p>
+<p>Information about the genetic testing:</p>
+<ul>
+<li>The probability it correctly identifies a species A panda is 0.8</li>
+<li>The probability it correctly identifies a special B panda is 0.65
+The test is positive for species A. If we ignore the data and calculate the posterior:
+$$P(A | +_A) = \frac{P(+_A | A) \cdot P(A)}{P(+_A)} = \frac{P(+_A | A) \cdot P(A)}{P(+_A | A) \cdot P(A) + P(+_A | B) \cdot P(B)}$$
+$$P(A | +_A) = \frac{0.8}{0.8 + 0.35} = 0.72\%$$</li>
+</ul>
+<p>If we incorporate the data: $s_2$ and $t_1$:
+$$P(A | +_A, s_2, t_1) = \frac{P(+_A, s_2, t_1 | A) \cdot P(A)}{P(+_A, s_2, t_1)}$$
+$$P(A | +_A, s_2, t_1) = \frac{P(+_A |A)\cdot P(s_2|A) \cdot P(t_1 | A) \cdot P(A)}{P(+_A |A)\cdot P(s_2|A) \cdot P(t_1 | A) \cdot P(A) + P(+_A |B)\cdot P(s_2|B) \cdot P(t_1 | B) \cdot P(B)} = 56.25\%$$</p>
+
+		</div>
+	</section>
+</article>
+				
+					<footer id="footer">
+						<ul class="icons">
+              
+              <li><a href="https://www.linkedin.com/in/eric-pena" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+              
+              
+              <li><a href="https://twitter.com/ericpenax" class="icon brands fa-twitter" target="_blank" rel="noopener noreferrer"><span class="label">Twitter</span></a></li>
+              
+              
+              <li><a href="https://mstdn.science/@ericpena" class="icon brands fa-mastodon" target="_blank" rel="noopener noreferrer"><span class="label">Mastodon</span></a></li>
+              
+              
+              <li><a href="https://github.com/ericpena" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+              
+              
+              
+              
+              <li><a href="https://instagram.com/ericpena" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
+              
+              
+              
+              <li><a href="mailto:eric.pena@binghamton.edu" class="icon solid fa-envelope" target="_blank" rel="noopener noreferrer"><span class="label">Email</span></a></li>
+              
+              
+
+						</ul>
+						<ul class="copyright">
+              <li>&copy; 2025 Eric Peña</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+      
+
+
+
+
+
+
+
+
+
+<script src="../../js/bundle.min.935254271ae3006602cb92b38ba70062a462cefc8d3aa575338369d256bb8422a69fc18f64450e74b7e6c240b20a252f522f3b9f323294bdf9ed466f5fb28ee9.js" integrity="sha512-k1JUJxrjAGYCy5Kzi6cAYqRizvyNOqV1M4Np0la7hCKmn8GPZEUOdLfmwkCyCiUvUi87nzIylL357UZvX7KO6Q=="></script>
+
+
+	</body>
+</html>
+

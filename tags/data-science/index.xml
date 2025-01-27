@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Science on Eric Peña</title>
+    <link>https://&lt;username&gt;.github.io/tags/data-science/</link>
+    <description>Recent content in Data Science on Eric Peña</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 01 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://<username>.github.io/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>K-Means</title>
+      <link>https://&lt;username&gt;.github.io/posts/k-means/</link>
+      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://&lt;username&gt;.github.io/posts/k-means/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;Imagine we have a scattering of points whose labels or group assignments are completely unknown to us and moreover, we haven&amp;rsquo;t a clue as to the number of groups. Unsupervised clustering helps us in such a situation and allows us to assign a cluster to each point. These clusters are defined by their centroids (centers). The K-Means algorithm will iteratively update these centroids to find the best location for them. It turns out that this clustering problem that K-Means helps solve is a computationally difficult problem (NP-Hard) but nevertheless we will go through the steps in detail here.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PCA with Eigenvalue Decomposition</title>
+      <link>https://&lt;username&gt;.github.io/posts/pca-evd/</link>
+      <pubDate>Mon, 29 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://&lt;username&gt;.github.io/posts/pca-evd/</guid>
+      <description>&lt;p&gt;In this article, I go into how we can perform Principal Component Analysis (PCA) using the method of Eigenvalue Decomposition (EVD). Generally, PCA is done by peforming a change of basis on the data, typically by utilizing eigenvectors that find the principal directions of the data. Another important thing to know is that the Eigenvalue Decomposition does not always exist. Eigenvalue Decomposition can only be done on square, full-rank, positive semi-definite matricies. Take a look at the PCA Single Value Decomposition article to learn another way of performing PCA. For now, let&amp;rsquo;s continue with EVD.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PCA with Single Value Decomposition</title>
+      <link>https://&lt;username&gt;.github.io/posts/pca-svd/</link>
+      <pubDate>Mon, 29 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://&lt;username&gt;.github.io/posts/pca-svd/</guid>
+      <description>&lt;p&gt;In another article, Principal Component Analysis was performed using Eigenvalue Decomposition. In this article we take a different approach: Single Value Decomposition. The general idea is that for any matrix we may perform Single Value Decomposition - this is guaranteed. It is a powerful tool that is used in many fields. On the other hand, the Eigenvalue Decomposition does not always exist. Eigenvalue Decomposition can only be done on square, full-rank, positive semi-definite matricies.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linear Regression</title>
+      <link>https://&lt;username&gt;.github.io/posts/linear-regression/</link>
+      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://&lt;username&gt;.github.io/posts/linear-regression/</guid>
+      <description>&lt;h2 id=&#34;mathematical-foundations&#34;&gt;Mathematical Foundations&lt;/h2&gt;&#xA;&lt;p&gt;The linear model is often the first model we learn fitting data. Given a vector of inputs $X^T = (X_1, X_2, \ldots, X_p)$, we can predict the output $Y$ with the following model:&lt;/p&gt;&#xA;&lt;p&gt;$$\hat Y = \hat \beta_0 + \sum_{j=1}^p X_j \hat \beta_j$$&lt;/p&gt;&#xA;&lt;p&gt;Many times, it&amp;rsquo;s convenient to include the vector $\textbf{1}$ in $\textbf{X}$ and include the $\hat \beta_0$ in the vector $\hat \beta$ so we may represent this linear model in vector form as an inner product:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

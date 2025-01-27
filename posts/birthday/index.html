@@ -1,0 +1,397 @@
+<!DOCTYPE HTML>
+
+
+<script type="text/javascript">
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+</script>
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<html lang="en">
+	<head>
+	  <title>Birthdays</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="origin">
+
+	
+
+    <meta name="description" content="Senior Data Scientist
+Understanding Complexity Through Data and Statistics">
+    
+    <meta name="generator" content="Hugo 0.138.0">
+
+    
+<link rel="stylesheet" href="../../css/main.min.6470f359d96cadb62114d84a859a08e047c933e85d36b945421da8260b62381977f4f70390c7eab26f30d96e167059bdd0e86e799c562d5d4eba32b5a9d4713c.css" integrity="sha512-ZHDzWdlsrbYhFNhKhZoI4EfJM&#43;hdNrlFQh2oJgtiOBl39PcDkMfqsm8w2W4WcFm90OhueZxWLV1OujK1qdRxPA==">
+
+
+<noscript><link rel="stylesheet" href="../../css/noscript.min.e6f1ba19697eecfddfbf83ff7181b98181998f163d7005f6ae923451556bf85bef357f43dffe1522b92c1efab7fb38441f479e39b7a03e4313a8ef12b0b01f65.css" integrity="sha512-5vG6GWl&#43;7P3fv4P/cYG5gYGZjxY9cAX2rpI0UVVr&#43;FvvNX9D3/4VIrksHvq3&#43;zhEH0eeObegPkMTqO8SsLAfZQ=="></noscript>
+
+
+
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Birthdays">
+  <meta name="twitter:description" content="This article explores the probability of having at least one birthday every day of the year in a group of people, leveraging combinatorics, probability, and simulations to address the problem through various mathematical frameworks, including the Coupon Collector&#39;s Problem and Stirling numbers.">
+      <meta name="twitter:site" content="@ericpenax">
+
+    <meta property="og:url" content="https://&lt;username&gt;.github.io/posts/birthday/">
+  <meta property="og:site_name" content="Eric Peña">
+  <meta property="og:title" content="Birthdays">
+  <meta property="og:description" content="This article explores the probability of having at least one birthday every day of the year in a group of people, leveraging combinatorics, probability, and simulations to address the problem through various mathematical frameworks, including the Coupon Collector&#39;s Problem and Stirling numbers.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-03-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-03-07T00:00:00+00:00">
+    <meta property="article:tag" content="Probability">
+
+    
+	</head>
+	<body class="landing is-preload">
+
+		
+			<div id="page-wrapper">
+
+				
+          <header id="header">
+            <h1><a href="https://%3cusername%3e.github.io/">Eric Peña</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+                  <a href="#menu" class="menuToggle" aria-label='Menu'><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+				              
+				              <li><a href="../../">Home</a></li>
+				              
+				              <li><a href="../../about/">About Me</a></li>
+				              
+				              <li><a href="../../posts/">Posts</a></li>
+				              
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+<article id="main">
+  <header >
+    <h2>Birthdays</h2>
+    
+	</header>
+	<section class="wrapper style5">
+		<div class="inner">
+      <h2 id="motivation">Motivation</h2>
+
+
+<div class="info-purple">
+    <style>
+      .info-purple a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-purple a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    <p>Consider this scene from a Seinfeld episode (<a href="https://www.youtube.com/watch?v=unxHTEdye2A">LINK</a> if you&rsquo;d like to watch the short clip)</p>
+<p><strong>Coworker</strong>: &ldquo;Elaine? Cake?&rdquo;</p>
+<p><strong>Elaine</strong>: &ldquo;Oh, no thanks&rdquo;</p>
+<p><strong>Coworker</strong>: &ldquo;It&rsquo;s Walter&rsquo;s special day!&rdquo;</p>
+<p><strong>Elaine</strong>: &ldquo;You know, there&rsquo;s 200 people who work in this office. Everyday is somebody&rsquo;s special day.&rdquo;</p>
+<p>Firstly, if by &ldquo;special day&rdquo; she means birthdays, then this of course cannot be true since there are 365-ish days in a year and only 200 people who work in the office. However, suppose there were 365 people in the office.</p>
+<p><strong>What is the probability of every single day being someone&rsquo;s birthday?</strong></p>
+<p>How might this probability change as the number of people increase to say 3000 people? Or if Elaine meant there were 200 working days in the year?</p>
+<p>How might we go about answering these kind of probability questions?</p>
+
+</div>
+<script>
+document.querySelectorAll('.info-purple a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+});
+</script>
+<h2 id="building-intuition">Building Intuition</h2>
+<ol>
+<li>
+<p>Assuming 365 days in a year, we know that with only 200 people the probability that there&rsquo;s a birthday everyday is zero(!) The point is: we need at least 365 people for this problem to make any sense.</p>
+</li>
+<li>
+<p><strong>Extremes</strong>: with 365 people, we might expected the probability of a birthday everyday being very low (remember many folks often share birthdays). Furthermore, we can intuit that the probability of a birthday everyday may asymptotically reach 100% as the number of people tends to infinity $(n \rightarrow \infty)$.</p>
+</li>
+<li>
+<p>For the time being, we can assume birthdays are completely random and this is not a leap year. We know in reality that birthdays are not random but rather tend to favor some months more than others, etc.</p>
+</li>
+</ol>
+<h2 id="framing-the-problem-with-expectations">Framing the Problem with Expectations</h2>
+<p>At first glance, this can be thought of in terms of the well-known <strong>Coupon Collector&rsquo;s Problem</strong> which states:</p>
+<blockquote>
+<p>Given n coupons, how many coupons do you expect you need to draw with replacement before having drawn each coupon at least once?</p>
+</blockquote>
+<p>In our case, coupons are the distinct days in the year. This expected value isn&rsquo;t the final answer we want but let&rsquo;s see how this works anyways (may be skipped if you&rsquo;re not interested).</p>
+<ul>
+<li>
+<p>Let $T$ be a random variable of the number of people we need to inspect to collect all $n$ distinct days in the year. We can imagine a line of individuals with random birthdays and one-by-one we check off the days in the year.</p>
+</li>
+<li>
+<p>Let $t_i$ be the number of people needed to collect the $i^{th}$ day after $i-1$ days have already been collected. Therefore, $T = t_1 + \cdots + t_n$.</p>
+</li>
+<li>
+<p>The probability of collecting a new $i^{th}$ day is $p_i = \frac{n - (i - 1)}{n} = \frac{n - i + 1}{n}$.</p>
+</li>
+<li>
+<p>Keep in mind that for each new day, the number of days we need to see before seeing a new one follows a <em>geometric distribution</em> (a distribution over the number of trials needed before seeing the first success &ndash; this can be extended with the negative binomial but that&rsquo;s beyond our scope).</p>
+</li>
+<li>
+<p>The expectation value of the <em>geometric distribution</em> is $\frac{1}{p}$. So in this case, it&rsquo;d be $\frac{1}{p_i} = \frac{n}{n-i+1}$.</p>
+</li>
+<li>
+<p>The <em>Linearity of Expectations</em> says that: $E(T) = E(t_1 + \cdots + t_n) = E(t_1) + \cdots + E(t_n)$.</p>
+</li>
+<li>
+<p>This continues with:
+$$
+\begin{align}
+&amp;= E(t_1) + \cdots + E(t_n) \\
+&amp;= \frac{1}{p_1} + \cdots + \frac{1}{p_n} \\
+&amp;= \frac{n}{n} + \frac{n}{n - 1} + \cdots + \frac{n}{1} \\
+&amp;= n \cdot \left(\frac{1}{1} + \frac{1}{2} + \cdots + \frac{1}{n}\right) \\
+&amp;= n \cdot H_n
+\end{align}
+$$</p>
+</li>
+</ul>
+<p>where $H_n$ is the $n^{th}$ <em>Harmonic Number</em>.</p>
+
+
+<div class="info-green">
+    <style>
+      .info-green a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-green a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    <p>Since we&rsquo;re assuming 365 days in a year:
+$$E(T) = 365 \cdot \sum_{k=1}^{365} \frac{1}{k} \approx 2364.64602343634$$
+$$\text{Answer: 2,365 people}$$</p>
+<p>The expected value was found using Mathematica:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Mathematica" data-lang="Mathematica"><span style="display:flex;"><span><span style="color:#ae81ff">365</span> Sum[<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>k, {k, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">365</span>}] <span style="color:#f92672">//</span> N
+</span></span></code></pre></div>
+</div>
+<script>
+document.querySelectorAll('.info-green a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+});
+</script>
+<h2 id="framing-the-problem-with-probabilities">Framing the Problem with Probabilities</h2>
+<p>I believe the best place to start is to think about this simple ratio:
+$$P(B | n, k) = \frac{f(n, k)}{g(n, k)}$$</p>
+<p>where $n$ is the number of people, $k$ is the number of days in a year, and $B$ is the event that there is at least one birthday everyday of the year.</p>
+<ul>
+<li>$f(n, k)$: number of ways of distributing $n$ distinct people among $k$ distinct birthdays, with each day containing at least one person.</li>
+<li>$g(n, k)$: number of ways of distributing $n$ distinct people among $n$ distinct birthdays, allowing for the possibility of having one or more days with no people at all (e.g., everyone could in principle share the same birthday on January 1st).</li>
+</ul>
+<h4 id="365-people-n--k">365 people (n = k)</h4>
+<p>Consider we have exactly 365 people, what is the probability that everyone has a distinct birthday? To jump to the point: there are $365!$ (i.e., &ldquo;365 factorial&rdquo;) ways to rearrange people&rsquo;s <strong>distinct</strong> birthdays and there are $365^{365}$ ways that birthdays can be assigned among 365 people, unrestricted.</p>
+<p>In terms of our functions $f$ and $g$ above, we may say that:
+$$f(n, k) = n!$$
+$$g(n, k) = k^n$$</p>
+
+
+<div class="info-green">
+    <style>
+      .info-green a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-green a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    <p><strong>$(n=k)$ Solution</strong></p>
+<p>$$P(B | n=365, k=365) = \frac{n!}{k^n} = \frac{365!}{365^{365}} = 1.4549552156187034034 \cdot 10^{-157} \approx 0$$</p>
+<p>This shows that it&rsquo;s VERY unlikely that there&rsquo;s a birthday everyday given 365 people. It may even be worth plotting $\frac{x!}{x^x}$, where $x \in \mathbb{Z}^+$.</p>
+
+</div>
+<script>
+document.querySelectorAll('.info-green a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+});
+</script>
+<h4 id="recursive-solution-n-ge-k">Recursive Solution (n $\ge$ k)</h4>
+<ul>
+<li>$g(n, k)$: In this case, $g(n, k)$ remains the same as before: $k^n$. In other words, there are still the same number of ways to rearrange $k$ birthdays to $n$ people without any kinds of restriction. This is the easy one.</li>
+<li>$f(n, k)$: It becomes more complicated when we consider the restriction that no days are left empty. To tackle this, we&rsquo;ll consider how many ways there are to rearrange $n$ into $k$ without restriction (basically $g(n, k)$) and subtract the number of arrangements there are with one day empty then subtract the number of arrangements there are with two days empty, and so on.</li>
+</ul>
+<p>The &ldquo;so on&rdquo; above can be written as:</p>
+<p>$$f(n, k) = k^n - {k \choose 1} \cdot f(n, 1) - {k \choose 2} \cdot f(n, 2) - \cdots - {k \choose k - 1} \cdot f(n, k - 1)$$</p>
+<ul>
+<li>Note that we need the binomial coefficients because there are a combinatorial number of ways to rearrange these <em>empty</em> days.</li>
+<li>Note that the last term means that everyone has the <em>same</em> birthday and that day could be any of the $k$ days on the calendar $––$ that&rsquo;s why it&rsquo;s multiplied by ${k \choose k-1}$ which is simply $k$.</li>
+</ul>
+<p>Written more compactly:</p>
+<p>$$f(n, k) = k^n - \sum_{i = 1}^{k - 1}{k \choose i} f(n, i)$$</p>
+<p>where k &gt; 1 and ${k \choose i} = \frac{k!}{i! (k - i)!}$</p>
+
+
+<div class="info-green">
+    <style>
+      .info-green a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-green a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    <p><strong>Recursive Solution</strong></p>
+<p>$$\therefore P(B | n, k) = \frac{f(n, k)}{g(n, k)} = \frac{k^n - \sum_{i = 1}^{k - 1}{k \choose i} f(n, i)}{k^n}$$</p>
+
+</div>
+<script>
+document.querySelectorAll('.info-green a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+});
+</script>
+<h4 id="the-venetian-solution">&ldquo;The Venetian&rdquo; Solution</h4>
+<p>The Scottish mathematician James Stirling was nicknamed &ldquo;The Venetian&rdquo;. He was a friend of Isaac Newton and well known for important advances to the theory of infinite series and infinitesimal calculus. His most important work is his book, <strong>Methodus Differentialis</strong> (1730) where he includes the asymptotic formula for $n!$.</p>
+<p>The point here is that he is also well known for the <strong>Stirling Numbers</strong> used in the field of combinatorics. The <strong>Stirling number of the second kind</strong> is the number of ways to partition a set of $n$ labeled objects into $k$ unlabeled non-empty subsets and is denoted by ${n \brace k}$.</p>
+<p>This helps us immensely since this is a key idea in the $f(n, k)$ that we found difficulty with above. The Stirling number of the second kind may formally be defined as:</p>
+<p>$${n \brace k} = \frac{1}{k!} \sum_{i=0}^{k} (-1)^i {k \choose i}(k - i)^n$$</p>
+<p>The main consideration for our problem is that the days of the year are actually labeled and we care what day someone&rsquo;s birthday lands on. In order to correct for this we add an extra $k!$ into our calculation. Therefore:
+$$f(n, k) = k! {n \brace k}$$
+and of course, $g(n, k) = k^n$, just as before.</p>
+<p>This leaves us with the final probability calculation:</p>
+
+
+<div class="info-green">
+    <style>
+      .info-green a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-green a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    <p><strong>Stirling Number Solution</strong></p>
+<p>$$\therefore P(B | n, k) = \frac{f(n, k)}{g(n, k)} = \frac{k! {n \brace k}}{k^n} = \frac{1}{k^n}\sum_{i=0}^{k} (-1)^i {k \choose i}(k - i)^n$$</p>
+
+</div>
+<script>
+document.querySelectorAll('.info-green a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+});
+</script>
+<p>This is a cleaner solution, albeit harder to understand at a glance. For example, the $(-1)^i$ term seems totally mysterious here.</p>
+<h4 id="plotting-probabilties">Plotting Probabilties</h4>
+<p><img alt="png" src="../../images/birthdays/birthday.png"></p>
+<h2 id="simulation">Simulation</h2>
+<p>We have the advantage of being able to create a simulation without having gone through the mathematics. The following code was done using Mathematica.</p>
+<ul>
+<li><code>n</code>: number of people</li>
+<li><code>k</code>: number of days in the year (possible birthdays)</li>
+<li><code>s</code>: sample size (number of groups of size n for simulation)</li>
+<li><code>x</code>: number of experiments to run to get final distribution</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mathematica" data-lang="mathematica"><span style="display:flex;"><span>f[n0_, k0_, s0_, x0_] <span style="color:#f92672">:=</span>
+</span></span><span style="display:flex;"><span> Module[{n <span style="color:#f92672">=</span> n0, k <span style="color:#f92672">=</span> k0, s <span style="color:#f92672">=</span> s0, numExp <span style="color:#f92672">=</span> x0, probList <span style="color:#f92672">=</span> {}},
+</span></span><span style="display:flex;"><span>  Do[
+</span></span><span style="display:flex;"><span>   birthdays <span style="color:#f92672">=</span> RandomInteger[{<span style="color:#ae81ff">1</span>, k}, {s, n}];
+</span></span><span style="display:flex;"><span>   uniqueBirthdays <span style="color:#f92672">=</span> 
+</span></span><span style="display:flex;"><span>    DeleteDuplicates[birthdays[[#]]] <span style="color:#f92672">&amp;</span> <span style="color:#f92672">/@</span> Range[Length[birthdays]];
+</span></span><span style="display:flex;"><span>   countAtLeastOneEachDay <span style="color:#f92672">=</span> 
+</span></span><span style="display:flex;"><span>    CountsBy[uniqueBirthdays, ContainsAll[#, Range[<span style="color:#ae81ff">1</span>, k]] <span style="color:#f92672">&amp;</span>];
+</span></span><span style="display:flex;"><span>   counts <span style="color:#f92672">=</span> 
+</span></span><span style="display:flex;"><span>    If[KeyExistsQ[countAtLeastOneEachDay, True], 
+</span></span><span style="display:flex;"><span>     countAtLeastOneEachDay[True], <span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>   AppendTo[probList, counts<span style="color:#f92672">/</span>s <span style="color:#f92672">//</span> N], {i, numExp}];
+</span></span><span style="display:flex;"><span>  Return[probList]
+</span></span><span style="display:flex;"><span>  ]
+</span></span></code></pre></div><ul>
+<li>Suppose $n = 2287$ people and $k = 365$ days in the year. The plot below shows the proportion of experiments that result in &ldquo;birthday everyday&rdquo; years. The mean of the values below is $\bar p = 50.116$% and the theoretical probability is $p = 50.0371$%.</li>
+</ul>
+<p><img alt="png" src="../../images/birthdays/prob-hist.png"></p>
+<hr>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Coupon_collector%27s_problem">Coupon Collector&rsquo;s Problem</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Stirling_numbers_of_the_second_kind">Stirling Number of the Second Kind</a></li>
+</ul>
+
+		</div>
+	</section>
+</article>
+				
+					<footer id="footer">
+						<ul class="icons">
+              
+              <li><a href="https://www.linkedin.com/in/eric-pena" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+              
+              
+              <li><a href="https://twitter.com/ericpenax" class="icon brands fa-twitter" target="_blank" rel="noopener noreferrer"><span class="label">Twitter</span></a></li>
+              
+              
+              <li><a href="https://mstdn.science/@ericpena" class="icon brands fa-mastodon" target="_blank" rel="noopener noreferrer"><span class="label">Mastodon</span></a></li>
+              
+              
+              <li><a href="https://github.com/ericpena" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+              
+              
+              
+              
+              <li><a href="https://instagram.com/ericpena" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
+              
+              
+              
+              <li><a href="mailto:eric.pena@binghamton.edu" class="icon solid fa-envelope" target="_blank" rel="noopener noreferrer"><span class="label">Email</span></a></li>
+              
+              
+
+						</ul>
+						<ul class="copyright">
+              <li>&copy; 2025 Eric Peña</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+      
+
+
+
+
+
+
+
+
+
+<script src="../../js/bundle.min.935254271ae3006602cb92b38ba70062a462cefc8d3aa575338369d256bb8422a69fc18f64450e74b7e6c240b20a252f522f3b9f323294bdf9ed466f5fb28ee9.js" integrity="sha512-k1JUJxrjAGYCy5Kzi6cAYqRizvyNOqV1M4Np0la7hCKmn8GPZEUOdLfmwkCyCiUvUi87nzIylL357UZvX7KO6Q=="></script>
+
+
+	</body>
+</html>
+
