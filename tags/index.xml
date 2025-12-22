@@ -2,101 +2,101 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Eric Peña</title>
-    <link>https://ericpena.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Eric Peña</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 12 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://ericpena.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Statistics</title>
-      <link>https://ericpena.github.io/tags/statistics/</link>
-      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/tags/statistics/</guid>
+      <link>http://localhost:1313/tags/statistics/</link>
+      <pubDate>Sun, 21 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/statistics/</guid>
       <description></description>
     </item>
     <item>
       <title>Mathematics</title>
-      <link>https://ericpena.github.io/tags/mathematics/</link>
+      <link>http://localhost:1313/tags/mathematics/</link>
       <pubDate>Sat, 09 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/tags/mathematics/</guid>
+      <guid>http://localhost:1313/tags/mathematics/</guid>
       <description></description>
     </item>
     <item>
       <title>Physics</title>
-      <link>https://ericpena.github.io/tags/physics/</link>
+      <link>http://localhost:1313/tags/physics/</link>
       <pubDate>Sat, 09 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/tags/physics/</guid>
+      <guid>http://localhost:1313/tags/physics/</guid>
       <description></description>
     </item>
     <item>
       <title>Modeling</title>
-      <link>https://ericpena.github.io/tags/modeling/</link>
+      <link>http://localhost:1313/tags/modeling/</link>
       <pubDate>Tue, 21 May 2024 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/tags/modeling/</guid>
+      <guid>http://localhost:1313/tags/modeling/</guid>
       <description></description>
     </item>
     <item>
       <title>Probability</title>
-      <link>https://ericpena.github.io/tags/probability/</link>
+      <link>http://localhost:1313/tags/probability/</link>
       <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/tags/probability/</guid>
+      <guid>http://localhost:1313/tags/probability/</guid>
       <description></description>
     </item>
     <item>
       <title>Cellular Automata</title>
-      <link>https://ericpena.github.io/tags/cellular-automata/</link>
+      <link>http://localhost:1313/tags/cellular-automata/</link>
       <pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/tags/cellular-automata/</guid>
+      <guid>http://localhost:1313/tags/cellular-automata/</guid>
       <description></description>
     </item>
     <item>
       <title>Complexity</title>
-      <link>https://ericpena.github.io/tags/complexity/</link>
+      <link>http://localhost:1313/tags/complexity/</link>
       <pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/tags/complexity/</guid>
+      <guid>http://localhost:1313/tags/complexity/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming</title>
-      <link>https://ericpena.github.io/tags/programming/</link>
+      <link>http://localhost:1313/tags/programming/</link>
       <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/tags/programming/</guid>
+      <guid>http://localhost:1313/tags/programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Data Science</title>
-      <link>https://ericpena.github.io/tags/data-science/</link>
+      <link>http://localhost:1313/tags/data-science/</link>
       <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/tags/data-science/</guid>
+      <guid>http://localhost:1313/tags/data-science/</guid>
       <description></description>
     </item>
     <item>
       <title>Bayesian</title>
-      <link>https://ericpena.github.io/tags/bayesian/</link>
+      <link>http://localhost:1313/tags/bayesian/</link>
       <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/tags/bayesian/</guid>
+      <guid>http://localhost:1313/tags/bayesian/</guid>
       <description></description>
     </item>
     <item>
       <title>Genetic Algorithm</title>
-      <link>https://ericpena.github.io/tags/genetic-algorithm/</link>
+      <link>http://localhost:1313/tags/genetic-algorithm/</link>
       <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/tags/genetic-algorithm/</guid>
+      <guid>http://localhost:1313/tags/genetic-algorithm/</guid>
       <description></description>
     </item>
     <item>
       <title>Optimization</title>
-      <link>https://ericpena.github.io/tags/optimization/</link>
+      <link>http://localhost:1313/tags/optimization/</link>
       <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/tags/optimization/</guid>
+      <guid>http://localhost:1313/tags/optimization/</guid>
       <description></description>
     </item>
     <item>
       <title>Julia</title>
-      <link>https://ericpena.github.io/tags/julia/</link>
+      <link>http://localhost:1313/tags/julia/</link>
       <pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/tags/julia/</guid>
+      <guid>http://localhost:1313/tags/julia/</guid>
       <description></description>
     </item>
   </channel>

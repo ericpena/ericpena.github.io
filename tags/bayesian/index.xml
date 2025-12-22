@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bayesian on Eric Peña</title>
-    <link>https://ericpena.github.io/tags/bayesian/</link>
+    <link>http://localhost:1313/tags/bayesian/</link>
     <description>Recent content in Bayesian on Eric Peña</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 14 Apr 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://ericpena.github.io/tags/bayesian/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/bayesian/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bayesian Optimization</title>
-      <link>https://ericpena.github.io/posts/bayes-opt/</link>
+      <link>http://localhost:1313/posts/bayes-opt/</link>
       <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/posts/bayes-opt/</guid>
+      <guid>http://localhost:1313/posts/bayes-opt/</guid>
       <description>&lt;h1 id=&#34;bayesian-optimization&#34;&gt;Bayesian Optimization&lt;/h1&gt;&#xA;&lt;p&gt;Below is a walk-through how to perform Bayesian Optimization in Python. This code follows work of Martin Krasser in order to optimize the following objective function:&lt;/p&gt;&#xA;&lt;p&gt;$$f(x) = 2 \sin{(4 x)} \cos{(x)}$$&#xA;$$\text{where } (1 &amp;lt; x &amp;lt; 4)$$&lt;/p&gt;&#xA;&lt;p&gt;The first section goes through designing a Bayesian Optimization algorithm using Numpy and SciPy. The second section goes into how we can take advantage of a Python package to optimize our function. The is one of the cleanest explanations of Bayesian optimization I&amp;rsquo;ve come across so I found it helpful to go through this procedure myself. Bayesian optimization is also often used to perform hyperparameter optimization.&lt;/p&gt;</description>
     </item>
   </channel>
