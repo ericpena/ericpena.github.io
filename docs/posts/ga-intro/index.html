@@ -1,0 +1,271 @@
+<!DOCTYPE HTML>
+
+
+<script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><script type="text/javascript">
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+</script>
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<html lang="en">
+	<head>
+	  <title>Genetic Algorithm Introduction</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="origin">
+
+	
+
+    <meta name="description" content="Senior Data Scientist
+Understanding Complexity Through Data and Statistics">
+    
+    <meta name="generator" content="Hugo 0.138.0">
+
+    
+<link rel="stylesheet" href="../../css/main.min.6470f359d96cadb62114d84a859a08e047c933e85d36b945421da8260b62381977f4f70390c7eab26f30d96e167059bdd0e86e799c562d5d4eba32b5a9d4713c.css" integrity="sha512-ZHDzWdlsrbYhFNhKhZoI4EfJM&#43;hdNrlFQh2oJgtiOBl39PcDkMfqsm8w2W4WcFm90OhueZxWLV1OujK1qdRxPA==">
+
+
+<noscript><link rel="stylesheet" href="../../css/noscript.min.e6f1ba19697eecfddfbf83ff7181b98181998f163d7005f6ae923451556bf85bef357f43dffe1522b92c1efab7fb38441f479e39b7a03e4313a8ef12b0b01f65.css" integrity="sha512-5vG6GWl&#43;7P3fv4P/cYG5gYGZjxY9cAX2rpI0UVVr&#43;FvvNX9D3/4VIrksHvq3&#43;zhEH0eeObegPkMTqO8SsLAfZQ=="></noscript>
+
+
+
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Genetic Algorithm Introduction">
+  <meta name="twitter:description" content="This article introduces genetic algorithms, explaining their biological inspiration, core components, and implementation through a Python example to optimize for a target string using selection, crossover, and mutation">
+      <meta name="twitter:site" content="@ericpenax">
+
+    <meta property="og:url" content="http://localhost:1313/posts/ga-intro/">
+  <meta property="og:site_name" content="Eric Peña">
+  <meta property="og:title" content="Genetic Algorithm Introduction">
+  <meta property="og:description" content="This article introduces genetic algorithms, explaining their biological inspiration, core components, and implementation through a Python example to optimize for a target string using selection, crossover, and mutation">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-04-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-04-14T00:00:00+00:00">
+    <meta property="article:tag" content="Genetic Algorithm">
+    <meta property="article:tag" content="Optimization">
+    <meta property="article:tag" content="Programming">
+
+    
+	</head>
+	<body class="landing is-preload">
+
+		
+			<div id="page-wrapper">
+
+				
+          <header id="header">
+            <h1><a href="http://localhost:1313/">Eric Peña</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+                  <a href="#menu" class="menuToggle" aria-label='Menu'><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+				              
+				              <li><a href="../../">Home</a></li>
+				              
+				              <li><a href="../../about/">About Me</a></li>
+				              
+				              <li><a href="../../posts/">Posts</a></li>
+				              
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+<article id="main">
+  <header >
+    <h2>Genetic Algorithm Introduction</h2>
+    
+	</header>
+	<section class="wrapper style5">
+		<div class="inner">
+      <h1 id="what-is-a-genetic-algorithm">What is a Genetic Algorithm</h1>
+<p>Evolutionary programming is a family of global optimization techniques that are biologically inspired. It works similarly to the natural process in evolutionary biology. Trial and error is a large component along with stochasticity and survival of the fittest. The type of evolutionary computation that we will focus on is genetic algorithms which became popular by the American Professor of Psychology, Electrical Engineering, and Computer Science, John Holland. Genetic algorithms work using natural selection of different possible solutions competing with one another. It incorporates biological concepts such as selection, crossover, and mutation. Candidate solutions can mate with each other and create offspring who can then compete with other solutions in their generation.</p>
+<h1 id="components-of-a-genetic-algorithm">Components of a Genetic Algorithm</h1>
+<ul>
+<li>Gene</li>
+<li>Chromosome</li>
+<li>Population</li>
+<li>Fitness Function</li>
+<li>Selection</li>
+<li>Crossover</li>
+<li>Mutation</li>
+</ul>
+<h1 id="programming-genetic-algorithms-in-python">Programming Genetic Algorithms in Python</h1>
+<p>It&rsquo;s typical to use object oriented programming when developing Genetic Algorithms in code. In our simple example, let&rsquo;s create a class called <code>Agent</code>. In the language of GA, these are called the <em>chromosome</em>. This chromosome will simply be a string in our program but I&rsquo;d recommend always thinking in terms of GA and the termology used in this domain. If the text string represents a chromosome, then the characters that make up this string are its <em>genes</em>. Below is an example of a simple genetic algorithm that will be given the task of finding the string: <code>ericpena</code>. The algorithm is broken up into distrinct methods for clarity.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> fuzzywuzzy <span style="color:#f92672">import</span> fuzz
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> string
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Agent</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> __init__(self, length):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># Initialize a new agent</span>
+</span></span><span style="display:flex;"><span>		self<span style="color:#f92672">.</span>string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(random<span style="color:#f92672">.</span>choice(string<span style="color:#f92672">.</span>ascii_letters) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(length))
+</span></span><span style="display:flex;"><span>		self<span style="color:#f92672">.</span>fitness <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> __str__(self):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;String: &#39;</span> <span style="color:#f92672">+</span> str(self<span style="color:#f92672">.</span>string) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; Fitness: &#39;</span> <span style="color:#f92672">+</span> str(self<span style="color:#f92672">.</span>fitness)
+</span></span></code></pre></div><h1 id="initialize-population">Initialize Population</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>in_str <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>in_str_len <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>population <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>generations <span style="color:#f92672">=</span> <span style="color:#ae81ff">2500</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">init_agents</span>(population, length):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> [Agent(length) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(population)]
+</span></span></code></pre></div><h1 id="define-fitness-function">Define Fitness Function</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fitness</span>(agents):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> agent <span style="color:#f92672">in</span> agents:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		agent<span style="color:#f92672">.</span>fitness <span style="color:#f92672">=</span> fuzz<span style="color:#f92672">.</span>ratio(agent<span style="color:#f92672">.</span>string, in_str)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> agents
+</span></span></code></pre></div><h1 id="define-selection-criteria">Define Selection Criteria</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">selection</span>(agents):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	agents <span style="color:#f92672">=</span> sorted(agents, key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> agent: agent<span style="color:#f92672">.</span>fitness, reverse<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>	print(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(map(str, agents)))
+</span></span><span style="display:flex;"><span>	agents <span style="color:#f92672">=</span> agents[:int(<span style="color:#ae81ff">0.2</span> <span style="color:#f92672">*</span> len(agents))]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> agents
+</span></span></code></pre></div><h1 id="define-crossover-mechanism">Define Crossover Mechanism</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">crossover</span>(agents):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	offspring <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(int((population <span style="color:#f92672">-</span> len(agents)) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>)):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		parent1 <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>choice(agents)
+</span></span><span style="display:flex;"><span>		parent2 <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>choice(agents)
+</span></span><span style="display:flex;"><span>		child1 <span style="color:#f92672">=</span> Agent(in_str_len)
+</span></span><span style="display:flex;"><span>		child2 <span style="color:#f92672">=</span> Agent(in_str_len)
+</span></span><span style="display:flex;"><span>		split <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">0</span>, in_str_len)
+</span></span><span style="display:flex;"><span>		child1<span style="color:#f92672">.</span>string <span style="color:#f92672">=</span> parent1<span style="color:#f92672">.</span>string[<span style="color:#ae81ff">0</span>:split] <span style="color:#f92672">+</span> parent2<span style="color:#f92672">.</span>string[split:in_str_len]
+</span></span><span style="display:flex;"><span>		child2<span style="color:#f92672">.</span>string <span style="color:#f92672">=</span> parent2<span style="color:#f92672">.</span>string[<span style="color:#ae81ff">0</span>:split] <span style="color:#f92672">+</span> parent1<span style="color:#f92672">.</span>string[split:in_str_len]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		offspring<span style="color:#f92672">.</span>append(child1)
+</span></span><span style="display:flex;"><span>		offspring<span style="color:#f92672">.</span>append(child2)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	agents<span style="color:#f92672">.</span>extend(offspring)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> agents
+</span></span></code></pre></div><h1 id="define-ga-mutation">Define GA Mutation</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">mutation</span>(agents):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> agent <span style="color:#f92672">in</span> agents:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> idx, param <span style="color:#f92672">in</span> enumerate(agent<span style="color:#f92672">.</span>string):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> random<span style="color:#f92672">.</span>uniform(<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0.1</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>				agent<span style="color:#f92672">.</span>string <span style="color:#f92672">=</span> agent<span style="color:#f92672">.</span>string[<span style="color:#ae81ff">0</span>:idx] <span style="color:#f92672">+</span> \
+</span></span><span style="display:flex;"><span>					random<span style="color:#f92672">.</span>choice(string<span style="color:#f92672">.</span>ascii_letters) <span style="color:#f92672">+</span> \
+</span></span><span style="display:flex;"><span>					agent<span style="color:#f92672">.</span>string[idx <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>:in_str_len]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> agents
+</span></span></code></pre></div><h1 id="running-ga">Running GA</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">ga</span>():
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	agents <span style="color:#f92672">=</span> init_agents(population, in_str_len)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> generation <span style="color:#f92672">in</span> range(generations):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#39;Generation: &#39;</span> <span style="color:#f92672">+</span> str(generation))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		agents <span style="color:#f92672">=</span> fitness(agents)
+</span></span><span style="display:flex;"><span>		agents <span style="color:#f92672">=</span> selection(agents)
+</span></span><span style="display:flex;"><span>		agents <span style="color:#f92672">=</span> crossover(agents)
+</span></span><span style="display:flex;"><span>		agents <span style="color:#f92672">=</span> mutation(agents)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> any(agent<span style="color:#f92672">.</span>fitness <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">90</span> <span style="color:#66d9ef">for</span> agent <span style="color:#f92672">in</span> agents):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			print(<span style="color:#e6db74">&#39;Threshold met!&#39;</span>)
+</span></span><span style="display:flex;"><span>			exit(<span style="color:#ae81ff">0</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	in_str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ericpena&#39;</span>
+</span></span><span style="display:flex;"><span>	in_str_len <span style="color:#f92672">=</span> len(in_str)
+</span></span><span style="display:flex;"><span>	ga()
+</span></span></code></pre></div><h1 id="results">Results</h1>
+<ul>
+<li>Generation 0 — String: CKvOGQJL Fitness: 0</li>
+<li>Generation 3 — String: iJdvcmeX Fitness: 38</li>
+<li>Generation 11 — String: iJOqcmea Fitness: 50</li>
+<li>Generation 85 — String: evXicpea Fitness: 75</li>
+<li>Generation 299 — String: esricena Fitness: 88</li>
+</ul>
+<p>As can be seen, the longer we allow this Genetic Algorithm to run, the closer the solution gets to the <em>objective string</em>: <code>ericpena</code></p>
+
+		</div>
+	</section>
+</article>
+				
+					<footer id="footer">
+						<ul class="icons">
+              
+              <li><a href="https://www.linkedin.com/in/eric-pena" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+              
+              
+              <li><a href="https://twitter.com/ericpenax" class="icon brands fa-twitter" target="_blank" rel="noopener noreferrer"><span class="label">Twitter</span></a></li>
+              
+              
+              <li><a href="https://mstdn.science/@ericpena" class="icon brands fa-mastodon" target="_blank" rel="noopener noreferrer"><span class="label">Mastodon</span></a></li>
+              
+              
+              <li><a href="https://github.com/ericpena" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+              
+              
+              
+              
+              <li><a href="https://instagram.com/ericpena" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
+              
+              
+              
+              <li><a href="mailto:eric.pena@binghamton.edu" class="icon solid fa-envelope" target="_blank" rel="noopener noreferrer"><span class="label">Email</span></a></li>
+              
+              
+
+						</ul>
+						<ul class="copyright">
+              <li>&copy; 2025 Eric Peña</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+      
+
+
+
+
+
+
+
+
+
+<script src="../../js/bundle.min.935254271ae3006602cb92b38ba70062a462cefc8d3aa575338369d256bb8422a69fc18f64450e74b7e6c240b20a252f522f3b9f323294bdf9ed466f5fb28ee9.js" integrity="sha512-k1JUJxrjAGYCy5Kzi6cAYqRizvyNOqV1M4Np0la7hCKmn8GPZEUOdLfmwkCyCiUvUi87nzIylL357UZvX7KO6Q=="></script>
+
+
+	</body>
+</html>
+

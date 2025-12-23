@@ -1,0 +1,381 @@
+<!DOCTYPE HTML>
+
+
+<script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><script type="text/javascript">
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+</script>
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<html lang="en">
+	<head>
+	  <title>Modified Coupon Collector&#39;s Problem</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="origin">
+
+	
+
+    <meta name="description" content="Senior Data Scientist
+Understanding Complexity Through Data and Statistics">
+    
+    <meta name="generator" content="Hugo 0.138.0">
+
+    
+<link rel="stylesheet" href="../../css/main.min.6470f359d96cadb62114d84a859a08e047c933e85d36b945421da8260b62381977f4f70390c7eab26f30d96e167059bdd0e86e799c562d5d4eba32b5a9d4713c.css" integrity="sha512-ZHDzWdlsrbYhFNhKhZoI4EfJM&#43;hdNrlFQh2oJgtiOBl39PcDkMfqsm8w2W4WcFm90OhueZxWLV1OujK1qdRxPA==">
+
+
+<noscript><link rel="stylesheet" href="../../css/noscript.min.e6f1ba19697eecfddfbf83ff7181b98181998f163d7005f6ae923451556bf85bef357f43dffe1522b92c1efab7fb38441f479e39b7a03e4313a8ef12b0b01f65.css" integrity="sha512-5vG6GWl&#43;7P3fv4P/cYG5gYGZjxY9cAX2rpI0UVVr&#43;FvvNX9D3/4VIrksHvq3&#43;zhEH0eeObegPkMTqO8SsLAfZQ=="></noscript>
+
+
+
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Modified Coupon Collector&#39;s Problem">
+  <meta name="twitter:description" content="This article explores the coupon collector&#39;s problem, analyzing the expected number of trials and probabilities to collect all or a fraction of distinct items, with extensions to modified scenarios and connections to combinatorics, simulations, and the philosophical Ship of Theseus">
+      <meta name="twitter:site" content="@ericpenax">
+
+    <meta property="og:url" content="http://localhost:1313/posts/mod-coupon/">
+  <meta property="og:site_name" content="Eric Peña">
+  <meta property="og:title" content="Modified Coupon Collector&#39;s Problem">
+  <meta property="og:description" content="This article explores the coupon collector&#39;s problem, analyzing the expected number of trials and probabilities to collect all or a fraction of distinct items, with extensions to modified scenarios and connections to combinatorics, simulations, and the philosophical Ship of Theseus">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-05-21T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-05-21T00:00:00+00:00">
+    <meta property="article:tag" content="Statistics">
+    <meta property="article:tag" content="Modeling">
+
+    
+	</head>
+	<body class="landing is-preload">
+
+		
+			<div id="page-wrapper">
+
+				
+          <header id="header">
+            <h1><a href="http://localhost:1313/">Eric Peña</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+                  <a href="#menu" class="menuToggle" aria-label='Menu'><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+				              
+				              <li><a href="../../">Home</a></li>
+				              
+				              <li><a href="../../about/">About Me</a></li>
+				              
+				              <li><a href="../../posts/">Posts</a></li>
+				              
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+<article id="main">
+  <header >
+    <h2>Modified Coupon Collector&#39;s Problem</h2>
+    
+	</header>
+	<section class="wrapper style5">
+		<div class="inner">
+      <h2 id="introduction">Introduction</h2>
+<p>In probability theory, the coupon collector&rsquo;s problem refers to the mathematical analysis of collecting every distinct kind of element when randomly choosing elements with replacement. Two initial questions can be asked for this problem: <strong>(1)</strong> If there are $k$ different kinds of coupons, what is the probability that all $k$ kinds of coupons have been collected after $n$ coupons are collected with replacement? <strong>(2)</strong> Given $k$ kinds of coupons, how many coupons do you expect you need to draw with replacement before having drawn each coupon at least once?</p>
+
+
+<div class="info-blue">
+    <style>
+      .info-blue a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-blue a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    If you&rsquo;d rather read the PDF version: <a href="../../images/mod-coupon/MCCP.pdf">[PDF] Modified Coupon Collector&rsquo;s Problem</a>
+</div>
+<script>
+  document.querySelectorAll('.info-blue a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
+<h4 id="connection-to-the-ship-of-theseus">Connection to the Ship of Theseus</h4>
+<p>The Ship of Theseus is a ‘thought experiment’ rather than a problem. It’s meant to discuss the concepts of identity. As a person from deep within the internet (Jeremy Glenesk) puts it:</p>
+<blockquote>
+<p>The experiment is meant to provoke thought, and make you question ideas. It is not meant to have a clear cut solution, because it’s not actually a problem, but an examination of the way in which we view identity. And through this, you have to question what criteria we use to classify identities, as this experiment is really meant to be a simplistic analogue to human identities, which is obviously significantly more complex. Am I the same person I was 10 years ago, even if basically every cell in my body has been discarded and replaced? Am I the same person, even if I hold different beliefs and experiences than the person from a decade ago? What makes a person who they are? How do we deal with the transference of identity? This is the point of the Ship of Theseus.</p>
+</blockquote>
+<p>Having said that, we could think of replacing the various components of a system individually and iteratively, by a random process, and ask the question: <em>how long until the system is completely replaced?</em> This could be a connection to this philosophical thought experiment.</p>
+<h2 id="classic-problem">Classic Problem</h2>
+<p>There are many interesting examples which could be used but let&rsquo;s stick with the classic scenario of coupon collection. When explaining the problem to a musician friend of mine, I described it in terms of keys on a piano: what is the expected number of key presses needed (&quot;with replacement&quot;) in order to press all 88 keys on the piano? There are countless other applications that could be considered.</p>
+<p>To keep consistent terminology, let&rsquo;s refer to the <em>kinds</em> of coupons as &quot;kinds&quot; $(k)$ and the <em>number</em> of collected coupons as &quot;coupons&quot; $(n)$. That is, what is the expected number $n$ needed to collected all $k$ kinds?</p>
+
+
+<div class="info-blue">
+    <style>
+      .info-blue a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-blue a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    <!-- raw HTML omitted -->Classic Problem<!-- raw HTML omitted --><!-- raw HTML omitted -->
+What is the expected number of collected coupons $n$ needed to collected all $k$ kinds of coupons available?
+</div>
+<script>
+  document.querySelectorAll('.info-blue a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
+<h2 id="expectation-value">Expectation Value</h2>
+<p>Let $T$ be a random variable of the number of coupons needed to collected all distinct kinds. Let $t_i$ be the number of coupons needed to collect the $i^{th}$ kind after $(i-1)$ coupons have already been collected. Therefore, $T=t_1+\cdots+t_k$. The probability of collecting a new $i^{th}$ kind is $p_i=\frac{k-(i-1)}{k}=\frac{k-i+1}{k}$.</p>
+<p>Keep in mind that for each new kind, the number of coupons we need to collect before reaching a new one follows a geometric distribution $––$ a distribution over the number of trials needed before seeing the first success.</p>
+<p>It&rsquo;s helpful to know that the expectation value of the geometric distribution is $\frac{1}{p}$. So in this case, it&rsquo;d be $\frac{1}{p_i}=\frac{k}{k-i+1}$. By the Linearity of Expectations:</p>
+<p>$$
+\begin{align}
+E(T) &amp;= E(t_1+\cdots+t_k) \\
+&amp;= E(t_1) + \cdots + E(t_k) \\
+&amp;= \frac{1}{p_1} + \cdots + \frac{1}{p_k} \\
+&amp;= \frac{k}{k} + \frac{k}{k - 1} + \cdots + \frac{k}{1} \\
+&amp;= k \cdot \left(\frac{1}{1} + \frac{1}{2} + \cdots + \frac{1}{k}\right) \\
+&amp;= k \cdot H_k \\
+\end{align}
+$$</p>
+<p>where $H_k$ is the $k^{th}$ <em>Harmonic Number</em>.</p>
+
+
+<div class="info-blue">
+    <style>
+      .info-blue a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-blue a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    Expected Value of Classic Problem
+$$E(T) = k \cdot H_k \approx k \cdot \log{k}$$
+</div>
+<script>
+  document.querySelectorAll('.info-blue a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
+<h2 id="probabilities">Probabilities</h2>
+<p>As with most probabilities, we can begin with thinking about a simple ratio
+$$P(A | n, k) = \frac{f(n, k)}{g(n, k)}$$
+where again, $n$ is the number of coupons collected, $k$ is the number of kinds of coupons, and $A$ is the event that each coupon has been collected at least once.</p>
+<ul>
+<li>$g(n, k)$: This is the easier expression and represents the number of ways of distributing $n$ coupons among $k$ kinds, allowing for the possibility of having one or more kinds without an associated coupon.</li>
+<li>$f(n, k)$: When $(n=k)$, this is simply the number of ways of distributing $n$ distinct coupons among $k$ distinct kinds (i.e., every kind has a single coupon associated with it), which becomes $f(n,k)=n!=k!$. This becomes more complicated when $(n &gt; k)$ and we consider the restriction that no coupons are left uncollected. To tackle this, we&rsquo;ll consider how many ways there are to rearrange $n$ into $k$ without restriction (basically $g(n, k)$) and then subtract the number of arrangements there are with one kind uncollected then subtract the number of arrangements there are with two kinds uncollected, and so on. This is written below as a recurrence relation.</li>
+</ul>
+<p>$$g(n, k) = k^n$$
+$$f(n, k) = k^n - {k \choose 1} \cdot f(n, 1) - {k \choose 2} \cdot f(n, 2) - \cdots - {k \choose k - 1} \cdot f(n, k - 1) = k^n - \sum_{i = 1}^{k - 1}{k \choose i} f(n, i)$$</p>
+<p>The more elegant way to solve this problem is to consider the well known Stirling Numbers of the Second Kind used in the field of combinatorics. The Stirling number of the second kind is the number of ways to partition a set of $n$ labeled objects into $k$ unlabeled non-empty subsets and is denoted by ${n \brace k}$. This helps us immensely since this is a key idea in the $f(n, k)$ that we found difficulty with above. The main consideration for our problem is that the kinds of coupons are actually labeled and we care what kind is collected by which coupon. In order to correct for this we add an extra $k!$ into our calculation. Therefore:
+$$f(n, k) = k! {n \brace k}$$
+We have all the pieces we need to get our answer.
+$$P(A | n, k) = \frac{f(n, k)}{g(n, k)}=\frac{k!\cdot{n \brace k}}{k^n}$$
+$$P(A | n, k) = \frac{1}{k^n}\sum_{i=0}^{k} (-1)^i {k \choose i}(k - i)^n$$</p>
+<p>
+
+<div class="info-blue">
+    <style>
+      .info-blue a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-blue a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    Probability of the Classic Problem
+$$P = \frac{k!\cdot{n \brace k}}{k^n}=\frac{1}{k^n}\sum_{i=0}^{k} (-1)^i {k \choose i}(k - i)^n$$
+The final expression comes from the ordinary generating function for Stirling numbers of the second kind.
+</div>
+<script>
+  document.querySelectorAll('.info-blue a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
+The expression of the ordinary generating function can be derived but that&rsquo;s not the point here.</p>
+<p>The Mathematica code used to generate the following plot is pretty straight forward:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Mathematica" data-lang="Mathematica"><span style="display:flex;"><span>f[n_, k_] <span style="color:#f92672">:=</span> Sum[(<span style="color:#ae81ff">-1</span>)<span style="color:#f92672">^</span>i Binomial[k, i] (k <span style="color:#f92672">-</span> i)<span style="color:#f92672">^</span>n, {i, <span style="color:#ae81ff">0</span>, k}]
+</span></span><span style="display:flex;"><span>g[n_, k_] <span style="color:#f92672">:=</span> k<span style="color:#f92672">^</span>n
+</span></span><span style="display:flex;"><span>Table[Table[{n, f[n, k]<span style="color:#f92672">/</span>g[n, k]}, {n, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">1000</span>, <span style="color:#ae81ff">10</span>}], {k, {<span style="color:#ae81ff">80</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">120</span>}}]
+</span></span></code></pre></div><p><img alt="classic-prob" src="../../images/mod-coupon/classic-prob.png"></p>
+<p><strong>Figure 1.</strong> Probability of collecting all $k$ kinds when $n$ coupons (shows three examples).</p>
+<h2 id="modified-problem">Modified Problem</h2>
+<p>Rather than collecting all the kinds of the coupons, we may be interested in just a portion of them. For example, how might this probability profile and expectation value change if we were interested in collecting half of the various kinds of coupons?</p>
+<h2 id="expectation-value-1">Expectation Value</h2>
+<p>Previously, we saw:
+$$\sum_{n=0}^{k-1}\frac{k}{k-n}=k\cdot H_k$$
+where $H_k$ is the $k^{th}$ harmonic number. However, if we only want to measure the &quot;time&quot; or trials needed collected half the coupons, the sum becomes:
+$$\sum_{n=0}^{(k/2)-1}\frac{k}{k-n}=k\cdot H_k - k\cdot H_{k/2} = k\cdot (H_k - H_{k/2})$$</p>
+<p>If we take one of the example from above
+$$E_{1/2}[T_{k=100}]=k\cdot (H_k - H_{k/2})=69.81721793101974$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>harmonic_number <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> k: sum([<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,k)])
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">100</span> <span style="color:#f92672">*</span> (harmonic_number(<span style="color:#ae81ff">100</span>) <span style="color:#f92672">-</span> harmonic_number(<span style="color:#ae81ff">50</span>))
+</span></span></code></pre></div><p>That is, if there are 100 distinct kinds, the expected number of coupons needed to collect half of them is about 70. We can make this a key result:
+
+
+<div class="info-blue">
+    <style>
+      .info-blue a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-blue a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    Modified Expectation Value
+$$E_{1/2}=k\cdot (H_k - H_{k/2})$$
+</div>
+<script>
+  document.querySelectorAll('.info-blue a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+</script></p>
+<h2 id="probability">Probability</h2>
+<p>When I first approached this problem, I thought there could be a couple ways to answer it: (1) the probability of at least $k/2$ has been collected and (2) the probability that exactly half of the coupons are collected. You might imagine that there isn&rsquo;t a high probability that we can reached $k/2$ exactly but there does exist an $n$ that makes collecting $k/2$ kinds most likely.</p>
+<h3 id="simulation">Simulation</h3>
+<p>To begin, we might want to create a simulation. In python, this becomes a one-liner. First, we can write a Monte Carlo simulation <code>prob_mc</code> for collecting at least half of the kinds:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>prob_mc <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> n: np<span style="color:#f92672">.</span>sum((np<span style="color:#f92672">.</span>array([len(set(np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>choice(k,n)))<span style="color:#f92672">/</span>k <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(m)]) <span style="color:#f92672">&gt;=</span> p))<span style="color:#f92672">/</span>m
+</span></span></code></pre></div><p>Another simulation is written <code>prob_mc_range</code> for collecting exactly half within some small margin, $\delta$. That is, $(f - \delta \le f&rsquo; \le f + \delta)$ for some desired fraction $f$ of the total number of kinds of coupons, $k$. In the code below, $\delta = 0.0001$.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>prob_mc_range <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> n: np<span style="color:#f92672">.</span>sum((np<span style="color:#f92672">.</span>abs(np<span style="color:#f92672">.</span>array([len(set(np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>choice(k,n)))<span style="color:#f92672">/</span>k
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(m)]) <span style="color:#f92672">-</span> p) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0.0001</span>))<span style="color:#f92672">/</span>m
+</span></span></code></pre></div><p><img src="../../images/mod-coupon/python-sim.png"></p>
+<p><strong>Figure 2.</strong> Probability of collecting half of $k$ kinds when $n$ coupons are collected. This shows the probability of at least half and exactly half within some margin.</p>
+<p>These two functions were also written in the Wolfram Language:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mathematica" data-lang="mathematica"><span style="display:flex;"><span>mcProbabilityLimit[k_, n_, p_, m_] <span style="color:#f92672">:=</span> 
+</span></span><span style="display:flex;"><span> Count[Table[
+</span></span><span style="display:flex;"><span>     Length[DeleteDuplicates[RandomInteger[{<span style="color:#ae81ff">0</span>, k <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>}, n]]]<span style="color:#f92672">/</span>k, {i, 
+</span></span><span style="display:flex;"><span>      m}], u_ <span style="color:#f92672">/;</span> u <span style="color:#f92672">&gt;=</span> p]<span style="color:#f92672">/</span>m <span style="color:#f92672">//</span> N
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mathematica" data-lang="mathematica"><span style="display:flex;"><span>mcProbabilityRange[k_, n_, p_, m_, <span style="color:#960050;background-color:#1e0010">\</span>[Delta]_] <span style="color:#f92672">:=</span> 
+</span></span><span style="display:flex;"><span> Count[Abs[
+</span></span><span style="display:flex;"><span>     Table[Length[DeleteDuplicates[RandomInteger[{<span style="color:#ae81ff">0</span>, k <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>}, n]]]<span style="color:#f92672">/</span>
+</span></span><span style="display:flex;"><span>        k, {i, m}] <span style="color:#f92672">-</span> p], u_ <span style="color:#f92672">/;</span> u <span style="color:#f92672">&lt;=</span> <span style="color:#960050;background-color:#1e0010">\</span>[Delta]]<span style="color:#f92672">/</span>m <span style="color:#f92672">//</span> N
+</span></span></code></pre></div><h3 id="analytical-solution">Analytical Solution</h3>
+<p>Ideally, an analytical solution, if one exists, would allow us to calculate these probabilities easily. The key is to start with the <em>classic problem</em> from above. There are two main ideas to explore to get to the answer:</p>
+<ol>
+<li>Shrink the problem and pretend there are only $k/2$ kinds of coupons that exist</li>
+<li>Find the number of combinations of $k/2$ occupied and $k/2$ unoccupied coupon configurations</li>
+</ol>
+<p>These two are depicted in the drawing below. <strong>(1)</strong> tells us that we can simply take the solution from the classic problem but with fewer coupons. In this case, specifically:</p>
+<p>$$(k/2)!\cdot {n \brace (k/2)}$$</p>
+<p>where $k = 2 j$ and $j \in \mathbb{Z}$ ($k$ is even and if it isn&rsquo;t, use $\left\lfloor \frac{k}{2} \right\rfloor)$.</p>
+<p><strong>(2)</strong> is simply the number of ways to arrange $k/2$ collected kinds among all the $k$ possible kinds and therefore becomes:</p>
+<p>$${k \choose (k/2)}=\frac{k!}{(k/2)!(k-k/2)!}=\frac{1}{2}\frac{k!}{(k/2)!}=\frac{1}{2}(k)_{k/2}$$</p>
+<p>where $(k)_{k/2}$ is the falling factorial.</p>
+<p>$$(k)_{k/2} = \prod_{i=1}^{k/2}(k - i + 1)$$</p>
+<p>Therefore, the probability of collecting half of $k$ kinds of coupons given $n$ collected coupons is:</p>
+<p>$$P = \frac{1}{k^n} \cdot \frac{1}{2}\prod_{i=1}^{k/2}(k - i + 1) \cdot (k/2)! \cdot {n \brace (k/2)}$$</p>
+
+
+<div class="info-green">
+    <style>
+      .info-green a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-green a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    Probability of Collecting Half of $k$ Kinds
+$$P = \frac{1}{k^n} \cdot \frac{1}{2}\prod_{i=1}^{k/2}(k - i + 1) \cdot \sum_{i=0}^{k/2} (-1)^i {k/2 \choose i}(k/2 - i)^n$$
+</div>
+<script>
+document.querySelectorAll('.info-green a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+});
+</script>
+<p><img src="../../images/mod-coupon/drawing.jpeg">
+<strong>Figure 3.</strong> Drawing that shows the general idea of analytical solution for $k/2$.</p>
+<p><img src="../../images/mod-coupon/wolfram-prob.png">
+<strong>Figure 4.</strong> Probability of collecting half of $k$ coupons given $n$ elements/coupons collected (where $k=100$).</p>
+<p><img src="../../images/mod-coupon/at-least-half.png">
+<strong>Figure 5.</strong> Probability of collecting at least half of $k$ kinds of coupons given $n$ elements/coupons collected (where $k=100$).</p>
+
+		</div>
+	</section>
+</article>
+				
+					<footer id="footer">
+						<ul class="icons">
+              
+              <li><a href="https://www.linkedin.com/in/eric-pena" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+              
+              
+              <li><a href="https://twitter.com/ericpenax" class="icon brands fa-twitter" target="_blank" rel="noopener noreferrer"><span class="label">Twitter</span></a></li>
+              
+              
+              <li><a href="https://mstdn.science/@ericpena" class="icon brands fa-mastodon" target="_blank" rel="noopener noreferrer"><span class="label">Mastodon</span></a></li>
+              
+              
+              <li><a href="https://github.com/ericpena" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+              
+              
+              
+              
+              <li><a href="https://instagram.com/ericpena" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
+              
+              
+              
+              <li><a href="mailto:eric.pena@binghamton.edu" class="icon solid fa-envelope" target="_blank" rel="noopener noreferrer"><span class="label">Email</span></a></li>
+              
+              
+
+						</ul>
+						<ul class="copyright">
+              <li>&copy; 2025 Eric Peña</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+      
+
+
+
+
+
+
+
+
+
+<script src="../../js/bundle.min.935254271ae3006602cb92b38ba70062a462cefc8d3aa575338369d256bb8422a69fc18f64450e74b7e6c240b20a252f522f3b9f323294bdf9ed466f5fb28ee9.js" integrity="sha512-k1JUJxrjAGYCy5Kzi6cAYqRizvyNOqV1M4Np0la7hCKmn8GPZEUOdLfmwkCyCiUvUi87nzIylL357UZvX7KO6Q=="></script>
+
+
+	</body>
+</html>
+

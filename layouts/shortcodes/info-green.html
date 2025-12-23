@@ -1,0 +1,23 @@
+<!-- <div class="info-green">
+    {{ .Inner }}
+</div> -->
+
+<div class="info-green">
+    <style>
+      .info-green a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-green a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    {{ .Inner | markdownify }}
+</div>
+<script>
+document.querySelectorAll('.info-green a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+});
+</script>

@@ -1,0 +1,23 @@
+<!-- <div class="info-purple">
+    {{ .Inner }}
+</div> -->
+
+<div class="info-purple">
+    <style>
+      .info-purple a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-purple a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    {{ .Inner | markdownify }}
+</div>
+<script>
+document.querySelectorAll('.info-purple a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+});
+</script>

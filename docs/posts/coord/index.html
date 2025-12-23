@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+
+
+<script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><script type="text/javascript">
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+</script>
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<html lang="en">
+	<head>
+	  <title>Lagrangian Mechanics</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="origin">
+
+	
+
+    <meta name="description" content="Senior Data Scientist
+Understanding Complexity Through Data and Statistics">
+    
+    <meta name="generator" content="Hugo 0.138.0">
+
+    
+<link rel="stylesheet" href="../../css/main.min.6470f359d96cadb62114d84a859a08e047c933e85d36b945421da8260b62381977f4f70390c7eab26f30d96e167059bdd0e86e799c562d5d4eba32b5a9d4713c.css" integrity="sha512-ZHDzWdlsrbYhFNhKhZoI4EfJM&#43;hdNrlFQh2oJgtiOBl39PcDkMfqsm8w2W4WcFm90OhueZxWLV1OujK1qdRxPA==">
+
+
+<noscript><link rel="stylesheet" href="../../css/noscript.min.e6f1ba19697eecfddfbf83ff7181b98181998f163d7005f6ae923451556bf85bef357f43dffe1522b92c1efab7fb38441f479e39b7a03e4313a8ef12b0b01f65.css" integrity="sha512-5vG6GWl&#43;7P3fv4P/cYG5gYGZjxY9cAX2rpI0UVVr&#43;FvvNX9D3/4VIrksHvq3&#43;zhEH0eeObegPkMTqO8SsLAfZQ=="></noscript>
+
+
+
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Lagrangian Mechanics">
+  <meta name="twitter:description" content="This article provides an in-depth exploration of Lagrangian mechanics, detailing its foundation in the principle of stationary action, its connection to Newtonian mechanics, and its application to complex systems like oscillating pendulums and double pendulums through elegant energy-based equations of motion">
+      <meta name="twitter:site" content="@ericpenax">
+
+    <meta property="og:url" content="http://localhost:1313/posts/coord/">
+  <meta property="og:site_name" content="Eric Peña">
+  <meta property="og:title" content="Lagrangian Mechanics">
+  <meta property="og:description" content="This article provides an in-depth exploration of Lagrangian mechanics, detailing its foundation in the principle of stationary action, its connection to Newtonian mechanics, and its application to complex systems like oscillating pendulums and double pendulums through elegant energy-based equations of motion">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-11-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-11-09T00:00:00+00:00">
+    <meta property="article:tag" content="Physics">
+    <meta property="article:tag" content="Mathematics">
+
+    
+	</head>
+	<body class="landing is-preload">
+
+		
+			<div id="page-wrapper">
+
+				
+          <header id="header">
+            <h1><a href="http://localhost:1313/">Eric Peña</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+                  <a href="#menu" class="menuToggle" aria-label='Menu'><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+				              
+				              <li><a href="../../">Home</a></li>
+				              
+				              <li><a href="../../about/">About Me</a></li>
+				              
+				              <li><a href="../../posts/">Posts</a></li>
+				              
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+<article id="main">
+  <header >
+    <h2>Lagrangian Mechanics</h2>
+    
+	</header>
+	<section class="wrapper style5">
+		<div class="inner">
+      <h2 id="table-of-contents">Table of Contents</h2>
+<ol start="0">
+<li><a href="../../posts/coord/#overview">Overview</a></li>
+<li><a href="../../posts/coord/#equation-of-motion">Equation of Motion</a></li>
+<li><a href="../../posts/coord/#principle-of-stationary-action">Principle of Stationary Action</a></li>
+<li><a href="../../posts/coord/#euler-lagrange-equation">Euler-Lagrange Equation</a></li>
+<li><a href="../../posts/coord/#relationship-to-newtons-second-law">Relationship to Newton&rsquo;s Second Law</a></li>
+<li><a href="../../posts/coord/#applications">Applications</a></li>
+</ol>
+<h2 id="overview">Overview</h2>
+
+
+<div class="info-green">
+    <style>
+      .info-green a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-green a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    Lagrangian mechanics offers a powerful and elegant framework for understanding the dynamics of physical systems. Developed by Joseph-Louis Lagrange in the 18th century, it reformulates Newtonian mechanics to focus on energy principles rather than forces. At its core, the Lagrangian approach introduces a function called the Lagrangian, defined as the difference between the kinetic energy and potential energy of a system. This method is particularly useful for analyzing complex systems with constraints, such as pendulums, planetary motion, or even modern robotics, as it simplifies calculations and generalizes easily to multiple dimensions. By applying the principle of least action, Lagrangian mechanics allows us to derive equations of motion that reveal the underlying behavior of a system with remarkable clarity. In this article, we’ll explore the foundational concepts of this framework, aiming to make it accessible to anyone curious about the mathematical elegance of physics.
+</div>
+<script>
+document.querySelectorAll('.info-green a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+});
+</script>
+<h2 id="equation-of-motion">Equation of Motion</h2>
+<p>The equations of motion are foundational to our understanding of physics, describing how systems evolve over time under the influence of forces. In classical mechanics, Newton’s second law, $F=ma$, provides a straightforward yet powerful framework: it relates the motion of an object to the forces acting upon it, allowing us to predict trajectories and dynamics from the motion of planets to the flight of a baseball. However, as our understanding of physics deepened, the equations of motion took on even greater significance, revealing connections between seemingly disparate phenomena and embodying deeper principles about the universe.</p>
+<p>At their core, the equations of motion are more than just tools for prediction; they embody the fundamental symmetries and conservation laws that govern nature. For instance, Lagrangian mechanics reframes the equations of motion not in terms of forces but through energy $––$ specifically, the difference between kinetic and potential energy, known as the Lagrangian whose details are provided below. This perspective is far more general, providing a bridge to more advanced areas of physics, including quantum mechanics and relativity. In this framework, the equations of motion are derived elegantly from the principle of least action, a profound idea that suggests the paths taken by physical systems are those for which a quantity called &ldquo;action&rdquo; is minimized or <em>stationary</em>.</p>
+<p>This shift in perspective underscores the deeper importance of the equations of motion. They are not merely equations to solve; they reveal how the universe inherently organizes itself. Whether describing the deterministic motion of classical objects or the probabilistic evolution of quantum systems, the equations of motion encapsulate the predictive power and universality of physical laws. By understanding these equations, we gain not only the ability to describe how things move but also a glimpse into the fundamental principles—such as the principle of least action—that reflect the elegance and simplicity of nature.</p>
+<h2 id="principle-of-stationary-action">Principle of Stationary Action</h2>
+<p>The principle of stationary action is a profound and unifying idea in physics that reveals how nature operates efficiently. It states that the motion of a physical system between two points in time follows a path for which the action is stationary—typically minimized—compared to all other conceivable paths.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> This principle applies universally, from the orbits of planets in celestial mechanics to the behavior of quantum particles, making it one of the most fundamental concepts in science. What makes it extraordinary is its ability to derive the equations of motion for systems in a way that highlights the intrinsic elegance of physical laws, emphasizing energy relationships rather than forces. Erwin Schrödinger himself was even inspired by this work which led to the development of the Schrödinger equation $&ndash;$ the equation which governs how probabilistic wave functions of quantum particles evolve through time.</p>
+<p>The action is a scalar quantity, defined mathematically as the integral of the Lagrangian over time. The Lagrangian, $\mathcal{L}$, represents the difference between a system&rsquo;s kinetic energy $(T)$ and potential energy $(U)$:</p>
+<p>$$\mathcal{L} = T - U$$</p>
+<p>The action, $S$, is then given by:</p>
+<p>$$S \equiv \int_{t_1}^{t_2} \mathcal{L}(q(t), \dot q(t), t) dt$$</p>
+<p>Here, $t_1$ and $t_2$ represent the initial and final times of the system, $\mathcal{L}$ encapsulates the system&rsquo;s dynamics at every instant within this interval, and $q(t)$ is the <em>equation of motion</em>. Integrals like the one above are called <em>functionals</em>, and $S$ is sometimes denoted as $S[q(t)]$. This notation tries to make clear that $S$ depends on, not a number, but rather the entire trajectory, $q(t)$. This kind of mathematics is referred to as calculus of variations (or variational calculus). The principle of stationary action asserts that the physical trajectory of the system is the one that makes $S$ stationary. In practical terms, this means that small variations in the path around the true trajectory do not significantly change $S$, leading to the <strong>Euler-Lagrange</strong> equations, which govern the motion of the system and what we&rsquo;ll touch on in the next section.</p>
+<p>What makes this principle so powerful is its generality. In classical mechanics, it reproduces Newton’s laws of motion. In optics, it relates to Fermat’s principle, where light takes the path of least time. In quantum mechanics, it lays the foundation for Feynman’s path integral formulation, where every possible path contributes to the behavior of particles, weighted by their action. Therefore, the principle of stationary action serves as a unification, revealing that the laws of physics are deeply rooted in optimization and symmetry.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>For example, consider a ball dropped from rest, and consider the function $y(t)$ for $0 \le t \le 1$. Assume $y(0) = 0$ and $y(1) = -g/2$ (which comes from $y = -gt^2/2$).</p>
+<p><img alt="least-action" src="../../images/coord/least-action.png"></p>
+<p>A number of different trajectories can be considered and each can be given a scalar value (i.e., action). We have tools to help us determine which trajectory yields a stationary value $&ndash;$ ultimately giving us the desired equation of motion.</p>
+<h2 id="euler-lagrange-equation">Euler-Lagrange Equation</h2>
+<p>The following theorem allows us to connect the principle of stationary action to the aforementioned <strong>Euler-Lagrange</strong> equations:</p>
+
+
+<div class="info-blue">
+    <style>
+      .info-blue a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-blue a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    <p>Theorem</p>
+<p>If the function $x_0(t)$ yields a stationary value (that is, a local minimum, maximum, or saddle point) of $S$, then</p>
+<p>$$\frac{\partial \mathcal{L}}{\partial x_0}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{x}_0}$$</p>
+<p>We consider the class of functions whose endpoints are fixed. That is, $x(t_1) = x_1$ and $x(t_2) = x_2$.</p>
+
+</div>
+<script>
+  document.querySelectorAll('.info-blue a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
+<p>Now, we can essentially replace Newton&rsquo;s Second Law of Motion, $F=ma$, by the following principle</p>
+
+
+<div class="info-blue">
+    <style>
+      .info-blue a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-blue a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    <p>Hamilton&rsquo;s Principle</p>
+<p>The path of a particle is the one that yields a stationary value of the action, $S$.</p>
+
+</div>
+<script>
+  document.querySelectorAll('.info-blue a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
+<p>This says if and only if we have a stationary value, then the Euler-Langrage equations hold and the E-L equations are essentially the same as $F=ma$. We will see examples of describing a system in terms of its energy instead of forces which allows the search for the equation of motion.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<h2 id="relationship-to-newtons-second-law">Relationship to Newton&rsquo;s Second Law</h2>
+<p>Since Lagrangian mechanics is a reformulation of Newtonian mechanics, there are a clear relationship between the concepts they use. The equations below give an idea of how frameworks are connected.</p>
+<p>$$F = ma = m\dot{v} = \dot{p}$$</p>
+<p>$$\Delta T = T_2 - T_1 = \int_{1}^{2}\textbf{F} \cdot d\textbf{r}$$</p>
+<p>$$U(\textbf{r}) = -\int_{r_0}^r F(\textbf{r}&rsquo;) \cdot d\textbf{r}&rsquo;$$</p>
+<p>$$\frac{\partial \mathcal{L}}{\partial q_i}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}$$
+$$\left( \frac{\partial \mathcal{L}}{\partial q_i} = F_i \right) \text{ and } \left( \frac{\partial \mathcal{L}}{\partial \dot{q}_i} = p_i \right)$$
+These are referred to as generalized forces and generalized momenta. I hope to add a discussion about generalized ignorable coordinates and conservation laws but this would be a different note.</p>
+<h2 id="applications">Applications</h2>
+<h3 id="example-1-pendulum-with-oscillating-support">Example 1: Pendulum with Oscillating Support</h3>
+
+
+<div class="info-blue">
+    <style>
+      .info-blue a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-blue a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    If you&rsquo;d rather read the PDF version: <a href="../../images/coord/oscillating-support.pdf">[PDF] Pendulum with Oscillating Support</a>
+</div>
+<script>
+  document.querySelectorAll('.info-blue a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
+
+
+<div class="info-green">
+    <style>
+      .info-green a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-green a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    <p>Problem $––$ A pendulum consists of a mass $m$ and a massless stick of length $l$. The pendulum support oscillates horizontally with a position given by $x(t) = A \cos{(\omega t)}$. What is the general solution for the angle of the pendulum as a function of time?</p>
+<!-- raw HTML omitted -->
+<p>The key is to describe the position of the mass in $(x,y)$ coordinates. This is given by:
+$$(X,Y)_m = (x+l \sin{\theta}, -l \cos{\theta})$$
+or with time dependent variables:
+$$(X(t),Y(t))_m = (x(t)+l \sin{(\theta(t))}, -l \cos{(\theta(t))})$$</p>
+<p>We can take a derivative of the position vectors to obtain the velocity (or the square of velocity):
+$$V^2 = \dot X^2 + \dot Y^2 = l^2 \dot \theta^2 + \dot x^2 + 2 l \dot x \dot \theta \cos{\theta}$$</p>
+<p>The Lagrangian can then be written as:
+$$\mathcal{L} = \frac{1}{2} m (l^2 \dot \theta^2 + \dot x^2 + 2 l \dot x \dot \theta \cos{\theta}) + mgl\sin{\theta}$$</p>
+<p>The Euler-Lagrange equation for $\theta$ is therefore:
+$$\frac{d}{dt}(m l^2 \dot \theta+ml\dot x \cos{\theta})=-ml\dot x \dot \theta \sin{\theta}-m g l \sin{\theta}$$</p>
+<p>The equation of motion is given by:
+$$l \ddot \theta+\ddot x \cos{\theta}=-g \sin{\theta}$$</p>
+<p>When we plug in the given expression for $x(t)$, the equation of Motion of Mass $m$ becomes:
+$$l \ddot \theta - A \omega^2 \cos{(\omega t)} \cos{\theta}+g \sin{\theta}=0$$</p>
+
+</div>
+<script>
+document.querySelectorAll('.info-green a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+});
+</script>
+<p>We can use a numerical solution to the differential equation with the following conditions: $l=7$, $g=9.81$, $A=1$, $\omega = \gamma \text{ (golden ratio)}$. I made the animation below using these initial conditions.</p>
+<p><img src="../../images/coord/stationary-action.gif"></p>
+<h3 id="example-2-double-pendulum">Example 2: Double Pendulum</h3>
+<p><img src="../../images/coord/double-pendulum-drawing.png"></p>
+
+
+<div class="info-green">
+    <style>
+      .info-green a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-green a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    <p>Problem $––$ A double pendulum of two masses, $m_1$ and $m_2$, and two rods of lengths $l_1$ and $l_2$. Find the equations of motion.</p>
+<!-- raw HTML omitted -->
+<p>$$
+\begin{align}
+(x,y)_1 &amp;= (l_1 \sin \theta_1, -l_1 \cos \theta_1) \\
+(x,y)_2 &amp;= (l_1 \sin \theta_1 + l_2 \sin \theta_2, -l_1 \cos \theta_1 - l_2 \cos \theta_2) \\
+v_1^2 &amp;= l_1^2 \dot{\theta}_1^2 \\
+v_2^2 &amp;= l_1^2 \dot{\theta}_1^2 + l_2^2 \dot{\theta}_2^2 + 2 l_1 l_2 \dot{\theta}_1 \dot{\theta}_2 (\cos \theta_1 \cos \theta_2 + \sin \theta_1 \sin \theta_2)\\
+\end{align}
+$$</p>
+<p>$$
+\mathcal{L} = \frac{1}{2} m_1 l_1^2 \dot{\theta}_1^2 + \frac{1}{2} m_2 \left( l_1^2 \dot{\theta}_1^2 + l_2^2 \dot{\theta}_2^2 + 2 l_1 l_2 \dot{\theta}_1 \dot{\theta}_2 \cos (\theta_1 - \theta_2) \right) + m_1 g l_1 \cos \theta_1 + m_2 g (l_1 \cos \theta_1 + l_2 \cos \theta_2)
+$$</p>
+<p>The equations of motion are given by the Euler-Lagrange equations:</p>
+<p>$$\frac{\partial \mathcal{L}}{\partial \theta_1}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{\theta}_1}$$</p>
+<p>$$\frac{\partial \mathcal{L}}{\partial \theta_2}=\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{\theta}_2}$$</p>
+<p>\begin{align}
+0 &amp;= (m_1 + m_2) l_1^2 \ddot{\theta}_1 + m_2 l_1 l_2 \ddot{\theta}_2 \cos (\theta_1 - \theta_2) + m_2 l_1 l_2 \dot{\theta}_2^2 \sin (\theta_1 - \theta_2) + (m_1 + m_2) g l_1 \sin \theta_1 \\
+0 &amp;= m_2 l_2^2 \ddot{\theta}_2 + m_2 l_1 l_2 \ddot{\theta}_1 \cos (\theta_1 - \theta_2) - m_2 l_1 l_2 \dot{\theta}_1^2 \sin (\theta_1 - \theta_2) + m_2 g l_2 \sin \theta_2 \\
+\end{align}</p>
+
+</div>
+<script>
+document.querySelectorAll('.info-green a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+});
+</script>
+<p>The nonlinear double pendulum was solve using numerical methods of the system of differential equation in Mathematica.
+<img src="../../images/coord/doublependulum_5.gif"></p>
+<h2 id="practice-problem">Practice Problem</h2>
+<p>Here is a fun problem to practice with.</p>
+<p><img alt="Falling Sticks" src="../../images/coord/two-sticks.png"></p>
+
+
+<div class="info-green">
+    <style>
+      .info-green a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-green a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    Problem $––$ Two massless sticks of length $2r$, each with a mass $m$ fixed at its middle, are hinged at an end. One stands on top of the other, as shown in above. The bottom end of the lower stick is hinged at the ground. They are held such that the lower stick is vertical, and the upper one is tilted at a small angle $\epsilon$ with respect to the vertical. They are then released. At this instant, what are the angular accelerations of the two sticks? Work in the approximation where $\epsilon$ is very small.
+</div>
+<script>
+document.querySelectorAll('.info-green a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+});
+</script>
+<h3 id="references">References</h3>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Principle of stationary action is sometimes called principle of &ldquo;least&rdquo; action but this is a misnomer since it is not always the case that the stationary value is a minimum. For example, the harmonic oscillator with $\mathcal{L} = \frac{1}{2}m \dot{x}^2 - \frac{1}{2}k x^2$ is sometimes a minimum and sometimes a saddle point depending on the situation.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>There is more that can be said with respect to symmetry in terms of Noether&rsquo;s theorem but I&rsquo;ll save this for another note.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>There also exists a Hamiltonian formulation of Classical Mechanics that takes advantage of its own coordinate system called <em>Canonical Coordinates</em>.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+		</div>
+	</section>
+</article>
+				
+					<footer id="footer">
+						<ul class="icons">
+              
+              <li><a href="https://www.linkedin.com/in/eric-pena" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+              
+              
+              <li><a href="https://twitter.com/ericpenax" class="icon brands fa-twitter" target="_blank" rel="noopener noreferrer"><span class="label">Twitter</span></a></li>
+              
+              
+              <li><a href="https://mstdn.science/@ericpena" class="icon brands fa-mastodon" target="_blank" rel="noopener noreferrer"><span class="label">Mastodon</span></a></li>
+              
+              
+              <li><a href="https://github.com/ericpena" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+              
+              
+              
+              
+              <li><a href="https://instagram.com/ericpena" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
+              
+              
+              
+              <li><a href="mailto:eric.pena@binghamton.edu" class="icon solid fa-envelope" target="_blank" rel="noopener noreferrer"><span class="label">Email</span></a></li>
+              
+              
+
+						</ul>
+						<ul class="copyright">
+              <li>&copy; 2025 Eric Peña</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+      
+
+
+
+
+
+
+
+
+
+<script src="../../js/bundle.min.935254271ae3006602cb92b38ba70062a462cefc8d3aa575338369d256bb8422a69fc18f64450e74b7e6c240b20a252f522f3b9f323294bdf9ed466f5fb28ee9.js" integrity="sha512-k1JUJxrjAGYCy5Kzi6cAYqRizvyNOqV1M4Np0la7hCKmn8GPZEUOdLfmwkCyCiUvUi87nzIylL357UZvX7KO6Q=="></script>
+
+
+	</body>
+</html>
+

@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+
+
+<script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><script type="text/javascript">
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+</script>
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<html lang="en">
+	<head>
+	  <title>Logistic Map</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="origin">
+
+	
+
+    <meta name="description" content="Senior Data Scientist
+Understanding Complexity Through Data and Statistics">
+    
+    <meta name="generator" content="Hugo 0.138.0">
+
+    
+<link rel="stylesheet" href="../../css/main.min.6470f359d96cadb62114d84a859a08e047c933e85d36b945421da8260b62381977f4f70390c7eab26f30d96e167059bdd0e86e799c562d5d4eba32b5a9d4713c.css" integrity="sha512-ZHDzWdlsrbYhFNhKhZoI4EfJM&#43;hdNrlFQh2oJgtiOBl39PcDkMfqsm8w2W4WcFm90OhueZxWLV1OujK1qdRxPA==">
+
+
+<noscript><link rel="stylesheet" href="../../css/noscript.min.e6f1ba19697eecfddfbf83ff7181b98181998f163d7005f6ae923451556bf85bef357f43dffe1522b92c1efab7fb38441f479e39b7a03e4313a8ef12b0b01f65.css" integrity="sha512-5vG6GWl&#43;7P3fv4P/cYG5gYGZjxY9cAX2rpI0UVVr&#43;FvvNX9D3/4VIrksHvq3&#43;zhEH0eeObegPkMTqO8SsLAfZQ=="></noscript>
+
+
+
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Logistic Map">
+  <meta name="twitter:description" content="This article explores the logistic map, a nonlinear difference equation capturing dynamic behaviors, including chaos, with insights into bifurcation and complex systems modeling">
+      <meta name="twitter:site" content="@ericpenax">
+
+    <meta property="og:url" content="http://localhost:1313/posts/logistic-map/">
+  <meta property="og:site_name" content="Eric Peña">
+  <meta property="og:title" content="Logistic Map">
+  <meta property="og:description" content="This article explores the logistic map, a nonlinear difference equation capturing dynamic behaviors, including chaos, with insights into bifurcation and complex systems modeling">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2021-03-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2021-03-23T00:00:00+00:00">
+    <meta property="article:tag" content="Physics">
+    <meta property="article:tag" content="Modeling">
+    <meta property="article:tag" content="Complexity">
+
+    
+	</head>
+	<body class="landing is-preload">
+
+		
+			<div id="page-wrapper">
+
+				
+          <header id="header">
+            <h1><a href="http://localhost:1313/">Eric Peña</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+                  <a href="#menu" class="menuToggle" aria-label='Menu'><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+				              
+				              <li><a href="../../">Home</a></li>
+				              
+				              <li><a href="../../about/">About Me</a></li>
+				              
+				              <li><a href="../../posts/">Posts</a></li>
+				              
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+<article id="main">
+  <header >
+    <h2>Logistic Map</h2>
+    
+	</header>
+	<section class="wrapper style5">
+		<div class="inner">
+      <h2 id="logistic-map">Logistic Map</h2>
+<p>The famous logistic map is a recurrence relation or polynomial mapping of degree 2. It is a nonlinear difference equation capable of capturing complex nonlinear dynamical behavior including chaos. This map was popularized by the biologist Robert May in a <a href="https://www.researchgate.net/publication/237005499_Simple_Mathematical_Models_With_Very_Complicated_Dynamics">Nature article</a> written in 1976. Sadly, Robert May has passed away recently on April 28, 2020. The equation is as follows:</p>
+<p>$$x_{n+1} = r x_n (1 - x_n)$$</p>
+<p>The parameter $r$ controls the behavior of the system. It turns out that $r=3.6$ is starting to reach the point of chaos.</p>
+<h2 id="preamble">Preamble</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pylab <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span></code></pre></div><h2 id="defining-logistic-map">Defining Logistic Map</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(x, r):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> r<span style="color:#f92672">*</span>x<span style="color:#f92672">*</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>x)
+</span></span></code></pre></div><h2 id="period-doubling-bifurcation-r--31">Period Doubling Bifurcation $(r = 3.1)$</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.01</span>
+</span></span><span style="display:flex;"><span>r <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.1</span>
+</span></span><span style="display:flex;"><span>xdata <span style="color:#f92672">=</span> [x]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> t <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">100</span>):
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> f(x, r)
+</span></span><span style="display:flex;"><span>    xdata<span style="color:#f92672">.</span>append(x)
+</span></span><span style="display:flex;"><span>plot(xdata, <span style="color:#e6db74">&#39;r.&#39;</span>);
+</span></span></code></pre></div><p><img alt="png" src="../../images/logistic-map/logistic_map_8_0.png"></p>
+<h2 id="creating-bifurcation-diagram">Creating Bifurcation Diagram</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rvalues <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>xvalues <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> r <span style="color:#f92672">in</span> linspace(<span style="color:#ae81ff">2.5</span>, <span style="color:#ae81ff">3.7</span>, <span style="color:#ae81ff">500</span>):
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.01</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> t <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">200</span>):
+</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">=</span> f(x, r)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> t <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">100</span>:
+</span></span><span style="display:flex;"><span>            rvalues<span style="color:#f92672">.</span>append(r)
+</span></span><span style="display:flex;"><span>            xvalues<span style="color:#f92672">.</span>append(x)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>plot(rvalues, xvalues, <span style="color:#e6db74">&#39;r.&#39;</span>, alpha <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.05</span>);
+</span></span></code></pre></div><p><img alt="png" src="../../images/logistic-map/logistic_map_10_0.png"></p>
+
+		</div>
+	</section>
+</article>
+				
+					<footer id="footer">
+						<ul class="icons">
+              
+              <li><a href="https://www.linkedin.com/in/eric-pena" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+              
+              
+              <li><a href="https://twitter.com/ericpenax" class="icon brands fa-twitter" target="_blank" rel="noopener noreferrer"><span class="label">Twitter</span></a></li>
+              
+              
+              <li><a href="https://mstdn.science/@ericpena" class="icon brands fa-mastodon" target="_blank" rel="noopener noreferrer"><span class="label">Mastodon</span></a></li>
+              
+              
+              <li><a href="https://github.com/ericpena" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+              
+              
+              
+              
+              <li><a href="https://instagram.com/ericpena" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
+              
+              
+              
+              <li><a href="mailto:eric.pena@binghamton.edu" class="icon solid fa-envelope" target="_blank" rel="noopener noreferrer"><span class="label">Email</span></a></li>
+              
+              
+
+						</ul>
+						<ul class="copyright">
+              <li>&copy; 2025 Eric Peña</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+      
+
+
+
+
+
+
+
+
+
+<script src="../../js/bundle.min.935254271ae3006602cb92b38ba70062a462cefc8d3aa575338369d256bb8422a69fc18f64450e74b7e6c240b20a252f522f3b9f323294bdf9ed466f5fb28ee9.js" integrity="sha512-k1JUJxrjAGYCy5Kzi6cAYqRizvyNOqV1M4Np0la7hCKmn8GPZEUOdLfmwkCyCiUvUi87nzIylL357UZvX7KO6Q=="></script>
+
+
+	</body>
+</html>
+

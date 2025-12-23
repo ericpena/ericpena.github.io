@@ -1,0 +1,427 @@
+<!DOCTYPE HTML>
+
+
+<script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><script type="text/javascript">
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+</script>
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<html lang="en">
+	<head>
+	  <title>PCA with Single Value Decomposition</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="referrer" content="origin">
+
+	
+
+    <meta name="description" content="Senior Data Scientist
+Understanding Complexity Through Data and Statistics">
+    
+    <meta name="generator" content="Hugo 0.138.0">
+
+    
+<link rel="stylesheet" href="../../css/main.min.6470f359d96cadb62114d84a859a08e047c933e85d36b945421da8260b62381977f4f70390c7eab26f30d96e167059bdd0e86e799c562d5d4eba32b5a9d4713c.css" integrity="sha512-ZHDzWdlsrbYhFNhKhZoI4EfJM&#43;hdNrlFQh2oJgtiOBl39PcDkMfqsm8w2W4WcFm90OhueZxWLV1OujK1qdRxPA==">
+
+
+<noscript><link rel="stylesheet" href="../../css/noscript.min.e6f1ba19697eecfddfbf83ff7181b98181998f163d7005f6ae923451556bf85bef357f43dffe1522b92c1efab7fb38441f479e39b7a03e4313a8ef12b0b01f65.css" integrity="sha512-5vG6GWl&#43;7P3fv4P/cYG5gYGZjxY9cAX2rpI0UVVr&#43;FvvNX9D3/4VIrksHvq3&#43;zhEH0eeObegPkMTqO8SsLAfZQ=="></noscript>
+
+
+
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="PCA with Single Value Decomposition">
+  <meta name="twitter:description" content="This article explains how to perform Principal Component Analysis (PCA) using Singular Value Decomposition (SVD), demonstrating its implementation, variance preservation, and practical applications with detailed examples and visualizations">
+      <meta name="twitter:site" content="@ericpenax">
+
+    <meta property="og:url" content="http://localhost:1313/posts/pca-svd/">
+  <meta property="og:site_name" content="Eric Peña">
+  <meta property="og:title" content="PCA with Single Value Decomposition">
+  <meta property="og:description" content="This article explains how to perform Principal Component Analysis (PCA) using Singular Value Decomposition (SVD), demonstrating its implementation, variance preservation, and practical applications with detailed examples and visualizations">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-06-29T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-06-29T00:00:00+00:00">
+    <meta property="article:tag" content="Data Science">
+    <meta property="article:tag" content="Programming">
+
+    
+	</head>
+	<body class="landing is-preload">
+
+		
+			<div id="page-wrapper">
+
+				
+          <header id="header">
+            <h1><a href="http://localhost:1313/">Eric Peña</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+                  <a href="#menu" class="menuToggle" aria-label='Menu'><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+				              
+				              <li><a href="../../">Home</a></li>
+				              
+				              <li><a href="../../about/">About Me</a></li>
+				              
+				              <li><a href="../../posts/">Posts</a></li>
+				              
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+<article id="main">
+  <header >
+    <h2>PCA with Single Value Decomposition</h2>
+    
+	</header>
+	<section class="wrapper style5">
+		<div class="inner">
+      <p>In another article, Principal Component Analysis was performed using Eigenvalue Decomposition. In this article we take a different approach: Single Value Decomposition. The general idea is that for any matrix we may perform Single Value Decomposition - this is guaranteed. It is a powerful tool that is used in many fields. On the other hand, the Eigenvalue Decomposition does not always exist. Eigenvalue Decomposition can only be done on square, full-rank, positive semi-definite matricies.</p>
+<p>The general formula for Single Value Decomposition:</p>
+<p>$$\Sigma = U \Lambda V^*$$</p>
+<ul>
+<li>
+<p>Remember that $V^* = V^T = V^{-1}$ for Real Unitary matrices</p>
+</li>
+<li>
+<p>If we had performed SVD on the covariance of the original data, $X_c$, then we will have essentially performed the same Eigenvalue decomposition as before. Therefore, we will perform SVD on the actual input matrix $X_c$ itself. This matrix need not be square nor linearly independent for SVD to help us here.</p>
+</li>
+<li>
+<p>A general note about <code>np.linalg.svd(...)</code> is that the $V$ that it returns, the rotation matrix of the output space, is actually $V^T$</p>
+</li>
+</ul>
+<h2 id="we-must-start-with-some-preliminary-data-generation">We must start with some preliminary data generation</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> seaborn <span style="color:#66d9ef">as</span> sns
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> math
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> StandardScaler
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.decomposition <span style="color:#f92672">import</span> PCA <span style="color:#66d9ef">as</span> sklearnPCA
+</span></span><span style="display:flex;"><span><span style="color:#f92672">%</span>matplotlib inline
+</span></span><span style="display:flex;"><span>np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>seed(<span style="color:#ae81ff">44</span>)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> mpl_toolkits.mplot3d <span style="color:#f92672">import</span> Axes3D
+</span></span></code></pre></div><p>Here, I generate data according to a Normal Bivariate Distribution described below:</p>
+<p>$$X ~ N(\mu, \Sigma)\ \ \ \ \ \ \ \ \ \Sigma = \begin{bmatrix}
+1 &amp; 3\\
+3 &amp; 10
+\end{bmatrix}$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>mean <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>cov <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">10</span>]]
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>multivariate_normal(mean, cov, <span style="color:#ae81ff">500</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(X[:,<span style="color:#ae81ff">0</span>], X[:,<span style="color:#ae81ff">1</span>], <span style="color:#e6db74">&#39;go&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Bivariate Normal Distribution Data&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;$X_1$&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;$X_2$&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;equal&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img alt="png" src="../../images/pca-svd/pca-svd_6_0.png"></p>
+<p>Next, I estimate the covariance matrix and compare it with $\Sigma$. The way to do this is listed in the 3 steps below:</p>
+<ol>
+<li>Remove the means from each data point in $X$: $X_c = (X - \bar X)$</li>
+<li>Calculate: $X_c^T X_c$</li>
+<li>Divide by the number of degrees of freedom: $(N-1)$</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>mx <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(X, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>Xc <span style="color:#f92672">=</span> X <span style="color:#f92672">-</span> mx
+</span></span><span style="display:flex;"><span>C <span style="color:#f92672">=</span> (Xc<span style="color:#f92672">.</span>T<span style="color:#a6e22e">@Xc</span>) <span style="color:#f92672">/</span> (Xc[:,<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>size <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>C
+</span></span></code></pre></div><pre><code>array([[ 0.98999791,  3.01642667],
+       [ 3.01642667, 10.21045548]])
+</code></pre>
+<p>We can see that the computed covariance matrix is quite similar to the original covariance. The basic idea is that <code>cov</code> $\approx$ <code>C</code>.</p>
+<p>Now, I will use the <code>svd</code> function from NumPy:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>U, E, VT <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>svd(C, full_matrices<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;U: Rotation of the input space</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{</span>U<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;E: Scaling in the output space</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{</span>E<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;VT: Rotation of the output space</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{</span>VT<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div><pre><code>U: Rotation of the input space
+[[-0.28565762 -0.95833174]
+ [-0.95833174  0.28565762]]
+
+E: Scaling in the output space
+[11.10958594  0.09086745]
+
+VT: Rotation of the output space
+[[-0.28565762 -0.95833174]
+ [-0.95833174  0.28565762]]
+</code></pre>
+<p>There are a few importnat points I should mention:</p>
+<ul>
+<li>
+<p>$U$ and $V$ are both orthonormal matrices (assuming $\Sigma$ is real)</p>
+</li>
+<li>
+<p>The columns of $V$ and $U$ are the Eigenvectors of $X_c^T X_c$ and $X_c X_c^T$, respectively.</p>
+</li>
+<li>
+<p>We can show what the data looks like in the new orthogonal directions</p>
+</li>
+<li>
+<p>Using the formula is $Z_k = X V_k$</p>
+</li>
+</ul>
+<p>Now, let&rsquo;s plot the data in the new bases:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>SZ <span style="color:#f92672">=</span> Xc <span style="color:#f92672">@</span> VT<span style="color:#f92672">.</span>T
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(SZ[:,<span style="color:#ae81ff">0</span>], SZ[:,<span style="color:#ae81ff">1</span>],<span style="color:#e6db74">&#39;go&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Single Value Composition Projection Into New Bases&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;Eigenvector 1 [PC: 1]&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;Eigenvector 2 [PC: 2]&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;equal&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img alt="png" src="../../images/pca-svd/pca-svd_13_0.png"></p>
+<p>Next we may see if this transformation preserves the variance of the original data</p>
+<p>The general formula for Single Value Decomposition:
+$$\Sigma = U \Lambda V^{*}$$</p>
+<p>Since $\Lambda$ is the diagonal matrix from decomposing $X_c$, the trace of this matrix (sum of $\Lambda_{ii}$) is the following:
+$$Tr(\Lambda) = \frac{d_1^2}{N-1} + \frac{d_2^2}{N-1} + \cdots + \frac{d_p^2}{N-1} = \sigma^2_{Z_1} + \sigma^2_{Z_2} + \cdots + \sigma^2_{Z_p}  = Var(Z)$$</p>
+<p>But in this case, the $\frac{d_i}{N - 1} = \lambda_i$ since SVD and Eigenvalue Decomposition is the same when done on the covariance matrix.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>xVariance <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>var(X[:,<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">+</span> np<span style="color:#f92672">.</span>var(X[:,<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>sVariance <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>sum(E)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Variance in newly found orthogonal space: </span><span style="color:#e6db74">{</span>sVariance<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Variance in original orthogonal space: </span><span style="color:#e6db74">{</span>xVariance<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div><pre><code>Variance in newly found orthogonal space: 11.200453390218739
+Variance in original orthogonal space: 11.178052483438304
+</code></pre>
+<p>These values are very close to one another therefore variance (information) is preserved.</p>
+<h2 id="more-features">More Features!</h2>
+<p>We typically have more features that we&rsquo;re dealing with so let&rsquo;s introduce this into what we&rsquo;re doing.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>N, p <span style="color:#f92672">=</span> <span style="color:#ae81ff">5000</span>, <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>meanNP <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span> <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(p)]
+</span></span></code></pre></div><p>Start with randomly creating a covariance matrix</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>covNP <span style="color:#f92672">=</span> [np<span style="color:#f92672">.</span>round(np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>random(p)) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(p)]
+</span></span><span style="display:flex;"><span>covNP <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array(covNP)
+</span></span><span style="display:flex;"><span>covNP <span style="color:#f92672">=</span> (covNP<span style="color:#f92672">.</span>T <span style="color:#f92672">@</span> covNP)
+</span></span><span style="display:flex;"><span>np<span style="color:#f92672">.</span>fill_diagonal(covNP, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>covNP
+</span></span></code></pre></div><pre><code>array([[1., 2., 2., 5., 3., 2., 3., 2., 4., 4.],
+       [2., 1., 2., 5., 4., 1., 2., 1., 5., 5.],
+       [2., 2., 1., 4., 3., 1., 1., 1., 3., 3.],
+       [5., 5., 4., 1., 7., 5., 4., 3., 8., 7.],
+       [3., 4., 3., 7., 1., 4., 3., 3., 5., 5.],
+       [2., 1., 1., 5., 4., 1., 2., 2., 3., 2.],
+       [3., 2., 1., 4., 3., 2., 1., 1., 4., 2.],
+       [2., 1., 1., 3., 3., 2., 1., 1., 1., 2.],
+       [4., 5., 3., 8., 5., 3., 4., 1., 1., 6.],
+       [4., 5., 3., 7., 5., 2., 2., 2., 6., 1.]])
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>min_eig <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>min(np<span style="color:#f92672">.</span>real(np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>eigvals(covNP)))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> min_eig <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>     covNP <span style="color:#f92672">-=</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">*</span>min_eig <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>eye(<span style="color:#f92672">*</span>covNP<span style="color:#f92672">.</span>shape)
+</span></span></code></pre></div><p>Create $X_{N \times p}$ input matrix with $N = 5000$ and $p = 10$ | Sample from the same Bivariate Normal Distribution</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>XNP <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>multivariate_normal(meanNP, covNP, N)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">show_pairplot</span>():
+</span></span><span style="display:flex;"><span>    XNP_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(data<span style="color:#f92672">=</span>XNP, columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;X&#39;</span> <span style="color:#f92672">+</span> str(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,p <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)])
+</span></span><span style="display:flex;"><span>    sns<span style="color:#f92672">.</span>pairplot(XNP_df,
+</span></span><span style="display:flex;"><span>             diag_kind <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;kde&#39;</span>,
+</span></span><span style="display:flex;"><span>             height <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>             palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;husl&#34;</span>,
+</span></span><span style="display:flex;"><span>             kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;reg&#34;</span>, plot_kws<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;line_kws&#39;</span>:{<span style="color:#e6db74">&#39;color&#39;</span>:<span style="color:#e6db74">&#39;red&#39;</span>}},
+</span></span><span style="display:flex;"><span>             markers<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;+&#34;</span>)
+</span></span><span style="display:flex;"><span>show_pairplot()
+</span></span></code></pre></div><p><img alt="png" src="../../images/pca-svd/pca-svd_25_0.png"></p>
+<p>Next we will:</p>
+<ol>
+<li>Subtract the mean from the input matrix</li>
+<li>Calculate the covariance matrix</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>mxNP <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(XNP, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>XcNP <span style="color:#f92672">=</span> XNP <span style="color:#f92672">-</span> mxNP
+</span></span><span style="display:flex;"><span>CNP <span style="color:#f92672">=</span> XcNP<span style="color:#f92672">.</span>T <span style="color:#f92672">@</span> XcNP <span style="color:#f92672">/</span> (XcNP[:,<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>size <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><p>Now we may show the calculated covariance matrix:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>imshow(CNP);
+</span></span></code></pre></div><p><img alt="png" src="../../images/pca-svd/pca-svd_29_0.png"></p>
+<p>We can take a look at the differences in covariances between the one used for data generation and the one from simulated data.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">5</span>))
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>subplot(<span style="color:#ae81ff">121</span>)
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>heatmap(covNP);
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Covariance Matrix Used For Data Generation&#39;</span>);
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;VARIABLE INDICIES&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;VARIABLE INDICIES&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>subplot(<span style="color:#ae81ff">122</span>)
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>heatmap(CNP);
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Calculated Covariance Matrix From Simulated Data&#39;</span>);
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;VARIABLE INDICIES&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;VARIABLE INDICIES&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img alt="png" src="../../images/pca-svd/pca-svd_31_0.png"></p>
+<p>Here, I perform <strong>SVD</strong> on this problem:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>UNP, ENP, VTNP <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>svd(XcNP, full_matrices <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;U: Rotation of the input space</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{</span>UNP<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;E: Scaling in the output space</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{</span>ENP<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;VT: Rotation of the output space</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{</span>VTNP<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div><pre><code>U: Rotation of the input space
+[[ 0.00063402 -0.00223972 -0.00512473 ... -0.01283197 -0.00249885
+   0.00729883]
+ [ 0.00398954 -0.00015302  0.01754178 ...  0.02282558 -0.00582044
+  -0.01374769]
+ [-0.0113012  -0.02463393  0.00080511 ...  0.00957205 -0.00641299
+  -0.0096895 ]
+ ...
+ [-0.01955479 -0.02007181  0.01777133 ...  0.02102236 -0.00992698
+   0.01587713]
+ [-0.01690699 -0.00056427 -0.0182975  ...  0.01105485 -0.01346963
+  -0.01055169]
+ [ 0.01078462  0.01053594  0.01148998 ... -0.00896266 -0.01786641
+   0.00072838]]
+
+E: Scaling in the output space
+[740.25549159 650.23894313 645.07816186 630.69002383 620.78564169
+ 614.66865467 609.89320315 606.82283464 599.25632365 582.99093422]
+
+VT: Rotation of the output space
+[[-0.29282796 -0.30797533 -0.28041494 -0.43695612 -0.43217361 -0.23051754
+  -0.14681501 -0.16859798 -0.34464154 -0.37572558]
+ [ 0.22877855  0.08402528  0.48977653 -0.05238006 -0.04269272 -0.52141728
+   0.25666469 -0.59697826 -0.03962057  0.02114617]
+ [-0.02011072 -0.34199333  0.733593   -0.06685807  0.00687695  0.34513918
+  -0.30369872  0.13985565 -0.32820467 -0.03644537]
+ [ 0.11779768  0.51624749  0.12470635 -0.14611295 -0.32952993 -0.34994377
+  -0.5445956   0.33456606  0.01191737  0.20736469]
+ [-0.22851051  0.11055657 -0.11981725  0.23791751 -0.0332837   0.2896755
+  -0.53419567 -0.66916026  0.07310094  0.2027199 ]
+ [ 0.83224791 -0.3533297  -0.24941654  0.1600689  -0.07765862 -0.00781993
+  -0.27364501 -0.0552323  -0.04264587 -0.09406375]
+ [-0.05189883 -0.30030924 -0.15682762 -0.03306807 -0.04685503 -0.13316574
+   0.12933948  0.04138274 -0.36434896  0.84280043]
+ [-0.08953451 -0.25994462  0.15540834  0.2883993  -0.73282976  0.07156255
+   0.17669037  0.0684583   0.48055385  0.08993209]
+ [-0.27447973 -0.44545874  0.04204989  0.20817596  0.37818413 -0.54242154
+  -0.33505051  0.12740806  0.33807826 -0.03300058]
+ [-0.12933967  0.14616797 -0.02638978  0.75543034 -0.11562563 -0.17987633
+   0.05742537  0.1011913  -0.53539761 -0.21123923]]
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>UNP, ENP, VTNP <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>svd(Xc, full_matrices <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># print(f&#39;U: Rotation of the input space\n{UNP}\n&#39;)</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;E: Scaling in the output space</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{</span>ENP<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;VT: Rotation of the output space</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{</span>VTNP<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div><pre><code>E: Scaling in the output space
+[74.4559157   6.73371059]
+
+VT: Rotation of the output space
+[[ 0.28565762  0.95833174]
+ [ 0.95833174 -0.28565762]]
+</code></pre>
+<p>It appears that since there are many more dimensions, the variance explain is spread throughout the different orthogonal components. The question becomes, is the amount of varation in all these components equal to the amount of variation from the original dataset. To answer this we will sum up all the diagonal entries from the $\Lambda$ matrix like previously discussed. The important formula we will use is the following:</p>
+<p>$$Tr(\Lambda) = \frac{d_1^2}{N} + \frac{d_2^2}{N} + \cdots + \frac{d_p^2}{N} = \sigma^2_{Z_1} + \sigma^2_{Z_2} + \cdots + \sigma^2_{Z_p}  = Var(Z)$$</p>
+<h4 id="amount-of-variation-from-svd-components">Amount of Variation From SVD Components:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>varNP <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>sum(np<span style="color:#f92672">.</span>square(ENP) <span style="color:#f92672">/</span> N)
+</span></span></code></pre></div><h4 id="amount-of-variation-from-the-original-simulated-data">Amount of Variation From The Original Simulated Data</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>varXcNP <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>sum([np<span style="color:#f92672">.</span>var(XcNP[:,i]) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(p)])
+</span></span></code></pre></div><h4 id="comparison-of-the-two-values-above">Comparison Of The Two Values Above</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Variance in newly found orthogonal space: </span><span style="color:#e6db74">{</span>varNP<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Variance in original orthogonal space: </span><span style="color:#e6db74">{</span>varXcNP<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div><pre><code>Variance in newly found orthogonal space: 797.4134455431736
+Variance in original orthogonal space: 797.413445543174
+</code></pre>
+<ul>
+<li>
+<p>As we can see above, the amount of variation explained is still preserved even when switching to a new orthogonal basis</p>
+</li>
+<li>
+<p>Now let&rsquo;s look into how much variation is explained by each variable</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>tvar <span style="color:#f92672">=</span> varNP
+</span></span><span style="display:flex;"><span>vlist <span style="color:#f92672">=</span> (np<span style="color:#f92672">.</span>square(ENP)<span style="color:#f92672">/</span>N)
+</span></span><span style="display:flex;"><span>cumvar <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>cumsum(vlist)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(vlist)
+</span></span><span style="display:flex;"><span>print(cumvar)
+</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>sum(vlist <span style="color:#f92672">/</span> tvar))
+</span></span></code></pre></div><pre><code>[109.59563857  84.56213663  83.22516698  79.55398123  77.07496258
+  75.56351101  74.39394385  73.64679053  71.82162829  67.97568588]
+[109.59563857 194.1577752  277.38294218 356.93692341 434.011886
+ 509.575397   583.96934085 657.61613138 729.43775967 797.41344554]
+1.0
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">7</span>))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> plt<span style="color:#f92672">.</span>style<span style="color:#f92672">.</span>context(<span style="color:#e6db74">&#39;seaborn-whitegrid&#39;</span>):
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>bar(range(p), vlist <span style="color:#f92672">/</span> tvar, alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>, align<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;center&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;individual explained variance&#39;</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>step(range(p), cumvar <span style="color:#f92672">/</span> tvar, where<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mid&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;cumulative explained variance&#39;</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;Explained variance ratio&#39;</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;Principal components&#39;</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;best&#39;</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>tight_layout()
+</span></span></code></pre></div><p><img alt="png" src="../../images/pca-svd/pca-svd_46_0.png"></p>
+<p>We can even check if this decomposition was successful. Let&rsquo;s reconstruct our original data by multiplying all three matrices we obtain from the decomposition.</p>
+<p>$$U \Lambda V^T \rightarrow X$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ENPmatrix <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>diag(ENP)
+</span></span><span style="display:flex;"><span>XNPconstructed <span style="color:#f92672">=</span> UNP <span style="color:#f92672">@</span> ENPmatrix <span style="color:#f92672">@</span> VTNP
+</span></span><span style="display:flex;"><span>frobenius <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>norm(XcNP <span style="color:#f92672">-</span> XNPconstructed, <span style="color:#e6db74">&#39;fro&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Frobenius Norm value between constructed Xc from the decomposition and the original dataset: </span><span style="color:#e6db74">{</span>frobenius<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div><pre><code>Frobenius Norm value between constructed Xc from the decomposition and the original dataset: 4.281900349435277e-12
+</code></pre>
+<p>A Frobenius Norm value this low shows that the decomposition was performed correctly</p>
+<p>$$||A||_F = \sqrt{Tr\left(AA^H\right)}$$</p>
+<!-- raw HTML omitted -->
+
+		</div>
+	</section>
+</article>
+				
+					<footer id="footer">
+						<ul class="icons">
+              
+              <li><a href="https://www.linkedin.com/in/eric-pena" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+              
+              
+              <li><a href="https://twitter.com/ericpenax" class="icon brands fa-twitter" target="_blank" rel="noopener noreferrer"><span class="label">Twitter</span></a></li>
+              
+              
+              <li><a href="https://mstdn.science/@ericpena" class="icon brands fa-mastodon" target="_blank" rel="noopener noreferrer"><span class="label">Mastodon</span></a></li>
+              
+              
+              <li><a href="https://github.com/ericpena" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+              
+              
+              
+              
+              <li><a href="https://instagram.com/ericpena" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
+              
+              
+              
+              <li><a href="mailto:eric.pena@binghamton.edu" class="icon solid fa-envelope" target="_blank" rel="noopener noreferrer"><span class="label">Email</span></a></li>
+              
+              
+
+						</ul>
+						<ul class="copyright">
+              <li>&copy; 2025 Eric Peña</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+      
+
+
+
+
+
+
+
+
+
+<script src="../../js/bundle.min.935254271ae3006602cb92b38ba70062a462cefc8d3aa575338369d256bb8422a69fc18f64450e74b7e6c240b20a252f522f3b9f323294bdf9ed466f5fb28ee9.js" integrity="sha512-k1JUJxrjAGYCy5Kzi6cAYqRizvyNOqV1M4Np0la7hCKmn8GPZEUOdLfmwkCyCiUvUi87nzIylL357UZvX7KO6Q=="></script>
+
+
+	</body>
+</html>
+

@@ -4,6 +4,7 @@
 /resources/**/sass/
 /assets/.cache/
 /.sass-cache/
+.hugo_build.lock
 
 ## Node / build
 /node_modules/
