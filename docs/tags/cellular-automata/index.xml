@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cellular Automata on Eric Peña</title>
-    <link>https://ericpena.github.io/tags/cellular-automata/</link>
+    <link>http://localhost:1313/tags/cellular-automata/</link>
     <description>Recent content in Cellular Automata on Eric Peña</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 24 Apr 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://ericpena.github.io/tags/cellular-automata/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/cellular-automata/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cellular Automata Introduction</title>
-      <link>https://ericpena.github.io/posts/ca-intro/</link>
+      <link>http://localhost:1313/posts/ca-intro/</link>
       <pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/posts/ca-intro/</guid>
+      <guid>http://localhost:1313/posts/ca-intro/</guid>
       <description>&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;With four parameters I can fit an elephant, and with five I can make him wiggle his trunk.&amp;rdquo; &amp;ndash; John von Neumann&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Throughout history, science has aimed to understand and model the natural world as accurately as possible despite its inherent complexity. There are many phenomena in nature whose patterns and behavior seem somewhat unpredictable yet these resulting patterns appear highly structured and organized. Scientists and mathematicians have developed techniques (e.g., calculus, chaos theory, cellular automata) to model nature in its truest form. However, this feat can become problematic for many complex systems that surround us. They are not amenable to the traditional reductionist methodologies that were typically used in gaining scientific understanding. Generally, these systems involve complicated interactions and feedback loops between their parts making it difficult to model their behavior. Moreover, allowing these parts to also interact with their environment exacerbates this modeling dilemma. There is specific behavior which systems exhibit when they are considered complex. Common terms that have been used to describe this behavior are nonlinearity, emergence, self-organization, chaos, spontaneous order, adaptation, and many others. Phenomena such as these have been known to occur across many systems and are said to have universal properties. &lt;em&gt;Complex Systems&lt;/em&gt; is a broad term that refers to the research approach that is applied to many seemingly disparate fields (e.g., physics, computer science, economics, sociology, information theory, nonlinear dynamics, meteorology, education, biology). This approach avoids being tethered to reductionist methods and instead considers that behavior can emerge and, in a sense, &lt;em&gt;be&lt;/em&gt; more than the sum of their parts. At this moment, the field of complex systems is growing rapidly and not yet fully developed. A convenient entry point is building up emergence from simple models. This contributes to the unwavering popularity in cellular automata models. It involves a simple lattice structure&amp;mdash;with a finite set of states&amp;mdash;governed by rules that a person from any background can understand.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cellular Automata Optimization using Genetic Algorithms</title>
-      <link>https://ericpena.github.io/posts/ga-liso/</link>
+      <link>http://localhost:1313/posts/ga-liso/</link>
       <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/posts/ga-liso/</guid>
+      <guid>http://localhost:1313/posts/ga-liso/</guid>
       <description>&lt;div class=&#34;info-blue&#34;&gt;&#xA;    &lt;style&gt;&#xA;      .info-blue a {&#xA;        color: inherit;&#xA;        color: #f39c12;&#xA;      }&#xA;      .info-blue a:hover {&#xA;        color: #f39c12;&#xA;        font-weight: bold;&#xA;      }&#xA;    &lt;/style&gt;&#xA;    If you&amp;rsquo;d rather read the PDF version: &lt;a href=&#34;../../images/ga-liso/LISO_Project.pdf&#34;&gt;[PDF] Cellular Automata Optimization using Genetic Algorithms&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&lt;script&gt;&#xA;  document.querySelectorAll(&#39;.info-blue a&#39;).forEach(function(link) {&#xA;    link.setAttribute(&#39;target&#39;, &#39;_blank&#39;);&#xA;    link.setAttribute(&#39;rel&#39;, &#39;noopener noreferrer&#39;);&#xA;  });&#xA;&lt;/script&gt;&#xA;&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;&#xA;&lt;p&gt;The mechanism by which nature exhibits emergent patterns and behaviors has been a mystery throughout history. One application that has been developed which tends to mimic nature is Conway’s Game of Life — an application in the field of cellular automata. The ability to predict a final state of a system, given an initial state in the context of Game of Life, come as an insurmountable task. In this work, genetic algorithms are explored along with how they may be used to search for initial conditions such that their final outcomes are optimal. Optimal final states may be defined in terms of growth, diversity, and density of the cellular automaton evolution. This may be beneficial in exploring the way in which coupled components interact in mathematical and physical systems.&lt;/p&gt;</description>
     </item>
   </channel>

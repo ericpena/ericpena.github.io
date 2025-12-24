@@ -2,205 +2,214 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ericpena.github.io/posts/gamma-beta/</loc>
+    <loc>http://localhost:1313/posts/gamma-beta/</loc>
     <lastmod>2025-12-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/</loc>
-    <lastmod>2025-12-21T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://ericpena.github.io/de/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://ericpena.github.io/es/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ericpena.github.io/"
-                />
-  </url><url>
-    <loc>https://ericpena.github.io/posts/</loc>
-    <lastmod>2025-12-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ericpena.github.io/tags/statistics/</loc>
-    <lastmod>2025-12-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ericpena.github.io/tags/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-12-21T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://ericpena.github.io/de/tags/"
+                href="http://localhost:1313/de/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://ericpena.github.io/es/tags/"
+                href="http://localhost:1313/es/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ericpena.github.io/tags/"
+                href="http://localhost:1313/"
                 />
   </url><url>
-    <loc>https://ericpena.github.io/posts/mle/</loc>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-12-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/statistics/</loc>
+    <lastmod>2025-12-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-12-21T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="http://localhost:1313/de/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://localhost:1313/es/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/tags/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/asymptotics/</loc>
+    <lastmod>2025-01-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/estimation/</loc>
+    <lastmod>2025-01-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/delta/</loc>
+    <lastmod>2025-01-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/mle/</loc>
     <lastmod>2024-11-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/coord/</loc>
+    <loc>http://localhost:1313/posts/coord/</loc>
     <lastmod>2024-11-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/tags/mathematics/</loc>
+    <loc>http://localhost:1313/tags/mathematics/</loc>
     <lastmod>2024-11-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/tags/physics/</loc>
+    <loc>http://localhost:1313/tags/physics/</loc>
     <lastmod>2024-11-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/tags/modeling/</loc>
+    <loc>http://localhost:1313/tags/modeling/</loc>
     <lastmod>2024-05-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/mod-coupon/</loc>
+    <loc>http://localhost:1313/posts/mod-coupon/</loc>
     <lastmod>2024-05-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/throwing-wall/</loc>
+    <loc>http://localhost:1313/posts/throwing-wall/</loc>
     <lastmod>2024-02-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/birthday/</loc>
+    <loc>http://localhost:1313/posts/birthday/</loc>
     <lastmod>2023-03-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/tags/probability/</loc>
+    <loc>http://localhost:1313/tags/probability/</loc>
     <lastmod>2023-03-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/tags/cellular-automata/</loc>
+    <loc>http://localhost:1313/tags/cellular-automata/</loc>
     <lastmod>2022-04-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/ca-intro/</loc>
+    <loc>http://localhost:1313/posts/ca-intro/</loc>
     <lastmod>2022-04-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/tags/complexity/</loc>
+    <loc>http://localhost:1313/tags/complexity/</loc>
     <lastmod>2022-04-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/tags/programming/</loc>
+    <loc>http://localhost:1313/tags/programming/</loc>
     <lastmod>2022-04-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/stat-think-2/</loc>
+    <loc>http://localhost:1313/posts/stat-think-2/</loc>
     <lastmod>2022-04-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/stat-think-3/</loc>
+    <loc>http://localhost:1313/posts/stat-think-3/</loc>
     <lastmod>2022-04-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/socks/</loc>
+    <loc>http://localhost:1313/posts/socks/</loc>
     <lastmod>2021-12-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/tags/data-science/</loc>
+    <loc>http://localhost:1313/tags/data-science/</loc>
     <lastmod>2021-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/k-means/</loc>
+    <loc>http://localhost:1313/posts/k-means/</loc>
     <lastmod>2021-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/logistic-map/</loc>
+    <loc>http://localhost:1313/posts/logistic-map/</loc>
     <lastmod>2021-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/logistic-growth/</loc>
+    <loc>http://localhost:1313/posts/logistic-growth/</loc>
     <lastmod>2021-03-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/p-value/</loc>
+    <loc>http://localhost:1313/posts/p-value/</loc>
     <lastmod>2020-12-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/pca-evd/</loc>
+    <loc>http://localhost:1313/posts/pca-evd/</loc>
     <lastmod>2020-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/pca-svd/</loc>
+    <loc>http://localhost:1313/posts/pca-svd/</loc>
     <lastmod>2020-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/linear-regression/</loc>
+    <loc>http://localhost:1313/posts/linear-regression/</loc>
     <lastmod>2020-05-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/r-types/</loc>
+    <loc>http://localhost:1313/posts/r-types/</loc>
     <lastmod>2020-05-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/tags/bayesian/</loc>
+    <loc>http://localhost:1313/tags/bayesian/</loc>
     <lastmod>2020-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/bayes-opt/</loc>
+    <loc>http://localhost:1313/posts/bayes-opt/</loc>
     <lastmod>2020-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/tags/genetic-algorithm/</loc>
+    <loc>http://localhost:1313/tags/genetic-algorithm/</loc>
     <lastmod>2020-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/ga-intro/</loc>
+    <loc>http://localhost:1313/posts/ga-intro/</loc>
     <lastmod>2020-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/tags/optimization/</loc>
+    <loc>http://localhost:1313/tags/optimization/</loc>
     <lastmod>2020-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/mitchell/</loc>
+    <loc>http://localhost:1313/posts/mitchell/</loc>
     <lastmod>2020-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/trajectory-opt/</loc>
+    <loc>http://localhost:1313/posts/trajectory-opt/</loc>
     <lastmod>2019-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/ga-liso/</loc>
+    <loc>http://localhost:1313/posts/ga-liso/</loc>
     <lastmod>2019-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/character-analysis/</loc>
+    <loc>http://localhost:1313/posts/character-analysis/</loc>
     <lastmod>2019-10-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/tags/julia/</loc>
+    <loc>http://localhost:1313/tags/julia/</loc>
     <lastmod>2019-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/julia-speed/</loc>
+    <loc>http://localhost:1313/posts/julia-speed/</loc>
     <lastmod>2019-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/tensor/</loc>
+    <loc>http://localhost:1313/posts/tensor/</loc>
     <lastmod>2019-04-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/war/</loc>
+    <loc>http://localhost:1313/posts/war/</loc>
     <lastmod>2019-03-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/posts/network-theory/</loc>
+    <loc>http://localhost:1313/posts/network-theory/</loc>
     <lastmod>2018-12-16T00:38:01-05:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/drafts/</loc>
+    <loc>http://localhost:1313/drafts/</loc>
     <lastmod>1012-01-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ericpena.github.io/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
   </url><url>
-    <loc>https://ericpena.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://ericpena.github.io/de/categories/"
+                href="http://localhost:1313/de/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://ericpena.github.io/es/categories/"
+                href="http://localhost:1313/es/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ericpena.github.io/categories/"
+                href="http://localhost:1313/categories/"
                 />
   </url><url>
-    <loc>https://ericpena.github.io/series/</loc>
+    <loc>http://localhost:1313/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://ericpena.github.io/de/series/"
+                href="http://localhost:1313/de/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://ericpena.github.io/es/series/"
+                href="http://localhost:1313/es/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ericpena.github.io/series/"
+                href="http://localhost:1313/series/"
                 />
   </url>
 </urlset>

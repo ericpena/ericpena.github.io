@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Complexity on Eric Peña</title>
-    <link>https://ericpena.github.io/tags/complexity/</link>
+    <link>http://localhost:1313/tags/complexity/</link>
     <description>Recent content in Complexity on Eric Peña</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 24 Apr 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://ericpena.github.io/tags/complexity/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/complexity/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cellular Automata Introduction</title>
-      <link>https://ericpena.github.io/posts/ca-intro/</link>
+      <link>http://localhost:1313/posts/ca-intro/</link>
       <pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/posts/ca-intro/</guid>
+      <guid>http://localhost:1313/posts/ca-intro/</guid>
       <description>&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;With four parameters I can fit an elephant, and with five I can make him wiggle his trunk.&amp;rdquo; &amp;ndash; John von Neumann&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Throughout history, science has aimed to understand and model the natural world as accurately as possible despite its inherent complexity. There are many phenomena in nature whose patterns and behavior seem somewhat unpredictable yet these resulting patterns appear highly structured and organized. Scientists and mathematicians have developed techniques (e.g., calculus, chaos theory, cellular automata) to model nature in its truest form. However, this feat can become problematic for many complex systems that surround us. They are not amenable to the traditional reductionist methodologies that were typically used in gaining scientific understanding. Generally, these systems involve complicated interactions and feedback loops between their parts making it difficult to model their behavior. Moreover, allowing these parts to also interact with their environment exacerbates this modeling dilemma. There is specific behavior which systems exhibit when they are considered complex. Common terms that have been used to describe this behavior are nonlinearity, emergence, self-organization, chaos, spontaneous order, adaptation, and many others. Phenomena such as these have been known to occur across many systems and are said to have universal properties. &lt;em&gt;Complex Systems&lt;/em&gt; is a broad term that refers to the research approach that is applied to many seemingly disparate fields (e.g., physics, computer science, economics, sociology, information theory, nonlinear dynamics, meteorology, education, biology). This approach avoids being tethered to reductionist methods and instead considers that behavior can emerge and, in a sense, &lt;em&gt;be&lt;/em&gt; more than the sum of their parts. At this moment, the field of complex systems is growing rapidly and not yet fully developed. A convenient entry point is building up emergence from simple models. This contributes to the unwavering popularity in cellular automata models. It involves a simple lattice structure&amp;mdash;with a finite set of states&amp;mdash;governed by rules that a person from any background can understand.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Logistic Map</title>
-      <link>https://ericpena.github.io/posts/logistic-map/</link>
+      <link>http://localhost:1313/posts/logistic-map/</link>
       <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/posts/logistic-map/</guid>
+      <guid>http://localhost:1313/posts/logistic-map/</guid>
       <description>&lt;h2 id=&#34;logistic-map&#34;&gt;Logistic Map&lt;/h2&gt;&#xA;&lt;p&gt;The famous logistic map is a recurrence relation or polynomial mapping of degree 2. It is a nonlinear difference equation capable of capturing complex nonlinear dynamical behavior including chaos. This map was popularized by the biologist Robert May in a &lt;a href=&#34;https://www.researchgate.net/publication/237005499_Simple_Mathematical_Models_With_Very_Complicated_Dynamics&#34;&gt;Nature article&lt;/a&gt; written in 1976. Sadly, Robert May has passed away recently on April 28, 2020. The equation is as follows:&lt;/p&gt;&#xA;&lt;p&gt;$$x_{n+1} = r x_n (1 - x_n)$$&lt;/p&gt;&#xA;&lt;p&gt;The parameter $r$ controls the behavior of the system. It turns out that $r=3.6$ is starting to reach the point of chaos.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Logistic Growth Model</title>
-      <link>https://ericpena.github.io/posts/logistic-growth/</link>
+      <link>http://localhost:1313/posts/logistic-growth/</link>
       <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/posts/logistic-growth/</guid>
+      <guid>http://localhost:1313/posts/logistic-growth/</guid>
       <description>&lt;h2 id=&#34;logistic-growth-model&#34;&gt;Logistic Growth Model&lt;/h2&gt;&#xA;&lt;p&gt;The simple difference equation below will show exponential growth behavior:&lt;/p&gt;&#xA;&lt;p&gt;$$x_t = a x_{t-1}$$&lt;/p&gt;&#xA;&lt;p&gt;However, it is often the case that a population cannot grow indefinitely but rather reach a population limit. This limit is called the population&amp;rsquo;s carrying capacity. To create a model with exponential growth but also incorporate this convergence to a population maximum limit, we may start with the following train of thought:&lt;/p&gt;&#xA;&lt;p&gt;$$x_t = f(x_{t-1}) x_{t-1}$$&lt;/p&gt;</description>
     </item>
     <item>
       <title>Review of Complexity Book by Melanie Mitchell</title>
-      <link>https://ericpena.github.io/posts/mitchell/</link>
+      <link>http://localhost:1313/posts/mitchell/</link>
       <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://ericpena.github.io/posts/mitchell/</guid>
+      <guid>http://localhost:1313/posts/mitchell/</guid>
       <description>&lt;p&gt;&lt;em&gt;Complexity: A Guided Tour&lt;/em&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;part-i&#34;&gt;Part I&lt;/h1&gt;&#xA;&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;&#xA;&lt;p&gt;Providing the multifaceted story of how complex systems has evolved into what it is today is no easy feat. Dr. Melanie Mitchell not only gives a comprehensive historical tour of science and mathematics, she also provides foundational knowledge that any reader can carry to appreciate the essence of what it means for a system to be complex in the technical sense. Early on, she gives a clear definition of complex systems as an interdisciplinary field that studies how large networks of entities with no central controller can organize themselves and exhibit collective behavior given simple rules. However, she also humbly confesses that given how nebulous the field is, there has yet to be one clear definition of complexity that everyone can agree on. I appreciate how candid she is about what is known and what is not known in this field. Mitchell shares that even a panel she organized of great system science thinkers at the Santa Fe Institute could not agree on an answer to the question: &amp;ldquo;how do you define complexity?&amp;rdquo;.&lt;/p&gt;</description>
     </item>
   </channel>

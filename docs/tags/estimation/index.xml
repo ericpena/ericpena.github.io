@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Estimation on Eric Peña</title>
+    <link>http://localhost:1313/tags/estimation/</link>
+    <description>Recent content in Estimation on Eric Peña</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 05 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/estimation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Estimators and the Delta Method</title>
+      <link>http://localhost:1313/posts/delta/</link>
+      <pubDate>Sun, 05 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/delta/</guid>
+      <description>&lt;h2 id=&#34;why-estimators-deserve-your-attention&#34;&gt;Why Estimators Deserve Your Attention&lt;/h2&gt;&#xA;&lt;p&gt;In statistics and machine learning, we almost never observe the quantity we truly care about.&lt;br&gt;&#xA;Instead, we &lt;strong&gt;estimate&lt;/strong&gt; it.&lt;/p&gt;&#xA;&lt;p&gt;Whether it’s a population mean, a regression coefficient, a risk metric, or a model performance score, the object of interest is typically an unknown parameter $\theta$. An &lt;strong&gt;estimator&lt;/strong&gt; is a rule—usually a function of data—that produces an approximation of this unknown quantity.&lt;/p&gt;&#xA;&#xA;&#xA;&lt;div class=&#34;info-purple&#34;&gt;&#xA;    &lt;style&gt;&#xA;      .info-purple a {&#xA;        color: inherit;&#xA;        color: #f39c12;&#xA;      }&#xA;      .info-purple a:hover {&#xA;        color: #f39c12;&#xA;        font-weight: bold;&#xA;      }&#xA;    &lt;/style&gt;&#xA;    Understanding &lt;em&gt;how estimators behave&lt;/em&gt;—especially their variability—is just as important as computing their point values.&#xA;&lt;/div&gt;&#xA;&lt;script&gt;&#xA;document.querySelectorAll(&#39;.info-purple a&#39;).forEach(function(link) {&#xA;    link.setAttribute(&#39;target&#39;, &#39;_blank&#39;);&#xA;    link.setAttribute(&#39;rel&#39;, &#39;noopener noreferrer&#39;);&#xA;});&#xA;&lt;/script&gt;&#xA;&lt;p&gt;This article focuses on one of the most powerful tools for studying estimators:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
