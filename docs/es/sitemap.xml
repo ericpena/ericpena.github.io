@@ -2,72 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ericpena.github.io/es/categories/</loc>
+    <loc>https://ericpena.com/es/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://ericpena.github.io/de/categories/"
+                href="https://ericpena.com/de/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ericpena.github.io/categories/"
+                href="https://ericpena.com/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://ericpena.github.io/es/categories/"
+                href="https://ericpena.com/es/categories/"
                 />
   </url><url>
-    <loc>https://ericpena.github.io/es/</loc>
+    <loc>https://ericpena.com/es/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://ericpena.github.io/de/"
+                href="https://ericpena.com/de/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ericpena.github.io/"
+                href="https://ericpena.com/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://ericpena.github.io/es/"
+                href="https://ericpena.com/es/"
                 />
   </url><url>
-    <loc>https://ericpena.github.io/es/series/</loc>
+    <loc>https://ericpena.com/es/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://ericpena.github.io/de/series/"
+                href="https://ericpena.com/de/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ericpena.github.io/series/"
+                href="https://ericpena.com/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://ericpena.github.io/es/series/"
+                href="https://ericpena.com/es/series/"
                 />
   </url><url>
-    <loc>https://ericpena.github.io/es/tags/</loc>
+    <loc>https://ericpena.com/es/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://ericpena.github.io/de/tags/"
+                href="https://ericpena.com/de/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ericpena.github.io/tags/"
+                href="https://ericpena.com/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://ericpena.github.io/es/tags/"
+                href="https://ericpena.com/es/tags/"
                 />
   </url>
 </urlset>

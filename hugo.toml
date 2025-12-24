@@ -1,4 +1,4 @@
-baseURL = "https://ericpena.github.io/"
+baseURL = "https://ericpena.com"
 languageCode = 'en-us'
 title = "Eric Peña"
 theme = "spectral"

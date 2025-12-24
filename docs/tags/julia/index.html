@@ -1,18 +1,5 @@
 <!DOCTYPE HTML>
 
-
-<script type="text/javascript">
-    window.MathJax = {
-        tex: {
-            inlineMath: [['$', '$']],
-            displayMath: [['$$', '$$']]
-        }
-    };
-</script>
-<script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
-</script>
-
 <html lang="en">
 	<head>
 	  <title>Julia</title>
@@ -25,11 +12,11 @@
     <meta name="description" content="Senior Data Scientist
 Understanding Complexity Through Data and Statistics">
     
-    <link rel="alternate" type="application/rss+xml" href="https://ericpena.github.io/tags/julia/index.xml" title="Eric Peña">
+    <link rel="alternate" type="application/rss+xml" href="https://ericpena.com/tags/julia/index.xml" title="Eric Peña">
     <meta name="generator" content="Hugo 0.138.0">
 
     
-<link rel="stylesheet" href="../../css/main.min.6470f359d96cadb62114d84a859a08e047c933e85d36b945421da8260b62381977f4f70390c7eab26f30d96e167059bdd0e86e799c562d5d4eba32b5a9d4713c.css" integrity="sha512-ZHDzWdlsrbYhFNhKhZoI4EfJM&#43;hdNrlFQh2oJgtiOBl39PcDkMfqsm8w2W4WcFm90OhueZxWLV1OujK1qdRxPA==">
+<link rel="stylesheet" href="../../css/main.min.09224b467f2c555409865abcdf41f1274d28443d62fe5328ebcd73347b9dd264ae5252ade861e8ea1e4e114804b96f4720a7117f83b8e24922fd71f04afbbb08.css" integrity="sha512-CSJLRn8sVVQJhlq830HxJ00oRD1i/lMo681zNHud0mSuUlKt6GHo6h5OEUgEuW9HIKcRf4O44kki/XHwSvu7CA==">
 
 
 <noscript><link rel="stylesheet" href="../../css/noscript.min.e6f1ba19697eecfddfbf83ff7181b98181998f163d7005f6ae923451556bf85bef357f43dffe1522b92c1efab7fb38441f479e39b7a03e4313a8ef12b0b01f65.css" integrity="sha512-5vG6GWl&#43;7P3fv4P/cYG5gYGZjxY9cAX2rpI0UVVr&#43;FvvNX9D3/4VIrksHvq3&#43;zhEH0eeObegPkMTqO8SsLAfZQ=="></noscript>
@@ -46,7 +33,7 @@ Understanding Complexity Through Data and Statistics">
 Understanding Complexity Through Data and Statistics">
       <meta name="twitter:site" content="@ericpenax">
 
-    <meta property="og:url" content="https://ericpena.github.io/tags/julia/">
+    <meta property="og:url" content="https://ericpena.com/tags/julia/">
   <meta property="og:site_name" content="Eric Peña">
   <meta property="og:title" content="Julia">
   <meta property="og:description" content="Senior Data Scientist
@@ -63,7 +50,7 @@ Understanding Complexity Through Data and Statistics">
 
 				
           <header id="header">
-            <h1><a href="https://ericpena.github.io/">Eric Peña</a></h1>
+            <h1><a href="https://ericpena.com/">Eric Peña</a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
@@ -90,21 +77,45 @@ Understanding Complexity Through Data and Statistics">
     
 	</header>
 		
-			<section class="wrapper style6">
+			<section class="wrapper style5">
 	<div class="inner">
-    <h3><a href="https://ericpena.github.io/posts/julia-speed/">Speed of Julia</a></h3>
-    <span style="margin-left: 0em; position: relative; top: -1em; color: #5d6d7e;">This article explores the impressive speed of the Julia language and compares it to Python using an example</span>
+    <h2><a href="https://ericpena.com/posts/julia-speed/">Speed of Julia</a></h2>
+    <time class="icon fa-clock-o">09.09.2019 00:00</time>
+    <p><h3 id="creating-fibn">Creating fib(n)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> fib(n)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (n <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> n <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> fib(n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> fib(n <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><h3 id="timing-fibn-140">Timing fib(n) 1:40</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> fibTime(k)
+</span></span><span style="display:flex;"><span>    t <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>k
+</span></span><span style="display:flex;"><span>        push!(t, (<span style="color:#a6e22e">@timed</span> fib(i))[<span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> t
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># :: Print @timed Fibonacci 1 through 40</span>
+</span></span><span style="display:flex;"><span>println(fibTime(<span style="color:#ae81ff">40</span>))
+</span></span></code></pre></div><h3 id="plotting-timed-results">Plotting @Timed Results</h3>
+<p>The timing for Julia is surprisingly very fast!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> Plots
+</span></span><span style="display:flex;"><span>plot(fibTime(<span style="color:#ae81ff">40</span>), title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Timed Recursive Fibonacci Algorithm&#34;</span>, 
+</span></span><span style="display:flex;"><span>  color <span style="color:#f92672">=</span> <span style="color:#e6db74">:red</span>, fill <span style="color:#f92672">=</span> (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">.3</span>, <span style="color:#e6db74">:red</span>), legend <span style="color:#f92672">=</span> false)
+</span></span><span style="display:flex;"><span>xaxis!(<span style="color:#e6db74">&#34;[n given in fib(n)]&#34;</span>)
+</span></span><span style="display:flex;"><span>yaxis!(<span style="color:#e6db74">&#34;Time [seconds]&#34;</span>)
+</span></span></code></pre></div><p><img alt="timed.png" src="../../images/julia-speed/timed.png"></p></p>
     
-    
-    
-    
-    
+    <a href="https://ericpena.com/posts/julia-speed/">Read more…</a>
     
 	</div>
 </section>
 
 		
-    <div class="wrapper style3">
+    <div class="wrapper style5">
   <div class="inner align-center">
 
 1
@@ -117,25 +128,22 @@ Understanding Complexity Through Data and Statistics">
 					<footer id="footer">
 						<ul class="icons">
               
-              <li><a href="https://www.linkedin.com/in/eric-pena" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+              <li><a href="https://twitter.com/ericpenax" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
               
               
-              <li><a href="https://twitter.com/ericpenax" class="icon brands fa-twitter" target="_blank" rel="noopener noreferrer"><span class="label">Twitter</span></a></li>
+              <li><a href="https://mastodon.social/@ericpena" class="icon brands fa-mastodon"><span class="label">Mastodon</span></a></li>
               
               
-              <li><a href="https://mstdn.science/@ericpena" class="icon brands fa-mastodon" target="_blank" rel="noopener noreferrer"><span class="label">Mastodon</span></a></li>
-              
-              
-              <li><a href="https://github.com/ericpena" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+              <li><a href="https://github.com/ericpena" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
               
               
               
               
-              <li><a href="https://instagram.com/ericpena" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
+              <li><a href="https://instagram.com/ericpena" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
               
               
               
-              <li><a href="mailto:eric.pena@binghamton.edu" class="icon solid fa-envelope" target="_blank" rel="noopener noreferrer"><span class="label">Email</span></a></li>
+              <li><a href="mailto:eric.pena@binghamton.edu" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
               
               
 

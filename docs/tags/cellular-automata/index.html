@@ -1,18 +1,5 @@
 <!DOCTYPE HTML>
 
-
-<script type="text/javascript">
-    window.MathJax = {
-        tex: {
-            inlineMath: [['$', '$']],
-            displayMath: [['$$', '$$']]
-        }
-    };
-</script>
-<script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
-</script>
-
 <html lang="en">
 	<head>
 	  <title>Cellular Automata</title>
@@ -25,11 +12,11 @@
     <meta name="description" content="Senior Data Scientist
 Understanding Complexity Through Data and Statistics">
     
-    <link rel="alternate" type="application/rss+xml" href="https://ericpena.github.io/tags/cellular-automata/index.xml" title="Eric Peña">
+    <link rel="alternate" type="application/rss+xml" href="https://ericpena.com/tags/cellular-automata/index.xml" title="Eric Peña">
     <meta name="generator" content="Hugo 0.138.0">
 
     
-<link rel="stylesheet" href="../../css/main.min.6470f359d96cadb62114d84a859a08e047c933e85d36b945421da8260b62381977f4f70390c7eab26f30d96e167059bdd0e86e799c562d5d4eba32b5a9d4713c.css" integrity="sha512-ZHDzWdlsrbYhFNhKhZoI4EfJM&#43;hdNrlFQh2oJgtiOBl39PcDkMfqsm8w2W4WcFm90OhueZxWLV1OujK1qdRxPA==">
+<link rel="stylesheet" href="../../css/main.min.09224b467f2c555409865abcdf41f1274d28443d62fe5328ebcd73347b9dd264ae5252ade861e8ea1e4e114804b96f4720a7117f83b8e24922fd71f04afbbb08.css" integrity="sha512-CSJLRn8sVVQJhlq830HxJ00oRD1i/lMo681zNHud0mSuUlKt6GHo6h5OEUgEuW9HIKcRf4O44kki/XHwSvu7CA==">
 
 
 <noscript><link rel="stylesheet" href="../../css/noscript.min.e6f1ba19697eecfddfbf83ff7181b98181998f163d7005f6ae923451556bf85bef357f43dffe1522b92c1efab7fb38441f479e39b7a03e4313a8ef12b0b01f65.css" integrity="sha512-5vG6GWl&#43;7P3fv4P/cYG5gYGZjxY9cAX2rpI0UVVr&#43;FvvNX9D3/4VIrksHvq3&#43;zhEH0eeObegPkMTqO8SsLAfZQ=="></noscript>
@@ -46,7 +33,7 @@ Understanding Complexity Through Data and Statistics">
 Understanding Complexity Through Data and Statistics">
       <meta name="twitter:site" content="@ericpenax">
 
-    <meta property="og:url" content="https://ericpena.github.io/tags/cellular-automata/">
+    <meta property="og:url" content="https://ericpena.com/tags/cellular-automata/">
   <meta property="og:site_name" content="Eric Peña">
   <meta property="og:title" content="Cellular Automata">
   <meta property="og:description" content="Senior Data Scientist
@@ -63,7 +50,7 @@ Understanding Complexity Through Data and Statistics">
 
 				
           <header id="header">
-            <h1><a href="https://ericpena.github.io/">Eric Peña</a></h1>
+            <h1><a href="https://ericpena.com/">Eric Peña</a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
@@ -90,35 +77,55 @@ Understanding Complexity Through Data and Statistics">
     
 	</header>
 		
-			<section class="wrapper style6">
+			<section class="wrapper style5">
 	<div class="inner">
-    <h3><a href="https://ericpena.github.io/posts/ca-intro/">Cellular Automata Introduction</a></h3>
-    <span style="margin-left: 0em; position: relative; top: -1em; color: #5d6d7e;">This article provides introduction of cellular automata which are discrete dynamical systems used primarily as a computational model to study how spatiotemporal patterns evolve in a wide range of phenomena</span>
+    <h2><a href="https://ericpena.com/posts/ca-intro/">Cellular Automata Introduction</a></h2>
+    <time class="icon fa-clock-o">24.04.2022 00:00</time>
+    <p><h2 id="motivation">Motivation</h2>
+<blockquote>
+<p>&ldquo;With four parameters I can fit an elephant, and with five I can make him wiggle his trunk.&rdquo; &ndash; John von Neumann</p>
+</blockquote>
+<p>Throughout history, science has aimed to understand and model the natural world as accurately as possible despite its inherent complexity. There are many phenomena in nature whose patterns and behavior seem somewhat unpredictable yet these resulting patterns appear highly structured and organized. Scientists and mathematicians have developed techniques (e.g., calculus, chaos theory, cellular automata) to model nature in its truest form. However, this feat can become problematic for many complex systems that surround us. They are not amenable to the traditional reductionist methodologies that were typically used in gaining scientific understanding. Generally, these systems involve complicated interactions and feedback loops between their parts making it difficult to model their behavior. Moreover, allowing these parts to also interact with their environment exacerbates this modeling dilemma. There is specific behavior which systems exhibit when they are considered complex. Common terms that have been used to describe this behavior are nonlinearity, emergence, self-organization, chaos, spontaneous order, adaptation, and many others. Phenomena such as these have been known to occur across many systems and are said to have universal properties. <em>Complex Systems</em> is a broad term that refers to the research approach that is applied to many seemingly disparate fields (e.g., physics, computer science, economics, sociology, information theory, nonlinear dynamics, meteorology, education, biology). This approach avoids being tethered to reductionist methods and instead considers that behavior can emerge and, in a sense, <em>be</em> more than the sum of their parts. At this moment, the field of complex systems is growing rapidly and not yet fully developed. A convenient entry point is building up emergence from simple models. This contributes to the unwavering popularity in cellular automata models. It involves a simple lattice structure&mdash;with a finite set of states&mdash;governed by rules that a person from any background can understand.</p></p>
     
-    
-    
-    
-    
+    <a href="https://ericpena.com/posts/ca-intro/">Read more…</a>
     
 	</div>
 </section>
 
 		
-			<section class="wrapper style6">
+			<section class="wrapper style5">
 	<div class="inner">
-    <h3><a href="https://ericpena.github.io/posts/ga-liso/">Cellular Automata Optimization using Genetic Algorithms</a></h3>
-    <span style="margin-left: 0em; position: relative; top: -1em; color: #5d6d7e;">This article explores using genetic algorithms to optimize initial conditions in Conway&#39;s Game of Life, aiming to produce final states that maximize growth, diversity, and density in cellular automata simulations</span>
+    <h2><a href="https://ericpena.com/posts/ga-liso/">Cellular Automata Optimization using Genetic Algorithms</a></h2>
+    <time class="icon fa-clock-o">01.12.2019 00:00</time>
+    <p><div class="info-blue">
+    <style>
+      .info-blue a {
+        color: inherit;
+        color: #f39c12;
+      }
+      .info-blue a:hover {
+        color: #f39c12;
+        font-weight: bold;
+      }
+    </style>
+    If you&rsquo;d rather read the PDF version: <a href="../../images/ga-liso/LISO_Project.pdf">[PDF] Cellular Automata Optimization using Genetic Algorithms</a>
+</div>
+<script>
+  document.querySelectorAll('.info-blue a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
+<h3 id="abstract">Abstract</h3>
+<p>The mechanism by which nature exhibits emergent patterns and behaviors has been a mystery throughout history. One application that has been developed which tends to mimic nature is Conway’s Game of Life — an application in the field of cellular automata. The ability to predict a final state of a system, given an initial state in the context of Game of Life, come as an insurmountable task. In this work, genetic algorithms are explored along with how they may be used to search for initial conditions such that their final outcomes are optimal. Optimal final states may be defined in terms of growth, diversity, and density of the cellular automaton evolution. This may be beneficial in exploring the way in which coupled components interact in mathematical and physical systems.</p></p>
     
-    
-    
-    
-    
+    <a href="https://ericpena.com/posts/ga-liso/">Read more…</a>
     
 	</div>
 </section>
 
 		
-    <div class="wrapper style3">
+    <div class="wrapper style5">
   <div class="inner align-center">
 
 1
@@ -131,25 +138,22 @@ Understanding Complexity Through Data and Statistics">
 					<footer id="footer">
 						<ul class="icons">
               
-              <li><a href="https://www.linkedin.com/in/eric-pena" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
+              <li><a href="https://twitter.com/ericpenax" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
               
               
-              <li><a href="https://twitter.com/ericpenax" class="icon brands fa-twitter" target="_blank" rel="noopener noreferrer"><span class="label">Twitter</span></a></li>
+              <li><a href="https://mastodon.social/@ericpena" class="icon brands fa-mastodon"><span class="label">Mastodon</span></a></li>
               
               
-              <li><a href="https://mstdn.science/@ericpena" class="icon brands fa-mastodon" target="_blank" rel="noopener noreferrer"><span class="label">Mastodon</span></a></li>
-              
-              
-              <li><a href="https://github.com/ericpena" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+              <li><a href="https://github.com/ericpena" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
               
               
               
               
-              <li><a href="https://instagram.com/ericpena" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
+              <li><a href="https://instagram.com/ericpena" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
               
               
               
-              <li><a href="mailto:eric.pena@binghamton.edu" class="icon solid fa-envelope" target="_blank" rel="noopener noreferrer"><span class="label">Email</span></a></li>
+              <li><a href="mailto:eric.pena@binghamton.edu" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
               
               
 
