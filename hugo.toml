@@ -1,12 +1,12 @@
-baseURL = "https://ericpena.com"
+baseURL = "https://www.ericpena.com/"
 languageCode = 'en-us'
 title = "Eric Peña"
 theme = "spectral"
 paginate = 50
 
-canonifyURLs=true
+canonifyURLs = true
 publishDir="docs"
-relativeURLs = true
+relativeURLs = false
 
 [params]
 fancyTitle = "Eric Peña" # title for frontpage, may include image
