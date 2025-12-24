@@ -6,7 +6,7 @@ paginate = 50
 
 canonifyURLs=true
 publishDir="docs"
-relativeURLs = true
+relativeURLs = false
 
 [params]
 fancyTitle = "Eric Peña" # title for frontpage, may include image
