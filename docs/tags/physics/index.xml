@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Physics on Eric Peña</title>
-    <link>http://localhost:1313/tags/physics/</link>
+    <link>https://ericpena.github.io/tags/physics/</link>
     <description>Recent content in Physics on Eric Peña</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 09 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/physics/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ericpena.github.io/tags/physics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lagrangian Mechanics</title>
-      <link>http://localhost:1313/posts/coord/</link>
+      <link>https://ericpena.github.io/posts/coord/</link>
       <pubDate>Sat, 09 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/coord/</guid>
+      <guid>https://ericpena.github.io/posts/coord/</guid>
       <description>&lt;h2 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h2&gt;&#xA;&lt;ol start=&#34;0&#34;&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../../posts/coord/#overview&#34;&gt;Overview&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../../posts/coord/#equation-of-motion&#34;&gt;Equation of Motion&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../../posts/coord/#principle-of-stationary-action&#34;&gt;Principle of Stationary Action&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../../posts/coord/#euler-lagrange-equation&#34;&gt;Euler-Lagrange Equation&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../../posts/coord/#relationship-to-newtons-second-law&#34;&gt;Relationship to Newton&amp;rsquo;s Second Law&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../../posts/coord/#applications&#34;&gt;Applications&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&#xA;&#xA;&lt;div class=&#34;info-green&#34;&gt;&#xA;    &lt;style&gt;&#xA;      .info-green a {&#xA;        color: inherit;&#xA;        color: #f39c12;&#xA;      }&#xA;      .info-green a:hover {&#xA;        color: #f39c12;&#xA;        font-weight: bold;&#xA;      }&#xA;    &lt;/style&gt;&#xA;    Lagrangian mechanics offers a powerful and elegant framework for understanding the dynamics of physical systems. Developed by Joseph-Louis Lagrange in the 18th century, it reformulates Newtonian mechanics to focus on energy principles rather than forces. At its core, the Lagrangian approach introduces a function called the Lagrangian, defined as the difference between the kinetic energy and potential energy of a system. This method is particularly useful for analyzing complex systems with constraints, such as pendulums, planetary motion, or even modern robotics, as it simplifies calculations and generalizes easily to multiple dimensions. By applying the principle of least action, Lagrangian mechanics allows us to derive equations of motion that reveal the underlying behavior of a system with remarkable clarity. In this article, we’ll explore the foundational concepts of this framework, aiming to make it accessible to anyone curious about the mathematical elegance of physics.&#xA;&lt;/div&gt;&#xA;&lt;script&gt;&#xA;document.querySelectorAll(&#39;.info-green a&#39;).forEach(function(link) {&#xA;    link.setAttribute(&#39;target&#39;, &#39;_blank&#39;);&#xA;    link.setAttribute(&#39;rel&#39;, &#39;noopener noreferrer&#39;);&#xA;});&#xA;&lt;/script&gt;&#xA;&lt;h2 id=&#34;equation-of-motion&#34;&gt;Equation of Motion&lt;/h2&gt;&#xA;&lt;p&gt;The equations of motion are foundational to our understanding of physics, describing how systems evolve over time under the influence of forces. In classical mechanics, Newton’s second law, $F=ma$, provides a straightforward yet powerful framework: it relates the motion of an object to the forces acting upon it, allowing us to predict trajectories and dynamics from the motion of planets to the flight of a baseball. However, as our understanding of physics deepened, the equations of motion took on even greater significance, revealing connections between seemingly disparate phenomena and embodying deeper principles about the universe.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Throwing at Wall</title>
-      <link>http://localhost:1313/posts/throwing-wall/</link>
+      <link>https://ericpena.github.io/posts/throwing-wall/</link>
       <pubDate>Wed, 21 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/throwing-wall/</guid>
+      <guid>https://ericpena.github.io/posts/throwing-wall/</guid>
       <description>&lt;h3 id=&#34;d-morin-347&#34;&gt;D. Morin 3.47&lt;/h3&gt;&#xA;&lt;p&gt;You throw a ball with speed $v_0$ at a vertical wall, a distance $l$ away. At what angle should you throw the ball so that it hits the wall as high as possible? Assume $l &amp;lt; v_0^2/g$.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;In general,&lt;/p&gt;&#xA;&lt;p&gt;$$y = y_0 + v_{0,y}t - \frac{1}{2}gt^2 = y_0 + v_{0}\cdot\sin(\phi)\cdot t - \frac{1}{2}gt^2$$&#xA;$$x = x_0 + v_{0,x}t = x_0 + v_{0}\cdot\cos(\phi)\cdot t$$&lt;/p&gt;&#xA;&lt;p&gt;The time it takes to hit the wall is,&lt;/p&gt;</description>
     </item>
     <item>
       <title>Logistic Map</title>
-      <link>http://localhost:1313/posts/logistic-map/</link>
+      <link>https://ericpena.github.io/posts/logistic-map/</link>
       <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/logistic-map/</guid>
+      <guid>https://ericpena.github.io/posts/logistic-map/</guid>
       <description>&lt;h2 id=&#34;logistic-map&#34;&gt;Logistic Map&lt;/h2&gt;&#xA;&lt;p&gt;The famous logistic map is a recurrence relation or polynomial mapping of degree 2. It is a nonlinear difference equation capable of capturing complex nonlinear dynamical behavior including chaos. This map was popularized by the biologist Robert May in a &lt;a href=&#34;https://www.researchgate.net/publication/237005499_Simple_Mathematical_Models_With_Very_Complicated_Dynamics&#34;&gt;Nature article&lt;/a&gt; written in 1976. Sadly, Robert May has passed away recently on April 28, 2020. The equation is as follows:&lt;/p&gt;&#xA;&lt;p&gt;$$x_{n+1} = r x_n (1 - x_n)$$&lt;/p&gt;&#xA;&lt;p&gt;The parameter $r$ controls the behavior of the system. It turns out that $r=3.6$ is starting to reach the point of chaos.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Logistic Growth Model</title>
-      <link>http://localhost:1313/posts/logistic-growth/</link>
+      <link>https://ericpena.github.io/posts/logistic-growth/</link>
       <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/logistic-growth/</guid>
+      <guid>https://ericpena.github.io/posts/logistic-growth/</guid>
       <description>&lt;h2 id=&#34;logistic-growth-model&#34;&gt;Logistic Growth Model&lt;/h2&gt;&#xA;&lt;p&gt;The simple difference equation below will show exponential growth behavior:&lt;/p&gt;&#xA;&lt;p&gt;$$x_t = a x_{t-1}$$&lt;/p&gt;&#xA;&lt;p&gt;However, it is often the case that a population cannot grow indefinitely but rather reach a population limit. This limit is called the population&amp;rsquo;s carrying capacity. To create a model with exponential growth but also incorporate this convergence to a population maximum limit, we may start with the following train of thought:&lt;/p&gt;&#xA;&lt;p&gt;$$x_t = f(x_{t-1}) x_{t-1}$$&lt;/p&gt;</description>
     </item>
     <item>
       <title>Optimizing Trajectory Angle</title>
-      <link>http://localhost:1313/posts/trajectory-opt/</link>
+      <link>https://ericpena.github.io/posts/trajectory-opt/</link>
       <pubDate>Fri, 13 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/trajectory-opt/</guid>
+      <guid>https://ericpena.github.io/posts/trajectory-opt/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;I had the pleasure of teaching physics for the Pre First-Year Academic and Career Engagement &lt;a href=&#34;https://mep.engineering.osu.edu/preface-summer-bridge-program&#34;&gt;(PREFACE)&lt;/a&gt; Program. These are students that graduated high school and are transitioning into college to study engineering. The following is a problem I gave my students as a challenge question on their final. Many students found this problem interesting and we had a long discussion about the power of learning theoretical mechanics for the future of their respective degrees.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tensor Intro</title>
-      <link>http://localhost:1313/posts/tensor/</link>
+      <link>https://ericpena.github.io/posts/tensor/</link>
       <pubDate>Sat, 20 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tensor/</guid>
+      <guid>https://ericpena.github.io/posts/tensor/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;../../images/tensor-intro/Vector-1-Form.svg&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Motivation:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;General Relativity&lt;/li&gt;&#xA;&lt;li&gt;Inertia Tensor&lt;/li&gt;&#xA;&lt;li&gt;Stress Tensor&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;It took me a whole week figure out what a tensor actually is. You will find many definitions and some are only partially correct. Let&amp;rsquo;s walk through the different explanations and learn how to think about them.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;(Array Definition)&lt;/strong&gt; Tensor = Multi-dimensional array of numbers (scalars (rank 0), vectors (rank 1), matricies (rank 2), etc.). This is true in a sense but there is a truer geometrical meaning behind the concept of a tensor.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;(Coordinate Definition)&lt;/strong&gt; Tensor = an object that is invariant under a change of coordinates and has &lt;em&gt;components&lt;/em&gt; that change in a special, predictable way under a change of coordinates. This is also true but let&amp;rsquo;s dive even deeper to learn how a tensor allows this behavior to take place.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;(Abstract Definition)&lt;/strong&gt; Tensor = a collection of vectors and covectors combined together using the tensor product&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;The important thing to keep in mind is that vectors exist independently of their components and their components depend on the coordinate system used to define vectors.&lt;/p&gt;</description>
     </item>
   </channel>
