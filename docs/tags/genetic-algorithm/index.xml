@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Genetic Algorithm on Eric Peña</title>
-    <link>http://localhost:1313/tags/genetic-algorithm/</link>
+    <link>https://ericpena.github.io/tags/genetic-algorithm/</link>
     <description>Recent content in Genetic Algorithm on Eric Peña</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 14 Apr 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/genetic-algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ericpena.github.io/tags/genetic-algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Genetic Algorithm Introduction</title>
-      <link>http://localhost:1313/posts/ga-intro/</link>
+      <link>https://ericpena.github.io/posts/ga-intro/</link>
       <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/ga-intro/</guid>
+      <guid>https://ericpena.github.io/posts/ga-intro/</guid>
       <description>&lt;h1 id=&#34;what-is-a-genetic-algorithm&#34;&gt;What is a Genetic Algorithm&lt;/h1&gt;&#xA;&lt;p&gt;Evolutionary programming is a family of global optimization techniques that are biologically inspired. It works similarly to the natural process in evolutionary biology. Trial and error is a large component along with stochasticity and survival of the fittest. The type of evolutionary computation that we will focus on is genetic algorithms which became popular by the American Professor of Psychology, Electrical Engineering, and Computer Science, John Holland. Genetic algorithms work using natural selection of different possible solutions competing with one another. It incorporates biological concepts such as selection, crossover, and mutation. Candidate solutions can mate with each other and create offspring who can then compete with other solutions in their generation.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cellular Automata Optimization using Genetic Algorithms</title>
-      <link>http://localhost:1313/posts/ga-liso/</link>
+      <link>https://ericpena.github.io/posts/ga-liso/</link>
       <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/ga-liso/</guid>
+      <guid>https://ericpena.github.io/posts/ga-liso/</guid>
       <description>&lt;div class=&#34;info-blue&#34;&gt;&#xA;    &lt;style&gt;&#xA;      .info-blue a {&#xA;        color: inherit;&#xA;        color: #f39c12;&#xA;      }&#xA;      .info-blue a:hover {&#xA;        color: #f39c12;&#xA;        font-weight: bold;&#xA;      }&#xA;    &lt;/style&gt;&#xA;    If you&amp;rsquo;d rather read the PDF version: &lt;a href=&#34;../../images/ga-liso/LISO_Project.pdf&#34;&gt;[PDF] Cellular Automata Optimization using Genetic Algorithms&lt;/a&gt;&#xA;&lt;/div&gt;&#xA;&lt;script&gt;&#xA;  document.querySelectorAll(&#39;.info-blue a&#39;).forEach(function(link) {&#xA;    link.setAttribute(&#39;target&#39;, &#39;_blank&#39;);&#xA;    link.setAttribute(&#39;rel&#39;, &#39;noopener noreferrer&#39;);&#xA;  });&#xA;&lt;/script&gt;&#xA;&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;&#xA;&lt;p&gt;The mechanism by which nature exhibits emergent patterns and behaviors has been a mystery throughout history. One application that has been developed which tends to mimic nature is Conway’s Game of Life — an application in the field of cellular automata. The ability to predict a final state of a system, given an initial state in the context of Game of Life, come as an insurmountable task. In this work, genetic algorithms are explored along with how they may be used to search for initial conditions such that their final outcomes are optimal. Optimal final states may be defined in terms of growth, diversity, and density of the cellular automaton evolution. This may be beneficial in exploring the way in which coupled components interact in mathematical and physical systems.&lt;/p&gt;</description>
     </item>
   </channel>
