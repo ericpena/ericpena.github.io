@@ -1,12 +1,8 @@
 name: Deploy Hugo site to Pages
 
-with:
-  hugo-version: "0.155.3"
-  extended: true
-
 on:
   push:
-    branches: ["master"]   # change to "main" if your default branch is main
+    branches: ["master"]
   workflow_dispatch:
 
 permissions:
@@ -30,7 +26,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "latest"
+          hugo-version: "0.155.3"
           extended: true
 
       - name: Build
@@ -48,6 +44,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
