@@ -56,3 +56,8 @@ Thumbs.db
 coverage/
 coverage.*
 .pytest_cache/
+
+## Hugo specific for GitHub Actions
+public/
+resources/
+.hugo_build.lock
