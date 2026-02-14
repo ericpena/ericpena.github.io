@@ -5,8 +5,8 @@ theme = "spectral"
 paginate = 50
 
 canonifyURLs=true
-publishDir="docs"
-relativeURLs = true
+# publishDir="docs"
+relativeURLs = false
 
 [params]
 fancyTitle = "Eric Peña" # title for frontpage, may include image
