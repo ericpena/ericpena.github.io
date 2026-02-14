@@ -2,7 +2,9 @@ baseURL = "https://ericpena.github.io/"
 languageCode = 'en-us'
 title = "Eric Peña"
 theme = "spectral"
-paginate = 50
+
+[pagination]
+pagerSize = 50
 
 canonifyURLs=true
 # publishDir="docs"
