@@ -1,5 +1,9 @@
 name: Deploy Hugo site to Pages
 
+with:
+  hugo-version: "0.155.3"
+  extended: true
+
 on:
   push:
     branches: ["master"]   # change to "main" if your default branch is main
