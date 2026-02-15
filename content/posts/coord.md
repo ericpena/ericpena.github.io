@@ -57,7 +57,7 @@ The following theorem allows us to connect the principle of stationary action to
 
 {{< info-blue >}}
 
-Theorem
+**Theorem**
 
 If the function $x_0(t)$ yields a stationary value (that is, a local minimum, maximum, or saddle point) of $S$, then
 
@@ -71,7 +71,7 @@ Now, we can essentially replace Newton's Second Law of Motion, $F=ma$, by the fo
 
 {{< info-blue >}}
 
-Hamilton's Principle
+**Hamilton's Principle**
 
 The path of a particle is the one that yields a stationary value of the action, $S$.
 

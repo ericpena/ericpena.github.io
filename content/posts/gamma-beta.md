@@ -21,7 +21,9 @@ This article builds both a **high-level conceptual map** and a **low-level algeb
 
 The unifying idea is simple but powerful:
 
-> **Events happen. We either count them, wait for them, sum their waiting times, or normalize competing rates.**
+{{< info-purple >}}
+**Events happen. We either count them, wait for them, sum their waiting times, or normalize competing rates.**
+{{< /info-purple >}}
 
 Once this is internalized, most distributional relationships stop feeling arbitrary. Instead of memorizing PDFs and CDFs, we learn a small set of **transforms, sums, ratios, and conjugacy rules** that generate almost everything we see in applied statistics.
 
@@ -70,7 +72,9 @@ This is the natural model for:
 
 Instead of asking *how many events occur*, ask:
 
-> **How long until the next one happens?**
+{{< info-purple >}}
+**How long until the next one happens?**
+{{< /info-purple >}}
 
 Let \(T\) be the waiting time to the next event. Then
 
@@ -99,7 +103,9 @@ This property is why Exponentials dominate:
 
 Now ask a slightly richer question:
 
-> **How long until the \(k\)-th event occurs?**
+{{< info-purple >}}
+**How long until the \(k\)-th event occurs?**
+{{< /info-purple >}}
 
 Let \(T_1, \dots, T_k\) be iid Exponential(\(\lambda\)) waiting times. Their sum
 
@@ -334,13 +340,13 @@ $$
 
 Same algebra, higher dimension.
 
-{{< info-blue >}}
+{{< info-purple >}}
 **Conjugacy checklist**
 
 - Poisson + Gamma → Gamma
 - Binomial + Beta → Beta
 - Multinomial + Dirichlet → Dirichlet
-{{< /info-blue >}}
+{{< /info-purple >}}
 
 ---
 
@@ -374,13 +380,13 @@ $$
 \lambda \mid E \sim \mathrm{Gamma}(\alpha_0+E,\beta_0+t).
 $$
 
-With \(\alpha_0=0.5,\beta_0=0\):
+With $(\alpha_0=0.5,\beta_0=0)$:
 
 $$
 \lambda \mid E \sim \mathrm{Gamma}(5.5,2),
 $$
 
-posterior mean \(= 2.75\).
+posterior mean $(= 2.75)$.
 
 Everything here is just **Gamma updating Poisson exposure**.
 
