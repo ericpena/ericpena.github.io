@@ -1,24 +1,9 @@
-<!-- <div class="info-blue">
-    {{ .Inner }}
-    {{ .Inner | markdownify }}
-</div> -->
-
 <div class="info-blue">
-    <style>
-      .info-blue a {
-        color: inherit;
-        color: #f39c12;
-      }
-      .info-blue a:hover {
-        color: #f39c12;
-        font-weight: bold;
-      }
-    </style>
     {{ .Inner | markdownify }}
 </div>
 <script>
-  document.querySelectorAll('.info-blue a').forEach(function(link) {
+document.querySelectorAll('.info-blue a').forEach(function(link) {
     link.setAttribute('target', '_blank');
     link.setAttribute('rel', 'noopener noreferrer');
-  });
+});
 </script>
