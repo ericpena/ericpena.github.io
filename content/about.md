@@ -2,7 +2,7 @@
 title = "About Me"
 +++
 
-{{< image src="/images/about/ericpena.png" alt="Alt text" class="fit" >}}
+{{< image src="/images/about/ericpena.png" alt="Alt text" class="small" >}}
 
 ## Overview
 * Data Scientist interested in Complex Systems
@@ -42,7 +42,7 @@ title = "About Me"
 -   **Mobilizer Award ([post](https://twitter.com/motionaldrive/status/1547624744559603714))**, Awarded by Motional (2022)
 -   **Graduate Service to Department in Systems Science Award ([post](https://www.linkedin.com/feed/update/urn:li:activity:6805558790239346689/))**, Awarded by Binghamton University (2021)
 -   **Honorable Mention for Best Poster Award ([post](https://twitter.com/ericpenax/status/1246217917043224577))**, Awarded by Northeast Regional Conference on Complex Systems (2020)
--   **Clifford D. Clark Diversity Fellow ([link](https://www.bupipedream.com/news/29417/clifford-clark/))**, Two years — Awarded by Binghamton University (2019—2021)
+-   **Clifford D. Clark Diversity Fellowship ([link](https://www.bupipedream.com/news/29417/clifford-clark/))**, Two years — Awarded by Binghamton University (2019—2021)
 -   **Young Scholars Program Scholarship**, Five years — Awarded by The OSU Office of Diversity and Inclusion (2008—2013)
 ---
 ## Education
