@@ -3203,16 +3203,16 @@ input, select, textarea {
 		}
 
 		.wrapper.style5 {
-			background-color: #ffffff;
-			color: #4E4852;
+			background-color: #1C2430;  /* 01/14/2026 default: #ffffff; */
+			color: #E6E8EB; /* 01/14/2026 default: #4E4852; */
 		}
 
 			.wrapper.style5 strong, .wrapper.style5 b {
-				color: #2E3842;
+				color: #8FB3FF; /* 01/14/2026 default: #2E3842; */
 			}
 
 			.wrapper.style5 h2, .wrapper.style5 h3, .wrapper.style5 h4, .wrapper.style5 h5, .wrapper.style5 h6 {
-				color: #2E3842;
+				color: #F5F7FA; /* 01/14/2026 default: #2E3842; */
 			}
 
 			.wrapper.style5 hr {
@@ -4057,3 +4057,59 @@ input, select, textarea {
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+
+/* Info-Green Box Styling */
+.info-green {
+  background-color: #1a1a1a; /* dark background */
+  color: #E6E8EB;                  /* your body light */
+  padding: 1.5em;
+  border-left: 4px solid #4CAF7D;  /* refined green accent */
+  margin: 2em 0;
+  border-radius: 6px;
+}
+
+.info-green a {
+  color: #7FD1A3;  /* lighter green for links */
+}
+
+.info-green a:hover {
+  color: #F5F7FA;  /* header light */
+}
+
+/* Info-Blue Box Styling */
+.info-blue {
+  background-color: #1a1a1a; /* dark background */
+  color: #fff;
+  padding: 1.5em;
+  border-left: 4px solid #3498db;
+  margin: 2em 0;
+  border-radius: 4px;
+}
+
+.info-blue a {
+  color: #3498db;
+}
+
+.info-blue a:hover {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Info-Purple Box Styling */
+.info-purple {
+  background-color: #1a1a1a; /* dark background */
+  color: #fff;
+  padding: 1.5em;
+  border-left: 4px solid #9b59b6;
+  margin: 2em 0;
+  border-radius: 4px;
+}
+
+.info-purple a {
+  color: #9b59b6;
+}
+
+.info-purple a:hover {
+  color: #fff;
+  font-weight: bold;
+}
