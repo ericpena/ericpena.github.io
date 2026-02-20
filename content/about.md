@@ -5,12 +5,13 @@ title = "About Me"
 {{< image src="/images/about/ericpena-bw.png" alt="Alt text" class="small" >}}
 
 ## Overview
-* Data Scientist interested in Complex Systems
+* Lead Data Scientist interested in Complex Systems
 * M.S. in [Complex Systems Science](https://en.wikipedia.org/wiki/Complex_system) as a [Clifford D. Clark Diversity Fellow](https://www.bupipedream.com/news/29417/clifford-clark/) at the [State University of New York at Binghamton](https://www.binghamton.edu/) and studied machine learning and complex systems modeling
 * B.S. in [Engineering Physics](https://en.wikipedia.org/wiki/Engineering_physics#:~:text=Engineering%20physics%2C%20or%20engineering%20science,aerospace%2C%20materials%20or%20mechanical%20engineering.) as a [Young Scholar](https://odi.osu.edu/young-scholars-program) at [The Ohio State University](https://odi.osu.edu/young-scholars-program)
 ---
 ## Experience
--   **Senior Data Scientist, Statistician**, [Torc Robotics](https://www.torc.ai/)
+-   **Lead Data Scientist Statistician — AV Safety Data Analysis**, [General Motors](https://www.gm.com/innovation/autonomous-driving)
+-   **Senior Data Scientist Statistician**, [Torc Robotics](https://www.torc.ai/)
 -   **Senior Data Scientist**, [Motional](https://www.motional.com/)
 -   **Statistics and Probability Teacher**, [SUNY Binghamton](https://www.binghamton.edu)
 -   **Revenue Management Senior Data Analyst**, [Diageo](https://www.diageo.com)
