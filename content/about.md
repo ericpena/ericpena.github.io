@@ -2,7 +2,7 @@
 title = "About Me"
 +++
 
-{{< image src="/images/about/ericpena.png" alt="Alt text" class="small" >}}
+{{< image src="/images/about/ericpena-bw.png" alt="Alt text" class="small" >}}
 
 ## Overview
 * Data Scientist interested in Complex Systems
