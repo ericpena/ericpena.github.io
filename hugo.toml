@@ -13,7 +13,7 @@ relativeURLs = false
 [params]
 fancyTitle = "Eric Peña" # title for frontpage, may include image
 copyright = "Eric Peña"
-description = 'Senior Data Scientist<br />Understanding Complexity Through Data and Statistics'
+description = 'Data Scientist & Statistician<br />Understanding Complexity Through Data and Statistics'
 startbuttonText = "Posts"
 startbuttonLink = "/posts"
 body_is_markdown = true
@@ -147,11 +147,11 @@ formspree_form_id = "example_invalid"
 
 [params.social]
 twitter = "ericpenax"
-mastodon = "@ericpena"
+# mastodon = "@ericpena"
 github = "ericpena"
 facebook = ""
 youtube = ""
-instagram = "ericpena"
+# instagram = "ericpena"
 dribble = ""
 linkedin = "eric-pena"
 

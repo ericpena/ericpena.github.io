@@ -10,7 +10,7 @@ title = "About Me"
 * B.S. in [Engineering Physics](https://en.wikipedia.org/wiki/Engineering_physics#:~:text=Engineering%20physics%2C%20or%20engineering%20science,aerospace%2C%20materials%20or%20mechanical%20engineering.) as a [Young Scholar](https://odi.osu.edu/young-scholars-program) at [The Ohio State University](https://odi.osu.edu/young-scholars-program)
 ---
 ## Experience
--   **Lead Data Scientist Statistician — AV Safety Data Analysis**, [General Motors](https://www.gm.com/innovation/autonomous-driving)
+-   **Lead Data Scientist Statistician — AV Safety Data Analysis**, [General Motors](https://www.gm.com/)
 -   **Senior Data Scientist Statistician**, [Torc Robotics](https://www.torc.ai/)
 -   **Senior Data Scientist**, [Motional](https://www.motional.com/)
 -   **Statistics and Probability Teacher**, [SUNY Binghamton](https://www.binghamton.edu)
