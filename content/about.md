@@ -48,6 +48,9 @@ title = "About Me"
 ---
 ## Education
 
+-   **PhD Student**, Binghamton University. *(in progress)*
+    - Systems Science
+    - Research Area: Statistical and Complex Systems Modeling
 -   **Master of Science**, Binghamton University. 2021. (4.0 GPA)
     - Systems Science
     - Thesis: *Life Worth Mentioning: Complexity of Life-Like Cellular Automata*
