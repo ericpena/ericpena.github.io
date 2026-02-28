@@ -13,7 +13,7 @@ relativeURLs = false
 [params]
 fancyTitle = "Eric Peña" # title for frontpage, may include image
 copyright = "Eric Peña"
-description = 'Senior Data Scientist<br />Understanding Complexity Through Data and Statistics'
+description = 'Data Scientist<br />Understanding Complexity Through Data and Statistics'
 startbuttonText = "Posts"
 startbuttonLink = "/posts"
 body_is_markdown = true
@@ -42,7 +42,7 @@ title = "Posts"
 enable = true
 title = 'The Ohio State University – Physics<br />Binghamton University – Complex Systems'
 body = '''
-As a Senior Data Scientist in the autonomous vehicle industry, I specialize in statistical modeling of complex systems, 
+As a data scientist in the autonomous vehicle industry, I specialize in statistical modeling of complex systems, 
 with a strong focus on safety of engineering applications. My work integrates advanced data science methods with systems 
 engineering principles to enhance the reliability and safety of autonomous systems. I am passionate about understanding 
 how complex systems behave under uncertainty.
@@ -147,11 +147,11 @@ formspree_form_id = "example_invalid"
 
 [params.social]
 twitter = "ericpenax"
-mastodon = "@ericpena"
+# mastodon = "@ericpena"
 github = "ericpena"
 facebook = ""
 youtube = ""
-instagram = "ericpena"
+# instagram = "ericpena"
 dribble = ""
 linkedin = "eric-pena"
 
