@@ -17,8 +17,6 @@ There is a moment in learning physics that has always made me uncomfortable. We 
 
 {{< /info-green >}}
 
-![least-action | 100](/images/models/points.png)
-
 This made physical models feel arbitrary to me, and it turns out others have thought about the same concern for a long time. Poincaré, Einstein, and other thinkers worried about the same gap. Philosophers call one version of it *underdetermination*: the evidence can be compatible with several different models. A finite collection of measurements does not uniquely specify a curve. Multiple functions can agree where we have measured and disagree where we have not.
 
 Henri Poincaré explored almost exactly this problem in *Science and Hypothesis* in 1902. He asked why, when connecting experimental points, we favor regular curves over extravagant zigzags. We bring expectations about simplicity and smoothness to the graph, even though those expectations are not themselves measurements. Poincaré then confronted the awkward question underneath: we may need simplicity to generalize, but what entitles us to expect nature to cooperate? An ordinary graph turns out to contain both observations and assumptions about how the world should behave. [Read “Hypotheses in Physics.”](https://brocku.ca/MeadProject/Poincare/Poincare_1905_10.html)
@@ -28,6 +26,8 @@ Einstein, in his 1933 lecture “On the Method of Theoretical Physics,” argued
 To see how invention becomes a testable proposal, consider exponential decay. We might choose an exponential because it resembles our data, but we could also begin with a physical assumption: the quantity loses a constant fraction of what remains per unit time. That assumption gives the equation $dy/dt=-ky$, whose solution is $y(t)=y_0e^{-kt}$. The curve now follows from a proposed rule about the system. We can investigate whether the fractional rate remains constant or whether changing conditions undermine the assumption. Still, different mechanisms can produce exponential behavior, so a successful fit does not uniquely reveal its cause.
 
 Richard Feynman described the practical process plainly: guess a law, calculate its consequences, and compare them with experiment. The guess earns credibility through what happens next. If an exponential and a power law both describe our measurements, we might observe much later, where their predictions separate, or change the experimental conditions. This offers an answer to my original question about authority. Anyone can propose a curve; confidence depends on reasons others can examine, including explicit assumptions, reproducible observations, and successful new predictions. Sometimes the evidence cannot distinguish the candidates, and recognizing that is itself progress. [Watch “Seeking New Laws.”](https://videos.cern.ch/record/1048168)
+
+![least-action | 100](/images/models/points.png)
 
 Pierre Duhem adds a complication. A prediction depends on more than the proposed law: it also involves assumptions about instruments, starting conditions, and the surrounding environment. When an experiment disagrees with a prediction, it may not identify which assumption failed. Perhaps our decay model is inadequate, or perhaps the detector drifted. In *The Aim and Structure of Physical Theory*, Duhem explains why scientific judgment remains necessary even after the measurements arrive. Researchers can agree about an observation while disagreeing about what should be revised. [Read “Physical Theory and Experiment.”](https://joelvelasco.net/teaching/5330/Duhem_physical_theory_experiment%28curd_cover%29.pdf)
 
