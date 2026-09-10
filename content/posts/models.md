@@ -1,8 +1,8 @@
 +++
-title = "Model Strangeness"
+title = "Freedom of Model Building"
 tags = ["statistics"]
 date = "2026-09-09"
-description = "Philosphy of model creation"
+description = "How do scientists decide which model to use when several can fit the same data? This post follows that question through the assumptions and creative choices behind scientific models, and looks at how physical reasoning and experiments help us decide which ones deserve our confidence."
 draft = false
 +++
 
@@ -19,7 +19,7 @@ There is a moment in learning physics that has always made me uncomfortable. We 
 
 ![least-action | 100](/images/models/points.png)
 
-For a long time, this made physical models feel arbitrary to me. Eventually, I discovered that this discomfort has an impressive intellectual ancestry. Poincaré, Einstein, and other thinkers worried about the same gap. Philosophers call one version of it *underdetermination*: the evidence can be compatible with several different models. A finite collection of measurements does not uniquely specify a curve. Multiple functions can agree where we have measured and disagree where we have not.
+This made physical models feel arbitrary to me, and it turns out others have thought about the same concern for a long time. Poincaré, Einstein, and other thinkers worried about the same gap. Philosophers call one version of it *underdetermination*: the evidence can be compatible with several different models. A finite collection of measurements does not uniquely specify a curve. Multiple functions can agree where we have measured and disagree where we have not.
 
 Henri Poincaré explored almost exactly this problem in *Science and Hypothesis* in 1902. He asked why, when connecting experimental points, we favor regular curves over extravagant zigzags. We bring expectations about simplicity and smoothness to the graph, even though those expectations are not themselves measurements. Poincaré then confronted the awkward question underneath: we may need simplicity to generalize, but what entitles us to expect nature to cooperate? An ordinary graph turns out to contain both observations and assumptions about how the world should behave. [Read “Hypotheses in Physics.”](https://brocku.ca/MeadProject/Poincare/Poincare_1905_10.html)
 
