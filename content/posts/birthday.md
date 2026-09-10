@@ -1,7 +1,7 @@
 +++
 title = "Birthdays"
 tags = ["probability"]
-date = "2023-03-07"
+date = "2025-10-08"
 description = "This article explores the probability of having at least one birthday every day of the year in a group of people, leveraging combinatorics, probability, and simulations to address the problem through various mathematical frameworks, including the Coupon Collector's Problem and Stirling numbers."
 draft = false
 +++

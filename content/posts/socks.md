@@ -1,7 +1,7 @@
 +++
 title = "Mismatched Socks"
 tags = ["probability"]
-date = "2021-12-09"
+date = "2025-04-23"
 description = "This article explores the probability of selecting unmatched socks from a pile using mathematical approaches, simulations, and comparisons of sequential and simultaneous selection methods"
 +++
 

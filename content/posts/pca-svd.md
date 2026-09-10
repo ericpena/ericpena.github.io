@@ -1,6 +1,6 @@
 +++
 title = 'PCA with Single Value Decomposition'
-date = '2020-06-29'
+date = '2024-08-14'
 tags = ['data science', 'programming']
 description = "This article explains how to perform Principal Component Analysis (PCA) using Singular Value Decomposition (SVD), demonstrating its implementation, variance preservation, and practical applications with detailed examples and visualizations"
 +++

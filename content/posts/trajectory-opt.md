@@ -1,7 +1,7 @@
 +++
 title = "Optimizing Trajectory Angle"
-tags = ["physics"]
-date = "2019-12-13"
+tags = ["physics", "optimization"]
+date = "2023-12-06"
 description = "This article explores optimizing the launch angle of a projectile to maximize the area under its trajectory using calculus and physics principles"
 +++
 

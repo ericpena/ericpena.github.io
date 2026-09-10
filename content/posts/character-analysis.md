@@ -1,7 +1,7 @@
 +++
 title = "Character Analysis"
-tags = ["programming"]
-date = "2019-10-03"
+tags = ["data science", "programming"]
+date = "2023-09-13"
 description = "This article analyzes character frequencies and transitions in text using histograms and heatmaps, implementing Python code to visualize and interpret patterns in character dependencies and transitions"
 +++
 

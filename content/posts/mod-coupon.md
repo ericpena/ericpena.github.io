@@ -1,7 +1,7 @@
 +++
 title = "Modified Coupon Collector's Problem"
-tags = ["statistics", "modeling"]
-date = "2024-05-21"
+tags = ["probability", "modeling"]
+date = "2025-12-31"
 description = "This article explores the coupon collector's problem, analyzing the expected number of trials and probabilities to collect all or a fraction of distinct items, with extensions to modified scenarios and connections to combinatorics, simulations, and the philosophical Ship of Theseus"
 draft = false
 +++

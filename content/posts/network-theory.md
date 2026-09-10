@@ -1,8 +1,9 @@
 +++
-date = '2018-12-16T00:38:01-05:00'
+date = '2023-03-29'
 draft = false
 title = 'Network Theory'
 description = "This article provides an extensive overview of network theory, covering graph representations, directed and bipartite graphs, cocitation, bibliographic coupling, hypergraphs, paths, geodesics, and specialized concepts like Eulerian and Hamiltonian paths, supported by mathematical definitions and visual examples"
+tags = ["mathematics", "complexity"]
 +++
 
 Graphs may be represented in the form of a matrix. Main types of graphs that may be represented are:

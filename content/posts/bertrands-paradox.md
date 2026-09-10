@@ -1,7 +1,7 @@
 +++
 title = "Bertrand's Paradox"
-tags = ["statistics", "estimation", "asymptotics"]
-date = "2025-01-05"
+tags = ["probability", "mathematics", "modeling"]
+date = "2026-06-17"
 description = "What’s the probability that a random chord in a circle is longer than the side of an inscribed triangle? Surprisingly, the answer is 1/4… or 1/3… or 1/2. All are correct. Bertrand’s Paradox reveals why “random” is not a mathematical concept until you define the underlying probability measure — and why hidden modeling assumptions shape every simulation you run."
 draft = false
 +++

@@ -1,7 +1,7 @@
 +++
 title = "Throwing at Wall"
-tags = ["physics"]
-date = "2024-02-21"
+tags = ["physics", "optimization"]
+date = "2025-11-19"
 description = "The article provides a solution to a David Morin textbook problem, determining the optimal angle to throw a ball at a wall for maximum height based on physics principles"
 +++
 

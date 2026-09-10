@@ -1,7 +1,7 @@
 +++
 title = "Estimators and the Delta Method"
 tags = ["statistics", "estimation", "asymptotics"]
-date = "2025-01-05"
+date = "2026-05-06"
 description = "A pedagogical introduction to estimators and the Delta Method, focusing on intuition, derivation via Taylor series, practical examples, and connections to test-set variance and modern statistical practice."
 draft = false
 +++

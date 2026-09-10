@@ -1,7 +1,7 @@
 +++
 title = "Cellular Automata Introduction"
 tags = ["cellular automata", "complexity"]
-date = "2022-04-24"
+date = "2025-08-27"
 description = "This article provides introduction of cellular automata which are discrete dynamical systems used primarily as a computational model to study how spatiotemporal patterns evolve in a wide range of phenomena"
 +++
 

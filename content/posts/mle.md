@@ -1,7 +1,7 @@
 +++
 title = "(Un)biased Point Estimation"
-tags = ["statistics"]
-date = "2024-11-12"
+tags = ["statistics", "estimation"]
+date = "2026-03-25"
 description = "This article explores how to estimate the maximum parameter $(\\theta)$ of a uniform distribution from sample data, deriving the Maximum Likelihood Estimator (MLE), identifying its bias, and constructing an unbiased estimator by adjusting the MLE"
 +++
 

@@ -1,6 +1,6 @@
 +++
 title = 'Tensor Intro'
-date = '2019-04-20'
+date = '2023-06-21'
 tags = ['mathematics', 'physics']
 description = "This article provides an introduction to tensors, exploring their geometric and mathematical definitions, transformation rules, notation, and applications, with detailed explanations of vectors, covectors, and coordinate system changes"
 +++

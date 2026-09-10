@@ -1,6 +1,6 @@
 +++
 title = 'R Data Types'
-date = '2020-05-21'
+date = '2024-05-22'
 tags = ['programming']
 description = "This article provides a comprehensive guide to R data types and structures, including vectors, matrices, arrays, lists, data frames, factors, and tables, detailing their creation, manipulation, and use cases with practical examples"
 +++

@@ -1,7 +1,7 @@
 +++
 title = "Lagrangian Mechanics"
 tags = ["physics", "mathematics"]
-date = '2024-11-09'
+date = '2026-02-11'
 description = "This article provides an in-depth exploration of Lagrangian mechanics, detailing its foundation in the principle of stationary action, its connection to Newtonian mechanics, and its application to complex systems like oscillating pendulums and double pendulums through elegant energy-based equations of motion"
 +++
 

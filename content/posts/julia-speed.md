@@ -1,7 +1,7 @@
 +++
 title = "Speed of Julia"
-tags = ["Julia", "Programming"]
-date = "2019-09-09"
+tags = ["programming"]
+date = "2023-08-02"
 description = "This article explores the impressive speed of the Julia language and compares it to Python using an example"
 +++
 
