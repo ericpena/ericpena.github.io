@@ -1,7 +1,7 @@
 +++
 title = "Connecting Distributions"
-tags = ["statistics"]
-date = "2025-12-21"
+tags = ["probability", "statistics", "bayesian"]
+date = "2026-07-29"
 description = "This short note builds intuition for how several core distributions—Poisson, Exponential, Gamma, Beta, Binomial, Chi Square, Dirichlet, Multinomial—are tightly connected. Rather than treating them as isolated formulas, we view them as different lenses on the same random process: events happening in time or within the same family."
 +++
 

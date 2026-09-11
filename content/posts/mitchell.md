@@ -1,7 +1,7 @@
 +++
 title = "Review of Complexity Book by Melanie Mitchell"
 tags = ["complexity"]
-date = "2020-04-07"
+date = "2024-01-17"
 description = "This article is a detailed review of Melanie Mitchell's Complexity: A Guided Tour, summarizing its exploration of complex systems, emergent behavior, networks, scaling, and computation, while highlighting the book's accessibility and its call for a unified theory of complexity"
 +++
 

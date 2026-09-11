@@ -1,6 +1,6 @@
 +++
 title = 'PCA with Eigenvalue Decomposition'
-date = '2020-06-29'
+date = '2024-09-25'
 tags = ['data science', 'programming']
 description = "This article provides a step-by-step guide to performing Principal Component Analysis (PCA) using Eigenvalue Decomposition (EVD), explaining the theoretical foundation, practical implementation, and visualization of principal components in a bivariate dataset"
 +++

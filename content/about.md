@@ -2,7 +2,7 @@
 title = "About Me"
 +++
 
-{{< image src="/images/about/ericpena-bw.png" alt="Alt text" class="small" >}}
+{{< network-portrait src="/images/about/ericpena-bw.png" alt="Eric Peña" >}}
 
 ## Overview
 * Lead Data Scientist interested in Complex Systems

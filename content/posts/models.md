@@ -1,6 +1,6 @@
 +++
 title = "Freedom of Model Building"
-tags = ["statistics"]
+tags = ["modeling", "physics", "statistics", "mathematics"]
 date = "2026-09-09"
 description = "How do scientists decide which model to use when several can fit the same data? This post follows that question through the assumptions and creative choices behind scientific models, and looks at how physical reasoning and experiments help us decide which ones deserve our confidence."
 draft = false

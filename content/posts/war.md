@@ -1,7 +1,7 @@
 +++
 title = "Coding the Card Game: War"
 tags = ["programming"]
-date = "2019-03-16"
+date = "2023-05-10"
 description = "This article details a Python-based simulation and analysis of the card game War, exploring game dynamics, recursive strategies, statistical trends, and variations in game rules, supported by visualizations and code implementation"
 +++
 

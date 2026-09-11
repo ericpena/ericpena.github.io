@@ -1,7 +1,7 @@
 +++
 title = "Bayesian Optimization"
 tags = ["bayesian", "optimization", "programming"]
-date = "2020-04-14"
+date = "2024-04-10"
 description = "This article provides a step-by-step guide to implementing Bayesian optimization in Python, including designing the algorithm from scratch using NumPy and SciPy, applying it with Python libraries like scikit-optimize, and visualizing the process for optimizing a noisy objective function"
 +++
 

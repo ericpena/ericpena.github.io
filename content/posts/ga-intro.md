@@ -1,5 +1,5 @@
 +++
-date = '2020-04-14'
+date = '2024-02-28'
 title = 'Genetic Algorithm Introduction'
 tags = ["genetic algorithm", "optimization", "programming"]
 description = "This article introduces genetic algorithms, explaining their biological inspiration, core components, and implementation through a Python example to optimize for a target string using selection, crossover, and mutation"

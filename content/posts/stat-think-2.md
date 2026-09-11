@@ -1,7 +1,7 @@
 +++
 title = 'Statistical Rethinking (Ch. 2)'
-date = '2022-04-23'
-tags = ['statistics', 'programming']
+date = '2025-07-16'
+tags = ["statistics", "bayesian", "programming"]
 description = "This article provides solutions and explanations for the exercises in Chapter 2 of Statistical Rethinking, focusing on foundational concepts in Bayesian statistics and probabilistic reasoning"
 +++
 

@@ -1,0 +1,28 @@
+{{ partial "header.html" . }}
+{{ $paginator := .Paginator }}
+<main id="main" class="posts-journal">
+  <header class="journal-header">
+    <div class="journal-inner">
+      <p class="journal-eyebrow">The journal</p>
+      <h1>{{ .Title }}</h1>
+      <p class="journal-count">{{ $paginator.TotalNumberOfElements }} posts</p>
+    </div>
+  </header>
+  <div class="journal-inner journal-entries">
+    {{ range $index, $page := $paginator.Pages }}
+      {{ partial "post-entry.html" (dict "page" $page "featured" (and (eq $paginator.PageNumber 1) (eq $index 0))) }}
+    {{ end }}
+    {{ if gt $paginator.TotalPages 1 }}
+    <nav class="journal-pagination" aria-label="Post pages">
+      {{ if $paginator.HasPrev }}
+      <a href="{{ $paginator.Prev.URL }}">Previous</a>
+      {{ end }}
+      <span>Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+      {{ if $paginator.HasNext }}
+      <a href="{{ $paginator.Next.URL }}">Next</a>
+      {{ end }}
+    </nav>
+    {{ end }}
+  </div>
+</main>
+{{ partial "footer.html" . }}

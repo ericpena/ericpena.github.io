@@ -1,7 +1,7 @@
 +++
 title = "Logistic Growth Model"
-tags = ["physics", "modeling", "complexity"]
-date = "2021-03-14"
+tags = ["mathematics", "modeling", "complexity"]
+date = "2024-12-18"
 description = "This article introduces the logistic growth model, exploring population dynamics with a carrying capacity, and compares it to a modified version with an optimal growth ratio using mathematical modeling and simulations"
 +++
 

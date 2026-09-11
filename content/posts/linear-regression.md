@@ -1,6 +1,6 @@
 +++
 title = 'Linear Regression'
-date = '2020-05-29'
+date = '2024-07-03'
 tags = ['statistics', 'programming', 'data science']
 description = "This article explains the mathematical foundations, practical implementation, and evaluation of linear regression, including confidence intervals for coefficients and a comparison between manual and Scikit-Learn implementations"
 +++

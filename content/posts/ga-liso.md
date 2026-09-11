@@ -1,7 +1,7 @@
 +++
 title = "Cellular Automata Optimization using Genetic Algorithms"
 tags = ["optimization","genetic algorithm","cellular automata"]
-date = "2019-12-01"
+date = "2023-10-25"
 description = "This article explores using genetic algorithms to optimize initial conditions in Conway's Game of Life, aiming to produce final states that maximize growth, diversity, and density in cellular automata simulations"
 +++
 

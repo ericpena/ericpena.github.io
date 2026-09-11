@@ -1,6 +1,6 @@
 +++
 title = 'K-Means'
-date = '2021-07-01'
+date = '2025-03-12'
 tags = ['data science', 'programming']
 description = "The article provides a comprehensive guide to implementing the K-Means clustering algorithm from scratch, exploring its functionality, optimization, and hyperparameter tuning, and compares it with Scikit-Learn's implementation"
 +++

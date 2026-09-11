@@ -1,0 +1,4 @@
+{{ if .HasShortcode "network-portrait" }}
+  {{ $css := resources.Get "css/network-portrait.css" | minify | fingerprint "sha512" }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ end }}

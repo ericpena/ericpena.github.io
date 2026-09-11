@@ -1,0 +1,17 @@
+{{ $page := .page }}
+<article class="journal-entry{{ if .featured }} journal-entry-featured{{ end }}">
+  <div class="journal-meta">
+    {{ if .featured }}<span class="journal-eyebrow">Latest post</span>{{ end }}
+    <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "Jan 2, 2006" }}</time>
+  </div>
+  <div class="journal-copy">
+    {{ with $page.GetTerms "tags" }}
+    <ul class="journal-topics" aria-label="Topics">
+      {{ range . }}<li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>{{ end }}
+    </ul>
+    {{ end }}
+    <h2><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h2>
+    {{ with $page.Description }}<p class="journal-description">{{ . }}</p>{{ end }}
+    {{ if .featured }}<a class="journal-read" href="{{ $page.RelPermalink }}">Read the post <span aria-hidden="true">&rarr;</span></a>{{ end }}
+  </div>
+</article>

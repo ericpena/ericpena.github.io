@@ -1,7 +1,7 @@
 +++
 title = "Logistic Map"
-tags = ["physics", "modeling", "complexity"]
-date = "2021-03-23"
+tags = ["mathematics", "modeling", "complexity"]
+date = "2025-01-29"
 description = "This article explores the logistic map, a nonlinear difference equation capturing dynamic behaviors, including chaos, with insights into bifurcation and complex systems modeling"
 +++
 

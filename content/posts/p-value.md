@@ -1,6 +1,6 @@
 +++
 title = 'P Value'
-date = '2020-12-16'
+date = '2024-11-06'
 tags = ['statistics']
 description = "This article explains the concept of p-values in statistics, using intuitive examples and calculations to illustrate their role in hypothesis testing and decision-making"
 +++
