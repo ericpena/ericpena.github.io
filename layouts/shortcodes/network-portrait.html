@@ -1,6 +1,7 @@
 {{ $ordinal := .Ordinal }}
 {{ $route := "M 77 164 L 169 52 L 279 92 L 438 51 L 546 195 L 462 291 L 395 285 L 317 346 L 175 313 L 83 336 L 145 218 L 215 185 Z" }}
-{{ $branches := "M 169 52 L 215 185 M 279 92 L 395 285 M 438 51 L 395 285 M 546 195 L 395 285 M 462 291 L 317 346 M 175 313 L 145 218" }}
+{{ $branches := "M 169 52 L 215 185 M 438 51 L 395 285 M 546 195 L 395 285 M 462 291 L 317 346 M 175 313 L 145 218" }}
+{{ $signals := slice (dict "color" "blue" "offset" 0) (dict "color" "green" "offset" -4) }}
 {{/* Node arrival times follow cumulative edge length / total length * 8s,
      offset by the leading signal's -1s start. Keep in sync with $route. */}}
 {{ $nodes := slice
@@ -34,16 +35,23 @@
       <path class="portrait-network-edge" d="{{ $route }}" />
       <path class="portrait-network-edge portrait-network-branch" d="{{ $branches }}" />
       {{ range $nodes }}
+      {{ $node := . }}
       <circle class="portrait-network-node" cx="{{ .x }}" cy="{{ .y }}" r="3" />
-      <circle class="portrait-network-response" cx="{{ .x }}" cy="{{ .y }}" r="3" opacity="0">
-        <animate attributeName="opacity" values="0.9;0;0" keyTimes="0;0.065;1" dur="8s" begin="{{ .begin }}" repeatCount="indefinite" />
-        <animate attributeName="r" values="3;10;10" keyTimes="0;0.065;1" dur="8s" begin="{{ .begin }}" repeatCount="indefinite" />
+      {{ range $signals }}
+      {{ $begin := printf "%.6fs" (add (float (replace $node.begin "s" "")) .offset) }}
+      <circle class="portrait-network-response portrait-network-response-{{ .color }}" cx="{{ $node.x }}" cy="{{ $node.y }}" r="3" opacity="0">
+        <animate attributeName="opacity" values="0.9;0;0" keyTimes="0;0.065;1" dur="8s" begin="{{ $begin }}" repeatCount="indefinite" />
+        <animate attributeName="r" values="3;10;10" keyTimes="0;0.065;1" dur="8s" begin="{{ $begin }}" repeatCount="indefinite" />
       </circle>
       {{ end }}
-      {{ range slice (dict "radius" 1.5 "opacity" 0.15 "begin" "-0.82s") (dict "radius" 1.8 "opacity" 0.3 "begin" "-0.88s") (dict "radius" 2.2 "opacity" 0.5 "begin" "-0.94s") (dict "radius" 3 "opacity" 1 "begin" "-1s") }}
-      <circle class="portrait-network-signal" r="{{ .radius }}" opacity="{{ .opacity }}">
-        <animateMotion path="{{ $route }}" dur="8s" begin="{{ .begin }}" repeatCount="indefinite" calcMode="paced" />
+      {{ end }}
+      {{ range $signals }}
+      {{ $signal := . }}
+      {{ range slice (dict "radius" 1.5 "opacity" 0.15 "begin" -0.82) (dict "radius" 1.8 "opacity" 0.3 "begin" -0.88) (dict "radius" 2.2 "opacity" 0.5 "begin" -0.94) (dict "radius" 3 "opacity" 1 "begin" -1.0) }}
+      <circle class="portrait-network-signal portrait-network-signal-{{ $signal.color }}" r="{{ .radius }}" opacity="{{ .opacity }}">
+        <animateMotion path="{{ $route }}" dur="8s" begin="{{ printf "%.6fs" (add .begin $signal.offset) }}" repeatCount="indefinite" calcMode="paced" />
       </circle>
+      {{ end }}
       {{ end }}
     </g>
   </svg>
