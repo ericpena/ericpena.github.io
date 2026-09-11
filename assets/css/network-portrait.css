@@ -1,0 +1,81 @@
+.network-portrait {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  width: 72%;
+  aspect-ratio: 3 / 2;
+  margin: 0 auto 2rem;
+}
+
+.network-portrait .portrait-network {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.portrait-network-back {
+  z-index: 0;
+}
+
+.portrait-network-front {
+  z-index: 2;
+}
+
+.network-portrait img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 41.666667%;
+  height: auto;
+  margin: 0;
+  border-radius: 50%;
+}
+
+.portrait-network-edge {
+  fill: none;
+  stroke: #9db3ce;
+  stroke-opacity: 0.35;
+  stroke-width: 1;
+  stroke-linejoin: round;
+}
+
+.portrait-network-branch {
+  stroke-opacity: 0.2;
+}
+
+.portrait-network-node {
+  fill: #8096b3;
+  stroke: #b7d0f4;
+  stroke-width: 0.75;
+}
+
+.portrait-network-signal {
+  fill: #f5faff;
+  filter: drop-shadow(0 0 3px #b6d6ff) drop-shadow(0 0 8px #8fb3ff);
+}
+
+.portrait-network-response {
+  fill: #c7e1ff;
+  filter: drop-shadow(0 0 5px #8fb3ff);
+}
+
+@media screen and (max-width: 736px) {
+  .network-portrait {
+    width: min(100%, 30rem);
+  }
+
+  .network-portrait img {
+    width: 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait-network-signal,
+  .portrait-network-response {
+    display: none;
+  }
+}
