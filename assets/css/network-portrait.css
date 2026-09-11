@@ -63,6 +63,16 @@
   filter: drop-shadow(0 0 5px #8fb3ff);
 }
 
+.portrait-network-signal-green {
+  fill: #edfff4;
+  filter: drop-shadow(0 0 3px #afffd4) drop-shadow(0 0 8px #65dda0);
+}
+
+.portrait-network-response-green {
+  fill: #b2f5ce;
+  filter: drop-shadow(0 0 5px #65dda0);
+}
+
 @media screen and (max-width: 736px) {
   .network-portrait {
     width: min(100%, 30rem);
