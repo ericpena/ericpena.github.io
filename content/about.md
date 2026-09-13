@@ -1,15 +1,18 @@
 +++
 title = "About Me"
+layout = "about"
 +++
 
-{{< network-portrait src="/images/about/ericpena-bw.png" alt="Eric Peña" >}}
+{{< about-section title="Overview" >}}
 
-## Overview
 * Lead Data Scientist interested in Complex Systems
 * M.S. in [Complex Systems Science](https://en.wikipedia.org/wiki/Complex_system) as a [Clifford D. Clark Diversity Fellow](https://www.bupipedream.com/news/29417/clifford-clark/) at the [State University of New York at Binghamton](https://www.binghamton.edu/) and studied machine learning and complex systems modeling
 * B.S. in [Engineering Physics](https://en.wikipedia.org/wiki/Engineering_physics#:~:text=Engineering%20physics%2C%20or%20engineering%20science,aerospace%2C%20materials%20or%20mechanical%20engineering.) as a [Young Scholar](https://odi.osu.edu/young-scholars-program) at [The Ohio State University](https://odi.osu.edu/young-scholars-program)
----
-## Experience
+
+{{< /about-section >}}
+
+{{< about-section title="Experience" >}}
+
 -   **Lead Data Scientist Statistician — AV Safety Data Analysis**, [General Motors](https://www.gm.com/)
 -   **Senior Data Scientist Statistician**, [Torc Robotics](https://www.torc.ai/)
 -   **Senior Data Scientist**, [Motional](https://www.motional.com/)
@@ -19,8 +22,11 @@ title = "About Me"
 -   **Engineer**, [H.B. Fuller](https://www.hbfuller.com)
 -   **Physics Teacher**, [OSU Physics](https://www.physics.osu.edu)
 -   **Physics Demonstrations Assistant**, [OSU Physics](https://www.physics.osu.edu)
----
-## Talks, Publications, and Posters
+
+{{< /about-section >}}
+
+{{< about-section title="Talks, Publications, and Posters" >}}
+
 -   **IEEE Transactions on Network Science and Engineering Journal 2024**
     -   **([publication](https://ieeexplore.ieee.org/document/10704980))** Sparse Bayesian Learning for Sequential Inference of Network Connectivity from Small Data
 -   **Conference on Artificial Life (ALIFE) 2022**
@@ -36,8 +42,11 @@ title = "About Me"
     - **([poster](eric_pena/bayesian_poster.pdf))** *Bayesian Sparse Network Reconstruction*
 -   **Norteast Regional Conference on Complex Systems (NERCCS) 2020**
     - **([poster](https://twitter.com/ericpenax/status/1246217917043224577))** Cellular Automata Optimization using Genetic Algorithms
----
-## Awards
+
+{{< /about-section >}}
+
+{{< about-section title="Awards" >}}
+
 -   **IISE Finalist Award in Best Paper Competition**, Awarded by IISE Conference (2024)
 -   **Mobilizer Award**, Awarded by Motional (2023)
 -   **Mobilizer Award ([post](https://twitter.com/motionaldrive/status/1547624744559603714))**, Awarded by Motional (2022)
@@ -45,8 +54,10 @@ title = "About Me"
 -   **Honorable Mention for Best Poster Award ([post](https://twitter.com/ericpenax/status/1246217917043224577))**, Awarded by Northeast Regional Conference on Complex Systems (2020)
 -   **Clifford D. Clark Diversity Fellowship ([link](https://www.bupipedream.com/news/29417/clifford-clark/))**, Two years — Awarded by Binghamton University (2019—2021)
 -   **Young Scholars Program Scholarship**, Five years — Awarded by The OSU Office of Diversity and Inclusion (2008—2013)
----
-## Education
+
+{{< /about-section >}}
+
+{{< about-section title="Education" >}}
 
 -   **PhD Student**, Binghamton University. *(in progress)*
     - Systems Science
@@ -58,8 +69,12 @@ title = "About Me"
     -   Collective Dynamics of Complex Systems and Engineering
 -   **Bachelor of Science**, The Ohio State University. 2014.
     -   Engineering Physics --- (specialization: Computer Science and Engineering)
----
-## Contact
+
+{{< /about-section >}}
+
+{{< about-section title="Contact" >}}
+
 - Email: **eric.pena@binghamton.edu**
 - LinkedIn: **[https://www.linkedin.com/in/eric-pena/](https://www.linkedin.com/in/eric-pena/)**
----
+
+{{< /about-section >}}
