@@ -1,4 +1,8 @@
-{{ if .HasShortcode "network-portrait" }}
+{{ if or (.HasShortcode "network-portrait") (eq .Params.layout "about") }}
   {{ $css := resources.Get "css/network-portrait.css" | minify | fingerprint "sha512" }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ end }}
+{{ if eq .Params.layout "about" }}
+  {{ $css := resources.Get "css/about.css" | minify | fingerprint "sha512" }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 {{ end }}

@@ -1,0 +1,10 @@
+{{ $id := .Get "title" | anchorize }}
+<section class="about-section about-{{ $id }}" aria-labelledby="{{ $id }}">
+  <h2 id="{{ $id }}">{{ .Get "title" }}</h2>
+  <div class="about-section-content">
+    {{ if eq $id "overview" }}
+      {{ partial "network-portrait.html" (dict "Ordinal" .Ordinal "src" "/images/about/ericpena-bw.png" "alt" "Eric Peña") }}
+    {{ end }}
+    {{ .Inner | .Page.RenderString }}
+  </div>
+</section>
